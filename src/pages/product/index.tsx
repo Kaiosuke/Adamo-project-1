@@ -20,8 +20,6 @@ const Home = () => {
     })();
   };
 
-  console.log(products);
-
   if (loading) {
     return <p>Loading...</p>;
   }

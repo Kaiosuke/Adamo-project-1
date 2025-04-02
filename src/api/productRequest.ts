@@ -16,9 +16,10 @@ formData.append("arr[]", "1");
 
 const getAllProducts = async () => {
   try {
-    const res = await instance.get("users", {
+    const res = await instance.get("room-types", {
       signal: controller.signal,
     });
+
     return res.data.data;
   } catch (error) {
     // if (axios.isCancel(error)) {
@@ -34,6 +35,6 @@ const getAllProducts = async () => {
 };
 
 // source.cancel("Casdas");
-controller.abort();
+// controller.abort();
 
 export { getAllProducts };

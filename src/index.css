@@ -14,8 +14,9 @@
   --popover-foreground: oklch(0.145 0 0);
   --primary: #ff7b42;
   --primary-foreground: #fff;
-  --default: #1c1c1e;
+  --secondary: #1c1c1e;
   --secondary-foreground: oklch(0.205 0 0);
+  --third: #fff;
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -88,6 +89,7 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-third: var(--third);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
@@ -121,6 +123,12 @@
 }
 
 @layer utilities {
+  /* Container */
+  .main-container {
+    @apply lg:px-58 md:px-42 sm:px-24 px-8;
+  }
+
+  /* Font size */
   .text-size-6xl {
     @apply lg:text-6xl md:text-5xl sm:text-4xl text-3xl;
   }
