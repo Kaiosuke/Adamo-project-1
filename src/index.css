@@ -17,6 +17,7 @@
   --secondary: #1c1c1e;
   --secondary-foreground: oklch(0.205 0 0);
   --third: #fff;
+  --banner: #FFF2CF
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -51,6 +52,8 @@
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
+  --third: oklch(0.145 0 0);
+  --banner: #FFF2CF
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(0.269 0 0);
@@ -90,6 +93,7 @@
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-third: var(--third);
+  --color-banner: var(--banner);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
@@ -130,7 +134,7 @@
 
   /* Font size */
   .text-size-6xl {
-    @apply lg:text-6xl md:text-5xl sm:text-4xl text-3xl;
+    @apply lg:text-6xl md:text-5xl sm:text-4xl text-2xl;
   }
 
   .text-size-5xl {
@@ -147,6 +151,10 @@
 
   .text-size-2xl {
     @apply lg:text-2xl md:text-xl sm:text-lg text-base;
+  }
+
+ .text-size-xl {
+    @apply lg:text-xl md:text-xl sm:text-lg text-base;
   }
 
   .text-size-lg {
