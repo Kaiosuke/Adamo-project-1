@@ -18,7 +18,7 @@ const buttonVariants = cva(
         primary:
           "bg-primary text-primary-foreground shadow-xs hover:bg-primary/80",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
+          "bg-secondary text-secondary-foreground h-[18rem] shadow-xs hover:bg-secondary/80",
         third:
           "bg-third text-third-foreground shadow-xs bg:opacity-90 hover:bg-third/80",
         ghost:
@@ -27,6 +27,7 @@ const buttonVariants = cva(
       },
       size: {
         default: "lg:h-[56px] md:h-[48px] h-[40px] has-[>svg]:px-3",
+        secondary: "md:h-[38px] h-[32px] has-[>svg]:px-3",
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",

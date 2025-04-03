@@ -17,6 +17,7 @@
   --secondary: #1c1c1e;
   --secondary-foreground: oklch(0.205 0 0);
   --third: #fff;
+  --four: #636567;
   --banner: #fff2cf;
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -48,11 +49,12 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  --primary: #4e86db;
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
+  --secondary: #fff;
   --secondary-foreground: oklch(0.985 0 0);
-  --third: oklch(0.145 0 0);
+  --third: #000;
+  --four: #636567;
   --banner: #fff2cf;
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
@@ -93,6 +95,7 @@
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-third: var(--third);
+  --color-four: var(--four);
   --color-banner: var(--banner);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
@@ -129,7 +132,7 @@
 @layer utilities {
   /* Container */
   .main-container {
-    @apply 2xl:px-48 lg:px-32 md:px-12 sm:px-24 px-8;
+    @apply 2xl:px-48 lg:px-32 md:px-12 px-8;
   }
 
   /* Font size */
@@ -142,7 +145,7 @@
   }
 
   .text-size-4xl {
-    @apply lg:text-4xl md:text-3xl sm:text-2xl text-xl;
+    @apply lg:text-4xl md:text-3xl sm:text-2xl text-xl font-medium;
   }
 
   .text-size-3xl {
@@ -150,7 +153,7 @@
   }
 
   .text-size-2xl {
-    @apply lg:text-2xl md:text-xl sm:text-lg text-base font-semibold;
+    @apply lg:text-2xl md:text-xl sm:text-lg text-base font-medium;
   }
 
   .text-size-xl {
@@ -167,5 +170,14 @@
 
   .bg-transparent {
     @apply relative after:absolute after:inset-0 after:bg-third after:opacity-75 after:z-[1];
+  }
+
+  .image-important {
+    inset: unset !important;
+    right: 0 !important;
+  }
+
+  .clip-path-flag {
+    clip-path: polygon(64% 0, 64% 100%, 32% 69%, 0 100%, 0 0);
   }
 }
