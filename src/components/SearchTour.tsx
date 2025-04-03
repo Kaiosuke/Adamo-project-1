@@ -43,10 +43,10 @@ const SearchTour = () => {
           <div className="lg:pt-6 pt-4">
             <Button
               variant="primary"
-              className="flex justify-center gap-2 text-third"
+              className="flex justify-center gap-2 text-third h-[64px]"
             >
               <CiSearch className="text-size-lg " />
-              Search Search
+              Search
             </Button>
           </div>
         </div>

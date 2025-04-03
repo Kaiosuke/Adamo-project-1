@@ -18,6 +18,7 @@
   --secondary-foreground: oklch(0.205 0 0);
   --third: #fff;
   --four: #636567;
+  --five: #e8e9ea;
   --banner: #fff2cf;
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -55,6 +56,7 @@
   --secondary-foreground: oklch(0.985 0 0);
   --third: #000;
   --four: #636567;
+  --five: #e8e9ea;
   --banner: #fff2cf;
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
@@ -96,6 +98,7 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-third: var(--third);
   --color-four: var(--four);
+  --color-five: var(--five);
   --color-banner: var(--banner);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
@@ -137,7 +140,7 @@
 
   /* Font size */
   .text-size-6xl {
-    @apply lg:text-6xl md:text-5xl sm:text-4xl text-2xl;
+    @apply lg:text-6xl md:text-5xl text-4xl font-semibold;
   }
 
   .text-size-5xl {
@@ -179,5 +182,9 @@
 
   .clip-path-flag {
     clip-path: polygon(64% 0, 64% 100%, 32% 69%, 0 100%, 0 0);
+  }
+
+  .pd-normal {
+    @apply lg:py-8 md:py-6 py-4;
   }
 }
