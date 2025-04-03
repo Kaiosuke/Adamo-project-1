@@ -28,7 +28,7 @@ const linkNavEn = [
 const NavPc = () => {
   return (
     <nav className="lg:block hidden">
-      <ul className="flex justify-between items-center gap-6 lg:flex-row flex-col">
+      <ul className="flex justify-between items-center gap-10 lg:flex-row flex-col">
         {linkNavEn.map((nav, index) => (
           <li key={index}>
             <a

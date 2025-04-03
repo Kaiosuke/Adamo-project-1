@@ -31,7 +31,7 @@ const linkNavEn = [
 
 const NavMb = () => {
   return (
-    <div className="lg:hidden block">
+    <div className="lg:hidden block relative z-50">
       <Sheet>
         <SheetTrigger asChild>
           <div className="ml-6 lg:hidden block text-third text-3xl">

@@ -32,7 +32,7 @@ import NavMb from "./NavMb";
 // ];
 const Header = () => {
   return (
-    <header className="fixed w-full z-[9999]">
+    <header className="fixed w-full z-[9999] top-4">
       <div className="main-container flex items-center relative">
         <img
           src={Logo}
