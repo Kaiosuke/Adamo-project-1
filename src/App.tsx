@@ -7,6 +7,8 @@ import Login from "./auth/login/Login";
 import Register from "./auth/register/Register";
 import About from "./pages/about";
 import Tours from "./pages/tours";
+import NewPassword from "./auth/newPassword/NewPassword";
+import ForgotPassword from "./auth/forgotPassword/ForgotPassword";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path="/auth" element={<LayoutAuth />}>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="new-password" element={<NewPassword />} />
+          <Route path="forgot-password" element={<ForgotPassword />} />
         </Route>
       </Routes>
     </BrowserRouter>

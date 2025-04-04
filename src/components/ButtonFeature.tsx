@@ -1,16 +1,11 @@
 import { Link } from "react-router";
-import { Button } from "./ui/button";
 
 const ButtonFeature = ({ content }: { content: string }) => {
   return (
     <Link to="#">
-      <Button
-        variant={"secondary"}
-        className="w-fit text-third px-6"
-        size={"secondary"}
-      >
+      <div className="w-[80px] h-[32px] bg-secondary text-third flex items-center justify-center text-sm cursor-pointer hover:bg-secondary/80">
         {content}
-      </Button>
+      </div>
     </Link>
   );
 };

@@ -1,4 +1,4 @@
-import { SignInSchema } from "@/components/schemas/authSchema";
+import { NewPasswordSchema } from "@/components/schemas/authSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -9,36 +9,40 @@ import { Form } from "@/components/ui/form";
 import { FaFacebook } from "react-icons/fa6";
 import { Link } from "react-router";
 
-const Login = () => {
-  const form = useForm<z.infer<typeof SignInSchema>>({
-    resolver: zodResolver(SignInSchema),
+const NewPassword = () => {
+  const form = useForm<z.infer<typeof NewPasswordSchema>>({
+    resolver: zodResolver(NewPasswordSchema),
     defaultValues: {
-      email: "",
       password: "",
+      confirm: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof SignInSchema>) {
+  function onSubmit(values: z.infer<typeof NewPasswordSchema>) {
     console.log(values);
   }
 
   return (
     <div className="flex justify-center items-center">
       <div className="flex justify-center items-start flex-col">
-        <h1 className="text-size-5xl text-secondary">Sign In</h1>
-        <div className="pt-4">Welcome to NgaoduVietnam</div>
+        <h1 className="text-size-5xl text-secondary">New Password</h1>
+        <div className="pt-4">Create your new password</div>
         <div className="mt-16">
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
               className="space-y-8 w-[350px]"
             >
-              <InputAuth form={form} name="email" title="Email Address" />
-
               <InputAuth
                 form={form}
                 name="password"
                 title="Password"
+                type="password"
+              />
+              <InputAuth
+                form={form}
+                name="confirm"
+                title="Confirm Password"
                 type="password"
               />
               <div className="text-right">
@@ -48,7 +52,7 @@ const Login = () => {
               </div>
               <div className="flex flex-col gap-6 mt-6">
                 <Button variant={"primary"} type="submit">
-                  Sign In
+                  Change Password
                 </Button>
                 <Button variant={"six"} type="button">
                   <span>
@@ -73,4 +77,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default NewPassword;

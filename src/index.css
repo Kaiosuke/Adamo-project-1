@@ -19,6 +19,7 @@
   --third: #fff;
   --four: #636567;
   --five: #e8e9ea;
+  --six: #4e86db;
   --banner: #fff2cf;
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -57,6 +58,7 @@
   --third: #000;
   --four: #636567;
   --five: #e8e9ea;
+  --six: #4e86db;
   --banner: #fff2cf;
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
@@ -99,6 +101,7 @@
   --color-third: var(--third);
   --color-four: var(--four);
   --color-five: var(--five);
+  --color-six: var(--six);
   --color-banner: var(--banner);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
@@ -144,7 +147,7 @@
   }
 
   .text-size-5xl {
-    @apply lg:text-5xl md:text-4xl sm:text-3xl text-2xl;
+    @apply lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-semibold;
   }
 
   .text-size-4xl {
@@ -186,5 +189,14 @@
 
   .pd-normal {
     @apply lg:py-8 md:py-6 py-4;
+  }
+
+  /* straight line */
+  .str-line {
+    @apply w-full h-[1px] my-4 bg-five;
+  }
+
+  .input-label-top {
+    @apply absolute left-0 top-1/2 -translate-y-1/2 text-base text-four transition-all peer-placeholder-shown:top-0 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:text-sm peer-focus:text-secondary;
   }
 }
