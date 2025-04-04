@@ -3,11 +3,9 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import InputAuth from "@/components/InputAuth";
+import { ForgotPasswordSchema } from "@/components/schemas/authSchema";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
-import { FaFacebook } from "react-icons/fa6";
-import { Link } from "react-router";
-import { ForgotPasswordSchema } from "@/components/schemas/authSchema";
 
 const ForgotPassword = () => {
   const form = useForm<z.infer<typeof ForgotPasswordSchema>>({

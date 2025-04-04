@@ -9,6 +9,7 @@ import About from "./pages/about";
 import Tours from "./pages/tours";
 import NewPassword from "./auth/newPassword/NewPassword";
 import ForgotPassword from "./auth/forgotPassword/ForgotPassword";
+import TourDetail from "./pages/tours/tourDetail";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="product" element={<Product />} />
           <Route path="about" element={<About />} />
           <Route path="tours" element={<Tours />} />
+          <Route path="tours/:id" element={<TourDetail />} />
         </Route>
       </Routes>
       <Routes>
