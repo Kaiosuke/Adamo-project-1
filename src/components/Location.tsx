@@ -22,9 +22,14 @@ const Location = ({
   price,
 }: LocationComponent) => {
   return (
-    <div className="w-full ">
+    <div className="w-full">
       <div className="relative">
-        <img src={mainImg} alt="VungTau" className="object-cover w-full" />
+        <img
+          src={mainImg}
+          alt="VungTau"
+          className="object-cover w-full after:hover:zoom-in-10"
+        />
+
         <div className="w-[32px] absolute top-[-1px] right-10">
           <img src={subImag} alt="shape" className="object-cover w-full" />
         </div>

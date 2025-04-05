@@ -1,4 +1,5 @@
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useTranslation } from "react-i18next";
 
 import { FaBars } from "react-icons/fa6";
 
@@ -29,7 +30,37 @@ const linkNavEn = [
   },
 ];
 
+const linkNavVi = [
+  {
+    title: "Trang chủ",
+    path: "/",
+  },
+  {
+    title: "Chúng tôi",
+    path: "about",
+  },
+  {
+    title: "Tham quan",
+    path: "/tours",
+  },
+  {
+    title: "Khách sạn",
+    path: "/hotels",
+  },
+  {
+    title: "Liên hệ",
+    path: "/contact",
+  },
+  {
+    title: "Đăng nhập",
+    path: "/login",
+  },
+];
+
 const NavMb = () => {
+  const { i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+
   return (
     <div className="lg:hidden block relative z-50">
       <Sheet>
@@ -41,16 +72,18 @@ const NavMb = () => {
         <SheetContent className="bg-secondary">
           <nav className="pt-20">
             <ul className="flex justify-between items-center gap-6 lg:flex-row flex-col">
-              {linkNavEn.map((nav, index) => (
-                <li key={index}>
-                  <a
-                    href={nav.path}
-                    className="text-third hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out"
-                  >
-                    {nav.title}
-                  </a>
-                </li>
-              ))}
+              {(currentLanguage === "en" ? linkNavEn : linkNavVi).map(
+                (nav, index) => (
+                  <li key={index}>
+                    <a
+                      href={nav.path}
+                      className="text-third hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out"
+                    >
+                      {nav.title}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </nav>
         </SheetContent>

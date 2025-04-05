@@ -2,7 +2,9 @@ import Logo from "@/assets/images/logo.png";
 
 import useDetectScroll from "@smakss/react-scroll-direction";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import DarkMode from "./DarkMode";
+import Language from "./Language";
 import NavMb from "./NavMb";
 
 const linkNavEn = [
@@ -32,35 +34,37 @@ const linkNavEn = [
   },
 ];
 
-// const linkNavVi = [
-//   {
-//     title: "Home",
-//     path: "/",
-//   },
-//   {
-//     title: "About",
-//     path: "about",
-//   },
-//   {
-//     title: "Tours",
-//     path: "/tours",
-//   },
-//   {
-//     title: "Hotels",
-//     path: "/hotels",
-//   },
-//   {
-//     title: "Contact",
-//     path: "/contact",
-//   },
-//   {
-//     title: "Login",
-//     path: "/login",
-//   },
-// ];
+const linkNavVi = [
+  {
+    title: "Trang chủ",
+    path: "/",
+  },
+  {
+    title: "Chúng tôi",
+    path: "about",
+  },
+  {
+    title: "Tham quan",
+    path: "/tours",
+  },
+  {
+    title: "Khách sạn",
+    path: "/hotels",
+  },
+  {
+    title: "Liên hệ",
+    path: "/contact",
+  },
+  {
+    title: "Đăng nhập",
+    path: "/login",
+  },
+];
 const Header = () => {
   const [isScroll, setIsScroll] = useState(false);
   const { scrollDir } = useDetectScroll();
+
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,6 +76,8 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const currentLanguage = i18n.language;
 
   return (
     <header
@@ -93,21 +99,24 @@ const Header = () => {
           <div className="flex items-center ">
             <nav className="lg:block hidden">
               <ul className="flex justify-between items-center gap-10 lg:flex-row flex-col">
-                {linkNavEn.map((nav, index) => (
-                  <li key={index}>
-                    <a
-                      href={nav.path}
-                      className={` ${
-                        isScroll ? "text-secondary" : "text-third"
-                      } hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out`}
-                    >
-                      {nav.title}
-                    </a>
-                  </li>
-                ))}
+                {(currentLanguage === "en" ? linkNavEn : linkNavVi).map(
+                  (nav, index) => (
+                    <li key={index}>
+                      <a
+                        href={nav.path}
+                        className={` ${
+                          isScroll ? "text-secondary" : "text-third"
+                        } hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out`}
+                      >
+                        {nav.title}
+                      </a>
+                    </li>
+                  )
+                )}
               </ul>
             </nav>
             <DarkMode />
+            <Language />
             <NavMb />
           </div>
         </div>
