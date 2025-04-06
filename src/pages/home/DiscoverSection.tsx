@@ -3,6 +3,7 @@ import HoiAn from "@/assets/images/Hoi An.png";
 import MuiNe from "@/assets/images/Mui ne.png";
 import Sapa from "@/assets/images/Sapa.png";
 import ButtonFeature from "@/components/ButtonFeature";
+import { Link } from "react-router";
 
 const DiscoverSection = () => {
   return (
@@ -17,9 +18,19 @@ const DiscoverSection = () => {
       </div>
       <div className="grid lg:grid-cols-4 gap-4 md:grid-cols-2 grid-cols-1 pt-6">
         <div className="w-full">
-          <img src={Sapa} alt="Sapa" className="object-cover w-full" />
+          <div className="overflow-hidden ">
+            <Link to="#!">
+              <img
+                src={Sapa}
+                alt="Sapa"
+                className="object-cover w-full hover:scale-125 tran-fast tran-fast"
+              />
+            </Link>
+          </div>
           <div className="pt-4">
-            <h4 className="text-size-xl text-secondary">Sapa, Lao Cai</h4>
+            <h4 className="text-size-xl text-secondary">
+              <Link to="#!">Sapa, Lao Cai</Link>
+            </h4>
             <span className="text-four text-base">24 experiences</span>
           </div>
         </div>

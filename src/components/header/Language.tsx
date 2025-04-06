@@ -19,13 +19,13 @@ const Language = () => {
   return (
     <div className="ml-6">
       <Select onValueChange={(value) => handleChangeLanguage(value)}>
-        <SelectTrigger className="w-[40px] text-secondary bg- text-third">
-          {currentLanguage}
+        <SelectTrigger className="w-[60px] text-secondary bg-transparent bg-">
+          <div className="text-secondary">{currentLanguage}</div>
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectItem value="en">EN</SelectItem>
-            <SelectItem value="vi">VI</SelectItem>
+            <SelectItem value="en">en</SelectItem>
+            <SelectItem value="vi">vi</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>

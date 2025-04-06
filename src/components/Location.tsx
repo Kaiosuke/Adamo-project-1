@@ -1,5 +1,6 @@
 import { CiLocationOn } from "react-icons/ci";
 import { MdCalendarMonth, MdOutlineStar } from "react-icons/md";
+import { Link } from "react-router";
 
 interface LocationComponent {
   location: string;
@@ -23,12 +24,14 @@ const Location = ({
 }: LocationComponent) => {
   return (
     <div className="w-full">
-      <div className="relative">
-        <img
-          src={mainImg}
-          alt="VungTau"
-          className="object-cover w-full after:hover:zoom-in-10"
-        />
+      <div className="relative overflow-hidden">
+        <Link to="#!">
+          <img
+            src={mainImg}
+            alt="VungTau"
+            className="object-cover w-full hover:scale-125 transition-all duration-200 ease-in-out"
+          />
+        </Link>
 
         <div className="w-[32px] absolute top-[-1px] right-10">
           <img src={subImag} alt="shape" className="object-cover w-full" />
@@ -43,7 +46,11 @@ const Location = ({
           <CiLocationOn className="text-size-xl text-primary" />
           <span className="text-four">{location}</span>
         </div>
-        <h5 className="text-size-lg font-medium pt-2">{des}</h5>
+        <h5 className="text-size-lg font-medium pt-2">
+          <Link to="#!" className="hover:underline">
+            {des}
+          </Link>
+        </h5>
         <div className="flex items-center justify-between pt-4">
           <div className="flex items-center gap-1">
             <MdCalendarMonth className="text-primary text-size-lg" />

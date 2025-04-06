@@ -1,8 +1,10 @@
 import BreadcrumbCom from "@/components/Breadcrumb";
 import PdSub from "@/components/PdSub";
+// import { Button } from "@/components/ui/button";
+import DatePickerWithRange from "@/components/DatePickerWithRange";
 import { Button } from "@/components/ui/button";
 import { CiLocationOn } from "react-icons/ci";
-import { FaRegCalendarAlt } from "react-icons/fa";
+import { GoPeople } from "react-icons/go";
 import { MdOutlineStar } from "react-icons/md";
 import TourDetailMain from "./TourDetailMain";
 
@@ -68,14 +70,11 @@ const TourDetail = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-full h-[64px] bg-third py-2 pl-4 flex items-center gap-4">
-                  <FaRegCalendarAlt className="text-primary" />
-                  <div className="text-secondary">
-                    <span>25/02/2001</span> - <span>28/02/2001</span>
-                  </div>
+                <div className="">
+                  <DatePickerWithRange />
                 </div>
-                <div className="w-full h-[64px] bg-third py-2 pl-4 flex items-center gap-4">
-                  <FaRegCalendarAlt className="text-primary" />
+                <div className="w-full h-[64px] bg-third py-2 pl-3 flex items-center gap-4">
+                  <GoPeople className="text-primary" />
                   <div className="text-secondary">2 Adults - 1 Children</div>
                 </div>
                 <div className="flex justify-between items-center">

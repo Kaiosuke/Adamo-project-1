@@ -1,10 +1,8 @@
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { CiFlag1 } from "react-icons/ci";
-import { LuUsers } from "react-icons/lu";
-import { MdCalendarMonth } from "react-icons/md";
-import { FaSortDown } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
-import { CiSearch } from "react-icons/ci";
+import { CiFlag1, CiSearch } from "react-icons/ci";
+import { FaMapMarkerAlt, FaSortDown } from "react-icons/fa";
+import { LuUsers } from "react-icons/lu";
+import DatePickerSingle from "./DatePickerSingle";
 
 const SearchTourHome = () => {
   return (
@@ -27,16 +25,12 @@ const SearchTourHome = () => {
                 Quatlam Beach, Giaothuy, Namdinh
               </span>
             </div>
-            <div className="bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 pl-6">
-              <MdCalendarMonth className="text-primary text-size-lg" />
-              <span className="text-size-base opacity-50">Departure time</span>
+            <div className="bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center pl-[11px]">
+              <DatePickerSingle />
             </div>
             <div className="bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6">
               <CiFlag1 className="text-primary text-size-lg" />
               <span className="text-size-base opacity-50">Type of tour</span>
-              <div className="ml-auto opacity-50">
-                <FaSortDown />
-              </div>
             </div>
             <div className="bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6">
               <LuUsers className="text-primary text-size-lg" />

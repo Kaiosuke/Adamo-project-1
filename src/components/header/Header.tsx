@@ -30,7 +30,7 @@ const linkNavEn = [
   },
   {
     title: "Login",
-    path: "/login",
+    path: "/auth/login",
   },
 ];
 
@@ -57,7 +57,7 @@ const linkNavVi = [
   },
   {
     title: "Đăng nhập",
-    path: "/login",
+    path: "/auth/login",
   },
 ];
 const Header = () => {
