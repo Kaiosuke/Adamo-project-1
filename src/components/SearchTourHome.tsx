@@ -1,6 +1,14 @@
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { CiFlag1, CiSearch } from "react-icons/ci";
-import { FaMapMarkerAlt, FaSortDown } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { LuUsers } from "react-icons/lu";
 import DatePickerSingle from "./DatePickerSingle";
 
@@ -25,21 +33,42 @@ const SearchTourHome = () => {
                 Quatlam Beach, Giaothuy, Namdinh
               </span>
             </div>
-            <div className="bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center pl-[11px]">
+            <div className="bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center pl-[12px]">
               <DatePickerSingle />
             </div>
             <div className="bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6">
               <CiFlag1 className="text-primary text-size-lg" />
-              <span className="text-size-base opacity-50">Type of tour</span>
+              <Select>
+                <SelectTrigger className="w-full">
+                  <SelectValue
+                    placeholder="Select a fruit"
+                    className="placeholder:text-secondary"
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectItem value="apple">Tour 1</SelectItem>
+                    <SelectItem value="banana">Tour 2</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
             </div>
             <div className="bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6">
               <LuUsers className="text-primary text-size-lg" />
-              <span className="text-size-base opacity-50">
-                Number of guests
-              </span>
-              <div className="ml-auto opacity-50">
-                <FaSortDown />
-              </div>
+              <Select>
+                <SelectTrigger className="w-full">
+                  <SelectValue
+                    placeholder="Number of guests"
+                    className="placeholder:text-secondary"
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectItem value="apple">1</SelectItem>
+                    <SelectItem value="banana">2</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
             </div>
           </div>
           <div className="lg:pt-6 pt-4">

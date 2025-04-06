@@ -116,7 +116,7 @@ const Header = () => {
               </ul>
             </nav>
             <DarkMode />
-            <Language />
+            <Language isScroll={isScroll} />
             <NavMb />
           </div>
         </div>

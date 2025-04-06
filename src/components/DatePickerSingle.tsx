@@ -18,15 +18,15 @@ function DatePickerSingle() {
 
   return (
     <Popover>
-      <PopoverTrigger asChild className="">
+      <PopoverTrigger asChild className="cursor-pointer">
         <Button
           variant={"outline"}
           className={cn(
-            "justify-start text-left font-normal border-none shadow-none pl-4",
+            "justify-start text-left font-normal border-none shadow-none group ",
             !date && "text-muted-foreground"
           )}
         >
-          <CalendarIcon className="mr-3 text-primary" />
+          <CalendarIcon className="mr-3 text-primary group-hover:text-third" />
           {date ? format(date, "PPP") : <span>Departure time</span>}
         </Button>
       </PopoverTrigger>

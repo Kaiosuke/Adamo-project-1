@@ -12,10 +12,9 @@ import {
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
-import * as Slider from "@radix-ui/react-slider";
 import { Checkbox } from "@/components/ui/checkbox";
 
-import { useState } from "react";
+import SliderCom from "@/components/Slider";
 import { Button } from "@/components/ui/button";
 
 const AttractiveTourSection = () => {
@@ -42,7 +41,7 @@ const AttractiveTourSection = () => {
     "20",
     "21",
   ];
-  const [values, setValues] = useState([0, 1200]);
+
   return (
     <section className="main-container">
       <div className="flex justify-between ">
@@ -65,38 +64,8 @@ const AttractiveTourSection = () => {
               </DropdownMenuLabel>
               <div>
                 <span className="text-secondary font-bold">Budget:</span>
-
-                <div className="w-full max-w-md mx-auto relative lg:mt-10 mt-8">
-                  <Slider.Root
-                    className="relative flex items-center select-none touch-none w-full h-5"
-                    value={values}
-                    onValueChange={setValues}
-                    min={0}
-                    max={100}
-                    step={1}
-                  >
-                    <Slider.Track className="relative w-full h-2 bg-gray-300 rounded">
-                      <Slider.Range className="absolute h-full bg-primary rounded" />
-                    </Slider.Track>
-
-                    <Slider.Thumb
-                      className="w-5 h-5 bg-third rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-third"
-                      aria-label="Min value"
-                    />
-
-                    <Slider.Thumb
-                      className="w-5 h-5 bg-third rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-third"
-                      aria-label="Max value"
-                    />
-                  </Slider.Root>
-                  <div className="flex justify-between mt-2 text-sm">
-                    <span className="absolute -top-4 text-secondary">
-                      {values[0]}
-                    </span>
-                    <span className="absolute -top-4 right-0 text-secondary">
-                      {values[1]}
-                    </span>
-                  </div>
+                <div className="lg:mt-10 mt-6">
+                  <SliderCom />
                 </div>
               </div>
               <div className="str-line" />
