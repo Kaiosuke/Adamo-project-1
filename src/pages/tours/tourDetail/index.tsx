@@ -9,6 +9,7 @@ import { MdOutlineStar } from "react-icons/md";
 import TourDetailMain from "./TourDetailMain";
 
 const TourDetail = () => {
+  console.log(1);
   return (
     <>
       <PdSub />
