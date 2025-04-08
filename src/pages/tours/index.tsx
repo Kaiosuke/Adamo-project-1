@@ -4,14 +4,19 @@ import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import AttractiveTourSection from "./AttractiveTourSection";
 
-import Hero from "@/assets/images/hero.png";
-import SearchTour from "@/components/SearchTour";
+import TourImg from "@/assets/images/hero-tour.png";
+import SearchTour from "@/components/searchList/SearchTour";
 import HeroSectionCom from "@/components/HeroSectionCom";
 
-const index = () => {
+const Tour = () => {
   return (
     <>
-      <HeroSectionCom image={Hero} Tour={<SearchTour />} />
+      <HeroSectionCom
+        image={TourImg}
+        Tour={<SearchTour />}
+        title="Search hundreds of tours and more"
+        des="Attractive tour and interesting experiences"
+      />
       <BreadcrumbCom links={[{ title: "home", href: "/" }]} current="tours" />
       <PdSub />
       <AttractiveTourSection />
@@ -20,4 +25,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Tour;

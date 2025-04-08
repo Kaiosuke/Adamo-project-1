@@ -1,5 +1,5 @@
 import Hero from "@/assets/images/hero.png";
-import SearchTourHome from "@/components/SearchTourHome";
+import SearchTourHome from "@/components/searchList/SearchTourHome";
 
 const HeroSection = () => {
   return (

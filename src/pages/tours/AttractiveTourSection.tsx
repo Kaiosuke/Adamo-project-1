@@ -1,6 +1,6 @@
 import ButtonFeature from "@/components/ButtonFeature";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
-import TourList from "./TourList";
+import Tour from "./Tour";
 
 import {
   DropdownMenu,
@@ -184,7 +184,7 @@ const AttractiveTourSection = () => {
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 lg:pt-16 md:pt-10 pt-6">
         {tourList.map((tour, index) => (
           <div key={index}>
-            <TourList tour={tour} />
+            <Tour tour={tour} />
           </div>
         ))}
       </div>

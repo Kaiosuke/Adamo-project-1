@@ -253,6 +253,10 @@
   .tran-slow {
     @apply transition-all duration-400 ease-in-out;
   }
+
+  .overlay-img {
+    @apply before:absolute before:bg-black/20 before:inset-0 before:w-full before:h-full z-[-1];
+  }
 }
 
 /* Swiper */
