@@ -15,6 +15,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import Viewer360 from "@/components/Viewer360";
 
+import Video from "@/assets/videos/dog.mp4";
+
 const TourDetailTabs = () => {
   return (
     <Tabs defaultValue="descriptions" className="lg:pt-10 pt-6">
@@ -224,16 +226,18 @@ const TourDetailTabs = () => {
         <div className="py-6">
           <div className="str-line " />
         </div>
-        <div>
+        <div className="h-full">
           <h4 className="text-size-xl font-semibold text-secondary">
             360° Panoramic Images and Videos
           </h4>
-          <div className="mt-4 f-[400px]">
+          <div className="mt-4 h-[400px]">
             <Viewer360 />
           </div>
-          <div className="mt-8">
-            {/* <img src={Tour2} alt="Workplace" className="w-full" /> */}
-            <map name="planetmap"></map>
+          <div className="mt-8 h-[400px] w-full">
+            <iframe
+              className="aspect-video md:aspect-square w-full h-full"
+              src={Video}
+            />
           </div>
         </div>
       </TabsContent>
