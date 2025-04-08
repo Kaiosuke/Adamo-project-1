@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import DarkMode from "./DarkMode";
 import Language from "./Language";
 import NavMb from "./NavMb";
+import { Link, useLocation } from "react-router";
 
 const linkNavEn = [
   {
@@ -60,6 +61,9 @@ const linkNavVi = [
     path: "/auth/login",
   },
 ];
+
+const pages = ["tour-detail", "hotel-detail"];
+
 const Header = () => {
   const [isScroll, setIsScroll] = useState(false);
   const { scrollDir } = useDetectScroll();
@@ -78,6 +82,15 @@ const Header = () => {
   }, []);
 
   const currentLanguage = i18n.language;
+
+  const location = useLocation();
+
+  const isPage = location.pathname.split("/")[1];
+
+  const getLinkColor = () => {
+    if (isScroll) return "text-secondary";
+    return pages.includes(isPage) ? "text-secondary" : "text-third";
+  };
 
   return (
     <header
@@ -102,14 +115,14 @@ const Header = () => {
                 {(currentLanguage === "en" ? linkNavEn : linkNavVi).map(
                   (nav, index) => (
                     <li key={index}>
-                      <a
-                        href={nav.path}
-                        className={` ${
-                          isScroll ? "text-secondary" : "text-third"
-                        } hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out`}
+                      <Link
+                        to={nav.path}
+                        className={` hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out
+                            ${getLinkColor()}
+                        `}
                       >
                         {nav.title}
-                      </a>
+                      </Link>
                     </li>
                   )
                 )}

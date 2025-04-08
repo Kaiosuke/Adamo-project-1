@@ -24,9 +24,9 @@ function App() {
           <Route path="product" element={<Product />} />
           <Route path="about" element={<About />} />
           <Route path="tours" element={<Tours />} />
-          <Route path="tours/:id" element={<TourDetail />} />
+          <Route path="tour-detail/:id" element={<TourDetail />} />
           <Route path="hotels" element={<Hotel />} />
-          <Route path="hotels/:id" element={<HotelDetail />} />
+          <Route path="hotel-detail/:id" element={<HotelDetail />} />
         </Route>
       </Routes>
       <Routes>
