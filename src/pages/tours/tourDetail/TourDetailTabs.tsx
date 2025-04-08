@@ -1,9 +1,11 @@
-import AccordionCom from "@/components/AccordionCom";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { IoCheckmarkSharp } from "react-icons/io5";
 import FullMap from "@/assets/images/Full Map.png";
 import Tour1 from "@/assets/images/tour-detail-1.png";
 import Tour2 from "@/assets/images/tour-detail-2.png";
+import AccordionCom from "@/components/AccordionCom";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { IoCheckmarkSharp } from "react-icons/io5";
+
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 const TourDetailTabs = () => {
   return (
@@ -118,70 +120,85 @@ const TourDetailTabs = () => {
           <div className="flex flex-col gap-4 mt-4">
             <AccordionCom
               title="Day 1: Molo Beverello (4 stops)"
+              type="location"
               contents={[
                 {
                   location: "Molo Beverello",
                   des: "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                   duration: "5 minutes ",
+                  icon: FaMapMarkerAlt,
                 },
                 {
                   location: "Marina Piccola",
                   des: "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings",
                   duration: "1 hour 30 minutes",
+                  icon: FaMapMarkerAlt,
                 },
                 {
                   location: "Blue Grotto",
                   des: "Pass trough the Ait Saouen Col in anti atlas",
+                  icon: FaMapMarkerAlt,
                 },
                 {
                   location: "Villa San Michele",
                   des: "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south.",
+                  icon: FaMapMarkerAlt,
                 },
               ]}
             />
             <AccordionCom
               title="Day 2: Marina Piccola (1 stop)"
+              type="location"
               contents={[
                 {
                   location: "Molo Beverello",
                   des: "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                   duration: "5 minutes ",
+                  icon: FaMapMarkerAlt,
                 },
                 {
                   location: "Marina Piccola",
                   des: "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings",
                   duration: "1 hour 30 minutes",
+                  icon: FaMapMarkerAlt,
                 },
                 {
                   location: "Blue Grotto",
                   des: "Pass trough the Ait Saouen Col in anti atlas",
+                  icon: FaMapMarkerAlt,
                 },
                 {
                   location: "Villa San Michele",
                   des: "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south.",
+                  icon: FaMapMarkerAlt,
                 },
               ]}
             />
             <AccordionCom
               title="Day 3: Marina Piccola (1 stop)"
+              type="location"
               contents={[
                 {
                   location: "Molo Beverello",
                   des: "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                   duration: "5 minutes ",
+                  icon: FaMapMarkerAlt,
                 },
                 {
                   location: "Marina Piccola",
                   des: "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings",
                   duration: "1 hour 30 minutes",
+                  icon: FaMapMarkerAlt,
                 },
                 {
                   location: "Blue Grotto",
                   des: "Pass trough the Ait Saouen Col in anti atlas",
+                  icon: FaMapMarkerAlt,
                 },
                 {
                   location: "Villa San Michele",
                   des: "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south.",
+                  icon: FaMapMarkerAlt,
                 },
               ]}
             />
@@ -214,7 +231,73 @@ const TourDetailTabs = () => {
           </div>
         </div>
       </TabsContent>
-      <TabsContent value="additional">Change your password here.</TabsContent>
+      <TabsContent value="additional">
+        <div>
+          <ul className="flex flex-col gap-2 list-disc ml-4 text-secondary">
+            <li>Confirmation will be received at time of booking </li>
+            <li>Not recommended for travelers with back problems </li>
+            <li>
+              Not recommended for pregnant travelers Infant seats available
+            </li>
+            <li>Not wheelchair accessible </li>
+            <li>Children must be accompanied by an adult </li>
+            <li>
+              Vegetarian option is available, please advise at time of booking
+              if required
+            </li>
+            <li>Minimum numbers apply. </li>
+            <li>
+              There is a possibility of cancellation after confirmation if the
+              meteorological
+            </li>
+            <li>Conditions do not allow it </li>
+            <li>Stroller accessible </li>
+            <li>Service animals allowed </li>
+            <li>Near public transportation </li>
+            <li>Most travelers can participate </li>
+            <li>Service animals allowed </li>
+            <li>This tour/activity will have a maximum of 17 travelers </li>
+          </ul>
+          <div className="py-6">
+            <div className="str-line " />
+          </div>
+          <div>
+            <h4 className="text-size-xl font-semibold text-secondary">FAQs</h4>
+            <div className="flex flex-col gap-4 mt-4">
+              <AccordionCom
+                title="What is the maximum group size during 2 Days 1 Night To Zagora Desert From Marrakech?"
+                type="faqs"
+                contents={[
+                  {
+                    des: "This activity will have a maximum of 17 travelers.",
+                    icon: FaMapMarkerAlt,
+                  },
+                ]}
+              />
+              <AccordionCom
+                title="When and where does the tour start?"
+                type="faqs"
+                contents={[
+                  {
+                    des: "This activity will have a maximum of 17 travelers.",
+                    icon: FaMapMarkerAlt,
+                  },
+                ]}
+              />
+              <AccordionCom
+                title="Do you arrange airport transfers?"
+                type="faqs"
+                contents={[
+                  {
+                    des: "This activity will have a maximum of 17 travelers.",
+                    icon: FaMapMarkerAlt,
+                  },
+                ]}
+              />
+            </div>
+          </div>
+        </div>
+      </TabsContent>
       <TabsContent value="reviews">Change your password here.</TabsContent>
     </Tabs>
   );

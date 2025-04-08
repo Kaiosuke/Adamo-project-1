@@ -21,6 +21,7 @@
   --five: #e8e9ea;
   --six: #4e86db;
   --seven: #f4f4f4;
+  --eight: #04316a;
   --banner: #fff2cf;
   --muted: oklch(0.97 0 0);
   --muted-foreground: #000;
@@ -64,6 +65,7 @@
   --five: #1a1a1a;
   --six: #db9a4e;
   --seven: #f4f4f4;
+  --eight: #04316a;
   --banner: #fff2cf;
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
@@ -114,6 +116,7 @@
   --color-five: var(--five);
   --color-six: var(--six);
   --color-seven: var(--seven);
+  --color-eight: var(--eight);
   --color-banner: var(--banner);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);

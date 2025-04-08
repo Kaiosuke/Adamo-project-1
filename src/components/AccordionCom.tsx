@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Accordion,
   AccordionContent,
@@ -5,19 +6,23 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useState } from "react";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaRegQuestionCircle } from "react-icons/fa";
 
 interface Props {
   title: string;
+  type: string;
   contents: {
-    location: string;
+    location?: string;
     des: string;
+    icon: React.ElementType;
     duration?: string;
   }[];
 }
 
-function AccordionCom({ title, contents }: Props) {
+function AccordionCom({ title, type, contents }: Props) {
   const [isSelected, setIsSelected] = useState(false);
+
+  console.log(contents);
 
   return (
     <Accordion
@@ -33,20 +38,40 @@ function AccordionCom({ title, contents }: Props) {
       }`}
     >
       <AccordionItem value="title">
-        <AccordionTrigger className="cursor-pointer text-lg text-eight font-semibold">
-          {title}
+        <AccordionTrigger
+          className={`cursor-pointer text-lg font-semibold ${
+            isSelected ? "text-eight" : "text-secondary"
+          }`}
+        >
+          {type === "location" ? (
+            title
+          ) : (
+            <div className="flex gap-2">
+              <div className="text-size-xl pt-2">
+                <FaRegQuestionCircle />
+              </div>
+              {title}
+            </div>
+          )}
         </AccordionTrigger>
         <AccordionContent>
           <div className="flex flex-col gap-4">
             {contents.map((content, index) => (
               <div key={index} className="flex gap-2 ">
-                <div className="pt-1">
-                  <FaMapMarkerAlt className="text-eight text-lg" />
-                </div>
+                {type === "location" ? (
+                  <div className="pt-1 text-eight text-lg">
+                    {<content.icon />}
+                  </div>
+                ) : (
+                  <div className="ml-4" />
+                )}
                 <div>
-                  <h5 className="text-eight text-base font-semibold">
-                    Molo Beverello
-                  </h5>
+                  {type === "location" ? (
+                    <h5 className="text-eight text-base font-semibold">
+                      Molo Beverello
+                    </h5>
+                  ) : null}
+
                   <div className="text-four flex flex-col gap-8">
                     <p>{content.des}</p>
                     {content.duration && (
