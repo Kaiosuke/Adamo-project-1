@@ -10,6 +10,8 @@ import Tours from "./pages/tours";
 import NewPassword from "./auth/newPassword/NewPassword";
 import ForgotPassword from "./auth/forgotPassword/ForgotPassword";
 import TourDetail from "./pages/tours/tourDetail";
+import LayoutOtherPages from "./components/otherPages/LayoutOtherPages";
+import CheckOut from "./components/otherPages/checkout";
 
 function App() {
   return (
@@ -29,6 +31,11 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="new-password" element={<NewPassword />} />
           <Route path="forgot-password" element={<ForgotPassword />} />
+        </Route>
+      </Routes>
+      <Routes>
+        <Route path="/" element={<LayoutOtherPages />}>
+          <Route path="checkout" element={<CheckOut />} />
         </Route>
       </Routes>
     </BrowserRouter>

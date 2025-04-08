@@ -176,7 +176,7 @@
 @layer utilities {
   /* Container */
   .main-container {
-    @apply 2xl:px-48 lg:px-32 md:px-12 px-8;
+    @apply 2xl:px-48 lg:px-20 md:px-12 px-8;
   }
 
   /* Font size */
@@ -201,7 +201,7 @@
   }
 
   .text-size-xl {
-    @apply lg:text-xl md:text-xl sm:text-lg text-base;
+    @apply lg:text-xl md:text-xl sm:text-lg text-base font-medium;
   }
 
   .text-size-lg {
