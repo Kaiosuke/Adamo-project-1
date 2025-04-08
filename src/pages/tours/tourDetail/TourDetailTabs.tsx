@@ -1,20 +1,19 @@
-import FullMap from "@/assets/images/Full Map.png";
-import Tour1 from "@/assets/images/tour-detail-1.png";
-import Tour2 from "@/assets/images/tour-detail-2.png";
 import Avatar1 from "@/assets/images/Avatar-1.png";
 import AccordionCom from "@/components/AccordionCom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { IoCheckmarkSharp } from "react-icons/io5";
 
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 import { FaMapMarkerAlt, FaUserCircle } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 
 import { TbPointFilled } from "react-icons/tb";
 
+import Map from "@/components/Map";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import Viewer360 from "@/components/Viewer360";
 
 const TourDetailTabs = () => {
   return (
@@ -219,8 +218,7 @@ const TourDetailTabs = () => {
         <div>
           <h4 className="text-size-xl font-semibold text-secondary">Map</h4>
           <div className="mt-4">
-            <img src={FullMap} alt="Workplace" className="w-full" />
-            <map name="planetmap"></map>
+            <Map />
           </div>
         </div>
         <div className="py-6">
@@ -230,12 +228,11 @@ const TourDetailTabs = () => {
           <h4 className="text-size-xl font-semibold text-secondary">
             360° Panoramic Images and Videos
           </h4>
-          <div className="mt-4">
-            <img src={Tour1} alt="Workplace" className="w-full" />
-            <map name="planetmap"></map>
+          <div className="mt-4 f-[400px]">
+            <Viewer360 />
           </div>
           <div className="mt-8">
-            <img src={Tour2} alt="Workplace" className="w-full" />
+            {/* <img src={Tour2} alt="Workplace" className="w-full" /> */}
             <map name="planetmap"></map>
           </div>
         </div>

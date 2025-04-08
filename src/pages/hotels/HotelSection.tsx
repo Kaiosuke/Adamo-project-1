@@ -1,6 +1,6 @@
 import Hotel from "./Hotel";
 
-import PaginationWithShow from "@/components/Paginations/PaginationWithShow";
+import PaginationWithShow from "@/components/paginations/PaginationWithShow";
 import SelectHotel from "./SelectHotel";
 import FilterHotel from "./FilterHotel";
 

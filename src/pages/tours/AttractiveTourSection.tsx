@@ -1,6 +1,6 @@
 import Tour from "./Tour";
 
-import PaginationWithShow from "@/components/Paginations/PaginationWithShow";
+import PaginationWithShow from "@/components/paginations/PaginationWithShow";
 import FilterTour from "./FilterTour";
 
 const AttractiveTourSection = () => {

@@ -22,8 +22,6 @@ interface Props {
 function AccordionCom({ title, type, contents }: Props) {
   const [isSelected, setIsSelected] = useState(false);
 
-  console.log(contents);
-
   return (
     <Accordion
       type="single"

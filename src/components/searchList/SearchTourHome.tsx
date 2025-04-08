@@ -33,9 +33,11 @@ const SearchTourHome = () => {
                 Quatlam Beach, Giaothuy, Namdinh
               </span>
             </div>
-            <div className="bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center pl-[12px]">
+
+            <div className="group bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
               <DatePickerSingle />
             </div>
+
             <div className="bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6">
               <CiFlag1 className="text-primary text-size-lg" />
               <Select>

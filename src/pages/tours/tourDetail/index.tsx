@@ -1,10 +1,8 @@
 import BreadcrumbCom from "@/components/Breadcrumb";
 import PdSub from "@/components/PdSub";
 // import { Button } from "@/components/ui/button";
-import DatePickerWithRange from "@/components/DatePickerWithRange";
-import { Button } from "@/components/ui/button";
+import { BillTourDetail } from "@/components/bills/BillTour";
 import { CiLocationOn } from "react-icons/ci";
-import { GoPeople } from "react-icons/go";
 import { MdOutlineStar } from "react-icons/md";
 import RelatedTours from "./RelatedTours";
 import TourDetailMain from "./TourDetailMain";
@@ -51,45 +49,7 @@ const TourDetail = () => {
             <TourDetailTabs />
           </div>
           <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit">
-            <div className="w-full h-full bg-seven">
-              <div className="lg:p-8 p-4 flex gap-2 items-end">
-                <span className="text-four">from</span>
-                <span className="text-secondary text-size-xl font-semibold">
-                  $234.00
-                </span>
-              </div>
-              <div className="h-[1px] w-full bg-four opacity-50" />
-              <div className="lg:p-8 p-4 flex flex-col gap-6">
-                <div className="flex gap-10">
-                  <div>
-                    <div className="text-four">Duration:</div>
-                    <div className="font-semibold text-secondary">
-                      3 days - 2 nights
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-four">Tour type:</div>
-                    <div className="font-semibold text-secondary">
-                      Sun - Beach
-                    </div>
-                  </div>
-                </div>
-                <div className="">
-                  <DatePickerWithRange />
-                </div>
-                <div className="w-full h-[64px] bg-third py-2 pl-3 flex items-center gap-4">
-                  <GoPeople className="text-primary" />
-                  <div className="text-secondary">2 Adults - 1 Children</div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-secondary">Total</span>
-                  <span className="text-secondary font-semibold">$450.00</span>
-                </div>
-                <div className="mt-4">
-                  <Button variant={"primary"}>Book now</Button>
-                </div>
-              </div>
-            </div>
+            <BillTourDetail />
           </div>
         </div>
       </section>

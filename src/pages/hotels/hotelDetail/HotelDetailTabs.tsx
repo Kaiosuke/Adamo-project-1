@@ -4,6 +4,7 @@ import Room1 from "@/assets/images/room-1.png";
 import Tour1 from "@/assets/images/tour-detail-1.png";
 import Tour2 from "@/assets/images/tour-detail-2.png";
 import AccordionCom from "@/components/AccordionCom";
+import SwiperCom from "@/components/SwiperCom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -57,7 +58,7 @@ const HotelDetailTabs = () => {
                   <DialogTrigger>
                     <FaImage className="text-third cursor-pointer" />
                   </DialogTrigger>
-                  <DialogContent className="lg:min-w-[1200px] w-full">
+                  <DialogContent className="lg:max-w-[1200px] w-full">
                     <DialogHeader>
                       <DialogTitle className="text-secondary text-size-3xl">
                         Standard Room
@@ -85,9 +86,9 @@ const HotelDetailTabs = () => {
                                 </Button>
                               </div>
                             </div>
-                            {/* <div className="mt-4 w-[640px] h-[680px]">
+                            <div className="mt-4 w-[640px] h-[400px]">
                               <SwiperCom />
-                            </div> */}
+                            </div>
                           </div>
                         </div>
                       </DialogDescription>
