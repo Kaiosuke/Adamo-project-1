@@ -20,6 +20,7 @@ const UserSchema = z.object({
       message:
         "Phone number must be greater than 8 character and smaller than 11 character",
     }),
+  payMethod: z.string().min(1, { message: "Please choice a pay method" }),
   address: z.string().optional(),
   city: z.string().optional(),
   state: z.string().optional(),
