@@ -3,7 +3,6 @@ import Shape2 from "@/assets/images/Shape-2png.png";
 import Shape from "@/assets/images/shape.png";
 import { CiLocationOn } from "react-icons/ci";
 import { FaStar } from "react-icons/fa6";
-import { MdCalendarMonth } from "react-icons/md";
 import { Link } from "react-router";
 
 const Hotel = ({ hotel }: { hotel: string | number }) => {

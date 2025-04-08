@@ -22,7 +22,9 @@ const CheckOut = () => {
             </div>
             <FormInfoUser />
           </div>
-          <BillTour />
+          <div className="lg:flex-[0_0_30%] flex-[0_0_auto] max-w-[380px] w-full bg-four h-fit">
+            <BillTour />
+          </div>
         </div>
       </section>
       <PdMain />

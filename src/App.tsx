@@ -13,6 +13,7 @@ import TourDetail from "./pages/tours/tourDetail";
 import LayoutOtherPages from "./otherPages/LayoutOtherPages";
 import Hotel from "./pages/hotels";
 import CheckOut from "./otherPages/checkout";
+import HotelDetail from "./pages/hotels/hotelDetail";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           <Route path="tours" element={<Tours />} />
           <Route path="tours/:id" element={<TourDetail />} />
           <Route path="hotels" element={<Hotel />} />
-          {/* <Route path="tours/:id" element={<TourDetail />} /> */}
+          <Route path="hotels/:id" element={<HotelDetail />} />
         </Route>
       </Routes>
       <Routes>
