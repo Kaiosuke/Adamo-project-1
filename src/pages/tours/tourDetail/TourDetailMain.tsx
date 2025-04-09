@@ -61,13 +61,13 @@ const TourDetailMain = () => {
         onSwiper={setThumbsSwiper}
         loop={true}
         spaceBetween={20}
-        slidesPerView={2}
+        slidesPerView={3}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
         breakpoints={{
           640: {
-            slidesPerView: 2,
+            slidesPerView: 3,
           },
           768: {
             slidesPerView: 3,

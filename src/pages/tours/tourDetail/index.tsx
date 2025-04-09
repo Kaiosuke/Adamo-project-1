@@ -41,8 +41,8 @@ const TourDetail = () => {
           </div>
           <span className="text-four">128 Reviews</span>
         </div>
-        <div className="flex 2xl:gap-20 gap-10 lg:mt-8 mt-6  flex-wrap">
-          <div className="flex-[0_0_auto] max-w-[635px] w-full">
+        <div className="flex 2xl:gap-20 gap-10 lg:mt-8 mt-6 flex-wrap lg:flex-row flex-col-reverse">
+          <div className="lg:flex-[1_0_auto] flex-[0_0_100%] lg:max-w-[635px] w-full">
             <div className="h-[680px] ">
               <TourDetailMain />
             </div>
