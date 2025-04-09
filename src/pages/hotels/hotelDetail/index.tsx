@@ -2,6 +2,7 @@ import BreadcrumbCom from "@/components/Breadcrumb";
 import PdSub from "@/components/PdSub";
 // import { Button } from "@/components/ui/button";
 import { BillHotelDetail } from "@/components/bills/BillHotel";
+import PdMain from "@/components/PdMain";
 import SwiperCom from "@/components/SwiperCom";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineStar } from "react-icons/md";
@@ -51,7 +52,7 @@ const HotelDetail = () => {
           <BillHotelDetail />
         </div>
       </section>
-      <PdSub />
+      <PdMain />
       <section className="main-container">
         <RelatedHotels />
       </section>

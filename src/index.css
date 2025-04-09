@@ -181,31 +181,31 @@
 
   /* Font size */
   .text-size-6xl {
-    @apply lg:text-6xl md:text-5xl text-4xl font-semibold;
+    @apply lg:text-6xl md:text-5xl text-4xl font-bold;
   }
 
   .text-size-5xl {
-    @apply lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-semibold;
+    @apply lg:text-5xl md:text-4xl text-3xl font-bold;
   }
 
   .text-size-4xl {
-    @apply lg:text-4xl md:text-3xl sm:text-2xl text-xl font-medium;
+    @apply lg:text-4xl md:text-3xl text-2xl font-medium;
   }
 
   .text-size-3xl {
-    @apply lg:text-3xl md:text-2xl sm:text-xl text-lg font-semibold;
+    @apply lg:text-3xl md:text-2xl text-xl  font-bold;
   }
 
   .text-size-2xl {
-    @apply lg:text-2xl md:text-xl sm:text-lg text-base font-medium;
+    @apply lg:text-2xl md:text-xl text-lg  font-medium;
   }
 
   .text-size-xl {
-    @apply lg:text-xl md:text-xl sm:text-lg text-base font-semibold;
+    @apply md:text-xl text-lg  font-bold;
   }
 
   .text-size-lg {
-    @apply lg:text-lg md:text-base text-sm;
+    @apply md:text-lg text-base;
   }
 
   .text-size-base {
