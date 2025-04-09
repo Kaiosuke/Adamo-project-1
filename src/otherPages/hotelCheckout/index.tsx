@@ -3,7 +3,7 @@ import PdSub from "@/components/PdSub";
 import FormInfoUser from "./FormInfoUser";
 import { BillTourCheckOut } from "@/components/bills/BillTour";
 
-const CheckOut = () => {
+const HotelCheckOut = () => {
   return (
     <>
       <PdSub />
@@ -32,4 +32,4 @@ const CheckOut = () => {
   );
 };
 
-export default CheckOut;
+export default HotelCheckOut;

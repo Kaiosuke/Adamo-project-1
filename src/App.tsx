@@ -12,8 +12,10 @@ import ForgotPassword from "./auth/forgotPassword/ForgotPassword";
 import TourDetail from "./pages/tours/tourDetail";
 import LayoutOtherPages from "./otherPages/LayoutOtherPages";
 import Hotel from "./pages/hotels";
-import CheckOut from "./otherPages/checkout";
 import HotelDetail from "./pages/hotels/hotelDetail";
+import TourCheckOut from "./otherPages/tourCheckout";
+import HotelCheckOut from "./otherPages/hotelCheckout";
+import ThankYou from "./otherPages/thanks";
 
 function App() {
   return (
@@ -39,7 +41,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/" element={<LayoutOtherPages />}>
-          <Route path="checkout" element={<CheckOut />} />
+          <Route path="tour-checkout" element={<TourCheckOut />} />
+          <Route path="hotel-checkout" element={<HotelCheckOut />} />
+          <Route path="thank" element={<ThankYou />} />
         </Route>
       </Routes>
     </BrowserRouter>
