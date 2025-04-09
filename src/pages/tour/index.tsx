@@ -4,20 +4,20 @@ import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import AttractiveTourSection from "./AttractiveTourSection";
 
+import { getAllTour } from "@/api/tourRequest";
 import TourImg from "@/assets/images/hero-tour.png";
-import SearchTour from "@/components/searchList/SearchTour";
 import HeroSectionCom from "@/components/HeroSectionCom";
-import { useEffect, useState } from "react";
-import { getAllProducts } from "@/api/productRequest";
+import SearchTour from "@/components/searchList/SearchTour";
+import { useAppDispatch } from "@/redux";
+import { useEffect } from "react";
 
 const Tour = () => {
-  const [tours, setTours] = useState([]);
+  const disPatch = useAppDispatch();
 
   useEffect(() => {
     (async () => {
       try {
-        const res = await getAllProducts();
-        console.log(res);
+        await disPatch(getAllTour());
       } catch (error) {
         console.log(error);
       }

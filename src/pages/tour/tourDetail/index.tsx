@@ -1,14 +1,36 @@
 import BreadcrumbCom from "@/components/Breadcrumb";
 import PdSub from "@/components/PdSub";
-// import { Button } from "@/components/ui/button";
 import { BillTourDetail } from "@/components/bills/BillTour";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineStar } from "react-icons/md";
 import RelatedTours from "./RelatedTours";
 import TourDetailMain from "./TourDetailMain";
 import TourDetailTabs from "./TourDetailTabs";
+import { useParams } from "react-router";
+import { useEffect } from "react";
+import { useAppDispatch } from "@/redux";
+import { getTourById } from "@/api/tourRequest";
+import { useSelector } from "react-redux";
+import { tourSelector } from "@/redux/selectors/tourSelector";
 
 const TourDetail = () => {
+  const { id } = useParams();
+
+  const dispatch = useAppDispatch();
+  const { tour } = useSelector(tourSelector);
+
+  useEffect(() => {
+    if (id) {
+      (async () => {
+        try {
+          await dispatch(getTourById(Number(id))).unwrap();
+        } catch (error) {
+          console.log(error);
+        }
+      })();
+    }
+  }, []);
+
   return (
     <>
       <PdSub />
@@ -23,23 +45,24 @@ const TourDetail = () => {
       <PdSub />
 
       <section className="main-container">
-        <h1 className="text-size-4xl text-secondary">
-          Discover interesting things in the romantic <br /> coastal city of
-          Vungtau
-        </h1>
+        <h1 className="text-size-4xl text-secondary">{tour?.title}</h1>
         <div className="lg:mt-6 mg-4 flex items-center gap-2">
           <CiLocationOn className="text-primary text-size-xl" />
-          <span className="text-four text-size-base">
-            Vungtau City, Baria-Vungtau
-          </span>
+          <span className="text-four text-size-base">{tour?.location}</span>
         </div>
 
         <div className="lg:mt-6 mt-4 flex items-center gap-6">
           <div className="w-[65px] h-[30px] text-third bg-primary flex items-center justify-center">
             <MdOutlineStar />
-            4.8
+            {tour?.score}
           </div>
-          <span className="text-four">129 Reviews</span>
+          <span className="text-four">
+            {tour?.reviews.length}
+            {tour?.reviews && tour?.reviews.length > 0
+              ? `Reviews`
+              : `Review`}{" "}
+            Reviews
+          </span>
         </div>
         <div className="flex 2xl:gap-20 gap-10 lg:mt-8 mt-6 flex-wrap lg:flex-row flex-col-reverse">
           <div className="lg:flex-[1_0_auto] flex-[0_0_100%] lg:max-w-[635px] w-full">

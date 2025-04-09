@@ -5,15 +5,19 @@ import App from "./App.tsx";
 import "./i18n/i18n.ts";
 import "./index.css";
 import { ThemeProvider } from "@/components/ThemeProvider.tsx";
+import { store } from "./redux/index.ts";
+import { Provider } from "react-redux";
 
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </QueryClientProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </QueryClientProvider>
+    </Provider>
   </StrictMode>
 );

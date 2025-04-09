@@ -1,11 +1,19 @@
 {
   "tours": [
     {
+      "id": 1,
       "title": "Discover interesting things in the romantic coastal city of Vungtau",
       "location": "Sapa, Laocai",
+      "score": 4.5,
+
       "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
+      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
       "price": 146,
       "description": {
         "overview": {
@@ -16,7 +24,7 @@
             "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
           ]
         },
-        "What's Included": [
+        "included": [
           "Port pickup and drop-off",
           "Local guide",
           "Local guide",
@@ -24,14 +32,14 @@
           "Blue Grotto admission tickets",
           "Shared boat ride tour around the island ( if Blue grotto is closed)"
         ],
-        "Departure & Return": {
-          "Departure Point": [
+        "departureReturn": {
+          "point": [
             "Molo Beverello, 80133 Napoli NA, Italy",
             "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
           ],
-          "Departure Time": "8:00 AM"
+          "time": "8:00 AM"
         },
-        "Tour Itinerary": [
+        "itinerary": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
@@ -102,9 +110,9 @@
             ]
           }
         ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
+        "maps": [21.028511, 105.804817],
+        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "videos": ["url('@/assets/videos/dog.mp4')"]
       },
 
       "additionalInfo": {
@@ -184,11 +192,19 @@
       ]
     },
     {
+      "id": 2,
       "title": "Discover interesting things in the romantic coastal city of Vungtau",
       "location": "Sapa, Laocai",
+      "score": 4.5,
+
       "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
+      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
       "price": 146,
       "description": {
         "overview": {
@@ -199,7 +215,7 @@
             "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
           ]
         },
-        "What's Included": [
+        "included": [
           "Port pickup and drop-off",
           "Local guide",
           "Local guide",
@@ -207,14 +223,14 @@
           "Blue Grotto admission tickets",
           "Shared boat ride tour around the island ( if Blue grotto is closed)"
         ],
-        "Departure & Return": {
-          "Departure Point": [
+        "departureReturn": {
+          "point": [
             "Molo Beverello, 80133 Napoli NA, Italy",
             "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
           ],
-          "Departure Time": "8:00 AM"
+          "time": "8:00 AM"
         },
-        "Tour Itinerary": [
+        "itinerary": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
@@ -285,9 +301,9 @@
             ]
           }
         ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
+        "maps": [21.028511, 105.804817],
+        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "videos": ["url('@/assets/videos/dog.mp4')"]
       },
 
       "additionalInfo": {
@@ -367,11 +383,19 @@
       ]
     },
     {
+      "id": 3,
       "title": "Discover interesting things in the romantic coastal city of Vungtau",
       "location": "Sapa, Laocai",
+      "score": 4.5,
+
       "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
+      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
       "price": 146,
       "description": {
         "overview": {
@@ -382,7 +406,7 @@
             "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
           ]
         },
-        "What's Included": [
+        "included": [
           "Port pickup and drop-off",
           "Local guide",
           "Local guide",
@@ -390,14 +414,14 @@
           "Blue Grotto admission tickets",
           "Shared boat ride tour around the island ( if Blue grotto is closed)"
         ],
-        "Departure & Return": {
-          "Departure Point": [
+        "departureReturn": {
+          "point": [
             "Molo Beverello, 80133 Napoli NA, Italy",
             "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
           ],
-          "Departure Time": "8:00 AM"
+          "time": "8:00 AM"
         },
-        "Tour Itinerary": [
+        "itinerary": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
@@ -468,9 +492,9 @@
             ]
           }
         ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
+        "maps": [21.028511, 105.804817],
+        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "videos": ["url('@/assets/videos/dog.mp4')"]
       },
 
       "additionalInfo": {
@@ -550,11 +574,19 @@
       ]
     },
     {
+      "id": 4,
       "title": "Discover interesting things in the romantic coastal city of Vungtau",
       "location": "Sapa, Laocai",
+      "score": 4.5,
+
       "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
+      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
       "price": 146,
       "description": {
         "overview": {
@@ -565,7 +597,7 @@
             "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
           ]
         },
-        "What's Included": [
+        "included": [
           "Port pickup and drop-off",
           "Local guide",
           "Local guide",
@@ -573,14 +605,14 @@
           "Blue Grotto admission tickets",
           "Shared boat ride tour around the island ( if Blue grotto is closed)"
         ],
-        "Departure & Return": {
-          "Departure Point": [
+        "departureReturn": {
+          "point": [
             "Molo Beverello, 80133 Napoli NA, Italy",
             "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
           ],
-          "Departure Time": "8:00 AM"
+          "time": "8:00 AM"
         },
-        "Tour Itinerary": [
+        "itinerary": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
@@ -651,9 +683,9 @@
             ]
           }
         ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
+        "maps": [21.028511, 105.804817],
+        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "videos": ["url('@/assets/videos/dog.mp4')"]
       },
 
       "additionalInfo": {
@@ -733,11 +765,19 @@
       ]
     },
     {
+      "id": 5,
       "title": "Discover interesting things in the romantic coastal city of Vungtau",
       "location": "Sapa, Laocai",
+      "score": 4.5,
+
       "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
+      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
       "price": 146,
       "description": {
         "overview": {
@@ -748,7 +788,7 @@
             "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
           ]
         },
-        "What's Included": [
+        "included": [
           "Port pickup and drop-off",
           "Local guide",
           "Local guide",
@@ -756,14 +796,14 @@
           "Blue Grotto admission tickets",
           "Shared boat ride tour around the island ( if Blue grotto is closed)"
         ],
-        "Departure & Return": {
-          "Departure Point": [
+        "departureReturn": {
+          "point": [
             "Molo Beverello, 80133 Napoli NA, Italy",
             "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
           ],
-          "Departure Time": "8:00 AM"
+          "time": "8:00 AM"
         },
-        "Tour Itinerary": [
+        "itinerary": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
@@ -834,9 +874,9 @@
             ]
           }
         ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
+        "maps": [21.028511, 105.804817],
+        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "videos": ["url('@/assets/videos/dog.mp4')"]
       },
 
       "additionalInfo": {
@@ -916,11 +956,19 @@
       ]
     },
     {
+      "id": 6,
       "title": "Discover interesting things in the romantic coastal city of Vungtau",
       "location": "Sapa, Laocai",
+      "score": 4.5,
+
       "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
+      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
       "price": 146,
       "description": {
         "overview": {
@@ -931,7 +979,7 @@
             "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
           ]
         },
-        "What's Included": [
+        "included": [
           "Port pickup and drop-off",
           "Local guide",
           "Local guide",
@@ -939,14 +987,14 @@
           "Blue Grotto admission tickets",
           "Shared boat ride tour around the island ( if Blue grotto is closed)"
         ],
-        "Departure & Return": {
-          "Departure Point": [
+        "departureReturn": {
+          "point": [
             "Molo Beverello, 80133 Napoli NA, Italy",
             "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
           ],
-          "Departure Time": "8:00 AM"
+          "time": "8:00 AM"
         },
-        "Tour Itinerary": [
+        "itinerary": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
@@ -1017,9 +1065,9 @@
             ]
           }
         ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
+        "maps": [21.028511, 105.804817],
+        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "videos": ["url('@/assets/videos/dog.mp4')"]
       },
 
       "additionalInfo": {
@@ -1099,11 +1147,19 @@
       ]
     },
     {
+      "id": 7,
       "title": "Discover interesting things in the romantic coastal city of Vungtau",
       "location": "Sapa, Laocai",
+      "score": 4.5,
+
       "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
+      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
       "price": 146,
       "description": {
         "overview": {
@@ -1114,7 +1170,7 @@
             "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
           ]
         },
-        "What's Included": [
+        "included": [
           "Port pickup and drop-off",
           "Local guide",
           "Local guide",
@@ -1122,14 +1178,14 @@
           "Blue Grotto admission tickets",
           "Shared boat ride tour around the island ( if Blue grotto is closed)"
         ],
-        "Departure & Return": {
-          "Departure Point": [
+        "departureReturn": {
+          "point": [
             "Molo Beverello, 80133 Napoli NA, Italy",
             "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
           ],
-          "Departure Time": "8:00 AM"
+          "time": "8:00 AM"
         },
-        "Tour Itinerary": [
+        "itinerary": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
@@ -1200,9 +1256,9 @@
             ]
           }
         ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
+        "maps": [21.028511, 105.804817],
+        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "videos": ["url('@/assets/videos/dog.mp4')"]
       },
 
       "additionalInfo": {
@@ -1282,11 +1338,19 @@
       ]
     },
     {
+      "id": 8,
       "title": "Discover interesting things in the romantic coastal city of Vungtau",
       "location": "Sapa, Laocai",
+      "score": 4.5,
+
       "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
+      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
       "price": 146,
       "description": {
         "overview": {
@@ -1297,7 +1361,7 @@
             "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
           ]
         },
-        "What's Included": [
+        "included": [
           "Port pickup and drop-off",
           "Local guide",
           "Local guide",
@@ -1305,14 +1369,14 @@
           "Blue Grotto admission tickets",
           "Shared boat ride tour around the island ( if Blue grotto is closed)"
         ],
-        "Departure & Return": {
-          "Departure Point": [
+        "departureReturn": {
+          "point": [
             "Molo Beverello, 80133 Napoli NA, Italy",
             "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
           ],
-          "Departure Time": "8:00 AM"
+          "time": "8:00 AM"
         },
-        "Tour Itinerary": [
+        "itinerary": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
@@ -1383,9 +1447,9 @@
             ]
           }
         ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
+        "maps": [21.028511, 105.804817],
+        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "videos": ["url('@/assets/videos/dog.mp4')"]
       },
 
       "additionalInfo": {
@@ -1465,11 +1529,19 @@
       ]
     },
     {
+      "id": 9,
       "title": "Discover interesting things in the romantic coastal city of Vungtau",
       "location": "Sapa, Laocai",
+      "score": 4.5,
+
       "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
+      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
       "price": 146,
       "description": {
         "overview": {
@@ -1480,7 +1552,7 @@
             "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
           ]
         },
-        "What's Included": [
+        "included": [
           "Port pickup and drop-off",
           "Local guide",
           "Local guide",
@@ -1488,14 +1560,14 @@
           "Blue Grotto admission tickets",
           "Shared boat ride tour around the island ( if Blue grotto is closed)"
         ],
-        "Departure & Return": {
-          "Departure Point": [
+        "departureReturn": {
+          "point": [
             "Molo Beverello, 80133 Napoli NA, Italy",
             "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
           ],
-          "Departure Time": "8:00 AM"
+          "time": "8:00 AM"
         },
-        "Tour Itinerary": [
+        "itinerary": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
@@ -1566,9 +1638,9 @@
             ]
           }
         ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
+        "maps": [21.028511, 105.804817],
+        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "videos": ["url('@/assets/videos/dog.mp4')"]
       },
 
       "additionalInfo": {
@@ -1648,11 +1720,19 @@
       ]
     },
     {
+      "id": 10,
       "title": "Discover interesting things in the romantic coastal city of Vungtau",
       "location": "Sapa, Laocai",
+      "score": 4.5,
+
       "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
+      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
       "price": 146,
       "description": {
         "overview": {
@@ -1663,7 +1743,7 @@
             "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
           ]
         },
-        "What's Included": [
+        "included": [
           "Port pickup and drop-off",
           "Local guide",
           "Local guide",
@@ -1671,14 +1751,14 @@
           "Blue Grotto admission tickets",
           "Shared boat ride tour around the island ( if Blue grotto is closed)"
         ],
-        "Departure & Return": {
-          "Departure Point": [
+        "departureReturn": {
+          "point": [
             "Molo Beverello, 80133 Napoli NA, Italy",
             "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
           ],
-          "Departure Time": "8:00 AM"
+          "time": "8:00 AM"
         },
-        "Tour Itinerary": [
+        "itinerary": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
@@ -1749,9 +1829,9 @@
             ]
           }
         ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
+        "maps": [21.028511, 105.804817],
+        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "videos": ["url('@/assets/videos/dog.mp4')"]
       },
 
       "additionalInfo": {
@@ -1831,11 +1911,19 @@
       ]
     },
     {
+      "id": 11,
       "title": "Discover interesting things in the romantic coastal city of Vungtau",
       "location": "Sapa, Laocai",
+      "score": 4.5,
+
       "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
+      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
       "price": 146,
       "description": {
         "overview": {
@@ -1846,7 +1934,7 @@
             "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
           ]
         },
-        "What's Included": [
+        "included": [
           "Port pickup and drop-off",
           "Local guide",
           "Local guide",
@@ -1854,14 +1942,14 @@
           "Blue Grotto admission tickets",
           "Shared boat ride tour around the island ( if Blue grotto is closed)"
         ],
-        "Departure & Return": {
-          "Departure Point": [
+        "departureReturn": {
+          "point": [
             "Molo Beverello, 80133 Napoli NA, Italy",
             "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
           ],
-          "Departure Time": "8:00 AM"
+          "time": "8:00 AM"
         },
-        "Tour Itinerary": [
+        "itinerary": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
@@ -1932,9 +2020,9 @@
             ]
           }
         ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
+        "maps": [21.028511, 105.804817],
+        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "videos": ["url('@/assets/videos/dog.mp4')"]
       },
 
       "additionalInfo": {
@@ -2014,11 +2102,19 @@
       ]
     },
     {
+      "id": 12,
       "title": "Discover interesting things in the romantic coastal city of Vungtau",
       "location": "Sapa, Laocai",
+      "score": 4.5,
+
       "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
+      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
       "price": 146,
       "description": {
         "overview": {
@@ -2029,7 +2125,7 @@
             "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
           ]
         },
-        "What's Included": [
+        "included": [
           "Port pickup and drop-off",
           "Local guide",
           "Local guide",
@@ -2037,14 +2133,14 @@
           "Blue Grotto admission tickets",
           "Shared boat ride tour around the island ( if Blue grotto is closed)"
         ],
-        "Departure & Return": {
-          "Departure Point": [
+        "departureReturn": {
+          "point": [
             "Molo Beverello, 80133 Napoli NA, Italy",
             "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
           ],
-          "Departure Time": "8:00 AM"
+          "time": "8:00 AM"
         },
-        "Tour Itinerary": [
+        "itinerary": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
@@ -2115,741 +2211,9 @@
             ]
           }
         ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
-      },
-
-      "additionalInfo": {
-        "list": [
-          "Confirmation will be received at time of booking",
-          "Not recommended for travelers with back problems",
-          "Not recommended for pregnant travelers Infant seats available ",
-          "Not wheelchair accessible",
-          "Children must be accompanied by an adult",
-          "Vegetarian option is available, please advise at time of booking if required",
-          "Minimum numbers apply.",
-          "There is a possibility of cancellation after confirmation if the meteorological",
-          "conditions do not allow it",
-          "Stroller accessible",
-          "Service animals allowed",
-          "Near public transportation",
-          "Most travelers can participate ",
-          "This tour/activity will have a maximum of 17 travelers"
-        ],
-        "faqs": [
-          {
-            "title": "What is the maximum group size during 2 Days 1 Night To Zagora Desert From Marrakech?",
-            "description": "This activity will have a maximum of 17 travelers."
-          },
-          {
-            "title": "When and where does the tour start?",
-            "description": "This activity will have a maximum of 17 travelers."
-          },
-          {
-            "title": "Do you arrange airport transfers?",
-            "description": "This activity will have a maximum of 17 travelers."
-          }
-        ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
-    },
-    {
-      "title": "Discover interesting things in the romantic coastal city of Vungtau",
-      "location": "Sapa, Laocai",
-      "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
-      "price": 146,
-      "description": {
-        "overview": {
-          "title": "Set sail for the idyllic Italian island of Capri on this full-day tour, including round-trip jetfoil transfers from Naples or Sorrento. Stop to browse the handicraft stores of Anacapri and soak up the atmosphere in buzzing La Piazzetta. Top it off with a visit to the Blue Grotto and a funicular ride to Marina Grande.",
-          "list": [
-            "Full-day tour of Capri island from Naples or Sorrento Admire views along the coast as you cruise to the island by jetfoil",
-            "Visit the lively island towns of Anacapri and Capri Ride",
-            "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
-          ]
-        },
-        "What's Included": [
-          "Port pickup and drop-off",
-          "Local guide",
-          "Local guide",
-          "Transport by minibus",
-          "Blue Grotto admission tickets",
-          "Shared boat ride tour around the island ( if Blue grotto is closed)"
-        ],
-        "Departure & Return": {
-          "Departure Point": [
-            "Molo Beverello, 80133 Napoli NA, Italy",
-            "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
-          ],
-          "Departure Time": "8:00 AM"
-        },
-        "Tour Itinerary": [
-          {
-            "title": "Day 1: Molo Beverello (4 stops)",
-            "locations": [
-              {
-                "name": "Molo Beverello",
-                "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
-                "duration": "5 minutes"
-              },
-              {
-                "name": "Marina Piccola",
-                "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
-                "duration": "1 hour 30 minutes"
-              },
-              {
-                "name": "Blue Grotto",
-                "des": "Pass trough the Ait Saouen Col in anti atlas"
-              },
-              {
-                "name": "Villa San Michele",
-                "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
-              }
-            ]
-          },
-          {
-            "title": "Day 2: Marina Piccola (1 stop)",
-            "locations": [
-              {
-                "name": "Molo Beverello",
-                "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
-                "duration": "5 minutes"
-              },
-              {
-                "name": "Marina Piccola",
-                "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
-                "duration": "1 hour 30 minutes"
-              },
-              {
-                "name": "Blue Grotto",
-                "des": "Pass trough the Ait Saouen Col in anti atlas"
-              },
-              {
-                "name": "Villa San Michele",
-                "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
-              }
-            ]
-          },
-          {
-            "title": "Day 3: Marina Piccola (1 stop)",
-            "locations": [
-              {
-                "name": "Molo Beverello",
-                "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
-                "duration": "5 minutes"
-              },
-              {
-                "name": "Marina Piccola",
-                "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
-                "duration": "1 hour 30 minutes"
-              },
-              {
-                "name": "Blue Grotto",
-                "des": "Pass trough the Ait Saouen Col in anti atlas"
-              },
-              {
-                "name": "Villa San Michele",
-                "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
-              }
-            ]
-          }
-        ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
-      },
-
-      "additionalInfo": {
-        "list": [
-          "Confirmation will be received at time of booking",
-          "Not recommended for travelers with back problems",
-          "Not recommended for pregnant travelers Infant seats available ",
-          "Not wheelchair accessible",
-          "Children must be accompanied by an adult",
-          "Vegetarian option is available, please advise at time of booking if required",
-          "Minimum numbers apply.",
-          "There is a possibility of cancellation after confirmation if the meteorological",
-          "conditions do not allow it",
-          "Stroller accessible",
-          "Service animals allowed",
-          "Near public transportation",
-          "Most travelers can participate ",
-          "This tour/activity will have a maximum of 17 travelers"
-        ],
-        "faqs": [
-          {
-            "title": "What is the maximum group size during 2 Days 1 Night To Zagora Desert From Marrakech?",
-            "description": "This activity will have a maximum of 17 travelers."
-          },
-          {
-            "title": "When and where does the tour start?",
-            "description": "This activity will have a maximum of 17 travelers."
-          },
-          {
-            "title": "Do you arrange airport transfers?",
-            "description": "This activity will have a maximum of 17 travelers."
-          }
-        ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
-    },
-    {
-      "title": "Discover interesting things in the romantic coastal city of Vungtau",
-      "location": "Sapa, Laocai",
-      "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
-      "price": 146,
-      "description": {
-        "overview": {
-          "title": "Set sail for the idyllic Italian island of Capri on this full-day tour, including round-trip jetfoil transfers from Naples or Sorrento. Stop to browse the handicraft stores of Anacapri and soak up the atmosphere in buzzing La Piazzetta. Top it off with a visit to the Blue Grotto and a funicular ride to Marina Grande.",
-          "list": [
-            "Full-day tour of Capri island from Naples or Sorrento Admire views along the coast as you cruise to the island by jetfoil",
-            "Visit the lively island towns of Anacapri and Capri Ride",
-            "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
-          ]
-        },
-        "What's Included": [
-          "Port pickup and drop-off",
-          "Local guide",
-          "Local guide",
-          "Transport by minibus",
-          "Blue Grotto admission tickets",
-          "Shared boat ride tour around the island ( if Blue grotto is closed)"
-        ],
-        "Departure & Return": {
-          "Departure Point": [
-            "Molo Beverello, 80133 Napoli NA, Italy",
-            "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
-          ],
-          "Departure Time": "8:00 AM"
-        },
-        "Tour Itinerary": [
-          {
-            "title": "Day 1: Molo Beverello (4 stops)",
-            "locations": [
-              {
-                "name": "Molo Beverello",
-                "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
-                "duration": "5 minutes"
-              },
-              {
-                "name": "Marina Piccola",
-                "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
-                "duration": "1 hour 30 minutes"
-              },
-              {
-                "name": "Blue Grotto",
-                "des": "Pass trough the Ait Saouen Col in anti atlas"
-              },
-              {
-                "name": "Villa San Michele",
-                "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
-              }
-            ]
-          },
-          {
-            "title": "Day 2: Marina Piccola (1 stop)",
-            "locations": [
-              {
-                "name": "Molo Beverello",
-                "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
-                "duration": "5 minutes"
-              },
-              {
-                "name": "Marina Piccola",
-                "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
-                "duration": "1 hour 30 minutes"
-              },
-              {
-                "name": "Blue Grotto",
-                "des": "Pass trough the Ait Saouen Col in anti atlas"
-              },
-              {
-                "name": "Villa San Michele",
-                "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
-              }
-            ]
-          },
-          {
-            "title": "Day 3: Marina Piccola (1 stop)",
-            "locations": [
-              {
-                "name": "Molo Beverello",
-                "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
-                "duration": "5 minutes"
-              },
-              {
-                "name": "Marina Piccola",
-                "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
-                "duration": "1 hour 30 minutes"
-              },
-              {
-                "name": "Blue Grotto",
-                "des": "Pass trough the Ait Saouen Col in anti atlas"
-              },
-              {
-                "name": "Villa San Michele",
-                "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
-              }
-            ]
-          }
-        ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
-      },
-
-      "additionalInfo": {
-        "list": [
-          "Confirmation will be received at time of booking",
-          "Not recommended for travelers with back problems",
-          "Not recommended for pregnant travelers Infant seats available ",
-          "Not wheelchair accessible",
-          "Children must be accompanied by an adult",
-          "Vegetarian option is available, please advise at time of booking if required",
-          "Minimum numbers apply.",
-          "There is a possibility of cancellation after confirmation if the meteorological",
-          "conditions do not allow it",
-          "Stroller accessible",
-          "Service animals allowed",
-          "Near public transportation",
-          "Most travelers can participate ",
-          "This tour/activity will have a maximum of 17 travelers"
-        ],
-        "faqs": [
-          {
-            "title": "What is the maximum group size during 2 Days 1 Night To Zagora Desert From Marrakech?",
-            "description": "This activity will have a maximum of 17 travelers."
-          },
-          {
-            "title": "When and where does the tour start?",
-            "description": "This activity will have a maximum of 17 travelers."
-          },
-          {
-            "title": "Do you arrange airport transfers?",
-            "description": "This activity will have a maximum of 17 travelers."
-          }
-        ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
-    },
-    {
-      "title": "Discover interesting things in the romantic coastal city of Vungtau",
-      "location": "Sapa, Laocai",
-      "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
-      "price": 146,
-      "description": {
-        "overview": {
-          "title": "Set sail for the idyllic Italian island of Capri on this full-day tour, including round-trip jetfoil transfers from Naples or Sorrento. Stop to browse the handicraft stores of Anacapri and soak up the atmosphere in buzzing La Piazzetta. Top it off with a visit to the Blue Grotto and a funicular ride to Marina Grande.",
-          "list": [
-            "Full-day tour of Capri island from Naples or Sorrento Admire views along the coast as you cruise to the island by jetfoil",
-            "Visit the lively island towns of Anacapri and Capri Ride",
-            "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
-          ]
-        },
-        "What's Included": [
-          "Port pickup and drop-off",
-          "Local guide",
-          "Local guide",
-          "Transport by minibus",
-          "Blue Grotto admission tickets",
-          "Shared boat ride tour around the island ( if Blue grotto is closed)"
-        ],
-        "Departure & Return": {
-          "Departure Point": [
-            "Molo Beverello, 80133 Napoli NA, Italy",
-            "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
-          ],
-          "Departure Time": "8:00 AM"
-        },
-        "Tour Itinerary": [
-          {
-            "title": "Day 1: Molo Beverello (4 stops)",
-            "locations": [
-              {
-                "name": "Molo Beverello",
-                "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
-                "duration": "5 minutes"
-              },
-              {
-                "name": "Marina Piccola",
-                "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
-                "duration": "1 hour 30 minutes"
-              },
-              {
-                "name": "Blue Grotto",
-                "des": "Pass trough the Ait Saouen Col in anti atlas"
-              },
-              {
-                "name": "Villa San Michele",
-                "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
-              }
-            ]
-          },
-          {
-            "title": "Day 2: Marina Piccola (1 stop)",
-            "locations": [
-              {
-                "name": "Molo Beverello",
-                "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
-                "duration": "5 minutes"
-              },
-              {
-                "name": "Marina Piccola",
-                "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
-                "duration": "1 hour 30 minutes"
-              },
-              {
-                "name": "Blue Grotto",
-                "des": "Pass trough the Ait Saouen Col in anti atlas"
-              },
-              {
-                "name": "Villa San Michele",
-                "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
-              }
-            ]
-          },
-          {
-            "title": "Day 3: Marina Piccola (1 stop)",
-            "locations": [
-              {
-                "name": "Molo Beverello",
-                "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
-                "duration": "5 minutes"
-              },
-              {
-                "name": "Marina Piccola",
-                "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
-                "duration": "1 hour 30 minutes"
-              },
-              {
-                "name": "Blue Grotto",
-                "des": "Pass trough the Ait Saouen Col in anti atlas"
-              },
-              {
-                "name": "Villa San Michele",
-                "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
-              }
-            ]
-          }
-        ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
-      },
-
-      "additionalInfo": {
-        "list": [
-          "Confirmation will be received at time of booking",
-          "Not recommended for travelers with back problems",
-          "Not recommended for pregnant travelers Infant seats available ",
-          "Not wheelchair accessible",
-          "Children must be accompanied by an adult",
-          "Vegetarian option is available, please advise at time of booking if required",
-          "Minimum numbers apply.",
-          "There is a possibility of cancellation after confirmation if the meteorological",
-          "conditions do not allow it",
-          "Stroller accessible",
-          "Service animals allowed",
-          "Near public transportation",
-          "Most travelers can participate ",
-          "This tour/activity will have a maximum of 17 travelers"
-        ],
-        "faqs": [
-          {
-            "title": "What is the maximum group size during 2 Days 1 Night To Zagora Desert From Marrakech?",
-            "description": "This activity will have a maximum of 17 travelers."
-          },
-          {
-            "title": "When and where does the tour start?",
-            "description": "This activity will have a maximum of 17 travelers."
-          },
-          {
-            "title": "Do you arrange airport transfers?",
-            "description": "This activity will have a maximum of 17 travelers."
-          }
-        ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
-    },
-    {
-      "title": "Discover interesting things in the romantic coastal city of Vungtau",
-      "location": "Sapa, Laocai",
-      "time": "3 days - 2 night",
-      "thumbnail": "thumbnail",
-      "images": ["imgage1", "image2", "image3"],
-      "price": 146,
-      "description": {
-        "overview": {
-          "title": "Set sail for the idyllic Italian island of Capri on this full-day tour, including round-trip jetfoil transfers from Naples or Sorrento. Stop to browse the handicraft stores of Anacapri and soak up the atmosphere in buzzing La Piazzetta. Top it off with a visit to the Blue Grotto and a funicular ride to Marina Grande.",
-          "list": [
-            "Full-day tour of Capri island from Naples or Sorrento Admire views along the coast as you cruise to the island by jetfoil",
-            "Visit the lively island towns of Anacapri and Capri Ride",
-            "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
-          ]
-        },
-        "What's Included": [
-          "Port pickup and drop-off",
-          "Local guide",
-          "Local guide",
-          "Transport by minibus",
-          "Blue Grotto admission tickets",
-          "Shared boat ride tour around the island ( if Blue grotto is closed)"
-        ],
-        "Departure & Return": {
-          "Departure Point": [
-            "Molo Beverello, 80133 Napoli NA, Italy",
-            "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
-          ],
-          "Departure Time": "8:00 AM"
-        },
-        "Tour Itinerary": [
-          {
-            "title": "Day 1: Molo Beverello (4 stops)",
-            "locations": [
-              {
-                "name": "Molo Beverello",
-                "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
-                "duration": "5 minutes"
-              },
-              {
-                "name": "Marina Piccola",
-                "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
-                "duration": "1 hour 30 minutes"
-              },
-              {
-                "name": "Blue Grotto",
-                "des": "Pass trough the Ait Saouen Col in anti atlas"
-              },
-              {
-                "name": "Villa San Michele",
-                "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
-              }
-            ]
-          },
-          {
-            "title": "Day 2: Marina Piccola (1 stop)",
-            "locations": [
-              {
-                "name": "Molo Beverello",
-                "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
-                "duration": "5 minutes"
-              },
-              {
-                "name": "Marina Piccola",
-                "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
-                "duration": "1 hour 30 minutes"
-              },
-              {
-                "name": "Blue Grotto",
-                "des": "Pass trough the Ait Saouen Col in anti atlas"
-              },
-              {
-                "name": "Villa San Michele",
-                "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
-              }
-            ]
-          },
-          {
-            "title": "Day 3: Marina Piccola (1 stop)",
-            "locations": [
-              {
-                "name": "Molo Beverello",
-                "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
-                "duration": "5 minutes"
-              },
-              {
-                "name": "Marina Piccola",
-                "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
-                "duration": "1 hour 30 minutes"
-              },
-              {
-                "name": "Blue Grotto",
-                "des": "Pass trough the Ait Saouen Col in anti atlas"
-              },
-              {
-                "name": "Villa San Michele",
-                "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
-              }
-            ]
-          }
-        ],
-        "maps": "12,12",
-        "Images": [2312],
-        "videos": ["das"]
+        "maps": [21.028511, 105.804817],
+        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "videos": ["url('@/assets/videos/dog.mp4')"]
       },
 
       "additionalInfo": {
