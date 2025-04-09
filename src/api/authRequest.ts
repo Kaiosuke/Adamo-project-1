@@ -1,4 +1,4 @@
-import instance from "./instance";
+import { instance } from "./instance";
 
 const login = async (data: { email: string; password: string }) => {
   try {

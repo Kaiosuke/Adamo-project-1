@@ -6,6 +6,12 @@ const instance = axios.create({
   withCredentials: true,
 });
 
+const instanceLocal = axios.create({
+  baseURL: "http://localhost:3000/",
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+});
+
 instance.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("accessToken");
@@ -19,4 +25,4 @@ instance.interceptors.request.use(
   }
 );
 
-export default instance;
+export { instance, instanceLocal };

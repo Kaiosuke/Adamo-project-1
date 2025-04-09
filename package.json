@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "server": "json-server db.json --watch",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -36,6 +37,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "i18next": "^24.2.3",
+    "json-server": "^1.0.0-beta.3",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.486.0",
     "react": "^19.0.0",

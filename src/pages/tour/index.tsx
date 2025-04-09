@@ -7,8 +7,23 @@ import AttractiveTourSection from "./AttractiveTourSection";
 import TourImg from "@/assets/images/hero-tour.png";
 import SearchTour from "@/components/searchList/SearchTour";
 import HeroSectionCom from "@/components/HeroSectionCom";
+import { useEffect, useState } from "react";
+import { getAllProducts } from "@/api/productRequest";
 
 const Tour = () => {
+  const [tours, setTours] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await getAllProducts();
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
   return (
     <>
       <HeroSectionCom
