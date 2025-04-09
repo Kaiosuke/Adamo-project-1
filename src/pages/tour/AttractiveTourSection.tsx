@@ -1,6 +1,6 @@
 import Tour from "./Tour";
 
-import PaginationWithShow from "@/components/paginations/PaginationWithShow";
+import PaginationWithShow from "../../components/paginations/PaginationWithShow";
 import FilterTour from "./FilterTour";
 import { useSelector } from "react-redux";
 import { tourSelector } from "@/redux/selectors/tourSelector";

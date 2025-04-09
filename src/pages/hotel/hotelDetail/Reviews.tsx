@@ -1,4 +1,4 @@
-import Pagination from "@/components/paginations/Pagination";
+import Pagination from "../../../components/paginations/Pagination";
 import PdSub from "@/components/PdSub";
 import ReviewHotel from "@/components/reviews/ReviewHotel";
 import { Button } from "@/components/ui/button";
