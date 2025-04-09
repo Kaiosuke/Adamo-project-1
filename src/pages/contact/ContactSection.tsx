@@ -5,18 +5,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import FormContact from "@/components/forms/FormContact";
 import { contactSchema } from "@/components/schemas/contactSchema";
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import { Form } from "@/components/ui/form";
 
 const ContactSection = () => {
   const form = useForm<z.infer<typeof contactSchema>>({
@@ -35,37 +27,46 @@ const ContactSection = () => {
 
   return (
     <section className="main-container">
-      <div className="flex gap-10 md:flex-row flex-col">
-        <div className="flex-[1_0_auto]">
-          <h2 className="text-secondary text-size-4xl">
-            We&apos;d love to hear from you
-          </h2>
-          <div className="text-four py-6">
-            Send us a message and we&apos;ll respond as soon as possible
+      <div className="flex gap-10 lg:flex-row flex-col-reverse">
+        <div className="flex-[1_0_auto] flex flex-col justify-between">
+          <div>
+            <h2 className="text-secondary text-size-4xl">
+              We&apos;d love to hear from you
+            </h2>
+            <div className="text-four mt-10">
+              Send us a message and we&apos;ll respond as soon as possible
+            </div>
           </div>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Username</FormLabel>
-                    <FormControl>
-                      <Input placeholder="shadcn" {...field} />
-                    </FormControl>
-                    <FormDescription>
-                      This is your public display name.
-                    </FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit">Submit</Button>
+              <div className="flex flex-col justify-between">
+                <FormContact form={form} placeholder="Your Name" name="name" />
+                <FormContact
+                  form={form}
+                  placeholder="Your Email"
+                  name="email"
+                />
+                <FormContact
+                  form={form}
+                  placeholder="Your Phone"
+                  name="phoneNumber"
+                />
+                <FormContact
+                  form={form}
+                  placeholder="Message"
+                  name="message"
+                  isArea
+                />
+              </div>
+              <div className="w-full text-right">
+                <Button type="submit" className="max-w-[200px] w-full">
+                  Submit
+                </Button>
+              </div>
             </form>
           </Form>
         </div>
-        <div className="w-[full] relative">
+        <div className="w-[full relative">
           <img
             src={OurOffice}
             alt="our office"

@@ -4,6 +4,7 @@ import HeroSectionCom from "@/components/HeroSectionCom";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import ContactSection from "./ContactSection";
+import MapCom from "@/components/MapCom";
 
 const Contact = () => {
   return (
@@ -13,6 +14,7 @@ const Contact = () => {
       <PdSub />
       <ContactSection />
       <PdMain />
+      <MapCom />
     </>
   );
 };

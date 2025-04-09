@@ -6,9 +6,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { FieldValues, Path, UseFormReturn } from "react-hook-form";
-import { Input } from "./ui/input";
+import { Input } from "../ui/input";
 import { FaStarOfLife } from "react-icons/fa6";
-import { Textarea } from "./ui/textarea";
+import { Textarea } from "../ui/textarea";
 
 interface IFormComp<T extends FieldValues> {
   form: UseFormReturn<T>;

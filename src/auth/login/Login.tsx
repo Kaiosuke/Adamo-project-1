@@ -42,7 +42,10 @@ const Login = () => {
                 type="password"
               />
               <div className="text-right">
-                <Link to="#!" className="text-four text-base">
+                <Link
+                  to="/auth/forgot-password"
+                  className="text-four text-base"
+                >
                   Forgot Password?
                 </Link>
               </div>

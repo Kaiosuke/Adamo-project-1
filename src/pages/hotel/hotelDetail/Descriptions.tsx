@@ -1,4 +1,4 @@
-import Map from "@/components/Map";
+import Map from "@/components/MapCom";
 import { Button } from "@/components/ui/button";
 import { IoCheckmarkSharp } from "react-icons/io5";
 

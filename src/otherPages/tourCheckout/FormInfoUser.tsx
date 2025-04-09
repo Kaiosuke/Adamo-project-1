@@ -1,6 +1,6 @@
 import Card from "@/assets/images/card.png";
 import Paypal from "@/assets/images/paypal.png";
-import FormComp from "@/components/FormCom";
+import FormComp from "@/components/forms/FormCom";
 import { userSchema } from "@/components/schemas/userSchema";
 import { Button } from "@/components/ui/button";
 import {

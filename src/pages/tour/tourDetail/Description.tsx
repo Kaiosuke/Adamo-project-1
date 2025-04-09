@@ -1,7 +1,7 @@
 import AccordionCom from "@/components/AccordionCom";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import Map from "@/components/Map";
+import Map from "@/components/MapCom";
 import Viewer360 from "@/components/Viewer360";
 import Video from "@/assets/videos/dog.mp4";
 

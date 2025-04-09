@@ -3,7 +3,7 @@ import "leaflet/dist/leaflet.css";
 
 const position: [number, number] = [21.028511, 105.804817];
 
-function MyLeafletMap() {
+function MapCom() {
   return (
     <MapContainer
       center={position}
@@ -22,4 +22,4 @@ function MyLeafletMap() {
   );
 }
 
-export default MyLeafletMap;
+export default MapCom;
