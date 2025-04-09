@@ -9,10 +9,8 @@ const AttractiveTourSection = () => {
   const { loading, tours } = useSelector(tourSelector);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Loading......</div>;
   }
-
-  console.log(tours);
 
   return (
     <section className="main-container">
