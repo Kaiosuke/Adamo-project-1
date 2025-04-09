@@ -201,7 +201,7 @@
   }
 
   .text-size-xl {
-    @apply lg:text-xl md:text-xl sm:text-lg text-base font-medium;
+    @apply lg:text-xl md:text-xl sm:text-lg text-base font-semibold;
   }
 
   .text-size-lg {

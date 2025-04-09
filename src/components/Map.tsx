@@ -8,7 +8,8 @@ function MyLeafletMap() {
     <MapContainer
       center={position}
       zoom={13}
-      style={{ height: "400px", width: "100%" }}
+      style={{ height: "400px", width: "100%", borderRadius: "10px" }}
+      className="rounded-2xl"
     >
       <TileLayer
         attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'

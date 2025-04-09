@@ -1,6 +1,3 @@
-import Location from "@/components/Tour";
-import Sapa1 from "@/assets/images/sapa-1.png";
-import SubImg from "@/assets/images/shape.png";
 import Hotel from "@/components/Hotel";
 
 const RelatedHotels = () => {
