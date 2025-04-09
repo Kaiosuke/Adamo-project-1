@@ -43,7 +43,7 @@ function App() {
         <Route path="/" element={<LayoutOtherPages />}>
           <Route path="tour-checkout" element={<TourCheckOut />} />
           <Route path="hotel-checkout" element={<HotelCheckOut />} />
-          <Route path="thank" element={<ThankYou />} />
+          <Route path="thanks" element={<ThankYou />} />
         </Route>
       </Routes>
     </BrowserRouter>

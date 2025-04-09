@@ -19,21 +19,22 @@ const SelectRoom = () => {
       <h3 className="text-secondary text-size-xl font-extrabold">Rooms</h3>
       <div className="flex flex-col gap-4 mt-4">
         <div className="w-full bg-seven">
-          <div className="relative flex ">
+          <div className="relative flex md:flex-row flex-col">
             <img src={Room1} alt="room1" />
             <div className="absolute top-2 left-2 w-8 h-8 rounded-full bg-four flex justify-center items-center">
               <Dialog>
                 <DialogTrigger>
                   <FaImage className="text-third cursor-pointer" />
                 </DialogTrigger>
-                <DialogContent className="lg:max-w-[1200px] md:max-w-[900px] max-w-[90%]">
+                <DialogContent className="lg:max-w-[1200px] md:max-w-[900px] max-w-[90%] h-[90%]">
                   <DialogHeader>
-                    <DialogTitle className="text-secondary text-size-3xl">
+                    <DialogTitle className="text-secondary text-size-3xl px-6 pt-6 ">
                       Standard Room
                     </DialogTitle>
                   </DialogHeader>
-                  <div className="flex lg:h-[100%] h-screen gap-10 lg:flex-row flex-col overflow-auto">
-                    <div className="lg:flex-[1_0_auto] flex-[0_0_100%] lg:max-w-[635px] w-[100%]">
+
+                  <div className="flex gap-10 lg:flex-row flex-col overflow-auto px-6 pb-6">
+                    <div className="lg:flex-[1_0_auto] flex-[0_0_100%] lg:max-w-[635px] w-full">
                       <div className="flex justify-between items-center">
                         <div className="flex items-center gap-2">
                           <span className="line-through text-four">$600</span>
