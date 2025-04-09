@@ -3,23 +3,23 @@ import SearchTourHome from "@/components/searchList/SearchTourHome";
 
 const HeroSection = () => {
   return (
-    <section className="w-full h-[100vh]">
+    <section className="w-full max-w-[1600px] m-auto">
       <div className="relative flex">
         <img
           src={Hero}
           alt="hero-image"
           className="w-full h-screen object-cover"
         />
-        <div className="flex gap-2 absolute top-[20%] main-container ">
-          <div className="lg:pt-20 md:pt-12 pt-6">
+        <div className="flex gap-2 absolute top-[20%] w-full">
+          <div className="lg:pt-20 md:pt-12 pt-6 max-w-[1164px] w-full m-auto">
             <p className="text-size-xl text-banner">Welcome to NgaoduVietnam</p>
             <h1 className="text-size-6xl text-third md:pt-4 pt-2 lg:w-[75%] md:w-[90%] w-[80%]">
-              Perfect place for your stories
+              Perfect place for <br /> your stories
             </h1>
           </div>
         </div>
-        <div className="absolute bottom-0 flex w-full items-end ">
-          <div className="bg-third py-6 h-fit w-full main-container">
+        <div className="absolute -bottom-1 flex w-full items-end ">
+          <div className="bg-third py-6 h-fit w-full xl:px-28 lg:px-20 md:px-12 sm:px-8 px-4">
             <div className="text-size-base font-semibold flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary"></div>
               Featured
