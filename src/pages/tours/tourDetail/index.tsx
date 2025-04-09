@@ -17,7 +17,7 @@ const TourDetail = () => {
         current="Detail Tour"
         links={[
           { href: "/", title: "Home" },
-          { href: "tours", title: "Detail tour" },
+          { href: "/tours", title: "Tours" },
         ]}
       />
       <PdSub />

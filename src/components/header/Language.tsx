@@ -7,9 +7,8 @@ import {
 } from "@/components/ui/select";
 import { useTranslation } from "react-i18next";
 
-const Language = ({ isScroll }: { isScroll: boolean }) => {
+const Language = ({ getLinkColor }: { getLinkColor: () => string }) => {
   const { i18n } = useTranslation();
-
   const currentLanguage = i18n.language;
 
   const handleChangeLanguage = (value: string) => {
@@ -20,9 +19,7 @@ const Language = ({ isScroll }: { isScroll: boolean }) => {
     <div className="ml-6">
       <Select onValueChange={(value) => handleChangeLanguage(value)}>
         <SelectTrigger className="w-[60px] text-secondary ">
-          <div className={`${isScroll ? "text-secondary" : "text-third"} `}>
-            {currentLanguage}
-          </div>
+          <div className={getLinkColor()}>{currentLanguage}</div>
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>

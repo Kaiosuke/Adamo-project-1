@@ -27,7 +27,7 @@ const linkNavEn = [
   },
   {
     title: "Contact",
-    path: "/contact",
+    path: "/contacts",
   },
   {
     title: "Login",
@@ -54,7 +54,7 @@ const linkNavVi = [
   },
   {
     title: "Liên hệ",
-    path: "/contact",
+    path: "/contacts",
   },
   {
     title: "Đăng nhập",
@@ -129,7 +129,7 @@ const Header = () => {
               </ul>
             </nav>
             <DarkMode />
-            <Language isScroll={isScroll} />
+            <Language getLinkColor={getLinkColor} />
             <NavMb />
           </div>
         </div>
