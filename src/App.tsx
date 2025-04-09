@@ -1,21 +1,21 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LayoutPage from "./pages/layout";
-import Home from "./pages/home";
-import Product from "./pages/product";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ForgotPassword from "./auth/forgotPassword/ForgotPassword";
 import LayoutAuth from "./auth/LayoutAuth";
 import Login from "./auth/login/Login";
-import Register from "./auth/register/Register";
-import About from "./pages/about";
-import Tours from "./pages/tours";
 import NewPassword from "./auth/newPassword/NewPassword";
-import ForgotPassword from "./auth/forgotPassword/ForgotPassword";
-import TourDetail from "./pages/tours/tourDetail";
-import LayoutOtherPages from "./otherPages/LayoutOtherPages";
-import Hotel from "./pages/hotels";
-import HotelDetail from "./pages/hotels/hotelDetail";
-import TourCheckOut from "./otherPages/tourCheckout";
+import Register from "./auth/register/Register";
 import HotelCheckOut from "./otherPages/hotelCheckout";
+import LayoutOtherPages from "./otherPages/LayoutOtherPages";
 import ThankYou from "./otherPages/thanks";
+import TourCheckOut from "./otherPages/tourCheckout";
+import About from "./pages/about";
+import Contact from "./pages/contact";
+import Home from "./pages/home";
+import Hotel from "./pages/hotel";
+import HotelDetail from "./pages/hotel/hotelDetail";
+import LayoutPage from "./pages/layout";
+import Tours from "./pages/tour";
+import TourDetail from "./pages/tour/tourDetail";
 
 function App() {
   return (
@@ -23,8 +23,8 @@ function App() {
       <Routes>
         <Route path="/" element={<LayoutPage />}>
           <Route index element={<Home />} />
-          <Route path="product" element={<Product />} />
           <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="tours" element={<Tours />} />
           <Route path="tour-detail/:id" element={<TourDetail />} />
           <Route path="hotels" element={<Hotel />} />

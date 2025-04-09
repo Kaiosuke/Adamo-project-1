@@ -8,9 +8,6 @@ export default {
         sans: ["DM Sans", ...defaultTheme.fontFamily.sans],
         roboto: ["Roboto", ...defaultTheme.fontFamily.sans],
       },
-      colors: {
-        third: "var(--color-third)",
-      },
     },
   },
   plugins: [],

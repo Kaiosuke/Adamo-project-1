@@ -1,7 +1,7 @@
 import Card from "@/assets/images/card.png";
 import Paypal from "@/assets/images/paypal.png";
 import FormComp from "@/components/FormCom";
-import { UserSchema } from "@/components/schemas/userSchema";
+import { userSchema } from "@/components/schemas/userSchema";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -17,8 +17,8 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 const FormInfoUser = () => {
-  const form = useForm<z.infer<typeof UserSchema>>({
-    resolver: zodResolver(UserSchema),
+  const form = useForm<z.infer<typeof userSchema>>({
+    resolver: zodResolver(userSchema),
     defaultValues: {
       firstName: "",
       lastName: "",
@@ -33,7 +33,7 @@ const FormInfoUser = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof UserSchema>) {
+  function onSubmit(values: z.infer<typeof userSchema>) {
     console.log(values);
   }
 

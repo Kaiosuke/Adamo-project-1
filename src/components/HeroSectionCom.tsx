@@ -2,9 +2,9 @@ import React from "react";
 
 interface Props {
   image: string;
-  title: string;
+  title?: string;
   des: string;
-  Tour: React.ReactNode;
+  Tour?: React.ReactNode;
 }
 
 const HeroSectionCom = ({ image, title, des, Tour }: Props) => {
@@ -15,7 +15,13 @@ const HeroSectionCom = ({ image, title, des, Tour }: Props) => {
         <div className="flex gap-2 absolute top-[20%] main-container ">
           <div className="lg:pt-20 md:pt-12 pt-6">
             <p className="text-size-xl text-banner">{title}</p>
-            <h1 className="text-size-6xl text-third md:pt-4 pt-2 lg:w-[50%] md:w-[90%] w-[80%]">
+            <h1
+              className={`text-size-6xl text-third md:pt-4 pt-2 ${
+                des.split(" ").length > 2
+                  ? "lg:w-[50%] md:w-[90%] w-[80%]"
+                  : "w-full"
+              } `}
+            >
               {des}
             </h1>
           </div>

@@ -27,7 +27,7 @@ const linkNavEn = [
   },
   {
     title: "Contact",
-    path: "/contacts",
+    path: "/contact",
   },
   {
     title: "Login",
@@ -54,7 +54,7 @@ const linkNavVi = [
   },
   {
     title: "Liên hệ",
-    path: "/contacts",
+    path: "/contact",
   },
   {
     title: "Đăng nhập",

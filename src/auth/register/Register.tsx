@@ -1,4 +1,4 @@
-import { RegisterSchema } from "@/components/schemas/authSchema";
+import { registerSchema } from "@/components/schemas/authSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -10,8 +10,8 @@ import { FaFacebook } from "react-icons/fa6";
 import { Link } from "react-router";
 
 const Login = () => {
-  const form = useForm<z.infer<typeof RegisterSchema>>({
-    resolver: zodResolver(RegisterSchema),
+  const form = useForm<z.infer<typeof registerSchema>>({
+    resolver: zodResolver(registerSchema),
     defaultValues: {
       firstName: "",
       lastName: "",
@@ -21,7 +21,7 @@ const Login = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof RegisterSchema>) {
+  function onSubmit(values: z.infer<typeof registerSchema>) {
     console.log(values);
   }
 

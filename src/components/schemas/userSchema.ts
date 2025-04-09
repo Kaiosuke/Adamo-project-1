@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const UserSchema = z.object({
+const userSchema = z.object({
   firstName: z
     .string()
     .trim()
@@ -29,4 +29,4 @@ const UserSchema = z.object({
   requirement: z.string().optional(),
 });
 
-export { UserSchema };
+export { userSchema };

@@ -3,19 +3,19 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import InputAuth from "@/components/InputAuth";
-import { ForgotPasswordSchema } from "@/components/schemas/authSchema";
+import { forgotPasswordSchema } from "@/components/schemas/authSchema";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 
 const ForgotPassword = () => {
-  const form = useForm<z.infer<typeof ForgotPasswordSchema>>({
-    resolver: zodResolver(ForgotPasswordSchema),
+  const form = useForm<z.infer<typeof forgotPasswordSchema>>({
+    resolver: zodResolver(forgotPasswordSchema),
     defaultValues: {
       email: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof ForgotPasswordSchema>) {
+  function onSubmit(values: z.infer<typeof forgotPasswordSchema>) {
     console.log(values);
   }
 

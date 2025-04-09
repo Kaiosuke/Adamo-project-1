@@ -1,4 +1,4 @@
-import { NewPasswordSchema } from "@/components/schemas/authSchema";
+import { newPasswordSchema } from "@/components/schemas/authSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -10,15 +10,15 @@ import { FaFacebook } from "react-icons/fa6";
 import { Link } from "react-router";
 
 const NewPassword = () => {
-  const form = useForm<z.infer<typeof NewPasswordSchema>>({
-    resolver: zodResolver(NewPasswordSchema),
+  const form = useForm<z.infer<typeof newPasswordSchema>>({
+    resolver: zodResolver(newPasswordSchema),
     defaultValues: {
       password: "",
       confirm: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof NewPasswordSchema>) {
+  function onSubmit(values: z.infer<typeof newPasswordSchema>) {
     console.log(values);
   }
 

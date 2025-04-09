@@ -1,13 +1,13 @@
 import { z } from "zod";
 
-const SignInSchema = z.object({
+const signInSchema = z.object({
   email: z.string().email({ message: "Invalid Email" }),
   password: z
     .string()
     .min(6, { message: "Password must be greater than 6 character" }),
 });
 
-const RegisterSchema = z
+const registerSchema = z
   .object({
     firstName: z
       .string()
@@ -28,7 +28,7 @@ const RegisterSchema = z
     path: ["confirm"],
   });
 
-const NewPasswordSchema = z
+const newPasswordSchema = z
   .object({
     password: z
       .string()
@@ -40,13 +40,13 @@ const NewPasswordSchema = z
     path: ["confirm"],
   });
 
-const ForgotPasswordSchema = z.object({
+const forgotPasswordSchema = z.object({
   email: z.string().email({ message: "Invalid Email" }),
 });
 
 export {
-  SignInSchema,
-  RegisterSchema,
-  NewPasswordSchema,
-  ForgotPasswordSchema,
+  signInSchema,
+  registerSchema,
+  newPasswordSchema,
+  forgotPasswordSchema,
 };
