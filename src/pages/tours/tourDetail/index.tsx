@@ -37,9 +37,9 @@ const TourDetail = () => {
         <div className="lg:mt-6 mt-4 flex items-center gap-6">
           <div className="w-[65px] h-[30px] text-third bg-primary flex items-center justify-center">
             <MdOutlineStar />
-            4.5
+            4.8
           </div>
-          <span className="text-four">128 Reviews</span>
+          <span className="text-four">129 Reviews</span>
         </div>
         <div className="flex 2xl:gap-20 gap-10 lg:mt-8 mt-6 flex-wrap lg:flex-row flex-col-reverse">
           <div className="lg:flex-[1_0_auto] flex-[0_0_100%] lg:max-w-[635px] w-full">
