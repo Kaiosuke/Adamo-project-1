@@ -13,7 +13,7 @@ interface LocationComponent {
   wishlist?: boolean;
 }
 
-const Location = ({
+const Tour = ({
   location,
   des,
   mainImg,
@@ -68,4 +68,4 @@ const Location = ({
   );
 };
 
-export default Location;
+export default Tour;

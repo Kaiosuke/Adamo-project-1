@@ -1,4 +1,4 @@
-import Location from "@/components/Location";
+import Location from "@/components/Tour";
 import Sapa1 from "@/assets/images/sapa-1.png";
 import SubImg from "@/assets/images/shape.png";
 

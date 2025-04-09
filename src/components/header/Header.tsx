@@ -94,7 +94,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full z-[9999] transition-all duration-200 ease-in-out ${
+      className={`fixed w-full z-50 transition-all duration-200 ease-in-out ${
         isScroll ? "bg-third" : ""
       } ${isScroll && scrollDir === "down" ? "translate-y-[-1000px]" : ""}`}
     >

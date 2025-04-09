@@ -4,7 +4,7 @@ import Shape2 from "@/assets/images/Shape-2png.png";
 import Shape from "@/assets/images/shape.png";
 import VungTau from "@/assets/images/Vung Tau.png";
 import ButtonFeature from "@/components/ButtonFeature";
-import Location from "@/components/Location";
+import Location from "@/components/Tour";
 
 const AttractiveSection = () => {
   return (

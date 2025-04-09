@@ -21,8 +21,9 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground h-[18rem] shadow-xs hover:bg-secondary/80",
         third:
           "bg-third text-third-foreground shadow-xs bg:opacity-90 hover:bg-third/80",
+        eight: "bg-eight text-third shadow-xs bg:opacity-90 hover:bg-eight/80",
         six: "bg-six text-six-foreground text-third shadow-xs bg:opacity-90 hover:bg-six/80",
-        nine: "bg-nine text-third-foreground shadow-xs bg:opacity-90 hover:bg-nine/80",
+        nine: "bg-nine text-third shadow-xs bg:opacity-90 hover:bg-nine/80",
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",

@@ -7,7 +7,7 @@ import { Link } from "react-router";
 
 const Hotel = ({ hotel }: { hotel: string | number }) => {
   return (
-    <div className="w-full ">
+    <div className="w-full">
       <div className="relative">
         <div className="overflow-hidden">
           <Link to="#!" className="group hover:scale-125 overlay-img">

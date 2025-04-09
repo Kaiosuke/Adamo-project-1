@@ -1,8 +1,7 @@
-import Hotel from "./Hotel";
-
 import PaginationWithShow from "@/components/paginations/PaginationWithShow";
 import SelectHotel from "./SelectHotel";
 import FilterHotel from "./FilterHotel";
+import Hotel from "@/components/Hotel";
 
 const HotelSection = () => {
   const hotelList = [
