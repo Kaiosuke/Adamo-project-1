@@ -3,7 +3,7 @@ import HeroSection from "./HeroSection";
 import IntroduceSection from "./IntroduceSection";
 import DiscoverSection from "./DiscoverSection";
 import AttractiveSection from "./AttractiveSection";
-import TraditionalSection from "./Tranditional";
+import TraditionalSection from "./Traditional";
 import ContactSection from "./ContactSection";
 
 const Home = () => {
