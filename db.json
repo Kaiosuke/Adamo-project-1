@@ -6,9 +6,9 @@
       "location": "Sapa,1 Laocai",
       "score": 4.5,
       "time": "3 days - 2 night",
-      "duration": "3 days",
+      "duration": 3,
       "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/pqsif5zyudt6ksfn3ant.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -201,9 +201,9 @@
       "location": "Hoi An, Quang Nam",
       "score": 4.8,
       "time": "3 days - 2 night",
-      "duration": "3 days",
+      "duration": 4,
       "type": "cultural",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/m8948eyrkfi7n6msloq6.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -389,21 +389,20 @@
     },
     {
       "id": 3,
-      "title": "Discover interesting things in the romantic coastal city of Vungtau",
-      "location": "Sapa, Laocai",
-      "score": 4.5,
-
-      "time": "3 days - 2 night",
-      "duration": "3 days",
-      "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "title": "Relax on the Pristine Beaches of Phu Quoc",
+      "location": "Phu Quoc, Kien Giang",
+      "score": 4.9,
+      "time": "4 days - 3 nights",
+      "duration": 5,
+      "type": "wildlife",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/zinrqkzgwthvfjmhxlqh.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
         "https://swiperjs.com/demos/images/nature-3.jpg",
         "https://swiperjs.com/demos/images/nature-4.jpg"
       ],
-      "price": 146,
+      "price": 220,
       "description": {
         "overview": {
           "title": "Set sail for the idyllic Italian island of Capri on this full-day tour, including round-trip jetfoil transfers from Naples or Sorrento. Stop to browse the handicraft stores of Anacapri and soak up the atmosphere in buzzing La Piazzetta. Top it off with a visit to the Blue Grotto and a funicular ride to Marina Grande.",
@@ -582,21 +581,20 @@
     },
     {
       "id": 4,
-      "title": "Discover interesting things in the romantic coastal city of Vungtau",
-      "location": "Sapa, Laocai",
-      "score": 4.5,
-
-      "time": "3 days - 2 night",
-      "duration": "3 days",
-      "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "title": "Discover the Imperial City of Hue",
+      "location": "Hue, Thua Thien Hue",
+      "score": 4.1,
+      "time": "5 days - 4 nights​",
+      "duration": 5,
+      "type": "ecotourism",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274580/Tours/cxtqseuizodljpilcyux.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
         "https://swiperjs.com/demos/images/nature-3.jpg",
         "https://swiperjs.com/demos/images/nature-4.jpg"
       ],
-      "price": 146,
+      "price": 320,
       "description": {
         "overview": {
           "title": "Set sail for the idyllic Italian island of Capri on this full-day tour, including round-trip jetfoil transfers from Naples or Sorrento. Stop to browse the handicraft stores of Anacapri and soak up the atmosphere in buzzing La Piazzetta. Top it off with a visit to the Blue Grotto and a funicular ride to Marina Grande.",
@@ -775,14 +773,13 @@
     },
     {
       "id": 5,
-      "title": "Discover interesting things in the romantic coastal city of Vungtau",
-      "location": "Sapa, Laocai",
+      "title": "Cruise Through the Mekong Delta",
+      "location": "Can Tho, Vietnam​",
       "score": 4.5,
-
-      "time": "3 days - 2 night",
-      "duration": "3 days",
-      "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "time": "6 days - 5 night",
+      "duration": 6,
+      "type": "sun and beaches",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274580/Tours/evwn1yivpodlvnbs9s0h.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -968,21 +965,20 @@
     },
     {
       "id": 6,
-      "title": "Discover interesting things in the romantic coastal city of Vungtau",
-      "location": "Sapa, Laocai",
-      "score": 4.5,
-
-      "time": "3 days - 2 night",
-      "duration": "3 days",
+      "title": "Trek Through the Rice Terraces of Mu Cang Chai",
+      "location": "Mu Cang Chai, Yen Bai​",
+      "score": 4.8,
+      "time": "10 days - 9 night",
+      "duration": 10,
       "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274580/Tours/llogdfww2cth0sjl83si.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
         "https://swiperjs.com/demos/images/nature-3.jpg",
         "https://swiperjs.com/demos/images/nature-4.jpg"
       ],
-      "price": 146,
+      "price": 400,
       "description": {
         "overview": {
           "title": "Set sail for the idyllic Italian island of Capri on this full-day tour, including round-trip jetfoil transfers from Naples or Sorrento. Stop to browse the handicraft stores of Anacapri and soak up the atmosphere in buzzing La Piazzetta. Top it off with a visit to the Blue Grotto and a funicular ride to Marina Grande.",
@@ -1161,21 +1157,20 @@
     },
     {
       "id": 7,
-      "title": "Discover interesting things in the romantic coastal city of Vungtau",
-      "location": "Sapa, Laocai",
-      "score": 4.5,
-
-      "time": "3 days - 2 night",
-      "duration": "3 days",
-      "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "title": "Dive into the Vibrant Culture of Ho Chi Minh City",
+      "location": "Ho Chi Minh City, Vietnam",
+      "score": 4.7,
+      "time": "4 days - 3 night",
+      "duration": 4,
+      "type": "wildlife",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274579/Tours/skajwsn4q6zxt38fo4v8.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
         "https://swiperjs.com/demos/images/nature-3.jpg",
         "https://swiperjs.com/demos/images/nature-4.jpg"
       ],
-      "price": 146,
+      "price": 200,
       "description": {
         "overview": {
           "title": "Set sail for the idyllic Italian island of Capri on this full-day tour, including round-trip jetfoil transfers from Naples or Sorrento. Stop to browse the handicraft stores of Anacapri and soak up the atmosphere in buzzing La Piazzetta. Top it off with a visit to the Blue Grotto and a funicular ride to Marina Grande.",
@@ -1354,21 +1349,20 @@
     },
     {
       "id": 8,
-      "title": "Discover interesting things in the romantic coastal city of Vungtau",
-      "location": "Sapa, Laocai",
-      "score": 4.5,
-
+      "title": "Explore the Caves of Phong Nha-Ke Bang National Park",
+      "location": "Dong Hoi, Quang Binh",
+      "score": 4.9,
       "time": "3 days - 2 night",
-      "duration": "3 days",
-      "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "duration": 3,
+      "type": "cultural",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274579/Tours/vydazqs3l1rnmiwnolug.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
         "https://swiperjs.com/demos/images/nature-3.jpg",
         "https://swiperjs.com/demos/images/nature-4.jpg"
       ],
-      "price": 146,
+      "price": 179,
       "description": {
         "overview": {
           "title": "Set sail for the idyllic Italian island of Capri on this full-day tour, including round-trip jetfoil transfers from Naples or Sorrento. Stop to browse the handicraft stores of Anacapri and soak up the atmosphere in buzzing La Piazzetta. Top it off with a visit to the Blue Grotto and a funicular ride to Marina Grande.",
@@ -1547,21 +1541,20 @@
     },
     {
       "id": 9,
-      "title": "Discover interesting things in the romantic coastal city of Vungtau",
-      "location": "Sapa, Laocai",
-      "score": 4.5,
-
-      "time": "3 days - 2 night",
-      "duration": "3 days",
-      "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "title": "Experience the Serenity of Mai Chau Valley",
+      "location": "Mai Chau, Hoa Binh",
+      "score": 4.6,
+      "time": "2 days - 1 night",
+      "duration": 2,
+      "type": "ecotourism",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274578/Tours/vf8la4imrkziidn5nqba.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
         "https://swiperjs.com/demos/images/nature-3.jpg",
         "https://swiperjs.com/demos/images/nature-4.jpg"
       ],
-      "price": 146,
+      "price": 120,
       "description": {
         "overview": {
           "title": "Set sail for the idyllic Italian island of Capri on this full-day tour, including round-trip jetfoil transfers from Naples or Sorrento. Stop to browse the handicraft stores of Anacapri and soak up the atmosphere in buzzing La Piazzetta. Top it off with a visit to the Blue Grotto and a funicular ride to Marina Grande.",
@@ -1740,21 +1733,20 @@
     },
     {
       "id": 10,
-      "title": "Discover interesting things in the romantic coastal city of Vungtau",
-      "location": "Sapa, Laocai",
-      "score": 4.5,
-
-      "time": "3 days - 2 night",
-      "duration": "3 days",
-      "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "title": "Sail Through the Limestone Karsts of Lan Ha Bay",
+      "location": "Cat Ba Island, Hai Phong",
+      "score": 4.8,
+      "time": "5 days - 4 night",
+      "duration": 5,
+      "type": "sun and beaches",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274578/Tours/dttwcxihcn2psyx55t4b.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
         "https://swiperjs.com/demos/images/nature-3.jpg",
         "https://swiperjs.com/demos/images/nature-4.jpg"
       ],
-      "price": 146,
+      "price": 380,
       "description": {
         "overview": {
           "title": "Set sail for the idyllic Italian island of Capri on this full-day tour, including round-trip jetfoil transfers from Naples or Sorrento. Stop to browse the handicraft stores of Anacapri and soak up the atmosphere in buzzing La Piazzetta. Top it off with a visit to the Blue Grotto and a funicular ride to Marina Grande.",
@@ -1933,21 +1925,20 @@
     },
     {
       "id": 11,
-      "title": "Discover interesting things in the romantic coastal city of Vungtau",
-      "location": "Sapa, Laocai",
-      "score": 4.5,
-
+      "title": "Unwind in the Misty Mountains of Da Lat",
+      "location": "Da Lat, Lam Dong",
+      "score": 4.7,
       "time": "3 days - 2 night",
-      "duration": "3 days",
+      "duration": 3,
       "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274578/Tours/z5uitbtlibctm1jmwjtb.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
         "https://swiperjs.com/demos/images/nature-3.jpg",
         "https://swiperjs.com/demos/images/nature-4.jpg"
       ],
-      "price": 146,
+      "price": 120,
       "description": {
         "overview": {
           "title": "Set sail for the idyllic Italian island of Capri on this full-day tour, including round-trip jetfoil transfers from Naples or Sorrento. Stop to browse the handicraft stores of Anacapri and soak up the atmosphere in buzzing La Piazzetta. Top it off with a visit to the Blue Grotto and a funicular ride to Marina Grande.",
@@ -2126,21 +2117,20 @@
     },
     {
       "id": 12,
-      "title": "Discover interesting things in the romantic coastal city of Vungtau",
-      "location": "Sapa, Laocai",
-      "score": 4.5,
-
-      "time": "3 days - 2 night",
-      "duration": "3 days",
-      "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "title": "Discover the Hidden Caves of Phong Nha",
+      "location": "Quang Binh, Vietnam",
+      "score": 4.8,
+      "time": "2 days - 1 night",
+      "duration": 2,
+      "type": "cultural",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274577/Tours/nzdca9iik8uu0dyq1dt4.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
         "https://swiperjs.com/demos/images/nature-3.jpg",
         "https://swiperjs.com/demos/images/nature-4.jpg"
       ],
-      "price": 146,
+      "price": 166,
       "description": {
         "overview": {
           "title": "Set sail for the idyllic Italian island of Capri on this full-day tour, including round-trip jetfoil transfers from Naples or Sorrento. Stop to browse the handicraft stores of Anacapri and soak up the atmosphere in buzzing La Piazzetta. Top it off with a visit to the Blue Grotto and a funicular ride to Marina Grande.",
@@ -2327,7 +2317,7 @@
       "price": 120,
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/r2m85wphhzqxhlqu8lvm.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -2472,7 +2462,7 @@
       "price": 120,
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274614/Hotels/kgjcpis8omeplbeqzad1.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -2617,7 +2607,7 @@
       "price": 120,
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274614/Hotels/llwhu7dauw5f4s8wk2bw.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -2762,7 +2752,7 @@
       "price": 120,
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274613/Hotels/jgxtelg89kuvyirgvtbr.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -2907,7 +2897,7 @@
       "price": 120,
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274613/Hotels/fzlke5faeg5esjtyxtul.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -3052,7 +3042,7 @@
       "price": 120,
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274613/Hotels/nfyy8cprk0mupmospzjl.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -3197,7 +3187,7 @@
       "price": 120,
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274613/Hotels/tnfoc6z0ug86hilmwvmk.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -3342,7 +3332,7 @@
       "price": 120,
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "https://picsum.photos/1920/1080",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274612/Hotels/qjbzhqlvdmx0e1cl8jjn.png",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -3399,6 +3389,586 @@
       "rooms": [
         {
           "id": "room_8",
+          "thumbnail": "https://swiperjs.com/demos/images/nature-2.jpg",
+          "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+          "title": "Family Suite",
+          "images": [
+            "https://swiperjs.com/demos/images/nature-1.jpg",
+            "https://swiperjs.com/demos/images/nature-2.jpg",
+            "https://swiperjs.com/demos/images/nature-3.jpg",
+            "https://swiperjs.com/demos/images/nature-4.jpg"
+          ],
+          "price": 40,
+          "square": "90 m2",
+          "capacity": 4,
+          "beds": "2 Queen Bed",
+          "features": [
+            "Air conditioning",
+            "Private Bathroom",
+            "Free WiFi",
+            "Free toiletries",
+            "Shower",
+            "Safe",
+            "Toilet",
+            "Towels",
+            "Tile/Marble floor",
+            "Desk",
+            "Refrigerator",
+            "Telephone",
+            "Ironing facilities",
+            "Satellite channels",
+            "Tea/Coffee make",
+            "Hairdryer",
+            "Electric kettle",
+            "Wake-up service",
+            "Wardrobe or close"
+          ]
+        }
+      ],
+
+      "reviews": [
+        {
+          "rate": 9,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Chic Urban Living in The heart of Ho Chi Minh City",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 9,
+      "price": 120,
+      "duration": "3 days",
+      "type": "city-break",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274612/Hotels/s8wmff7v37hlurwpgwkz.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "description": {
+        "overview": {
+          "description": "Opposite Durban’s famous beachfront, Blue Waters Hotel is within walking distance of the Suncoast Casino and the iconic Moses Mabhida Stadium. Both uShaka Marine World and Greyville Racecourse are within 2.5 mi from the property.@The spacious rooms and suites feature LCD TVs along with coffee-and-tea-making facilities. Each is equipped with air conditioning and a work desk. There is also plenty of luggage storage space. Most rooms come with furnished balconies and offer a view of the Indian Ocean.@Guests at Blue Waters can enjoy afternoon tea and cake in the Florida Lounge overlooking the ocean. The Versailles Restaurant provides buffet and á la carte service for lunch and dinner.@Leisure facilities at the Hotel Blue Waters include an indoor swimming pool, sauna and a squash court. There is also an outdoor rooftop swimming pool and guests can enjoy drinks with sunset views at the rooftop bar.@The Durban North Beach area is a good location for walking, running and cycling. Hotel Blue Waters is 5 minutes’ drive from the Durban ICC and 10 minutes’ drive from Durban’s city center. Durban Station is 1.2 mi away, while King Shaka International Airport is 19 mi from the property.@Couples in particular like the location – they rated it 9.1 for a two-person trip.@We speak your language!"
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee make",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or close"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "Security deposit will not be collected at this hotel",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards are not accepted at this hotel",
+            "No additional tax has to be paid at the hotel",
+            "On-site parking is available",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples are allowed",
+            "Couples are welcome",
+            "Guests can check in using any Domestic or International ID proof with photograph"
+          ]
+        },
+        "maps": [21.028511, 105.804817],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
+      },
+
+      "rooms": [
+        {
+          "id": "room_9",
+          "thumbnail": "https://swiperjs.com/demos/images/nature-2.jpg",
+          "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+          "title": "Family Suite",
+          "images": [
+            "https://swiperjs.com/demos/images/nature-1.jpg",
+            "https://swiperjs.com/demos/images/nature-2.jpg",
+            "https://swiperjs.com/demos/images/nature-3.jpg",
+            "https://swiperjs.com/demos/images/nature-4.jpg"
+          ],
+          "price": 40,
+          "square": "90 m2",
+          "capacity": 4,
+          "beds": "2 Queen Bed",
+          "features": [
+            "Air conditioning",
+            "Private Bathroom",
+            "Free WiFi",
+            "Free toiletries",
+            "Shower",
+            "Safe",
+            "Toilet",
+            "Towels",
+            "Tile/Marble floor",
+            "Desk",
+            "Refrigerator",
+            "Telephone",
+            "Ironing facilities",
+            "Satellite channels",
+            "Tea/Coffee make",
+            "Hairdryer",
+            "Electric kettle",
+            "Wake-up service",
+            "Wardrobe or close"
+          ]
+        }
+      ],
+
+      "reviews": [
+        {
+          "rate": 9,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Chic Urban Living in The heart of Ho Chi Minh City",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 9,
+      "price": 120,
+      "duration": "3 days",
+      "type": "city-break",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274612/Hotels/x4lfb1nxkb5qjp2ikygf.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "description": {
+        "overview": {
+          "description": "Opposite Durban’s famous beachfront, Blue Waters Hotel is within walking distance of the Suncoast Casino and the iconic Moses Mabhida Stadium. Both uShaka Marine World and Greyville Racecourse are within 2.5 mi from the property.@The spacious rooms and suites feature LCD TVs along with coffee-and-tea-making facilities. Each is equipped with air conditioning and a work desk. There is also plenty of luggage storage space. Most rooms come with furnished balconies and offer a view of the Indian Ocean.@Guests at Blue Waters can enjoy afternoon tea and cake in the Florida Lounge overlooking the ocean. The Versailles Restaurant provides buffet and á la carte service for lunch and dinner.@Leisure facilities at the Hotel Blue Waters include an indoor swimming pool, sauna and a squash court. There is also an outdoor rooftop swimming pool and guests can enjoy drinks with sunset views at the rooftop bar.@The Durban North Beach area is a good location for walking, running and cycling. Hotel Blue Waters is 5 minutes’ drive from the Durban ICC and 10 minutes’ drive from Durban’s city center. Durban Station is 1.2 mi away, while King Shaka International Airport is 19 mi from the property.@Couples in particular like the location – they rated it 9.1 for a two-person trip.@We speak your language!"
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee make",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or close"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "Security deposit will not be collected at this hotel",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards are not accepted at this hotel",
+            "No additional tax has to be paid at the hotel",
+            "On-site parking is available",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples are allowed",
+            "Couples are welcome",
+            "Guests can check in using any Domestic or International ID proof with photograph"
+          ]
+        },
+        "maps": [21.028511, 105.804817],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
+      },
+
+      "rooms": [
+        {
+          "id": "room_10",
+          "thumbnail": "https://swiperjs.com/demos/images/nature-2.jpg",
+          "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+          "title": "Family Suite",
+          "images": [
+            "https://swiperjs.com/demos/images/nature-1.jpg",
+            "https://swiperjs.com/demos/images/nature-2.jpg",
+            "https://swiperjs.com/demos/images/nature-3.jpg",
+            "https://swiperjs.com/demos/images/nature-4.jpg"
+          ],
+          "price": 40,
+          "square": "90 m2",
+          "capacity": 4,
+          "beds": "2 Queen Bed",
+          "features": [
+            "Air conditioning",
+            "Private Bathroom",
+            "Free WiFi",
+            "Free toiletries",
+            "Shower",
+            "Safe",
+            "Toilet",
+            "Towels",
+            "Tile/Marble floor",
+            "Desk",
+            "Refrigerator",
+            "Telephone",
+            "Ironing facilities",
+            "Satellite channels",
+            "Tea/Coffee make",
+            "Hairdryer",
+            "Electric kettle",
+            "Wake-up service",
+            "Wardrobe or close"
+          ]
+        }
+      ],
+
+      "reviews": [
+        {
+          "rate": 9,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Chic Urban Living in The heart of Ho Chi Minh City",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 9,
+      "price": 120,
+      "duration": "3 days",
+      "type": "city-break",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274611/Hotels/btbjzgdnql0a0fwfqfcq.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "description": {
+        "overview": {
+          "description": "Opposite Durban’s famous beachfront, Blue Waters Hotel is within walking distance of the Suncoast Casino and the iconic Moses Mabhida Stadium. Both uShaka Marine World and Greyville Racecourse are within 2.5 mi from the property.@The spacious rooms and suites feature LCD TVs along with coffee-and-tea-making facilities. Each is equipped with air conditioning and a work desk. There is also plenty of luggage storage space. Most rooms come with furnished balconies and offer a view of the Indian Ocean.@Guests at Blue Waters can enjoy afternoon tea and cake in the Florida Lounge overlooking the ocean. The Versailles Restaurant provides buffet and á la carte service for lunch and dinner.@Leisure facilities at the Hotel Blue Waters include an indoor swimming pool, sauna and a squash court. There is also an outdoor rooftop swimming pool and guests can enjoy drinks with sunset views at the rooftop bar.@The Durban North Beach area is a good location for walking, running and cycling. Hotel Blue Waters is 5 minutes’ drive from the Durban ICC and 10 minutes’ drive from Durban’s city center. Durban Station is 1.2 mi away, while King Shaka International Airport is 19 mi from the property.@Couples in particular like the location – they rated it 9.1 for a two-person trip.@We speak your language!"
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee make",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or close"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "Security deposit will not be collected at this hotel",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards are not accepted at this hotel",
+            "No additional tax has to be paid at the hotel",
+            "On-site parking is available",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples are allowed",
+            "Couples are welcome",
+            "Guests can check in using any Domestic or International ID proof with photograph"
+          ]
+        },
+        "maps": [21.028511, 105.804817],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
+      },
+
+      "rooms": [
+        {
+          "id": "room_11",
+          "thumbnail": "https://swiperjs.com/demos/images/nature-2.jpg",
+          "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+          "title": "Family Suite",
+          "images": [
+            "https://swiperjs.com/demos/images/nature-1.jpg",
+            "https://swiperjs.com/demos/images/nature-2.jpg",
+            "https://swiperjs.com/demos/images/nature-3.jpg",
+            "https://swiperjs.com/demos/images/nature-4.jpg"
+          ],
+          "price": 40,
+          "square": "90 m2",
+          "capacity": 4,
+          "beds": "2 Queen Bed",
+          "features": [
+            "Air conditioning",
+            "Private Bathroom",
+            "Free WiFi",
+            "Free toiletries",
+            "Shower",
+            "Safe",
+            "Toilet",
+            "Towels",
+            "Tile/Marble floor",
+            "Desk",
+            "Refrigerator",
+            "Telephone",
+            "Ironing facilities",
+            "Satellite channels",
+            "Tea/Coffee make",
+            "Hairdryer",
+            "Electric kettle",
+            "Wake-up service",
+            "Wardrobe or close"
+          ]
+        }
+      ],
+
+      "reviews": [
+        {
+          "rate": 9,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Chic Urban Living in The heart of Ho Chi Minh City",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 9,
+      "price": 120,
+      "duration": "3 days",
+      "type": "city-break",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274611/Hotels/urqhsq4o0nhbjha8hedg.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "description": {
+        "overview": {
+          "description": "Opposite Durban’s famous beachfront, Blue Waters Hotel is within walking distance of the Suncoast Casino and the iconic Moses Mabhida Stadium. Both uShaka Marine World and Greyville Racecourse are within 2.5 mi from the property.@The spacious rooms and suites feature LCD TVs along with coffee-and-tea-making facilities. Each is equipped with air conditioning and a work desk. There is also plenty of luggage storage space. Most rooms come with furnished balconies and offer a view of the Indian Ocean.@Guests at Blue Waters can enjoy afternoon tea and cake in the Florida Lounge overlooking the ocean. The Versailles Restaurant provides buffet and á la carte service for lunch and dinner.@Leisure facilities at the Hotel Blue Waters include an indoor swimming pool, sauna and a squash court. There is also an outdoor rooftop swimming pool and guests can enjoy drinks with sunset views at the rooftop bar.@The Durban North Beach area is a good location for walking, running and cycling. Hotel Blue Waters is 5 minutes’ drive from the Durban ICC and 10 minutes’ drive from Durban’s city center. Durban Station is 1.2 mi away, while King Shaka International Airport is 19 mi from the property.@Couples in particular like the location – they rated it 9.1 for a two-person trip.@We speak your language!"
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee make",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or close"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "Security deposit will not be collected at this hotel",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards are not accepted at this hotel",
+            "No additional tax has to be paid at the hotel",
+            "On-site parking is available",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples are allowed",
+            "Couples are welcome",
+            "Guests can check in using any Domestic or International ID proof with photograph"
+          ]
+        },
+        "maps": [21.028511, 105.804817],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
+      },
+
+      "rooms": [
+        {
+          "id": "room_12",
           "thumbnail": "https://swiperjs.com/demos/images/nature-2.jpg",
           "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
           "title": "Family Suite",
