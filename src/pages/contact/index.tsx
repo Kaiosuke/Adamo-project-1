@@ -25,7 +25,7 @@ const Contact = () => {
         </div>
       </section>
       <PdSub />
-      <BreadcrumbCom links={[{ title: "home", href: "/" }]} current="Contact" />
+      <BreadcrumbCom links={[{ title: "Home", href: "/" }]} current="Contact" />
       <PdSub />
       <ContactSection />
       <PdMain />

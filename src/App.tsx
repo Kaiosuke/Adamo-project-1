@@ -17,6 +17,7 @@ import LayoutPage from "./pages/layout";
 import Tours from "./pages/tour";
 import TourDetail from "./pages/tour/tourDetail";
 import PrivatePolicy from "./pages/privatePolicy";
+import NotFoundPage from "./otherPages/notFoundPage";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="tour-checkout" element={<TourCheckOut />} />
           <Route path="hotel-checkout" element={<HotelCheckOut />} />
           <Route path="thanks" element={<ThankYou />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
