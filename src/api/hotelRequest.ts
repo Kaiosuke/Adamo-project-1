@@ -35,4 +35,20 @@ const getHotelById = createAsyncThunk<
   }
 });
 
-export { getAllHotel, getHotelById };
+const getLocationHotels = createAsyncThunk<
+  string[] | string,
+  void,
+  { rejectValue: string }
+>("hotel/getLocation", async (_, { rejectWithValue }) => {
+  try {
+    const res = await instanceLocal.get("/locationHotels");
+    return res.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      return rejectWithValue(error.response?.data?.message);
+    }
+    return rejectWithValue("Error");
+  }
+});
+
+export { getAllHotel, getHotelById, getLocationHotels };

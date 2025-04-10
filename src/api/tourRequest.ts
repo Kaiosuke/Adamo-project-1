@@ -35,18 +35,36 @@ const getTourById = createAsyncThunk<
   }
 });
 
-// const getLocation = createAsyncThunk(
-//   "tour/getLocation",
-//   (_, { rejectWithValue }) => {
-//     try {
-//       const res = await instanceLocal.get("/hotels/")
-//     } catch (error) {
-//       if (axios.isAxiosError(error)) {
-//         return rejectWithValue(error);
-//       }
-//       return rejectWithValue("Error")
-//     }
-//   }
-// );
+const getLocationTour = createAsyncThunk<
+  string[] | string,
+  void,
+  { rejectValue: string }
+>("tour/getLocation", async (_, { rejectWithValue }) => {
+  try {
+    const res = await instanceLocal.get("/locationTours");
+    return res.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      return rejectWithValue(error.response?.data?.message);
+    }
+    return rejectWithValue("Error");
+  }
+});
 
-export { getAllTour, getTourById };
+const getTypeTours = createAsyncThunk<
+  string[] | string,
+  void,
+  { rejectValue: string }
+>("tour/getType", async (_, { rejectWithValue }) => {
+  try {
+    const res = await instanceLocal.get("/typeTours");
+    return res.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      return rejectWithValue(error.response?.data?.message);
+    }
+    return rejectWithValue("Error");
+  }
+});
+
+export { getAllTour, getTourById, getLocationTour, getTypeTours };
