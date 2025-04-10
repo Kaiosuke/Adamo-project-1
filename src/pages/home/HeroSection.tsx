@@ -3,15 +3,15 @@ import SearchTourHome from "@/components/searchList/SearchTourHome";
 
 const HeroSection = () => {
   return (
-    <section className="w-full max-w-[1600px] m-auto">
-      <div className="relative flex">
+    <section className="sub-2-container">
+      <div className="relative flex h-full">
         <img
           src={Hero}
           alt="hero-image"
-          className="w-full h-screen object-cover"
+          className="w-full h-[700px] object-cover"
         />
         <div className="flex gap-2 absolute top-[20%] w-full">
-          <div className="lg:pt-20 md:pt-12 pt-6 max-w-[1164px] w-full m-auto">
+          <div className="lg:pt-20 md:pt-12 pt-6 sub-container">
             <p className="text-size-xl text-banner">Welcome to NgaoduVietnam</p>
             <h1 className="text-size-6xl text-third md:pt-4 pt-2 lg:w-[75%] md:w-[90%] w-[80%]">
               Perfect place for <br /> your stories

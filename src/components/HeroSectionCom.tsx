@@ -14,10 +14,10 @@ const HeroSectionCom = ({ image, title, des, Tour }: Props) => {
         <img
           src={image}
           alt="hero-image"
-          className="w-full h-screen object-cover"
+          className="w-full h-[700px] object-cover"
         />
-        <div className="flex gap-2 absolute top-[20%] w-full">
-          <div className="lg:pt-20 md:pt-12 pt-6 w-[1164px] m-auto">
+        <div className="flex gap-2 absolute lg:top-[20%] top-[50%] lg:-translate-y-[0] -translate-y-[50%] w-full">
+          <div className="lg:pt-20 md:pt-12 pt-6 sub-container">
             <p className="text-size-xl text-banner">{title}</p>
             <h1 className="text-size-6xl text-third md:pt-4 pt-2 lg:w-[45%] md:w-[90%] w-[80%]">
               {des}

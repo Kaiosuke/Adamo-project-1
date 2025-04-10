@@ -179,6 +179,14 @@
     @apply max-w-[1164px] m-auto w-full xl:px-0 lg:px-18 md:px-12 sm:px-8 px-4;
   }
 
+  .sub-container {
+    @apply max-w-[1164px] w-full m-auto xl:px-0 lg:px-16 md:px-10 px-4;
+  }
+
+  .sub-2-container {
+    @apply max-w-[1600px] w-full  m-auto;
+  }
+
   /* Font size */
   .text-size-6xl {
     @apply lg:text-6xl md:text-5xl text-4xl font-bold;

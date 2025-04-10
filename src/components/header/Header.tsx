@@ -94,12 +94,12 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed max-w-[1600px] w-full m-auto z-50 transition-all duration-200 ease-in-out ${
+      className={`fixed w-full z-50 transition-all duration-200 ease-in-out ${
         isScroll ? "bg-third" : ""
       } ${isScroll && scrollDir === "down" ? "translate-y-[-1000px]" : ""}`}
     >
       <div
-        className={`main-container flex items-center relative ${
+        className={`main-container  flex items-center relative ${
           isScroll ? "pt-0" : "pt-4"
         }`}
       >

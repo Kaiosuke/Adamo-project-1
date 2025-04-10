@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="lg:py-16 md:py-10 py-6 bg-secondary opacity-90 max-w-[1600px] m-auto">
-        <div className="flex justify-between flex-wrap w-[1164px] m-auto">
+        <div className="flex justify-between flex-wrap sub-container">
           <div className="lg:flex-[0_0_10%] flex-[0_0_100%]">
             <div className="w-full">
               <img src={Logo} alt="logo" className="object-cover" />

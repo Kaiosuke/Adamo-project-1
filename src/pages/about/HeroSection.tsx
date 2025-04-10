@@ -2,7 +2,7 @@ import Hero from "@/assets/images/hero.png";
 
 const HeroSection = () => {
   return (
-    <section>
+    <section className="sub-2-container">
       <div className="w-full flex relative">
         <img src={Hero} alt="about" className="w-full object-cover h-[400px]" />
         <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
