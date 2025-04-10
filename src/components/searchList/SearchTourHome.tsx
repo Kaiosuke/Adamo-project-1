@@ -32,10 +32,10 @@ const SearchTourHome = ({ location, types }: Props) => {
         <div className="lg:px-8 lg:py-8 px-6 py-6">
           <p className="text-size-2xl">Discover beautiful Vietnam</p>
           <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
-            <div className="bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6">
-              <FaMapMarkerAlt className="text-primary text-size-lg" />
+            <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
+              <FaMapMarkerAlt className="text-primary text-size-lg group-hover:text-third" />
               <Select>
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full group-hover:text-third">
                   <SelectValue
                     placeholder="Type of tour"
                     className="placeholder:text-secondary"
