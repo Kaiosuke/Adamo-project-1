@@ -21,7 +21,7 @@ const TourList = ({ tour }: { tour: ITour }) => {
             </div>
           )}
           <img
-            src="https://picsum.photos/1920/1080"
+            src={tour.thumbnail}
             onLoad={() => setIsLoaded(true)}
             alt={tour.title}
             className={`object-cover w-full ${isLoaded ? "block" : "hidden"}`}
@@ -48,10 +48,10 @@ const TourList = ({ tour }: { tour: ITour }) => {
           <CiLocationOn className="text-size-xl text-primary" />
           <span className="text-four">{tour.location}</span>
         </div>
-        <h5 className="text-size-lg font-medium pt-2 hover:underline">
+        <h5 className="text-size-lg font-medium pt-2 hover:underline h-[40px] leading-1">
           <Link to={`/tour-detail/${tour.id}`}>{tour.title}</Link>
         </h5>
-        <div className="flex items-center justify-between pt-4">
+        <div className="flex items-center justify-between pt-6">
           <div className="flex items-center gap-1">
             <MdCalendarMonth className="text-primary text-size-lg" />
             <span className="text-four">{tour.time}</span>

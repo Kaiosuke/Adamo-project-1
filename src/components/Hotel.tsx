@@ -15,7 +15,7 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
     <div className="w-full">
       <div className="relative">
         <div className="overflow-hidden">
-          {!isLoaded && <Skeleton className="w-[372px] h-[209.25px]" />}
+          {!isLoaded && <Skeleton className="w-[372px] h-[264px]" />}
           <Link
             to={`/hotel-detail/${hotel.id}`}
             className="group hover:scale-125 overlay-img"
