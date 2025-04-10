@@ -109,11 +109,13 @@ const Header = () => {
           isScroll ? "pt-0" : "pt-4"
         }`}
       >
-        <img
-          src={getLogoColor()}
-          className="lg:w-[90px] lg:h-[90px] md:w-[68px] md:h-[68px] w-[48px] h-[48px]"
-          alt="logo"
-        />
+        <Link to="/">
+          <img
+            src={getLogoColor()}
+            className="lg:w-[90px] lg:h-[90px] md:w-[68px] md:h-[68px] w-[48px] h-[48px]"
+            alt="logo"
+          />
+        </Link>
         <div className="ml-auto flex items-center">
           <div className="flex items-center ">
             <nav className="lg:block hidden">

@@ -35,4 +35,18 @@ const getTourById = createAsyncThunk<
   }
 });
 
+// const getLocation = createAsyncThunk(
+//   "tour/getLocation",
+//   (_, { rejectWithValue }) => {
+//     try {
+//       const res = await instanceLocal.get("/hotels/")
+//     } catch (error) {
+//       if (axios.isAxiosError(error)) {
+//         return rejectWithValue(error);
+//       }
+//       return rejectWithValue("Error")
+//     }
+//   }
+// );
+
 export { getAllTour, getTourById };
