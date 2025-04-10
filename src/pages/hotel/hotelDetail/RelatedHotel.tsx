@@ -1,13 +1,19 @@
 import Hotel from "@/components/Hotel";
+import { hotelSelector } from "@/redux/selectors/hotelSelector";
+import { useSelector } from "react-redux";
 
 const RelatedHotels = () => {
+  const { hotels } = useSelector(hotelSelector);
+
   return (
     <div>
       <h2 className="text-size-3xl text-secondary ">Recommend For you</h2>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-8 md:gap-4 gap-10 lg:mt-10 mt-8">
-        <Hotel hotel={1} />
-        <Hotel hotel={2} />
-        <Hotel hotel={3} />
+      <div className="grid lg:grid-cols-3 grid-cols-2 gap-6 mt-4">
+        {hotels.map((hotel, index) => (
+          <div key={index}>
+            <Hotel hotel={hotel} />
+          </div>
+        ))}
       </div>
     </div>
   );

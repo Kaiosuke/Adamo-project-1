@@ -3,21 +3,30 @@ import PdSub from "@/components/PdSub";
 import ReviewHotel from "@/components/reviews/ReviewHotel";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { hotelSelector } from "@/redux/selectors/hotelSelector";
 import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const Reviews = () => {
   const [isReview, setIsReview] = useState(false);
+
+  const { hotel } = useSelector(hotelSelector);
 
   return (
     <div>
       <div className="flex gap-8">
         <div className="w-[148px] h-[148px] bg-primary flex justify-center items-center">
-          <span className="text-third text-size-5xl">9.5</span>
+          <span className="text-third text-size-5xl">{hotel?.score}</span>
         </div>
         <div className="flex flex-col justify-between">
           <div className="text-size-4xl">Wonderful</div>
-          <div>Based on 150 reviews</div>
+          <div>
+            {hotel?.reviews.length}{" "}
+            {hotel?.reviews.length && hotel?.reviews.length > 0
+              ? "Reviews"
+              : "Review"}
+          </div>
 
           <Button
             variant={isReview ? "five" : "primary"}
@@ -47,10 +56,11 @@ const Reviews = () => {
       </div>
 
       <div className="flex flex-col gap-4">
-        <ReviewHotel />
-        <ReviewHotel />
-        <ReviewHotel />
-        <ReviewHotel />
+        {hotel?.reviews.map((review, index) => (
+          <div key={index}>
+            <ReviewHotel review={review} />
+          </div>
+        ))}
       </div>
       <PdSub />
       <Pagination />

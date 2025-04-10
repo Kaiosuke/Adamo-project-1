@@ -8,9 +8,13 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { useSelector } from "react-redux";
+import { hotelSelector } from "@/redux/selectors/hotelSelector";
 
 const SwiperCom = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
+  const { hotel } = useSelector(hotelSelector);
 
   return (
     <>
@@ -26,18 +30,11 @@ const SwiperCom = () => {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
+        {hotel?.images.map((v, index) => (
+          <SwiperSlide key={index}>
+            <img src={v} />
+          </SwiperSlide>
+        ))}
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
@@ -60,18 +57,11 @@ const SwiperCom = () => {
         }}
         className="mySwiper mt-3"
       >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
+        {hotel?.images.map((v, index) => (
+          <SwiperSlide key={index}>
+            <img src={v} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

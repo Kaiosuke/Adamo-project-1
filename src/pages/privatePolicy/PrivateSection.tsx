@@ -1,12 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { privatePolicy } from "@/data.json";
+import { handleSeparateWord } from "@/helper";
 import { FaDownload } from "react-icons/fa6";
 import { Link } from "react-router";
 
 const PrivateSection = () => {
-  const separateWord = (word: string): string[] => {
-    return word.split("@");
-  };
   return (
     <section className="main-container pt-6 text-four">
       <h1 className="text-size-4xl text-secondary">Privacy Policy</h1>
@@ -83,7 +81,7 @@ const PrivateSection = () => {
                         {content.title}
                       </h3>
                       <div>
-                        {separateWord(content.description).map(
+                        {handleSeparateWord(content.description).map(
                           (cont, index) => (
                             <div key={index} className="mt-4">
                               {cont}
@@ -111,7 +109,7 @@ const PrivateSection = () => {
               ) : null}
               {value.description ? (
                 <div>
-                  {separateWord(value.description).map((des, index) => (
+                  {handleSeparateWord(value.description).map((des, index) => (
                     <div key={index} className="mt-4">
                       {des}
                     </div>

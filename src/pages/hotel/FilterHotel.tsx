@@ -39,7 +39,7 @@ const FilterHotel = () => {
         </div>
         <div className="str-line" />
         <div>
-          <span className="text-secondary font-bold">Duration</span>
+          <span className="text-secondary font-bold">Hotel star</span>
           <div className="mt-4">
             <RadioGroup defaultValue="option-one">
               <div className="flex items-center space-x-2">

@@ -8,7 +8,7 @@
       "time": "3 days - 2 night",
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "thumbnail": "https://picsum.photos/1920/1080",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -204,7 +204,7 @@
       "time": "3 days - 2 night",
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "thumbnail": "https://picsum.photos/1920/1080",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -397,7 +397,7 @@
       "time": "3 days - 2 night",
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "thumbnail": "https://picsum.photos/1920/1080",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -590,7 +590,7 @@
       "time": "3 days - 2 night",
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "thumbnail": "https://picsum.photos/1920/1080",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -783,7 +783,7 @@
       "time": "3 days - 2 night",
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "thumbnail": "https://picsum.photos/1920/1080",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -976,7 +976,7 @@
       "time": "3 days - 2 night",
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "thumbnail": "https://picsum.photos/1920/1080",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -1169,7 +1169,7 @@
       "time": "3 days - 2 night",
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "thumbnail": "https://picsum.photos/1920/1080",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -1362,7 +1362,7 @@
       "time": "3 days - 2 night",
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "thumbnail": "https://picsum.photos/1920/1080",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -1555,7 +1555,7 @@
       "time": "3 days - 2 night",
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "thumbnail": "https://picsum.photos/1920/1080",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -1748,7 +1748,7 @@
       "time": "3 days - 2 night",
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "thumbnail": "https://picsum.photos/1920/1080",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -1941,7 +1941,7 @@
       "time": "3 days - 2 night",
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "thumbnail": "https://picsum.photos/1920/1080",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -2134,7 +2134,7 @@
       "time": "3 days - 2 night",
       "duration": "3 days",
       "type": "city-break",
-      "thumbnail": "url('@/assets/images/sapa-1.png')",
+      "thumbnail": "https://picsum.photos/1920/1080",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -2278,6 +2278,1168 @@
       "reviews": [
         {
           "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        }
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "id": 1,
+      "title": "Chic Urban Living in The heart of Ho Chi Minh City",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 9,
+      "price": 120,
+      "duration": "3 days",
+      "type": "city-break",
+      "thumbnail": "https://picsum.photos/1920/1080",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "description": {
+        "overview": {
+          "description": "Opposite Durban’s famous beachfront, Blue Waters Hotel is within walking distance of the Suncoast Casino and the iconic Moses Mabhida Stadium. Both uShaka Marine World and Greyville Racecourse are within 2.5 mi from the property.@The spacious rooms and suites feature LCD TVs along with coffee-and-tea-making facilities. Each is equipped with air conditioning and a work desk. There is also plenty of luggage storage space. Most rooms come with furnished balconies and offer a view of the Indian Ocean.@Guests at Blue Waters can enjoy afternoon tea and cake in the Florida Lounge overlooking the ocean. The Versailles Restaurant provides buffet and á la carte service for lunch and dinner.@Leisure facilities at the Hotel Blue Waters include an indoor swimming pool, sauna and a squash court. There is also an outdoor rooftop swimming pool and guests can enjoy drinks with sunset views at the rooftop bar.@The Durban North Beach area is a good location for walking, running and cycling. Hotel Blue Waters is 5 minutes’ drive from the Durban ICC and 10 minutes’ drive from Durban’s city center. Durban Station is 1.2 mi away, while King Shaka International Airport is 19 mi from the property.@Couples in particular like the location – they rated it 9.1 for a two-person trip.@We speak your language!"
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee make",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or close"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "Security deposit will not be collected at this hotel",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards are not accepted at this hotel",
+            "No additional tax has to be paid at the hotel",
+            "On-site parking is available",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples are allowed",
+            "Couples are welcome",
+            "Guests can check in using any Domestic or International ID proof with photograph"
+          ]
+        },
+        "maps": [21.028511, 105.804817],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
+      },
+
+      "rooms": [
+        {
+          "id": "room_1",
+          "thumbnail": "https://swiperjs.com/demos/images/nature-2.jpg",
+          "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+          "title": "Family Suite",
+          "images": [
+            "https://swiperjs.com/demos/images/nature-1.jpg",
+            "https://swiperjs.com/demos/images/nature-2.jpg",
+            "https://swiperjs.com/demos/images/nature-3.jpg",
+            "https://swiperjs.com/demos/images/nature-4.jpg"
+          ],
+          "price": 40,
+          "square": "90 m2",
+          "capacity": 4,
+          "beds": "2 Queen Bed",
+          "features": [
+            "Air conditioning",
+            "Private Bathroom",
+            "Free WiFi",
+            "Free toiletries",
+            "Shower",
+            "Safe",
+            "Toilet",
+            "Towels",
+            "Tile/Marble floor",
+            "Desk",
+            "Refrigerator",
+            "Telephone",
+            "Ironing facilities",
+            "Satellite channels",
+            "Tea/Coffee make",
+            "Hairdryer",
+            "Electric kettle",
+            "Wake-up service",
+            "Wardrobe or close"
+          ]
+        }
+      ],
+
+      "reviews": [
+        {
+          "rate": 9,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Chic Urban Living in The heart of Ho Chi Minh City",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 9,
+      "price": 120,
+      "duration": "3 days",
+      "type": "city-break",
+      "thumbnail": "https://picsum.photos/1920/1080",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "description": {
+        "overview": {
+          "description": "Opposite Durban’s famous beachfront, Blue Waters Hotel is within walking distance of the Suncoast Casino and the iconic Moses Mabhida Stadium. Both uShaka Marine World and Greyville Racecourse are within 2.5 mi from the property.@The spacious rooms and suites feature LCD TVs along with coffee-and-tea-making facilities. Each is equipped with air conditioning and a work desk. There is also plenty of luggage storage space. Most rooms come with furnished balconies and offer a view of the Indian Ocean.@Guests at Blue Waters can enjoy afternoon tea and cake in the Florida Lounge overlooking the ocean. The Versailles Restaurant provides buffet and á la carte service for lunch and dinner.@Leisure facilities at the Hotel Blue Waters include an indoor swimming pool, sauna and a squash court. There is also an outdoor rooftop swimming pool and guests can enjoy drinks with sunset views at the rooftop bar.@The Durban North Beach area is a good location for walking, running and cycling. Hotel Blue Waters is 5 minutes’ drive from the Durban ICC and 10 minutes’ drive from Durban’s city center. Durban Station is 1.2 mi away, while King Shaka International Airport is 19 mi from the property.@Couples in particular like the location – they rated it 9.1 for a two-person trip.@We speak your language!"
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee make",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or close"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "Security deposit will not be collected at this hotel",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards are not accepted at this hotel",
+            "No additional tax has to be paid at the hotel",
+            "On-site parking is available",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples are allowed",
+            "Couples are welcome",
+            "Guests can check in using any Domestic or International ID proof with photograph"
+          ]
+        },
+        "maps": [21.028511, 105.804817],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
+      },
+
+      "rooms": [
+        {
+          "id": "room_2",
+          "thumbnail": "https://swiperjs.com/demos/images/nature-2.jpg",
+          "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+          "title": "Family Suite",
+          "images": [
+            "https://swiperjs.com/demos/images/nature-1.jpg",
+            "https://swiperjs.com/demos/images/nature-2.jpg",
+            "https://swiperjs.com/demos/images/nature-3.jpg",
+            "https://swiperjs.com/demos/images/nature-4.jpg"
+          ],
+          "price": 40,
+          "square": "90 m2",
+          "capacity": 4,
+          "beds": "2 Queen Bed",
+          "features": [
+            "Air conditioning",
+            "Private Bathroom",
+            "Free WiFi",
+            "Free toiletries",
+            "Shower",
+            "Safe",
+            "Toilet",
+            "Towels",
+            "Tile/Marble floor",
+            "Desk",
+            "Refrigerator",
+            "Telephone",
+            "Ironing facilities",
+            "Satellite channels",
+            "Tea/Coffee make",
+            "Hairdryer",
+            "Electric kettle",
+            "Wake-up service",
+            "Wardrobe or close"
+          ]
+        }
+      ],
+
+      "reviews": [
+        {
+          "rate": 9,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Chic Urban Living in The heart of Ho Chi Minh City",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 9,
+      "price": 120,
+      "duration": "3 days",
+      "type": "city-break",
+      "thumbnail": "https://picsum.photos/1920/1080",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "description": {
+        "overview": {
+          "description": "Opposite Durban’s famous beachfront, Blue Waters Hotel is within walking distance of the Suncoast Casino and the iconic Moses Mabhida Stadium. Both uShaka Marine World and Greyville Racecourse are within 2.5 mi from the property.@The spacious rooms and suites feature LCD TVs along with coffee-and-tea-making facilities. Each is equipped with air conditioning and a work desk. There is also plenty of luggage storage space. Most rooms come with furnished balconies and offer a view of the Indian Ocean.@Guests at Blue Waters can enjoy afternoon tea and cake in the Florida Lounge overlooking the ocean. The Versailles Restaurant provides buffet and á la carte service for lunch and dinner.@Leisure facilities at the Hotel Blue Waters include an indoor swimming pool, sauna and a squash court. There is also an outdoor rooftop swimming pool and guests can enjoy drinks with sunset views at the rooftop bar.@The Durban North Beach area is a good location for walking, running and cycling. Hotel Blue Waters is 5 minutes’ drive from the Durban ICC and 10 minutes’ drive from Durban’s city center. Durban Station is 1.2 mi away, while King Shaka International Airport is 19 mi from the property.@Couples in particular like the location – they rated it 9.1 for a two-person trip.@We speak your language!"
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee make",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or close"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "Security deposit will not be collected at this hotel",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards are not accepted at this hotel",
+            "No additional tax has to be paid at the hotel",
+            "On-site parking is available",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples are allowed",
+            "Couples are welcome",
+            "Guests can check in using any Domestic or International ID proof with photograph"
+          ]
+        },
+        "maps": [21.028511, 105.804817],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
+      },
+
+      "rooms": [
+        {
+          "id": "room_3",
+          "thumbnail": "https://swiperjs.com/demos/images/nature-2.jpg",
+          "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+          "title": "Family Suite",
+          "images": [
+            "https://swiperjs.com/demos/images/nature-1.jpg",
+            "https://swiperjs.com/demos/images/nature-2.jpg",
+            "https://swiperjs.com/demos/images/nature-3.jpg",
+            "https://swiperjs.com/demos/images/nature-4.jpg"
+          ],
+          "price": 40,
+          "square": "90 m2",
+          "capacity": 4,
+          "beds": "2 Queen Bed",
+          "features": [
+            "Air conditioning",
+            "Private Bathroom",
+            "Free WiFi",
+            "Free toiletries",
+            "Shower",
+            "Safe",
+            "Toilet",
+            "Towels",
+            "Tile/Marble floor",
+            "Desk",
+            "Refrigerator",
+            "Telephone",
+            "Ironing facilities",
+            "Satellite channels",
+            "Tea/Coffee make",
+            "Hairdryer",
+            "Electric kettle",
+            "Wake-up service",
+            "Wardrobe or close"
+          ]
+        }
+      ],
+
+      "reviews": [
+        {
+          "rate": 9,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Chic Urban Living in The heart of Ho Chi Minh City",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 9,
+      "price": 120,
+      "duration": "3 days",
+      "type": "city-break",
+      "thumbnail": "https://picsum.photos/1920/1080",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "description": {
+        "overview": {
+          "description": "Opposite Durban’s famous beachfront, Blue Waters Hotel is within walking distance of the Suncoast Casino and the iconic Moses Mabhida Stadium. Both uShaka Marine World and Greyville Racecourse are within 2.5 mi from the property.@The spacious rooms and suites feature LCD TVs along with coffee-and-tea-making facilities. Each is equipped with air conditioning and a work desk. There is also plenty of luggage storage space. Most rooms come with furnished balconies and offer a view of the Indian Ocean.@Guests at Blue Waters can enjoy afternoon tea and cake in the Florida Lounge overlooking the ocean. The Versailles Restaurant provides buffet and á la carte service for lunch and dinner.@Leisure facilities at the Hotel Blue Waters include an indoor swimming pool, sauna and a squash court. There is also an outdoor rooftop swimming pool and guests can enjoy drinks with sunset views at the rooftop bar.@The Durban North Beach area is a good location for walking, running and cycling. Hotel Blue Waters is 5 minutes’ drive from the Durban ICC and 10 minutes’ drive from Durban’s city center. Durban Station is 1.2 mi away, while King Shaka International Airport is 19 mi from the property.@Couples in particular like the location – they rated it 9.1 for a two-person trip.@We speak your language!"
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee make",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or close"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "Security deposit will not be collected at this hotel",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards are not accepted at this hotel",
+            "No additional tax has to be paid at the hotel",
+            "On-site parking is available",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples are allowed",
+            "Couples are welcome",
+            "Guests can check in using any Domestic or International ID proof with photograph"
+          ]
+        },
+        "maps": [21.028511, 105.804817],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
+      },
+
+      "rooms": [
+        {
+          "id": "room_4",
+          "thumbnail": "https://swiperjs.com/demos/images/nature-2.jpg",
+          "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+          "title": "Family Suite",
+          "images": [
+            "https://swiperjs.com/demos/images/nature-1.jpg",
+            "https://swiperjs.com/demos/images/nature-2.jpg",
+            "https://swiperjs.com/demos/images/nature-3.jpg",
+            "https://swiperjs.com/demos/images/nature-4.jpg"
+          ],
+          "price": 40,
+          "square": "90 m2",
+          "capacity": 4,
+          "beds": "2 Queen Bed",
+          "features": [
+            "Air conditioning",
+            "Private Bathroom",
+            "Free WiFi",
+            "Free toiletries",
+            "Shower",
+            "Safe",
+            "Toilet",
+            "Towels",
+            "Tile/Marble floor",
+            "Desk",
+            "Refrigerator",
+            "Telephone",
+            "Ironing facilities",
+            "Satellite channels",
+            "Tea/Coffee make",
+            "Hairdryer",
+            "Electric kettle",
+            "Wake-up service",
+            "Wardrobe or close"
+          ]
+        }
+      ],
+
+      "reviews": [
+        {
+          "rate": 9,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Chic Urban Living in The heart of Ho Chi Minh City",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 9,
+      "price": 120,
+      "duration": "3 days",
+      "type": "city-break",
+      "thumbnail": "https://picsum.photos/1920/1080",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "description": {
+        "overview": {
+          "description": "Opposite Durban’s famous beachfront, Blue Waters Hotel is within walking distance of the Suncoast Casino and the iconic Moses Mabhida Stadium. Both uShaka Marine World and Greyville Racecourse are within 2.5 mi from the property.@The spacious rooms and suites feature LCD TVs along with coffee-and-tea-making facilities. Each is equipped with air conditioning and a work desk. There is also plenty of luggage storage space. Most rooms come with furnished balconies and offer a view of the Indian Ocean.@Guests at Blue Waters can enjoy afternoon tea and cake in the Florida Lounge overlooking the ocean. The Versailles Restaurant provides buffet and á la carte service for lunch and dinner.@Leisure facilities at the Hotel Blue Waters include an indoor swimming pool, sauna and a squash court. There is also an outdoor rooftop swimming pool and guests can enjoy drinks with sunset views at the rooftop bar.@The Durban North Beach area is a good location for walking, running and cycling. Hotel Blue Waters is 5 minutes’ drive from the Durban ICC and 10 minutes’ drive from Durban’s city center. Durban Station is 1.2 mi away, while King Shaka International Airport is 19 mi from the property.@Couples in particular like the location – they rated it 9.1 for a two-person trip.@We speak your language!"
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee make",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or close"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "Security deposit will not be collected at this hotel",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards are not accepted at this hotel",
+            "No additional tax has to be paid at the hotel",
+            "On-site parking is available",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples are allowed",
+            "Couples are welcome",
+            "Guests can check in using any Domestic or International ID proof with photograph"
+          ]
+        },
+        "maps": [21.028511, 105.804817],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
+      },
+
+      "rooms": [
+        {
+          "id": "room_5",
+          "thumbnail": "https://swiperjs.com/demos/images/nature-2.jpg",
+          "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+          "title": "Family Suite",
+          "images": [
+            "https://swiperjs.com/demos/images/nature-1.jpg",
+            "https://swiperjs.com/demos/images/nature-2.jpg",
+            "https://swiperjs.com/demos/images/nature-3.jpg",
+            "https://swiperjs.com/demos/images/nature-4.jpg"
+          ],
+          "price": 40,
+          "square": "90 m2",
+          "capacity": 4,
+          "beds": "2 Queen Bed",
+          "features": [
+            "Air conditioning",
+            "Private Bathroom",
+            "Free WiFi",
+            "Free toiletries",
+            "Shower",
+            "Safe",
+            "Toilet",
+            "Towels",
+            "Tile/Marble floor",
+            "Desk",
+            "Refrigerator",
+            "Telephone",
+            "Ironing facilities",
+            "Satellite channels",
+            "Tea/Coffee make",
+            "Hairdryer",
+            "Electric kettle",
+            "Wake-up service",
+            "Wardrobe or close"
+          ]
+        }
+      ],
+
+      "reviews": [
+        {
+          "rate": 9,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Chic Urban Living in The heart of Ho Chi Minh City",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 9,
+      "price": 120,
+      "duration": "3 days",
+      "type": "city-break",
+      "thumbnail": "https://picsum.photos/1920/1080",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "description": {
+        "overview": {
+          "description": "Opposite Durban’s famous beachfront, Blue Waters Hotel is within walking distance of the Suncoast Casino and the iconic Moses Mabhida Stadium. Both uShaka Marine World and Greyville Racecourse are within 2.5 mi from the property.@The spacious rooms and suites feature LCD TVs along with coffee-and-tea-making facilities. Each is equipped with air conditioning and a work desk. There is also plenty of luggage storage space. Most rooms come with furnished balconies and offer a view of the Indian Ocean.@Guests at Blue Waters can enjoy afternoon tea and cake in the Florida Lounge overlooking the ocean. The Versailles Restaurant provides buffet and á la carte service for lunch and dinner.@Leisure facilities at the Hotel Blue Waters include an indoor swimming pool, sauna and a squash court. There is also an outdoor rooftop swimming pool and guests can enjoy drinks with sunset views at the rooftop bar.@The Durban North Beach area is a good location for walking, running and cycling. Hotel Blue Waters is 5 minutes’ drive from the Durban ICC and 10 minutes’ drive from Durban’s city center. Durban Station is 1.2 mi away, while King Shaka International Airport is 19 mi from the property.@Couples in particular like the location – they rated it 9.1 for a two-person trip.@We speak your language!"
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee make",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or close"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "Security deposit will not be collected at this hotel",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards are not accepted at this hotel",
+            "No additional tax has to be paid at the hotel",
+            "On-site parking is available",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples are allowed",
+            "Couples are welcome",
+            "Guests can check in using any Domestic or International ID proof with photograph"
+          ]
+        },
+        "maps": [21.028511, 105.804817],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
+      },
+
+      "rooms": [
+        {
+          "id": "room_6",
+          "thumbnail": "https://swiperjs.com/demos/images/nature-2.jpg",
+          "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+          "title": "Family Suite",
+          "images": [
+            "https://swiperjs.com/demos/images/nature-1.jpg",
+            "https://swiperjs.com/demos/images/nature-2.jpg",
+            "https://swiperjs.com/demos/images/nature-3.jpg",
+            "https://swiperjs.com/demos/images/nature-4.jpg"
+          ],
+          "price": 40,
+          "square": "90 m2",
+          "capacity": 4,
+          "beds": "2 Queen Bed",
+          "features": [
+            "Air conditioning",
+            "Private Bathroom",
+            "Free WiFi",
+            "Free toiletries",
+            "Shower",
+            "Safe",
+            "Toilet",
+            "Towels",
+            "Tile/Marble floor",
+            "Desk",
+            "Refrigerator",
+            "Telephone",
+            "Ironing facilities",
+            "Satellite channels",
+            "Tea/Coffee make",
+            "Hairdryer",
+            "Electric kettle",
+            "Wake-up service",
+            "Wardrobe or close"
+          ]
+        }
+      ],
+
+      "reviews": [
+        {
+          "rate": 9,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Chic Urban Living in The heart of Ho Chi Minh City",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 9,
+      "price": 120,
+      "duration": "3 days",
+      "type": "city-break",
+      "thumbnail": "https://picsum.photos/1920/1080",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "description": {
+        "overview": {
+          "description": "Opposite Durban’s famous beachfront, Blue Waters Hotel is within walking distance of the Suncoast Casino and the iconic Moses Mabhida Stadium. Both uShaka Marine World and Greyville Racecourse are within 2.5 mi from the property.@The spacious rooms and suites feature LCD TVs along with coffee-and-tea-making facilities. Each is equipped with air conditioning and a work desk. There is also plenty of luggage storage space. Most rooms come with furnished balconies and offer a view of the Indian Ocean.@Guests at Blue Waters can enjoy afternoon tea and cake in the Florida Lounge overlooking the ocean. The Versailles Restaurant provides buffet and á la carte service for lunch and dinner.@Leisure facilities at the Hotel Blue Waters include an indoor swimming pool, sauna and a squash court. There is also an outdoor rooftop swimming pool and guests can enjoy drinks with sunset views at the rooftop bar.@The Durban North Beach area is a good location for walking, running and cycling. Hotel Blue Waters is 5 minutes’ drive from the Durban ICC and 10 minutes’ drive from Durban’s city center. Durban Station is 1.2 mi away, while King Shaka International Airport is 19 mi from the property.@Couples in particular like the location – they rated it 9.1 for a two-person trip.@We speak your language!"
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee make",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or close"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "Security deposit will not be collected at this hotel",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards are not accepted at this hotel",
+            "No additional tax has to be paid at the hotel",
+            "On-site parking is available",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples are allowed",
+            "Couples are welcome",
+            "Guests can check in using any Domestic or International ID proof with photograph"
+          ]
+        },
+        "maps": [21.028511, 105.804817],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
+      },
+
+      "rooms": [
+        {
+          "id": "room_7",
+          "thumbnail": "https://swiperjs.com/demos/images/nature-2.jpg",
+          "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+          "title": "Family Suite",
+          "images": [
+            "https://swiperjs.com/demos/images/nature-1.jpg",
+            "https://swiperjs.com/demos/images/nature-2.jpg",
+            "https://swiperjs.com/demos/images/nature-3.jpg",
+            "https://swiperjs.com/demos/images/nature-4.jpg"
+          ],
+          "price": 40,
+          "square": "90 m2",
+          "capacity": 4,
+          "beds": "2 Queen Bed",
+          "features": [
+            "Air conditioning",
+            "Private Bathroom",
+            "Free WiFi",
+            "Free toiletries",
+            "Shower",
+            "Safe",
+            "Toilet",
+            "Towels",
+            "Tile/Marble floor",
+            "Desk",
+            "Refrigerator",
+            "Telephone",
+            "Ironing facilities",
+            "Satellite channels",
+            "Tea/Coffee make",
+            "Hairdryer",
+            "Electric kettle",
+            "Wake-up service",
+            "Wardrobe or close"
+          ]
+        }
+      ],
+
+      "reviews": [
+        {
+          "rate": 9,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        },
+        {
+          "rate": 5,
+          "avatar": "url('@/assets/images/Avatar-1.png')",
+          "opinion": "Nevermind",
+          "time": "Sep 2020",
+          "title": "The best experience ever!",
+          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Chic Urban Living in The heart of Ho Chi Minh City",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 9,
+      "price": 120,
+      "duration": "3 days",
+      "type": "city-break",
+      "thumbnail": "https://picsum.photos/1920/1080",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "description": {
+        "overview": {
+          "description": "Opposite Durban’s famous beachfront, Blue Waters Hotel is within walking distance of the Suncoast Casino and the iconic Moses Mabhida Stadium. Both uShaka Marine World and Greyville Racecourse are within 2.5 mi from the property.@The spacious rooms and suites feature LCD TVs along with coffee-and-tea-making facilities. Each is equipped with air conditioning and a work desk. There is also plenty of luggage storage space. Most rooms come with furnished balconies and offer a view of the Indian Ocean.@Guests at Blue Waters can enjoy afternoon tea and cake in the Florida Lounge overlooking the ocean. The Versailles Restaurant provides buffet and á la carte service for lunch and dinner.@Leisure facilities at the Hotel Blue Waters include an indoor swimming pool, sauna and a squash court. There is also an outdoor rooftop swimming pool and guests can enjoy drinks with sunset views at the rooftop bar.@The Durban North Beach area is a good location for walking, running and cycling. Hotel Blue Waters is 5 minutes’ drive from the Durban ICC and 10 minutes’ drive from Durban’s city center. Durban Station is 1.2 mi away, while King Shaka International Airport is 19 mi from the property.@Couples in particular like the location – they rated it 9.1 for a two-person trip.@We speak your language!"
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee make",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or close"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "Security deposit will not be collected at this hotel",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards are not accepted at this hotel",
+            "No additional tax has to be paid at the hotel",
+            "On-site parking is available",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples are allowed",
+            "Couples are welcome",
+            "Guests can check in using any Domestic or International ID proof with photograph"
+          ]
+        },
+        "maps": [21.028511, 105.804817],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
+      },
+
+      "rooms": [
+        {
+          "id": "room_8",
+          "thumbnail": "https://swiperjs.com/demos/images/nature-2.jpg",
+          "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+          "title": "Family Suite",
+          "images": [
+            "https://swiperjs.com/demos/images/nature-1.jpg",
+            "https://swiperjs.com/demos/images/nature-2.jpg",
+            "https://swiperjs.com/demos/images/nature-3.jpg",
+            "https://swiperjs.com/demos/images/nature-4.jpg"
+          ],
+          "price": 40,
+          "square": "90 m2",
+          "capacity": 4,
+          "beds": "2 Queen Bed",
+          "features": [
+            "Air conditioning",
+            "Private Bathroom",
+            "Free WiFi",
+            "Free toiletries",
+            "Shower",
+            "Safe",
+            "Toilet",
+            "Towels",
+            "Tile/Marble floor",
+            "Desk",
+            "Refrigerator",
+            "Telephone",
+            "Ironing facilities",
+            "Satellite channels",
+            "Tea/Coffee make",
+            "Hairdryer",
+            "Electric kettle",
+            "Wake-up service",
+            "Wardrobe or close"
+          ]
+        }
+      ],
+
+      "reviews": [
+        {
+          "rate": 9,
           "avatar": "url('@/assets/images/Avatar-1.png')",
           "opinion": "Nevermind",
           "time": "Sep 2020",

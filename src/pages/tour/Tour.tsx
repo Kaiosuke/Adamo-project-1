@@ -1,6 +1,7 @@
 import Shape2 from "@/assets/images/Shape-2png.png";
 import Shape from "@/assets/images/shape.png";
 import { Skeleton } from "@/components/ui/skeleton";
+import { handleFormatMoney } from "@/helper";
 import { ITour } from "@/interfaces/tour";
 import { useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
@@ -48,7 +49,7 @@ const TourList = ({ tour }: { tour: ITour }) => {
           <span className="text-four">{tour.location}</span>
         </div>
         <h5 className="text-size-lg font-medium pt-2 hover:underline">
-          <a href="#">{tour.title}</a>
+          <Link to={`/tour-detail/${tour.id}`}>{tour.title}</Link>
         </h5>
         <div className="flex items-center justify-between pt-4">
           <div className="flex items-center gap-1">
@@ -58,7 +59,7 @@ const TourList = ({ tour }: { tour: ITour }) => {
           <div className="flex items-end gap-1">
             <span className="text-four">from</span>
             <span className="text-secondary text-size-xl font-bold">
-              ${tour.price}.00
+              {handleFormatMoney(tour.price)}
             </span>
           </div>
         </div>

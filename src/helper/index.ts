@@ -4,4 +4,9 @@ const handleFormatMoney = (money: number): string => {
     currency: "USD",
   });
 };
-export { handleFormatMoney };
+
+const handleSeparateWord = (word: string): string[] => {
+  return word.split("@");
+};
+
+export { handleFormatMoney, handleSeparateWord };

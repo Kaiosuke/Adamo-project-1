@@ -5,8 +5,22 @@ import PdSub from "@/components/PdSub";
 import SearchHotel from "@/components/searchList/SearchHotel";
 import HotelSection from "./HotelSection";
 import PdMain from "@/components/PdMain";
+import { useAppDispatch } from "@/redux";
+import { useEffect } from "react";
+import { getAllHotel } from "@/api/hotelRequest";
 
 const Hotel = () => {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    (async () => {
+      try {
+        await dispatch(getAllHotel());
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
   return (
     <>
       <HeroSectionCom

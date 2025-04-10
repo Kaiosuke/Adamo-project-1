@@ -6,15 +6,20 @@ import { Input } from "../ui/input";
 import DatePickerWithRange from "../DatePickerWithRange";
 import { FaCircleMinus, FaCirclePlus } from "react-icons/fa6";
 import { Checkbox } from "../ui/checkbox";
+import { useSelector } from "react-redux";
+import { hotelSelector } from "@/redux/selectors/hotelSelector";
+import { handleFormatMoney } from "@/helper";
 
 const BillHotelDetail = () => {
+  const { hotel } = useSelector(hotelSelector);
+
   return (
     <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit">
       <div className="w-full h-full bg-seven">
         <div className="lg:p-8 p-4 flex gap-2 items-end">
           <span className="text-four">from</span>
           <span className="text-secondary text-size-xl font-semibold">
-            $234.00
+            {hotel?.price && handleFormatMoney(hotel?.price)}
           </span>
         </div>
         <div className="h-[1px] w-full bg-four opacity-50" />
