@@ -1,4 +1,8 @@
-import { getAllHotel, getHotelById } from "@/api/hotelRequest";
+import {
+  getAllHotel,
+  getHotelById,
+  getLocationHotels,
+} from "@/api/hotelRequest";
 import { IHotel } from "@/interfaces/hotel";
 
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
@@ -7,6 +11,7 @@ export interface IHotelState {
   error: string | boolean | undefined;
   loading: boolean;
   hotels: IHotel[];
+  locations: string[];
   hotel: IHotel | null;
 }
 
@@ -14,6 +19,7 @@ const initialState: IHotelState = {
   error: false,
   loading: true,
   hotels: [],
+  locations: [],
   hotel: null,
 };
 
@@ -56,6 +62,17 @@ const hotelsSlice = createSlice({
       }
     );
     build.addCase(getHotelById.rejected, setError);
+
+    build.addCase(getLocationHotels.pending, setLoading);
+    build.addCase(
+      getLocationHotels.fulfilled,
+      (state: IHotelState, action: PayloadAction<string[]>) => {
+        state.loading = false;
+        state.error = false;
+        state.locations = action.payload;
+      }
+    );
+    build.addCase(getLocationHotels.rejected, setError);
   },
 });
 

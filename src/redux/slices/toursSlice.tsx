@@ -1,4 +1,9 @@
-import { getAllTour, getTourById } from "@/api/tourRequest";
+import {
+  getAllTour,
+  getLocationTours,
+  getTourById,
+  getTypeTours,
+} from "@/api/tourRequest";
 import { ITour } from "@/interfaces/tour";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
@@ -6,6 +11,8 @@ export interface ITourState {
   error: string | boolean | undefined;
   loading: boolean;
   tours: ITour[];
+  locations: string[];
+  types: string[];
   tour: ITour | null;
 }
 
@@ -13,6 +20,8 @@ const initialState: ITourState = {
   error: false,
   loading: true,
   tours: [],
+  locations: [],
+  types: [],
   tour: null,
 };
 
@@ -55,6 +64,28 @@ const toursSlice = createSlice({
       }
     );
     build.addCase(getTourById.rejected, setError);
+
+    build.addCase(getLocationTours.pending, setLoading);
+    build.addCase(
+      getLocationTours.fulfilled,
+      (state: ITourState, action: PayloadAction<string[]>) => {
+        state.loading = false;
+        state.error = false;
+        state.locations = action.payload;
+      }
+    );
+    build.addCase(getLocationTours.rejected, setError);
+
+    build.addCase(getTypeTours.pending, setLoading);
+    build.addCase(
+      getTypeTours.fulfilled,
+      (state: ITourState, action: PayloadAction<string[]>) => {
+        state.loading = false;
+        state.error = false;
+        state.types = action.payload;
+      }
+    );
+    build.addCase(getTypeTours.rejected, setError);
   },
 });
 

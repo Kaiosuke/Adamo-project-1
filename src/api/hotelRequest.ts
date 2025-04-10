@@ -36,7 +36,7 @@ const getHotelById = createAsyncThunk<
 });
 
 const getLocationHotels = createAsyncThunk<
-  string[] | string,
+  string[],
   void,
   { rejectValue: string }
 >("hotel/getLocation", async (_, { rejectWithValue }) => {
