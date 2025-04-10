@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Accordion,
   AccordionContent,
@@ -6,20 +5,20 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useState } from "react";
-import { FaRegQuestionCircle } from "react-icons/fa";
+import { FaMapMarkerAlt, FaRegQuestionCircle } from "react-icons/fa";
 
-interface Props {
+interface Prop {
   title: string;
-  type: string;
-  contents: {
-    location?: string;
+  type?: string;
+  description?: string;
+  locations?: {
+    title: string;
     des: string;
-    icon: React.ElementType;
     duration?: string;
   }[];
 }
 
-function AccordionCom({ title, type, contents }: Props) {
+function AccordionCom({ content }: { content: Prop }) {
   const [isSelected, setIsSelected] = useState(false);
 
   return (
@@ -41,50 +40,54 @@ function AccordionCom({ title, type, contents }: Props) {
             isSelected ? "text-eight" : "text-secondary"
           }`}
         >
-          {type === "location" ? (
-            title
+          {content.type && content.type ? (
+            <>{content.title}</>
           ) : (
             <div className="flex gap-2">
               <div className="text-size-xl pt-2">
                 <FaRegQuestionCircle />
               </div>
-              {title}
+              {content.title}
             </div>
           )}
         </AccordionTrigger>
         <AccordionContent>
           <div className="flex flex-col gap-4">
-            {contents.map((content, index) => (
-              <div key={index} className="flex gap-2 ">
-                {type === "location" ? (
-                  <div className="pt-1 text-eight text-lg">
-                    {<content.icon />}
-                  </div>
-                ) : (
-                  <div className="ml-4" />
-                )}
-                <div>
-                  {type === "location" ? (
-                    <h5 className="text-eight text-base font-semibold">
-                      Molo Beverello
-                    </h5>
-                  ) : null}
+            {content.locations ? (
+              content.locations.map((v, index) => (
+                <div key={index} className="flex gap-2 ">
+                  {v.duration ? (
+                    <div className="pt-1 text-eight text-lg">
+                      {<FaMapMarkerAlt />}
+                    </div>
+                  ) : (
+                    <div className="ml-4" />
+                  )}
+                  <div>
+                    {v.duration ? (
+                      <h5 className="text-eight text-base font-semibold">
+                        {v.title}
+                      </h5>
+                    ) : null}
 
-                  <div className="text-four flex flex-col gap-8">
-                    <p>{content.des}</p>
-                    {content.duration && (
-                      <div>
+                    <div className="text-four flex flex-col gap-8">
+                      <p>{v.des}</p>
+                      {v.duration && (
                         <div>
-                          <span className="font-semibold">Duration</span>:{" "}
-                          {content.duration}
+                          <div>
+                            <span className="font-semibold">Duration</span>:{" "}
+                            {v.duration}
+                          </div>
+                          <div>Admission Ticket Free</div>
                         </div>
-                        <div>Admission Ticket Free</div>
-                      </div>
-                    )}
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <div className="ml-6">{content.description}</div>
+            )}
           </div>
         </AccordionContent>
       </AccordionItem>

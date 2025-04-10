@@ -1,6 +1,7 @@
 interface ITour {
   id: number;
   title: string;
+  type: string;
   location: string;
   score: number;
   time: string;
@@ -17,21 +18,20 @@ interface ITour {
       point: string[];
       time: string;
     };
-    itinerary: [
+    itineraries: [
       {
         title: string;
-        locations: [
-          {
-            name: string;
-            des: string;
-            duration: string;
-          }
-        ];
+        type: string;
+        locations: {
+          title: string;
+          des: string;
+          duration?: string;
+        }[];
       }
     ];
-    maps: number[];
-    Images: string[];
-    videos: string[];
+    maps: [number, number];
+    image360: string;
+    video: string;
   };
 
   additionalInfo: {
@@ -44,16 +44,14 @@ interface ITour {
     ];
   };
 
-  reviews: [
-    {
-      rate: number;
-      avatar: string;
-      opinion: string;
-      time: string;
-      title: string;
-      des: string;
-    }
-  ];
+  reviews: {
+    rate: number;
+    avatar: string;
+    opinion: string;
+    time: string;
+    title: string;
+    des: string;
+  }[];
 }
 
 export type { ITour };

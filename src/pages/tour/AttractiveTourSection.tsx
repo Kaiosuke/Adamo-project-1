@@ -1,15 +1,16 @@
 import Tour from "./Tour";
 
+import LoadingPage from "@/components/LoadingPage";
+import { tourSelector } from "@/redux/selectors/tourSelector";
+import { useSelector } from "react-redux";
 import PaginationWithShow from "../../components/paginations/PaginationWithShow";
 import FilterTour from "./FilterTour";
-import { useSelector } from "react-redux";
-import { tourSelector } from "@/redux/selectors/tourSelector";
 
 const AttractiveTourSection = () => {
   const { loading, tours } = useSelector(tourSelector);
 
   if (loading) {
-    return <div>Loading......</div>;
+    return <LoadingPage />;
   }
 
   return (

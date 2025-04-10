@@ -5,8 +5,9 @@
       "title": "Discover interesting things in the romantic coastal city of Vungtau",
       "location": "Sapa, Laocai",
       "score": 4.5,
-
       "time": "3 days - 2 night",
+      "duration": "3 days",
+      "type": "city-break",
       "thumbnail": "url('@/assets/images/sapa-1.png')",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
@@ -39,80 +40,83 @@
           ],
           "time": "8:00 AM"
         },
-        "itinerary": [
+        "itineraries": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
+            "type": "location",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
           },
           {
             "title": "Day 2: Marina Piccola (1 stop)",
+            "type": "location",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
           },
           {
             "title": "Day 3: Marina Piccola (1 stop)",
+            "type": "location",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
           }
         ],
         "maps": [21.028511, 105.804817],
-        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
-        "videos": ["url('@/assets/videos/dog.mp4')"]
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
       },
 
       "additionalInfo": {
@@ -198,6 +202,8 @@
       "score": 4.5,
 
       "time": "3 days - 2 night",
+      "duration": "3 days",
+      "type": "city-break",
       "thumbnail": "url('@/assets/images/sapa-1.png')",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
@@ -230,26 +236,26 @@
           ],
           "time": "8:00 AM"
         },
-        "itinerary": [
+        "itineraries": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -258,21 +264,21 @@
             "title": "Day 2: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -281,29 +287,29 @@
             "title": "Day 3: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
           }
         ],
         "maps": [21.028511, 105.804817],
-        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
-        "videos": ["url('@/assets/videos/dog.mp4')"]
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "video": "url('@/assets/videos/dog.mp4')"
       },
 
       "additionalInfo": {
@@ -389,6 +395,8 @@
       "score": 4.5,
 
       "time": "3 days - 2 night",
+      "duration": "3 days",
+      "type": "city-break",
       "thumbnail": "url('@/assets/images/sapa-1.png')",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
@@ -421,26 +429,26 @@
           ],
           "time": "8:00 AM"
         },
-        "itinerary": [
+        "itineraries": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -449,21 +457,21 @@
             "title": "Day 2: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -472,29 +480,29 @@
             "title": "Day 3: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
           }
         ],
         "maps": [21.028511, 105.804817],
-        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
-        "videos": ["url('@/assets/videos/dog.mp4')"]
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "video": "url('@/assets/videos/dog.mp4')"
       },
 
       "additionalInfo": {
@@ -580,6 +588,8 @@
       "score": 4.5,
 
       "time": "3 days - 2 night",
+      "duration": "3 days",
+      "type": "city-break",
       "thumbnail": "url('@/assets/images/sapa-1.png')",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
@@ -612,26 +622,26 @@
           ],
           "time": "8:00 AM"
         },
-        "itinerary": [
+        "itineraries": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -640,21 +650,21 @@
             "title": "Day 2: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -663,29 +673,29 @@
             "title": "Day 3: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
           }
         ],
         "maps": [21.028511, 105.804817],
-        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
-        "videos": ["url('@/assets/videos/dog.mp4')"]
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "video": "url('@/assets/videos/dog.mp4')"
       },
 
       "additionalInfo": {
@@ -771,6 +781,8 @@
       "score": 4.5,
 
       "time": "3 days - 2 night",
+      "duration": "3 days",
+      "type": "city-break",
       "thumbnail": "url('@/assets/images/sapa-1.png')",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
@@ -803,26 +815,26 @@
           ],
           "time": "8:00 AM"
         },
-        "itinerary": [
+        "itineraries": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -831,21 +843,21 @@
             "title": "Day 2: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -854,29 +866,29 @@
             "title": "Day 3: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
           }
         ],
         "maps": [21.028511, 105.804817],
-        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
-        "videos": ["url('@/assets/videos/dog.mp4')"]
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "video": "url('@/assets/videos/dog.mp4')"
       },
 
       "additionalInfo": {
@@ -962,6 +974,8 @@
       "score": 4.5,
 
       "time": "3 days - 2 night",
+      "duration": "3 days",
+      "type": "city-break",
       "thumbnail": "url('@/assets/images/sapa-1.png')",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
@@ -994,26 +1008,26 @@
           ],
           "time": "8:00 AM"
         },
-        "itinerary": [
+        "itineraries": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -1022,21 +1036,21 @@
             "title": "Day 2: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -1045,29 +1059,29 @@
             "title": "Day 3: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
           }
         ],
         "maps": [21.028511, 105.804817],
-        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
-        "videos": ["url('@/assets/videos/dog.mp4')"]
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "video": "url('@/assets/videos/dog.mp4')"
       },
 
       "additionalInfo": {
@@ -1153,6 +1167,8 @@
       "score": 4.5,
 
       "time": "3 days - 2 night",
+      "duration": "3 days",
+      "type": "city-break",
       "thumbnail": "url('@/assets/images/sapa-1.png')",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
@@ -1185,26 +1201,26 @@
           ],
           "time": "8:00 AM"
         },
-        "itinerary": [
+        "itineraries": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -1213,21 +1229,21 @@
             "title": "Day 2: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -1236,29 +1252,29 @@
             "title": "Day 3: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
           }
         ],
         "maps": [21.028511, 105.804817],
-        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
-        "videos": ["url('@/assets/videos/dog.mp4')"]
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "video": "url('@/assets/videos/dog.mp4')"
       },
 
       "additionalInfo": {
@@ -1344,6 +1360,8 @@
       "score": 4.5,
 
       "time": "3 days - 2 night",
+      "duration": "3 days",
+      "type": "city-break",
       "thumbnail": "url('@/assets/images/sapa-1.png')",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
@@ -1376,26 +1394,26 @@
           ],
           "time": "8:00 AM"
         },
-        "itinerary": [
+        "itineraries": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -1404,21 +1422,21 @@
             "title": "Day 2: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -1427,29 +1445,29 @@
             "title": "Day 3: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
           }
         ],
         "maps": [21.028511, 105.804817],
-        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
-        "videos": ["url('@/assets/videos/dog.mp4')"]
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "video": "url('@/assets/videos/dog.mp4')"
       },
 
       "additionalInfo": {
@@ -1535,6 +1553,8 @@
       "score": 4.5,
 
       "time": "3 days - 2 night",
+      "duration": "3 days",
+      "type": "city-break",
       "thumbnail": "url('@/assets/images/sapa-1.png')",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
@@ -1567,26 +1587,26 @@
           ],
           "time": "8:00 AM"
         },
-        "itinerary": [
+        "itineraries": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -1595,21 +1615,21 @@
             "title": "Day 2: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -1618,29 +1638,29 @@
             "title": "Day 3: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
           }
         ],
         "maps": [21.028511, 105.804817],
-        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
-        "videos": ["url('@/assets/videos/dog.mp4')"]
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "video": "url('@/assets/videos/dog.mp4')"
       },
 
       "additionalInfo": {
@@ -1726,6 +1746,8 @@
       "score": 4.5,
 
       "time": "3 days - 2 night",
+      "duration": "3 days",
+      "type": "city-break",
       "thumbnail": "url('@/assets/images/sapa-1.png')",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
@@ -1758,26 +1780,26 @@
           ],
           "time": "8:00 AM"
         },
-        "itinerary": [
+        "itineraries": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -1786,21 +1808,21 @@
             "title": "Day 2: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -1809,29 +1831,29 @@
             "title": "Day 3: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
           }
         ],
         "maps": [21.028511, 105.804817],
-        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
-        "videos": ["url('@/assets/videos/dog.mp4')"]
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "video": "url('@/assets/videos/dog.mp4')"
       },
 
       "additionalInfo": {
@@ -1917,6 +1939,8 @@
       "score": 4.5,
 
       "time": "3 days - 2 night",
+      "duration": "3 days",
+      "type": "city-break",
       "thumbnail": "url('@/assets/images/sapa-1.png')",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
@@ -1949,26 +1973,26 @@
           ],
           "time": "8:00 AM"
         },
-        "itinerary": [
+        "itineraries": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -1977,21 +2001,21 @@
             "title": "Day 2: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -2000,29 +2024,29 @@
             "title": "Day 3: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
           }
         ],
         "maps": [21.028511, 105.804817],
-        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
-        "videos": ["url('@/assets/videos/dog.mp4')"]
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "video": "url('@/assets/videos/dog.mp4')"
       },
 
       "additionalInfo": {
@@ -2108,6 +2132,8 @@
       "score": 4.5,
 
       "time": "3 days - 2 night",
+      "duration": "3 days",
+      "type": "city-break",
       "thumbnail": "url('@/assets/images/sapa-1.png')",
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
@@ -2140,26 +2166,26 @@
           ],
           "time": "8:00 AM"
         },
-        "itinerary": [
+        "itineraries": [
           {
             "title": "Day 1: Molo Beverello (4 stops)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -2168,21 +2194,21 @@
             "title": "Day 2: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
@@ -2191,29 +2217,29 @@
             "title": "Day 3: Marina Piccola (1 stop)",
             "locations": [
               {
-                "name": "Molo Beverello",
+                "title": "Molo Beverello",
                 "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
                 "duration": "5 minutes"
               },
               {
-                "name": "Marina Piccola",
+                "title": "Marina Piccola",
                 "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
                 "duration": "1 hour 30 minutes"
               },
               {
-                "name": "Blue Grotto",
+                "title": "Blue Grotto",
                 "des": "Pass trough the Ait Saouen Col in anti atlas"
               },
               {
-                "name": "Villa San Michele",
+                "title": "Villa San Michele",
                 "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
               }
             ]
           }
         ],
         "maps": [21.028511, 105.804817],
-        "Images": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
-        "videos": ["url('@/assets/videos/dog.mp4')"]
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "video": "url('@/assets/videos/dog.mp4')"
       },
 
       "additionalInfo": {

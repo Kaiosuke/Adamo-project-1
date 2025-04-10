@@ -33,22 +33,21 @@ function App() {
           <Route path="hotel-detail/:id" element={<HotelDetail />} />
           <Route path="private-policy" element={<PrivatePolicy />} />
         </Route>
-      </Routes>
-      <Routes>
+
         <Route path="/auth" element={<LayoutAuth />}>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="new-password" element={<NewPassword />} />
           <Route path="forgot-password" element={<ForgotPassword />} />
         </Route>
-      </Routes>
-      <Routes>
+
         <Route path="/" element={<LayoutOtherPages />}>
           <Route path="tour-checkout" element={<TourCheckOut />} />
           <Route path="hotel-checkout" element={<HotelCheckOut />} />
           <Route path="thanks" element={<ThankYou />} />
-          <Route path="*" element={<NotFoundPage />} />
         </Route>
+
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -3,7 +3,18 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FaStar } from "react-icons/fa6";
 import { TbPointFilled } from "react-icons/tb";
 
-const ReviewTour = () => {
+interface Props {
+  rate: number;
+  avatar: string;
+  opinion: string;
+  time: string;
+  title: string;
+  des: string;
+}
+
+const ReviewTour = ({ review }: { review: Props }) => {
+  console.log(review.rate);
+
   return (
     <div>
       <div className="flex gap-6 items-center">
@@ -19,19 +30,15 @@ const ReviewTour = () => {
             <FaStar className="text-nine" />
             <FaStar className="text-four" />
           </div>
-          <div className="font-bold">The best experience ever!</div>
+          <div className="font-bold">{review.title}</div>
           <div className="flex gap-2 items-center">
-            Nevermind <TbPointFilled className="w-3 text-five" /> Sep 2020
+            {review.opinion} <TbPointFilled className="w-3 text-five" />{" "}
+            {review.time}
           </div>
         </div>
       </div>
       <div className="mt-4">
-        <p className="leading-6 text-four">
-          It was excellent! The trip is long but the vans are comfortable and
-          have wi-fi. The driver very friendly as well as Ahmed our guide to the
-          dromedaries. The camp was beautiful, comfortable beds, clean bathroom
-          and delicious food!
-        </p>
+        <p className="leading-6 text-four">{review.des}</p>
       </div>
       <div className="str-line-2" />
     </div>

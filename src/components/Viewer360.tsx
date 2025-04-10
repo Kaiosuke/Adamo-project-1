@@ -1,11 +1,11 @@
 // Viewer360.tsx
-import { useEffect, useRef } from "react";
-import "@photo-sphere-viewer/core/index.css";
 import { Viewer } from "@photo-sphere-viewer/core";
+import "@photo-sphere-viewer/core/index.css";
+import { useEffect, useRef } from "react";
 
 const baseUrl = "https://photo-sphere-viewer-data.netlify.app/assets/";
 
-function Viewer360() {
+function Viewer360({ url = baseUrl }: { url?: string }) {
   const viewerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ function Viewer360() {
     if (viewerRef.current) {
       viewer = new Viewer({
         container: viewerRef.current,
-        panorama: baseUrl + "sphere.jpg",
+        panorama: url + "sphere.jpg",
       });
     }
     return () => {

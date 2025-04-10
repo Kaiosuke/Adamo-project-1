@@ -4,46 +4,53 @@ import { GoPeople } from "react-icons/go";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import DatePickerWithRange from "../DatePickerWithRange";
+import { useSelector } from "react-redux";
+import { tourSelector } from "@/redux/selectors/tourSelector";
+import { handleFormatMoney } from "@/helper";
 
 const BillTourDetail = () => {
+  const { tour } = useSelector(tourSelector);
+
   return (
-    <div className="w-full h-full bg-seven">
-      <div className="lg:p-8 p-4 flex gap-2 items-end">
-        <span className="text-four">from</span>
-        <span className="text-secondary text-size-xl font-semibold">
-          $234.00
-        </span>
-      </div>
-      <div className="h-[1px] w-full bg-four opacity-50" />
-      <div className="lg:p-8 p-4 flex flex-col gap-6">
-        <div className="flex gap-10">
-          <div>
-            <div className="text-four">Duration:</div>
-            <div className="font-semibold text-secondary">
-              3 days - 2 nights
+    <>
+      {tour && (
+        <div className="w-full h-full bg-seven">
+          <div className="lg:p-8 p-4 flex gap-2 items-end">
+            <span className="text-four">from</span>
+            <span className="text-secondary text-size-xl font-semibold">
+              {handleFormatMoney(tour?.price)}
+            </span>
+          </div>
+          <div className="h-[1px] w-full bg-four opacity-50" />
+          <div className="lg:p-8 p-4 flex flex-col gap-6">
+            <div className="flex gap-10">
+              <div>
+                <div className="text-four">Duration:</div>
+                <div className="font-semibold text-secondary">{tour.time}</div>
+              </div>
+              <div>
+                <div className="text-four">Tour type:</div>
+                <div className="font-semibold text-secondary">{tour.type}</div>
+              </div>
+            </div>
+
+            <DatePickerWithRange />
+
+            <div className="w-full h-[64px] bg-third py-2 pl-3 flex items-center gap-4">
+              <GoPeople className="text-primary" />
+              <div className="text-secondary">2 Adults - 1 Children</div>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-secondary">Total</span>
+              <span className="text-secondary font-semibold">$450.00</span>
+            </div>
+            <div className="mt-4">
+              <Button variant={"primary"}>Book now</Button>
             </div>
           </div>
-          <div>
-            <div className="text-four">Tour type:</div>
-            <div className="font-semibold text-secondary">Sun - Beach</div>
-          </div>
         </div>
-
-        <DatePickerWithRange />
-
-        <div className="w-full h-[64px] bg-third py-2 pl-3 flex items-center gap-4">
-          <GoPeople className="text-primary" />
-          <div className="text-secondary">2 Adults - 1 Children</div>
-        </div>
-        <div className="flex justify-between items-center">
-          <span className="text-secondary">Total</span>
-          <span className="text-secondary font-semibold">$450.00</span>
-        </div>
-        <div className="mt-4">
-          <Button variant={"primary"}>Book now</Button>
-        </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
