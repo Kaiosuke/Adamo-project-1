@@ -29,6 +29,7 @@ const Hotel = () => {
         title="Find deals on hotels, homes, and much more..."
         des="From cozy country homes to funky city apartments"
       />
+      <PdSub />
       <BreadcrumbCom links={[{ title: "home", href: "/" }]} current="hotels" />
       <PdSub />
       <HotelSection />
