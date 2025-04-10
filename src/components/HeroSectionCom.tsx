@@ -14,7 +14,7 @@ const HeroSectionCom = ({ image, title, des, Tour }: Props) => {
         <img
           src={image}
           alt="hero-image"
-          className="w-full h-[700px] object-cover"
+          className="w-full h-[730px] object-cover"
         />
         <div className="flex gap-2 absolute lg:top-[20%] top-[50%] lg:-translate-y-[0] -translate-y-[50%] w-full">
           <div className="lg:pt-20 md:pt-12 pt-6 sub-container">

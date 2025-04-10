@@ -8,7 +8,7 @@ const HeroSection = () => {
         <img
           src={Hero}
           alt="hero-image"
-          className="w-full h-[700px] object-cover"
+          className="w-full h-[730px] object-cover"
         />
         <div className="flex gap-2 absolute top-[20%] w-full">
           <div className="lg:pt-20 md:pt-12 pt-6 sub-container">

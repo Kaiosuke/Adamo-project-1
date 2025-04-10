@@ -16,6 +16,7 @@ import HotelDetail from "./pages/hotel/hotelDetail";
 import LayoutPage from "./pages/layout";
 import Tours from "./pages/tour";
 import TourDetail from "./pages/tour/tourDetail";
+import PrivatePolicy from "./pages/privatePolicy";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="tour-detail/:id" element={<TourDetail />} />
           <Route path="hotels" element={<Hotel />} />
           <Route path="hotel-detail/:id" element={<HotelDetail />} />
+          <Route path="private-policy" element={<PrivatePolicy />} />
         </Route>
       </Routes>
       <Routes>

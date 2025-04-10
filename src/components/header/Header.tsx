@@ -1,4 +1,5 @@
 import Logo from "@/assets/images/logo.png";
+import LogoBlack from "@/assets/images/logo-black.png";
 
 import useDetectScroll from "@smakss/react-scroll-direction";
 import { useEffect, useState } from "react";
@@ -62,7 +63,7 @@ const linkNavVi = [
   },
 ];
 
-const pages = ["tour-detail", "hotel-detail"];
+const pages = ["tour-detail", "hotel-detail", "private-policy"];
 
 const Header = () => {
   const [isScroll, setIsScroll] = useState(false);
@@ -92,9 +93,14 @@ const Header = () => {
     return pages.includes(isPage) ? "text-secondary" : "text-third";
   };
 
+  const getLogoColor = () => {
+    if (isScroll) return LogoBlack;
+    return pages.includes(isPage) ? LogoBlack : Logo;
+  };
+
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-200 ease-in-out ${
+      className={`fixed w-full py-4 z-50 transition-all duration-200 ease-in-out ${
         isScroll ? "bg-third" : ""
       } ${isScroll && scrollDir === "down" ? "translate-y-[-1000px]" : ""}`}
     >
@@ -104,7 +110,7 @@ const Header = () => {
         }`}
       >
         <img
-          src={Logo}
+          src={getLogoColor()}
           className="lg:w-[90px] lg:h-[90px] md:w-[68px] md:h-[68px] w-[48px] h-[48px]"
           alt="logo"
         />
