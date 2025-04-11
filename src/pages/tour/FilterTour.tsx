@@ -14,8 +14,35 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 import SliderCom from "@/components/Slider";
 import { Button } from "@/components/ui/button";
+import { useDispatch, useSelector } from "react-redux";
+import { tourSelector } from "@/redux/selectors/tourSelector";
+import {
+  filterByDuration,
+  filterByGuest,
+  filterByLocation,
+  filterByType,
+} from "@/redux/slices/toursSlice";
+import { useState } from "react";
 
 const FilterTour = () => {
+  const { filter, locations, guests, types, tours, durations } =
+    useSelector(tourSelector);
+
+  const [priceTour, setPriceTour] = useState([]);
+  const [durationTour, setDurationTour] = useState("");
+
+  const { duration, type, price } = filter;
+  const [typeTour, setTypeTour] = useState<string[]>(type);
+
+  const dispatch = useDispatch();
+
+  const handleFilter = () => {
+    dispatch(filterByType(typeTour));
+    dispatch(filterByDuration(durationTour));
+  };
+
+  console.log(durationTour);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -40,39 +67,20 @@ const FilterTour = () => {
         <div>
           <span className="text-secondary font-bold">Duration</span>
           <div className="mt-4">
-            <RadioGroup defaultValue="option-one">
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem
-                  value="option-one"
-                  id="option-one"
-                  className="rounded-sm"
-                />
-                <Label htmlFor="option-one text-secondary">0-3 days</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem
-                  value="option-two"
-                  id="option-two"
-                  className="rounded-sm"
-                />
-                <Label htmlFor="option-two text-secondary">3-5 days</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem
-                  value="option-three"
-                  id="option-three"
-                  className="rounded-sm"
-                />
-                <Label htmlFor="option-three text-secondary">5-7 days</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem
-                  value="option-four"
-                  id="option-four"
-                  className="rounded-sm"
-                />
-                <Label htmlFor="option-four text-secondary">over 1 week</Label>
-              </div>
+            <RadioGroup
+              defaultValue="option-one"
+              onValueChange={(v) => setDurationTour(v)}
+            >
+              {durations.map((v, index) => (
+                <div className="flex items-center space-x-2" key={index}>
+                  <RadioGroupItem
+                    value={v.time}
+                    id={v.time}
+                    className="rounded-sm"
+                  />
+                  <Label htmlFor={v.time}>{v.title}</Label>
+                </div>
+              ))}
             </RadioGroup>
           </div>
         </div>
@@ -80,55 +88,39 @@ const FilterTour = () => {
         <div>
           <span className="text-secondary font-bold">Type of Tours</span>
           <div className="flex flex-col">
-            <div className="mt-4 flex items-center gap-2">
-              <Checkbox id="terms" />
-              <label
-                htmlFor="terms"
-                className="text-sm text-secondary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                City-Break
-              </label>
-            </div>
-            <div className="mt-4 flex items-center gap-2">
-              <Checkbox id="2" />
-              <label
-                htmlFor="2"
-                className="text-sm text-secondary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Wildlife
-              </label>
-            </div>
-            <div className="mt-4 flex items-center gap-2">
-              <Checkbox id="3" />
-              <label
-                htmlFor="3"
-                className="text-sm text-secondary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Cultural
-              </label>
-            </div>
-            <div className="mt-4 flex items-center gap-2">
-              <Checkbox id="4" />
-              <label
-                htmlFor="4"
-                className="text-sm text-secondary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Ecotourism
-              </label>
-            </div>
-            <div className="mt-4 flex items-center gap-2">
-              <Checkbox id="4" />
-              <label
-                htmlFor="4"
-                className="text-sm text-secondary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Sun and Beaches
-              </label>
-            </div>
+            {types.map((v, index) => (
+              <div className="mt-4 flex items-center gap-2" key={index}>
+                <Checkbox
+                  id={v}
+                  defaultChecked={type.includes(v)}
+                  value={v}
+                  onCheckedChange={(checked) => {
+                    if (checked) {
+                      setTypeTour((prev) => [...prev, v]);
+                    } else {
+                      setTypeTour((prev) =>
+                        prev.filter((value) => value !== v)
+                      );
+                    }
+                  }}
+                />
+                <label
+                  htmlFor={v}
+                  className="text-sm text-secondary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                >
+                  {v}
+                </label>
+              </div>
+            ))}
           </div>
         </div>
         <div className="py-4">
-          <Button variant={"primary"} size={"third"} className="h-[48px] ">
+          <Button
+            variant={"primary"}
+            size={"third"}
+            className="h-[48px]"
+            onClick={handleFilter}
+          >
             Apply Filter
           </Button>
         </div>

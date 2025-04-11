@@ -1,10 +1,4 @@
-import {
-  getAllTour,
-  getGuests,
-  getLocationTours,
-  getTourById,
-  getTypeTours,
-} from "@/api/tourRequest";
+import { getFilters, getAllTour, getTourById } from "@/api/tourRequest";
 import { ITour } from "@/interfaces/tour";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
@@ -14,8 +8,16 @@ export interface ITourState {
   tours: ITour[];
   locations: string[];
   types: string[];
+  durations: { title: string; time: string }[];
   guests: string[];
   tour: ITour | null;
+  filter: {
+    location: string;
+    type: string[];
+    guest: string;
+    price: number[];
+    duration: string;
+  };
 }
 
 const initialState: ITourState = {
@@ -24,8 +26,16 @@ const initialState: ITourState = {
   tours: [],
   locations: [],
   types: [],
+  durations: [],
   guests: [],
   tour: null,
+  filter: {
+    location: "",
+    type: [],
+    guest: "",
+    price: [],
+    duration: "",
+  },
 };
 
 const setLoading = (state: ITourState) => {
@@ -44,7 +54,23 @@ const setError = (
 const toursSlice = createSlice({
   initialState,
   name: "tour",
-  reducers: {},
+  reducers: {
+    filterByLocation: (state: ITourState, action: PayloadAction<string>) => {
+      state.filter.location = action.payload;
+    },
+    filterByType: (state: ITourState, action: PayloadAction<string[]>) => {
+      state.filter.type = action.payload;
+    },
+    filterByGuest: (state: ITourState, action: PayloadAction<string>) => {
+      state.filter.guest = action.payload;
+    },
+    filterByPrice: (state: ITourState, action: PayloadAction<number[]>) => {
+      state.filter.price = action.payload;
+    },
+    filterByDuration: (state: ITourState, action: PayloadAction<string>) => {
+      state.filter.duration = action.payload;
+    },
+  },
   extraReducers: (build) => {
     build.addCase(getAllTour.pending, setLoading);
     build.addCase(
@@ -68,39 +94,38 @@ const toursSlice = createSlice({
     );
     build.addCase(getTourById.rejected, setError);
 
-    build.addCase(getLocationTours.pending, setLoading);
+    build.addCase(getFilters.pending, setLoading);
     build.addCase(
-      getLocationTours.fulfilled,
-      (state: ITourState, action: PayloadAction<string[]>) => {
+      getFilters.fulfilled,
+      (
+        state: ITourState,
+        action: PayloadAction<{
+          locations: string[];
+          types: string[];
+          guests: string[];
+          durations: { title: string; time: string }[];
+        }>
+      ) => {
         state.loading = false;
         state.error = false;
-        state.locations = action.payload;
-      }
-    );
-    build.addCase(getLocationTours.rejected, setError);
 
-    build.addCase(getTypeTours.pending, setLoading);
-    build.addCase(
-      getTypeTours.fulfilled,
-      (state: ITourState, action: PayloadAction<string[]>) => {
-        state.loading = false;
-        state.error = false;
-        state.types = action.payload;
-      }
-    );
-    build.addCase(getTypeTours.rejected, setError);
+        const { locations, guests, types, durations } = action.payload;
 
-    build.addCase(getGuests.pending, setLoading);
-    build.addCase(
-      getGuests.fulfilled,
-      (state: ITourState, action: PayloadAction<string[]>) => {
-        state.loading = false;
-        state.error = false;
-        state.guests = action.payload;
+        state.locations = locations;
+        state.types = types;
+        state.guests = guests;
+        state.durations = durations;
       }
     );
-    build.addCase(getGuests.rejected, setError);
+    build.addCase(getFilters.rejected, setError);
   },
 });
 
 export default toursSlice.reducer;
+export const {
+  filterByDuration,
+  filterByLocation,
+  filterByGuest,
+  filterByPrice,
+  filterByType,
+} = toursSlice.actions;

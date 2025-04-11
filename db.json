@@ -3984,7 +3984,25 @@
     "1 Adult - 1 Children",
     "2 Adults - 1 Children",
     "2 Adults - 2 Children",
-    "2 Adults - 3 Children"
+    "2 Adults - 3 Children",
     "others"
+  ],
+  "duration": [
+    {
+      "title": "0 - 3 days",
+      "time": "0-3"
+    },
+    {
+      "title": "3 - 5 days",
+      "time": "3-5"
+    },
+    {
+      "title": "5 - 7 days",
+      "time": "5-7"
+    },
+    {
+      "title": "over 1 week",
+      "time": "7-100"
+    }
   ]
 }

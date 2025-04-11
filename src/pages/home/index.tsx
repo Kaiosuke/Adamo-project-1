@@ -1,17 +1,18 @@
 import PdMain from "@/components/PdMain";
-import HeroSection from "./HeroSection";
-import IntroduceSection from "./IntroduceSection";
-import DiscoverSection from "./DiscoverSection";
-import AttractiveSection from "./AttractiveSection";
-import TraditionalSection from "./Traditional";
-import ContactSection from "./ContactSection";
 import { useAppDispatch } from "@/redux";
 import { useEffect } from "react";
-import { getGuests, getLocationTours, getTypeTours } from "@/api/tourRequest";
+import AttractiveSection from "./AttractiveSection";
+import ContactSection from "./ContactSection";
+import DiscoverSection from "./DiscoverSection";
+import HeroSection from "./HeroSection";
+import IntroduceSection from "./IntroduceSection";
+import TraditionalSection from "./Traditional";
+// import { getGuests, getLocationTours, getTypeTours } from "@/api/tourRequest";
 import { getLocationHotels } from "@/api/hotelRequest";
-import { useSelector } from "react-redux";
-import { tourSelector } from "@/redux/selectors/tourSelector";
+import { getFilters } from "@/api/tourRequest";
 import LoadingPage from "@/components/LoadingPage";
+import { tourSelector } from "@/redux/selectors/tourSelector";
+import { useSelector } from "react-redux";
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -21,9 +22,7 @@ const Home = () => {
   useEffect(() => {
     (async () => {
       try {
-        await dispatch(getLocationTours());
-        await dispatch(getTypeTours());
-        await dispatch(getGuests());
+        await dispatch(getFilters());
         await dispatch(getLocationHotels());
       } catch (error) {
         console.log(error);

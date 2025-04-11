@@ -1,11 +1,7 @@
 import Hero from "@/assets/images/hero.png";
 import SearchTourHome from "@/components/searchList/SearchTourHome";
-import { tourSelector } from "@/redux/selectors/tourSelector";
-import { useSelector } from "react-redux";
 
 const HeroSection = () => {
-  const { locations, types, guests } = useSelector(tourSelector);
-
   return (
     <section className="sub-2-container">
       <div className="relative flex h-full">
@@ -44,7 +40,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <SearchTourHome location={locations} types={types} guests={guests} />
+          <SearchTourHome />
         </div>
       </div>
     </section>

@@ -11,7 +11,9 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
   return (
     <div className="w-full">
       <div className="relative">
-        <LoadedImage alt={hotel.title} thumbnail={hotel.thumbnail} />
+        <Link to={`/hotel-detail/${hotel.id}`}>
+          <LoadedImage alt={hotel.title} thumbnail={hotel.thumbnail} />
+        </Link>
 
         <div className="w-[32px] absolute top-[-1px] right-10">
           {Number(hotel) % 2 === 0 ? (

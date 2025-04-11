@@ -1,16 +1,11 @@
-import LoadingPage from "@/components/LoadingPage";
+import Tour from "@/components/Tour";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import { useSelector } from "react-redux";
 import PaginationWithShow from "../../components/paginations/PaginationWithShow";
 import FilterTour from "./FilterTour";
-import Tour from "@/components/Tour";
 
 const AttractiveTourSection = () => {
-  const { loading, tours } = useSelector(tourSelector);
-
-  if (loading) {
-    return <LoadingPage />;
-  }
+  const { tours } = useSelector(tourSelector);
 
   return (
     <section className="main-container">
