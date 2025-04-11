@@ -20,8 +20,9 @@ import { useDispatch, useSelector } from "react-redux";
 import DatePickerSingle from "../DatePickerSingle";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import { useState } from "react";
+import { Link } from "react-router";
 
-const SearchTour = () => {
+const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
   const { locations, guests, types, filter } = useSelector(tourSelector);
 
   const { location, type } = filter;
@@ -41,7 +42,13 @@ const SearchTour = () => {
   };
 
   return (
-    <>
+    <div
+      className={`w-full bg-third/80 ${
+        !isHome
+          ? "flex-[0_0_30%] 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8"
+          : null
+      }`}
+    >
       <div className="lg:px-8 lg:py-8 px-6 py-6">
         <p className="text-size-2xl">Discover beautiful Vietnam</p>
         <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
@@ -52,10 +59,7 @@ const SearchTour = () => {
               onValueChange={(value) => setLocationFilter(value)}
             >
               <SelectTrigger className="w-full group-hover:text-third ">
-                <SelectValue
-                  placeholder="Location"
-                  className="placeholder:text-red-400"
-                />
+                <SelectValue placeholder="Location" className="" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
@@ -89,10 +93,7 @@ const SearchTour = () => {
               }
             >
               <SelectTrigger className="w-full group-hover:text-third ">
-                <SelectValue
-                  placeholder="Type of Tour"
-                  className="placeholder:text-red-400"
-                />
+                <SelectValue placeholder="Type of Tour" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
@@ -109,11 +110,8 @@ const SearchTour = () => {
           <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
             <LuUsers className="text-primary text-size-lg group-hover:text-third" />
             <Select onValueChange={(value) => handleFilterGuest(value)}>
-              <SelectTrigger className="w-full group-hover:text-third ">
-                <SelectValue
-                  placeholder="Number of guests"
-                  className="placeholder:text-red-400"
-                />
+              <SelectTrigger className="w-full group-hover:text-third">
+                <SelectValue placeholder="Number of guests" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
@@ -129,17 +127,19 @@ const SearchTour = () => {
           </div>
         </div>
         <div className="lg:pt-6 pt-4">
-          <Button
-            variant="primary"
-            className="flex justify-center gap-2 text-third"
-            onClick={handleFilter}
-          >
-            <CiSearch className="text-size-lg" />
-            Search
-          </Button>
+          <Link to="/tours">
+            <Button
+              variant="primary"
+              className="flex justify-center gap-2 text-third"
+              onClick={handleFilter}
+            >
+              <CiSearch className="text-size-lg" />
+              Search
+            </Button>
+          </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

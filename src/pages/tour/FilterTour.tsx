@@ -41,6 +41,7 @@ const FilterTour = () => {
   };
 
   const handleResetFilter = () => {
+    console.log(1);
     setDurationTour("");
     setPrices([0, 1200]);
     setTypeTour([]);

@@ -13,9 +13,15 @@ import {
 } from "@/components/ui/select";
 import { LuUsers } from "react-icons/lu";
 
-const SearchHotel = () => {
+const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   return (
-    <div className="flex-[0_0_30%] bg-third/80 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8 lg:block hidden">
+    <div
+      className={`bg-third/80 lg:block hidden ${
+        isHome
+          ? "h-[503px] w-[100%]"
+          : "flex-[0_0_30%] 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8 "
+      }`}
+    >
       <div className="z-10 relative">
         <div className="lg:px-8 lg:py-8 px-6 py-6">
           <p className="text-size-2xl">Discover beautiful Vietnam</p>
@@ -48,7 +54,7 @@ const SearchHotel = () => {
               </Select>
             </div>
           </div>
-          <div className="lg:pt-6 pt-4">
+          <div className="lg:pt-6 pt-4 mt-auto h-full">
             <Button
               variant="primary"
               className="flex justify-center gap-2 text-third h-[64px]"
