@@ -1,5 +1,6 @@
 import {
   getAllTour,
+  getGuests,
   getLocationTours,
   getTourById,
   getTypeTours,
@@ -13,6 +14,7 @@ export interface ITourState {
   tours: ITour[];
   locations: string[];
   types: string[];
+  guests: string[];
   tour: ITour | null;
 }
 
@@ -22,6 +24,7 @@ const initialState: ITourState = {
   tours: [],
   locations: [],
   types: [],
+  guests: [],
   tour: null,
 };
 
@@ -86,6 +89,17 @@ const toursSlice = createSlice({
       }
     );
     build.addCase(getTypeTours.rejected, setError);
+
+    build.addCase(getGuests.pending, setLoading);
+    build.addCase(
+      getGuests.fulfilled,
+      (state: ITourState, action: PayloadAction<string[]>) => {
+        state.loading = false;
+        state.error = false;
+        state.guests = action.payload;
+      }
+    );
+    build.addCase(getGuests.rejected, setError);
   },
 });
 

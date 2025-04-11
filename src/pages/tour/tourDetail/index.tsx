@@ -19,7 +19,7 @@ const TourDetail = () => {
   const { id } = useParams();
 
   const dispatch = useAppDispatch();
-  const { tour } = useSelector(tourSelector);
+  const { tour, loading } = useSelector(tourSelector);
 
   useEffect(() => {
     if (id) {
@@ -33,7 +33,7 @@ const TourDetail = () => {
     }
   }, []);
 
-  if (!tour) {
+  if (loading) {
     return <LoadingPage />;
   }
 

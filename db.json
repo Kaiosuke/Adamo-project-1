@@ -3978,5 +3978,13 @@
     "wildlife",
     "ecotourism",
     "sun and beaches"
+  ],
+  "guests": [
+    "1 Adult",
+    "1 Adult - 1 Children",
+    "2 Adults - 1 Children",
+    "2 Adults - 2 Children",
+    "2 Adults - 3 Children"
+    "others"
   ]
 }

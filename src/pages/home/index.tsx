@@ -7,7 +7,7 @@ import TraditionalSection from "./Traditional";
 import ContactSection from "./ContactSection";
 import { useAppDispatch } from "@/redux";
 import { useEffect } from "react";
-import { getLocationTours, getTypeTours } from "@/api/tourRequest";
+import { getGuests, getLocationTours, getTypeTours } from "@/api/tourRequest";
 import { getLocationHotels } from "@/api/hotelRequest";
 import { useSelector } from "react-redux";
 import { tourSelector } from "@/redux/selectors/tourSelector";
@@ -23,6 +23,7 @@ const Home = () => {
       try {
         await dispatch(getLocationTours());
         await dispatch(getTypeTours());
+        await dispatch(getGuests());
         await dispatch(getLocationHotels());
       } catch (error) {
         console.log(error);

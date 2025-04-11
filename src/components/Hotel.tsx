@@ -1,35 +1,18 @@
 import Shape2 from "@/assets/images/Shape-2png.png";
 import Shape from "@/assets/images/shape.png";
+import { handleFormatMoney } from "@/helper";
 import { IHotel } from "@/interfaces/hotel";
-import { useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { FaStar } from "react-icons/fa6";
 import { Link } from "react-router";
-import { Skeleton } from "./ui/skeleton";
-import { handleFormatMoney } from "@/helper";
+import LoadedImage from "./LoadedImage";
 
 const Hotel = ({ hotel }: { hotel: IHotel }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  console.log(hotel.reviews);
   return (
     <div className="w-full">
       <div className="relative">
-        <div className="overflow-hidden">
-          {!isLoaded && <Skeleton className="w-[372px] h-[264px]" />}
-          <Link
-            to={`/hotel-detail/${hotel.id}`}
-            className="group hover:scale-125 overlay-img"
-          >
-            <img
-              src={hotel.thumbnail}
-              alt="VungTau"
-              onLoad={() => setIsLoaded(true)}
-              className={`object-cover w-full group-hover:scale-120 tran-fast ${
-                isLoaded ? "block" : "hidden"
-              }`}
-            />
-          </Link>
-        </div>
+        <LoadedImage alt={hotel.title} thumbnail={hotel.thumbnail} />
+
         <div className="w-[32px] absolute top-[-1px] right-10">
           {Number(hotel) % 2 === 0 ? (
             <img src={Shape} alt="shape" className="object-cover w-full" />

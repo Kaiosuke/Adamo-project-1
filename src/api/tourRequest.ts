@@ -66,4 +66,19 @@ const getTypeTours = createAsyncThunk<string[], void, { rejectValue: string }>(
   }
 );
 
-export { getAllTour, getTourById, getLocationTours, getTypeTours };
+const getGuests = createAsyncThunk<string[], void, { rejectValue: string }>(
+  "tour/guests",
+  async (_, { rejectWithValue }) => {
+    try {
+      const res = await instanceLocal.get("/guests");
+      return res.data;
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        return rejectWithValue(error.response?.data?.message);
+      }
+      return rejectWithValue("Error");
+    }
+  }
+);
+
+export { getAllTour, getTourById, getLocationTours, getTypeTours, getGuests };

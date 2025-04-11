@@ -1,5 +1,6 @@
 import axios from "axios";
 
+const controller = new AbortController();
 const instance = axios.create({
   baseURL: "https://hotel-backend-production-a519.up.railway.app/",
   headers: { "Content-Type": "application/json" },
@@ -8,7 +9,10 @@ const instance = axios.create({
 const instanceLocal = axios.create({
   baseURL: "http://localhost:3000/",
   headers: { "Content-Type": "application/json" },
+  signal: controller.signal,
 });
+
+// controller.abort();
 
 instance.interceptors.request.use(
   (config) => {

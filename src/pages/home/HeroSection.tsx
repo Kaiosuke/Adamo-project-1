@@ -4,9 +4,7 @@ import { tourSelector } from "@/redux/selectors/tourSelector";
 import { useSelector } from "react-redux";
 
 const HeroSection = () => {
-  const { locations, types } = useSelector(tourSelector);
-
-  console.log(locations);
+  const { locations, types, guests } = useSelector(tourSelector);
 
   return (
     <section className="sub-2-container">
@@ -46,7 +44,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <SearchTourHome location={locations} types={types} />
+          <SearchTourHome location={locations} types={types} guests={guests} />
         </div>
       </div>
     </section>
