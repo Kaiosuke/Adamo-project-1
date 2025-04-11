@@ -19,7 +19,7 @@ const Tour = () => {
 
   const { filter, loading } = useSelector(tourSelector);
 
-  const { location, type, duration } = filter;
+  const { location, type, duration, price } = filter;
 
   useEffect(() => {
     (async () => {
@@ -39,29 +39,29 @@ const Tour = () => {
           type.forEach((v) => {
             result += `type=${v}&`;
           });
-          return result;
+
+          return type ? result : "";
         };
 
-        const arrDuration = duration.split("-");
+        const arrDuration = duration.length ? duration.split("-") : [0, 30];
 
-        const separateDuration = () => {
-          let result = "";
-          arrDuration.forEach((v) => {
-            result += `lte=${v}&gte=${v}`;
-          });
-          return result;
-        };
-
+        const dataDuration = `duration_gte=${arrDuration[0]}&duration_lte=${arrDuration[1]}`;
+        const dataPrice = `price_gte=${price[0]}&price_lte=${price[1]}`;
         const dataType = separateType();
-        const dataDuration = separateDuration();
+
         await dispatch(
-          getAllTour({ location, types: dataType, durations: dataDuration })
+          getAllTour({
+            location,
+            types: dataType,
+            durations: dataDuration,
+            price: dataPrice,
+          })
         );
       } catch (error) {
         console.log(error);
       }
     })();
-  }, [dispatch, location, type, duration]);
+  }, [dispatch, location, type, duration, price]);
 
   if (loading) {
     return <LoadingPage />;

@@ -5,13 +5,19 @@ import { instanceLocal } from "./instance";
 
 const getAllTour = createAsyncThunk<
   ITour[],
-  { location: string; types: string; durations: string }
+  {
+    location: string;
+    types: string;
+    durations: string;
+    price: string;
+  },
+  { rejectValue: string }
 >(
   "tour/getAll",
-  async ({ location, types, durations }, { rejectWithValue }) => {
+  async ({ location, types, durations, price }, { rejectWithValue }) => {
     try {
       const res = await instanceLocal.get(
-        `/tours?location_like=${location}&${types}${durations}`
+        `/tours?location_like=${location}&${types}${durations}&${price}`
       );
 
       return res.data;

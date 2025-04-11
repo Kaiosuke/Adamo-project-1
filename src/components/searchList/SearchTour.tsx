@@ -19,23 +19,25 @@ import { LuUsers } from "react-icons/lu";
 import { useDispatch, useSelector } from "react-redux";
 import DatePickerSingle from "../DatePickerSingle";
 import { tourSelector } from "@/redux/selectors/tourSelector";
+import { useState } from "react";
 
 const SearchTour = () => {
-  const { locations, guests, types } = useSelector(tourSelector);
+  const { locations, guests, types, filter } = useSelector(tourSelector);
+
+  const { location, type } = filter;
 
   const dispatch = useDispatch();
-  const handleFilterLocation = (value: string) => {
-    dispatch(filterByLocation(value));
-  };
 
-  const handleFilterType = (value: string) => {
-    const arr = [];
-    arr.push(value);
-    dispatch(filterByType(arr));
-  };
+  const [locationFilter, setLocationFilter] = useState(location);
+  const [typeFilter, setTypeFilter] = useState<string[]>(type);
 
   const handleFilterGuest = (value: string) => {
     dispatch(filterByGuest(value));
+  };
+
+  const handleFilter = () => {
+    dispatch(filterByLocation(locationFilter));
+    dispatch(filterByType(typeFilter));
   };
 
   return (
@@ -45,7 +47,10 @@ const SearchTour = () => {
         <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
           <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
             <FaMapMarkerAlt className="text-primary text-size-lg group-hover:text-third" />
-            <Select onValueChange={(value) => handleFilterLocation(value)}>
+            <Select
+              defaultValue={location}
+              onValueChange={(value) => setLocationFilter(value)}
+            >
               <SelectTrigger className="w-full group-hover:text-third ">
                 <SelectValue
                   placeholder="Location"
@@ -71,7 +76,18 @@ const SearchTour = () => {
 
           <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
             <CiFlag1 className="text-primary text-size-lg group-hover:text-third" />
-            <Select onValueChange={(value) => handleFilterType(value)}>
+            <Select
+              defaultValue={
+                type.length < 1 ? type.toString() : type[0].toString()
+              }
+              onValueChange={(value) =>
+                setTypeFilter(() => {
+                  const arr = [];
+                  arr.push(value);
+                  return arr;
+                })
+              }
+            >
               <SelectTrigger className="w-full group-hover:text-third ">
                 <SelectValue
                   placeholder="Type of Tour"
@@ -116,6 +132,7 @@ const SearchTour = () => {
           <Button
             variant="primary"
             className="flex justify-center gap-2 text-third"
+            onClick={handleFilter}
           >
             <CiSearch className="text-size-lg" />
             Search

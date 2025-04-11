@@ -11,27 +11,25 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 import { Checkbox } from "@/components/ui/checkbox";
+import { Slider } from "@/components/ui/slider";
 
-import SliderCom from "@/components/Slider";
 import { Button } from "@/components/ui/button";
-import { useDispatch, useSelector } from "react-redux";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import {
   filterByDuration,
-  filterByGuest,
-  filterByLocation,
+  filterByPrice,
   filterByType,
 } from "@/redux/slices/toursSlice";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const FilterTour = () => {
-  const { filter, locations, guests, types, tours, durations } =
-    useSelector(tourSelector);
-
-  const [priceTour, setPriceTour] = useState([]);
-  const [durationTour, setDurationTour] = useState("");
+  const { filter, types, durations } = useSelector(tourSelector);
 
   const { duration, type, price } = filter;
+
+  const [durationTour, setDurationTour] = useState(duration);
+  const [prices, setPrices] = useState(price);
   const [typeTour, setTypeTour] = useState<string[]>(type);
 
   const dispatch = useDispatch();
@@ -39,9 +37,14 @@ const FilterTour = () => {
   const handleFilter = () => {
     dispatch(filterByType(typeTour));
     dispatch(filterByDuration(durationTour));
+    dispatch(filterByPrice(prices));
   };
 
-  console.log(durationTour);
+  const handleResetFilter = () => {
+    setDurationTour("");
+    setPrices([0, 1200]);
+    setTypeTour([]);
+  };
 
   return (
     <DropdownMenu>
@@ -53,14 +56,28 @@ const FilterTour = () => {
           <span className="text-[#03387D] text-size-lg font-semibold">
             FILTER:
           </span>
-          <span className="text-five cursor-pointer hover:underline">
+          <span
+            className="text-five cursor-pointer hover:underline"
+            onClick={handleResetFilter}
+          >
             CLEAR
           </span>
         </DropdownMenuLabel>
         <div>
           <span className="text-secondary font-bold">Budget:</span>
           <div className="lg:mt-10 mt-6">
-            <SliderCom />
+            <div className="relative">
+              <Slider
+                defaultValue={prices}
+                max={1200}
+                step={1}
+                onValueChange={(e) => setPrices(e)}
+              />
+              <div className="absolute -top-[30px]">${prices[0]}</div>
+              <div className="absolute -top-[30px] right-[10px]">
+                ${prices[1]}
+              </div>
+            </div>
           </div>
         </div>
         <div className="str-line" />
@@ -68,7 +85,7 @@ const FilterTour = () => {
           <span className="text-secondary font-bold">Duration</span>
           <div className="mt-4">
             <RadioGroup
-              defaultValue="option-one"
+              defaultValue={duration}
               onValueChange={(v) => setDurationTour(v)}
             >
               {durations.map((v, index) => (
@@ -76,6 +93,7 @@ const FilterTour = () => {
                   <RadioGroupItem
                     value={v.time}
                     id={v.time}
+                    defaultChecked={duration === v.time}
                     className="rounded-sm"
                   />
                   <Label htmlFor={v.time}>{v.title}</Label>
