@@ -22,6 +22,7 @@ import {
 } from "@/redux/slices/toursSlice";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useDebouncedCallback } from "use-debounce";
 
 const FilterTour = () => {
   const { filter, types, durations } = useSelector(tourSelector);
@@ -34,14 +35,13 @@ const FilterTour = () => {
 
   const dispatch = useDispatch();
 
-  const handleFilter = () => {
+  const handleFilter = useDebouncedCallback(() => {
     dispatch(filterByType(typeTour));
     dispatch(filterByDuration(durationTour));
     dispatch(filterByPrice(prices));
-  };
+  }, 1000);
 
   const handleResetFilter = () => {
-    console.log(1);
     setDurationTour("");
     setPrices([0, 1200]);
     setTypeTour([]);
@@ -69,7 +69,7 @@ const FilterTour = () => {
           <div className="lg:mt-10 mt-6">
             <div className="relative">
               <Slider
-                defaultValue={prices}
+                value={prices}
                 max={1200}
                 step={1}
                 onValueChange={(e) => setPrices(e)}
@@ -86,7 +86,7 @@ const FilterTour = () => {
           <span className="text-secondary font-bold">Duration</span>
           <div className="mt-4">
             <RadioGroup
-              defaultValue={duration}
+              value={durationTour}
               onValueChange={(v) => setDurationTour(v)}
             >
               {durations.map((v, index) => (
@@ -94,7 +94,6 @@ const FilterTour = () => {
                   <RadioGroupItem
                     value={v.time}
                     id={v.time}
-                    defaultChecked={duration === v.time}
                     className="rounded-sm"
                   />
                   <Label htmlFor={v.time}>{v.title}</Label>
@@ -111,8 +110,7 @@ const FilterTour = () => {
               <div className="mt-4 flex items-center gap-2" key={index}>
                 <Checkbox
                   id={v}
-                  defaultChecked={type.includes(v)}
-                  value={v}
+                  checked={typeTour.includes(v)}
                   onCheckedChange={(checked) => {
                     if (checked) {
                       setTypeTour((prev) => [...prev, v]);

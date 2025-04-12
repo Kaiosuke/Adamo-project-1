@@ -7,19 +7,28 @@ import AttractiveTourSection from "./AttractiveTourSection";
 import { getAllTour, getFilters } from "@/api/tourRequest";
 import TourImg from "@/assets/images/hero-tour.png";
 import HeroSectionCom from "@/components/HeroSectionCom";
-import LoadingPage from "@/components/LoadingPage";
+import PaginationWithShow from "@/components/paginations/PaginationWithShow";
 import SearchTour from "@/components/searchList/SearchTour";
 import { useAppDispatch } from "@/redux";
 import { tourSelector } from "@/redux/selectors/tourSelector";
-import { useEffect } from "react";
+
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 const Tour = () => {
   const dispatch = useAppDispatch();
-
   const { filter, loading } = useSelector(tourSelector);
-
   const { location, type, duration, price } = filter;
+
+  const totalData = JSON.parse(localStorage.getItem("totalTour") || "0");
+
+  const [pageCount, setPageCount] = useState(0);
+  const ITEMS_PER_PAGE = 4;
+
+  const [currentPage, setCurrentPage] = useState(() => {
+    const saved = localStorage.getItem("currentPage");
+    return saved ? Number(saved) : 0;
+  });
 
   useEffect(() => {
     (async () => {
@@ -34,38 +43,22 @@ const Tour = () => {
   useEffect(() => {
     (async () => {
       try {
-        const separateType = () => {
-          let result = "";
-          type.forEach((v) => {
-            result += `type=${v}&`;
-          });
-
-          return type ? result : "";
-        };
-
-        const arrDuration = duration.length ? duration.split("-") : [0, 30];
-
-        const dataDuration = `duration_gte=${arrDuration[0]}&duration_lte=${arrDuration[1]}`;
-        const dataPrice = `price_gte=${price[0]}&price_lte=${price[1]}`;
-        const dataType = separateType();
-
         await dispatch(
           getAllTour({
             location,
-            types: dataType,
-            durations: dataDuration,
-            price: dataPrice,
+            types: type,
+            durations: duration,
+            start: ITEMS_PER_PAGE * currentPage,
+            price: price,
           })
         );
+
+        setPageCount(Math.ceil(totalData / ITEMS_PER_PAGE));
       } catch (error) {
         console.log(error);
       }
     })();
-  }, [dispatch, location, type, duration, price]);
-
-  if (loading) {
-    return <LoadingPage />;
-  }
+  }, [dispatch, location, type, duration, price, currentPage, totalData]);
 
   return (
     <>
@@ -78,6 +71,17 @@ const Tour = () => {
       <BreadcrumbCom links={[{ title: "home", href: "/" }]} current="tours" />
       <PdSub />
       <AttractiveTourSection />
+
+      <PaginationWithShow
+        currentPage={currentPage}
+        items={ITEMS_PER_PAGE}
+        pageCount={pageCount}
+        totalData={totalData}
+        onPageChange={(e) => {
+          setCurrentPage(e);
+          localStorage.setItem("currentPage", e.toLocaleString());
+        }}
+      />
       <PdMain />
     </>
   );

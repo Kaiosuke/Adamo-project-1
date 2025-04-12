@@ -1,27 +1,60 @@
+import ReactPaginate from "react-paginate";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
-const PaginationWithShow = () => {
+type PaginationProps = {
+  currentPage: number;
+  pageCount: number;
+  totalData: number;
+  items: number;
+  onPageChange: (page: number) => void;
+};
+
+const PaginationWithShow = ({
+  currentPage,
+  pageCount,
+  totalData,
+  items,
+  onPageChange,
+}: PaginationProps) => {
   return (
-    <div className="lg:pt-16 md:pt-10 pt-6 flex items-center justify-end">
+    <div className="lg:pt-16 md:pt-10 pt-6 flex items-center justify-end main-container">
       <div className="flex md:w-2/3 justify-between w-full sm:flex-row flex-col items-center">
         <div className="flex items-center gap-4 text-four">
           <span>Showing</span>
-          <span>1/2</span>
+          <span>
+            {Math.ceil(totalData / items) < 1 ? (
+              "0"
+            ) : (
+              <span>
+                {currentPage + 1} / {Math.ceil(totalData / items)}
+              </span>
+            )}
+          </span>
         </div>
-        <div className="flex gap-4 sm:pt-0 pt-4">
-          <div className="w-10 h-10 bg-five flex items-center justify-center text-four font-semibold cursor-pointer">
-            <GoArrowLeft />
-          </div>
-          <div className="w-10 h-10 bg-secondary flex items-center justify-center text-third font-semibold cursor-pointer">
-            1
-          </div>
-          <div className="w-10 h-10 bg-five flex items-center justify-center text-four font-semibold cursor-pointer">
-            2
-          </div>
-          <div className="w-10 h-10 bg-five flex items-center justify-center text-four font-semibold cursor-pointer">
-            <GoArrowRight />
-          </div>
-        </div>
+        <ReactPaginate
+          breakLabel="..."
+          previousLabel={
+            <div className="w-10 h-10 flex items-center justify-center cursor-pointer bg-five text-four font-semibold">
+              <GoArrowLeft />
+            </div>
+          }
+          nextLabel={
+            <div className="w-10 h-10 flex items-center justify-center cursor-pointer bg-five text-four font-semibold">
+              <GoArrowRight />
+            </div>
+          }
+          onPageChange={(e) => onPageChange(e.selected)}
+          pageRangeDisplayed={3}
+          marginPagesDisplayed={1}
+          forcePage={pageCount > 0 ? currentPage : 0}
+          pageCount={pageCount > 0 ? pageCount : 1}
+          containerClassName="flex gap-2 flex-wrap"
+          pageClassName="w-10 h-10 flex items-center justify-center cursor-pointer bg-five text-four font-semibold"
+          activeClassName="bg-secondary text-third"
+          breakClassName="w-10 h-10 flex items-center justify-center"
+          pageLinkClassName="w-full h-full flex items-center justify-center cursor-pointer bg-five text-four font-semibold"
+          activeLinkClassName="bg-secondary text-third"
+        />
       </div>
     </div>
   );

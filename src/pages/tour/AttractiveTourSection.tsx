@@ -1,7 +1,6 @@
 import Tour from "@/components/Tour";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import { useSelector } from "react-redux";
-import PaginationWithShow from "../../components/paginations/PaginationWithShow";
 import FilterTour from "./FilterTour";
 
 const AttractiveTourSection = () => {
@@ -24,8 +23,6 @@ const AttractiveTourSection = () => {
             </div>
           ))}
       </div>
-
-      <PaginationWithShow />
     </section>
   );
 };

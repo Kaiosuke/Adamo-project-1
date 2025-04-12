@@ -1,23 +1,42 @@
+import ReactPaginate from "react-paginate";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
-const Pagination = () => {
+type PaginationProps = {
+  currentPage: number;
+  pageCount: number;
+  onPageChange: (page: number) => void;
+};
+
+const Pagination = ({
+  currentPage,
+  pageCount,
+  onPageChange,
+}: PaginationProps) => {
   return (
-    <div className="flex md:w-2/3 justify-between w-full sm:flex-row flex-col items-center">
-      <div className="flex gap-4 sm:pt-0 pt-4">
-        <div className="w-10 h-10 bg-five flex items-center justify-center text-four font-semibold cursor-pointer">
+    <ReactPaginate
+      breakLabel="..."
+      previousLabel={
+        <div className="w-10 h-10 flex items-center justify-center cursor-pointer bg-five text-four font-semibold">
           <GoArrowLeft />
         </div>
-        <div className="w-10 h-10 bg-secondary flex items-center justify-center text-third font-semibold cursor-pointer">
-          1
-        </div>
-        <div className="w-10 h-10 bg-five flex items-center justify-center text-four font-semibold cursor-pointer">
-          2
-        </div>
-        <div className="w-10 h-10 bg-five flex items-center justify-center text-four font-semibold cursor-pointer">
+      }
+      nextLabel={
+        <div className="w-10 h-10 flex items-center justify-center cursor-pointer bg-five text-four font-semibold">
           <GoArrowRight />
         </div>
-      </div>
-    </div>
+      }
+      onPageChange={(e) => onPageChange(e.selected)}
+      pageRangeDisplayed={3}
+      marginPagesDisplayed={1}
+      pageCount={pageCount}
+      forcePage={currentPage}
+      containerClassName="flex gap-2 flex-wrap"
+      pageClassName="w-10 h-10 flex items-center justify-center cursor-pointer bg-five text-four font-semibold"
+      activeClassName="bg-secondary text-third"
+      breakClassName="w-10 h-10 flex items-center justify-center"
+      pageLinkClassName="w-full h-full flex items-center justify-center cursor-pointer bg-five text-four font-semibold"
+      activeLinkClassName="bg-secondary text-third"
+    />
   );
 };
 

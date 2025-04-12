@@ -7,9 +7,8 @@ import DiscoverSection from "./DiscoverSection";
 import HeroSection from "./HeroSection";
 import IntroduceSection from "./IntroduceSection";
 import TraditionalSection from "./Traditional";
-// import { getGuests, getLocationTours, getTypeTours } from "@/api/tourRequest";
 import { getLocationHotels } from "@/api/hotelRequest";
-import { getFilters } from "@/api/tourRequest";
+import { getAllTour, getFilters } from "@/api/tourRequest";
 import LoadingPage from "@/components/LoadingPage";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import { useSelector } from "react-redux";
@@ -24,6 +23,7 @@ const Home = () => {
       try {
         await dispatch(getFilters());
         await dispatch(getLocationHotels());
+        await dispatch(getAllTour({}));
       } catch (error) {
         console.log(error);
       }

@@ -6,20 +6,48 @@ import { instanceLocal } from "./instance";
 const getAllTour = createAsyncThunk<
   ITour[],
   {
-    location: string;
-    types: string;
-    durations: string;
-    price: string;
+    location?: string;
+    types?: string[];
+    durations?: string;
+    price?: number[];
+    start?: number;
+    limit?: string;
   },
   { rejectValue: string }
 >(
   "tour/getAll",
-  async ({ location, types, durations, price }, { rejectWithValue }) => {
+  async (
+    { location = "", types = [], durations, price, start = 0, limit = 4 },
+    { rejectWithValue }
+  ) => {
     try {
-      const res = await instanceLocal.get(
-        `/tours?location_like=${location}&${types}${durations}&${price}`
-      );
+      const separateType = () => {
+        let result = "";
+        types.forEach((v) => {
+          result += `type=${v}&`;
+        });
 
+        return types ? result : "";
+      };
+
+      const arrDuration =
+        durations && durations.length ? durations.split("-") : [0, 30];
+
+      const dataDuration = `duration_gte=${arrDuration[0]}&duration_lte=${arrDuration[1]}`;
+
+      const dataPrice = price && `price_gte=${price[0]}&price_lte=${price[1]}`;
+
+      const dataType = separateType();
+
+      const res = await instanceLocal.get(
+        `/tours?location_like=${location}&${types && dataType}${
+          durations && dataDuration
+        }&${price && dataPrice}&_start=${start}&_limit=${limit}`
+      );
+      localStorage.setItem(
+        "totalTour",
+        JSON.stringify(parseInt(res.headers["x-total-count"]))
+      );
       return res.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {

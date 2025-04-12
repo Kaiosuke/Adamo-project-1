@@ -16,8 +16,6 @@ import {
 function DatePickerSingle() {
   const [date, setDate] = React.useState<Date>();
 
-  console.log(date);
-
   return (
     <Popover>
       <PopoverTrigger asChild className="cursor-pointer">
