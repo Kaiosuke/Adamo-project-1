@@ -22,8 +22,7 @@ const ForgotPassword = () => {
   function onSubmit(values: z.infer<typeof forgotPasswordSchema>) {
     (async () => {
       try {
-        const res = await dispatch(forgotPassword(values.email)).unwrap();
-        console.log(res);
+        await dispatch(forgotPassword(values.email));
       } catch (error) {
         console.log(error);
       }

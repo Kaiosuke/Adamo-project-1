@@ -16,7 +16,7 @@ import { useSelector } from "react-redux";
 const Home = () => {
   const dispatch = useAppDispatch();
 
-  const { loading } = useSelector(tourSelector);
+  const { loading, error } = useSelector(tourSelector);
 
   useEffect(() => {
     (async () => {
@@ -32,6 +32,10 @@ const Home = () => {
 
   if (loading) {
     return <LoadingPage />;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
   }
 
   return (

@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { login } from "@/api/authRequest";
+import { login, loginByFb } from "@/api/authRequest";
 import InputAuth from "@/components/InputAuth";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
@@ -39,6 +39,17 @@ const Login = () => {
     })();
   }
 
+  const handleLoginByFb = async () => {
+    try {
+      const user = await dispatch(loginByFb()).unwrap();
+      if (user) {
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="flex justify-center items-center">
       <div className="flex justify-center items-start flex-col">
@@ -70,7 +81,7 @@ const Login = () => {
                 <Button variant={"primary"} type="submit">
                   Sign In
                 </Button>
-                <Button variant={"six"} type="button">
+                <Button variant={"six"} type="button" onClick={handleLoginByFb}>
                   <span>
                     <FaFacebook className="text-size-lg" />
                   </span>

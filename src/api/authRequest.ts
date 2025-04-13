@@ -1,4 +1,4 @@
-import { auth } from "@/firebase/firebase";
+import { auth, facebookProvider } from "@/firebase/firebase";
 import { IAuth } from "@/interfaces/auth";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { FirebaseError } from "firebase/app";
@@ -6,7 +6,9 @@ import {
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
+  updatePassword,
   updateProfile,
 } from "firebase/auth";
 import Cookies from "js-cookie";
@@ -40,6 +42,31 @@ const login = createAsyncThunk<
     return rejectWithValue("Login failed");
   }
 });
+
+const loginByFb = createAsyncThunk<IAuth, void, { rejectValue: string }>(
+  "auth/loginByFb",
+  async (_, { rejectWithValue }) => {
+    try {
+      const result = await signInWithPopup(auth, facebookProvider);
+      const user = result.user;
+
+      const token = await user.getIdToken();
+
+      Cookies.set("accessToken", token);
+
+      return {
+        uid: user.uid,
+        displayName: user.displayName,
+        email: user.email,
+      };
+    } catch (error) {
+      if (error instanceof FirebaseError) {
+        return rejectWithValue("Change Password failure!");
+      }
+      return rejectWithValue("Login failed");
+    }
+  }
+);
 
 const register = createAsyncThunk<
   void,
@@ -77,7 +104,7 @@ const logout = createAsyncThunk<void, void, { rejectValue: string }>(
       Cookies.remove("accessToken");
     } catch (error) {
       if (error instanceof FirebaseError) {
-        return rejectWithValue("Logout successfully!");
+        return rejectWithValue("Logout failure!");
       }
       return rejectWithValue("Login failed");
     }
@@ -95,10 +122,31 @@ const forgotPassword = createAsyncThunk<
     return "Reset password email sent successfully!";
   } catch (error) {
     if (error instanceof FirebaseError) {
-      return rejectWithValue("Logout successfully!");
+      return rejectWithValue("Forgot Password failure!");
+    }
+    return rejectWithValue("Login failed");
+  }
+});
+const changePassword = createAsyncThunk<
+  string,
+  string,
+  { rejectValue: string }
+>("auth/changePassword", async (newPassword, { rejectWithValue }) => {
+  try {
+    const user = auth.currentUser;
+
+    if (!user) {
+      return rejectWithValue("Bạn chưa đăng nhập");
+    }
+
+    await updatePassword(user, newPassword);
+    return "Change password successfully";
+  } catch (error) {
+    if (error instanceof FirebaseError) {
+      return rejectWithValue("Change Password failure!");
     }
     return rejectWithValue("Login failed");
   }
 });
 
-export { login, register, logout, forgotPassword };
+export { changePassword, forgotPassword, login, logout, register, loginByFb };

@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { FaFacebook } from "react-icons/fa6";
 import { Link } from "react-router";
+import { useAppDispatch } from "@/redux";
+import { changePassword } from "@/api/authRequest";
 
 const NewPassword = () => {
   const form = useForm<z.infer<typeof newPasswordSchema>>({
@@ -18,8 +20,17 @@ const NewPassword = () => {
     },
   });
 
+  const dispatch = useAppDispatch();
+
   function onSubmit(values: z.infer<typeof newPasswordSchema>) {
-    console.log(values);
+    (async () => {
+      try {
+        const res = await dispatch(changePassword(values.password)).unwrap();
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   }
 
   return (

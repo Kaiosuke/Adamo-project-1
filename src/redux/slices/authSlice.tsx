@@ -1,4 +1,11 @@
-import { forgotPassword, login, logout, register } from "@/api/authRequest";
+import {
+  changePassword,
+  forgotPassword,
+  login,
+  loginByFb,
+  logout,
+  register,
+} from "@/api/authRequest";
 import { IAuth } from "@/interfaces/auth";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
@@ -64,6 +71,24 @@ const authSlice = createSlice({
       state.error = undefined;
     });
     build.addCase(forgotPassword.rejected, setError);
+
+    build.addCase(changePassword.pending, setLoading);
+    build.addCase(changePassword.fulfilled, (state: IAuthState) => {
+      state.loading = false;
+      state.error = undefined;
+    });
+    build.addCase(changePassword.rejected, setError);
+
+    build.addCase(loginByFb.pending, setLoading);
+    build.addCase(
+      loginByFb.fulfilled,
+      (state: IAuthState, action: PayloadAction<IAuth>) => {
+        state.loading = false;
+        state.currentUser = action.payload;
+        state.error = undefined;
+      }
+    );
+    build.addCase(loginByFb.rejected, setError);
   },
 });
 

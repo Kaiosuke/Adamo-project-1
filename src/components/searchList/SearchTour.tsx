@@ -63,7 +63,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  {locations &&
+                  {locations.length &&
                     locations.map((v, index) => (
                       <SelectItem value={v} key={index}>
                         {v}
@@ -97,7 +97,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  {types &&
+                  {types.length &&
                     types.map((v, index) => (
                       <SelectItem value={v} key={index}>
                         {v}
@@ -115,7 +115,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  {guests &&
+                  {guests.length &&
                     guests.map((v, index) => (
                       <SelectItem value={v} key={index}>
                         {v}
