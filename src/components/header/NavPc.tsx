@@ -1,0 +1,135 @@
+import { authSelector } from "@/redux/selectors/authSelector";
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { Link } from "react-router";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { FaUser } from "react-icons/fa6";
+import { useAppDispatch } from "@/redux";
+import { logout } from "@/api/authRequest";
+
+const linkNavEn = [
+  {
+    title: "Home",
+    path: "/",
+  },
+  {
+    title: "About",
+    path: "about",
+  },
+  {
+    title: "Tours",
+    path: "/tours",
+  },
+  {
+    title: "Hotels",
+    path: "/hotels",
+  },
+  {
+    title: "Contact",
+    path: "/contact",
+  },
+];
+
+const linkNavVi = [
+  {
+    title: "Trang chủ",
+    path: "/",
+  },
+  {
+    title: "Chúng tôi",
+    path: "about",
+  },
+  {
+    title: "Tham quan",
+    path: "/tours",
+  },
+  {
+    title: "Khách sạn",
+    path: "/hotels",
+  },
+  {
+    title: "Liên hệ",
+    path: "/contact",
+  },
+];
+
+interface Props {
+  getLinkColor: () => void;
+}
+
+const NavPc = ({ getLinkColor }: Props) => {
+  const { currentUser } = useSelector(authSelector);
+  const { i18n } = useTranslation();
+
+  const currentLanguage = i18n.language;
+
+  const dispatch = useAppDispatch();
+
+  const handleLogout = async () => {
+    try {
+      await dispatch(logout()).unwrap();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return (
+    <ul className="flex justify-between items-center gap-10 lg:flex-row flex-col">
+      {(currentLanguage === "en" ? linkNavEn : linkNavVi).map((nav, index) => (
+        <li key={index}>
+          <Link
+            to={nav.path}
+            className={` hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out
+                            ${getLinkColor()}
+                        `}
+          >
+            {nav.title}
+          </Link>
+        </li>
+      ))}
+      <li>
+        {currentUser ? (
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <FaUser className="text-third cursor-pointer hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuLabel>
+                {currentUser.displayName
+                  ? currentUser.displayName
+                  : currentUser.email}
+              </DropdownMenuLabel>
+              <DropdownMenuSeparator />
+
+              <DropdownMenuItem
+                className="cursor-pointer"
+                onClick={handleLogout}
+              >
+                Sign Out
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        ) : (
+          <Link
+            to={"/auth/login"}
+            className={` hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out
+                            ${getLinkColor()}
+                        `}
+          >
+            Login
+          </Link>
+        )}
+      </li>
+    </ul>
+  );
+};
+
+export default NavPc;

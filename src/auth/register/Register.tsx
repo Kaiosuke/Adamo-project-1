@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { FaFacebook } from "react-icons/fa6";
 import { Link } from "react-router";
+import { useAppDispatch } from "@/redux";
+import { register } from "@/api/authRequest";
 
 const Login = () => {
   const form = useForm<z.infer<typeof registerSchema>>({
@@ -21,8 +23,23 @@ const Login = () => {
     },
   });
 
+  const dispatch = useAppDispatch();
+
   function onSubmit(values: z.infer<typeof registerSchema>) {
-    console.log(values);
+    (async () => {
+      try {
+        await dispatch(
+          register({
+            email: values.email,
+            password: values.password,
+            firstName: values.firstName,
+            lastName: values.lastName,
+          })
+        ).unwrap();
+      } catch (error) {
+        alert(error);
+      }
+    })();
   }
 
   return (

@@ -12,11 +12,11 @@ const registerSchema = z
     firstName: z
       .string()
       .trim()
-      .min(4, { message: "First name must be greater than 4 character " }),
+      .min(2, { message: "First name must be greater than 2 character " }),
     lastName: z
       .string()
       .trim()
-      .min(4, { message: "Last name must be greater than 4 character " }),
+      .min(2, { message: "Last name must be greater than 2 character " }),
     email: z.string().email({ message: "Invalid Email" }),
     password: z
       .string()

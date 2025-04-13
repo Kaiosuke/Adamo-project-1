@@ -1,6 +1,8 @@
-interface ISignIn {
-  email: string;
-  password: string;
+interface IAuth {
+  uid: string;
+  email: string | null;
+  displayName?: string | null;
+  password?: string;
 }
 
-export type { ISignIn };
+export type { IAuth };

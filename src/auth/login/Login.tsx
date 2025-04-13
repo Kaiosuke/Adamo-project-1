@@ -3,11 +3,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import { login } from "@/api/authRequest";
 import InputAuth from "@/components/InputAuth";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
+import { useAppDispatch } from "@/redux";
 import { FaFacebook } from "react-icons/fa6";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const Login = () => {
   const form = useForm<z.infer<typeof signInSchema>>({
@@ -18,8 +20,23 @@ const Login = () => {
     },
   });
 
+  const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
+
   function onSubmit(values: z.infer<typeof signInSchema>) {
-    console.log(values);
+    (async () => {
+      try {
+        const user = await dispatch(
+          login({ email: values.email, password: values.password })
+        ).unwrap();
+        if (user) {
+          navigate("/");
+        }
+      } catch (error) {
+        alert(error);
+      }
+    })();
   }
 
   return (

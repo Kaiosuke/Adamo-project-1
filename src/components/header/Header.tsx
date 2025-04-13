@@ -1,75 +1,19 @@
-import Logo from "@/assets/images/logo.png";
 import LogoBlack from "@/assets/images/logo-black.png";
+import Logo from "@/assets/images/logo.png";
 
 import useDetectScroll from "@smakss/react-scroll-direction";
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Link, useLocation } from "react-router";
 import DarkMode from "./DarkMode";
 import Language from "./Language";
 import NavMb from "./NavMb";
-import { Link, useLocation } from "react-router";
-
-const linkNavEn = [
-  {
-    title: "Home",
-    path: "/",
-  },
-  {
-    title: "About",
-    path: "about",
-  },
-  {
-    title: "Tours",
-    path: "/tours",
-  },
-  {
-    title: "Hotels",
-    path: "/hotels",
-  },
-  {
-    title: "Contact",
-    path: "/contact",
-  },
-  {
-    title: "Login",
-    path: "/auth/login",
-  },
-];
-
-const linkNavVi = [
-  {
-    title: "Trang chủ",
-    path: "/",
-  },
-  {
-    title: "Chúng tôi",
-    path: "about",
-  },
-  {
-    title: "Tham quan",
-    path: "/tours",
-  },
-  {
-    title: "Khách sạn",
-    path: "/hotels",
-  },
-  {
-    title: "Liên hệ",
-    path: "/contact",
-  },
-  {
-    title: "Đăng nhập",
-    path: "/auth/login",
-  },
-];
+import NavPc from "./NavPc";
 
 const pages = ["tour-detail", "hotel-detail", "private-policy"];
 
 const Header = () => {
   const [isScroll, setIsScroll] = useState(false);
   const { scrollDir } = useDetectScroll();
-
-  const { i18n } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,8 +25,6 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const currentLanguage = i18n.language;
 
   const location = useLocation();
 
@@ -119,22 +61,7 @@ const Header = () => {
         <div className="ml-auto flex items-center">
           <div className="flex items-center ">
             <nav className="lg:block hidden">
-              <ul className="flex justify-between items-center gap-10 lg:flex-row flex-col">
-                {(currentLanguage === "en" ? linkNavEn : linkNavVi).map(
-                  (nav, index) => (
-                    <li key={index}>
-                      <Link
-                        to={nav.path}
-                        className={` hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out
-                            ${getLinkColor()}
-                        `}
-                      >
-                        {nav.title}
-                      </Link>
-                    </li>
-                  )
-                )}
-              </ul>
+              <NavPc getLinkColor={getLinkColor} />
             </nav>
             <DarkMode />
             <Language getLinkColor={getLinkColor} />

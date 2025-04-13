@@ -1,13 +1,86 @@
-import { instance } from "./instance";
+import { auth } from "@/firebase/firebase";
+import { IAuth } from "@/interfaces/auth";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import { FirebaseError } from "firebase/app";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
+import Cookies from "js-cookie";
 
-const login = async (data: { email: string; password: string }) => {
+const login = createAsyncThunk<
+  IAuth,
+  { email: string; password: string },
+  { rejectValue: string }
+>("auth/login", async ({ email, password }, { rejectWithValue }) => {
   try {
-    const res = await instance.post("auth/login", data);
-    localStorage.setItem("accessToken", res.data.data.accessToken);
-  } catch (error) {
-    const err = error as { response?: { data: { message: string } } };
-    throw err.response?.data.message || error;
-  }
-};
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
 
-export { login };
+    const user = userCredential.user;
+    const token = await user.getIdToken();
+
+    Cookies.set("accessToken", token);
+
+    return {
+      uid: user.uid,
+      displayName: user.displayName,
+      email: user.email,
+    };
+  } catch (error) {
+    if (error instanceof FirebaseError) {
+      return rejectWithValue("Email or password is not correct");
+    }
+    return rejectWithValue("Login failed");
+  }
+});
+
+const register = createAsyncThunk<
+  void,
+  { email: string; password: string; firstName: string; lastName: string },
+  { rejectValue: string }
+>(
+  "auth/register",
+  async ({ email, password, firstName, lastName }, { rejectWithValue }) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      const user = userCredential.user;
+
+      await updateProfile(user, {
+        displayName: `${firstName} ${lastName}`,
+      });
+    } catch (error) {
+      if (error instanceof FirebaseError) {
+        return rejectWithValue("Email already in use");
+      }
+      return rejectWithValue("Login failed");
+    }
+  }
+);
+
+const logout = createAsyncThunk<void, void, { rejectValue: string }>(
+  "auth/logout",
+  async (_, { rejectWithValue }) => {
+    try {
+      await signOut(auth);
+      Cookies.remove("accessToken");
+    } catch (error) {
+      if (error instanceof FirebaseError) {
+        return rejectWithValue("Logout successfully!");
+      }
+      return rejectWithValue("Login failed");
+    }
+  }
+);
+
+export { login, register, logout };
