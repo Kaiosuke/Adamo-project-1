@@ -1,17 +1,23 @@
 import { Input } from "@/components/ui/input";
+import { Trans, useTranslation } from "react-i18next";
 import { CiMail } from "react-icons/ci";
 
 const ContactSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="main-container">
       <div className="lg:flex lg:justify-between">
         <h2 className=" lg:pr-20 pt-0 ">
-          <span className="text-secondary text-size-4xl">
-            Leave us an email, <br /> to get{" "}
-          </span>
-          <span className="text-primary text-size-4xl">the latest deals</span>
+          <Trans
+            i18nKey={"contact.title"}
+            components={{
+              div: <div className="text-secondary text-size-4xl" />,
+              span: <span className="text-primary text-size-4xl" />,
+            }}
+          />
         </h2>
-        <div className="flex gap-4 lg:pt-0 pt-10 ">
+        <p className="flex gap-4 lg:pt-0 pt-10 ">
           <div className="relative w-[324px] h-[48px]">
             <Input
               placeholder="example@gmail.com"
@@ -24,7 +30,7 @@ const ContactSection = () => {
           <div className="w-[100px] h-[48px] bg-secondary text-third flex items-center justify-center text-sm cursor-pointer hover:bg-secondary/80">
             Send
           </div>
-        </div>
+        </p>
       </div>
     </section>
   );

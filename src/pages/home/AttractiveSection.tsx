@@ -1,10 +1,13 @@
 import ButtonFeature from "@/components/ButtonFeature";
 import Tour from "@/components/Tour";
 import { tourSelector } from "@/redux/selectors/tourSelector";
+import { Trans, useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
 const AttractiveSection = () => {
   const { tours } = useSelector(tourSelector);
+
+  const { t } = useTranslation();
 
   const newTours = tours.slice(1, 4);
 
@@ -12,7 +15,7 @@ const AttractiveSection = () => {
     <section className="main-container">
       <div className="flex">
         <h3 className="text-secondary text-size-4xl">
-          Attractive tour and interesting <br /> experiences
+          <Trans i18nKey={"attractive.title"} ns="home" />
         </h3>
         <div className="ml-auto">
           <ButtonFeature content="View All" />

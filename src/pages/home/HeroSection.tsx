@@ -1,7 +1,10 @@
 import Hero from "@/assets/images/hero.png";
 import SearchTourHome from "@/components/searchList/SearchTourHome";
+import { Trans, useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="sub-2-container">
       <div className="relative flex h-full">
@@ -12,9 +15,11 @@ const HeroSection = () => {
         />
         <div className="flex gap-2 absolute top-[20%] w-full">
           <div className="lg:pt-20 md:pt-12 pt-6 sub-container">
-            <p className="text-size-xl text-banner">Welcome to NgaoduVietnam</p>
+            <p className="text-size-xl text-banner">
+              <Trans i18nKey={"banner.title"} />
+            </p>
             <h1 className="text-size-6xl text-third md:pt-4 pt-2 lg:w-[75%] md:w-[90%] w-[80%]">
-              Perfect place for <br /> your stories
+              <Trans i18nKey={"banner.description"} />
             </h1>
           </div>
         </div>

@@ -1,8 +1,11 @@
 import Home19 from "@/assets/images/home 19.png";
 import Home18 from "@/assets/images/home-18.png";
 import Quote from "@/assets/images/quote.png";
+import { Trans, useTranslation } from "react-i18next";
 
 const IntroduceSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="main-container">
       <div className="flex gap-6 lg:flex-row flex-col h-[100%]">
@@ -18,27 +21,26 @@ const IntroduceSection = () => {
         </div>
 
         <div className="lg:flex-[0_0_50%] flex-[0_0_100%] lg:pt-0 pt-6">
-          <h2 className="text-secondary text-size-4xl lg:pr-20 pt-0">
-            With{" "}
-            <span className="text-primary text-size-4xl">NgaoduVietnam</span>,
-            immerses you in majestic space and unique cultural features
-          </h2>
+          <Trans
+            i18nKey="introduce.title"
+            ns="home"
+            components={{
+              h2: <h2 className="text-secondary text-size-4xl lg:pr-20 pt-0" />,
+              span: <span className="text-primary text-size-4xl" />,
+            }}
+          />
+
           <div className="flex md:gap-8 gap-4  items-start lg:pt-10 md:pt-6 pt-4">
             <img src={Quote} alt="quote" className="object-contain" />
 
             <div className="text-secondary">
-              <p className="">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
-                viverra nuQlla eget sed odio. Vulputate risus faucibus sem non,
-                feugiat nec consequat, montes. Elementum scelerisque phasellus
-                donec lectus ullamcorper faucibus. Malesuada et adipiscing
-                molestie egestas leo ut.
-              </p>
-              <p className="lg:pt-6 md:pt-4 pt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
-                viverra nuQlla eget sed odio. Vulputate risus faucibus sem non,
-                feugiat nec consequat, montes.
-              </p>
+              <Trans
+                i18nKey="introduce.description"
+                ns="home"
+                components={{
+                  p: <p className="lg:pt-6 md:pt-4 pt-2" />,
+                }}
+              />
             </div>
           </div>
         </div>

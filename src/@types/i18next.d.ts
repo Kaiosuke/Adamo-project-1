@@ -5,6 +5,6 @@ declare module "i18next" {
   // Extend CustomTypeOptions
   interface CustomTypeOptions {
     defaultNS: typeof defaultNS;
-    resources: (typeof resources)["vi"];
+    resources: (typeof resources)["en"];
   }
 }

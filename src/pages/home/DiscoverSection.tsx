@@ -1,11 +1,13 @@
 import ButtonFeature from "@/components/ButtonFeature";
 import LoadedImage from "@/components/LoadedImage";
 import { tourSelector } from "@/redux/selectors/tourSelector";
+import { Trans, useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { Link } from "react-router";
 
 const DiscoverSection = () => {
   const { tours } = useSelector(tourSelector);
+  const { t } = useTranslation();
 
   const newTours = tours.slice(2, 6);
 
@@ -13,7 +15,7 @@ const DiscoverSection = () => {
     <section className="main-container">
       <div className="flex">
         <h3 className="text-secondary text-size-4xl">
-          Discover fascinating <br /> destinations
+          <Trans i18nKey={"discover.title"} />
         </h3>
         <div className="ml-auto">
           <ButtonFeature content="View All" />

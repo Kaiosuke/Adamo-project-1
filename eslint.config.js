@@ -24,6 +24,7 @@ export default defineConfig([
     rules: {
       // "no-unused-vars": "warn",
       "no-undef": "warn",
+      "no-undef": "t",
       "react/react-in-jsx-scope": "off",
     },
     settings: {
