@@ -6,6 +6,8 @@ import InputAuth from "@/components/InputAuth";
 import { forgotPasswordSchema } from "@/components/schemas/authSchema";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
+import { useAppDispatch } from "@/redux";
+import { forgotPassword } from "@/api/authRequest";
 
 const ForgotPassword = () => {
   const form = useForm<z.infer<typeof forgotPasswordSchema>>({
@@ -15,8 +17,17 @@ const ForgotPassword = () => {
     },
   });
 
+  const dispatch = useAppDispatch();
+
   function onSubmit(values: z.infer<typeof forgotPasswordSchema>) {
-    console.log(values);
+    (async () => {
+      try {
+        const res = await dispatch(forgotPassword(values.email)).unwrap();
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   }
 
   return (
@@ -24,8 +35,8 @@ const ForgotPassword = () => {
       <div className="flex justify-center items-start flex-col">
         <h1 className="text-size-5xl text-secondary">Forgot Password</h1>
         <div className="pt-4">
-          Enter the e-mail address associated with the account. <br /> We'll
-          e-mail a link to reset your password.
+          Enter the e-mail address associated with the account. <br />{" "}
+          We&apos;ll e-mail a link to reset your password.
         </div>
         <div className="mt-16">
           <Form {...form}>

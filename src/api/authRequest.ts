@@ -4,6 +4,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { FirebaseError } from "firebase/app";
 import {
   createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
   updateProfile,
@@ -83,4 +84,21 @@ const logout = createAsyncThunk<void, void, { rejectValue: string }>(
   }
 );
 
-export { login, register, logout };
+const forgotPassword = createAsyncThunk<
+  string,
+  string,
+  { rejectValue: string }
+>("auth/forgotPassword", async (email, { rejectWithValue }) => {
+  try {
+    await sendPasswordResetEmail(auth, email);
+
+    return "Reset password email sent successfully!";
+  } catch (error) {
+    if (error instanceof FirebaseError) {
+      return rejectWithValue("Logout successfully!");
+    }
+    return rejectWithValue("Login failed");
+  }
+});
+
+export { login, register, logout, forgotPassword };

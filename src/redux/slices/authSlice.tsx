@@ -1,4 +1,4 @@
-import { login, logout, register } from "@/api/authRequest";
+import { forgotPassword, login, logout, register } from "@/api/authRequest";
 import { IAuth } from "@/interfaces/auth";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
@@ -57,6 +57,13 @@ const authSlice = createSlice({
       state.error = undefined;
     });
     build.addCase(logout.rejected, setError);
+
+    build.addCase(forgotPassword.pending, setLoading);
+    build.addCase(forgotPassword.fulfilled, (state: IAuthState) => {
+      state.loading = false;
+      state.error = undefined;
+    });
+    build.addCase(forgotPassword.rejected, setError);
   },
 });
 
