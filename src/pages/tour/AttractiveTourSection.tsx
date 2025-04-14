@@ -3,9 +3,14 @@ import { tourSelector } from "@/redux/selectors/tourSelector";
 import { Trans } from "react-i18next";
 import { useSelector } from "react-redux";
 import FilterTour from "./FilterTour";
+import LoadingItem from "@/components/LoadingList/LoadingItem";
 
 const AttractiveTourSection = () => {
-  const { tours } = useSelector(tourSelector);
+  const { tours, loading } = useSelector(tourSelector);
+
+  if (loading) {
+    return <LoadingItem />;
+  }
 
   return (
     <section className="main-container">
@@ -17,12 +22,15 @@ const AttractiveTourSection = () => {
       </div>
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 lg:pt-16 md:pt-10 pt-6">
-        {tours.length &&
+        {tours.length ? (
           tours.map((tour, index) => (
             <div key={index}>
               <Tour tour={tour} />
             </div>
-          ))}
+          ))
+        ) : (
+          <div className="text-size-2xl text-secondary">Not found Tour</div>
+        )}
       </div>
     </section>
   );

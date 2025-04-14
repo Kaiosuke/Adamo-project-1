@@ -13,12 +13,12 @@ import { useAppDispatch } from "@/redux";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const Tour = () => {
   const dispatch = useAppDispatch();
-  const { filter, loading } = useSelector(tourSelector);
+  const { filter } = useSelector(tourSelector);
   const { location, type, duration, price } = filter;
 
   const { t } = useTranslation("tour");

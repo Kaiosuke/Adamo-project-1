@@ -15,7 +15,6 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router";
 
 import { toast } from "sonner";
-import ToastCom from "@/components/toast/Toast";
 
 const Login = () => {
   const form = useForm<z.infer<typeof signInSchema>>({
@@ -53,9 +52,10 @@ const Login = () => {
       const user = await dispatch(loginByFb()).unwrap();
       if (user) {
         navigate("/");
+        toast.success("Login Success");
       }
     } catch (error) {
-      console.log(error);
+      typeof error === "string" && toast.error(error);
     }
   };
 

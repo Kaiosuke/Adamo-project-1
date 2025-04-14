@@ -1,16 +1,16 @@
 import Hotel from "@/components/Hotel";
-import LoadingPage from "@/components/LoadingList/LoadingPage";
+import LoadingItem from "@/components/LoadingList/LoadingItem";
 import { hotelSelector } from "@/redux/selectors/hotelSelector";
+import { Trans } from "react-i18next";
 import { useSelector } from "react-redux";
 import FilterHotel from "./FilterHotel";
 import SelectHotel from "./SelectHotel";
-import { Trans } from "react-i18next";
 
 const HotelSection = () => {
   const { hotels, loading } = useSelector(hotelSelector);
 
   if (loading) {
-    return <LoadingPage />;
+    return <LoadingItem />;
   }
 
   return (
@@ -26,11 +26,15 @@ const HotelSection = () => {
       </div>
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 lg:pt-16 md:pt-10 pt-6">
-        {hotels.map((hotel, index) => (
-          <div key={index}>
-            <Hotel hotel={hotel} />
-          </div>
-        ))}
+        {hotels.length ? (
+          hotels.map((hotel, index) => (
+            <div key={index}>
+              <Hotel hotel={hotel} />
+            </div>
+          ))
+        ) : (
+          <div className="text-size-2xl text-secondary">Not found Hotel</div>
+        )}
       </div>
     </section>
   );
