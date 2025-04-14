@@ -1,15 +1,40 @@
 import { handleFormatMoney } from "@/helper";
 import { tourSelector } from "@/redux/selectors/tourSelector";
+import { addDays } from "date-fns";
+import { useState } from "react";
+import { DateRange } from "react-day-picker";
 import { CiLocationOn } from "react-icons/ci";
 import { FaCalendarAlt } from "react-icons/fa";
 import { GoPeople } from "react-icons/go";
-import { useSelector } from "react-redux";
-import DateTour from "../dates/DateTour";
+import { useDispatch, useSelector } from "react-redux";
+import DatePickerWithRange from "../DatePickerWithRange";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { LuUsers } from "react-icons/lu";
+import { filterByGuest } from "@/redux/slices/toursSlice";
+import { useTranslation } from "react-i18next";
+
 const BillTourDetail = () => {
-  const { tour } = useSelector(tourSelector);
+  const { tour, filter } = useSelector(tourSelector);
+  const { t } = useTranslation("search");
+
+  const [date, setDate] = useState<DateRange | undefined>({
+    from: addDays(new Date(), 1),
+    to: addDays(new Date(), tour!.duration),
+  });
+
+  const disPatch = useDispatch();
+
+  const { guests } = useSelector(tourSelector);
 
   return (
     <>
@@ -34,14 +59,35 @@ const BillTourDetail = () => {
               </div>
             </div>
 
-            <DateTour />
+            <DatePickerWithRange setDate={setDate} date={date} />
             <div className="w-full h-[64px] bg-third py-2 pl-3 flex items-center gap-4">
-              <GoPeople className="text-primary" />
-              <div className="text-secondary">2 Adults - 1 Children</div>
+              <LuUsers className="text-primary text-size-lg group-hover:text-third" />
+              <Select
+                onValueChange={(value) => {
+                  disPatch(filterByGuest(value));
+                }}
+                value={filter.guest}
+              >
+                <SelectTrigger className="w-full group-hover:text-third">
+                  <SelectValue placeholder={t("tour.guest")} />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    {guests.length &&
+                      guests.map((v, index) => (
+                        <SelectItem value={v} key={index}>
+                          {v}
+                        </SelectItem>
+                      ))}
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-secondary">Total</span>
-              <span className="text-secondary font-semibold">$450.00</span>
+              <span className="text-secondary font-semibold">
+                {handleFormatMoney(tour.duration * tour.price)}
+              </span>
             </div>
             <div className="mt-4">
               <Button variant={"primary"}>Book now</Button>

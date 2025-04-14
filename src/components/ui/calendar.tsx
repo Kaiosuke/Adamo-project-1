@@ -12,7 +12,7 @@ function Calendar({
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
-      className={cn("", className)}
+      className={cn("p-4", className)}
       classNames={{
         ...classNames,
       }}

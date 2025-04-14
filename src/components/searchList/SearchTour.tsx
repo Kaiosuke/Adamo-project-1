@@ -112,7 +112,10 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
           </div>
           <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
             <LuUsers className="text-primary text-size-lg group-hover:text-third" />
-            <Select onValueChange={(value) => handleFilterGuest(value)}>
+            <Select
+              onValueChange={(value) => handleFilterGuest(value)}
+              value={filter.guest}
+            >
               <SelectTrigger className="w-full group-hover:text-third">
                 <SelectValue placeholder={t("tour.guest")} />
               </SelectTrigger>
