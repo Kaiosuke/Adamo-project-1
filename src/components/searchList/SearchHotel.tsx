@@ -17,6 +17,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LuUsers } from "react-icons/lu";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router";
 
 const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const { t } = useTranslation("search");
@@ -94,14 +95,16 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
             </div>
           </div>
           <div className="lg:pt-6 pt-4 mt-auto h-full">
-            <Button
-              variant="primary"
-              className="flex justify-center gap-2 text-third h-[64px]"
-              onClick={handleFilter}
-            >
-              <CiSearch className="text-size-lg " />
-              Search
-            </Button>
+            <Link to="/hotels">
+              <Button
+                variant="primary"
+                className="flex justify-center gap-2 text-third h-[64px]"
+                onClick={handleFilter}
+              >
+                <CiSearch className="text-size-lg " />
+                Search
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

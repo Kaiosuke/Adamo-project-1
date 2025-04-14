@@ -71,6 +71,7 @@ const Tour = () => {
         title={t("banner.title")}
         des={t("banner.description")}
       />
+      <PdSub />
       <BreadcrumbCom links={[{ title: "home", href: "/" }]} current="tours" />
       <PdSub />
       <AttractiveTourSection />

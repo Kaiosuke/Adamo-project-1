@@ -9,7 +9,7 @@ const HeroSection = () => {
         <img
           src={Hero}
           alt="hero-image"
-          className="w-full h-[730px] object-cover"
+          className="w-full h-[726px] object-cover"
         />
         <div className="flex gap-2 absolute top-[20%] w-full">
           <div className="lg:pt-20 md:pt-12 pt-6 sub-container">
@@ -22,12 +22,12 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="absolute -bottom-1 flex w-full items-end ">
-          <div className="bg-third py-6 h-fit w-full xl:px-46 lg:px-26 md:px-12 sm:px-8 px-4">
+          <div className="bg-third h-[100px] flex flex-col gap-2 justify-center items-start w-full xl:px-46 lg:px-26 md:px-12 sm:px-8 px-4">
             <div className="text-size-base font-semibold flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary"></div>
               Featured
             </div>
-            <div className="flex sm:items-center sm:flex-row flex-col justify-between items-start sm:gap-0 gap-1">
+            <div className="flex w-full sm:items-center sm:flex-row flex-col justify-between items-start sm:gap-0 gap-1">
               <div className="flex items-end gap-1">
                 <span className="text-size-xl font-bold">200+</span>
                 <span>tours</span>
