@@ -1,17 +1,18 @@
+import { getLocationHotels } from "@/api/hotelRequest";
+import { getAllTour, getFilters } from "@/api/tourRequest";
+import LoadingPage from "@/components/LoadingPage";
 import PdMain from "@/components/PdMain";
 import { useAppDispatch } from "@/redux";
+import { tourSelector } from "@/redux/selectors/tourSelector";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import AttractiveSection from "./AttractiveSection";
 import ContactSection from "./ContactSection";
 import DiscoverSection from "./DiscoverSection";
 import HeroSection from "./HeroSection";
 import IntroduceSection from "./IntroduceSection";
 import TraditionalSection from "./Traditional";
-import { getLocationHotels } from "@/api/hotelRequest";
-import { getAllTour, getFilters } from "@/api/tourRequest";
-import LoadingPage from "@/components/LoadingPage";
-import { tourSelector } from "@/redux/selectors/tourSelector";
-import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -29,6 +30,8 @@ const Home = () => {
       }
     })();
   }, []);
+
+  const { t } = useTranslation();
 
   if (loading) {
     return <LoadingPage />;

@@ -1,11 +1,9 @@
 import Home19 from "@/assets/images/home 19.png";
 import Home18 from "@/assets/images/home-18.png";
 import Quote from "@/assets/images/quote.png";
-import { Trans, useTranslation } from "react-i18next";
+import { Trans } from "react-i18next";
 
 const IntroduceSection = () => {
-  const { t } = useTranslation();
-
   return (
     <section className="main-container">
       <div className="flex gap-6 lg:flex-row flex-col h-[100%]">

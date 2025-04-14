@@ -1,5 +1,6 @@
 import Tour from "@/components/Tour";
 import { tourSelector } from "@/redux/selectors/tourSelector";
+import { Trans } from "react-i18next";
 import { useSelector } from "react-redux";
 import FilterTour from "./FilterTour";
 
@@ -10,7 +11,7 @@ const AttractiveTourSection = () => {
     <section className="main-container">
       <div className="flex justify-between ">
         <h2 className="text-size-4xl text-secondary">
-          Attractive tour and interesting <br /> experiences
+          <Trans i18nKey={"attractiveTour.title"} ns="tour" />
         </h2>
         <FilterTour />
       </div>

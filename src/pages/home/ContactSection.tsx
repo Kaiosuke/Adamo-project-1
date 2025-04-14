@@ -1,26 +1,20 @@
-import { Trans, useTranslation } from "react-i18next";
-import { CiMail } from "react-icons/ci";
+import { Trans } from "react-i18next";
 
+import { sendMailSchema } from "@/components/schemas/authSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { sendMailSchema } from "@/components/schemas/authSchema";
 
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
 const ContactSection = () => {
-  const { t } = useTranslation();
-
   const form = useForm<z.infer<typeof sendMailSchema>>({
     resolver: zodResolver(sendMailSchema),
     defaultValues: {

@@ -9,6 +9,7 @@ import FormContact from "@/components/forms/FormContact";
 import { contactSchema } from "@/components/schemas/contactSchema";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
+import { Trans } from "react-i18next";
 
 const ContactSection = () => {
   const form = useForm<z.infer<typeof contactSchema>>({
@@ -28,13 +29,13 @@ const ContactSection = () => {
   return (
     <section className="main-container">
       <div className="flex gap-10 lg:flex-row flex-col-reverse">
-        <div className="flex-[1_0_auto] flex flex-col justify-between">
+        <div className="flex-[1_0_40%] flex flex-col justify-between">
           <div>
             <h2 className="text-secondary text-size-4xl">
-              We&apos;d love to hear from you
+              <Trans i18nKey={"contact.title"} ns="contact" />
             </h2>
             <div className="text-four mt-10">
-              Send us a message and we&apos;ll respond as soon as possible
+              <Trans i18nKey={"contact.description"} ns="contact" />
             </div>
           </div>
           <Form {...form}>
@@ -66,7 +67,7 @@ const ContactSection = () => {
             </form>
           </Form>
         </div>
-        <div className="w-[full relative">
+        <div className="flex-[0_0_60%] max-w-[543px] relative">
           <img
             src={OurOffice}
             alt="our office"

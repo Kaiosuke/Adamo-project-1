@@ -1,10 +1,8 @@
 import Hero from "@/assets/images/hero.png";
 import SearchTourHome from "@/components/searchList/SearchTourHome";
-import { Trans, useTranslation } from "react-i18next";
+import { Trans } from "react-i18next";
 
 const HeroSection = () => {
-  const { t } = useTranslation();
-
   return (
     <section className="sub-2-container">
       <div className="relative flex h-full">
@@ -24,7 +22,7 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="absolute -bottom-1 flex w-full items-end ">
-          <div className="bg-third py-6 h-fit w-full xl:px-28 lg:px-20 md:px-12 sm:px-8 px-4">
+          <div className="bg-third py-6 h-fit w-full xl:px-46 lg:px-26 md:px-12 sm:px-8 px-4">
             <div className="text-size-base font-semibold flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary"></div>
               Featured

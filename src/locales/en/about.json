@@ -1,0 +1,15 @@
+{
+  "banner": {
+    "title": "About"
+  },
+  "introduce": {
+    "title": "<h2>With <span>NgaoduVietnam</span>, immerses you in majestic space and unique cultural features</h2>",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purusviverra nuQlla eget sed odio. Vulputate risus faucibus sem non,feugiat nec consequat, montes. Elementum scelerisque phasellusdonec lectus ullamcorper faucibus. Malesuada et adipiscingmolestie egestas leo ut.<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purusviverra nuQlla eget sed odio. Vulputate risus faucibus sem non,feugiat nec consequat, montes. </p>"
+  },
+  "traditional": {
+    "title": "Experience the traditional <br/>  cultural beauties of Vietnam",
+    "passage1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purusviverra nuQlla eget sed odio. Vulputate risus faucibus sem non,feugiat nec consequat, montes. Elementum scelerisque phasellusdonec lectus ullamcorper faucibus. Malesuada et adipiscingmolestie egestas leo ut.",
+    "passage2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purusviverra nuQlla eget sed odio. Vulputate risus faucibus sem non,feugiat nec consequat, montes. Elementum scelerisque phasellusdonec lectus ullamcorper faucibus. Malesuada et adipiscingmolestie egestas leo ut.",
+    "passage3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purusviverra nuQlla eget sed odio. Vulputate risus faucibus sem non,feugiat nec consequat, montes. Elementum scelerisque phasellusdonec lectus ullamcorper faucibus. Malesuada et adipiscingmolestie egestas leo ut."
+  }
+}

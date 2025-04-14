@@ -1,0 +1,20 @@
+{
+  "tour": {
+    "title": "Chuyến du lịch",
+    "description": "Khám phá Việt Nam tươi đẹp",
+    "location": "Địa điểm",
+    "departure": "Thời gian khởi hành",
+    "type": "Thể loại",
+    "guest": "Số lượng khách",
+    "search": "Tìm kiếm"
+  },
+  "hotel": {
+    "title": "Khách sạn",
+    "description": "Khám phá Việt Nam tươi đẹp",
+    "location": "Địa điểm",
+    "departure": "Thời gian khởi hành",
+    "type": "Thể loại",
+    "guest": "Số lượng khách",
+    "search": "Tìm kiếm"
+  }
+}

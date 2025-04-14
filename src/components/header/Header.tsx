@@ -47,7 +47,7 @@ const Header = () => {
       } ${isScroll && scrollDir === "down" ? "translate-y-[-1000px]" : ""}`}
     >
       <div
-        className={`main-container  flex items-center relative ${
+        className={`main-container flex items-center relative ${
           isScroll ? "pt-0" : "pt-4"
         }`}
       >

@@ -21,6 +21,7 @@ import DatePickerSingle from "../DatePickerSingle";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import { useState } from "react";
 import { Link } from "react-router";
+import { useTranslation } from "react-i18next";
 
 const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
   const { locations, guests, types, filter } = useSelector(tourSelector);
@@ -41,6 +42,8 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
     dispatch(filterByType(typeFilter));
   };
 
+  const { t } = useTranslation("search");
+
   return (
     <div
       className={`w-full bg-third/80 ${
@@ -50,7 +53,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
       }`}
     >
       <div className="lg:px-8 lg:py-8 px-6 py-6">
-        <p className="text-size-2xl">Discover beautiful Vietnam</p>
+        <p className="text-size-2xl">{t("tour.description")}</p>
         <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
           <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
             <FaMapMarkerAlt className="text-primary text-size-lg group-hover:text-third" />
@@ -59,7 +62,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
               onValueChange={(value) => setLocationFilter(value)}
             >
               <SelectTrigger className="w-full group-hover:text-third ">
-                <SelectValue placeholder="Location" className="" />
+                <SelectValue placeholder={t("tour.location")} />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
@@ -93,7 +96,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
               }
             >
               <SelectTrigger className="w-full group-hover:text-third ">
-                <SelectValue placeholder="Type of Tour" />
+                <SelectValue placeholder={t("tour.type")} />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
@@ -111,7 +114,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
             <LuUsers className="text-primary text-size-lg group-hover:text-third" />
             <Select onValueChange={(value) => handleFilterGuest(value)}>
               <SelectTrigger className="w-full group-hover:text-third">
-                <SelectValue placeholder="Number of guests" />
+                <SelectValue placeholder={t("tour.guest")} />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
@@ -134,7 +137,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
               onClick={handleFilter}
             >
               <CiSearch className="text-size-lg" />
-              Search
+              {t("tour.search")}
             </Button>
           </Link>
         </div>

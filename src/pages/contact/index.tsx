@@ -4,8 +4,11 @@ import MapCom from "@/components/MapCom";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import ContactSection from "./ContactSection";
+import { Trans, useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <section className="w-full max-w-[1600px] m-auto">
@@ -18,7 +21,7 @@ const Contact = () => {
           <div className="flex gap-2 absolute top-[50%] -translate-y-[50%] w-full">
             <div className="lg:pt-20 md:pt-12 pt-6 sub-container">
               <h1 className="text-size-6xl text-third md:pt-4 pt-2 lg:w-[45%] md:w-[90%] w-[80%]">
-                Contact Us
+                <Trans i18nKey={"banner.title"} ns="contact" />
               </h1>
             </div>
           </div>

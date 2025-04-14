@@ -1,8 +1,9 @@
 import Home19 from "@/assets/images/home 19.png";
 import Home18 from "@/assets/images/home-18.png";
+import Pagoda from "@/assets/images/pagoda.png";
 import Quote from "@/assets/images/quote.png";
 import PdMain from "@/components/PdMain";
-import Pagoda from "@/assets/images/pagoda.png";
+import { Trans } from "react-i18next";
 
 const IntroduceSection = () => {
   return (
@@ -20,27 +21,26 @@ const IntroduceSection = () => {
         </div>
 
         <div className="lg:flex-[0_0_50%] flex-[0_0_100%] lg:pt-0 pt-6">
-          <h2 className="text-secondary text-size-4xl lg:pr-20 pt-0">
-            With{" "}
-            <span className="text-primary text-size-4xl">NgaoduVietnam</span>,
-            immerses you in majestic space and unique cultural features
-          </h2>
+          <Trans
+            i18nKey="introduce.title"
+            ns="about"
+            components={{
+              h2: <h2 className="text-secondary text-size-4xl lg:pr-20 pt-0" />,
+              span: <span className="text-primary text-size-4xl" />,
+            }}
+          />
+
           <div className="flex md:gap-8 gap-4  items-start lg:pt-10 md:pt-6 pt-4">
             <img src={Quote} alt="quote" className="object-contain" />
 
             <div className="text-secondary">
-              <p className="">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
-                viverra nuQlla eget sed odio. Vulputate risus faucibus sem non,
-                feugiat nec consequat, montes. Elementum scelerisque phasellus
-                donec lectus ullamcorper faucibus. Malesuada et adipiscing
-                molestie egestas leo ut.
-              </p>
-              <p className="lg:pt-6 md:pt-4 pt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
-                viverra nuQlla eget sed odio. Vulputate risus faucibus sem non,
-                feugiat nec consequat, montes.
-              </p>
+              <Trans
+                i18nKey="introduce.description"
+                ns="about"
+                components={{
+                  p: <p className="lg:pt-6 md:pt-4 pt-2" />,
+                }}
+              />
             </div>
           </div>
         </div>
@@ -50,24 +50,23 @@ const IntroduceSection = () => {
       <PdMain />
       <div className="flex gap-10 lg:flex-row flex-col-reverse">
         <div className="lg:flex-[0_0_50%] flex-[0_0_100%] lg:pt-0 pt-6">
-          <h2 className="text-secondary text-size-4xl lg:pr-20 pt-0">
-            With <span className="text-primary">NgaoduVietnam</span>, immerses
-            you in majestic space and unique cultural features
-          </h2>
+          <Trans
+            i18nKey="introduce.title"
+            ns="about"
+            components={{
+              h2: <h2 className="text-secondary text-size-4xl lg:pr-20 pt-0" />,
+              span: <span className="text-primary text-size-4xl" />,
+            }}
+          />
           <div className="flex md:gap-8 gap-4 items-start lg:pt-10 md:pt-6 pt-4 lg: w-[80%]">
             <div className="text-secondary">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
-                viverra nuQlla eget sed odio. Vulputate risus faucibus sem non,
-                feugiat nec consequat, montes. Elementum scelerisque phasellus
-                donec lectus ullamcorper faucibus. Malesuada et adipiscing
-                molestie egestas leo ut.
-              </p>
-              <p className="lg:pt-6 md:pt-4 pt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
-                viverra nuQlla eget sed odio. Vulputate risus faucibus sem non,
-                feugiat nec consequat, montes.
-              </p>
+              <Trans
+                i18nKey="introduce.description"
+                ns="about"
+                components={{
+                  p: <p className="lg:pt-6 md:pt-4 pt-2" />,
+                }}
+              />
             </div>
           </div>
         </div>

@@ -14,11 +14,14 @@ import { tourSelector } from "@/redux/selectors/tourSelector";
 
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const Tour = () => {
   const dispatch = useAppDispatch();
   const { filter, loading } = useSelector(tourSelector);
   const { location, type, duration, price } = filter;
+
+  const { t } = useTranslation("tour");
 
   const totalData = JSON.parse(localStorage.getItem("totalTour") || "0");
 
@@ -65,8 +68,8 @@ const Tour = () => {
       <HeroSectionCom
         image={TourImg}
         Tour={<SearchTour />}
-        title="Search hundreds of tours and more"
-        des="Attractive tour and interesting experiences"
+        title={t("banner.title")}
+        des={t("banner.description")}
       />
       <BreadcrumbCom links={[{ title: "home", href: "/" }]} current="tours" />
       <PdSub />

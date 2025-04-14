@@ -12,8 +12,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { LuUsers } from "react-icons/lu";
+import { useTranslation } from "react-i18next";
 
 const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
+  const { t } = useTranslation();
+
   return (
     <div
       className={`bg-third/80 lg:block hidden ${

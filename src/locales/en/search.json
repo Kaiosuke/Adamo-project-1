@@ -1,0 +1,20 @@
+{
+  "tour": {
+    "title": "Tours",
+    "description": "Discover beautiful Vietnam",
+    "location": "location",
+    "departure": "Departure time",
+    "type": "Type of Tour",
+    "guest": "Number of guests",
+    "search": "search"
+  },
+  "hotel": {
+    "title": "Hotel",
+    "description": "Discover beautiful Vietnam",
+    "location": "location",
+    "departure": "Departure time",
+    "type": "Type of Tour",
+    "guest": "Number of guests",
+    "search": "search"
+  }
+}
