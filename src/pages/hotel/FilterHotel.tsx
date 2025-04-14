@@ -7,16 +7,69 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 import { Checkbox } from "@/components/ui/checkbox";
 
-import SliderCom from "@/components/Slider";
 import { Button } from "@/components/ui/button";
+import { hotelSelector } from "@/redux/selectors/hotelSelector";
+import {
+  filterByPrice,
+  filterByScore,
+  filterByStar,
+} from "@/redux/slices/hotelsSlice";
+
+import { useState } from "react";
 import { FaStar } from "react-icons/fa6";
+import { useDispatch, useSelector } from "react-redux";
+import { useDebouncedCallback } from "use-debounce";
+import { Slider } from "@/components/ui/slider";
+import { Label } from "@/components/ui/label";
+
+const starList = ["1", "2", "3", "4", "5"];
+const scoreList = [
+  {
+    title: "Wonderful : 9.5+",
+    score: "9.5",
+  },
+  {
+    title: "Very Good : 9+",
+    score: "9",
+  },
+  {
+    title: "Good : 8+",
+    score: "8",
+  },
+  {
+    title: "Pleasant : 7+",
+    score: "7",
+  },
+];
 
 const FilterHotel = () => {
+  const { filter } = useSelector(hotelSelector);
+
+  const { price, star, score } = filter;
+
+  const [prices, setPrices] = useState(price);
+
+  const [starHotel, setStarHotel] = useState(star);
+  const [scoreHotel, setScoreHotel] = useState(score);
+
+  const dispatch = useDispatch();
+
+  const handleFilter = useDebouncedCallback(() => {
+    dispatch(filterByStar(starHotel));
+    dispatch(filterByPrice(prices));
+    dispatch(filterByScore(scoreHotel));
+  }, 1000);
+
+  const handleResetFilter = () => {
+    setStarHotel([1, 2, 3, 4, 5]);
+    setScoreHotel(0);
+    setPrices([0, 300]);
+  };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -27,14 +80,28 @@ const FilterHotel = () => {
           <span className="text-[#03387D] text-size-lg font-semibold">
             FILTER:
           </span>
-          <span className="text-five cursor-pointer hover:underline">
+          <span
+            className="text-five cursor-pointer hover:underline"
+            onClick={handleResetFilter}
+          >
             CLEAR
           </span>
         </DropdownMenuLabel>
         <div>
           <span className="text-secondary font-bold">Budget:</span>
           <div className="lg:mt-10 mt-6">
-            <SliderCom />
+            <div className="relative">
+              <Slider
+                value={prices}
+                max={300}
+                step={1}
+                onValueChange={(e) => setPrices(e)}
+              />
+              <div className="absolute -top-[30px]">${prices[0]}</div>
+              <div className="absolute -top-[30px] right-[10px]">
+                ${prices[1]}
+              </div>
+            </div>
           </div>
         </div>
         <div className="str-line" />
@@ -42,112 +109,77 @@ const FilterHotel = () => {
           <span className="text-secondary font-bold">Hotel star</span>
           <div className="mt-4">
             <RadioGroup defaultValue="option-one">
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem
-                  value="option-one"
-                  id="option-one"
-                  className="rounded-sm"
-                />
-                <Label htmlFor="option-one">
-                  <FaStar className="text-nine" />
-                  <FaStar className="text-nine" />
-                  <FaStar className="text-nine" />
-                  <FaStar className="text-nine" />
-                  <FaStar className="text-nine" />
-                </Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem
-                  value="option-two"
-                  id="option-two"
-                  className="rounded-sm"
-                />
-                <Label htmlFor="option-two">
-                  <FaStar className="text-nine" />
-                  <FaStar className="text-nine" />
-                  <FaStar className="text-nine" />
-                  <FaStar className="text-nine" />
-                </Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem
-                  value="option-three"
-                  id="option-three"
-                  className="rounded-sm"
-                />
-                <Label htmlFor="option-three">
-                  <FaStar className="text-nine" />
-                  <FaStar className="text-nine" />
-                  <FaStar className="text-nine" />
-                </Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem
-                  value="option-four"
-                  id="option-four"
-                  className="rounded-sm"
-                />
-                <Label htmlFor="option-four">
-                  <FaStar className="text-nine" />
-                  <FaStar className="text-nine" />
-                </Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem
-                  value="option-four"
-                  id="option-four"
-                  className="rounded-sm"
-                />
-                <Label htmlFor="option-four">
-                  <FaStar className="text-nine" />
-                </Label>
-              </div>
+              {starList.map((v, index) => (
+                <div className="mt-4 flex items-center gap-2" key={index}>
+                  <Checkbox
+                    id={v}
+                    checked={starHotel.includes(Number(v))}
+                    onCheckedChange={(checked) => {
+                      if (checked) {
+                        setStarHotel((prev) => [...prev, Number(v)]);
+                      } else {
+                        setStarHotel((prev) =>
+                          prev.filter((value) => Number(value) !== Number(v))
+                        );
+                      }
+                    }}
+                  />
+                  <label
+                    htmlFor={v}
+                    className="flex gap-2 text-sm text-secondary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    {Array.from({ length: Number(v) }).map((_, index) => (
+                      <FaStar className="text-nine" key={index} />
+                    ))}
+                  </label>
+                </div>
+              ))}
             </RadioGroup>
           </div>
         </div>
         <div className="str-line" />
         <div>
-          <span className="text-secondary font-bold">Review Score</span>
-          <div className="flex flex-col">
-            <div className="mt-4 flex items-center gap-2">
-              <Checkbox id="terms" />
-              <label
-                htmlFor="terms"
-                className="text-sm text-secondary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          <div>
+            <span className="text-secondary font-bold">Review Score</span>
+            <div className="mt-4">
+              <RadioGroup
+                value={String(scoreHotel)}
+                onValueChange={(v) => setScoreHotel(Number(v))}
               >
-                Wonderful : 9.5+
-              </label>
-            </div>
-            <div className="mt-4 flex items-center gap-2">
-              <Checkbox id="2" />
-              <label
-                htmlFor="2"
-                className="text-sm text-secondary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Very Good : 9+
-              </label>
-            </div>
-            <div className="mt-4 flex items-center gap-2">
-              <Checkbox id="3" />
-              <label
-                htmlFor="3"
-                className="text-sm text-secondary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Good : 8+
-              </label>
-            </div>
-            <div className="mt-4 flex items-center gap-2">
-              <Checkbox id="4" />
-              <label
-                htmlFor="4"
-                className="text-sm text-secondary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Pleasant : 7+
-              </label>
+                {scoreList.map((v, index) => (
+                  <div className="mt-4 flex items-center gap-2" key={index}>
+                    <RadioGroupItem
+                      value={v.score}
+                      id={v.title}
+                      className="rounded-sm"
+                    />
+
+                    <Label
+                      htmlFor={v.title}
+                      className="text-sm text-secondary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      {v.title}
+                    </Label>
+                  </div>
+                ))}
+              </RadioGroup>
             </div>
           </div>
+          {/* <span className="text-secondary font-bold">Review Score</span>
+          <div className="flex flex-col">
+            {scoreList.map((v, index) => (
+              <div className="mt-4 flex items-center gap-2" key={index}>
+                <Checkbox
+                  value={v.score}
+                  id={v.title}
+                  onChange={(v) => setScoreHotel(Number(v))}
+                />
+            
+              </div>
+            ))}
+          </div> */}
         </div>
-        <div className="py-4">
+        <div className="py-4" onClick={handleFilter}>
           <Button variant={"primary"} size={"third"} className="h-[48px] ">
             Apply Filter
           </Button>

@@ -1,4 +1,4 @@
-import { getFilters, getAllTour, getTourById } from "@/api/tourRequest";
+import { getAllTour, getFiltersTour, getTourById } from "@/api/tourRequest";
 import { ITour } from "@/interfaces/tour";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
@@ -94,9 +94,9 @@ const toursSlice = createSlice({
     );
     build.addCase(getTourById.rejected, setError);
 
-    build.addCase(getFilters.pending, setLoading);
+    build.addCase(getFiltersTour.pending, setLoading);
     build.addCase(
-      getFilters.fulfilled,
+      getFiltersTour.fulfilled,
       (
         state: ITourState,
         action: PayloadAction<{
@@ -117,7 +117,7 @@ const toursSlice = createSlice({
         state.durations = durations;
       }
     );
-    build.addCase(getFilters.rejected, setError);
+    build.addCase(getFiltersTour.rejected, setError);
   },
 });
 

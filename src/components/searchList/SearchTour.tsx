@@ -69,7 +69,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
                   {locations.length &&
                     locations.map((v, index) => (
                       <SelectItem value={v} key={index}>
-                        {v}
+                        {v.length < 2 ? "All" : v}
                       </SelectItem>
                     ))}
                 </SelectGroup>

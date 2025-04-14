@@ -1,8 +1,4 @@
-import {
-  getAllHotel,
-  getHotelById,
-  getLocationHotels,
-} from "@/api/hotelRequest";
+import { getAllHotel, getFiltersHotel, getHotelById } from "@/api/hotelRequest";
 import { IHotel } from "@/interfaces/hotel";
 
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
@@ -11,7 +7,16 @@ export interface IHotelState {
   error: string | boolean | undefined;
   loading: boolean;
   hotels: IHotel[];
+  guests: string[];
   locations: string[];
+  filter: {
+    location: string;
+    star: number[];
+    guest: string;
+    score: number;
+    sort: string;
+    price: number[];
+  };
   hotel: IHotel | null;
 }
 
@@ -19,8 +24,17 @@ const initialState: IHotelState = {
   error: false,
   loading: true,
   hotels: [],
+  guests: [],
   locations: [],
   hotel: null,
+  filter: {
+    location: "",
+    star: [1, 2, 3, 4, 5],
+    guest: "",
+    sort: "price-asc",
+    score: 0,
+    price: [0, 300],
+  },
 };
 
 const setLoading = (state: IHotelState) => {
@@ -39,7 +53,26 @@ const setError = (
 const hotelsSlice = createSlice({
   initialState,
   name: "Hotel",
-  reducers: {},
+  reducers: {
+    filterByLocation: (state: IHotelState, action: PayloadAction<string>) => {
+      state.filter.location = action.payload;
+    },
+    filterByStar: (state: IHotelState, action: PayloadAction<number[]>) => {
+      state.filter.star = action.payload;
+    },
+    filterByScore: (state: IHotelState, action: PayloadAction<number>) => {
+      state.filter.score = action.payload;
+    },
+    filterByPrice: (state: IHotelState, action: PayloadAction<number[]>) => {
+      state.filter.price = action.payload;
+    },
+    filterByGuest: (state: IHotelState, action: PayloadAction<string>) => {
+      state.filter.guest = action.payload;
+    },
+    filterBySort: (state: IHotelState, action: PayloadAction<string>) => {
+      state.filter.sort = action.payload;
+    },
+  },
   extraReducers: (build) => {
     build.addCase(getAllHotel.pending, setLoading);
     build.addCase(
@@ -63,17 +96,33 @@ const hotelsSlice = createSlice({
     );
     build.addCase(getHotelById.rejected, setError);
 
-    build.addCase(getLocationHotels.pending, setLoading);
+    build.addCase(getFiltersHotel.pending, setLoading);
     build.addCase(
-      getLocationHotels.fulfilled,
-      (state: IHotelState, action: PayloadAction<string[]>) => {
+      getFiltersHotel.fulfilled,
+      (
+        state: IHotelState,
+        action: PayloadAction<{
+          locations: string[];
+          guests: string[];
+        }>
+      ) => {
         state.loading = false;
         state.error = false;
-        state.locations = action.payload;
+        state.locations = action.payload.locations;
+        state.guests = action.payload.guests;
       }
     );
-    build.addCase(getLocationHotels.rejected, setError);
+    build.addCase(getFiltersHotel.rejected, setError);
   },
 });
 
 export default hotelsSlice.reducer;
+
+export const {
+  filterByGuest,
+  filterByLocation,
+  filterByPrice,
+  filterByStar,
+  filterBySort,
+  filterByScore,
+} = hotelsSlice.actions;

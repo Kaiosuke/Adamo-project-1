@@ -1,10 +1,11 @@
-import { getLocationHotels } from "@/api/hotelRequest";
-import { getAllTour, getFilters } from "@/api/tourRequest";
+import { getFiltersHotel } from "@/api/hotelRequest";
+import { getAllTour, getFiltersTour } from "@/api/tourRequest";
 import LoadingPage from "@/components/LoadingPage";
 import PdMain from "@/components/PdMain";
 import { useAppDispatch } from "@/redux";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import AttractiveSection from "./AttractiveSection";
 import ContactSection from "./ContactSection";
@@ -12,7 +13,6 @@ import DiscoverSection from "./DiscoverSection";
 import HeroSection from "./HeroSection";
 import IntroduceSection from "./IntroduceSection";
 import TraditionalSection from "./Traditional";
-import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -22,8 +22,8 @@ const Home = () => {
   useEffect(() => {
     (async () => {
       try {
-        await dispatch(getFilters());
-        await dispatch(getLocationHotels());
+        await dispatch(getFiltersTour());
+        await dispatch(getFiltersHotel());
         await dispatch(getAllTour({}));
       } catch (error) {
         console.log(error);

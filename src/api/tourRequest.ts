@@ -11,7 +11,7 @@ const getAllTour = createAsyncThunk<
     durations?: string;
     price?: number[];
     start?: number;
-    limit?: string;
+    limit?: number;
   },
   { rejectValue: string }
 >(
@@ -74,7 +74,7 @@ const getTourById = createAsyncThunk<
   }
 });
 
-const getFilters = createAsyncThunk<
+const getFiltersTour = createAsyncThunk<
   {
     locations: string[];
     types: string[];
@@ -83,7 +83,7 @@ const getFilters = createAsyncThunk<
   },
   void,
   { rejectValue: string }
->("tour/filers", async (_, { rejectWithValue }) => {
+>("tour/filer", async (_, { rejectWithValue }) => {
   try {
     const getLocations = async () => {
       try {
@@ -149,4 +149,4 @@ const getFilters = createAsyncThunk<
   }
 });
 
-export { getAllTour, getTourById, getFilters };
+export { getAllTour, getTourById, getFiltersTour };

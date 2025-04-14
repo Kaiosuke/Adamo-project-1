@@ -1,10 +1,9 @@
-import PaginationWithShow from "../../components/paginations/PaginationWithShow";
-import SelectHotel from "./SelectHotel";
-import FilterHotel from "./FilterHotel";
 import Hotel from "@/components/Hotel";
-import { useSelector } from "react-redux";
-import { hotelSelector } from "@/redux/selectors/hotelSelector";
 import LoadingPage from "@/components/LoadingPage";
+import { hotelSelector } from "@/redux/selectors/hotelSelector";
+import { useSelector } from "react-redux";
+import FilterHotel from "./FilterHotel";
+import SelectHotel from "./SelectHotel";
 
 const HotelSection = () => {
   const { hotels, loading } = useSelector(hotelSelector);
@@ -30,8 +29,6 @@ const HotelSection = () => {
           </div>
         ))}
       </div>
-
-      <PaginationWithShow />
     </section>
   );
 };

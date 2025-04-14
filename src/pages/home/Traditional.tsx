@@ -10,8 +10,6 @@ const TraditionalSection = () => {
 
   const newTours = tours.slice(0, 3);
 
-  console.log(newTours);
-
   return (
     <section className="main-container">
       <div className="flex">

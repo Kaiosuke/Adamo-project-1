@@ -4,7 +4,7 @@ import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import AttractiveTourSection from "./AttractiveTourSection";
 
-import { getAllTour, getFilters } from "@/api/tourRequest";
+import { getAllTour, getFiltersTour } from "@/api/tourRequest";
 import TourImg from "@/assets/images/hero-tour.png";
 import HeroSectionCom from "@/components/HeroSectionCom";
 import PaginationWithShow from "@/components/paginations/PaginationWithShow";
@@ -29,14 +29,14 @@ const Tour = () => {
   const ITEMS_PER_PAGE = 4;
 
   const [currentPage, setCurrentPage] = useState(() => {
-    const saved = localStorage.getItem("currentPage");
+    const saved = localStorage.getItem("currentPageTour");
     return saved ? Number(saved) : 0;
   });
 
   useEffect(() => {
     (async () => {
       try {
-        await dispatch(getFilters());
+        await dispatch(getFiltersTour());
       } catch (error) {
         console.log(error);
       }
@@ -82,7 +82,7 @@ const Tour = () => {
         totalData={totalData}
         onPageChange={(e) => {
           setCurrentPage(e);
-          localStorage.setItem("currentPage", e.toLocaleString());
+          localStorage.setItem("currentPageTour", e.toLocaleString());
         }}
       />
       <PdMain />
