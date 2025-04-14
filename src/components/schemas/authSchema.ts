@@ -44,9 +44,14 @@ const forgotPasswordSchema = z.object({
   email: z.string().email({ message: "Invalid Email" }),
 });
 
+const sendMailSchema = z.object({
+  email: z.string().email({ message: "Invalid Email" }),
+});
+
 export {
   signInSchema,
   registerSchema,
   newPasswordSchema,
   forgotPasswordSchema,
+  sendMailSchema,
 };
