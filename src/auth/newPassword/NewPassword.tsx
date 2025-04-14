@@ -7,9 +7,13 @@ import InputAuth from "@/components/InputAuth";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { FaFacebook } from "react-icons/fa6";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useAppDispatch } from "@/redux";
 import { changePassword } from "@/api/authRequest";
+import { useSelector } from "react-redux";
+import { authSelector } from "@/redux/selectors/authSelector";
+import LoadingBtn from "@/components/LoadingList/LoadingBtn";
+import { toast } from "sonner";
 
 const NewPassword = () => {
   const form = useForm<z.infer<typeof newPasswordSchema>>({
@@ -20,17 +24,26 @@ const NewPassword = () => {
     },
   });
 
+  const { loading, currentUser } = useSelector(authSelector);
+
   const dispatch = useAppDispatch();
 
   function onSubmit(values: z.infer<typeof newPasswordSchema>) {
     (async () => {
       try {
-        const res = await dispatch(changePassword(values.password)).unwrap();
-        console.log(res);
+        await dispatch(changePassword(values.password)).unwrap();
+        form.reset();
+        toast.success("Change Password success");
       } catch (error) {
-        console.log(error);
+        typeof error === "string" && toast.error(error);
       }
     })();
+  }
+
+  const navigate = useNavigate();
+
+  if (currentUser) {
+    navigate("/");
   }
 
   return (
@@ -57,13 +70,22 @@ const NewPassword = () => {
                 type="password"
               />
               <div className="text-right">
-                <Link to="#!" className="text-four text-base">
+                <Link
+                  to="/auth/forgot-password"
+                  className="text-four text-base"
+                >
                   Forgot Password?
                 </Link>
               </div>
               <div className="flex flex-col gap-6 mt-6">
                 <Button variant={"primary"} type="submit">
-                  Change Password
+                  {loading ? (
+                    <>
+                      <LoadingBtn />
+                    </>
+                  ) : (
+                    "Change password"
+                  )}
                 </Button>
                 <Button variant={"six"} type="button">
                   <span>

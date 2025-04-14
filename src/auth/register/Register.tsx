@@ -10,6 +10,10 @@ import { FaFacebook } from "react-icons/fa6";
 import { Link } from "react-router";
 import { useAppDispatch } from "@/redux";
 import { register } from "@/api/authRequest";
+import { useSelector } from "react-redux";
+import { authSelector } from "@/redux/selectors/authSelector";
+import LoadingBtn from "@/components/LoadingList/LoadingBtn";
+import { toast } from "sonner";
 
 const Login = () => {
   const form = useForm<z.infer<typeof registerSchema>>({
@@ -25,6 +29,8 @@ const Login = () => {
 
   const dispatch = useAppDispatch();
 
+  const { loading } = useSelector(authSelector);
+
   function onSubmit(values: z.infer<typeof registerSchema>) {
     (async () => {
       try {
@@ -36,8 +42,10 @@ const Login = () => {
             lastName: values.lastName,
           })
         ).unwrap();
+        toast.success("Register Success");
+        form.reset();
       } catch (error) {
-        alert(error);
+        typeof error === "string" && toast.error(error);
       }
     })();
   }
@@ -74,7 +82,13 @@ const Login = () => {
 
               <div className="flex flex-col gap-6 mt-6">
                 <Button variant={"primary"} type="submit">
-                  Register
+                  {loading ? (
+                    <>
+                      <LoadingBtn />
+                    </>
+                  ) : (
+                    "Register"
+                  )}
                 </Button>
                 <Button variant={"six"} type="button">
                   <span>

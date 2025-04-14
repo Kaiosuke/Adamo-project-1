@@ -1,11 +1,12 @@
 import Shape2 from "@/assets/images/Shape-2png.png";
 import Shape from "@/assets/images/shape.png";
-import LoadedImage from "@/components/LoadedImage";
+
 import { handleFormatMoney } from "@/helper";
 import { ITour } from "@/interfaces/tour";
 import { CiLocationOn } from "react-icons/ci";
 import { MdCalendarMonth, MdOutlineStar } from "react-icons/md";
 import { Link } from "react-router";
+import LoadedImage from "./LoadingList/LoadedImage";
 
 const Tour = ({ tour }: { tour: ITour }) => {
   return (

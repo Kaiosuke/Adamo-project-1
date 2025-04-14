@@ -1,6 +1,6 @@
 import { getFiltersHotel } from "@/api/hotelRequest";
 import { getAllTour, getFiltersTour } from "@/api/tourRequest";
-import LoadingPage from "@/components/LoadingPage";
+import LoadingPage from "@/components/LoadingList/LoadingPage";
 import PdMain from "@/components/PdMain";
 import { useAppDispatch } from "@/redux";
 import { tourSelector } from "@/redux/selectors/tourSelector";

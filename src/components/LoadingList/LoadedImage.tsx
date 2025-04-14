@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Skeleton } from "./ui/skeleton";
+import { Skeleton } from "../ui/skeleton";
 
 const LoadedImage = ({
   thumbnail,

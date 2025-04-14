@@ -12,7 +12,7 @@ import { useAppDispatch } from "@/redux";
 import { getTourById } from "@/api/tourRequest";
 import { useSelector } from "react-redux";
 import { tourSelector } from "@/redux/selectors/tourSelector";
-import LoadingPage from "@/components/LoadingPage";
+import LoadingPage from "@/components/LoadingList/LoadingPage";
 import PdMain from "@/components/PdMain";
 
 const TourDetail = () => {

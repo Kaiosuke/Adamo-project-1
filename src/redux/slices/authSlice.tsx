@@ -79,7 +79,6 @@ const authSlice = createSlice({
     });
     build.addCase(changePassword.rejected, setError);
 
-    build.addCase(loginByFb.pending, setLoading);
     build.addCase(
       loginByFb.fulfilled,
       (state: IAuthState, action: PayloadAction<IAuth>) => {
@@ -88,7 +87,6 @@ const authSlice = createSlice({
         state.error = undefined;
       }
     );
-    build.addCase(loginByFb.rejected, setError);
   },
 });
 

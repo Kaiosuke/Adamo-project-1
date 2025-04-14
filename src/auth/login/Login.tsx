@@ -5,11 +5,17 @@ import { z } from "zod";
 
 import { login, loginByFb } from "@/api/authRequest";
 import InputAuth from "@/components/InputAuth";
+import LoadingBtn from "@/components/LoadingList/LoadingBtn";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { useAppDispatch } from "@/redux";
+import { authSelector } from "@/redux/selectors/authSelector";
 import { FaFacebook } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router";
+
+import { toast } from "sonner";
+import ToastCom from "@/components/toast/Toast";
 
 const Login = () => {
   const form = useForm<z.infer<typeof signInSchema>>({
@@ -19,6 +25,8 @@ const Login = () => {
       password: "",
     },
   });
+
+  const { loading } = useSelector(authSelector);
 
   const dispatch = useAppDispatch();
 
@@ -31,10 +39,11 @@ const Login = () => {
           login({ email: values.email, password: values.password })
         ).unwrap();
         if (user) {
+          toast.success("Login Success");
           navigate("/");
         }
       } catch (error) {
-        alert(error);
+        typeof error === "string" && toast.error(error);
       }
     })();
   }
@@ -79,7 +88,13 @@ const Login = () => {
               </div>
               <div className="flex flex-col gap-6 mt-6">
                 <Button variant={"primary"} type="submit">
-                  Sign In
+                  {loading ? (
+                    <>
+                      <LoadingBtn />
+                    </>
+                  ) : (
+                    "Sign in"
+                  )}
                 </Button>
                 <Button variant={"six"} type="button" onClick={handleLoginByFb}>
                   <span>

@@ -1,12 +1,12 @@
+import { handleFormatMoney } from "@/helper";
+import { tourSelector } from "@/redux/selectors/tourSelector";
 import { CiLocationOn } from "react-icons/ci";
 import { FaCalendarAlt } from "react-icons/fa";
 import { GoPeople } from "react-icons/go";
+import { useSelector } from "react-redux";
+import DateTour from "../dates/DateTour";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
-import DatePickerWithRange from "../DatePickerWithRange";
-import { useSelector } from "react-redux";
-import { tourSelector } from "@/redux/selectors/tourSelector";
-import { handleFormatMoney } from "@/helper";
 
 const BillTourDetail = () => {
   const { tour } = useSelector(tourSelector);
@@ -34,8 +34,7 @@ const BillTourDetail = () => {
               </div>
             </div>
 
-            <DatePickerWithRange />
-
+            <DateTour />
             <div className="w-full h-[64px] bg-third py-2 pl-3 flex items-center gap-4">
               <GoPeople className="text-primary" />
               <div className="text-secondary">2 Adults - 1 Children</div>
@@ -110,4 +109,4 @@ const BillTourCheckOut = () => {
   );
 };
 
-export { BillTourDetail, BillTourCheckOut };
+export { BillTourCheckOut, BillTourDetail };

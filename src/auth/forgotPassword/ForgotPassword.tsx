@@ -8,6 +8,10 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { useAppDispatch } from "@/redux";
 import { forgotPassword } from "@/api/authRequest";
+import { useSelector } from "react-redux";
+import { authSelector } from "@/redux/selectors/authSelector";
+import LoadingBtn from "@/components/LoadingList/LoadingBtn";
+import { toast } from "sonner";
 
 const ForgotPassword = () => {
   const form = useForm<z.infer<typeof forgotPasswordSchema>>({
@@ -17,14 +21,18 @@ const ForgotPassword = () => {
     },
   });
 
+  const { loading } = useSelector(authSelector);
+
   const dispatch = useAppDispatch();
 
   function onSubmit(values: z.infer<typeof forgotPasswordSchema>) {
     (async () => {
       try {
         await dispatch(forgotPassword(values.email));
+        form.reset();
+        toast.success("Please check your email");
       } catch (error) {
-        console.log(error);
+        typeof error === "string" && toast.error(error);
       }
     })();
   }
@@ -46,7 +54,13 @@ const ForgotPassword = () => {
               <InputAuth form={form} name="email" title="Email Address" />
               <div className="flex flex-col gap-6 mt-6">
                 <Button variant={"primary"} type="submit">
-                  Send Request
+                  {loading ? (
+                    <>
+                      <LoadingBtn />
+                    </>
+                  ) : (
+                    "Send Request"
+                  )}
                 </Button>
                 <Button variant={"outline"} type="button">
                   Back to sign in

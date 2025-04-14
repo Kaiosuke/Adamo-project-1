@@ -2,6 +2,7 @@ interface ITour {
   id: number;
   title: string;
   type: string;
+  duration: number;
   location: string;
   score: number;
   time: string;

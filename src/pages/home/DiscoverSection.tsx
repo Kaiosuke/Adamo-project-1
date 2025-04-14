@@ -1,5 +1,6 @@
 import ButtonFeature from "@/components/ButtonFeature";
-import LoadedImage from "@/components/LoadedImage";
+import LoadedImage from "@/components/LoadingList/LoadedImage";
+
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import { Trans } from "react-i18next";
 import { useSelector } from "react-redux";

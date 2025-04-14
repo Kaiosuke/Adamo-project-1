@@ -1,5 +1,5 @@
 import Hotel from "@/components/Hotel";
-import LoadingPage from "@/components/LoadingPage";
+import LoadingPage from "@/components/LoadingList/LoadingPage";
 import { hotelSelector } from "@/redux/selectors/hotelSelector";
 import { useSelector } from "react-redux";
 import FilterHotel from "./FilterHotel";
