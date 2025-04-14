@@ -29,7 +29,7 @@ const initialState: IHotelState = {
   hotel: null,
   filter: {
     location: "",
-    star: [1, 2, 3, 4, 5],
+    star: [],
     guest: "",
     sort: "price-asc",
     score: 0,

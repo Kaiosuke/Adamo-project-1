@@ -11,10 +11,13 @@ import { hotelSelector } from "@/redux/selectors/hotelSelector";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import HotelSection from "./HotelSection";
+import { useTranslation } from "react-i18next";
 
 const Hotel = () => {
   const { filter } = useSelector(hotelSelector);
   const { location, price, score, sort, star } = filter;
+
+  const { t } = useTranslation("hotel");
 
   const ITEMS_PER_PAGE = 4;
 
@@ -53,8 +56,8 @@ const Hotel = () => {
       <HeroSectionCom
         image={HotelImg}
         Tour={<SearchHotel />}
-        title="Find deals on hotels, homes, and much more..."
-        des="From cozy country homes to funky city apartments"
+        title={t("banner.title")}
+        des={t("banner.description")}
       />
       <PdSub />
       <BreadcrumbCom links={[{ title: "home", href: "/" }]} current="hotels" />

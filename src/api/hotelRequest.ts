@@ -21,7 +21,7 @@ const getAllHotel = createAsyncThunk<
     {
       location = "",
       score = 0,
-      star = [1, 2, 3, 4, 5],
+      star = [],
       price = [0, 300],
       start = 0,
       limit = 4,
@@ -32,12 +32,24 @@ const getAllHotel = createAsyncThunk<
     try {
       const arrSort = sort.split("-");
 
-      const dataStar = `star_gte=${star[0]}&star_lte=${star[star.length - 1]}`;
+      const separateStar = () => {
+        let result = "";
+        star.forEach((v) => {
+          result += `star=${v}&`;
+        });
+
+        return result;
+      };
 
       const dataPrice = `price_gte=${price[0]}&price_lte=${price[1]}`;
+      const dataStar = separateStar();
 
       const res = await instanceLocal.get(
-        `/hotels?location_like=${location}&score_gte=${score}&${dataStar}&${dataPrice}&_start=${start}&_limit=${limit}&_sort=${arrSort[0]}&_order=${arrSort[1]}`
+        `/hotels?location_like=${location}&score_gte=${score}&${
+          star.length && dataStar
+        }&${dataPrice}&_start=${start}&_limit=${limit}&_sort=${
+          arrSort[0]
+        }&_order=${arrSort[1]}`
       );
       localStorage.setItem(
         "totalHotel",

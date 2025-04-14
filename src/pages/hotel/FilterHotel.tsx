@@ -65,7 +65,7 @@ const FilterHotel = () => {
   }, 1000);
 
   const handleResetFilter = () => {
-    setStarHotel([1, 2, 3, 4, 5]);
+    setStarHotel([]);
     setScoreHotel(0);
     setPrices([0, 300]);
   };
@@ -116,7 +116,7 @@ const FilterHotel = () => {
                     checked={starHotel.includes(Number(v))}
                     onCheckedChange={(checked) => {
                       if (checked) {
-                        setStarHotel((prev) => [...prev, Number(v)]);
+                        setStarHotel((prev) => [...prev, Number(v)].sort());
                       } else {
                         setStarHotel((prev) =>
                           prev.filter((value) => Number(value) !== Number(v))
