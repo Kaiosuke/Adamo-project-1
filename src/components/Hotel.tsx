@@ -8,6 +8,8 @@ import { Link } from "react-router";
 import LoadedImage from "./LoadingList/LoadedImage";
 
 const Hotel = ({ hotel }: { hotel: IHotel }) => {
+  const totalData = JSON.parse(localStorage.getItem("totalReviewHotel") || "0");
+
   return (
     <div className="w-full">
       <div className="relative">
@@ -37,7 +39,7 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
           <CiLocationOn className="text-size-xl text-primary" />
           <span className="text-four">{hotel.location}</span>
         </div>
-        <h5 className="text-size-lg font-medium pt-2 hover:underline">
+        <h5 className="text-size-lg font-medium pt-2 hover:underline h-[60px]">
           <Link to={`/hotel-detail/${hotel.id}`}>{hotel.title}</Link>
         </h5>
         <div className="flex xl:items-center justify-between pt-4 xl:flex-row lg:flex-col flex-row lg:items-start items-center ">
@@ -47,8 +49,7 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
               <span className="text-base font-semibold">{hotel.score}</span>
             </div>
             <span className="text-sm">
-              {hotel.reviews.length}{" "}
-              {`${hotel.reviews.length > 0 ? "Reviews" : "Review"}`}
+              {totalData} {`${totalData > 0 ? "Reviews" : "Review"}`}
             </span>
           </div>
           <div className="flex items-end gap-1">

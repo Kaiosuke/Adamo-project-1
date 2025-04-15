@@ -1,20 +1,10 @@
 import Avatar1 from "@/assets/images/Avatar-1.png";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { IReviewTour } from "@/interfaces/review";
 import { FaStar } from "react-icons/fa6";
 import { TbPointFilled } from "react-icons/tb";
 
-interface Props {
-  rate: number;
-  avatar: string;
-  opinion: string;
-  time: string;
-  title: string;
-  des: string;
-}
-
-const ReviewTour = ({ review }: { review: Props }) => {
-  console.log(review.rate);
-
+const ReviewTour = ({ review }: { review: IReviewTour }) => {
   return (
     <div>
       <div className="flex gap-6 items-center">
@@ -24,11 +14,13 @@ const ReviewTour = ({ review }: { review: Props }) => {
         </Avatar>
         <div className="flex flex-col gap-4 text-secondary">
           <div className="text-secondary flex items-center gap-2">
+            {Array.from({ length: review.rate }).map((_, index) => (
+              <FaStar className="text-nine" key={index} />
+            ))}
+            {/* <FaStar className="text-nine" />
             <FaStar className="text-nine" />
             <FaStar className="text-nine" />
-            <FaStar className="text-nine" />
-            <FaStar className="text-nine" />
-            <FaStar className="text-four" />
+            <FaStar className="text-four" /> */}
           </div>
           <div className="font-bold">{review.title}</div>
           <div className="flex gap-2 items-center">

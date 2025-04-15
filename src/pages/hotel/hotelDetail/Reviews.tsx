@@ -1,17 +1,28 @@
-import Pagination from "../../../components/paginations/Pagination";
+import Pagination from "@/components/paginations/Pagination";
 import PdSub from "@/components/PdSub";
 import ReviewHotel from "@/components/reviews/ReviewHotel";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { hotelSelector } from "@/redux/selectors/hotelSelector";
+import { reviewSelector } from "@/redux/selectors/reviewSelector";
 import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
-const Reviews = () => {
+interface Props {
+  currentPage: number;
+  setCurrentPage: (v: number) => void;
+  pageCount: number;
+}
+
+const Reviews = ({ currentPage, setCurrentPage, pageCount }: Props) => {
   const [isReview, setIsReview] = useState(false);
 
   const { hotel } = useSelector(hotelSelector);
+
+  const totalData = JSON.parse(localStorage.getItem("totalReviewHotel") || "0");
+
+  const { reviewsHotel } = useSelector(reviewSelector);
 
   return (
     <div>
@@ -22,10 +33,7 @@ const Reviews = () => {
         <div className="flex flex-col justify-between">
           <div className="text-size-4xl">Wonderful</div>
           <div>
-            {hotel?.reviews.length}{" "}
-            {hotel?.reviews.length && hotel?.reviews.length > 0
-              ? "Reviews"
-              : "Review"}
+            {totalData} {totalData > 0 ? "Reviews" : "Review"}
           </div>
 
           <Button
@@ -56,14 +64,22 @@ const Reviews = () => {
       </div>
 
       <div className="flex flex-col gap-4">
-        {hotel?.reviews.map((review, index) => (
-          <div key={index}>
-            <ReviewHotel review={review} />
-          </div>
-        ))}
+        {reviewsHotel.length &&
+          reviewsHotel.map((review, index) => (
+            <div key={index}>
+              <ReviewHotel review={review} />
+            </div>
+          ))}
       </div>
       <PdSub />
-      <Pagination />
+      <Pagination
+        currentPage={currentPage}
+        onPageChange={(v) => {
+          setCurrentPage(v);
+          localStorage.setItem("currentPageHotel", v.toLocaleString());
+        }}
+        pageCount={pageCount}
+      />
     </div>
   );
 };

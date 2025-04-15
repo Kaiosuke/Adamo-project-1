@@ -28,8 +28,8 @@ const Pagination = ({
       onPageChange={(e) => onPageChange(e.selected)}
       pageRangeDisplayed={3}
       marginPagesDisplayed={1}
-      pageCount={pageCount}
-      forcePage={currentPage}
+      forcePage={pageCount > 0 ? currentPage : 0}
+      pageCount={pageCount > 0 ? pageCount : 1}
       containerClassName="flex gap-2 flex-wrap"
       pageClassName="w-10 h-10 flex items-center justify-center cursor-pointer bg-five text-four font-semibold"
       activeClassName="bg-secondary text-third"

@@ -2986,58 +2986,58 @@
       "title": "The best experience ever!",
       "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
     },
-    [
-      {
-        "id": 2,
-        "tourId": 1,
-        "rate": 4,
-        "avatar": "url('@/assets/images/Avatar-2.png')",
-        "opinion": "Would go again!",
-        "time": "Oct 2020",
-        "title": "Wonderful desert adventure",
-        "des": "I really enjoyed this tour. The views were breathtaking and the sunset over the dunes was unforgettable. The food was good, and our guide was very knowledgeable."
-      },
-      {
-        "id": 3,
-        "tourId": 1,
-        "rate": 5,
-        "avatar": "url('@/assets/images/Avatar-3.png')",
-        "opinion": "Highly recommended",
-        "time": "Nov 2020",
-        "title": "Magical journey!",
-        "des": "The whole experience felt like a dream. Riding camels through the golden sand and spending the night in the camp was a highlight of my trip. Great hospitality too!"
-      },
-      {
-        "id": 4,
-        "tourId": 1,
-        "rate": 3,
-        "avatar": "url('@/assets/images/Avatar-4.png')",
-        "opinion": "Good but could improve",
-        "time": "Dec 2020",
-        "title": "Nice but too touristy",
-        "des": "The scenery was amazing but the camp felt a bit too modern for a desert experience. I was expecting something more authentic. Still had a good time overall."
-      },
-      {
-        "id": 5,
-        "tourId": 1,
-        "rate": 5,
-        "avatar": "url('@/assets/images/Avatar-5.png')",
-        "opinion": "Loved it!",
-        "time": "Jan 2021",
-        "title": "Perfect from start to finish",
-        "des": "Everything was perfectly organized. From the pickup to the drop-off, I felt taken care of. The camp was clean, and the night sky was just amazing."
-      },
-      {
-        "id": 6,
-        "tourId": 1,
-        "rate": 4,
-        "avatar": "url('@/assets/images/Avatar-6.png')",
-        "opinion": "Good vibes only",
-        "time": "Feb 2021",
-        "title": "Great value for the price",
-        "des": "This tour exceeded my expectations. The team was friendly, and the experience was truly immersive. A bit cold at night, but the blankets were warm enough!"
-      }
-    ],
+
+    {
+      "id": 2,
+      "tourId": 1,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-2.png')",
+      "opinion": "Would go again!",
+      "time": "Oct 2020",
+      "title": "Wonderful desert adventure",
+      "des": "I really enjoyed this tour. The views were breathtaking and the sunset over the dunes was unforgettable. The food was good, and our guide was very knowledgeable."
+    },
+    {
+      "id": 3,
+      "tourId": 1,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-3.png')",
+      "opinion": "Highly recommended",
+      "time": "Nov 2020",
+      "title": "Magical journey!",
+      "des": "The whole experience felt like a dream. Riding camels through the golden sand and spending the night in the camp was a highlight of my trip. Great hospitality too!"
+    },
+    {
+      "id": 4,
+      "tourId": 1,
+      "rate": 3,
+      "avatar": "url('@/assets/images/Avatar-4.png')",
+      "opinion": "Good but could improve",
+      "time": "Dec 2020",
+      "title": "Nice but too touristy",
+      "des": "The scenery was amazing but the camp felt a bit too modern for a desert experience. I was expecting something more authentic. Still had a good time overall."
+    },
+    {
+      "id": 5,
+      "tourId": 1,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-5.png')",
+      "opinion": "Loved it!",
+      "time": "Jan 2021",
+      "title": "Perfect from start to finish",
+      "des": "Everything was perfectly organized. From the pickup to the drop-off, I felt taken care of. The camp was clean, and the night sky was just amazing."
+    },
+    {
+      "id": 6,
+      "tourId": 1,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-6.png')",
+      "opinion": "Good vibes only",
+      "time": "Feb 2021",
+      "title": "Great value for the price",
+      "des": "This tour exceeded my expectations. The team was friendly, and the experience was truly immersive. A bit cold at night, but the blankets were warm enough!"
+    },
+
     {
       "id": 7,
       "tourId": 2,

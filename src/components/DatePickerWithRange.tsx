@@ -20,8 +20,6 @@ interface Props {
 }
 
 function DatePickerWithRange({ date, setDate, duration }: Props) {
-  console.log(duration);
-
   return (
     <div className={cn("grid gap-2")}>
       <Popover>

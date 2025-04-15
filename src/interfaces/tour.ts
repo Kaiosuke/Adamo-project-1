@@ -44,15 +44,6 @@ interface ITour {
       }
     ];
   };
-
-  reviews: {
-    rate: number;
-    avatar: string;
-    opinion: string;
-    time: string;
-    title: string;
-    des: string;
-  }[];
 }
 
 export type { ITour };

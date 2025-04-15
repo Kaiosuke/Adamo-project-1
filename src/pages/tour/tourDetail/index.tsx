@@ -1,41 +1,59 @@
+import { getReviewTourList } from "@/api/reviewRequest";
+import { getTourById } from "@/api/tourRequest";
 import BreadcrumbCom from "@/components/Breadcrumb";
+import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import { BillTourDetail } from "@/components/bills/BillTour";
+import { useAppDispatch } from "@/redux";
+import { tourSelector } from "@/redux/selectors/tourSelector";
+import { useEffect, useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineStar } from "react-icons/md";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router";
 import RelatedTours from "./RelatedTours";
 import TourDetailMain from "./TourDetailMain";
 import TourDetailTabs from "./TourDetailTabs";
-import { useParams } from "react-router";
-import { useEffect } from "react";
-import { useAppDispatch } from "@/redux";
-import { getTourById } from "@/api/tourRequest";
-import { useSelector } from "react-redux";
-import { tourSelector } from "@/redux/selectors/tourSelector";
-import LoadingPage from "@/components/LoadingList/LoadingPage";
-import PdMain from "@/components/PdMain";
 
 const TourDetail = () => {
   const { id } = useParams();
 
   const dispatch = useAppDispatch();
-  const { tour, loading } = useSelector(tourSelector);
+  const { tour } = useSelector(tourSelector);
+
+  const totalData = JSON.parse(localStorage.getItem("totalReviewTour") || "0");
+
+  const [pageCount, setPageCount] = useState(0);
+
+  const ITEMS_PER_PAGE = 3;
+
+  const [currentPage, setCurrentPage] = useState(() => {
+    const saved = localStorage.getItem("currentReviewTour");
+    return saved ? Number(saved) : 0;
+  });
 
   useEffect(() => {
     if (id) {
       (async () => {
         try {
           await dispatch(getTourById(Number(id))).unwrap();
+          await dispatch(
+            getReviewTourList({
+              tourId: Number(id),
+              start: ITEMS_PER_PAGE * currentPage,
+            })
+          ).unwrap();
+          setPageCount(Math.ceil(totalData / ITEMS_PER_PAGE));
         } catch (error) {
           console.log(error);
         }
       })();
     }
-  }, []);
+  }, [currentPage, totalData]);
 
-  if (loading) {
-    return <LoadingPage />;
-  }
+  // if (loading) {
+  //   return <LoadingPage />;
+  // }
 
   return (
     <>
@@ -65,10 +83,7 @@ const TourDetail = () => {
                 {tour?.score}
               </div>
               <span className="text-four">
-                {tour?.reviews.length}{" "}
-                {tour?.reviews && tour?.reviews.length > 0
-                  ? `Reviews`
-                  : `Review`}{" "}
+                {totalData} {totalData > 0 ? `Reviews` : `Review`}{" "}
               </span>
             </div>
             <div className="flex 2xl:gap-20 gap-10 lg:mt-8 mt-6 flex-wrap lg:flex-row flex-col-reverse">
@@ -76,8 +91,14 @@ const TourDetail = () => {
                 <div className="h-[680px] ">
                   <TourDetailMain />
                 </div>
-                <TourDetailTabs />
+                <TourDetailTabs
+                  currentPage={currentPage}
+                  pageCount={pageCount}
+                  setCurrentPage={setCurrentPage}
+                  totalData={totalData}
+                />
               </div>
+
               <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit">
                 <BillTourDetail />
               </div>

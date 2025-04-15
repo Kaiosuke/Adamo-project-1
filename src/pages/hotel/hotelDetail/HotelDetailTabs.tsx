@@ -3,7 +3,15 @@ import Descriptions from "./Descriptions";
 import Reviews from "./Reviews";
 import SelectRoom from "./SelectRoom";
 
-const HotelDetailTabs = () => {
+interface Props {
+  currentPage: number;
+  setCurrentPage: (v: number) => void;
+  pageCount: number;
+}
+
+const HotelDetailTabs = ({ currentPage, pageCount, setCurrentPage }: Props) => {
+  const totalData = JSON.parse(localStorage.getItem("totalReviewHotel") || "0");
+
   return (
     <Tabs defaultValue="selectRoom" className="lg:pt-10 pt-6">
       <TabsList className="w-full bg-third justify-between p-0">
@@ -23,7 +31,7 @@ const HotelDetailTabs = () => {
           value="reviews"
           className="data-[state=active]:text-primary text-size-2xl px-0 flex-none data-[state=active]:shadow-none trans-slow hover:text-six cursor-pointer"
         >
-          Reviews(54)
+          {totalData > 0 ? `Reviews(${totalData})` : `Review(${totalData})`}
         </TabsTrigger>
       </TabsList>
       <div className="str-line" />
@@ -35,7 +43,11 @@ const HotelDetailTabs = () => {
       </TabsContent>
 
       <TabsContent value="reviews">
-        <Reviews />
+        <Reviews
+          currentPage={currentPage}
+          pageCount={pageCount}
+          setCurrentPage={setCurrentPage}
+        />
       </TabsContent>
     </Tabs>
   );

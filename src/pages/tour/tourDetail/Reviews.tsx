@@ -1,15 +1,23 @@
 // import Pagination from "../../../components/paginations/Pagination";
-import PdSub from "@/components/PdSub";
+import Pagination from "@/components/paginations/Pagination";
 import ReviewTour from "@/components/reviews/ReviewTour";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { reviewSelector } from "@/redux/selectors/reviewSelector";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import { FaUserCircle } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 
-const Reviews = () => {
+interface Props {
+  currentPage: number;
+  pageCount: number;
+  setCurrentPage: (value: number) => void;
+}
+
+const Reviews = ({ currentPage, pageCount, setCurrentPage }: Props) => {
   const { tour } = useSelector(tourSelector);
+  const { reviewsTour } = useSelector(reviewSelector);
 
   return (
     <>
@@ -30,8 +38,8 @@ const Reviews = () => {
                   <div className="text-four font-semibold">
                     Based on{" "}
                     <span className="text-secondary">
-                      {tour.reviews.length}{" "}
-                      {tour?.reviews.length > 0 ? "reviews" : "review"}
+                      {reviewsTour.length}{" "}
+                      {reviewsTour.length > 0 ? "reviews" : "review"}
                     </span>
                   </div>
                 </div>
@@ -110,14 +118,20 @@ const Reviews = () => {
           <div className="str-line-2" />
           <div>
             <div className="flex flex-col gap-4">
-              {tour.reviews.map((review, index) => (
+              {reviewsTour.map((review, index) => (
                 <div key={index}>
                   <ReviewTour review={review} />
                 </div>
               ))}
             </div>
-            <PdSub />
-            {/* <Pagination /> */}
+            <Pagination
+              currentPage={currentPage}
+              pageCount={pageCount}
+              onPageChange={(e) => {
+                setCurrentPage(e);
+                localStorage.setItem("currentReviewTour", e.toLocaleString());
+              }}
+            />
           </div>
         </div>
       )}

@@ -3,12 +3,20 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Additional from "./Additional";
 import Description from "./Description";
 import Reviews from "./Reviews";
-import { useSelector } from "react-redux";
-import { tourSelector } from "@/redux/selectors/tourSelector";
 
-const TourDetailTabs = () => {
-  const { tour } = useSelector(tourSelector);
+interface Props {
+  currentPage: number;
+  totalData: number;
+  pageCount: number;
+  setCurrentPage: (value: number) => void;
+}
 
+const TourDetailTabs = ({
+  totalData,
+  currentPage,
+  pageCount,
+  setCurrentPage,
+}: Props) => {
   return (
     <Tabs defaultValue="descriptions" className="lg:pt-10 pt-6">
       <TabsList className="w-full bg-third justify-between p-0">
@@ -28,9 +36,7 @@ const TourDetailTabs = () => {
           value="reviews"
           className="data-[state=active]:text-primary text-size-2xl px-0 flex-none data-[state=active]:shadow-none trans-slow hover:text-six cursor-pointer"
         >
-          {tour && tour?.reviews.length > 0
-            ? `Reviews(${tour?.reviews.length})`
-            : `Review(${tour?.reviews.length})`}
+          {totalData > 0 ? `Reviews(${totalData})` : `Review(${totalData})`}
         </TabsTrigger>
       </TabsList>
       <div className="str-line" />
@@ -41,7 +47,11 @@ const TourDetailTabs = () => {
         <Additional />
       </TabsContent>
       <TabsContent value="reviews">
-        <Reviews />
+        <Reviews
+          currentPage={currentPage}
+          pageCount={pageCount}
+          setCurrentPage={setCurrentPage}
+        />
       </TabsContent>
     </Tabs>
   );
