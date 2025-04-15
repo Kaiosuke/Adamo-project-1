@@ -1,17 +1,15 @@
+import { getTourById } from "@/api/tourRequest";
+import { BillTourCheckOut } from "@/components/bills/BillTour";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
-import FormInfoUser from "./FormInfoUser";
-import { BillTourCheckOut } from "@/components/bills/BillTour";
-import { useSelector } from "react-redux";
+import { useAppDispatch } from "@/redux";
 import { bookingSelector } from "@/redux/selectors/bookingSelector";
 import { useEffect } from "react";
-import { useAppDispatch } from "@/redux";
-import { getTourById } from "@/api/tourRequest";
-import { tourSelector } from "@/redux/selectors/tourSelector";
+import { useSelector } from "react-redux";
+import FormInfoUser from "./FormInfoUser";
 
 const TourCheckOut = () => {
   const { booking } = useSelector(bookingSelector);
-  const { tour } = useSelector(tourSelector);
 
   const dispatch = useAppDispatch();
 

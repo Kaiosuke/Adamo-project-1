@@ -1,7 +1,6 @@
 import Card from "@/assets/images/card.png";
 import Paypal from "@/assets/images/paypal.png";
 import FormComp from "@/components/forms/FormCom";
-import { userSchema } from "@/schemas/userSchema";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -12,30 +11,77 @@ import {
 } from "@/components/ui/form";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { userSchema } from "@/schemas/userSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
+
+import { StringParam, useQueryParams, withDefault } from "use-query-params";
 import { z } from "zod";
 
 const FormInfoUser = () => {
+  const [query, setQuery] = useQueryParams({
+    firstName: withDefault(StringParam, ""),
+    lastName: withDefault(StringParam, ""),
+    email: withDefault(StringParam, ""),
+    phoneNumber: withDefault(StringParam, ""),
+    address: withDefault(StringParam, ""),
+    city: withDefault(StringParam, ""),
+    state: withDefault(StringParam, ""),
+    zipCode: withDefault(StringParam, ""),
+    country: withDefault(StringParam, ""),
+    requirement: withDefault(StringParam, ""),
+    payMethod: withDefault(StringParam, ""),
+  });
+
   const form = useForm<z.infer<typeof userSchema>>({
     resolver: zodResolver(userSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
-      phoneNumber: "",
-      address: "",
-      city: "",
-      state: "",
-      zipCode: "",
-      country: "",
-      requirement: "",
-      payMethod: "",
+      firstName: query.firstName,
+      lastName: query.lastName,
+      email: query.email,
+      phoneNumber: query.phoneNumber,
+      address: query.address,
+      city: query.city,
+      state: query.state,
+      zipCode: query.zipCode,
+      country: query.country,
+      requirement: query.requirement,
+      payMethod: query.payMethod,
     },
   });
 
+  const { watch } = form;
+
+  useEffect(() => {
+    const subScription = watch((value) => {
+      setQuery({
+        firstName: value.firstName,
+        lastName: value.lastName,
+        email: value.email,
+        phoneNumber: value.phoneNumber,
+        address: value.address,
+        city: value.city,
+        state: value.state,
+        zipCode: value.zipCode,
+        country: value.country,
+        requirement: value.requirement,
+        payMethod: value.payMethod,
+      });
+
+      return () => subScription.unsubscribe();
+    });
+  }, [watch]);
+
+  const navigate = useNavigate();
+
   function onSubmit(values: z.infer<typeof userSchema>) {
     console.log(values);
+    navigate("/tours");
   }
+
+  console.log(1);
 
   return (
     <Form {...form}>
@@ -131,7 +177,10 @@ const FormInfoUser = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <RadioGroup onValueChange={field.onChange}>
+                    <RadioGroup
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <div className="flex items-center space-x-2">
                         <RadioGroupItem
                           value="card"

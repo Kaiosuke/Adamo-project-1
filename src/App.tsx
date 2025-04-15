@@ -18,37 +18,41 @@ import Tours from "./pages/tour";
 import TourDetail from "./pages/tour/tourDetail";
 import PrivatePolicy from "./pages/privatePolicy";
 import NotFoundPage from "./otherPages/notFoundPage";
+import { QueryParamProvider } from "use-query-params";
+import { ReactRouter6Adapter } from "use-query-params/adapters/react-router-6";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LayoutPage />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="tours" element={<Tours />} />
-          <Route path="tour-detail/:id" element={<TourDetail />} />
-          <Route path="hotels" element={<Hotel />} />
-          <Route path="hotel-detail/:id" element={<HotelDetail />} />
-          <Route path="private-policy" element={<PrivatePolicy />} />
-        </Route>
+      <QueryParamProvider adapter={ReactRouter6Adapter}>
+        <Routes>
+          <Route path="/" element={<LayoutPage />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="tours" element={<Tours />} />
+            <Route path="tour-detail/:id" element={<TourDetail />} />
+            <Route path="hotels" element={<Hotel />} />
+            <Route path="hotel-detail/:id" element={<HotelDetail />} />
+            <Route path="private-policy" element={<PrivatePolicy />} />
+          </Route>
 
-        <Route path="/auth" element={<LayoutAuth />}>
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          <Route path="new-password" element={<NewPassword />} />
-          <Route path="forgot-password" element={<ForgotPassword />} />
-        </Route>
+          <Route path="/auth" element={<LayoutAuth />}>
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+            <Route path="new-password" element={<NewPassword />} />
+            <Route path="forgot-password" element={<ForgotPassword />} />
+          </Route>
 
-        <Route path="/" element={<LayoutOtherPages />}>
-          <Route path="tour-checkout" element={<TourCheckOut />} />
-          <Route path="hotel-checkout" element={<HotelCheckOut />} />
-          <Route path="thanks" element={<ThankYou />} />
-        </Route>
+          <Route path="/" element={<LayoutOtherPages />}>
+            <Route path="tour-checkout" element={<TourCheckOut />} />
+            <Route path="hotel-checkout" element={<HotelCheckOut />} />
+            <Route path="thanks" element={<ThankYou />} />
+          </Route>
 
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </QueryParamProvider>
     </BrowserRouter>
   );
 }

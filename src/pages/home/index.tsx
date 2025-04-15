@@ -1,6 +1,5 @@
 import { getFiltersHotel } from "@/api/hotelRequest";
 import { getAllTour, getFiltersTour } from "@/api/tourRequest";
-import LoadingPage from "@/components/LoadingList/LoadingPage";
 import PdMain from "@/components/PdMain";
 import { useAppDispatch } from "@/redux";
 import { tourSelector } from "@/redux/selectors/tourSelector";
@@ -17,7 +16,7 @@ import TraditionalSection from "./Traditional";
 const Home = () => {
   const dispatch = useAppDispatch();
 
-  const { loading, error } = useSelector(tourSelector);
+  const { error } = useSelector(tourSelector);
 
   useEffect(() => {
     (async () => {
@@ -33,14 +32,9 @@ const Home = () => {
 
   const { t } = useTranslation();
 
-  if (loading) {
-    return <LoadingPage />;
-  }
-
   if (error) {
     return <div>{error}</div>;
   }
-
   return (
     <>
       <HeroSection />

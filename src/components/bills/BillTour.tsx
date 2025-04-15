@@ -172,7 +172,7 @@ const BillTourCheckOut = () => {
   return (
     <>
       {tour && booking && (
-        <div className="bg-seven">
+        <div className="bg-seven w-[380px]">
           <div className="lg:p-8 p-4 flex flex-col gap-6">
             <p className="text-secondary font-semibold">{tour.title}</p>
             <div className="flex items-center gap-2">
