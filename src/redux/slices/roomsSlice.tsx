@@ -1,10 +1,10 @@
-import { IRoom } from "@/interfaces/room";
+import { IRoomWithQuantity } from "@/interfaces/room";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface IStateRoom {
   loading: boolean;
   error: undefined | string;
-  rooms: IRoom[];
+  rooms: IRoomWithQuantity[];
   breakfast:
     | {
         id: number;
@@ -33,7 +33,7 @@ const roomsSlice = createSlice({
   name: "room",
   initialState,
   reducers: {
-    addRoom: (state: IStateRoom, action: PayloadAction<IRoom>) => {
+    addRoom: (state: IStateRoom, action: PayloadAction<IRoomWithQuantity>) => {
       const existRoom = state.rooms.find(
         (room) => room.id === action.payload.id
       );
@@ -60,14 +60,18 @@ const roomsSlice = createSlice({
       });
     },
     decreaseRoom: (state: IStateRoom, action: PayloadAction<number>) => {
-      state.rooms = state.rooms.filter((room) => {
-        if (room.id === action.payload && room.quantity) {
-          if (room.quantity < 1) return;
-          return { ...room, quantity: room.quantity - 1 };
-        }
-        console.log(room.quantity);
-        return room;
-      });
+      const existRoom = state.rooms.find((room) => room.id === action.payload);
+      if (existRoom && existRoom.quantity < 2) {
+        state.rooms = state.rooms.filter((room) => room.id !== action.payload);
+        console.log(1);
+      } else {
+        state.rooms = state.rooms.map((room) => {
+          if (room.id === action.payload && room.quantity) {
+            return { ...room, quantity: room.quantity - 1 };
+          }
+          return room;
+        });
+      }
     },
   },
 });

@@ -13,7 +13,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { userSchema } from "@/schemas/userSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 
@@ -21,6 +21,8 @@ import { StringParam, useQueryParams, withDefault } from "use-query-params";
 import { z } from "zod";
 
 const FormInfoUser = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const [query, setQuery] = useQueryParams({
     firstName: withDefault(StringParam, ""),
     lastName: withDefault(StringParam, ""),
@@ -55,30 +57,22 @@ const FormInfoUser = () => {
   const { watch } = form;
 
   useEffect(() => {
-    const subScription = watch((value) => {
-      setQuery({
-        firstName: value.firstName,
-        lastName: value.lastName,
-        email: value.email,
-        phoneNumber: value.phoneNumber,
-        address: value.address,
-        city: value.city,
-        state: value.state,
-        zipCode: value.zipCode,
-        country: value.country,
-        requirement: value.requirement,
-        payMethod: value.payMethod,
-      });
-
-      return () => subScription.unsubscribe();
+    const subscription = watch((value) => {
+      if (!isSubmitted) {
+        setQuery({
+          ...value,
+        });
+      }
     });
-  }, [watch]);
+
+    return () => subscription.unsubscribe();
+  }, [watch, isSubmitted]);
 
   const navigate = useNavigate();
 
   function onSubmit(values: z.infer<typeof userSchema>) {
-    console.log(values);
-    navigate("/tours");
+    setIsSubmitted(true);
+    navigate("/thanks", { replace: true });
   }
 
   return (

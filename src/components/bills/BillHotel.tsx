@@ -50,6 +50,8 @@ const BillHotelDetail = () => {
     dispatch(increaseRoom(room.id));
   };
 
+  console.log(rooms);
+
   return (
     <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit">
       <div className="w-full h-full bg-seven">

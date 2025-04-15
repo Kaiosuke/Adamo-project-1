@@ -9,7 +9,10 @@ interface IRoom {
   capacity: number;
   beds: string;
   features: string[];
-  quantity?: number;
 }
 
-export type { IRoom };
+interface IRoomWithQuantity extends IRoom {
+  quantity: number;
+}
+
+export type { IRoom, IRoomWithQuantity };
