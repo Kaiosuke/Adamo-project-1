@@ -1,4 +1,4 @@
-import { signInSchema } from "@/components/schemas/authSchema";
+import { signInSchema } from "@/schemas/authSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";

@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import FormContact from "@/components/forms/FormContact";
-import { contactSchema } from "@/components/schemas/contactSchema";
+import { contactSchema } from "@/schemas/contactSchema";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { Trans } from "react-i18next";

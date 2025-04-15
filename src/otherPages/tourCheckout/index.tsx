@@ -2,8 +2,31 @@ import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import FormInfoUser from "./FormInfoUser";
 import { BillTourCheckOut } from "@/components/bills/BillTour";
+import { useSelector } from "react-redux";
+import { bookingSelector } from "@/redux/selectors/bookingSelector";
+import { useEffect } from "react";
+import { useAppDispatch } from "@/redux";
+import { getTourById } from "@/api/tourRequest";
+import { tourSelector } from "@/redux/selectors/tourSelector";
 
 const TourCheckOut = () => {
+  const { booking } = useSelector(bookingSelector);
+  const { tour } = useSelector(tourSelector);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (booking?.tourId) {
+      (async () => {
+        try {
+          await dispatch(getTourById(booking?.tourId)).unwrap();
+        } catch (error) {
+          console.log(error);
+        }
+      })();
+    }
+  }, []);
+
   return (
     <>
       <PdSub />

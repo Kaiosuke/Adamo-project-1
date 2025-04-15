@@ -1,6 +1,6 @@
 import { Trans } from "react-i18next";
 
-import { sendMailSchema } from "@/components/schemas/authSchema";
+import { sendMailSchema } from "@/schemas/authSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
