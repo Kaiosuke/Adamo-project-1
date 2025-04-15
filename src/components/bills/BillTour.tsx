@@ -59,7 +59,11 @@ const BillTourDetail = () => {
               </div>
             </div>
 
-            <DatePickerWithRange setDate={setDate} date={date} />
+            <DatePickerWithRange
+              setDate={setDate}
+              date={date}
+              duration={tour.duration}
+            />
             <div className="w-full h-[64px] bg-third py-2 pl-3 flex items-center gap-4">
               <LuUsers className="text-primary text-size-lg group-hover:text-third" />
               <Select

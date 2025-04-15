@@ -16,9 +16,12 @@ import { cn } from "@/lib/utils";
 interface Props {
   setDate: (value: DateRange | undefined) => void;
   date: DateRange | undefined;
+  duration: number;
 }
 
-function DatePickerWithRange({ date, setDate }: Props) {
+function DatePickerWithRange({ date, setDate, duration }: Props) {
+  console.log(duration);
+
   return (
     <div className={cn("grid gap-2")}>
       <Popover>
@@ -53,7 +56,7 @@ function DatePickerWithRange({ date, setDate }: Props) {
             selected={date}
             onSelect={(range) => {
               if (range?.from && range?.to) {
-                const maxDate = addDays(range.from, 2);
+                const maxDate = addDays(range.from, duration);
                 if (range.to > maxDate) {
                   setDate({ from: range.from, to: maxDate });
                   return;
