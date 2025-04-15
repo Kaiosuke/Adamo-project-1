@@ -11,14 +11,16 @@ const LoadedImage = ({
   const [isLoaded, setIsdLoaded] = useState(false);
 
   return (
-    <div className="overflow-hidden">
-      {!isLoaded && <Skeleton className="w-[350px] h-[264px]" />}
+    <div className="overflow-hidden relative w-full h-full rounded-none aspect-3/2 object-cover">
+      {!isLoaded && (
+        <Skeleton className="absolute inset-0 z-[1] rounded-none w-full h-full" />
+      )}
 
       <img
         src={thumbnail}
         alt={alt}
         onLoad={() => setIsdLoaded(true)}
-        className={`object-cover w-full hover:scale-125 tran-fast tran-fast ${
+        className={`object-cover w-full hover:scale-125 tran-fast ${
           isLoaded ? "block" : "hidden"
         }`}
       />

@@ -80,7 +80,7 @@ const HotelDetail = () => {
             {totalData} {totalData > 0 ? `Reviews` : `Review`}
           </span>
         </div>
-        <div className="flex 2xl:gap-20 gap-10 lg:mt-8 mt-6 flex-wrap lg:flex-row flex-col-reverse">
+        <div className="flex 2xl:gap-20 gap-10 lg:mt-8 mt-6 flex-wrap xl:flex-row flex-col-reverse">
           <div className="lg:flex-[1_0_auto] flex-[0_0_100%] lg:max-w-[635px] w-full">
             <div className="h-[680px]">
               <SwiperCom />
@@ -91,7 +91,9 @@ const HotelDetail = () => {
               setCurrentPage={setCurrentPage}
             />
           </div>
-          <BillHotelDetail />
+          <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit xl:sticky top-[20px]">
+            <BillHotelDetail />
+          </div>
         </div>
       </section>
       <PdMain />
