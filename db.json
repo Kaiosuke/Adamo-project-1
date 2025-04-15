@@ -150,50 +150,7 @@
             "description": "This activity will have a maximum of 17 travelers."
           }
         ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
+      }
     },
     {
       "id": 2,
@@ -342,50 +299,7 @@
             "description": "This activity will have a maximum of 17 travelers."
           }
         ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
+      }
     },
     {
       "id": 3,
@@ -534,50 +448,7 @@
             "description": "This activity will have a maximum of 17 travelers."
           }
         ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
+      }
     },
     {
       "id": 4,
@@ -726,50 +597,7 @@
             "description": "This activity will have a maximum of 17 travelers."
           }
         ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
+      }
     },
     {
       "id": 5,
@@ -918,50 +746,7 @@
             "description": "This activity will have a maximum of 17 travelers."
           }
         ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
+      }
     },
     {
       "id": 6,
@@ -1110,50 +895,7 @@
             "description": "This activity will have a maximum of 17 travelers."
           }
         ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
+      }
     },
     {
       "id": 7,
@@ -1302,50 +1044,7 @@
             "description": "This activity will have a maximum of 17 travelers."
           }
         ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
+      }
     },
     {
       "id": 8,
@@ -1494,50 +1193,7 @@
             "description": "This activity will have a maximum of 17 travelers."
           }
         ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
+      }
     },
     {
       "id": 9,
@@ -1686,50 +1342,7 @@
             "description": "This activity will have a maximum of 17 travelers."
           }
         ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
+      }
     },
     {
       "id": 10,
@@ -1878,50 +1491,7 @@
             "description": "This activity will have a maximum of 17 travelers."
           }
         ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
+      }
     },
     {
       "id": 11,
@@ -2070,50 +1640,7 @@
             "description": "This activity will have a maximum of 17 travelers."
           }
         ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
+      }
     },
     {
       "id": 12,
@@ -2262,50 +1789,7 @@
             "description": "This activity will have a maximum of 17 travelers."
           }
         ]
-      },
-
-      "reviews": [
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
-      ]
+      }
     }
   ],
   "hotels": [
@@ -2408,49 +1892,6 @@
             "Wardrobe or close"
           ]
         }
-      ],
-
-      "reviews": [
-        {
-          "rate": 9,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
       ]
     },
     {
@@ -2544,49 +1985,6 @@
             "Tea/Coffee make"
           ]
         }
-      ],
-
-      "reviews": [
-        {
-          "rate": 9,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
       ]
     },
     {
@@ -2679,49 +2077,6 @@
             "Wake-up service",
             "Wardrobe or close"
           ]
-        }
-      ],
-
-      "reviews": [
-        {
-          "rate": 9,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
         }
       ]
     },
@@ -2818,49 +2173,6 @@
             "Wardrobe or close"
           ]
         }
-      ],
-
-      "reviews": [
-        {
-          "rate": 9,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
       ]
     },
     {
@@ -2953,49 +2265,6 @@
             "Wake-up service",
             "Wardrobe or close"
           ]
-        }
-      ],
-
-      "reviews": [
-        {
-          "rate": 9,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
         }
       ]
     },
@@ -3090,49 +2359,6 @@
             "Wardrobe or close"
           ]
         }
-      ],
-
-      "reviews": [
-        {
-          "rate": 9,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
       ]
     },
     {
@@ -3224,49 +2450,6 @@
             "Wardrobe or close"
           ]
         }
-      ],
-
-      "reviews": [
-        {
-          "rate": 9,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
       ]
     },
     {
@@ -3357,49 +2540,6 @@
             "Wake-up service",
             "Wardrobe or close"
           ]
-        }
-      ],
-
-      "reviews": [
-        {
-          "rate": 9,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
         }
       ]
     },
@@ -3493,49 +2633,6 @@
             "Wake-up service",
             "Wardrobe or close"
           ]
-        }
-      ],
-
-      "reviews": [
-        {
-          "rate": 9,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
         }
       ]
     },
@@ -3632,49 +2729,6 @@
             "Wardrobe or close"
           ]
         }
-      ],
-
-      "reviews": [
-        {
-          "rate": 9,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
       ]
     },
     {
@@ -3763,49 +2817,6 @@
             "Wake-up service",
             "Wardrobe or close"
           ]
-        }
-      ],
-
-      "reviews": [
-        {
-          "rate": 9,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
         }
       ]
     },
@@ -3898,49 +2909,6 @@
             "Wardrobe or close"
           ]
         }
-      ],
-
-      "reviews": [
-        {
-          "rate": 9,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        },
-        {
-          "rate": 5,
-          "avatar": "url('@/assets/images/Avatar-1.png')",
-          "opinion": "Nevermind",
-          "time": "Sep 2020",
-          "title": "The best experience ever!",
-          "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-        }
       ]
     }
   ],
@@ -4005,6 +2973,822 @@
     {
       "title": "over 1 week",
       "time": "7-100"
+    }
+  ],
+  "reviewsTour": [
+    {
+      "id": 1,
+      "tourId": 1,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Sep 2020",
+      "title": "The best experience ever!",
+      "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+    },
+    [
+      {
+        "id": 2,
+        "tourId": 1,
+        "rate": 4,
+        "avatar": "url('@/assets/images/Avatar-2.png')",
+        "opinion": "Would go again!",
+        "time": "Oct 2020",
+        "title": "Wonderful desert adventure",
+        "des": "I really enjoyed this tour. The views were breathtaking and the sunset over the dunes was unforgettable. The food was good, and our guide was very knowledgeable."
+      },
+      {
+        "id": 3,
+        "tourId": 1,
+        "rate": 5,
+        "avatar": "url('@/assets/images/Avatar-3.png')",
+        "opinion": "Highly recommended",
+        "time": "Nov 2020",
+        "title": "Magical journey!",
+        "des": "The whole experience felt like a dream. Riding camels through the golden sand and spending the night in the camp was a highlight of my trip. Great hospitality too!"
+      },
+      {
+        "id": 4,
+        "tourId": 1,
+        "rate": 3,
+        "avatar": "url('@/assets/images/Avatar-4.png')",
+        "opinion": "Good but could improve",
+        "time": "Dec 2020",
+        "title": "Nice but too touristy",
+        "des": "The scenery was amazing but the camp felt a bit too modern for a desert experience. I was expecting something more authentic. Still had a good time overall."
+      },
+      {
+        "id": 5,
+        "tourId": 1,
+        "rate": 5,
+        "avatar": "url('@/assets/images/Avatar-5.png')",
+        "opinion": "Loved it!",
+        "time": "Jan 2021",
+        "title": "Perfect from start to finish",
+        "des": "Everything was perfectly organized. From the pickup to the drop-off, I felt taken care of. The camp was clean, and the night sky was just amazing."
+      },
+      {
+        "id": 6,
+        "tourId": 1,
+        "rate": 4,
+        "avatar": "url('@/assets/images/Avatar-6.png')",
+        "opinion": "Good vibes only",
+        "time": "Feb 2021",
+        "title": "Great value for the price",
+        "des": "This tour exceeded my expectations. The team was friendly, and the experience was truly immersive. A bit cold at night, but the blankets were warm enough!"
+      }
+    ],
+    {
+      "id": 7,
+      "tourId": 2,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-7.png')",
+      "opinion": "Unforgettable!",
+      "time": "Mar 2021",
+      "title": "Such a peaceful escape",
+      "des": "This tour helped me disconnect from the busy city life. The landscapes were stunning and our guide made the whole trip feel personal and unique."
+    },
+    {
+      "id": 8,
+      "tourId": 2,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-8.png')",
+      "opinion": "Worth it",
+      "time": "Apr 2021",
+      "title": "Beautiful scenery, nice people",
+      "des": "The trip was well organized, the locations we visited were beautiful and relaxing. A bit of waiting time at some spots but overall very enjoyable."
+    },
+    {
+      "id": 9,
+      "tourId": 2,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-9.png')",
+      "opinion": "Loved every second",
+      "time": "May 2021",
+      "title": "Truly memorable",
+      "des": "From the moment we started, everything felt magical. Great energy from the group and staff, and the stops along the way were full of culture and charm."
+    },
+    {
+      "id": 10,
+      "tourId": 3,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-10.png')",
+      "opinion": "Nice surprise",
+      "time": "Jun 2021",
+      "title": "Great for nature lovers",
+      "des": "I was surprised by how much I enjoyed this tour. The views were absolutely stunning and the pace was just right."
+    },
+    {
+      "id": 11,
+      "tourId": 3,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-11.png')",
+      "opinion": "Incredible!",
+      "time": "Jul 2021",
+      "title": "One of the best days ever",
+      "des": "Every stop on the tour was magical. The food was fresh, and the guides were knowledgeable and fun."
+    },
+    {
+      "id": 12,
+      "tourId": 3,
+      "rate": 3,
+      "avatar": "url('@/assets/images/Avatar-12.png')",
+      "opinion": "Mixed feelings",
+      "time": "Aug 2021",
+      "title": "Great tour, minor issues",
+      "des": "I loved the scenery, but the transport wasn’t very comfortable. Still, the experience was worth it."
+    },
+    {
+      "id": 13,
+      "tourId": 3,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-13.png')",
+      "opinion": "Would recommend",
+      "time": "Sep 2021",
+      "title": "Good vibes and beautiful spots",
+      "des": "The guide created such a good atmosphere, and we got to visit hidden gems that weren’t crowded."
+    },
+    {
+      "id": 14,
+      "tourId": 4,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-14.png')",
+      "opinion": "Nice weekend",
+      "time": "Oct 2021",
+      "title": "Lovely short escape",
+      "des": "A quick but sweet getaway. The highlight was the boat ride — super relaxing and peaceful."
+    },
+    {
+      "id": 15,
+      "tourId": 4,
+      "rate": 3,
+      "avatar": "url('@/assets/images/Avatar-15.png')",
+      "opinion": "Okay",
+      "time": "Nov 2021",
+      "title": "Good but too short",
+      "des": "The tour was okay, but I wish it was longer. Felt like we were rushing through some of the places."
+    },
+    {
+      "id": 16,
+      "tourId": 6,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-16.png')",
+      "opinion": "Perfect!",
+      "time": "Dec 2021",
+      "title": "Everything I hoped for",
+      "des": "Great service, great people, and unforgettable experiences. Highly recommend this tour!"
+    },
+    {
+      "id": 17,
+      "tourId": 6,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-17.png')",
+      "opinion": "Enjoyable",
+      "time": "Jan 2022",
+      "title": "Fun and informative",
+      "des": "The guide gave us so much interesting info about the history and culture. Definitely worth the money."
+    },
+    {
+      "id": 18,
+      "tourId": 6,
+      "rate": 3,
+      "avatar": "url('@/assets/images/Avatar-18.png')",
+      "opinion": "Average",
+      "time": "Feb 2022",
+      "title": "Expected more",
+      "des": "It was okay, but I didn’t feel it stood out compared to other tours I’ve done."
+    },
+    {
+      "id": 19,
+      "tourId": 6,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-19.png')",
+      "opinion": "Cool trip",
+      "time": "Mar 2022",
+      "title": "Nice getaway with friends",
+      "des": "Took this with a few friends and we had a blast. Loved the hiking parts!"
+    },
+    {
+      "id": 20,
+      "tourId": 6,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-20.png')",
+      "opinion": "So worth it",
+      "time": "Apr 2022",
+      "title": "Exceeded expectations",
+      "des": "I wasn’t expecting much, but this ended up being one of my favorite travel memories."
+    },
+    {
+      "id": 21,
+      "tourId": 7,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-21.png')",
+      "opinion": "So peaceful",
+      "time": "May 2022",
+      "title": "Best escape to nature",
+      "des": "Absolutely serene. Waking up to the sound of birds and a gentle breeze was everything I needed."
+    },
+    {
+      "id": 22,
+      "tourId": 7,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-22.png')",
+      "opinion": "Relaxing and fun",
+      "time": "Jun 2022",
+      "title": "Nature at its best",
+      "des": "Loved the hiking trail and the picnic by the lake. Our guide was super chill and patient."
+    },
+    {
+      "id": 23,
+      "tourId": 7,
+      "rate": 3,
+      "avatar": "url('@/assets/images/Avatar-23.png')",
+      "opinion": "Not bad",
+      "time": "Jul 2022",
+      "title": "Okay experience",
+      "des": "The place was beautiful, but I expected a bit more activities. Still, a good day overall."
+    },
+    {
+      "id": 24,
+      "tourId": 8,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-24.png')",
+      "opinion": "Good deal",
+      "time": "Aug 2022",
+      "title": "Affordable and nice",
+      "des": "For the price, this tour was fantastic. Clean transport, on-time, and friendly staff."
+    },
+    {
+      "id": 25,
+      "tourId": 8,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-25.png')",
+      "opinion": "Perfect combo",
+      "time": "Sep 2022",
+      "title": "History and food!",
+      "des": "We got to explore old ruins and try local dishes — both were amazing. Loved every part of it!"
+    },
+    {
+      "id": 26,
+      "tourId": 8,
+      "rate": 3,
+      "avatar": "url('@/assets/images/Avatar-26.png')",
+      "opinion": "So-so",
+      "time": "Oct 2022",
+      "title": "Could be better",
+      "des": "It was okay. Some places were crowded, and the guide seemed in a rush."
+    },
+    {
+      "id": 27,
+      "tourId": 9,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-27.png')",
+      "opinion": "Loved it!",
+      "time": "Nov 2022",
+      "title": "Urban adventure",
+      "des": "This city tour was packed with hidden gems. The street food stop was the best surprise!"
+    },
+    {
+      "id": 28,
+      "tourId": 9,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-28.png')",
+      "opinion": "So much fun",
+      "time": "Dec 2022",
+      "title": "Great energy",
+      "des": "From the local markets to the sunset rooftop, everything was vibrant and exciting."
+    },
+    {
+      "id": 29,
+      "tourId": 9,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-29.png')",
+      "opinion": "Energetic",
+      "time": "Jan 2023",
+      "title": "City lights and sights",
+      "des": "Perfect for those who like fast-paced discovery. You won’t get bored, that's for sure."
+    },
+    {
+      "id": 30,
+      "tourId": 10,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "Booked this for our anniversary and it couldn’t have gone better. Sunset views were breathtaking."
+    },
+    {
+      "id": 31,
+      "tourId": 10,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-31.png')",
+      "opinion": "Chill and lovely",
+      "time": "Mar 2023",
+      "title": "Relaxing weekend",
+      "des": "The spa part was a surprise bonus! Totally worth the money for a weekend away."
+    },
+    {
+      "id": 32,
+      "tourId": 10,
+      "rate": 3,
+      "avatar": "url('@/assets/images/Avatar-32.png')",
+      "opinion": "Decent",
+      "time": "Apr 2023",
+      "title": "Not bad, but not wow",
+      "des": "Pretty view, but service could have been better. Still got some great photos."
+    },
+    {
+      "id": 33,
+      "tourId": 11,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-33.png')",
+      "opinion": "Adventurous!",
+      "time": "May 2023",
+      "title": "Thrill seekers' dream",
+      "des": "Ziplining through the forest was such a rush! If you love adrenaline, this one’s for you."
+    },
+    {
+      "id": 34,
+      "tourId": 11,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-34.png')",
+      "opinion": "So exciting",
+      "time": "Jun 2023",
+      "title": "Lots of action",
+      "des": "Rock climbing and kayaking were my favorites. The staff ensured everyone was safe and having fun."
+    },
+    {
+      "id": 35,
+      "tourId": 11,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-35.png')",
+      "opinion": "Nice experience",
+      "time": "Jul 2023",
+      "title": "Fun and safe",
+      "des": "Was nervous at first but the guides were amazing. By the end, I didn’t want to leave!"
+    },
+    {
+      "id": 36,
+      "tourId": 12,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-36.png')",
+      "opinion": "Magical",
+      "time": "Aug 2023",
+      "title": "A fairy tale come true",
+      "des": "Visiting ancient castles and hearing the legends from our guide gave me chills. Truly magical."
+    },
+    {
+      "id": 37,
+      "tourId": 12,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-37.png')",
+      "opinion": "Unique",
+      "time": "Sep 2023",
+      "title": "History alive",
+      "des": "The medieval villages were like stepping back in time. Great storytelling and beautiful spots."
+    },
+    {
+      "id": 38,
+      "tourId": 12,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-38.png')",
+      "opinion": "Very cultural",
+      "time": "Oct 2023",
+      "title": "Enriching journey",
+      "des": "Great for history buffs. I learned so much and the photos came out stunning!"
+    }
+  ],
+  "reviewsHotel": [
+    {
+      "id": 1,
+      "hotelId": 1,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Sep 2020",
+      "title": "The best experience ever!",
+      "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
+    },
+    {
+      "id": 2,
+      "hotelId": 1,
+      "rate": 8,
+      "avatar": "url('@/assets/images/Avatar-2.png')",
+      "opinion": "Very cozy",
+      "time": "Oct 2020",
+      "title": "Charming stay",
+      "des": "The rooms were clean and well-decorated. I especially loved the little balcony with a garden view."
+    },
+    {
+      "id": 3,
+      "hotelId": 1,
+      "rate": 7,
+      "avatar": "url('@/assets/images/Avatar-3.png')",
+      "opinion": "Nice but noisy",
+      "time": "Nov 2020",
+      "title": "Good but a bit loud",
+      "des": "Staff were friendly and location was great, but the walls were thin and I could hear my neighbors."
+    },
+    {
+      "id": 4,
+      "hotelId": 1,
+      "rate": 10,
+      "avatar": "url('@/assets/images/Avatar-4.png')",
+      "opinion": "Perfect",
+      "time": "Dec 2020",
+      "title": "Highly recommend!",
+      "des": "Everything was top-notch — the breakfast buffet, the staff, the spa. I would absolutely stay again!"
+    },
+    {
+      "id": 5,
+      "hotelId": 1,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-5.png')",
+      "opinion": "Very satisfied",
+      "time": "Jan 2021",
+      "title": "Wonderful service",
+      "des": "The concierge went above and beyond to help us plan our local activities. The room was spotless."
+    },
+    {
+      "id": 6,
+      "hotelId": 1,
+      "rate": 8,
+      "avatar": "url('@/assets/images/Avatar-6.png')",
+      "opinion": "Cozy vibe",
+      "time": "Feb 2021",
+      "title": "Warm and welcoming",
+      "des": "It felt like home. The fireplace in the lounge was such a nice touch for chilly evenings."
+    },
+    {
+      "id": 7,
+      "hotelId": 2,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Relaxing",
+      "time": "Mar 2021",
+      "title": "Great for a weekend escape",
+      "des": "The atmosphere was peaceful and the garden area was beautiful. A perfect place to unwind."
+    },
+    {
+      "id": 8,
+      "hotelId": 2,
+      "rate": 7,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Good value",
+      "time": "Apr 2021",
+      "title": "Affordable and clean",
+      "des": "The room was simple but very clean. The location made it easy to explore nearby attractions."
+    },
+    {
+      "id": 9,
+      "hotelId": 2,
+      "rate": 6,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Okay stay",
+      "time": "May 2021",
+      "title": "Decent but not impressive",
+      "des": "Wi-Fi was a bit slow and the breakfast options were limited. Staff was helpful though."
+    },
+    {
+      "id": 10,
+      "hotelId": 2,
+      "rate": 8,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Comfortable",
+      "time": "Jun 2021",
+      "title": "Nice and quiet",
+      "des": "The bed was really comfy and the AC worked great. Slept like a baby!"
+    },
+    {
+      "id": 11,
+      "hotelId": 3,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-2.png')",
+      "opinion": "Amazing view",
+      "time": "Jul 2021",
+      "title": "Mountain paradise",
+      "des": "Waking up to that mountain view every day was unforgettable. Totally worth it!"
+    },
+    {
+      "id": 12,
+      "hotelId": 3,
+      "rate": 8,
+      "avatar": "url('@/assets/images/Avatar-3.png')",
+      "opinion": "Chill vibes",
+      "time": "Aug 2021",
+      "title": "Peaceful retreat",
+      "des": "Quiet, clean, and surrounded by nature. A great break from city life."
+    },
+    {
+      "id": 13,
+      "hotelId": 3,
+      "rate": 7,
+      "avatar": "url('@/assets/images/Avatar-4.png')",
+      "opinion": "Good enough",
+      "time": "Sep 2021",
+      "title": "Nice stay",
+      "des": "Could use a little renovation, but staff made the stay pleasant."
+    },
+    {
+      "id": 14,
+      "hotelId": 3,
+      "rate": 10,
+      "avatar": "url('@/assets/images/Avatar-5.png')",
+      "opinion": "Perfect stay",
+      "time": "Oct 2021",
+      "title": "Exceeded expectations",
+      "des": "Superb hospitality, delicious meals, and a cozy room. Would return in a heartbeat."
+    },
+    {
+      "id": 15,
+      "hotelId": 3,
+      "rate": 8,
+      "avatar": "url('@/assets/images/Avatar-6.png')",
+      "opinion": "Lovely spot",
+      "time": "Nov 2021",
+      "title": "Ideal for couples",
+      "des": "Perfect romantic getaway. The fireplace and view sealed the deal."
+    },
+    {
+      "id": 16,
+      "hotelId": 4,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-7.png')",
+      "opinion": "Impressive service",
+      "time": "Dec 2021",
+      "title": "Staff made the difference",
+      "des": "They helped us with everything, from booking taxis to restaurant reservations. Very attentive."
+    },
+    {
+      "id": 17,
+      "hotelId": 4,
+      "rate": 6,
+      "avatar": "url('@/assets/images/Avatar-8.png')",
+      "opinion": "Not bad",
+      "time": "Jan 2022",
+      "title": "Good location, average rooms",
+      "des": "Close to the city center but the room smelled a bit musty. Still decent for the price."
+    },
+    {
+      "id": 18,
+      "hotelId": 4,
+      "rate": 7,
+      "avatar": "url('@/assets/images/Avatar-9.png')",
+      "opinion": "Fair",
+      "time": "Feb 2022",
+      "title": "Alright stay",
+      "des": "Comfortable beds and clean bathroom. Nothing fancy, but it worked for our short trip."
+    },
+    {
+      "id": 19,
+      "hotelId": 5,
+      "rate": 8,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Good for work trips",
+      "time": "Mar 2022",
+      "title": "Solid business hotel",
+      "des": "Had everything I needed for my work trip: desk, quiet space, and fast Wi-Fi."
+    },
+    {
+      "id": 20,
+      "hotelId": 5,
+      "rate": 7,
+      "avatar": "url('@/assets/images/Avatar-2.png')",
+      "opinion": "Comfortable stay",
+      "time": "Apr 2022",
+      "title": "Better than expected",
+      "des": "Nothing too fancy but really comfy. I slept well and breakfast was decent."
+    },
+    {
+      "id": 21,
+      "hotelId": 5,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-3.png')",
+      "opinion": "Excellent service",
+      "time": "May 2022",
+      "title": "Staff was amazing",
+      "des": "I accidentally booked the wrong date, and they helped me change without charge."
+    },
+    {
+      "id": 22,
+      "hotelId": 5,
+      "rate": 6,
+      "avatar": "url('@/assets/images/Avatar-4.png')",
+      "opinion": "Decent",
+      "time": "Jun 2022",
+      "title": "Could be better",
+      "des": "Elevator was out of service for a day. Besides that, the room was clean and quiet."
+    },
+    {
+      "id": 23,
+      "hotelId": 6,
+      "rate": 10,
+      "avatar": "url('@/assets/images/Avatar-5.png')",
+      "opinion": "Luxury!",
+      "time": "Jul 2022",
+      "title": "Felt like royalty",
+      "des": "The spa, the pool, the room — everything was five-star. Totally worth every penny!"
+    },
+    {
+      "id": 24,
+      "hotelId": 6,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-6.png')",
+      "opinion": "Beautiful space",
+      "time": "Aug 2022",
+      "title": "Great design",
+      "des": "The interior design and layout were stunning. It felt like staying inside a Pinterest board."
+    },
+    {
+      "id": 25,
+      "hotelId": 6,
+      "rate": 8,
+      "avatar": "url('@/assets/images/Avatar-7.png')",
+      "opinion": "Very nice",
+      "time": "Sep 2022",
+      "title": "Modern and sleek",
+      "des": "Modern facilities, great bar area. Loved the rooftop pool!"
+    },
+    {
+      "id": 26,
+      "hotelId": 7,
+      "rate": 7,
+      "avatar": "url('@/assets/images/Avatar-8.png')",
+      "opinion": "Good location",
+      "time": "Oct 2022",
+      "title": "Close to everything",
+      "des": "It’s right in the center so it’s easy to walk to shops and restaurants. Room was okay."
+    },
+    {
+      "id": 27,
+      "hotelId": 7,
+      "rate": 8,
+      "avatar": "url('@/assets/images/Avatar-9.png')",
+      "opinion": "Clean and simple",
+      "time": "Nov 2022",
+      "title": "Exactly what I needed",
+      "des": "No frills, just a clean room and good service. I’ll stay again for sure."
+    },
+    {
+      "id": 28,
+      "hotelId": 7,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-10.png')",
+      "opinion": "Charming spot",
+      "time": "Dec 2022",
+      "title": "Loved the decor",
+      "des": "The vintage style mixed with comfort. Super photogenic!"
+    },
+    {
+      "id": 29,
+      "hotelId": 7,
+      "rate": 6,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Average",
+      "time": "Jan 2023",
+      "title": "Had some issues",
+      "des": "The air conditioning was a bit weak and check-in took too long. Otherwise, not bad."
+    },
+    {
+      "id": 30,
+      "hotelId": 8,
+      "rate": 7,
+      "avatar": "url('@/assets/images/Avatar-2.png')",
+      "opinion": "Nice view",
+      "time": "Feb 2023",
+      "title": "Great for a weekend",
+      "des": "Perfect for a quick escape. The view from our room was stunning, especially at sunset."
+    },
+    {
+      "id": 31,
+      "hotelId": 8,
+      "rate": 8,
+      "avatar": "url('@/assets/images/Avatar-3.png')",
+      "opinion": "Quiet and peaceful",
+      "time": "Mar 2023",
+      "title": "Relaxing stay",
+      "des": "Far from the city noise, this hotel gave me the peace I needed."
+    },
+    {
+      "id": 32,
+      "hotelId": 8,
+      "rate": 6,
+      "avatar": "url('@/assets/images/Avatar-4.png')",
+      "opinion": "Needs improvements",
+      "time": "Apr 2023",
+      "title": "Could be better",
+      "des": "Good location, but the beds were a bit hard and water pressure was low."
+    },
+    {
+      "id": 33,
+      "hotelId": 9,
+      "rate": 10,
+      "avatar": "url('@/assets/images/Avatar-5.png')",
+      "opinion": "Perfect stay!",
+      "time": "May 2023",
+      "title": "Highly recommend",
+      "des": "Everything was on point — clean rooms, great food, super friendly staff!"
+    },
+    {
+      "id": 34,
+      "hotelId": 9,
+      "rate": 8,
+      "avatar": "url('@/assets/images/Avatar-6.png')",
+      "opinion": "Cozy",
+      "time": "Jun 2023",
+      "title": "Good vibes",
+      "des": "Feels like a boutique hotel. Really appreciated the small touches in the room."
+    },
+    {
+      "id": 35,
+      "hotelId": 9,
+      "rate": 7,
+      "avatar": "url('@/assets/images/Avatar-7.png')",
+      "opinion": "Comfortable enough",
+      "time": "Jul 2023",
+      "title": "Decent value",
+      "des": "Good value for money, nothing luxurious but everything worked well."
+    },
+    {
+      "id": 36,
+      "hotelId": 9,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-8.png')",
+      "opinion": "Top notch",
+      "time": "Aug 2023",
+      "title": "Well managed",
+      "des": "The staff were super responsive and helpful throughout our stay."
+    },
+    {
+      "id": 37,
+      "hotelId": 10,
+      "rate": 7,
+      "avatar": "url('@/assets/images/Avatar-9.png')",
+      "opinion": "Functional",
+      "time": "Sep 2023",
+      "title": "Met expectations",
+      "des": "Wasn’t blown away, but it did the job. Clean, functional, and no surprises."
+    },
+    {
+      "id": 38,
+      "hotelId": 10,
+      "rate": 6,
+      "avatar": "url('@/assets/images/Avatar-10.png')",
+      "opinion": "Just okay",
+      "time": "Oct 2023",
+      "title": "Needs upgrades",
+      "des": "Felt like it needed a renovation. Staff were kind, but amenities were dated."
+    },
+    {
+      "id": 39,
+      "hotelId": 11,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Loved it",
+      "time": "Nov 2023",
+      "title": "Great escape",
+      "des": "The garden area was beautiful. Spent hours reading under the trees. Super calm."
+    },
+    {
+      "id": 40,
+      "hotelId": 11,
+      "rate": 8,
+      "avatar": "url('@/assets/images/Avatar-2.png')",
+      "opinion": "Peaceful",
+      "time": "Dec 2023",
+      "title": "Serene environment",
+      "des": "Surprisingly quiet even though it’s close to downtown. Nice breakfast!"
+    },
+    {
+      "id": 41,
+      "hotelId": 11,
+      "rate": 7,
+      "avatar": "url('@/assets/images/Avatar-3.png')",
+      "opinion": "Not bad",
+      "time": "Jan 2024",
+      "title": "Good short stay",
+      "des": "Was there for one night, everything worked out fine. Room was tidy and warm."
+    },
+    {
+      "id": 42,
+      "hotelId": 12,
+      "rate": 8,
+      "avatar": "url('@/assets/images/Avatar-4.png')",
+      "opinion": "New and clean",
+      "time": "Feb 2024",
+      "title": "Fresh hotel",
+      "des": "Feels recently renovated. Sleek design and comfortable bed."
+    },
+    {
+      "id": 43,
+      "hotelId": 12,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-5.png')",
+      "opinion": "Would return",
+      "time": "Mar 2024",
+      "title": "Good experience",
+      "des": "Good experience overall. Loved the breakfast variety and fast check-out."
     }
   ]
 }
