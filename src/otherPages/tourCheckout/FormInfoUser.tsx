@@ -81,8 +81,6 @@ const FormInfoUser = () => {
     navigate("/tours");
   }
 
-  console.log(1);
-
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mt-2">

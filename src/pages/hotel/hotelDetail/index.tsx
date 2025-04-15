@@ -25,12 +25,12 @@ const HotelDetail = () => {
   const totalData = JSON.parse(localStorage.getItem("totalReviewHotel") || "0");
 
   const ITEMS_PER_PAGE = 3;
+
+  const [pageCount, setPageCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(() => {
     const saved = localStorage.getItem("currentPageHotel");
     return saved ? Number(saved) : 0;
   });
-
-  const [pageCount, setPageCount] = useState(0);
 
   useEffect(() => {
     if (id) {

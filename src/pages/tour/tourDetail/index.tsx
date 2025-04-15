@@ -19,14 +19,13 @@ const TourDetail = () => {
   const { id } = useParams();
 
   const dispatch = useAppDispatch();
+
   const { tour } = useSelector(tourSelector);
 
   const totalData = JSON.parse(localStorage.getItem("totalReviewTour") || "0");
-
-  const [pageCount, setPageCount] = useState(0);
-
   const ITEMS_PER_PAGE = 3;
 
+  const [pageCount, setPageCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(() => {
     const saved = localStorage.getItem("currentReviewTour");
     return saved ? Number(saved) : 0;
@@ -50,10 +49,6 @@ const TourDetail = () => {
       })();
     }
   }, [currentPage, totalData]);
-
-  // if (loading) {
-  //   return <LoadingPage />;
-  // }
 
   return (
     <>

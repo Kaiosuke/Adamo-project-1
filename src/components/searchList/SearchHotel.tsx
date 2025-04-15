@@ -21,6 +21,7 @@ import { Link } from "react-router";
 
 const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const { t } = useTranslation("search");
+  const [date, setDate] = useState<Date>(new Date());
 
   const { locations, filter, guests } = useSelector(hotelSelector);
 
@@ -73,7 +74,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
             </div>
 
             <div className="group bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
-              <DatePickerSingle />
+              <DatePickerSingle date={date} setDate={setDate} />
             </div>
             <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
               <LuUsers className="text-primary text-size-lg group-hover:text-third" />

@@ -1,10 +1,6 @@
-"use client";
-
-import * as React from "react";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -12,10 +8,14 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
 
-function DatePickerSingle() {
-  const [date, setDate] = React.useState<Date>();
+interface Props {
+  date: Date;
+  setDate: (v: any) => void;
+}
 
+function DatePickerSingle({ date, setDate }: Props) {
   return (
     <Popover>
       <PopoverTrigger asChild className="cursor-pointer">
@@ -31,7 +31,7 @@ function DatePickerSingle() {
           {date ? format(date, "PPP") : <span>Departure time</span>}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-auto p-0">
+      <PopoverContent className="w-full h-full p-0">
         <Calendar mode="single" selected={date} onSelect={setDate} />
       </PopoverContent>
     </Popover>

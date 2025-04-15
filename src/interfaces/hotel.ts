@@ -22,18 +22,5 @@ interface IHotel {
     image360: string;
     video: string;
   };
-
-  rooms: {
-    id: string;
-    thumbnail: string;
-    description: string;
-    title: string;
-    images: string[];
-    price: number;
-    square: string;
-    capacity: number;
-    beds: string;
-    features: string[];
-  }[];
 }
 export type { IHotel };

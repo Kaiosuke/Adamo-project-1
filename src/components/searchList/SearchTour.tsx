@@ -25,11 +25,12 @@ import { useTranslation } from "react-i18next";
 
 const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
   const { locations, guests, types, filter } = useSelector(tourSelector);
-
   const { location, type } = filter;
+  const { t } = useTranslation("search");
 
   const dispatch = useDispatch();
 
+  const [date, setDate] = useState<Date>(new Date());
   const [locationFilter, setLocationFilter] = useState(location);
   const [typeFilter, setTypeFilter] = useState<string[]>(type);
 
@@ -41,8 +42,6 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
     dispatch(filterByLocation(locationFilter));
     dispatch(filterByType(typeFilter));
   };
-
-  const { t } = useTranslation("search");
 
   return (
     <div
@@ -78,7 +77,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
           </div>
 
           <div className="group bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
-            <DatePickerSingle />
+            <DatePickerSingle date={date} setDate={setDate} />
           </div>
 
           <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">

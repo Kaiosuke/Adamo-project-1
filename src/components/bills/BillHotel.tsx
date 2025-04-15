@@ -1,17 +1,54 @@
+import { handleFormatMoney } from "@/helper";
+import { hotelSelector } from "@/redux/selectors/hotelSelector";
+import { filterByGuest } from "@/redux/slices/hotelsSlice";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { CiLocationOn } from "react-icons/ci";
 import { FaCalendarAlt } from "react-icons/fa";
-import { GoPeople } from "react-icons/go";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
-import DatePickerWithRange from "../DatePickerWithRange";
 import { FaCircleMinus, FaCirclePlus } from "react-icons/fa6";
+import { GoPeople } from "react-icons/go";
+import { LuUsers } from "react-icons/lu";
+import { useDispatch, useSelector } from "react-redux";
+import DatePickerSingle from "../DatePickerSingle";
+import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
-import { useSelector } from "react-redux";
-import { hotelSelector } from "@/redux/selectors/hotelSelector";
-import { handleFormatMoney } from "@/helper";
+import { Input } from "../ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
+import { roomSelector } from "@/redux/selectors/roomSelector";
+import { decreaseRoom, increaseRoom } from "@/redux/slices/roomsSlice";
+import { IRoom } from "@/interfaces/room";
 
 const BillHotelDetail = () => {
+  const { t } = useTranslation(["search"]);
+
   const { hotel } = useSelector(hotelSelector);
+  const { guests, filter } = useSelector(hotelSelector);
+  const { rooms } = useSelector(roomSelector);
+
+  const { guest } = filter;
+
+  const [date, setDate] = useState<Date>(new Date());
+
+  const dispatch = useDispatch();
+
+  const handleFilterGuest = (v: string) => {
+    dispatch(filterByGuest(v));
+  };
+
+  const handleDecreaseRoom = (room: IRoom) => {
+    dispatch(decreaseRoom(room.id));
+  };
+
+  const handleIncreaseRoom = (room: IRoom) => {
+    dispatch(increaseRoom(room.id));
+  };
 
   return (
     <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit">
@@ -24,31 +61,54 @@ const BillHotelDetail = () => {
         </div>
         <div className="h-[1px] w-full bg-four opacity-50" />
         <div className="lg:p-8 p-4 flex flex-col gap-6">
-          <div className="bg-third">
-            <DatePickerWithRange />
+          <div className="bg-third h-[64px]">
+            <DatePickerSingle date={date} setDate={setDate} />
           </div>
-          <div className="w-full h-[64px] bg-third py-2 pl-3 flex items-center gap-4">
-            <GoPeople className="text-primary" />
-            <div className="text-secondary">2 Adults - 1 Children</div>
+          <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
+            <LuUsers className="text-primary text-size-lg group-hover:text-third" />
+            <Select
+              defaultValue={guest}
+              onValueChange={(value) => handleFilterGuest(value)}
+            >
+              <SelectTrigger className="w-full group-hover:text-third">
+                <SelectValue placeholder={t("hotel.guest")} />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  {guests.length &&
+                    guests.map((v, index) => (
+                      <SelectItem value={v} key={index}>
+                        {v}
+                      </SelectItem>
+                    ))}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
           </div>
           <div>
-            <div className="grid grid-cols-3 items-center">
-              <div className="font-bold w-[122px]">Standard Room</div>
-              <div className="flex items-center justify-between gap-2 ml-auto">
-                <FaCircleMinus className="text-four text-xl cursor-pointer hover:text-four/80" />
-                <span className="w-[10px] text-center">1</span>
-                <FaCirclePlus className="text-four text-xl cursor-pointer hover:text-four/80" />
-              </div>
-              <div className="font-bold text-six ml-auto">$120.00</div>
-            </div>
-            <div className="grid grid-cols-3 items-center mt-2">
-              <div className="font-bold w-[122px]">Family Suite</div>
-              <div className="flex items-center justify-between gap-2 ml-auto">
-                <FaCircleMinus className="text-four text-xl cursor-pointer hover:text-four/80" />
-                <span className="w-[10px] text-center">0</span>
-                <FaCirclePlus className="text-four text-xl cursor-pointer hover:text-four/80" />
-              </div>
-              <div className="font-bold text-six ml-auto">$240.00</div>
+            <div className="flex flex-col gap-2">
+              {rooms.map((room) => (
+                <div key={room.id} className="grid grid-cols-3 items-center">
+                  <div className="font-bold w-[122px]">{room.type}</div>
+                  <div className="flex items-center justify-between gap-2 ml-auto">
+                    <FaCircleMinus
+                      className="text-four text-xl cursor-pointer hover:text-four/80"
+                      onClick={() => handleDecreaseRoom(room)}
+                    />
+                    <span className="w-[10px] text-center">
+                      {room.quantity}
+                    </span>
+                    <FaCirclePlus
+                      className="text-four text-xl cursor-pointer hover:text-four/80"
+                      onClick={() => handleIncreaseRoom(room)}
+                    />
+                  </div>
+                  <div className="font-bold text-six ml-auto">
+                    {room.quantity &&
+                      handleFormatMoney(room.quantity * room.price)}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
           <div className="h-[1px] w-full bg-four opacity-30" />
@@ -160,4 +220,4 @@ const BillHotelCheckOut = () => {
   );
 };
 
-export { BillHotelDetail, BillHotelCheckOut };
+export { BillHotelCheckOut, BillHotelDetail };
