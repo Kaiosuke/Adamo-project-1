@@ -26,7 +26,12 @@ const DiscoverSection = () => {
       <div className="grid lg:grid-cols-4 gap-4 md:grid-cols-2 grid-cols-1 pt-6">
         {newTours.map((tour) => (
           <div className="w-full" key={tour.id}>
-            <LoadedImage thumbnail={tour.thumbnail} alt={tour.title} />
+            <Link to={`/tour-detail/${tour.id}`} className="w-full">
+              <div className="relative">
+                <LoadedImage thumbnail={tour.thumbnail} alt={tour.title} />
+              </div>
+            </Link>
+
             <div className="pt-4">
               <h4 className="text-size-xl text-secondary">
                 <Link to="#!">Sapa, Lao Cai</Link>

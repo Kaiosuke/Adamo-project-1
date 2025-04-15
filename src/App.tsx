@@ -20,6 +20,7 @@ import PrivatePolicy from "./pages/privatePolicy";
 import NotFoundPage from "./otherPages/notFoundPage";
 import { QueryParamProvider } from "use-query-params";
 import { ReactRouter6Adapter } from "use-query-params/adapters/react-router-6";
+import ScrollPage from "./components/scrollTop/ScrollPage";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+        <ScrollPage />
       </QueryParamProvider>
     </BrowserRouter>
   );
