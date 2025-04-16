@@ -114,11 +114,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       },
-
       "additionalInfo": {
         "list": [
           "Confirmation will be received at time of booking",
@@ -263,11 +265,15 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
-
       "additionalInfo": {
         "list": [
           "Confirmation will be received at time of booking",
@@ -412,11 +418,15 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
-
       "additionalInfo": {
         "list": [
           "Confirmation will be received at time of booking",
@@ -561,11 +571,15 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
-
       "additionalInfo": {
         "list": [
           "Confirmation will be received at time of booking",
@@ -710,11 +724,15 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
-
       "additionalInfo": {
         "list": [
           "Confirmation will be received at time of booking",
@@ -859,11 +877,15 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
-
       "additionalInfo": {
         "list": [
           "Confirmation will be received at time of booking",
@@ -1008,11 +1030,15 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
-
       "additionalInfo": {
         "list": [
           "Confirmation will be received at time of booking",
@@ -1157,11 +1183,15 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
-
       "additionalInfo": {
         "list": [
           "Confirmation will be received at time of booking",
@@ -1306,11 +1336,15 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
-
       "additionalInfo": {
         "list": [
           "Confirmation will be received at time of booking",
@@ -1455,11 +1489,15 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
-
       "additionalInfo": {
         "list": [
           "Confirmation will be received at time of booking",
@@ -1604,11 +1642,15 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
-
       "additionalInfo": {
         "list": [
           "Confirmation will be received at time of booking",
@@ -1753,11 +1795,15 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
-
       "additionalInfo": {
         "list": [
           "Confirmation will be received at time of booking",
@@ -1849,7 +1895,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -1906,7 +1955,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -1963,7 +2015,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2021,7 +2076,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2078,7 +2136,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2135,7 +2196,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2191,7 +2255,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2247,7 +2314,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2304,7 +2374,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2362,7 +2435,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2417,7 +2493,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2473,7 +2552,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2517,6 +2599,7 @@
     "sun and beaches"
   ],
   "guests": [
+    " ",
     "1 Adult",
     "1 Adult - 1 Children",
     "2 Adults - 1 Children",
@@ -2553,7 +2636,6 @@
       "title": "The best experience ever!",
       "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
     },
-
     {
       "id": 2,
       "tourId": 1,
@@ -2604,7 +2686,6 @@
       "title": "Great value for the price",
       "des": "This tour exceeded my expectations. The team was friendly, and the experience was truly immersive. A bit cold at night, but the blankets were warm enough!"
     },
-
     {
       "id": 7,
       "tourId": 2,
@@ -3356,6 +3437,36 @@
       "time": "Mar 2024",
       "title": "Good experience",
       "des": "Good experience overall. Loved the breakfast variety and fast check-out."
+    },
+    {
+      "hotelId": "7",
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "321321",
+      "id": 46
+    },
+    {
+      "hotelId": 7,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "312321",
+      "id": 47
+    },
+    {
+      "hotelId": 7,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "test comment",
+      "id": 48
     }
   ],
   "rooms": [
@@ -3364,6 +3475,8 @@
       "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274611/Hotels/uykb9oefs9fdcvwezj56.png",
       "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
       "type": "Family Suite",
+      "quantity": 4,
+      "status": true,
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -3400,7 +3513,9 @@
       "id": 2,
       "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274611/Hotels/uykb9oefs9fdcvwezj56.png",
       "description": "Spacious family suite featuring modern decor, city and partial sea view, and a private balcony. Includes a comfortable sitting area, large flat-screen TV, mini fridge, and tea/coffee facilities. The en-suite bathroom offers a rain shower and deluxe amenities.@Maximum occupancy is 2 adults and 2 children under 6 years old. Extra beds are available upon request and subject to availability.",
+      "quantity": 3,
       "type": "Family Suite",
+      "status": true,
       "images": [
         "https://swiperjs.com/demos/images/nature-4.jpg",
         "https://swiperjs.com/demos/images/nature-5.jpg",
@@ -3432,7 +3547,9 @@
       "id": 3,
       "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274611/Hotels/uykb9oefs9fdcvwezj56.png",
       "description": "Elegant family suite offering garden and mountain views from the private balcony. Features a spacious layout with two queen beds, a work desk, and a kitchenette. The bathroom includes a walk-in shower, complimentary toiletries, and a hairdryer.@Maximum occupancy is 4 adults. No extra beds allowed but cribs are available for infants under 3 years old.",
+      "quantity": 0,
       "type": "Family Suite",
+      "status": false,
       "images": [
         "https://swiperjs.com/demos/images/nature-7.jpg",
         "https://swiperjs.com/demos/images/nature-8.jpg",
@@ -3463,7 +3580,9 @@
       "id": 4,
       "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274612/Hotels/qjbzhqlvdmx0e1cl8jjn.png",
       "description": "Cozy standard room with a city view and warm lighting. Features a queen bed, small seating area, flat-screen TV, and complimentary WiFi. Ideal for couples or solo travelers looking for comfort and convenience.@Maximum occupancy is 2 adults. Cribs are available upon request.",
+      "quantity": 5,
       "type": "Standard room",
+      "status": true,
       "images": [
         "https://swiperjs.com/demos/images/nature-3.jpg",
         "https://swiperjs.com/demos/images/nature-4.jpg",
@@ -3490,7 +3609,9 @@
       "id": 5,
       "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274612/Hotels/qjbzhqlvdmx0e1cl8jjn.png",
       "description": "Simple and elegant room equipped with essentials for a comfortable stay. Includes a twin bed setup, a work desk, and private bathroom. Perfect for business or short-term travelers.@Maximum occupancy is 2 adults. Extra beds not available.",
+      "quantity": 2,
       "type": "Standard room",
+      "status": false,
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -3517,7 +3638,9 @@
       "id": 6,
       "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274612/Hotels/qjbzhqlvdmx0e1cl8jjn.png",
       "description": "Bright standard room with large windows and garden view. Comes with modern furniture, a queen-size bed, and minimalist decor. Includes complimentary tea and high-speed internet.@Maximum occupancy is 2 adults and 1 child under 5 sharing existing bedding.",
+      "quantity": 1,
       "type": "Standard room",
+      "status": false,
       "images": [
         "https://swiperjs.com/demos/images/nature-5.jpg",
         "https://swiperjs.com/demos/images/nature-7.jpg",

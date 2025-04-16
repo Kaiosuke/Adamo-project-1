@@ -1,5 +1,6 @@
 import { IRoomWithQuantity } from "@/interfaces/room";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { stat } from "fs";
 
 interface IStateRoom {
   loading: boolean;
@@ -34,20 +35,18 @@ const roomsSlice = createSlice({
   initialState,
   reducers: {
     addRoom: (state: IStateRoom, action: PayloadAction<IRoomWithQuantity>) => {
-      const existRoom = state.rooms.find(
-        (room) => room.id === action.payload.id
-      );
-      if (existRoom) {
-        state.rooms = state.rooms.map((room) => {
-          if (room.id === action.payload.id && room.quantity) {
-            if (room.quantity > 2) return room;
-            return { ...room, quantity: room.quantity + 1 };
-          }
-          return room;
-        });
+      const exist = state.rooms.find((r) => r.id === action.payload.id);
+      if (exist) {
+        state.rooms = state.rooms.filter(
+          (room) => room.id !== action.payload.id
+        );
       } else {
         state.rooms = [...state.rooms, action.payload];
       }
+    },
+
+    deleteRoom: (state: IStateRoom, action: PayloadAction<number>) => {
+      state.rooms = state.rooms.filter((room) => room.id !== action.payload);
     },
 
     increaseRoom: (state: IStateRoom, action: PayloadAction<number>) => {
@@ -59,11 +58,11 @@ const roomsSlice = createSlice({
         return room;
       });
     },
+
     decreaseRoom: (state: IStateRoom, action: PayloadAction<number>) => {
       const existRoom = state.rooms.find((room) => room.id === action.payload);
       if (existRoom && existRoom.quantity < 2) {
         state.rooms = state.rooms.filter((room) => room.id !== action.payload);
-        console.log(1);
       } else {
         state.rooms = state.rooms.map((room) => {
           if (room.id === action.payload && room.quantity) {
@@ -77,4 +76,5 @@ const roomsSlice = createSlice({
 });
 
 export default roomsSlice.reducer;
-export const { addRoom, decreaseRoom, increaseRoom } = roomsSlice.actions;
+export const { addRoom, decreaseRoom, increaseRoom, deleteRoom } =
+  roomsSlice.actions;

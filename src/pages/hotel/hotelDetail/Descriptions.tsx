@@ -1,20 +1,18 @@
 import Map from "@/components/MapCom";
 import { Button } from "@/components/ui/button";
 import { handleSeparateWord } from "@/helper";
-import { hotelSelector } from "@/redux/selectors/hotelSelector";
+import { IHotel } from "@/interfaces/hotel";
+
 import { IoCheckmarkSharp } from "react-icons/io5";
-import { useSelector } from "react-redux";
 
-const Descriptions = () => {
-  const { hotel } = useSelector(hotelSelector);
-
+const Descriptions = ({ data }: { data: IHotel }) => {
   return (
     <>
       <div>
         <h4 className="text-size-xl text-secondary">Overview</h4>
         <div className="mt-4 text-secondary">
-          {hotel?.description.overview.description &&
-            handleSeparateWord(hotel?.description.overview.description).map(
+          {data.description.overview.description &&
+            handleSeparateWord(data.description.overview.description).map(
               (v, index) => (
                 <p key={index} className="mt-4">
                   {v}
@@ -29,7 +27,7 @@ const Descriptions = () => {
       <div>
         <h4 className="text-size-xl text-secondary">Hotel Amenities</h4>
         <ul className="grid grid-cols-2 gap-2 mt-6 text-secondary">
-          {hotel?.description.amenities.map((v, index) => (
+          {data.description.amenities.map((v, index) => (
             <li className="flex items-center gap-2" key={index}>
               <IoCheckmarkSharp className="text-[#28B554]" />
               {v}
@@ -49,7 +47,7 @@ const Descriptions = () => {
               variant={"seven"}
               className=" md:w-[270px] w-[200px] rounded-lg px-4 cursor-auto mt-2"
             >
-              {hotel?.description.rules.checkIn}
+              {data.description.rules.checkIn}
             </Button>
           </div>
           <div className="font-bold">
@@ -58,12 +56,12 @@ const Descriptions = () => {
               variant={"seven"}
               className=" md:w-[270px] w-[200px] rounded-lg px-4 cursor-auto mt-2"
             >
-              {hotel?.description.rules.checkOut}
+              {data.description.rules.checkOut}
             </Button>
           </div>
         </div>
         <ul className="flex flex-col gap-2 list-disc ml-4 text-secondary mt-8">
-          {hotel?.description.rules.information.map((v, index) => (
+          {data.description.rules.information.map((v, index) => (
             <li key={index}>{v} </li>
           ))}
         </ul>
@@ -75,7 +73,7 @@ const Descriptions = () => {
       <div>
         <h4 className="text-size-xl text-secondary">Map</h4>
         <div className="mt-4">
-          <Map coordinates={hotel?.description.maps} />
+          <Map coordinates={data.description.maps} />
         </div>
       </div>
       <div className="py-6">

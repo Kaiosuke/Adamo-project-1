@@ -1,34 +1,92 @@
+import { addReviewHotel, getReviewsHotel } from "@/api/reviewRequest";
 import Pagination from "@/components/paginations/Pagination";
 import PdSub from "@/components/PdSub";
 import ReviewHotel from "@/components/reviews/ReviewHotel";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { hotelSelector } from "@/redux/selectors/hotelSelector";
-import { reviewSelector } from "@/redux/selectors/reviewSelector";
-import { useState } from "react";
+import useQueryParams from "@/hooks/useQueryParams";
+import { IReviewHotel } from "@/interfaces/review";
+import { commentSchema } from "@/schemas/reivewSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import { FaUserCircle } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useParams } from "react-router";
+import { z } from "zod";
 
-interface Props {
-  currentPage: number;
-  setCurrentPage: (v: number) => void;
-  pageCount: number;
-}
+import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
 
-const Reviews = ({ currentPage, setCurrentPage, pageCount }: Props) => {
+const Reviews = () => {
+  const { id } = useParams();
   const [isReview, setIsReview] = useState(false);
-
-  const { hotel } = useSelector(hotelSelector);
 
   const totalData = JSON.parse(localStorage.getItem("totalReviewHotel") || "0");
 
-  const { reviewsHotel } = useSelector(reviewSelector);
+  const ITEMS_PER_PAGE = 3;
+
+  const [pageCount, setPageCount] = useState(0);
+
+  const [currentPage, setCurrentPage] = useState(() => {
+    const saved = localStorage.getItem("currentPageHotel");
+    return saved ? Number(saved) : 0;
+  });
+
+  const { params, setQueryParam } = useQueryParams();
+
+  const _page = params._page ? Number(params._page) : 1;
+
+  const { data } = useQuery({
+    queryKey: ["reviewHotel", id, currentPage],
+    queryFn: () =>
+      getReviewsHotel({
+        hotelId: id as string,
+        _page: _page,
+      }),
+    enabled: id !== undefined,
+  });
+
+  useEffect(() => {
+    setPageCount(Math.ceil(totalData / ITEMS_PER_PAGE));
+  }, []);
+
+  const addComment = useMutation({
+    mutationFn: (data: Omit<IReviewHotel, "id">) => {
+      return addReviewHotel({ data });
+    },
+  });
+
+  const form = useForm<z.infer<typeof commentSchema>>({
+    resolver: zodResolver(commentSchema),
+    defaultValues: {
+      message: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof commentSchema>) {
+    const data = {
+      hotelId: Number(id),
+      rate: 9,
+      avatar: `url('@/assets/images/Avatar-30.png')`,
+      opinion: "Dreamy!",
+      time: "Feb 2023",
+      title: "Romantic escape",
+      des: values.message,
+    };
+
+    addComment.mutate(data, {
+      onSuccess: () => {
+        form.reset();
+        setIsReview(false);
+      },
+    });
+  }
 
   return (
     <div>
       <div className="flex gap-8">
         <div className="w-[148px] h-[148px] bg-primary flex justify-center items-center">
-          <span className="text-third text-size-5xl">{hotel?.score}</span>
+          <span className="text-third text-size-5xl">{9.4}</span>
         </div>
         <div className="flex flex-col justify-between">
           <div className="text-size-4xl">Wonderful</div>
@@ -45,8 +103,43 @@ const Reviews = ({ currentPage, setCurrentPage, pageCount }: Props) => {
           </Button>
         </div>
       </div>
+      {isReview && (
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <div className={`md:mt-10 mt-8 `}>
+                    <div className="flex gap-2">
+                      <div className="">
+                        <FaUserCircle className="lg:w-[56px] md:w-[48px] w-[40px] h-auto text-five" />
+                      </div>
+                      <Textarea
+                        placeholder="Type anything"
+                        className="h-[128px] bg-seven text-four placeholder:text-four"
+                        {...field}
+                      />
+                    </div>
+                    <div className="w-full text-right mt-6">
+                      <Button
+                        className="w-auto lg:px-10 md:px-8 px-6"
+                        size={"third"}
+                      >
+                        Comment
+                      </Button>
+                    </div>
+                  </div>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </form>
+        </Form>
+      )}
 
-      <div className={`md:mt-10 mt-8 ${isReview ? "block" : "hidden"}`}>
+      {/* <div className={`md:mt-10 mt-8 ${isReview ? "block" : "hidden"}`}>
         <div className="flex gap-2">
           <div className="">
             <FaUserCircle className="lg:w-[56px] md:w-[48px] w-[40px] h-auto text-five" />
@@ -61,12 +154,12 @@ const Reviews = ({ currentPage, setCurrentPage, pageCount }: Props) => {
             Comment
           </Button>
         </div>
-      </div>
+      </div> */}
 
       <div className="flex flex-col gap-4">
-        {reviewsHotel.length &&
-          reviewsHotel.map((review, index) => (
-            <div key={index}>
+        {data &&
+          data.data.map((review: IReviewHotel) => (
+            <div key={review.id}>
               <ReviewHotel review={review} />
             </div>
           ))}
@@ -76,6 +169,7 @@ const Reviews = ({ currentPage, setCurrentPage, pageCount }: Props) => {
         currentPage={currentPage}
         onPageChange={(v) => {
           setCurrentPage(v);
+          setQueryParam("_page", (v + 1).toString());
           localStorage.setItem("currentPageHotel", v.toLocaleString());
         }}
         pageCount={pageCount}

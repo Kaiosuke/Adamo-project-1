@@ -1,5 +1,5 @@
-import ReactPaginate from "react-paginate";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import ReactPaginate from "react-paginate";
 
 type PaginationProps = {
   currentPage: number;
@@ -43,7 +43,9 @@ const PaginationWithShow = ({
               <GoArrowRight />
             </div>
           }
-          onPageChange={(e) => onPageChange(e.selected)}
+          onPageChange={(e) => {
+            onPageChange(e.selected);
+          }}
           pageRangeDisplayed={3}
           marginPagesDisplayed={1}
           forcePage={pageCount > 0 ? currentPage : 0}

@@ -1,15 +1,17 @@
 import Hotel from "@/components/Hotel";
 import LoadingItem from "@/components/LoadingList/LoadingItem";
-import { hotelSelector } from "@/redux/selectors/hotelSelector";
+import { IHotel } from "@/interfaces/hotel";
 import { Trans } from "react-i18next";
-import { useSelector } from "react-redux";
 import FilterHotel from "./FilterHotel";
 import SelectHotel from "./SelectHotel";
 
-const HotelSection = () => {
-  const { hotels, loading } = useSelector(hotelSelector);
+interface Props {
+  data: IHotel[];
+  isLoading: boolean;
+}
 
-  if (loading) {
+const HotelSection = ({ data, isLoading }: Props) => {
+  if (isLoading) {
     return <LoadingItem />;
   }
 
@@ -26,9 +28,9 @@ const HotelSection = () => {
       </div>
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 lg:pt-16 md:pt-10 pt-6">
-        {hotels.length ? (
-          hotels.map((hotel, index) => (
-            <div key={index}>
+        {data ? (
+          data.map((hotel) => (
+            <div key={hotel.id}>
               <Hotel hotel={hotel} />
             </div>
           ))

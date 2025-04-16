@@ -1,4 +1,4 @@
-import { getAllHotel, getFiltersHotel } from "@/api/hotelRequest";
+import { getHotels } from "@/api/hotelRequest";
 import HotelImg from "@/assets/images/hotel.png";
 import BreadcrumbCom from "@/components/Breadcrumb";
 import HeroSectionCom from "@/components/HeroSectionCom";
@@ -6,50 +6,39 @@ import PaginationWithShow from "@/components/paginations/PaginationWithShow";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import SearchHotel from "@/components/searchList/SearchHotel";
-import { useAppDispatch } from "@/redux";
-import { hotelSelector } from "@/redux/selectors/hotelSelector";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import HotelSection from "./HotelSection";
+import { handleSetParam } from "@/helper";
+import useQueryString from "@/hooks/useQueryString";
+import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import HotelSection from "./HotelSection";
+import useQueryParams from "@/hooks/useQueryParams";
 
 const Hotel = () => {
-  const { filter } = useSelector(hotelSelector);
-  const { location, price, score, sort, star } = filter;
-
   const { t } = useTranslation("hotel");
 
   const ITEMS_PER_PAGE = 4;
-
-  const [pageCount, setPageCount] = useState(0);
-  const totalData = JSON.parse(localStorage.getItem("totalHotel") || "0");
 
   const [currentPage, setCurrentPage] = useState(() => {
     const saved = localStorage.getItem("currentPageHotel");
     return saved ? Number(saved) : 0;
   });
 
-  useEffect(() => {
-    (async () => {
-      try {
-        await dispatch(getFiltersHotel());
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, []);
+  // const queryString: { _page?: string; _sort?: string; _order?: string } =
+  //   useQueryString();
+  const { params, setQueryParam } = useQueryParams();
 
-  const dispatch = useAppDispatch();
-  useEffect(() => {
-    (async () => {
-      try {
-        await dispatch(getAllHotel({ location, price, score, star, sort }));
-        setPageCount(Math.ceil(totalData / ITEMS_PER_PAGE));
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, [dispatch, location, price, score, star, sort, currentPage, totalData]);
+  const _page = Number(params._page) | 1;
+  const _sort = params._sort || "price";
+  const _order = params._order || "asc";
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["hotels", { _page, _sort, _order }],
+    queryFn: () => getHotels({ _page, _sort, _order }),
+  });
+
+  const totalData = Number(data?.headers["x-total-count"]);
+  const pageCount = Math.ceil(totalData / ITEMS_PER_PAGE);
 
   return (
     <>
@@ -62,7 +51,7 @@ const Hotel = () => {
       <PdSub />
       <BreadcrumbCom links={[{ title: "home", href: "/" }]} current="hotels" />
       <PdSub />
-      <HotelSection />
+      <HotelSection data={data?.data} isLoading={isLoading} />
       <PaginationWithShow
         currentPage={currentPage}
         items={ITEMS_PER_PAGE}
@@ -70,6 +59,7 @@ const Hotel = () => {
         totalData={totalData}
         onPageChange={(e) => {
           setCurrentPage(e);
+          setQueryParam("_page", (e + 1).toString());
           localStorage.setItem("currentPageHotel", e.toLocaleString());
         }}
       />

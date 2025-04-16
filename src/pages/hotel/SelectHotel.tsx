@@ -5,10 +5,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { hotelSelector } from "@/redux/selectors/hotelSelector";
-import { filterBySort } from "@/redux/slices/hotelsSlice";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { handleSetParam } from "@/helper";
+import useQueryString from "@/hooks/useQueryString";
 
 const sortList = [
   {
@@ -30,17 +28,18 @@ const sortList = [
 ];
 
 const SelectHotel = () => {
-  const { filter } = useSelector(hotelSelector);
+  const queryString = useQueryString();
 
-  const { sort } = filter;
-
-  const dispatch = useDispatch();
+  const _sort = queryString._sort || "price";
+  const _order = queryString._order || "asc";
+  const defaultValue = _sort + "-" + _order;
 
   return (
     <Select
-      defaultValue={sort}
+      defaultValue={defaultValue}
       onValueChange={(v) => {
-        dispatch(filterBySort(v));
+        handleSetParam("_sort", v.split("-")[0]);
+        handleSetParam("_order", v.split("-")[1]);
       }}
     >
       <SelectTrigger className="w-[180px]">

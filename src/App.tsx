@@ -21,6 +21,7 @@ import NotFoundPage from "./otherPages/notFoundPage";
 import { QueryParamProvider } from "use-query-params";
 import { ReactRouter6Adapter } from "use-query-params/adapters/react-router-6";
 import ScrollPage from "./components/scrollTop/ScrollPage";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <ScrollPage />
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryParamProvider>
     </BrowserRouter>
   );

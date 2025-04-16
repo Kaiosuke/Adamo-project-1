@@ -1,7 +1,9 @@
 interface IRoom {
   id: number;
+  status: boolean;
   thumbnail: string;
   description: string;
+  quantity: number;
   type: string;
   images: string[];
   price: number;

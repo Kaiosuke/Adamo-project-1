@@ -2,14 +2,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Descriptions from "./Descriptions";
 import Reviews from "./Reviews";
 import SelectRoom from "./SelectRoom";
+import { IHotel } from "@/interfaces/hotel";
 
 interface Props {
-  currentPage: number;
-  setCurrentPage: (v: number) => void;
-  pageCount: number;
+  data: IHotel;
 }
 
-const HotelDetailTabs = ({ currentPage, pageCount, setCurrentPage }: Props) => {
+const HotelDetailTabs = ({ data }: Props) => {
   const totalData = JSON.parse(localStorage.getItem("totalReviewHotel") || "0");
 
   return (
@@ -39,15 +38,11 @@ const HotelDetailTabs = ({ currentPage, pageCount, setCurrentPage }: Props) => {
         <SelectRoom />
       </TabsContent>
       <TabsContent value="descriptions">
-        <Descriptions />
+        <Descriptions data={data} />
       </TabsContent>
 
       <TabsContent value="reviews">
-        <Reviews
-          currentPage={currentPage}
-          pageCount={pageCount}
-          setCurrentPage={setCurrentPage}
-        />
+        <Reviews />
       </TabsContent>
     </Tabs>
   );

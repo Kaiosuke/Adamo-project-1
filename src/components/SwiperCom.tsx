@@ -9,16 +9,13 @@ import "swiper/css/thumbs";
 
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { useSelector } from "react-redux";
-import { hotelSelector } from "@/redux/selectors/hotelSelector";
 
 const SwiperCom = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-  const { hotel } = useSelector(hotelSelector);
-
   return (
     <>
-      <Swiper
+      {/* <Swiper
         style={{
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
@@ -62,7 +59,7 @@ const SwiperCom = () => {
             <img src={v} />
           </SwiperSlide>
         ))}
-      </Swiper>
+      </Swiper> */}
     </>
   );
 };

@@ -12,19 +12,14 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 
 import { Button } from "@/components/ui/button";
-import { hotelSelector } from "@/redux/selectors/hotelSelector";
-import {
-  filterByPrice,
-  filterByScore,
-  filterByStar,
-} from "@/redux/slices/hotelsSlice";
 
-import { useState } from "react";
-import { FaStar } from "react-icons/fa6";
-import { useDispatch, useSelector } from "react-redux";
-import { useDebouncedCallback } from "use-debounce";
-import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
+import { FaStar } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { getFiltersHotel } from "@/api/hotelRequest";
+import useQueryString from "@/hooks/useQueryString";
 
 const starList = ["1", "2", "3", "4", "5"];
 const scoreList = [
@@ -47,28 +42,16 @@ const scoreList = [
 ];
 
 const FilterHotel = () => {
-  const { filter } = useSelector(hotelSelector);
+  const { data } = useQuery({
+    queryKey: ["filtersHotel"],
+    queryFn: () => getFiltersHotel(),
+  });
 
-  const { price, star, score } = filter;
+  const navigate = useNavigate();
 
-  const [prices, setPrices] = useState(price);
+  const queryString = useQueryString();
 
-  const [starHotel, setStarHotel] = useState(star);
-  const [scoreHotel, setScoreHotel] = useState(score);
-
-  const dispatch = useDispatch();
-
-  const handleFilter = useDebouncedCallback(() => {
-    dispatch(filterByStar(starHotel));
-    dispatch(filterByPrice(prices));
-    dispatch(filterByScore(scoreHotel));
-  }, 1000);
-
-  const handleResetFilter = () => {
-    setStarHotel([]);
-    setScoreHotel(0);
-    setPrices([0, 300]);
-  };
+  const handleFilter = () => {};
 
   return (
     <DropdownMenu>
@@ -80,14 +63,11 @@ const FilterHotel = () => {
           <span className="text-[#03387D] text-size-lg font-semibold">
             FILTER:
           </span>
-          <span
-            className="text-five cursor-pointer hover:underline"
-            onClick={handleResetFilter}
-          >
+          <span className="text-five cursor-pointer hover:underline">
             CLEAR
           </span>
         </DropdownMenuLabel>
-        <div>
+        {/* <div>
           <span className="text-secondary font-bold">Budget:</span>
           <div className="lg:mt-10 mt-6">
             <div className="relative">
@@ -103,7 +83,7 @@ const FilterHotel = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="str-line" />
         <div>
           <span className="text-secondary font-bold">Hotel star</span>
@@ -113,16 +93,16 @@ const FilterHotel = () => {
                 <div className="mt-4 flex items-center gap-2" key={index}>
                   <Checkbox
                     id={v}
-                    checked={starHotel.includes(Number(v))}
-                    onCheckedChange={(checked) => {
-                      if (checked) {
-                        setStarHotel((prev) => [...prev, Number(v)].sort());
-                      } else {
-                        setStarHotel((prev) =>
-                          prev.filter((value) => Number(value) !== Number(v))
-                        );
-                      }
-                    }}
+                    // checked={starHotel.includes(Number(v))}
+                    // onCheckedChange={(checked) => {
+                    //   if (checked) {
+                    //     setStarHotel((prev) => [...prev, Number(v)].sort());
+                    //   } else {
+                    //     setStarHotel((prev) =>
+                    //       prev.filter((value) => Number(value) !== Number(v))
+                    //     );
+                    //   }
+                    // }}
                   />
                   <label
                     htmlFor={v}
@@ -143,8 +123,8 @@ const FilterHotel = () => {
             <span className="text-secondary font-bold">Review Score</span>
             <div className="mt-4">
               <RadioGroup
-                value={String(scoreHotel)}
-                onValueChange={(v) => setScoreHotel(Number(v))}
+              // value={String(scoreHotel)}
+              // onValueChange={(v) => setScoreHotel(Number(v))}
               >
                 {scoreList.map((v, index) => (
                   <div className="mt-4 flex items-center gap-2" key={index}>

@@ -23,4 +23,12 @@ interface IHotel {
     video: string;
   };
 }
+
+// export type IHotel2 = Pick<
+//   IHotel,
+//   "id" | "title" | "location" | "score" | "price" | "thumbnail"
+// >;
+
+// Omit<IHotel, "description">;
+
 export type { IHotel };

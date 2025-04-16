@@ -1,6 +1,8 @@
+import { getFiltersHotel } from "@/api/hotelRequest";
 import { handleFormatMoney } from "@/helper";
-import { hotelSelector } from "@/redux/selectors/hotelSelector";
-import { filterByGuest } from "@/redux/slices/hotelsSlice";
+import useQueryString from "@/hooks/useQueryString";
+import { roomSelector } from "@/redux/selectors/roomSelector";
+import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { CiLocationOn } from "react-icons/ci";
@@ -8,7 +10,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { FaCircleMinus, FaCirclePlus } from "react-icons/fa6";
 import { GoPeople } from "react-icons/go";
 import { LuUsers } from "react-icons/lu";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import DatePickerSingle from "../DatePickerSingle";
 import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
@@ -21,36 +23,34 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-import { roomSelector } from "@/redux/selectors/roomSelector";
-import { decreaseRoom, increaseRoom } from "@/redux/slices/roomsSlice";
-import { IRoom } from "@/interfaces/room";
 
 const BillHotelDetail = () => {
   const { t } = useTranslation(["search"]);
 
-  const { hotel } = useSelector(hotelSelector);
-  const { guests, filter } = useSelector(hotelSelector);
   const { rooms } = useSelector(roomSelector);
-
-  const { guest } = filter;
 
   const [date, setDate] = useState<Date>(new Date());
 
-  const dispatch = useDispatch();
+  const queryString = useQueryString();
 
-  const handleFilterGuest = (v: string) => {
-    dispatch(filterByGuest(v));
-  };
+  const guest = queryString.guest || "";
 
-  const handleDecreaseRoom = (room: IRoom) => {
-    dispatch(decreaseRoom(room.id));
-  };
+  const { data } = useQuery({
+    queryKey: ["guests"],
+    queryFn: () => getFiltersHotel(),
+  });
 
-  const handleIncreaseRoom = (room: IRoom) => {
-    dispatch(increaseRoom(room.id));
-  };
+  // const handleFilterGuest = (v: string) => {
+  //   dispatch(filterByGuest(v));
+  // };
 
-  console.log(rooms);
+  // const handleDecreaseRoom = (room: IRoom) => {
+  //   dispatch(decreaseRoom(room.id));
+  // };
+
+  // const handleIncreaseRoom = (room: IRoom) => {
+  //   dispatch(increaseRoom(room.id));
+  // };
 
   return (
     <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit">
@@ -58,7 +58,7 @@ const BillHotelDetail = () => {
         <div className="lg:p-8 p-4 flex gap-2 items-end">
           <span className="text-four">from</span>
           <span className="text-secondary text-size-xl font-semibold">
-            {hotel?.price && handleFormatMoney(hotel?.price)}
+            {/* {hotel?.price && handleFormatMoney(hotel?.price)} */}
           </span>
         </div>
         <div className="h-[1px] w-full bg-four opacity-50" />
@@ -70,15 +70,15 @@ const BillHotelDetail = () => {
             <LuUsers className="text-primary text-size-lg group-hover:text-third" />
             <Select
               defaultValue={guest}
-              onValueChange={(value) => handleFilterGuest(value)}
+              // onValueChange={(value) => handleFilterGuest(value)}
             >
               <SelectTrigger className="w-full group-hover:text-third">
                 <SelectValue placeholder={t("hotel.guest")} />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  {guests.length &&
-                    guests.map((v, index) => (
+                  {data &&
+                    data.guests.map((v, index) => (
                       <SelectItem value={v} key={index}>
                         {v}
                       </SelectItem>
@@ -95,14 +95,14 @@ const BillHotelDetail = () => {
                   <div className="flex items-center justify-between gap-2 ml-auto">
                     <FaCircleMinus
                       className="text-four text-xl cursor-pointer hover:text-four/80"
-                      onClick={() => handleDecreaseRoom(room)}
+                      // onClick={() => handleDecreaseRoom(room)}
                     />
                     <span className="w-[10px] text-center">
                       {room.quantity}
                     </span>
                     <FaCirclePlus
                       className="text-four text-xl cursor-pointer hover:text-four/80"
-                      onClick={() => handleIncreaseRoom(room)}
+                      // onClick={() => handleIncreaseRoom(room)}
                     />
                   </div>
                   <div className="font-bold text-six ml-auto">
