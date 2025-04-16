@@ -1,21 +1,22 @@
-import { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const useQueryParams = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const [params, setParams] = useState(() => {
-    return Object.fromEntries(new URLSearchParams(location.search));
-  });
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  useEffect(() => {
-    setParams(Object.fromEntries(new URLSearchParams(location.search)));
-  }, [location.search]);
+  const params: Record<string, string> = {};
+  for (const [key, value] of searchParams.entries()) {
+    params[key] = value;
+  }
 
-  const setQueryParam = (key: string, value: string) => {
-    const searchParams = new URLSearchParams(location.search);
-    searchParams.set(key, value);
-    navigate(`?${searchParams.toString()}`, { replace: true });
+  const setQueryParam = (newValues: Record<string, string>) => {
+    setSearchParams((prev) => {
+      const updated = new URLSearchParams(prev);
+
+      Object.entries(newValues).forEach(([key, value]) => {
+        updated.set(key, value);
+      });
+      return updated;
+    });
   };
 
   return { params, setQueryParam };

@@ -9,36 +9,48 @@ import SearchHotel from "@/components/searchList/SearchHotel";
 import { handleSetParam } from "@/helper";
 import useQueryString from "@/hooks/useQueryString";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import HotelSection from "./HotelSection";
-import useQueryParams from "@/hooks/useQueryParams";
+
+import { useSearchParams } from "react-router";
+
+import {
+  useQueryParams,
+  StringParam,
+  NumberParam,
+  withDefault,
+} from "use-query-params";
 
 const Hotel = () => {
   const { t } = useTranslation("hotel");
 
   const ITEMS_PER_PAGE = 4;
 
-  const [currentPage, setCurrentPage] = useState(() => {
-    const saved = localStorage.getItem("currentPageHotel");
-    return saved ? Number(saved) : 0;
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const [query, setQuery] = useQueryParams({
+    _page: withDefault(NumberParam, 1),
+    _sort: StringParam,
+    _order: StringParam,
   });
 
-  // const queryString: { _page?: string; _sort?: string; _order?: string } =
-  //   useQueryString();
-  const { params, setQueryParam } = useQueryParams();
-
-  const _page = Number(params._page) | 1;
-  const _sort = params._sort || "price";
-  const _order = params._order || "asc";
+  const _page = Number(query._page) || 1;
+  const _sort = query._sort || "price";
+  const _order = query._order || "asc";
 
   const { data, isLoading } = useQuery({
     queryKey: ["hotels", { _page, _sort, _order }],
     queryFn: () => getHotels({ _page, _sort, _order }),
   });
 
-  const totalData = Number(data?.headers["x-total-count"]);
+  const totalData = Number(localStorage.getItem("totalHotel"));
+
   const pageCount = Math.ceil(totalData / ITEMS_PER_PAGE);
+
+  useEffect(() => {
+    setCurrentPage(_page - 1);
+  }, [_page]);
 
   return (
     <>
@@ -51,7 +63,8 @@ const Hotel = () => {
       <PdSub />
       <BreadcrumbCom links={[{ title: "home", href: "/" }]} current="hotels" />
       <PdSub />
-      <HotelSection data={data?.data} isLoading={isLoading} />
+
+      <HotelSection data={data || []} isLoading={isLoading} />
       <PaginationWithShow
         currentPage={currentPage}
         items={ITEMS_PER_PAGE}
@@ -59,10 +72,10 @@ const Hotel = () => {
         totalData={totalData}
         onPageChange={(e) => {
           setCurrentPage(e);
-          setQueryParam("_page", (e + 1).toString());
-          localStorage.setItem("currentPageHotel", e.toLocaleString());
+          setQuery({ _page: e + 1 });
         }}
       />
+
       <PdMain />
     </>
   );

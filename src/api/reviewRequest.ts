@@ -39,7 +39,6 @@ const getReviewsHotel = async ({
   _page?: number | string;
   _limit?: number | string;
 }) => {
-  console.log("hotelId", hotelId);
   const res = await instanceLocal.get(`reviewsHotel?hotelId=${hotelId}`, {
     params: {
       _page,

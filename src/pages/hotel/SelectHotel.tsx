@@ -5,8 +5,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { handleSetParam } from "@/helper";
-import useQueryString from "@/hooks/useQueryString";
+import {
+  NumberParam,
+  StringParam,
+  useQueryParams,
+  withDefault,
+} from "use-query-params";
 
 const sortList = [
   {
@@ -28,18 +32,22 @@ const sortList = [
 ];
 
 const SelectHotel = () => {
-  const queryString = useQueryString();
+  const [query, setQuery] = useQueryParams({
+    _page: withDefault(NumberParam, 1),
+    _sort: StringParam,
+    _order: StringParam,
+  });
 
-  const _sort = queryString._sort || "price";
-  const _order = queryString._order || "asc";
-  const defaultValue = _sort + "-" + _order;
+  const defaultValue = query._sort + "-" + query._order;
 
   return (
     <Select
-      defaultValue={defaultValue}
+      defaultValue={
+        !defaultValue.includes("undefined") ? defaultValue : sortList[0].value
+      }
       onValueChange={(v) => {
-        handleSetParam("_sort", v.split("-")[0]);
-        handleSetParam("_order", v.split("-")[1]);
+        const [sort, order] = v.split("-");
+        setQuery({ _sort: sort, _order: order, _page: 1 });
       }}
     >
       <SelectTrigger className="w-[180px]">

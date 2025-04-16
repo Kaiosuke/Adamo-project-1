@@ -68,7 +68,7 @@ const getHotels = async ({
   _limit = 4,
   _sort = "price",
   _order = "asc",
-}: IGetHotels) => {
+}: IGetHotels): Promise<IHotel[]> => {
   const res = await instanceLocal.get("hotels", {
     params: {
       _page,
@@ -78,7 +78,8 @@ const getHotels = async ({
     },
   });
 
-  return res;
+  localStorage.setItem("totalHotel", res.headers["x-total-count"]);
+  return res.data;
 };
 
 const getHotelById = async (id: string): Promise<IHotel> => {

@@ -3009,26 +3009,6 @@
   ],
   "reviewsHotel": [
     {
-      "id": 1,
-      "hotelId": 1,
-      "rate": 9,
-      "avatar": "url('@/assets/images/Avatar-1.png')",
-      "opinion": "Nevermind",
-      "time": "Sep 2020",
-      "title": "The best experience ever!",
-      "des": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!"
-    },
-    {
-      "id": 2,
-      "hotelId": 1,
-      "rate": 8,
-      "avatar": "url('@/assets/images/Avatar-2.png')",
-      "opinion": "Very cozy",
-      "time": "Oct 2020",
-      "title": "Charming stay",
-      "des": "The rooms were clean and well-decorated. I especially loved the little balcony with a garden view."
-    },
-    {
       "id": 3,
       "hotelId": 1,
       "rate": 7,
@@ -3167,16 +3147,6 @@
       "time": "Dec 2021",
       "title": "Staff made the difference",
       "des": "They helped us with everything, from booking taxis to restaurant reservations. Very attentive."
-    },
-    {
-      "id": 17,
-      "hotelId": 4,
-      "rate": 6,
-      "avatar": "url('@/assets/images/Avatar-8.png')",
-      "opinion": "Not bad",
-      "time": "Jan 2022",
-      "title": "Good location, average rooms",
-      "des": "Close to the city center but the room smelled a bit musty. Still decent for the price."
     },
     {
       "id": 18,
@@ -3467,6 +3437,46 @@
       "title": "Romantic escape",
       "des": "test comment",
       "id": 48
+    },
+    {
+      "hotelId": 9,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "312312312",
+      "id": 49
+    },
+    {
+      "hotelId": 9,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "trtdasdas",
+      "id": 50
+    },
+    {
+      "hotelId": 9,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "312321",
+      "id": 51
+    },
+    {
+      "hotelId": 1,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "412",
+      "id": 52
     }
   ],
   "rooms": [
@@ -3476,7 +3486,7 @@
       "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
       "type": "Family Suite",
       "quantity": 4,
-      "status": true,
+      "status": false,
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",

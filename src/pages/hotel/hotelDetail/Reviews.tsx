@@ -139,26 +139,9 @@ const Reviews = () => {
         </Form>
       )}
 
-      {/* <div className={`md:mt-10 mt-8 ${isReview ? "block" : "hidden"}`}>
-        <div className="flex gap-2">
-          <div className="">
-            <FaUserCircle className="lg:w-[56px] md:w-[48px] w-[40px] h-auto text-five" />
-          </div>
-          <Textarea
-            placeholder="Type anything"
-            className="h-[128px] bg-seven text-four placeholder:text-four"
-          />
-        </div>
-        <div className="w-full text-right mt-6">
-          <Button className="w-auto lg:px-10 md:px-8 px-6" size={"third"}>
-            Comment
-          </Button>
-        </div>
-      </div> */}
-
       <div className="flex flex-col gap-4">
         {data &&
-          data.data.map((review: IReviewHotel) => (
+          data.data.reverse().map((review: IReviewHotel) => (
             <div key={review.id}>
               <ReviewHotel review={review} />
             </div>
