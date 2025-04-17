@@ -114,7 +114,10 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       },
@@ -262,8 +265,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -410,8 +418,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -558,8 +571,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -706,8 +724,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -854,8 +877,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1002,8 +1030,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1150,8 +1183,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1298,8 +1336,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1446,8 +1489,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1594,8 +1642,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1742,8 +1795,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1837,7 +1895,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -1894,7 +1955,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -1951,7 +2015,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2009,7 +2076,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2066,7 +2136,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2123,7 +2196,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2179,7 +2255,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2235,7 +2314,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2292,7 +2374,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2350,7 +2435,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2405,7 +2493,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2461,7 +2552,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -3383,6 +3477,306 @@
       "title": "Romantic escape",
       "des": "412",
       "id": 52
+    },
+    {
+      "hotelId": 12,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "trong",
+      "id": 53
+    },
+    {
+      "hotelId": 12,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "hello",
+      "id": 54
+    },
+    {
+      "hotelId": 3,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "helo",
+      "id": 55
+    },
+    {
+      "hotelId": 3,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "321312",
+      "id": 56
+    },
+    {
+      "hotelId": 3,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "312312312",
+      "id": 57
+    },
+    {
+      "hotelId": 1,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "trong",
+      "id": 58
+    },
+    {
+      "hotelId": 1,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "test comment\n",
+      "id": 59
+    },
+    {
+      "hotelId": 1,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "hello2",
+      "id": 60
+    },
+    {
+      "hotelId": 1,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "tets1",
+      "id": 61
+    },
+    {
+      "hotelId": 1,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "e2e21",
+      "id": 62
+    },
+    {
+      "hotelId": 1,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "32131231",
+      "id": 63
+    },
+    {
+      "hotelId": 1,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "321312",
+      "id": 64
+    },
+    {
+      "hotelId": 6,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "312312",
+      "id": 65
+    },
+    {
+      "hotelId": 6,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "32131",
+      "id": 66
+    },
+    {
+      "hotelId": 6,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "312321",
+      "id": 67
+    },
+    {
+      "hotelId": 6,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "321",
+      "id": 68
+    },
+    {
+      "hotelId": 6,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "21321",
+      "id": 69
+    },
+    {
+      "hotelId": 6,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "12312",
+      "id": 70
+    },
+    {
+      "hotelId": 6,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "11",
+      "id": 71
+    },
+    {
+      "hotelId": 6,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "21321",
+      "id": 72
+    },
+    {
+      "hotelId": 6,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "312",
+      "id": 73
+    },
+    {
+      "hotelId": 6,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "312",
+      "id": 74
+    },
+    {
+      "hotelId": 2,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "312",
+      "id": 75
+    },
+    {
+      "hotelId": 2,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "312",
+      "id": 76
+    },
+    {
+      "hotelId": 2,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "1",
+      "id": 77
+    },
+    {
+      "hotelId": 2,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "2",
+      "id": 78
+    },
+    {
+      "hotelId": 2,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "312",
+      "id": 79
+    },
+    {
+      "hotelId": 2,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "hi",
+      "id": 80
+    },
+    {
+      "hotelId": 2,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "2132",
+      "id": 81
+    },
+    {
+      "hotelId": 2,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "31231",
+      "id": 82
     }
   ],
   "rooms": [
@@ -3431,7 +3825,7 @@
       "description": "Spacious family suite featuring modern decor, city and partial sea view, and a private balcony. Includes a comfortable sitting area, large flat-screen TV, mini fridge, and tea/coffee facilities. The en-suite bathroom offers a rain shower and deluxe amenities.@Maximum occupancy is 2 adults and 2 children under 6 years old. Extra beds are available upon request and subject to availability.",
       "quantity": 3,
       "type": "Family Suite",
-      "status": true,
+      "status": false,
       "images": [
         "https://swiperjs.com/demos/images/nature-4.jpg",
         "https://swiperjs.com/demos/images/nature-5.jpg",
@@ -3527,7 +3921,7 @@
       "description": "Simple and elegant room equipped with essentials for a comfortable stay. Includes a twin bed setup, a work desk, and private bathroom. Perfect for business or short-term travelers.@Maximum occupancy is 2 adults. Extra beds not available.",
       "quantity": 2,
       "type": "Standard room",
-      "status": false,
+      "status": true,
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",

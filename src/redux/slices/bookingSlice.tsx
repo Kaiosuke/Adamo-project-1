@@ -1,16 +1,18 @@
-import { IBooking } from "@/interfaces/booking";
+import { IBooking, IBookingHotel } from "@/interfaces/booking";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface IStateBooking {
   loading: boolean;
   error: undefined | string;
   booking: IBooking | undefined;
+  bookingHotel: IBookingHotel | undefined;
 }
 
 const initialState: IStateBooking = {
   loading: false,
   error: undefined,
   booking: undefined,
+  bookingHotel: undefined,
 };
 
 const bookingSlice = createSlice({
@@ -20,8 +22,15 @@ const bookingSlice = createSlice({
     addBooking: (state: IStateBooking, action: PayloadAction<IBooking>) => {
       state.booking = action.payload;
     },
+
+    addBookingHotel: (
+      state: IStateBooking,
+      action: PayloadAction<IBookingHotel>
+    ) => {
+      state.bookingHotel = action.payload;
+    },
   },
 });
 
 export default bookingSlice.reducer;
-export const { addBooking } = bookingSlice.actions;
+export const { addBooking, addBookingHotel } = bookingSlice.actions;

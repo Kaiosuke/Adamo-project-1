@@ -8,14 +8,13 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import { useSelector } from "react-redux";
 
-const SwiperCom = () => {
+const SwiperCom = ({ images }: { images?: string[] }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
     <>
-      {/* <Swiper
+      <Swiper
         style={{
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
@@ -27,7 +26,7 @@ const SwiperCom = () => {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
-        {hotel?.images.map((v, index) => (
+        {images?.map((v, index) => (
           <SwiperSlide key={index}>
             <img src={v} />
           </SwiperSlide>
@@ -54,12 +53,12 @@ const SwiperCom = () => {
         }}
         className="mySwiper mt-3"
       >
-        {hotel?.images.map((v, index) => (
+        {images?.map((v, index) => (
           <SwiperSlide key={index}>
             <img src={v} />
           </SwiperSlide>
         ))}
-      </Swiper> */}
+      </Swiper>
     </>
   );
 };

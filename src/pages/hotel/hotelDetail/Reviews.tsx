@@ -4,11 +4,11 @@ import PdSub from "@/components/PdSub";
 import ReviewHotel from "@/components/reviews/ReviewHotel";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import useQueryParams from "@/hooks/useQueryParams";
+
 import { IReviewHotel } from "@/interfaces/review";
 import { commentSchema } from "@/schemas/reivewSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaUserCircle } from "react-icons/fa";
@@ -16,12 +16,13 @@ import { useParams } from "react-router";
 import { z } from "zod";
 
 import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
+import { NumberParam, useQueryParams } from "use-query-params";
 
 const Reviews = () => {
   const { id } = useParams();
   const [isReview, setIsReview] = useState(false);
-
-  const totalData = JSON.parse(localStorage.getItem("totalReviewHotel") || "0");
+  const [totalData, setTotalData] = useState(0);
+  const [isRefresh, setIsFresh] = useState(false);
 
   const ITEMS_PER_PAGE = 3;
 
@@ -32,12 +33,16 @@ const Reviews = () => {
     return saved ? Number(saved) : 0;
   });
 
-  const { params, setQueryParam } = useQueryParams();
+  const queryClient = useQueryClient();
 
-  const _page = params._page ? Number(params._page) : 1;
+  const [query, setQuery] = useQueryParams({
+    _page: NumberParam,
+  });
+
+  const _page = query._page ? query._page : 1;
 
   const { data } = useQuery({
-    queryKey: ["reviewHotel", id, currentPage],
+    queryKey: ["reviewHotel", { id, _page }],
     queryFn: () =>
       getReviewsHotel({
         hotelId: id as string,
@@ -47,12 +52,17 @@ const Reviews = () => {
   });
 
   useEffect(() => {
-    setPageCount(Math.ceil(totalData / ITEMS_PER_PAGE));
+    const total = localStorage.getItem("totalReviewHotel") || "0";
+    setPageCount(Math.ceil(Number(total) / ITEMS_PER_PAGE));
+    setTotalData(Number(total));
   }, []);
 
   const addComment = useMutation({
     mutationFn: (data: Omit<IReviewHotel, "id">) => {
       return addReviewHotel({ data });
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["reviewHotel"] });
     },
   });
 
@@ -78,6 +88,8 @@ const Reviews = () => {
       onSuccess: () => {
         form.reset();
         setIsReview(false);
+        setQuery({ _page: 1 });
+        setCurrentPage(0);
       },
     });
   }
@@ -141,7 +153,7 @@ const Reviews = () => {
 
       <div className="flex flex-col gap-4">
         {data &&
-          data.data.reverse().map((review: IReviewHotel) => (
+          data.reverse().map((review: IReviewHotel) => (
             <div key={review.id}>
               <ReviewHotel review={review} />
             </div>
@@ -152,7 +164,7 @@ const Reviews = () => {
         currentPage={currentPage}
         onPageChange={(v) => {
           setCurrentPage(v);
-          setQueryParam("_page", (v + 1).toString());
+          setQuery({ _page: v + 1 });
           localStorage.setItem("currentPageHotel", v.toLocaleString());
         }}
         pageCount={pageCount}

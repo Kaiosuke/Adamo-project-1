@@ -1,6 +1,5 @@
-import { Outlet } from "react-router";
 import ImageSign from "@/assets/images/sign.png";
-import { Toaster } from "sonner";
+import { Outlet } from "react-router";
 
 const LayoutAuth = () => {
   return (
@@ -14,7 +13,6 @@ const LayoutAuth = () => {
           ></div>
         </div>
       </div>
-      <Toaster />
     </>
   );
 };

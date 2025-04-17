@@ -38,14 +38,15 @@ const getReviewsHotel = async ({
   hotelId: number | string;
   _page?: number | string;
   _limit?: number | string;
-}) => {
+}): Promise<IReviewHotel[]> => {
   const res = await instanceLocal.get(`reviewsHotel?hotelId=${hotelId}`, {
     params: {
       _page,
       _limit,
     },
   });
-  return res;
+  localStorage.setItem("totalReviewHotel", res.headers["x-total-count"]);
+  return res.data;
 };
 
 const addReviewHotel = async ({
@@ -54,6 +55,7 @@ const addReviewHotel = async ({
   data: Omit<IReviewHotel, "id">;
 }): Promise<IReviewHotel> => {
   const res = await instanceLocal.post("reviewsHotel", data);
+  localStorage.setItem("totalReviewHotel", res.headers["x-total-count"]);
   return res.data;
 };
 

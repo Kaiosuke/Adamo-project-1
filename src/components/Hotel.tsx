@@ -8,7 +8,7 @@ import { Link } from "react-router";
 import LoadedImage from "./LoadingList/LoadedImage";
 
 const Hotel = ({ hotel }: { hotel: IHotel }) => {
-  const totalData = JSON.parse(localStorage.getItem("totalReviewHotel") || "0");
+  const totalData = Number(localStorage.getItem("totalReviewHotel") || "0");
 
   return (
     <div className="w-full">

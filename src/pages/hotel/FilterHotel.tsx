@@ -13,12 +13,13 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 import { Button } from "@/components/ui/button";
 
+import LoadingBtn from "@/components/LoadingList/LoadingBtn";
 import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
 import { useState } from "react";
 import { FaStar } from "react-icons/fa6";
 import { useDebouncedCallback } from "use-debounce";
 import { NumberParam, StringParam, useQueryParams } from "use-query-params";
-import { Slider } from "@/components/ui/slider";
 
 const starList = ["1", "2", "3", "4", "5"];
 const scoreList = [
@@ -41,6 +42,8 @@ const scoreList = [
 ];
 
 const FilterHotel = () => {
+  const [loading, setLoading] = useState(false);
+
   const [query, setQuery] = useQueryParams({
     score: StringParam,
     _page: NumberParam,
@@ -64,10 +67,18 @@ const FilterHotel = () => {
   });
 
   const handleFilter = useDebouncedCallback(() => {
+    setLoading(true);
     setQuery({ score });
     setQuery({ prices: `${prices[0] + "," + prices[1]}` });
     setQuery({ star: stars.toString() });
     setQuery({ _page: 1 });
+    setLoading(false);
+  }, 1000);
+
+  const handleResetFilter = useDebouncedCallback(() => {
+    setQuery({ score: "" });
+    setQuery({ prices: `0,2000` });
+    setQuery({ star: "" });
   }, 1000);
 
   return (
@@ -80,7 +91,10 @@ const FilterHotel = () => {
           <span className="text-[#03387D] text-size-lg font-semibold">
             FILTER:
           </span>
-          <span className="text-five cursor-pointer hover:underline">
+          <span
+            className="text-five cursor-pointer hover:underline"
+            onClick={handleResetFilter}
+          >
             CLEAR
           </span>
         </DropdownMenuLabel>
@@ -160,7 +174,13 @@ const FilterHotel = () => {
         </div>
         <div className="py-4" onClick={handleFilter}>
           <Button variant={"primary"} size={"third"} className="h-[48px] ">
-            Apply Filter
+            {loading ? (
+              <>
+                <LoadingBtn />
+              </>
+            ) : (
+              "Apply Filter"
+            )}
           </Button>
         </div>
       </DropdownMenuContent>

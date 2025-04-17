@@ -1,3 +1,6 @@
+import { IBreakfast, IExtraBed } from "@/redux/slices/roomsSlice";
+import { IRoom } from "./room";
+
 interface IBooking {
   duration: {
     from: string;
@@ -9,4 +12,14 @@ interface IBooking {
   guests: string;
 }
 
-export type { IBooking };
+interface IBookingHotel {
+  duration: string;
+  hotelId: number;
+  guests: string;
+  rooms: { data: IRoom; quantity: number }[];
+  breakFast: IBreakfast | undefined;
+  extraBed: IExtraBed | undefined;
+  totalPrice: number;
+}
+
+export type { IBooking, IBookingHotel };

@@ -12,10 +12,26 @@ import RelatedHotels from "./RelatedHotel";
 
 import { getHotelById } from "@/api/hotelRequest";
 import { useQuery } from "@tanstack/react-query";
+import { getReviewsHotel } from "@/api/reviewRequest";
 
 const HotelDetail = () => {
   const { id } = useParams();
   const [totalData, setTotalData] = useState();
+
+  useQuery({
+    queryKey: ["reviewHotel", { id }],
+    queryFn: () =>
+      getReviewsHotel({
+        hotelId: id as string,
+      }),
+    enabled: id !== undefined,
+  });
+
+  const { data } = useQuery({
+    queryKey: ["hotelDetail", id],
+    queryFn: () => getHotelById(id as string),
+    enabled: id !== undefined,
+  });
 
   useEffect(() => {
     const totalData = JSON.parse(
@@ -23,12 +39,6 @@ const HotelDetail = () => {
     );
     setTotalData(totalData);
   }, []);
-
-  const { data } = useQuery({
-    queryKey: ["hotelDetail", id],
-    queryFn: () => getHotelById(id as string),
-    enabled: id !== undefined,
-  });
 
   return (
     <>
@@ -62,12 +72,12 @@ const HotelDetail = () => {
         <div className="flex 2xl:gap-20 gap-10 lg:mt-8 mt-6 flex-wrap xl:flex-row flex-col-reverse">
           <div className="lg:flex-[1_0_auto] flex-[0_0_100%] lg:max-w-[635px] w-full">
             <div className="h-[680px]">
-              <SwiperCom />
+              <SwiperCom images={data?.images} />
             </div>
             {data && <HotelDetailTabs data={data} />}
           </div>
           <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit xl:sticky top-[20px]">
-            <BillHotelDetail />
+            <BillHotelDetail hotel={data} />
           </div>
         </div>
       </section>

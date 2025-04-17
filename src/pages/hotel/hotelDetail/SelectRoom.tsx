@@ -10,13 +10,14 @@ import {
 } from "@/components/ui/dialog";
 import { handleFormatMoney, handleSeparateWord } from "@/helper";
 import { IRoom } from "@/interfaces/room";
-import { addRoom } from "@/redux/slices/roomsSlice";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { addRoom, deleteRoom } from "@/redux/slices/roomsSlice";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { FaCheck, FaImage } from "react-icons/fa6";
 import { IoBedOutline } from "react-icons/io5";
 import { LuUsers } from "react-icons/lu";
 import { RiShape2Line } from "react-icons/ri";
 import { useDispatch } from "react-redux";
+import { useDebouncedCallback } from "use-debounce";
 
 const SelectRoom = () => {
   const { data } = useQuery({
@@ -26,22 +27,33 @@ const SelectRoom = () => {
 
   const dispatch = useDispatch();
 
-  const handleAddRoom = (room: IRoom) => {
+  const queryClient = useQueryClient();
+
+  const handleAddRoom = useDebouncedCallback((room: IRoom) => {
     const roomData = {
-      ...room,
+      data: room,
       quantity: 1,
     };
     dispatch(addRoom(roomData));
-  };
+  }, 300);
 
+  const handleDeleteRoom = useDebouncedCallback((room: IRoom) => {
+    dispatch(deleteRoom(room));
+  }, 300);
   const changeStatusMutation = useMutation({
     mutationFn: ({ roomId, status }: { roomId: number; status: boolean }) =>
       changeStatusRoom(roomId, status),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["rooms"] });
+    },
   });
 
-  const handleChangeStatus = (roomId: number, status: boolean) => {
-    changeStatusMutation.mutate({ roomId, status });
-  };
+  const handleChangeStatus = useDebouncedCallback(
+    (roomId: number, status: boolean) => {
+      changeStatusMutation.mutate({ roomId, status });
+    },
+    300
+  );
 
   return (
     <>
@@ -83,19 +95,48 @@ const SelectRoom = () => {
                               <span className="text-four">/night</span>
                             </div>
                             <div>
-                              <Button
-                                variant={"primary"}
-                                size={"third"}
-                                type="button"
-                                className="px-4 font-semibold"
-                                onClick={() => handleAddRoom(room)}
-                              >
-                                Select room
-                              </Button>
+                              {room.quantity < 1 ? (
+                                <Button
+                                  variant={"eight"}
+                                  size={"third"}
+                                  className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full cursor-not-allowed"
+                                >
+                                  Out of Room
+                                </Button>
+                              ) : !room.status ? (
+                                <div>
+                                  <Button
+                                    variant={"outline"}
+                                    size={"third"}
+                                    type="button"
+                                    className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full"
+                                    onClick={() => {
+                                      handleAddRoom(room);
+                                      handleChangeStatus(room.id, true);
+                                    }}
+                                  >
+                                    Select room
+                                  </Button>
+                                </div>
+                              ) : (
+                                <Button
+                                  variant={"primary"}
+                                  size={"third"}
+                                  type="button"
+                                  className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full"
+                                  onClick={() => {
+                                    handleDeleteRoom(room);
+                                    handleChangeStatus(room.id, false);
+                                  }}
+                                >
+                                  <FaCheck className="text-third" />
+                                  Selected
+                                </Button>
+                              )}
                             </div>
                           </div>
                           <div className="mt-4 h-[520px]">
-                            <SwiperCom />
+                            <SwiperCom images={room.images} />
                           </div>
                         </div>
                         <div className="flex-[1_1_auto]">
@@ -201,7 +242,7 @@ const SelectRoom = () => {
                         type="button"
                         className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full"
                         onClick={() => {
-                          handleAddRoom(room);
+                          handleDeleteRoom(room);
                           handleChangeStatus(room.id, false);
                         }}
                       >

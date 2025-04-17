@@ -6,19 +6,15 @@ import PaginationWithShow from "@/components/paginations/PaginationWithShow";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import SearchHotel from "@/components/searchList/SearchHotel";
-import { handleSetParam } from "@/helper";
-import useQueryString from "@/hooks/useQueryString";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import HotelSection from "./HotelSection";
 
-import { useSearchParams } from "react-router";
-
 import {
-  useQueryParams,
-  StringParam,
   NumberParam,
+  StringParam,
+  useQueryParams,
   withDefault,
 } from "use-query-params";
 

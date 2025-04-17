@@ -9,7 +9,7 @@ interface Props {
 }
 
 const HotelDetailTabs = ({ data }: Props) => {
-  const totalData = JSON.parse(localStorage.getItem("totalReviewHotel") || "0");
+  const totalData = localStorage.getItem("totalReviewHotel");
 
   return (
     <Tabs defaultValue="selectRoom" className="lg:pt-10 pt-6">
@@ -30,7 +30,9 @@ const HotelDetailTabs = ({ data }: Props) => {
           value="reviews"
           className="data-[state=active]:text-primary text-size-2xl px-0 flex-none data-[state=active]:shadow-none trans-slow hover:text-six cursor-pointer"
         >
-          {totalData > 0 ? `Reviews(${totalData})` : `Review(${totalData})`}
+          {totalData && Number(totalData) > 0
+            ? `Reviews(${totalData})`
+            : `Review(${totalData})`}
         </TabsTrigger>
       </TabsList>
       <div className="str-line" />

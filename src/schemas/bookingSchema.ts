@@ -4,4 +4,8 @@ const bookingSchema = z.object({
   guests: z.string().min(1, { message: "Please choose guests" }),
 });
 
-export { bookingSchema };
+const bookingHotelSchema = z.object({
+  guests: z.string().min(1, { message: "Please choose guests" }),
+});
+
+export { bookingSchema, bookingHotelSchema };
