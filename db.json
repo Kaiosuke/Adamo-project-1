@@ -114,10 +114,7 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       },
@@ -265,13 +262,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -418,13 +410,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -571,13 +558,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -724,13 +706,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -877,13 +854,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1030,13 +1002,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1183,13 +1150,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1336,13 +1298,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1489,13 +1446,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1642,13 +1594,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1795,13 +1742,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1895,10 +1837,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -1955,10 +1894,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2015,10 +1951,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2076,10 +2009,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2136,10 +2066,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2196,10 +2123,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2255,10 +2179,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2314,10 +2235,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2374,10 +2292,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2435,10 +2350,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2493,10 +2405,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2552,10 +2461,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2577,7 +2483,7 @@
     "Quang Binh, Vietnam"
   ],
   "locationHotels": [
-    " ",
+    "All",
     "Cua Duong, Phu Quoc",
     "Sa Pa, Lao Cai",
     "Loc Tho, Nha Trang",
@@ -2599,7 +2505,7 @@
     "sun and beaches"
   ],
   "guests": [
-    " ",
+    "All",
     "1 Adult",
     "1 Adult - 1 Children",
     "2 Adults - 1 Children",

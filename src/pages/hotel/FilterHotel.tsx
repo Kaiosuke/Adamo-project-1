@@ -14,12 +14,11 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 
 import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
+import { useState } from "react";
 import { FaStar } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import { getFiltersHotel } from "@/api/hotelRequest";
-import useQueryString from "@/hooks/useQueryString";
+import { useDebouncedCallback } from "use-debounce";
+import { NumberParam, StringParam, useQueryParams } from "use-query-params";
+import { Slider } from "@/components/ui/slider";
 
 const starList = ["1", "2", "3", "4", "5"];
 const scoreList = [
@@ -42,16 +41,34 @@ const scoreList = [
 ];
 
 const FilterHotel = () => {
-  const { data } = useQuery({
-    queryKey: ["filtersHotel"],
-    queryFn: () => getFiltersHotel(),
+  const [query, setQuery] = useQueryParams({
+    score: StringParam,
+    _page: NumberParam,
+    prices: StringParam,
+    star: StringParam,
   });
 
-  const navigate = useNavigate();
+  const [score, setScore] = useState(() => {
+    const v = query.score;
+    return v ? v : "";
+  });
 
-  const queryString = useQueryString();
+  const [stars, setStars] = useState<string[]>(() => {
+    const v = query.star;
+    return v ? v?.split(",") : [];
+  });
 
-  const handleFilter = () => {};
+  const [prices, setPrices] = useState(() => {
+    const v = query.prices;
+    return v ? [Number(v.split(",")[0]), Number(v.split(",")[1])] : [0, 300];
+  });
+
+  const handleFilter = useDebouncedCallback(() => {
+    setQuery({ score });
+    setQuery({ prices: `${prices[0] + "," + prices[1]}` });
+    setQuery({ star: stars.toString() });
+    setQuery({ _page: 1 });
+  }, 1000);
 
   return (
     <DropdownMenu>
@@ -67,7 +84,7 @@ const FilterHotel = () => {
             CLEAR
           </span>
         </DropdownMenuLabel>
-        {/* <div>
+        <div>
           <span className="text-secondary font-bold">Budget:</span>
           <div className="lg:mt-10 mt-6">
             <div className="relative">
@@ -83,7 +100,7 @@ const FilterHotel = () => {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
         <div className="str-line" />
         <div>
           <span className="text-secondary font-bold">Hotel star</span>
@@ -93,16 +110,14 @@ const FilterHotel = () => {
                 <div className="mt-4 flex items-center gap-2" key={index}>
                   <Checkbox
                     id={v}
-                    // checked={starHotel.includes(Number(v))}
-                    // onCheckedChange={(checked) => {
-                    //   if (checked) {
-                    //     setStarHotel((prev) => [...prev, Number(v)].sort());
-                    //   } else {
-                    //     setStarHotel((prev) =>
-                    //       prev.filter((value) => Number(value) !== Number(v))
-                    //     );
-                    //   }
-                    // }}
+                    checked={stars.includes(v)}
+                    onCheckedChange={(checked) => {
+                      if (checked) {
+                        setStars((prev) => [...prev, v].sort());
+                      } else {
+                        setStars((prev) => prev.filter((value) => value !== v));
+                      }
+                    }}
                   />
                   <label
                     htmlFor={v}
@@ -122,10 +137,7 @@ const FilterHotel = () => {
           <div>
             <span className="text-secondary font-bold">Review Score</span>
             <div className="mt-4">
-              <RadioGroup
-              // value={String(scoreHotel)}
-              // onValueChange={(v) => setScoreHotel(Number(v))}
-              >
+              <RadioGroup value={score} onValueChange={(v) => setScore(v)}>
                 {scoreList.map((v, index) => (
                   <div className="mt-4 flex items-center gap-2" key={index}>
                     <RadioGroupItem
@@ -145,19 +157,6 @@ const FilterHotel = () => {
               </RadioGroup>
             </div>
           </div>
-          {/* <span className="text-secondary font-bold">Review Score</span>
-          <div className="flex flex-col">
-            {scoreList.map((v, index) => (
-              <div className="mt-4 flex items-center gap-2" key={index}>
-                <Checkbox
-                  value={v.score}
-                  id={v.title}
-                  onChange={(v) => setScoreHotel(Number(v))}
-                />
-            
-              </div>
-            ))}
-          </div> */}
         </div>
         <div className="py-4" onClick={handleFilter}>
           <Button variant={"primary"} size={"third"} className="h-[48px] ">

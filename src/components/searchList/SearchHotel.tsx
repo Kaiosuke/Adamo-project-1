@@ -19,8 +19,7 @@ import { useTranslation } from "react-i18next";
 import { LuUsers } from "react-icons/lu";
 import { Link } from "react-router";
 import { useNavigate } from "react-router-dom";
-import useQueryString from "@/hooks/useQueryString";
-import { handleSetParam } from "@/helper";
+import { StringParam, useQueryParams } from "use-query-params";
 const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const { t } = useTranslation("search");
   const [date, setDate] = useState<Date>(new Date());
@@ -30,15 +29,26 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
     queryFn: () => getFiltersHotel(),
   });
 
-  const queryString = useQueryString();
+  const [query, setQuery] = useQueryParams({
+    location: StringParam,
+    guest: StringParam,
+  });
 
-  const location = queryString.location || " ";
-  const guest = queryString.guest || " ";
+  const [location, setLocation] = useState<string>(() => {
+    const v = query.location;
+    return v ? v : "All";
+  });
+
+  const [guest, setGuest] = useState<string>(() => {
+    const v = query.guest;
+    return v ? v : "All";
+  });
 
   const navigate = useNavigate();
 
   const handleFilter = () => {
-    navigate(`/hotels?&location=${location}&guest=${guest}`);
+    setQuery({ location: location, guest: guest });
+    navigate(`/hotels`);
   };
 
   return (
@@ -58,7 +68,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
               <Select
                 defaultValue={location}
                 onValueChange={(v) => {
-                  handleSetParam("location", v);
+                  setLocation(v);
                 }}
               >
                 <SelectTrigger className="w-full group-hover:text-third ">
@@ -82,10 +92,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
             </div>
             <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
               <LuUsers className="text-primary text-size-lg group-hover:text-third" />
-              <Select
-                defaultValue={guest}
-                onValueChange={(v) => handleSetParam("guest", v)}
-              >
+              <Select defaultValue={guest} onValueChange={(v) => setGuest(v)}>
                 <SelectTrigger className="w-full group-hover:text-third">
                   <SelectValue placeholder={t("tour.guest")} />
                 </SelectTrigger>

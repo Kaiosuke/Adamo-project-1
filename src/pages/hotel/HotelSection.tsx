@@ -28,7 +28,7 @@ const HotelSection = ({ data, isLoading }: Props) => {
       </div>
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 lg:pt-16 md:pt-10 pt-6">
-        {data ? (
+        {data.length ? (
           data.map((hotel) => (
             <div key={hotel.id}>
               <Hotel hotel={hotel} />

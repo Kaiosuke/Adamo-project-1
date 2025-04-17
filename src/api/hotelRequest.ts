@@ -61,6 +61,10 @@ interface IGetHotels {
   _limit?: number | string;
   _sort?: string;
   _order?: string;
+  location?: string;
+  score?: string;
+  prices?: string;
+  star?: string;
 }
 
 const getHotels = async ({
@@ -68,6 +72,10 @@ const getHotels = async ({
   _limit = 4,
   _sort = "price",
   _order = "asc",
+  location = " ",
+  score = "0",
+  prices = "0,300",
+  star = "",
 }: IGetHotels): Promise<IHotel[]> => {
   const res = await instanceLocal.get("hotels", {
     params: {
@@ -75,6 +83,11 @@ const getHotels = async ({
       _limit,
       _sort,
       _order,
+      score_gte: score,
+      location_like: location === "All" ? " " : location,
+      price_gte: prices.split(",")[0],
+      price_lte: prices.split(",")[1],
+      star: star ? star.split(",") : undefined,
     },
   });
 

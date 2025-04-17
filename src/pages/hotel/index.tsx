@@ -33,15 +33,29 @@ const Hotel = () => {
     _page: withDefault(NumberParam, 1),
     _sort: StringParam,
     _order: StringParam,
+    location: StringParam,
+    score: StringParam,
+    prices: StringParam,
+    star: StringParam,
+    guest: StringParam,
   });
 
   const _page = Number(query._page) || 1;
   const _sort = query._sort || "price";
   const _order = query._order || "asc";
+  const score = query.score || "";
+  const guest = query.guest || "";
+  const prices = query.prices || "0,200";
+  const location = query.location || "All";
+  const star = query.star || "";
 
   const { data, isLoading } = useQuery({
-    queryKey: ["hotels", { _page, _sort, _order }],
-    queryFn: () => getHotels({ _page, _sort, _order }),
+    queryKey: [
+      "hotels",
+      { _page, _sort, _order, location, score, prices, star, guest },
+    ],
+    queryFn: () =>
+      getHotels({ _page, _sort, _order, location, score, prices, star }),
   });
 
   const totalData = Number(localStorage.getItem("totalHotel"));
