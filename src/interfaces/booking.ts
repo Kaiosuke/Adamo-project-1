@@ -13,7 +13,10 @@ interface IBooking {
 }
 
 interface IBookingHotel {
-  duration: string;
+  duration: {
+    from: string;
+    to: string;
+  };
   hotelId: number;
   guests: string;
   rooms: { data: IRoom; quantity: number }[];

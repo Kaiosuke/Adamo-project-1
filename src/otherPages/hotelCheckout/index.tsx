@@ -1,7 +1,7 @@
+import { BillHotelCheckOut } from "@/components/bills/BillHotel";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import FormInfoUser from "./FormInfoUser";
-import { BillTourCheckOut } from "@/components/bills/BillTour";
 
 const HotelCheckOut = () => {
   return (
@@ -23,7 +23,7 @@ const HotelCheckOut = () => {
             <FormInfoUser />
           </div>
           <div className="lg:flex-[0_0_30%] flex-[0_0_auto] max-w-[380px] w-full bg-four h-fit">
-            <BillTourCheckOut />
+            <BillHotelCheckOut />
           </div>
         </div>
       </section>

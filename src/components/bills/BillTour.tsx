@@ -54,10 +54,6 @@ const BillTourDetail = () => {
 
   const navigate = useNavigate();
 
-  // const handleFilterGuest = (v: string) => {
-  //   disPatch(filterByGuest(v));
-  // };
-
   function onSubmit(values: z.infer<typeof bookingSchema>) {
     if (tour && date?.from && date?.to) {
       const totalPrice = tour?.price && tour?.price * tour?.duration;

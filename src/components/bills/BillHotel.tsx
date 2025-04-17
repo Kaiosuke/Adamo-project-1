@@ -1,4 +1,4 @@
-import { getFiltersHotel } from "@/api/hotelRequest";
+import { getFiltersHotel, getHotelById } from "@/api/hotelRequest";
 import { handleFormatMoney } from "@/helper";
 import { IHotel } from "@/interfaces/hotel";
 import { IRoom } from "@/interfaces/room";
@@ -25,7 +25,6 @@ import { GoPeople } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "sonner";
 import { StringParam, useQueryParams } from "use-query-params";
-import DatePickerSingle from "../DatePickerSingle";
 import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
 import { Input } from "../ui/input";
@@ -47,20 +46,26 @@ import { IBookingHotel } from "@/interfaces/booking";
 import { addBookingHotel } from "@/redux/slices/bookingSlice";
 import { bookingHotelSchema } from "@/schemas/bookingSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { addDays } from "date-fns";
+import { DateRange } from "react-day-picker";
 import { useDebouncedCallback } from "use-debounce";
+import DatePickerWithRange from "../DatePickerWithRange";
+import { bookingSelector } from "@/redux/selectors/bookingSelector";
+import { useNavigate } from "react-router";
 
 const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
   const { t } = useTranslation(["search"]);
 
   const { rooms, breakfast, extraBed } = useSelector(roomSelector);
 
-  const [date, setDate] = useState<Date>(new Date());
+  const [date, setDate] = useState<DateRange | undefined>({
+    from: addDays(new Date(), 1),
+    to: addDays(new Date(), 3),
+  });
 
   const [query, setQuery] = useQueryParams({
     guest: StringParam,
   });
-
-  const guest = query.guest || "";
 
   const { data } = useQuery({
     queryKey: ["guests"],
@@ -122,8 +127,13 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
 
     if (breakfast.status) data += breakfast.price * breakfast.quantity;
     if (extraBed.status) data += extraBed.price * extraBed.quantity;
+    if (date?.from && date.to)
+      data *= date?.to?.getDate() - date?.from?.getDate() + 1;
+
     return data;
   };
+
+  const navigate = useNavigate();
 
   const form = useForm<z.infer<typeof bookingHotelSchema>>({
     resolver: zodResolver(bookingHotelSchema),
@@ -134,18 +144,27 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
 
   const onSubmit = useDebouncedCallback(
     (values: z.infer<typeof bookingHotelSchema>) => {
-      const data: IBookingHotel = {
-        duration: date.toDateString(),
-        breakFast:
-          breakfast.status && breakfast.quantity > 0 ? breakfast : undefined,
-        extraBed:
-          extraBed.status && extraBed.quantity > 0 ? extraBed : undefined,
-        rooms: rooms,
-        guests: values.guests,
-        hotelId: hotel!.id,
-        totalPrice: handleTotalMoney(),
-      };
-      dispatch(addBookingHotel(data));
+      if (date?.from && date.to) {
+        const data: IBookingHotel = {
+          duration: {
+            from: date?.from.toDateString(),
+            to: date?.to.toDateString(),
+          },
+          breakFast:
+            breakfast.status && breakfast.quantity > 0 ? breakfast : undefined,
+          extraBed:
+            extraBed.status && extraBed.quantity > 0 ? extraBed : undefined,
+          rooms: rooms,
+          guests: values.guests,
+          hotelId: hotel!.id,
+          totalPrice: handleTotalMoney(),
+        };
+
+        dispatch(addBookingHotel(data));
+        navigate("/hotel-checkout");
+      } else {
+        toast.warning("Please choose dates");
+      }
     },
     300
   );
@@ -163,13 +182,12 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
                   <span className="text-four">from</span>
                   <span className="text-secondary text-size-xl font-semibold">
                     {hotel && handleFormatMoney(hotel.price)}
-                    22
                   </span>
                 </div>
                 <div className="h-[1px] w-full bg-four opacity-50" />
                 <div className="lg:p-8 p-4 flex flex-col gap-6">
-                  <div className="bg-third h-[64px]">
-                    <DatePickerSingle date={date} setDate={setDate} />
+                  <div className="bg-third h-full">
+                    <DatePickerWithRange setDate={setDate} date={date} />
                   </div>
                   <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
                     <GoPeople className="text-primary text-xl group-hover:text-third" />
@@ -181,7 +199,7 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
                       value={field.value}
                     >
                       <SelectTrigger className="w-full group-hover:text-third">
-                        <SelectValue placeholder={t("tour.guest")} />
+                        <SelectValue placeholder={t("hotel.guest")} />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectGroup {...field}>
@@ -355,58 +373,122 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
 };
 
 const BillHotelCheckOut = () => {
+  const { bookingHotel } = useSelector(bookingSelector);
+
+  const id = bookingHotel?.hotelId;
+
+  const { data } = useQuery({
+    queryKey: ["hotelDetail", { id: id }],
+    queryFn: () => getHotelById(id),
+    enabled: id !== undefined,
+  });
+  const handleGetDay = (v: string) => {
+    const time = new Date(v);
+    return time.toLocaleDateString("vi-VN");
+  };
+
+  console.log(bookingHotel);
+
   return (
-    <div className="bg-seven">
-      <div className="lg:p-8 p-4 flex flex-col gap-6">
-        <p className="text-secondary font-semibold">
-          Discover interesting things in the romantic coastal city of Vungtau
-        </p>
-        <div className="flex items-center gap-2">
-          <CiLocationOn className="text-primary text-xl" />
-          <span className="text-four text-sm">Vungtau City, Baria-Vungtau</span>
-        </div>
-        <div className="flex gap-10">
-          <div>
-            <div className="text-four">Duration:</div>
-            <div className="font-semibold text-secondary">
-              3 days - 2 nights
+    <>
+      {data && bookingHotel && (
+        <div className="bg-seven w-[380px]">
+          <div className="lg:p-8 p-4 flex flex-col gap-6">
+            <p className="text-secondary font-semibold">{data.title}</p>
+            <div className="flex items-center gap-2">
+              <CiLocationOn className="text-primary text-xl" />
+              <span className="text-four text-sm">{data.location}</span>
+            </div>
+            <div className="flex gap-10">
+              <div>
+                <div className="text-four">Tour type:</div>
+                <div className="font-semibold text-secondary">{data.type}</div>
+              </div>
+            </div>
+            <div className="w-full h-[64px] bg-third py-2 pl-3 flex items-center gap-4 text-sm">
+              <FaCalendarAlt className="text-primary text-xl" />
+              <div className="text-secondary flex items-center gap-1">
+                <span>{handleGetDay(bookingHotel.duration.from)}</span>
+                <span>-</span>
+                <span>{handleGetDay(bookingHotel.duration.to)}</span>
+              </div>
+            </div>
+            <div className="w-full h-[64px] bg-third py-2 pl-3 flex items-center gap-4 text-sm">
+              <GoPeople className="text-primary text-xl" />
+              <div className="text-secondary">{bookingHotel.guests}</div>
+            </div>
+            <div>
+              {bookingHotel.rooms.map((room) => (
+                <div
+                  key={room.data.id}
+                  className="flex items-center justify-between font-bold"
+                >
+                  <div className="flex items-center gap-0.5">
+                    <div className="text-primary">{room.quantity}</div>
+                    <div className="text-primary">x</div>
+                    <div className="text-secondary">{room.data.type}</div>
+                  </div>
+                  <div>
+                    {handleFormatMoney(room.data.price * room.quantity)}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div>
+              <div className="text-four">Add-ons:</div>
+              <div>
+                {bookingHotel.breakFast && (
+                  <div className="flex items-center justify-between text-secondary font-bold">
+                    <div className="flex items-center gap-0.5">
+                      <div className="text-primary">
+                        {bookingHotel.breakFast.quantity}
+                      </div>
+                      <div className="text-primary">x</div>
+                      <div className="text-secondary">Breakfast</div>
+                    </div>
+                    <div>{handleFormatMoney(bookingHotel.breakFast.price)}</div>
+                  </div>
+                )}
+              </div>
+              <div>
+                {bookingHotel.extraBed && (
+                  <div className="flex items-center justify-between text-secondary font-bold">
+                    <div className="flex items-center gap-0.5">
+                      <div className="text-primary">
+                        {bookingHotel.extraBed.quantity}
+                      </div>
+                      <div className="text-primary">x</div>
+                      <div className="text-secondary">extraBed</div>
+                    </div>
+                    <div>{handleFormatMoney(bookingHotel.extraBed.price)}</div>
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className="w-full h-[56px] flex items-center gap-4 text-sm">
+              <div className="flex-[1_0_auto]  h-full">
+                <Input
+                  className="bg-third rounded-none h-full p-0 py-2 pl-3 placeholder:text-four"
+                  placeholder="Promo Code"
+                />
+              </div>
+              <div className="text-secondary w-[112px] h-full">
+                <Button
+                  variant={"outline"}
+                  className="font-bold border-2 h-full"
+                >
+                  Apply
+                </Button>
+              </div>
             </div>
           </div>
-          <div>
-            <div className="text-four">Tour type:</div>
-            <div className="font-semibold text-secondary">Sun - Beach</div>
+          <div className="flex justify-between items-center bg-secondary text-third text-size-xl lg:p-8 p-4">
+            <span>Total</span>
+            <span>{handleFormatMoney(bookingHotel.totalPrice)}</span>
           </div>
         </div>
-        <div className="w-full h-[64px] bg-third py-2 pl-3 flex items-center gap-4 text-sm">
-          <FaCalendarAlt className="text-primary text-xl" />
-          <div className="text-secondary">
-            <span>25/02/2021 - </span>
-            <span> 28/02/2021</span>
-          </div>
-        </div>
-        <div className="w-full h-[64px] bg-third py-2 pl-3 flex items-center gap-4 text-sm">
-          <GoPeople className="text-primary text-xl" />
-          <div className="text-secondary">2 Adults - 1 Children</div>
-        </div>
-        <div className="w-full h-[56px] flex items-center gap-4 text-sm">
-          <div className="flex-[1_0_auto]  h-full">
-            <Input
-              className="bg-third rounded-none h-full p-0 py-2 pl-3 placeholder:text-four"
-              placeholder="Promo Code"
-            />
-          </div>
-          <div className="text-secondary w-[112px] h-full">
-            <Button variant={"outline"} className="font-bold border-2 h-full">
-              Apply
-            </Button>
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-between items-center bg-secondary text-third text-size-xl lg:p-8 p-4">
-        <span>Total</span>
-        <span>$450.00</span>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

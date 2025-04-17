@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 interface Props {
   setDate: (value: DateRange | undefined) => void;
   date: DateRange | undefined;
-  duration: number;
+  duration?: number;
 }
 
 function DatePickerWithRange({ date, setDate, duration }: Props) {
@@ -47,28 +47,44 @@ function DatePickerWithRange({ date, setDate, duration }: Props) {
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="start">
-          <Calendar
-            mode="range"
-            defaultMonth={date?.from}
-            selected={date}
-            onSelect={(range) => {
-              if (range?.from && range?.to) {
-                const maxDate = addDays(range.from, duration);
-                if (range.to > maxDate) {
-                  setDate({ from: range.from, to: maxDate });
-                  return;
+        {duration ? (
+          <PopoverContent className="w-auto p-0" align="start">
+            <Calendar
+              mode="range"
+              defaultMonth={date?.from}
+              selected={date}
+              onSelect={(range) => {
+                if (range?.from && range?.to) {
+                  const maxDate = addDays(range.from, duration);
+                  if (range.to > maxDate) {
+                    setDate({ from: range.from, to: maxDate });
+                    return;
+                  }
                 }
-              }
-              setDate(range);
-            }}
-            disabled={(date) => {
-              const today = new Date();
-              return date < today;
-            }}
-            numberOfMonths={2}
-          />
-        </PopoverContent>
+                setDate(range);
+              }}
+              disabled={(date) => {
+                const today = new Date();
+                return date < today;
+              }}
+              numberOfMonths={2}
+            />
+          </PopoverContent>
+        ) : (
+          <PopoverContent className="w-auto p-0" align="start">
+            <Calendar
+              mode="range"
+              defaultMonth={date?.from}
+              selected={date}
+              onSelect={setDate}
+              disabled={(date) => {
+                const today = new Date();
+                return date < today;
+              }}
+              numberOfMonths={2}
+            />
+          </PopoverContent>
+        )}
       </Popover>
     </div>
   );

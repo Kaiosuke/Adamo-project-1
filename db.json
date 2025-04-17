@@ -3825,7 +3825,7 @@
       "description": "Spacious family suite featuring modern decor, city and partial sea view, and a private balcony. Includes a comfortable sitting area, large flat-screen TV, mini fridge, and tea/coffee facilities. The en-suite bathroom offers a rain shower and deluxe amenities.@Maximum occupancy is 2 adults and 2 children under 6 years old. Extra beds are available upon request and subject to availability.",
       "quantity": 3,
       "type": "Family Suite",
-      "status": false,
+      "status": true,
       "images": [
         "https://swiperjs.com/demos/images/nature-4.jpg",
         "https://swiperjs.com/demos/images/nature-5.jpg",

@@ -1,7 +1,6 @@
 import Card from "@/assets/images/card.png";
 import Paypal from "@/assets/images/paypal.png";
 import FormComp from "@/components/forms/FormCom";
-import { userSchema } from "@/schemas/userSchema";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -12,29 +11,70 @@ import {
 } from "@/components/ui/form";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { userSchema } from "@/schemas/userSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import { useEffect, useState } from "react";
+
+import { useNavigate } from "react-router";
+
+import { StringParam, useQueryParams, withDefault } from "use-query-params";
+
 const FormInfoUser = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const [query, setQuery] = useQueryParams({
+    firstName: withDefault(StringParam, ""),
+    lastName: withDefault(StringParam, ""),
+    email: withDefault(StringParam, ""),
+    phoneNumber: withDefault(StringParam, ""),
+    address: withDefault(StringParam, ""),
+    city: withDefault(StringParam, ""),
+    state: withDefault(StringParam, ""),
+    zipCode: withDefault(StringParam, ""),
+    country: withDefault(StringParam, ""),
+    requirement: withDefault(StringParam, ""),
+    payMethod: withDefault(StringParam, ""),
+  });
+
   const form = useForm<z.infer<typeof userSchema>>({
     resolver: zodResolver(userSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
-      phoneNumber: "",
-      address: "",
-      city: "",
-      state: "",
-      zipCode: "",
-      country: "",
-      requirement: "",
-      payMethod: "",
+      firstName: query.firstName,
+      lastName: query.lastName,
+      email: query.email,
+      phoneNumber: query.phoneNumber,
+      address: query.address,
+      city: query.city,
+      state: query.state,
+      zipCode: query.zipCode,
+      country: query.country,
+      requirement: query.requirement,
+      payMethod: query.payMethod,
     },
   });
 
+  const { watch } = form;
+
+  useEffect(() => {
+    if (!isSubmitted) {
+      const subscription = watch((value) => {
+        setQuery({
+          ...value,
+        });
+      });
+      return () => subscription.unsubscribe();
+    }
+  }, [watch, isSubmitted]);
+
+  const navigate = useNavigate();
+
   function onSubmit(values: z.infer<typeof userSchema>) {
     console.log(values);
+    setIsSubmitted(true);
+    navigate("/thanks");
   }
 
   return (
@@ -131,7 +171,10 @@ const FormInfoUser = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <RadioGroup onValueChange={field.onChange}>
+                    <RadioGroup
+                      value={field.value}
+                      onValueChange={field.onChange}
+                    >
                       <div className="flex items-center space-x-2">
                         <RadioGroupItem
                           value="card"
