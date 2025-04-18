@@ -5,34 +5,36 @@ import {
   SelectItem,
   SelectTrigger,
 } from "@/components/ui/select";
+import { languageSelector } from "@/redux/selectors/languageSelector";
+import { changeLanguage, Lg } from "@/redux/slices/languageSlice";
 import { useEffect } from "react";
+
 import { useTranslation } from "react-i18next";
-import { StringParam, useQueryParams } from "use-query-params";
+import { useDispatch, useSelector } from "react-redux";
 
 const Language = ({ getLinkColor }: { getLinkColor: () => string }) => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
-  const [query, setQuery] = useQueryParams({
-    lg: StringParam,
-  });
+  const { lg } = useSelector(languageSelector);
 
-  const handleChangeLanguage = (value: string) => {
+  const dispatch = useDispatch();
+
+  const handleChangeLanguage = (value: Lg) => {
     i18n.changeLanguage(value);
-    setQuery({ lg: value });
+    console.log(value);
+    dispatch(changeLanguage(value));
   };
 
-  const language = query.lg || "en";
-
   useEffect(() => {
-    i18n.changeLanguage(language);
+    i18n.changeLanguage(lg);
   }, []);
 
   return (
     <div className="ml-6">
       <Select
-        value={language}
-        onValueChange={(value) => handleChangeLanguage(value)}
+        value={lg}
+        onValueChange={(value) => handleChangeLanguage(value as Lg)}
       >
         <SelectTrigger className="w-[60px] text-secondary ">
           <div className={getLinkColor()}>{currentLanguage}</div>

@@ -1,5 +1,4 @@
 import { changeStatusRoom, getAllRoom } from "@/api/roomRequest";
-import LoadedImage from "@/components/LoadingList/LoadedImage";
 import LoadedImageWidth from "@/components/LoadingList/LoadedImageWidth";
 import SwiperCom from "@/components/SwiperCom";
 import { Button } from "@/components/ui/button";
@@ -67,11 +66,6 @@ const SelectRoom = () => {
           <div className="flex flex-col gap-4 mt-4" key={room.id}>
             <div className="w-full bg-seven">
               <div className="relative flex md:flex-row flex-col">
-                {/* <img
-                  src={room.thumbnail}
-                  alt={room.type}
-                  className="w-[170px]"
-                /> */}
                 <div className="w-[200px]">
                   <LoadedImageWidth
                     alt={room.type}

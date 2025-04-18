@@ -15,6 +15,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router";
 
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
   const form = useForm<z.infer<typeof signInSchema>>({
@@ -24,6 +25,8 @@ const Login = () => {
       password: "",
     },
   });
+
+  const { t } = useTranslation("auth");
 
   const { loading } = useSelector(authSelector);
 
@@ -62,20 +65,20 @@ const Login = () => {
   return (
     <div className="flex justify-center items-center">
       <div className="flex justify-center items-start flex-col">
-        <h1 className="text-size-5xl text-secondary">Sign In</h1>
-        <div className="pt-4">Welcome to NgaoduVietnam</div>
+        <h1 className="text-size-5xl text-secondary">{t("signIn.title")}</h1>
+        <div className="pt-4">{t("signIn.description")}</div>
         <div className="mt-16">
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
               className="space-y-8 w-[350px]"
             >
-              <InputAuth form={form} name="email" title="Email Address" />
+              <InputAuth form={form} name="email" title={t("signIn.email")} />
 
               <InputAuth
                 form={form}
                 name="password"
-                title="Password"
+                title={t("signIn.password")}
                 type="password"
               />
               <div className="text-right">
@@ -83,7 +86,7 @@ const Login = () => {
                   to="/auth/forgot-password"
                   className="text-four text-base"
                 >
-                  Forgot Password?
+                  {t("signIn.forgotPs")}
                 </Link>
               </div>
               <div className="flex flex-col gap-6 mt-6">
@@ -93,23 +96,23 @@ const Login = () => {
                       <LoadingBtn />
                     </>
                   ) : (
-                    "Sign in"
+                    `${t("signIn.title")}`
                   )}
                 </Button>
                 <Button variant={"six"} type="button" onClick={handleLoginByFb}>
                   <span>
                     <FaFacebook className="text-size-lg" />
                   </span>
-                  Sign in with FaceBook
+                  {t("signIn.signFb")}
                 </Button>
               </div>
             </form>
           </Form>
           <div className="mt-6">
             <span className="text-four">
-              Don&apos;t have an account{" "}
+              {t("signIn.accCount")}{" "}
               <Link to="/auth/register" className="text-primary">
-                Sign up
+                {t("signIn.signUp")}
               </Link>
             </span>
           </div>

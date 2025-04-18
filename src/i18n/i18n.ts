@@ -4,6 +4,8 @@ import TOUR_EN from "@/locales/en/tour.json";
 import HOTEL_EN from "@/locales/en/hotel.json";
 import CONTACT_EN from "@/locales/en/contact.json";
 import SEARCH_EN from "@/locales/en/search.json";
+import AUTH_EN from "@/locales/en/auth.json";
+import CHECKOUT_EN from "@/locales/en/checkout.json";
 
 import HOME_VI from "@/locales/vi/home.json";
 import ABOUT_VI from "@/locales/vi/about.json";
@@ -11,6 +13,8 @@ import TOUR_VI from "@/locales/vi/tour.json";
 import HOTEL_VI from "@/locales/vi/hotel.json";
 import CONTACT_VI from "@/locales/vi/contact.json";
 import SEARCH_VI from "@/locales/vi/search.json";
+import AUTH_VI from "@/locales/vi/auth.json";
+import CHECKOUT_VI from "@/locales/vi/checkout.json";
 
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
@@ -28,6 +32,8 @@ export const resources = {
     hotel: HOTEL_EN,
     contact: CONTACT_EN,
     search: SEARCH_EN,
+    auth: AUTH_EN,
+    checkout: CHECKOUT_EN,
   },
   vi: {
     home: HOME_VI,
@@ -36,6 +42,8 @@ export const resources = {
     hotel: HOTEL_VI,
     contact: CONTACT_VI,
     search: SEARCH_VI,
+    auth: AUTH_VI,
+    checkout: CHECKOUT_VI,
   },
 };
 

@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import { authSelector } from "@/redux/selectors/authSelector";
 import LoadingBtn from "@/components/LoadingList/LoadingBtn";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
   const form = useForm<z.infer<typeof registerSchema>>({
@@ -50,11 +51,13 @@ const Login = () => {
     })();
   }
 
+  const { t } = useTranslation("auth");
+
   return (
     <div className="flex justify-center items-center">
       <div className="flex justify-center items-start flex-col">
-        <h1 className="text-size-5xl text-secondary">Register</h1>
-        <div className="pt-4">Welcome to NgaoduVietnam</div>
+        <h1 className="text-size-5xl text-secondary">{t("signUp.title")}</h1>
+        <div className="pt-4">{t("signUp.description")}</div>
         <div className="mt-16">
           <Form {...form}>
             <form
@@ -62,21 +65,29 @@ const Login = () => {
               className="space-y-8 w-[350px]"
             >
               <div className="flex items-center gap-4 ">
-                <InputAuth form={form} name="firstName" title="First Name" />
-                <InputAuth form={form} name="lastName" title="Last Name" />
+                <InputAuth
+                  form={form}
+                  name="firstName"
+                  title={t("signUp.firstName")}
+                />
+                <InputAuth
+                  form={form}
+                  name="lastName"
+                  title={t("signUp.lastName")}
+                />
               </div>
-              <InputAuth form={form} name="email" title="Email Address" />
+              <InputAuth form={form} name="email" title={t("signUp.email")} />
 
               <InputAuth
                 form={form}
                 name="password"
-                title="Password"
+                title={t("signUp.password")}
                 type="password"
               />
               <InputAuth
                 form={form}
                 name="confirm"
-                title="Confirm Password"
+                title={t("signUp.confirm")}
                 type="password"
               />
 
@@ -87,23 +98,23 @@ const Login = () => {
                       <LoadingBtn />
                     </>
                   ) : (
-                    "Register"
+                    `${t("signUp.register")}`
                   )}
                 </Button>
                 <Button variant={"six"} type="button">
                   <span>
                     <FaFacebook className="text-size-lg" />
                   </span>
-                  Sign in with FaceBook
+                  {t("signUp.signFb")}
                 </Button>
               </div>
             </form>
           </Form>
           <div className="mt-6">
             <span className="text-four">
-              Maybe already?{" "}
+              {t("signUp.already")}{" "}
               <Link to="/auth/login" className="text-primary">
-                Login
+                {t("signUp.SignIN")}
               </Link>
             </span>
           </div>

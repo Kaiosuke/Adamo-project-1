@@ -12,6 +12,8 @@ import { useSelector } from "react-redux";
 import { authSelector } from "@/redux/selectors/authSelector";
 import LoadingBtn from "@/components/LoadingList/LoadingBtn";
 import { toast } from "sonner";
+import { Link } from "react-router";
+import { Trans, useTranslation } from "react-i18next";
 
 const ForgotPassword = () => {
   const form = useForm<z.infer<typeof forgotPasswordSchema>>({
@@ -37,13 +39,14 @@ const ForgotPassword = () => {
     })();
   }
 
+  const { t } = useTranslation("auth");
+
   return (
     <div className="flex justify-center items-center">
       <div className="flex justify-center items-start flex-col">
-        <h1 className="text-size-5xl text-secondary">Forgot Password</h1>
+        <h1 className="text-size-5xl text-secondary">{t("forgotPs.title")}</h1>
         <div className="pt-4">
-          Enter the e-mail address associated with the account. <br />{" "}
-          We&apos;ll e-mail a link to reset your password.
+          <Trans ns="auth" i18nKey={"forgotPs.description"} />
         </div>
         <div className="mt-16">
           <Form {...form}>
@@ -51,7 +54,7 @@ const ForgotPassword = () => {
               onSubmit={form.handleSubmit(onSubmit)}
               className="space-y-8 w-[350px]"
             >
-              <InputAuth form={form} name="email" title="Email Address" />
+              <InputAuth form={form} name="email" title={t("forgotPs.email")} />
               <div className="flex flex-col gap-6 mt-6">
                 <Button variant={"primary"} type="submit">
                   {loading ? (
@@ -59,12 +62,14 @@ const ForgotPassword = () => {
                       <LoadingBtn />
                     </>
                   ) : (
-                    "Send Request"
+                    `${t("forgotPs.send")}`
                   )}
                 </Button>
-                <Button variant={"outline"} type="button">
-                  Back to sign in
-                </Button>
+                <Link to="/auth/login">
+                  <Button variant={"outline"} type="button">
+                    {t("forgotPs.back")}
+                  </Button>
+                </Link>
               </div>
             </form>
           </Form>
