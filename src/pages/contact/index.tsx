@@ -5,6 +5,7 @@ import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import ContactSection from "./ContactSection";
 import { Trans, useTranslation } from "react-i18next";
+import { Rating } from "react-simple-star-rating";
 
 const Contact = () => {
   useTranslation("contact");
@@ -27,6 +28,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
       <PdSub />
       <BreadcrumbCom links={[{ title: "Home", href: "/" }]} current="Contact" />
       <PdSub />

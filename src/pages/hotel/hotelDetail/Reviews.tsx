@@ -22,7 +22,6 @@ const Reviews = () => {
   const { id } = useParams();
   const [isReview, setIsReview] = useState(false);
   const [totalData, setTotalData] = useState(0);
-  const [isRefresh, setIsFresh] = useState(false);
 
   const ITEMS_PER_PAGE = 3;
 

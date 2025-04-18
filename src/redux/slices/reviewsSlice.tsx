@@ -1,5 +1,5 @@
-import { getReviewTourList } from "@/api/reviewRequest";
-import { IReviewHotel, IReviewTour } from "@/interfaces/review";
+import { addReviewTour, getReviewTourList } from "@/api/reviewRequest";
+import { IReviewTour } from "@/interfaces/review";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface IStateReview {
@@ -42,6 +42,15 @@ const reviewsSlice = createSlice({
       }
     );
     builder.addCase(getReviewTourList.rejected, setError);
+
+    builder.addCase(addReviewTour.pending, setLoading);
+    builder.addCase(
+      addReviewTour.fulfilled,
+      (state: IStateReview, action: PayloadAction<IReviewTour>) => {
+        (state.loading = false), (state.error = undefined);
+        state.reviewsTour = [...state.reviewsTour, action.payload];
+      }
+    );
   },
 });
 

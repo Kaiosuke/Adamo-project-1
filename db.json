@@ -3005,6 +3005,36 @@
       "time": "Oct 2023",
       "title": "Enriching journey",
       "des": "Great for history buffs. I learned so much and the photos came out stunning!"
+    },
+    {
+      "tourId": 2,
+      "rate": 3,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Fri Apr 18 2025",
+      "title": "The best experience ever",
+      "des": "32121",
+      "id": 39
+    },
+    {
+      "tourId": 2,
+      "rate": 3,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Fri Apr 18 2025",
+      "title": "The best experience ever",
+      "des": "3212121321",
+      "id": 40
+    },
+    {
+      "tourId": 2,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Fri Apr 18 2025",
+      "title": "The best experience ever",
+      "des": "rtrere",
+      "id": 41
     }
   ],
   "reviewsHotel": [

@@ -20,4 +20,6 @@ interface IReviewHotel {
   des: string;
 }
 
-export type { IReviewHotel, IReviewTour };
+type IReviewTourLackId = Omit<IReviewTour, "id">;
+
+export type { IReviewHotel, IReviewTour, IReviewTourLackId };

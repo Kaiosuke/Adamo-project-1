@@ -1,4 +1,8 @@
-import { IReviewHotel, IReviewTour } from "@/interfaces/review";
+import {
+  IReviewHotel,
+  IReviewTour,
+  IReviewTourLackId,
+} from "@/interfaces/review";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { instanceLocal } from "./instance";
@@ -30,6 +34,22 @@ const getReviewTourList = createAsyncThunk<
   }
 );
 
+const addReviewTour = createAsyncThunk<
+  IReviewTour,
+  { data: IReviewTourLackId },
+  { rejectValue: string }
+>("review/add", async ({ data }, { rejectWithValue }) => {
+  try {
+    const res = await instanceLocal.post("reviewsTour", data);
+    return res.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      return rejectWithValue(error.response?.data.message);
+    }
+    rejectWithValue("error");
+  }
+});
+
 const getReviewsHotel = async ({
   hotelId,
   _page = 1,
@@ -59,4 +79,4 @@ const addReviewHotel = async ({
   return res.data;
 };
 
-export { getReviewsHotel, getReviewTourList, addReviewHotel };
+export { getReviewsHotel, getReviewTourList, addReviewHotel, addReviewTour };
