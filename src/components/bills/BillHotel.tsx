@@ -192,9 +192,9 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
                   <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
                     <GoPeople className="text-primary text-xl group-hover:text-third" />
                     <Select
-                      onValueChange={() => {
-                        setQuery({ guest: field.value });
-                        return field.onChange;
+                      onValueChange={(v) => {
+                        setQuery({ guest: v });
+                        return field.onChange(v);
                       }}
                       value={field.value}
                     >
@@ -379,15 +379,13 @@ const BillHotelCheckOut = () => {
 
   const { data } = useQuery({
     queryKey: ["hotelDetail", { id: id }],
-    queryFn: () => getHotelById(id),
+    queryFn: () => getHotelById(Number(id)),
     enabled: id !== undefined,
   });
   const handleGetDay = (v: string) => {
     const time = new Date(v);
     return time.toLocaleDateString("vi-VN");
   };
-
-  console.log(bookingHotel);
 
   return (
     <>
@@ -419,19 +417,23 @@ const BillHotelCheckOut = () => {
             </div>
             <div>
               {bookingHotel.rooms.map((room) => (
-                <div
-                  key={room.data.id}
-                  className="flex items-center justify-between font-bold"
-                >
-                  <div className="flex items-center gap-0.5">
-                    <div className="text-primary">{room.quantity}</div>
-                    <div className="text-primary">x</div>
-                    <div className="text-secondary">{room.data.type}</div>
-                  </div>
-                  <div>
-                    {handleFormatMoney(room.data.price * room.quantity)}
-                  </div>
-                </div>
+                <>
+                  {room.quantity > 0 && (
+                    <div
+                      key={room.data.id}
+                      className="flex items-center justify-between font-bold"
+                    >
+                      <div className="flex items-center gap-0.5">
+                        <div className="text-primary">{room.quantity}</div>
+                        <div className="text-primary">x</div>
+                        <div className="text-secondary">{room.data.type}</div>
+                      </div>
+                      <div>
+                        {handleFormatMoney(room.data.price * room.quantity)}
+                      </div>
+                    </div>
+                  )}
+                </>
               ))}
             </div>
             <div>

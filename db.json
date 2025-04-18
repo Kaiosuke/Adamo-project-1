@@ -3807,6 +3807,36 @@
       "title": "Romantic escape",
       "des": "31231",
       "id": 82
+    },
+    {
+      "hotelId": 9,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "21321312",
+      "id": 83
+    },
+    {
+      "hotelId": 9,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "trongle",
+      "id": 84
+    },
+    {
+      "hotelId": 9,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "hello2",
+      "id": 85
     }
   ],
   "rooms": [
@@ -3922,7 +3952,7 @@
       "description": "Cozy standard room with a city view and warm lighting. Features a queen bed, small seating area, flat-screen TV, and complimentary WiFi. Ideal for couples or solo travelers looking for comfort and convenience.@Maximum occupancy is 2 adults. Cribs are available upon request.",
       "quantity": 5,
       "type": "Standard room",
-      "status": true,
+      "status": false,
       "images": [
         "https://swiperjs.com/demos/images/nature-3.jpg",
         "https://swiperjs.com/demos/images/nature-4.jpg",

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 
 import { IReviewHotel } from "@/interfaces/review";
-import { commentSchema } from "@/schemas/reivewSchema";
+import { commentSchema } from "@/schemas/reviewSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
@@ -17,6 +17,7 @@ import { z } from "zod";
 
 import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { NumberParam, useQueryParams } from "use-query-params";
+import { CommentRatings } from "@/components/ui/Rating";
 
 const Reviews = () => {
   const { id } = useParams();
@@ -69,6 +70,7 @@ const Reviews = () => {
     resolver: zodResolver(commentSchema),
     defaultValues: {
       message: "",
+      star: 0,
     },
   });
 
@@ -116,36 +118,57 @@ const Reviews = () => {
       </div>
       {isReview && (
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-8 mt-6"
+          >
             <FormField
               control={form.control}
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <div className={`md:mt-10 mt-8 `}>
-                    <div className="flex gap-2">
-                      <div className="">
-                        <FaUserCircle className="lg:w-[56px] md:w-[48px] w-[40px] h-auto text-five" />
-                      </div>
-                      <Textarea
-                        placeholder="Type anything"
-                        className="h-[128px] bg-seven text-four placeholder:text-four"
-                        {...field}
-                      />
+                  <div className="flex gap-2">
+                    <div className="">
+                      <FaUserCircle className="lg:w-[56px] md:w-[48px] w-[40px] h-auto text-five" />
                     </div>
-                    <div className="w-full text-right mt-6">
-                      <Button
-                        className="w-auto lg:px-10 md:px-8 px-6"
-                        size={"third"}
-                      >
-                        Comment
-                      </Button>
-                    </div>
+                    <Textarea
+                      value={field.value}
+                      onChange={(v) => {
+                        field.onChange(v);
+                      }}
+                      placeholder="Type anything"
+                      className="h-[128px] bg-seven text-four placeholder:text-four"
+                    />
                   </div>
                   <FormMessage />
                 </FormItem>
               )}
             />
+            <div className="w-full mt-6 flex justify-between">
+              <FormField
+                control={form.control}
+                name="star"
+                render={({ field }) => (
+                  <FormItem>
+                    <div className="">
+                      <CommentRatings
+                        rating={Number(field.value)}
+                        size={30}
+                        onRatingChange={(v) => {
+                          field.onChange(Number(v));
+                        }}
+                        variant="yellow"
+                        totalStars={5}
+                      />
+                    </div>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button className="w-auto lg:px-10 md:px-8 px-6" size={"third"}>
+                Comment
+              </Button>
+            </div>
           </form>
         </Form>
       )}

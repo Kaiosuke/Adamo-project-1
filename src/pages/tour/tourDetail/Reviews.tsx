@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useAppDispatch } from "@/redux";
 import { reviewSelector } from "@/redux/selectors/reviewSelector";
 import { tourSelector } from "@/redux/selectors/tourSelector";
-import { commentSchema } from "@/schemas/reivewSchema";
+import { commentSchema } from "@/schemas/reviewSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { FaUserCircle } from "react-icons/fa";
