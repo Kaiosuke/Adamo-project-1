@@ -27,4 +27,22 @@ instance.interceptors.request.use(
   }
 );
 
+instance.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  async (err) => {
+    const originalRequest = err.config;
+    if (err.response.status === 401 && !originalRequest._retry) {
+      originalRequest._retry = true;
+      try {
+      } catch (error) {
+        console.log(err);
+      }
+    }
+
+    return Promise.reject(err);
+  }
+);
+
 export { instance, instanceLocal };
