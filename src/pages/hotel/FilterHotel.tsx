@@ -20,6 +20,7 @@ import { useState } from "react";
 import { FaStar } from "react-icons/fa6";
 import { useDebouncedCallback } from "use-debounce";
 import { NumberParam, StringParam, useQueryParams } from "use-query-params";
+import { toast } from "sonner";
 
 const starList = ["1", "2", "3", "4", "5"];
 const scoreList = [
@@ -73,12 +74,14 @@ const FilterHotel = () => {
     setQuery({ star: stars.toString() });
     setQuery({ _page: 1 });
     setLoading(false);
+    toast.success("Filter successfully");
   }, 1000);
 
   const handleResetFilter = useDebouncedCallback(() => {
     setQuery({ score: "" });
     setQuery({ prices: `0,2000` });
     setQuery({ star: "" });
+    toast.success("Reset successfully");
   }, 1000);
 
   return (

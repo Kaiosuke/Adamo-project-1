@@ -20,6 +20,7 @@ import { LuUsers } from "react-icons/lu";
 import { Link } from "react-router";
 import { useNavigate } from "react-router-dom";
 import { StringParam, useQueryParams } from "use-query-params";
+import { toast } from "sonner";
 const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const { t } = useTranslation("search");
   const [date, setDate] = useState<Date>(new Date());
@@ -48,6 +49,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
 
   const handleFilter = () => {
     setQuery({ location: location, guest: guest });
+    toast.success("Filter successfully");
     navigate(`/hotels`);
   };
 

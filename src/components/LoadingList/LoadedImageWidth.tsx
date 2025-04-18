@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Skeleton } from "../ui/skeleton";
 
-const LoadedImage = ({
+const LoadedImageWidth = ({
   thumbnail,
   alt,
 }: {
@@ -11,7 +11,7 @@ const LoadedImage = ({
   const [isLoaded, setIsdLoaded] = useState(false);
 
   return (
-    <div className="overflow-hidden relative w-full h-full rounded-none aspect-3/2 object-cover">
+    <div className="overflow-hidden relative w-full h-full rounded-none object-cover">
       {!isLoaded && (
         <Skeleton className="absolute inset-0 z-[1] rounded-none w-full h-full" />
       )}
@@ -20,7 +20,7 @@ const LoadedImage = ({
         src={thumbnail}
         alt={alt}
         onLoad={() => setIsdLoaded(true)}
-        className={`object-cover hover:scale-125 tran-fast ${
+        className={`object-cover h-full w-full hover:scale-125 tran-fast ${
           isLoaded ? "block" : "hidden"
         }`}
       />
@@ -28,4 +28,4 @@ const LoadedImage = ({
   );
 };
 
-export default LoadedImage;
+export default LoadedImageWidth;

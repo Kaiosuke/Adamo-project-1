@@ -95,7 +95,7 @@ const getHotels = async ({
   return res.data;
 };
 
-const getHotelById = async (id: number): Promise<IHotel> => {
+const getHotelById = async (id: number | string): Promise<IHotel> => {
   const res = await instanceLocal.get(`hotels/${id}`);
   return res.data;
 };

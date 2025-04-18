@@ -31,6 +31,7 @@ import { filterByGuest } from "@/redux/slices/toursSlice";
 import { useNavigate } from "react-router";
 import DatePickerWithRange from "../DatePickerWithRange";
 import { Button } from "../ui/button";
+import { toast } from "sonner";
 
 const BillTourDetail = () => {
   const { tour } = useSelector(tourSelector);
@@ -73,7 +74,7 @@ const BillTourDetail = () => {
       };
 
       disPatch(addBooking(data));
-
+      toast.success("Booking successfully");
       navigate("/tour-checkout");
     }
   }

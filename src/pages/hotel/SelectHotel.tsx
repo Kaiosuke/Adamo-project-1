@@ -5,6 +5,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { toast } from "sonner";
 import {
   NumberParam,
   StringParam,
@@ -48,6 +49,7 @@ const SelectHotel = () => {
       onValueChange={(v) => {
         const [sort, order] = v.split("-");
         setQuery({ _sort: sort, _order: order, _page: 1 });
+        toast.success("Sort successfully");
       }}
     >
       <SelectTrigger className="w-[180px]">

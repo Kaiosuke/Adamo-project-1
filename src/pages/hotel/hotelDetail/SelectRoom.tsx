@@ -1,4 +1,6 @@
 import { changeStatusRoom, getAllRoom } from "@/api/roomRequest";
+import LoadedImage from "@/components/LoadingList/LoadedImage";
+import LoadedImageWidth from "@/components/LoadingList/LoadedImageWidth";
 import SwiperCom from "@/components/SwiperCom";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,6 +19,7 @@ import { IoBedOutline } from "react-icons/io5";
 import { LuUsers } from "react-icons/lu";
 import { RiShape2Line } from "react-icons/ri";
 import { useDispatch } from "react-redux";
+import { toast } from "sonner";
 import { useDebouncedCallback } from "use-debounce";
 
 const SelectRoom = () => {
@@ -45,6 +48,7 @@ const SelectRoom = () => {
       changeStatusRoom(roomId, status),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["rooms"] });
+      toast.success("Successfully");
     },
   });
 
@@ -63,11 +67,17 @@ const SelectRoom = () => {
           <div className="flex flex-col gap-4 mt-4" key={room.id}>
             <div className="w-full bg-seven">
               <div className="relative flex md:flex-row flex-col">
-                <img
+                {/* <img
                   src={room.thumbnail}
                   alt={room.type}
                   className="w-[170px]"
-                />
+                /> */}
+                <div className="w-[200px]">
+                  <LoadedImageWidth
+                    alt={room.type}
+                    thumbnail={room.thumbnail}
+                  />
+                </div>
                 <div className="absolute top-2 left-2 w-8 h-8 rounded-full bg-four flex justify-center items-center">
                   <Dialog>
                     <DialogTrigger>

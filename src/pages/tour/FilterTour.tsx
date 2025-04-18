@@ -23,6 +23,7 @@ import {
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useDebouncedCallback } from "use-debounce";
+import { toast } from "sonner";
 
 const FilterTour = () => {
   const { filter, types, durations } = useSelector(tourSelector);
@@ -39,9 +40,11 @@ const FilterTour = () => {
     dispatch(filterByType(typeTour));
     dispatch(filterByDuration(durationTour));
     dispatch(filterByPrice(prices));
+    toast.success("Filter successfully");
   }, 1000);
 
   const handleResetFilter = () => {
+    toast.success("Reset successfully");
     setDurationTour("");
     setPrices([0, 1200]);
     setTypeTour([]);

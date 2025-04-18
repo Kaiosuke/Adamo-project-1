@@ -3145,6 +3145,16 @@
       "title": "The best experience ever",
       "des": "hdasdasd",
       "id": 52
+    },
+    {
+      "tourId": 2,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Fri Apr 18 2025",
+      "title": "The best experience ever",
+      "des": "321dsad",
+      "id": 53
     }
   ],
   "reviewsHotel": [
@@ -3957,6 +3967,16 @@
       "title": "Romantic escape",
       "des": "321321",
       "id": 86
+    },
+    {
+      "hotelId": 7,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "dasd",
+      "id": 87
     }
   ],
   "rooms": [
@@ -3966,7 +3986,7 @@
       "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
       "type": "Family Suite",
       "quantity": 4,
-      "status": false,
+      "status": true,
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -4005,7 +4025,7 @@
       "description": "Spacious family suite featuring modern decor, city and partial sea view, and a private balcony. Includes a comfortable sitting area, large flat-screen TV, mini fridge, and tea/coffee facilities. The en-suite bathroom offers a rain shower and deluxe amenities.@Maximum occupancy is 2 adults and 2 children under 6 years old. Extra beds are available upon request and subject to availability.",
       "quantity": 3,
       "type": "Family Suite",
-      "status": false,
+      "status": true,
       "images": [
         "https://swiperjs.com/demos/images/nature-4.jpg",
         "https://swiperjs.com/demos/images/nature-5.jpg",

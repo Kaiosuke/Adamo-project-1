@@ -64,7 +64,7 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
   });
 
   const [query, setQuery] = useQueryParams({
-    guest: StringParam,
+    guest: StringParam || "",
   });
 
   const { data } = useQuery({
@@ -142,8 +142,6 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
     },
   });
 
-  console.log(query.guest);
-
   const onSubmit = useDebouncedCallback(
     (values: z.infer<typeof bookingHotelSchema>) => {
       if (date?.from && date.to) {
@@ -163,6 +161,7 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
         };
 
         dispatch(addBookingHotel(data));
+        toast.success("Booking successfully");
         navigate("/hotel-checkout");
       } else {
         toast.warning("Please choose dates");

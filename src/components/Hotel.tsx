@@ -18,7 +18,11 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
   return (
     <div className="w-full">
       <div className="relative">
-        <Link to={`/hotel-detail/${hotel.id}?guest=${query.guest}`}>
+        <Link
+          to={`/hotel-detail/${hotel.id}?guest=${
+            query.guest ? query.guest : ""
+          }`}
+        >
           <LoadedImage alt={hotel.title} thumbnail={hotel.thumbnail} />
         </Link>
 

@@ -22,6 +22,7 @@ import { tourSelector } from "@/redux/selectors/tourSelector";
 import { useState } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
+import { toast } from "sonner";
 
 const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
   const { locations, guests, types, filter } = useSelector(tourSelector);
@@ -41,6 +42,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
   const handleFilter = () => {
     dispatch(filterByLocation(locationFilter));
     dispatch(filterByType(typeFilter));
+    toast.success("Filter successfully");
   };
 
   return (

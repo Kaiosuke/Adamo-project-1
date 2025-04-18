@@ -29,7 +29,7 @@ const HotelDetail = () => {
 
   const { data } = useQuery({
     queryKey: ["hotelDetail", { id: id }],
-    queryFn: () => getHotelById(id as string),
+    queryFn: () => getHotelById(Number(id)),
     enabled: id !== undefined,
   });
 

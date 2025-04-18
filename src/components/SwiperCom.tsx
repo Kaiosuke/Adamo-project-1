@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import LoadedImage from "./LoadingList/LoadedImage";
 
 const SwiperCom = ({ images }: { images?: string[] }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -28,7 +29,7 @@ const SwiperCom = ({ images }: { images?: string[] }) => {
       >
         {images?.map((v, index) => (
           <SwiperSlide key={index}>
-            <img src={v} />
+            <LoadedImage alt="image" thumbnail={v} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -55,7 +56,7 @@ const SwiperCom = ({ images }: { images?: string[] }) => {
       >
         {images?.map((v, index) => (
           <SwiperSlide key={index}>
-            <img src={v} />
+            <LoadedImage alt="image" thumbnail={v} />
           </SwiperSlide>
         ))}
       </Swiper>
