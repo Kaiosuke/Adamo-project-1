@@ -1,3 +1,11 @@
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 import React from "react";
 
 interface Props {
@@ -24,10 +32,23 @@ const HeroSectionCom = ({ image, title, des, Tour }: Props) => {
             </h1>
           </div>
         </div>
-        <div className="absolute -bottom-1 flex w-full items-end ">
+        <div className="absolute -bottom-1 w-full items-end lg:flex hidden">
           <div className="bg-third w-full lg:h-[98px] h-0" />
           {Tour}
         </div>
+      </div>
+
+      <div className="lg:hidden block main-container">
+        <Dialog>
+          <DialogTrigger className="px-6 py-3 text-third bg-primary mt-8">
+            Open Search
+          </DialogTrigger>
+          <DialogContent className="bg-third/60">
+            <DialogHeader>
+              <DialogDescription>{Tour}</DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );

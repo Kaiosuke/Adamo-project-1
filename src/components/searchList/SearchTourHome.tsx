@@ -7,7 +7,7 @@ const SearchTourHome = () => {
   const { t } = useTranslation("search");
 
   return (
-    <div className="flex-[0_0_30%] 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8">
+    <div className=" 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8 lg:max-w-[446px] w-full">
       <div className="relative z-10">
         <Tabs defaultValue="tour">
           <TabsList className="flex w-full p-0 h-[46px] rounded-none bg-third/60 trans-fast">

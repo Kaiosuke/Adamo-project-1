@@ -1,5 +1,12 @@
 import Hero from "@/assets/images/hero.png";
 import SearchTourHome from "@/components/searchList/SearchTourHome";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Trans, useTranslation } from "react-i18next";
 
 const HeroSection = () => {
@@ -23,13 +30,13 @@ const HeroSection = () => {
             </h1>
           </div>
         </div>
-        <div className="absolute -bottom-1 flex w-full items-end ">
-          <div className="bg-third h-[100px] flex flex-col gap-2 justify-center items-start w-full xl:px-46 lg:px-26 md:px-12 sm:px-8 px-4">
+        <div className="absolute -bottom-1 sub-2-container flex items-end justify-between">
+          <div className="bg-third h-[100px] flex flex-col gap-2 justify-center items-start w-full xl:px-46 lg:pl-26 lg:py-10 md:px-12 sm:px-8 px-4">
             <div className="text-size-base font-semibold flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary"></div>
               {t("featured.title")}
             </div>
-            <div className="flex w-full sm:items-center sm:flex-row flex-col justify-between items-start sm:gap-0 gap-1">
+            <div className="flex w-full sm:items-center flex-row justify-between items-start sm:gap-0 gap-1">
               <div className="flex items-end gap-1">
                 <span className="text-size-xl font-bold">200+</span>
                 <span>{t("featured.tours")}</span>
@@ -44,9 +51,24 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-
-          <SearchTourHome />
+          <div className="lg:block hidden max-w-[1164px] m-auto w-full xl:px-0 lg:pr-18 md:pr-12 sm:pr-8 pr-4">
+            <SearchTourHome />
+          </div>
         </div>
+      </div>
+      <div className="lg:hidden block main-container">
+        <Dialog>
+          <DialogTrigger>
+            <div className="px-6 py-3 text-third bg-primary">Open Search</div>
+          </DialogTrigger>
+          <DialogContent className="bg-third/60">
+            <DialogHeader>
+              <DialogDescription>
+                <SearchTourHome />
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );
