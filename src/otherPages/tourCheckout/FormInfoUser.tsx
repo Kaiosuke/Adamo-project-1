@@ -71,6 +71,7 @@ const FormInfoUser = () => {
   const navigate = useNavigate();
 
   function onSubmit(values: z.infer<typeof userSchema>) {
+    console.log(values);
     setIsSubmitted(true);
     navigate("/thanks", { replace: true });
   }

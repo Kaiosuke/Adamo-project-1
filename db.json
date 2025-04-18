@@ -3155,6 +3155,16 @@
       "title": "The best experience ever",
       "des": "321dsad",
       "id": 53
+    },
+    {
+      "tourId": 2,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Fri Apr 18 2025",
+      "title": "The best experience ever",
+      "des": "31221",
+      "id": 54
     }
   ],
   "reviewsHotel": [
@@ -3977,6 +3987,16 @@
       "title": "Romantic escape",
       "des": "dasd",
       "id": 87
+    },
+    {
+      "hotelId": 9,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "3213213",
+      "id": 88
     }
   ],
   "rooms": [

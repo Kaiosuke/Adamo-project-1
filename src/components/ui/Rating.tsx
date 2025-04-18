@@ -110,6 +110,9 @@ export const CommentRatings = ({
           })
         )}
       </div>
+      <span className="text-muted-foreground">
+        Current Rating: {`${currentRating}`}
+      </span>
     </div>
   );
 };

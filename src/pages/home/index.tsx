@@ -25,6 +25,7 @@ const Home = () => {
   }, []);
 
   const { t } = useTranslation();
+  console.log(t);
 
   return (
     <>

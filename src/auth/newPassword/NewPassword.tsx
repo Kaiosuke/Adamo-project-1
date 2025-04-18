@@ -6,17 +6,17 @@ import { z } from "zod";
 import { changePassword } from "@/api/authRequest";
 import InputAuth from "@/components/InputAuth";
 import LoadingBtn from "@/components/LoadingList/LoadingBtn";
+import LoadingPage from "@/components/LoadingList/LoadingPage";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { useAppDispatch } from "@/redux";
 import { authSelector } from "@/redux/selectors/authSelector";
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { FaFacebook } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router";
 import { toast } from "sonner";
-import LoadingPage from "@/components/LoadingList/LoadingPage";
 
 const NewPassword = () => {
   const form = useForm<z.infer<typeof newPasswordSchema>>({

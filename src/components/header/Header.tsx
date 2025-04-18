@@ -61,7 +61,7 @@ const Header = () => {
         <div className="ml-auto flex items-center">
           <div className="flex items-center ">
             <nav className="lg:block hidden">
-              <NavPc getLinkColor={getLinkColor} />
+              <NavPc isPage={isPage} getLinkColor={getLinkColor} />
             </nav>
             <DarkMode />
             <Language getLinkColor={getLinkColor} />

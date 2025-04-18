@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const controller = new AbortController();
 const instance = axios.create({
@@ -16,9 +17,10 @@ const instanceLocal = axios.create({
 
 instance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("accessToken");
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+    const accessToken = Cookies.get("accessToken");
+    if (accessToken) {
+      config.headers.Authorization = `Bearer ${accessToken}`;
+      Cookies.set("accessToken", accessToken);
     }
     return config;
   },
@@ -27,21 +29,36 @@ instance.interceptors.request.use(
   }
 );
 
-instance.interceptors.response.use(
-  (response) => {
-    return response;
-  },
-  async (err) => {
-    const originalRequest = err.config;
-    if (err.response.status === 401 && !originalRequest._retry) {
+instanceLocal.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    const originalRequest = error.config;
+    if (
+      error.response?.status === 401 &&
+      error.response.data.message !== "Invalid Password" &&
+      !originalRequest._retry
+    ) {
       originalRequest._retry = true;
       try {
-      } catch (error) {
-        console.log(err);
+        const res = await instanceLocal.post("", {}, { withCredentials: true });
+        const newAccessToken = res.data.newAccessToken;
+
+        Cookies.set("accessToken", newAccessToken, {
+          expires: 1,
+          secure: true,
+          sameSite: "Strict",
+        });
+
+        originalRequest.headers.Authorization = `Bearer ${res.data.newAccessToken}`;
+
+        return instanceLocal(originalRequest);
+      } catch (err) {
+        console.log("Refresh token failed:", err);
+        return Promise.reject(err);
       }
     }
 
-    return Promise.reject(err);
+    return Promise.reject(error);
   }
 );
 

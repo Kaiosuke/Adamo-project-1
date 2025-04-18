@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { Link } from "react-router";
 
+import { logout } from "@/api/authRequest";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,9 +12,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { FaUser } from "react-icons/fa6";
 import { useAppDispatch } from "@/redux";
-import { logout } from "@/api/authRequest";
+import { FaUser } from "react-icons/fa6";
 
 const linkNavEn = [
   {
@@ -22,7 +22,7 @@ const linkNavEn = [
   },
   {
     title: "About",
-    path: "about",
+    path: "/about",
   },
   {
     title: "Tours",
@@ -45,7 +45,7 @@ const linkNavVi = [
   },
   {
     title: "Chúng tôi",
-    path: "about",
+    path: "/about",
   },
   {
     title: "Tham quan",
@@ -63,9 +63,10 @@ const linkNavVi = [
 
 interface Props {
   getLinkColor: () => void;
+  isPage: string;
 }
 
-const NavPc = ({ getLinkColor }: Props) => {
+const NavPc = ({ getLinkColor, isPage }: Props) => {
   const { currentUser } = useSelector(authSelector);
   const { i18n } = useTranslation();
 
@@ -87,9 +88,13 @@ const NavPc = ({ getLinkColor }: Props) => {
         <li key={index}>
           <Link
             to={nav.path}
-            className={` hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out
-                            ${getLinkColor()}
-                        `}
+            className={` hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all 
+              duration-300 ease-in-out ${
+                isPage === nav.path.split("/")[1]
+                  ? "text-primary"
+                  : getLinkColor()
+              }
+            }`}
           >
             {nav.title}
           </Link>
