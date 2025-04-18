@@ -2,6 +2,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useTranslation } from "react-i18next";
 
 import { FaBars } from "react-icons/fa6";
+import { Link } from "react-router";
 
 const linkNavEn = [
   {
@@ -75,12 +76,12 @@ const NavMb = () => {
               {(currentLanguage === "en" ? linkNavEn : linkNavVi).map(
                 (nav, index) => (
                   <li key={index}>
-                    <a
-                      href={nav.path}
+                    <Link
+                      to={nav.path}
                       className="text-third hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out"
                     >
                       {nav.title}
-                    </a>
+                    </Link>
                   </li>
                 )
               )}

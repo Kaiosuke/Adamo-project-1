@@ -22,8 +22,6 @@ import { QueryParamProvider } from "use-query-params";
 import { ReactRouter6Adapter } from "use-query-params/adapters/react-router-6";
 import ScrollPage from "./components/scrollTop/ScrollPage";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import LayoutTest from "./test/LayoutTest";
-import TestQuery from "./test/contact";
 
 function App() {
   return (
@@ -55,9 +53,6 @@ function App() {
           </Route>
 
           <Route path="*" element={<NotFoundPage />} />
-          <Route path="/test" element={<LayoutTest />}>
-            <Route index element={<TestQuery />} />
-          </Route>
         </Routes>
         <ScrollPage />
         <ReactQueryDevtools initialIsOpen={false} />

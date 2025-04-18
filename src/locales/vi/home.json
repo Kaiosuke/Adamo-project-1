@@ -3,6 +3,12 @@
     "title": "Chào mừng đến với NgaoduVietnam",
     "description": "Nơi lý tưởng để kể <br /> câu chuyện của bạn"
   },
+  "featured": {
+    "title": "Nổi bật",
+    "tours": "chuyến tham quan",
+    "Destination": "Điểm đến",
+    "type": "Loại hình tour"
+  },
   "introduce": {
     "title": "<h2>Với <span>NgaoduVietnam</span>, đưa bạn vào không gian hùng vĩ và những đặc trưng văn hóa độc đáo</h2>",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purusviverra nuQlla eget sed odio. Vulputate risus faucibus sem non,feugiat nec consequat, montes. Elementum scelerisque phasellusdonec lectus ullamcorper faucibus. Malesuada et adipiscingmolestie egestas leo ut.<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purusviverra nuQlla eget sed odio. Vulputate risus faucibus sem non,feugiat nec consequat, montes. </p>"

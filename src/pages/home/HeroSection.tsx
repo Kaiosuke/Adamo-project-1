@@ -1,8 +1,10 @@
 import Hero from "@/assets/images/hero.png";
 import SearchTourHome from "@/components/searchList/SearchTourHome";
-import { Trans } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+  const { t } = useTranslation("home");
+
   return (
     <section className="sub-2-container">
       <div className="relative flex h-full">
@@ -25,20 +27,20 @@ const HeroSection = () => {
           <div className="bg-third h-[100px] flex flex-col gap-2 justify-center items-start w-full xl:px-46 lg:px-26 md:px-12 sm:px-8 px-4">
             <div className="text-size-base font-semibold flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary"></div>
-              Featured
+              {t("featured.title")}
             </div>
             <div className="flex w-full sm:items-center sm:flex-row flex-col justify-between items-start sm:gap-0 gap-1">
               <div className="flex items-end gap-1">
                 <span className="text-size-xl font-bold">200+</span>
-                <span>tours</span>
+                <span>{t("featured.tours")}</span>
               </div>
               <div className="flex items-end gap-1">
                 <span className="text-size-xl font-bold">100+</span>
-                <span>Destination</span>
+                <span>{t("featured.Destination")}</span>
               </div>
               <div className="flex items-end gap-1">
                 <span className="text-size-xl font-bold">8+</span>
-                <span>Type of tour</span>
+                <span>{t("featured.type")}</span>
               </div>
             </div>
           </div>
