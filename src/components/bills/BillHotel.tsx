@@ -142,6 +142,8 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
     },
   });
 
+  console.log(query.guest);
+
   const onSubmit = useDebouncedCallback(
     (values: z.infer<typeof bookingHotelSchema>) => {
       if (date?.from && date.to) {

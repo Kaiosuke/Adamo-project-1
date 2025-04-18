@@ -25,11 +25,12 @@ import { z } from "zod";
 
 import { Form, FormField, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { bookingSelector } from "@/redux/selectors/bookingSelector";
 import { addBooking } from "@/redux/slices/bookingSlice";
+import { filterByGuest } from "@/redux/slices/toursSlice";
 import { useNavigate } from "react-router";
 import DatePickerWithRange from "../DatePickerWithRange";
 import { Button } from "../ui/button";
-import { bookingSelector } from "@/redux/selectors/bookingSelector";
 
 const BillTourDetail = () => {
   const { tour } = useSelector(tourSelector);
@@ -43,12 +44,14 @@ const BillTourDetail = () => {
 
   const disPatch = useDispatch();
 
-  const { guests } = useSelector(tourSelector);
+  const { guests, filter } = useSelector(tourSelector);
+
+  const { guest } = filter;
 
   const form = useForm<z.infer<typeof bookingSchema>>({
     resolver: zodResolver(bookingSchema),
     defaultValues: {
-      guests: "",
+      guests: guest,
     },
   });
 
@@ -115,7 +118,10 @@ const BillTourDetail = () => {
                     />
                     <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
                       <Select
-                        onValueChange={field.onChange}
+                        onValueChange={(v) => {
+                          field.onChange(v);
+                          disPatch(filterByGuest(v));
+                        }}
                         value={field.value}
                       >
                         <SelectTrigger className="w-full group-hover:text-third">

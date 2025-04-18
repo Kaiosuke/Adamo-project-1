@@ -1,14 +1,24 @@
 import { BillHotelCheckOut } from "@/components/bills/BillHotel";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { Link } from "react-router";
 import FormInfoUser from "./FormInfoUser";
 
 const HotelCheckOut = () => {
   return (
     <>
       <PdSub />
+
       <section className="main-container">
-        <h1 className="text-size-4xl text-secondary">Booking Submission</h1>
+        <Link
+          to="/"
+          className="text-size-2xl text-primary flex items-center gap-2"
+        >
+          <FaArrowLeftLong />
+          Home
+        </Link>
+        <h1 className="text-size-4xl text-secondary t-4">Booking Submission</h1>
         <div className="w-[70%]">
           <div className="str-line " />
         </div>

@@ -18,9 +18,10 @@ import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { CommentRatings } from "@/components/ui/Rating";
 import { useDebouncedCallback } from "use-debounce";
 import { useParams } from "react-router";
-import { addReviewTour } from "@/api/reviewRequest";
+import { addReviewTour, getAllReviewTour } from "@/api/reviewRequest";
 import { IReviewTourLackId } from "@/interfaces/review";
 import { toast } from "sonner";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 interface Props {
   currentPage: number;
@@ -44,6 +45,28 @@ const Reviews = ({ currentPage, pageCount, setCurrentPage }: Props) => {
     },
   });
 
+  const queryClient = useQueryClient();
+
+  const { data } = useQuery({
+    queryKey: ["reviewsTour", { id }],
+    queryFn: () => getAllReviewTour(id as string),
+    enabled: id !== undefined,
+  });
+
+  const handleFilterRate = (rate: number): number => {
+    if (data?.length) {
+      return data.filter((v) => v.rate === rate).length;
+    }
+    return 0;
+  };
+
+  const handleCalculatePercent = (v: number): number => {
+    if (data?.length) {
+      return Math.floor((v / data.length) * 100);
+    }
+    return 0;
+  };
+
   const onSubmit = useDebouncedCallback(
     (values: z.infer<typeof commentSchema>) => {
       (async () => {
@@ -60,7 +83,13 @@ const Reviews = ({ currentPage, pageCount, setCurrentPage }: Props) => {
           try {
             await dispatch(addReviewTour({ data: data })).unwrap();
             toast.success("Comment successfully!!");
-            form.reset();
+            form.reset({
+              message: "",
+              star: 0,
+            });
+            queryClient.invalidateQueries({
+              queryKey: ["reviewsTour", { id }],
+            });
           } catch (error) {
             toast.error(String(error));
           }
@@ -104,46 +133,106 @@ const Reviews = ({ currentPage, pageCount, setCurrentPage }: Props) => {
                     <span>5</span>
                     <FaStar className="text-four" />
                     <div className="flex-[0_0_50%] h-[8px] rounded-2xl flex">
-                      <div className="bg-nine flex-[0_0_80%] rounded-l-lg" />
+                      <div
+                        className={`bg-nine rounded-l-lg`}
+                        style={{
+                          flex: `0 0 ${handleCalculatePercent(
+                            handleFilterRate(5)
+                          )}%`,
+                        }}
+                      />
+
                       <div className="bg-five flex-[1_0_auto] rounded-r-lg" />
                     </div>
-                    <span>42 reviews</span>
+                    <span>
+                      {handleFilterRate(5) > 0
+                        ? `${handleFilterRate(5)} Reviews`
+                        : "0 Review"}
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span>4</span>
                     <FaStar className="text-four" />
                     <div className="flex-[0_0_50%] h-[8px] rounded-2xl flex">
-                      <div className="bg-nine flex-[0_0_30%] rounded-l-lg" />
+                      <div
+                        className={`bg-nine rounded-l-lg`}
+                        style={{
+                          flex: `0 0 ${handleCalculatePercent(
+                            handleFilterRate(4)
+                          )}%`,
+                        }}
+                      />
+
                       <div className="bg-five flex-[1_0_auto] rounded-r-lg" />
                     </div>
-                    <span>21 reviews</span>
+                    <span>
+                      {handleFilterRate(4) > 0
+                        ? `${handleFilterRate(4)} Reviews`
+                        : "0 Review"}
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span>3</span>
                     <FaStar className="text-four" />
                     <div className="flex-[0_0_50%] h-[8px] rounded-2xl flex">
-                      <div className="bg-nine flex-[0_0_75%] rounded-l-lg" />
+                      <div
+                        className={`bg-nine rounded-l-lg`}
+                        style={{
+                          flex: `0 0 ${handleCalculatePercent(
+                            handleFilterRate(3)
+                          )}%`,
+                        }}
+                      />
+
                       <div className="bg-five flex-[1_0_auto] rounded-r-lg" />
                     </div>
-                    <span>46 reviews</span>
+                    <span>
+                      {handleFilterRate(3) > 0
+                        ? `${handleFilterRate(3)} Reviews`
+                        : "0 Review"}
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span>2</span>
                     <FaStar className="text-four" />
                     <div className="flex-[0_0_50%] h-[8px] rounded-2xl flex">
-                      <div className="bg-nine flex-[0_1_0%] rounded-l-lg" />
-                      <div className="bg-five flex-[1_0_auto] rounded-lg" />
+                      <div
+                        className={`bg-nine rounded-l-lg`}
+                        style={{
+                          flex: `0 0 ${handleCalculatePercent(
+                            handleFilterRate(2)
+                          )}%`,
+                        }}
+                      />
+
+                      <div className="bg-five flex-[1_0_auto] rounded-r-lg" />
                     </div>
-                    <span>0 review</span>
+                    <span>
+                      {handleFilterRate(2) > 0
+                        ? `${handleFilterRate(2)} Reviews`
+                        : "0 Review"}
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span>1 </span>
-                    <FaStar className="text-four ml-1" />
+                    <span>1</span>
+                    <FaStar className="text-four" />
                     <div className="flex-[0_0_50%] h-[8px] rounded-2xl flex">
-                      <div className="bg-nine flex-[0_1_0%] rounded-l-lg" />
-                      <div className="bg-five flex-[1_0_auto] rounded-lg" />
+                      <div
+                        className={`bg-nine rounded-l-lg`}
+                        style={{
+                          flex: `0 0 ${handleCalculatePercent(
+                            handleFilterRate(1)
+                          )}%`,
+                        }}
+                      />
+
+                      <div className="bg-five flex-[1_0_auto] rounded-r-lg" />
                     </div>
-                    <span>0 review</span>
+                    <span>
+                      {handleFilterRate(1) > 0
+                        ? `${handleFilterRate(1)} Reviews`
+                        : "0 Review"}
+                    </span>
                   </div>
                 </div>
               </div>

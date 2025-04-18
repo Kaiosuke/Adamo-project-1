@@ -34,6 +34,13 @@ const getReviewTourList = createAsyncThunk<
   }
 );
 
+const getAllReviewTour = async (
+  id: number | string
+): Promise<IReviewTour[]> => {
+  const res = await instanceLocal.get(`reviewsTour?tourId=${id}`);
+  return res.data;
+};
+
 const addReviewTour = createAsyncThunk<
   IReviewTour,
   { data: IReviewTourLackId },
@@ -79,4 +86,10 @@ const addReviewHotel = async ({
   return res.data;
 };
 
-export { getReviewsHotel, getReviewTourList, addReviewHotel, addReviewTour };
+export {
+  getReviewsHotel,
+  getReviewTourList,
+  addReviewHotel,
+  addReviewTour,
+  getAllReviewTour,
+};

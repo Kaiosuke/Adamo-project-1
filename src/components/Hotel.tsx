@@ -5,15 +5,20 @@ import { IHotel } from "@/interfaces/hotel";
 import { CiLocationOn } from "react-icons/ci";
 import { FaStar } from "react-icons/fa6";
 import { Link } from "react-router";
+import { StringParam, useQueryParams } from "use-query-params";
 import LoadedImage from "./LoadingList/LoadedImage";
 
 const Hotel = ({ hotel }: { hotel: IHotel }) => {
   const totalData = Number(localStorage.getItem("totalReviewHotel") || "0");
 
+  const [query] = useQueryParams({
+    guest: StringParam,
+  });
+
   return (
     <div className="w-full">
       <div className="relative">
-        <Link to={`/hotel-detail/${hotel.id}`}>
+        <Link to={`/hotel-detail/${hotel.id}?guest=${query.guest}`}>
           <LoadedImage alt={hotel.title} thumbnail={hotel.thumbnail} />
         </Link>
 

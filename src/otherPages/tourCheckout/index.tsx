@@ -7,6 +7,8 @@ import { bookingSelector } from "@/redux/selectors/bookingSelector";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import FormInfoUser from "./FormInfoUser";
+import { Link } from "react-router";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const TourCheckOut = () => {
   const { booking } = useSelector(bookingSelector);
@@ -29,7 +31,16 @@ const TourCheckOut = () => {
     <>
       <PdSub />
       <section className="main-container">
-        <h1 className="text-size-4xl text-secondary">Booking Submission</h1>
+        <Link
+          to="/"
+          className="text-size-2xl text-primary flex items-center gap-2"
+        >
+          <FaArrowLeftLong />
+          Home
+        </Link>
+        <h1 className="text-size-4xl text-secondary mt-4">
+          Booking Submission
+        </h1>
         <div className="w-[70%]">
           <div className="str-line " />
         </div>

@@ -110,7 +110,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
                 </Select>
               </div>
             </div>
-            <div className="mb-8">
+            <div className={` ${isHome ? "mb-8 " : "mt-4"}`}>
               <Link to={`/hotels?location=${location}&guest=${guest}`}>
                 <Button
                   variant="primary"
