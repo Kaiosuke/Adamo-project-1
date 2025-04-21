@@ -223,7 +223,7 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
                           className="grid grid-cols-3 items-center"
                         >
                           <div className="font-bold w-[122px]">
-                            {room.data.type}
+                            {room?.data?.type}
                           </div>
                           <div className="flex items-center justify-between gap-2 ml-auto">
                             <FaCircleMinus
@@ -240,6 +240,7 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
                           </div>
                           <div className="font-bold text-six ml-auto">
                             {room.quantity &&
+                              room.data?.price &&
                               handleFormatMoney(
                                 room.quantity * room.data.price
                               )}

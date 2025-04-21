@@ -15,9 +15,9 @@ import { FaUserCircle } from "react-icons/fa";
 import { useParams } from "react-router";
 import { z } from "zod";
 
+import Rating from "@/components/Rating";
 import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { NumberParam, useQueryParams } from "use-query-params";
-import { CommentRatings } from "@/components/ui/Rating";
 
 const Reviews = () => {
   const { id } = useParams();
@@ -41,6 +41,8 @@ const Reviews = () => {
 
   const _page = query._page ? query._page : 1;
 
+  console.log(_page);
+
   const { data } = useQuery({
     queryKey: ["reviewHotel", { id, _page }],
     queryFn: () =>
@@ -53,9 +55,16 @@ const Reviews = () => {
 
   useEffect(() => {
     const total = localStorage.getItem("totalReviewHotel") || "0";
+    setCurrentPage(0);
     setPageCount(Math.ceil(Number(total) / ITEMS_PER_PAGE));
     setTotalData(Number(total));
   }, []);
+
+  const handleRestTotal = () => {
+    const total = totalData + 1;
+    setPageCount(Math.ceil(Number(total) / ITEMS_PER_PAGE));
+    setTotalData(Number(total));
+  };
 
   const addComment = useMutation({
     mutationFn: (data: Omit<IReviewHotel, "id">) => {
@@ -80,16 +89,16 @@ const Reviews = () => {
       rate: 9,
       avatar: `url('@/assets/images/Avatar-30.png')`,
       opinion: "Dreamy!",
-      time: "Feb 2023",
+      time: new Date().toDateString(),
       title: "Romantic escape",
       des: values.message,
     };
 
     addComment.mutate(data, {
-      onSuccess: () => {
+      onSuccess: async () => {
         form.reset();
-        setIsReview(false);
         setQuery({ _page: 1 });
+        handleRestTotal();
         setCurrentPage(0);
       },
     });
@@ -151,14 +160,12 @@ const Reviews = () => {
                 render={({ field }) => (
                   <FormItem>
                     <div className="">
-                      <CommentRatings
+                      <Rating
                         rating={Number(field.value)}
                         size={30}
                         onRatingChange={(v) => {
                           field.onChange(Number(v));
                         }}
-                        variant="yellow"
-                        totalStars={5}
                       />
                     </div>
                     <FormMessage />

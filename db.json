@@ -3165,6 +3165,16 @@
       "title": "The best experience ever",
       "des": "31221",
       "id": 54
+    },
+    {
+      "tourId": 4,
+      "rate": 2,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Mon Apr 21 2025",
+      "title": "The best experience ever",
+      "des": "21321",
+      "id": 55
     }
   ],
   "reviewsHotel": [
@@ -3497,26 +3507,6 @@
       "time": "Aug 2023",
       "title": "Well managed",
       "des": "The staff were super responsive and helpful throughout our stay."
-    },
-    {
-      "id": 37,
-      "hotelId": 10,
-      "rate": 7,
-      "avatar": "url('@/assets/images/Avatar-9.png')",
-      "opinion": "Functional",
-      "time": "Sep 2023",
-      "title": "Met expectations",
-      "des": "Wasn’t blown away, but it did the job. Clean, functional, and no surprises."
-    },
-    {
-      "id": 38,
-      "hotelId": 10,
-      "rate": 6,
-      "avatar": "url('@/assets/images/Avatar-10.png')",
-      "opinion": "Just okay",
-      "time": "Oct 2023",
-      "title": "Needs upgrades",
-      "des": "Felt like it needed a renovation. Staff were kind, but amenities were dated."
     },
     {
       "id": 39,
@@ -3997,6 +3987,96 @@
       "title": "Romantic escape",
       "des": "3213213",
       "id": 88
+    },
+    {
+      "hotelId": 10,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "321dsa",
+      "id": 89
+    },
+    {
+      "hotelId": 10,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "trongle",
+      "id": 90
+    },
+    {
+      "hotelId": 10,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "321321",
+      "id": 91
+    },
+    {
+      "hotelId": 10,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "32312321",
+      "id": 92
+    },
+    {
+      "hotelId": 10,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "ewqeqw",
+      "id": 93
+    },
+    {
+      "hotelId": 10,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "213213",
+      "id": 94
+    },
+    {
+      "hotelId": 10,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Feb 2023",
+      "title": "Romantic escape",
+      "des": "tronglee",
+      "id": 95
+    },
+    {
+      "hotelId": 1,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Mon Apr 21 2025",
+      "title": "Romantic escape",
+      "des": "eqewqewq",
+      "id": 96
+    },
+    {
+      "hotelId": 1,
+      "rate": 9,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Mon Apr 21 2025",
+      "title": "Romantic escape",
+      "des": "312321",
+      "id": 97
     }
   ],
   "rooms": [

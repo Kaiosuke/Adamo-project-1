@@ -21,8 +21,8 @@ const TourDetail = () => {
   const dispatch = useAppDispatch();
 
   const { tour } = useSelector(tourSelector);
+  const [totalData, setTotalData] = useState();
 
-  const totalData = JSON.parse(localStorage.getItem("totalReviewTour") || "0");
   const ITEMS_PER_PAGE = 3;
 
   const [pageCount, setPageCount] = useState(0);
@@ -42,7 +42,11 @@ const TourDetail = () => {
               start: ITEMS_PER_PAGE * currentPage,
             })
           ).unwrap();
-          setPageCount(Math.ceil(totalData / ITEMS_PER_PAGE));
+          const total = JSON.parse(
+            localStorage.getItem("totalReviewTour") || "0"
+          );
+          setTotalData(total);
+          setPageCount(Math.ceil(total / ITEMS_PER_PAGE));
         } catch (error) {
           console.log(error);
         }
@@ -78,7 +82,7 @@ const TourDetail = () => {
                 {tour?.score}
               </div>
               <span className="text-four">
-                {totalData} {totalData > 0 ? `Reviews` : `Review`}{" "}
+                {totalData} {totalData && totalData > 0 ? `Reviews` : `Review`}{" "}
               </span>
             </div>
             <div className="flex 2xl:gap-20 gap-10 lg:mt-8 mt-6 flex-wrap xl:flex-row flex-col-reverse">
@@ -86,12 +90,14 @@ const TourDetail = () => {
                 <div className="h-[680px] ">
                   <TourDetailMain />
                 </div>
-                <TourDetailTabs
-                  currentPage={currentPage}
-                  pageCount={pageCount}
-                  setCurrentPage={setCurrentPage}
-                  totalData={totalData}
-                />
+                {totalData && (
+                  <TourDetailTabs
+                    currentPage={currentPage}
+                    pageCount={pageCount}
+                    setCurrentPage={setCurrentPage}
+                    totalData={totalData}
+                  />
+                )}
               </div>
 
               <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit xl:sticky top-[20px]">

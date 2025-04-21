@@ -14,14 +14,14 @@ import { FaStar } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import { z } from "zod";
 
-import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
-import { CommentRatings } from "@/components/ui/Rating";
-import { useDebouncedCallback } from "use-debounce";
-import { useParams } from "react-router";
 import { addReviewTour, getAllReviewTour } from "@/api/reviewRequest";
+import Rating from "@/components/Rating";
+import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { IReviewTourLackId } from "@/interfaces/review";
-import { toast } from "sonner";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useParams } from "react-router";
+import { toast } from "sonner";
+import { useDebouncedCallback } from "use-debounce";
 
 interface Props {
   currentPage: number;
@@ -270,7 +270,7 @@ const Reviews = ({ currentPage, pageCount, setCurrentPage }: Props) => {
                   render={({ field }) => (
                     <FormItem>
                       <div className="">
-                        <CommentRatings
+                        <Rating
                           rating={Number(field.value)}
                           size={30}
                           onRatingChange={(v) => {
