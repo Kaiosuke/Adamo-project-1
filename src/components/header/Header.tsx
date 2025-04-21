@@ -9,7 +9,7 @@ import Language from "./Language";
 import NavMb from "./NavMb";
 import NavPc from "./NavPc";
 
-const pages = ["tour-detail", "hotel-detail", "private-policy"];
+const pages = ["tour-detail", "hotel-detail", "privacy-policy"];
 
 const Header = () => {
   const [isScroll, setIsScroll] = useState(false);

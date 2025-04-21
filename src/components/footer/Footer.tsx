@@ -54,38 +54,38 @@ const linksVi = [
 const pagesEn = [
   {
     title: "Partner with us",
-    link: "#!",
+    link: "/privacy-policy",
   },
   {
     title: "Terms & Conditions",
-    link: "#!",
+    link: "/privacy-policy",
   },
   {
     title: "Privacy Policy",
-    link: "#!",
+    link: "/privacy-policy",
   },
   {
     title: "Guest Policy",
-    link: "#!",
+    link: "/privacy-policy",
   },
 ];
 
 const pagesVi = [
   {
     title: "Hợp tác với chúng tôi",
-    link: "#!",
+    link: "/privacy-policy",
   },
   {
     title: "Điều khoản & Điều kiện",
-    link: "#!",
+    link: "/privacy-policy",
   },
   {
     title: "Chính sách Bảo mật",
-    link: "#!",
+    link: "/privacy-policy",
   },
   {
     title: "Chính sách Khách hàng",
-    link: "#!",
+    link: "/privacy-policy",
   },
 ];
 

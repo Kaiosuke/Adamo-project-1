@@ -98,7 +98,7 @@ function App() {
               }
             />
             <Route
-              path="private-policy"
+              path="privacy-policy"
               element={
                 <Suspense fallback={<LoadingPage />}>
                   <PrivatePolicy />

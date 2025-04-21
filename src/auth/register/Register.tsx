@@ -7,9 +7,9 @@ import InputAuth from "@/components/InputAuth";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { FaFacebook } from "react-icons/fa6";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useAppDispatch } from "@/redux";
-import { register } from "@/api/authRequest";
+import { loginByFb, register } from "@/api/authRequest";
 import { useSelector } from "react-redux";
 import { authSelector } from "@/redux/selectors/authSelector";
 import LoadingBtn from "@/components/LoadingList/LoadingBtn";
@@ -29,6 +29,19 @@ const Login = () => {
   });
 
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const handleLoginByFb = async () => {
+    try {
+      const user = await dispatch(loginByFb()).unwrap();
+      if (user) {
+        navigate("/");
+        toast.success("Login Success");
+      }
+    } catch (error) {
+      typeof error === "string" && toast.error(error);
+    }
+  };
 
   const { loading } = useSelector(authSelector);
 
@@ -101,7 +114,7 @@ const Login = () => {
                     `${t("signUp.register")}`
                   )}
                 </Button>
-                <Button variant={"six"} type="button">
+                <Button variant={"six"} type="button" onClick={handleLoginByFb}>
                   <span>
                     <FaFacebook className="text-size-lg" />
                   </span>

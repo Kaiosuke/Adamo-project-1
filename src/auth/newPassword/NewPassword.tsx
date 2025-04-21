@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { newPassword } from "@/api/authRequest";
+import { loginByFb, newPassword } from "@/api/authRequest";
 import InputAuth from "@/components/InputAuth";
 import LoadingBtn from "@/components/LoadingList/LoadingBtn";
 import LoadingPage from "@/components/LoadingList/LoadingPage";
@@ -57,6 +57,18 @@ const NewPassword = () => {
 
   const { t } = useTranslation("auth");
 
+  const handleLoginByFb = async () => {
+    try {
+      const user = await dispatch(loginByFb()).unwrap();
+      if (user) {
+        navigate("/");
+        toast.success("Login Success");
+      }
+    } catch (error) {
+      typeof error === "string" && toast.error(error);
+    }
+  };
+
   useEffect(() => {
     if (currentUser) {
       navigate("/");
@@ -108,7 +120,7 @@ const NewPassword = () => {
                     `${t("newPs.access")}`
                   )}
                 </Button>
-                <Button variant={"six"} type="button">
+                <Button variant={"six"} type="button" onClick={handleLoginByFb}>
                   <span>
                     <FaFacebook className="text-size-lg" />
                   </span>

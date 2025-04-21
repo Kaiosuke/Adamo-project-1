@@ -98,12 +98,6 @@ const ChangePassword = () => {
                     `${t("changePs.access")}`
                   )}
                 </Button>
-                <Button variant={"six"} type="button">
-                  <span>
-                    <FaFacebook className="text-size-lg" />
-                  </span>
-                  {t("changePs.signFb")}
-                </Button>
               </div>
             </form>
           </Form>
