@@ -3,20 +3,19 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import { changePassword } from "@/api/authRequest";
 import InputAuth from "@/components/InputAuth";
+import LoadingBtn from "@/components/LoadingList/LoadingBtn";
+import LoadingPage from "@/components/LoadingList/LoadingPage";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
-import { FaFacebook } from "react-icons/fa6";
-import { Link, useNavigate } from "react-router";
 import { useAppDispatch } from "@/redux";
-import { changePassword } from "@/api/authRequest";
-import { useSelector } from "react-redux";
 import { authSelector } from "@/redux/selectors/authSelector";
-import LoadingBtn from "@/components/LoadingList/LoadingBtn";
-import { toast } from "sonner";
-import LoadingPage from "@/components/LoadingList/LoadingPage";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router";
+import { toast } from "sonner";
 
 const ChangePassword = () => {
   const form = useForm<z.infer<typeof newPasswordSchema>>({
