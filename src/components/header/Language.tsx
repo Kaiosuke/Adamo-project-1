@@ -22,7 +22,6 @@ const Language = ({ getLinkColor }: { getLinkColor: () => string }) => {
 
   const handleChangeLanguage = (value: Lg) => {
     i18n.changeLanguage(value);
-    console.log(value);
     dispatch(changeLanguage(value));
   };
 

@@ -149,6 +149,8 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
     },
   });
 
+  console.log(1);
+
   const onSubmit = useDebouncedCallback(
     (values: z.infer<typeof bookingHotelSchema>) => {
       if (rooms.length < 1) {

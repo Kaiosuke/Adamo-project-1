@@ -39,7 +39,7 @@ const HotelDetail = () => {
     );
     setTotalData(totalData);
   }, []);
-
+  console.log("hotel");
   return (
     <>
       <PdSub />
