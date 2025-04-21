@@ -1,10 +1,9 @@
 import Hotel from "@/components/Hotel";
-import LoadingItem from "@/components/LoadingList/LoadingItem";
+import SkeletonHotel from "@/components/SkeletonHotel";
 import { IHotel } from "@/interfaces/hotel";
 import { Trans } from "react-i18next";
 import FilterHotel from "./FilterHotel";
 import SelectHotel from "./SelectHotel";
-import { Fragment } from "react/jsx-runtime";
 
 interface Props {
   data: IHotel[];
@@ -12,10 +11,6 @@ interface Props {
 }
 
 const HotelSection = ({ data, isLoading }: Props) => {
-  if (isLoading) {
-    return <LoadingItem />;
-  }
-
   return (
     <section className="main-container">
       <div className="flex justify-between ">
@@ -28,16 +23,12 @@ const HotelSection = ({ data, isLoading }: Props) => {
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 lg:pt-16 md:pt-10 pt-6">
-        {data.length ? (
-          data.map((hotel) => (
-            <Fragment key={hotel.id}>
-              <Hotel hotel={hotel} />
-            </Fragment>
-          ))
-        ) : (
-          <div className="text-size-2xl text-secondary">Not found Hotel</div>
-        )}
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
+        {isLoading
+          ? Array.from({ length: data.length }).map((_, index) => (
+              <SkeletonHotel key={index} />
+            ))
+          : data.map((hotel) => <Hotel key={hotel.id} hotel={hotel} />)}
       </div>
     </section>
   );

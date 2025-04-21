@@ -41,6 +41,7 @@ const FilterTour = () => {
     dispatch(filterByDuration(durationTour));
     dispatch(filterByPrice(prices));
     toast.success("Filter successfully");
+    localStorage.setItem("currentPageTour", "0");
   }, 1000);
 
   const handleResetFilter = () => {

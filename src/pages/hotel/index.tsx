@@ -41,7 +41,7 @@ const Hotel = () => {
   const _order = query._order || "asc";
   const score = query.score || "";
   const guest = query.guest || "";
-  const prices = query.prices || "0,200";
+  const prices = query.prices || "0,300";
   const location = query.location || "All";
   const star = query.star || "";
 

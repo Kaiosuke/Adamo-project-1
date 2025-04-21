@@ -28,10 +28,7 @@ const Tour = () => {
   const [pageCount, setPageCount] = useState(0);
   const ITEMS_PER_PAGE = 4;
 
-  const [currentPage, setCurrentPage] = useState(() => {
-    const saved = localStorage.getItem("currentPageTour");
-    return saved ? Number(saved) : 0;
-  });
+  const [currentPage, setCurrentPage] = useState<number>(0);
 
   useEffect(() => {
     (async () => {
@@ -57,6 +54,8 @@ const Tour = () => {
         );
 
         setPageCount(Math.ceil(totalData / ITEMS_PER_PAGE));
+        const saved = localStorage.getItem("currentPageTour");
+        saved ? setCurrentPage(Number(saved)) : setCurrentPage(0);
       } catch (error) {
         console.log(error);
       }

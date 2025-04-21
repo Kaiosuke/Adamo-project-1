@@ -19,7 +19,7 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
   const from = query.from || new Date().toDateString();
 
   return (
-    <div className="w-full">
+    <div className="w-full mt-4">
       <div className="relative">
         <Link
           to={`/hotel-detail/${hotel.id}?guest=${

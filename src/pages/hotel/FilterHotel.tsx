@@ -68,21 +68,24 @@ const FilterHotel = () => {
   });
 
   const handleFilter = useDebouncedCallback(() => {
-    setLoading(true);
-    setQuery({ score });
-    setQuery({ prices: `${prices[0] + "," + prices[1]}` });
-    setQuery({ star: stars.toString() });
-    setQuery({ _page: 1 });
+    setQuery({
+      score,
+      prices: `${prices[0]},${prices[1]}`,
+      star: stars.toString(),
+      _page: 1,
+    });
     setLoading(false);
     toast.success("Filter successfully");
-  }, 1000);
+  }, 300);
 
   const handleResetFilter = useDebouncedCallback(() => {
     setQuery({ score: "" });
     setQuery({ prices: `0,2000` });
     setQuery({ star: "" });
     toast.success("Reset successfully");
-  }, 1000);
+  }, 300);
+
+  console.log("filter");
 
   return (
     <DropdownMenu>
