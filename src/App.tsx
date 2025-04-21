@@ -1,27 +1,39 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ForgotPassword from "./auth/forgotPassword/ForgotPassword";
 import LayoutAuth from "./auth/LayoutAuth";
-import Login from "./auth/login/Login";
-import NewPassword from "./auth/newPassword/NewPassword";
-import Register from "./auth/register/Register";
-import HotelCheckOut from "./otherPages/hotelCheckout";
 import LayoutOtherPages from "./otherPages/LayoutOtherPages";
-import ThankYou from "./otherPages/thanks";
-import TourCheckOut from "./otherPages/tourCheckout";
-import About from "./pages/about";
-import Contact from "./pages/contact";
-import Home from "./pages/home";
-import Hotel from "./pages/hotel";
-import HotelDetail from "./pages/hotel/hotelDetail";
 import LayoutPage from "./pages/layout";
-import Tours from "./pages/tour";
-import TourDetail from "./pages/tour/tourDetail";
-import PrivatePolicy from "./pages/privatePolicy";
-import NotFoundPage from "./otherPages/notFoundPage";
+
 import { QueryParamProvider } from "use-query-params";
 import { ReactRouter6Adapter } from "use-query-params/adapters/react-router-6";
 import ScrollPage from "./components/scrollTop/ScrollPage";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
+import { lazy, Suspense } from "react";
+import LoadingPage from "./components/LoadingList/LoadingPage";
+
+const Home = lazy(() => import("./pages/home"));
+const About = lazy(() => import("./pages/about"));
+const Contact = lazy(() => import("./pages/contact"));
+const Tours = lazy(() => import("./pages/tour"));
+const TourDetail = lazy(() => import("./pages/tour/tourDetail"));
+const Hotel = lazy(() => import("./pages/hotel"));
+const HotelDetail = lazy(() => import("./pages/hotel/hotelDetail"));
+const PrivatePolicy = lazy(() => import("./pages/privatePolicy"));
+
+const Login = lazy(() => import("./auth/login/Login"));
+const Register = lazy(() => import("./auth/register/Register"));
+const NewPassword = lazy(() => import("./auth/newPassword/NewPassword"));
+const ChangePassword = lazy(
+  () => import("./auth/changePassword/ChangePassword")
+);
+const ForgotPassword = lazy(
+  () => import("./auth/forgotPassword/ForgotPassword")
+);
+
+const ThankYou = lazy(() => import("./otherPages/thanks"));
+const TourCheckOut = lazy(() => import("./otherPages/tourCheckout"));
+const HotelCheckOut = lazy(() => import("./otherPages/hotelCheckout"));
+const NotFoundPage = lazy(() => import("./otherPages/notFoundPage"));
 
 function App() {
   return (
@@ -29,30 +41,143 @@ function App() {
       <QueryParamProvider adapter={ReactRouter6Adapter}>
         <Routes>
           <Route path="/" element={<LayoutPage />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="tours" element={<Tours />} />
-            <Route path="tour-detail/:id" element={<TourDetail />} />
-            <Route path="hotels" element={<Hotel />} />
-            <Route path="hotel-detail/:id" element={<HotelDetail />} />
-            <Route path="private-policy" element={<PrivatePolicy />} />
+            <Route
+              index
+              element={
+                <Suspense fallback={<LoadingPage />}>
+                  <Home />
+                </Suspense>
+              }
+            />
+            <Route
+              path="about"
+              element={
+                <Suspense fallback={<LoadingPage />}>
+                  <About />
+                </Suspense>
+              }
+            />
+            <Route
+              path="contact"
+              element={
+                <Suspense fallback={<LoadingPage />}>
+                  <Contact />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tours"
+              element={
+                <Suspense fallback={<LoadingPage />}>
+                  <Tours />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tour-detail/:id"
+              element={
+                <Suspense fallback={<LoadingPage />}>
+                  <TourDetail />
+                </Suspense>
+              }
+            />
+            <Route
+              path="hotels"
+              element={
+                <Suspense fallback={<LoadingPage />}>
+                  <Hotel />
+                </Suspense>
+              }
+            />
+            <Route
+              path="hotel-detail/:id"
+              element={
+                <Suspense fallback={<LoadingPage />}>
+                  <HotelDetail />
+                </Suspense>
+              }
+            />
+            <Route
+              path="private-policy"
+              element={
+                <Suspense fallback={<LoadingPage />}>
+                  <PrivatePolicy />
+                </Suspense>
+              }
+            />
           </Route>
 
           <Route path="/auth" element={<LayoutAuth />}>
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="new-password" element={<NewPassword />} />
-            <Route path="forgot-password" element={<ForgotPassword />} />
+            <Route
+              path="login"
+              element={
+                <Suspense fallback={<LoadingPage />}>
+                  <Login />
+                </Suspense>
+              }
+            />
+            <Route
+              path="register"
+              element={
+                <Suspense fallback={<LoadingPage />}>
+                  <Register />
+                </Suspense>
+              }
+            />
+            <Route
+              path="new-password"
+              element={
+                <Suspense fallback={<LoadingPage />}>
+                  <NewPassword />
+                </Suspense>
+              }
+            />
+            <Route
+              path="change-password"
+              element={
+                <Suspense fallback={<LoadingPage />}>
+                  <ChangePassword />
+                </Suspense>
+              }
+            />
+            <Route
+              path="forgot-password"
+              element={
+                <Suspense fallback={<LoadingPage />}>
+                  <ForgotPassword />
+                </Suspense>
+              }
+            />
           </Route>
 
           <Route path="/" element={<LayoutOtherPages />}>
-            <Route path="tour-checkout" element={<TourCheckOut />} />
-            <Route path="hotel-checkout" element={<HotelCheckOut />} />
+            <Route
+              path="tour-checkout"
+              element={
+                <Suspense fallback={<LoadingPage />}>
+                  <TourCheckOut />
+                </Suspense>
+              }
+            />
+            <Route
+              path="hotel-checkout"
+              element={
+                <Suspense fallback={<LoadingPage />}>
+                  <HotelCheckOut />
+                </Suspense>
+              }
+            />
             <Route path="thanks" element={<ThankYou />} />
           </Route>
 
-          <Route path="*" element={<NotFoundPage />} />
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<LoadingPage />}>
+                <NotFoundPage />
+              </Suspense>
+            }
+          />
         </Routes>
         <ScrollPage />
         <ReactQueryDevtools initialIsOpen={false} />

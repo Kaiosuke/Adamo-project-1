@@ -1,7 +1,8 @@
-import LazyWrapper from "@/components/lazies/LazyWrapper";
 import PdMain from "@/components/PdMain";
 import HeroSection from "./HeroSection";
 import { useTranslation } from "react-i18next";
+import IntroduceSection from "./IntroduceSection";
+import TraditionalSection from "./TraditionalSection";
 
 const About = () => {
   const { t } = useTranslation();
@@ -11,9 +12,9 @@ const About = () => {
     <>
       <HeroSection />
       <PdMain />
-      <LazyWrapper loader={() => import("./IntroduceSection")} />
+      <IntroduceSection />
       <PdMain />
-      <LazyWrapper loader={() => import("./TraditionalSection")} />
+      <TraditionalSection />
       <PdMain />
     </>
   );

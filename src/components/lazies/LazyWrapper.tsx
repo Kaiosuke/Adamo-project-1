@@ -10,7 +10,7 @@ const LazyWrapper = ({ loader, fallback }: Props) => {
   const [Component, setComponent] = useState<React.LazyExoticComponent<
     React.ComponentType<unknown>
   > | null>(null);
-  console.log(1);
+
   return (
     <LazyScrollCom
       onVisible={() => {

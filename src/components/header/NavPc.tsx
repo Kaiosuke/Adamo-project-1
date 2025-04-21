@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useAppDispatch } from "@/redux";
 import { FaUser } from "react-icons/fa6";
+import { toast } from "sonner";
 
 const linkNavEn = [
   {
@@ -77,6 +78,7 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
   const handleLogout = async () => {
     try {
       await dispatch(logout()).unwrap();
+      toast.success("Sign Success");
     } catch (error) {
       console.log(error);
     }
@@ -113,6 +115,9 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
                   : currentUser.email}
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
+              <DropdownMenuItem className="cursor-pointer">
+                <Link to="/auth/change-password">Change password</Link>
+              </DropdownMenuItem>
 
               <DropdownMenuItem
                 className="cursor-pointer"

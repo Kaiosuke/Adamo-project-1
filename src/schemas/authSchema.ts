@@ -44,7 +44,19 @@ const newPasswordSchema = z
   .object({
     password: z
       .string()
-      .min(6, { message: "Password must be greater than 6 character" }),
+      .min(6, { message: "Password must be greater than 6 character" })
+      .refine((value) => /[a-z]/.test(value), {
+        message: "Password must contain at least 1 lowercase letter",
+      })
+      .refine((value) => /[A-Z]/.test(value), {
+        message: "Password must contain at least 1 uppercase letter",
+      })
+      .refine((value) => /\d/.test(value), {
+        message: "Password must contain at least 1 number",
+      })
+      .refine((value) => /[!@#$%&*-]/.test(value), {
+        message: "Password must contain at least 1 special character",
+      }),
     confirm: z.string(),
   })
   .refine((data) => data.password === data.confirm, {

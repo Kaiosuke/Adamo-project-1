@@ -3,6 +3,7 @@ import { IAuth } from "@/interfaces/auth";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { FirebaseError } from "firebase/app";
 import {
+  confirmPasswordReset,
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
@@ -127,6 +128,23 @@ const forgotPassword = createAsyncThunk<
     return rejectWithValue("Login failed");
   }
 });
+
+const newPassword = createAsyncThunk<
+  string,
+  { oobCode: string; newPassword: string },
+  { rejectValue: string }
+>("auth/newPassword", async ({ oobCode, newPassword }, { rejectWithValue }) => {
+  try {
+    await confirmPasswordReset(auth, oobCode, newPassword);
+    return "Password reset successfully!";
+  } catch (error) {
+    if (error instanceof FirebaseError) {
+      return rejectWithValue("Change Password failure!");
+    }
+    return rejectWithValue("Login failed");
+  }
+});
+
 const changePassword = createAsyncThunk<
   string,
   string,
@@ -149,4 +167,12 @@ const changePassword = createAsyncThunk<
   }
 });
 
-export { changePassword, forgotPassword, login, logout, register, loginByFb };
+export {
+  newPassword,
+  forgotPassword,
+  login,
+  loginByFb,
+  logout,
+  register,
+  changePassword,
+};

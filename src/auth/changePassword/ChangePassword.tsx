@@ -3,23 +3,21 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { newPassword } from "@/api/authRequest";
 import InputAuth from "@/components/InputAuth";
-import LoadingBtn from "@/components/LoadingList/LoadingBtn";
-import LoadingPage from "@/components/LoadingList/LoadingPage";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
-import { useAppDispatch } from "@/redux";
-import { authSelector } from "@/redux/selectors/authSelector";
-import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import { FaFacebook } from "react-icons/fa6";
-import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router";
+import { useAppDispatch } from "@/redux";
+import { changePassword } from "@/api/authRequest";
+import { useSelector } from "react-redux";
+import { authSelector } from "@/redux/selectors/authSelector";
+import LoadingBtn from "@/components/LoadingList/LoadingBtn";
 import { toast } from "sonner";
-import { StringParam, useQueryParams } from "use-query-params";
+import LoadingPage from "@/components/LoadingList/LoadingPage";
+import { useEffect } from "react";
 
-const NewPassword = () => {
+const ChangePassword = () => {
   const form = useForm<z.infer<typeof newPasswordSchema>>({
     resolver: zodResolver(newPasswordSchema),
     defaultValues: {
@@ -28,50 +26,39 @@ const NewPassword = () => {
     },
   });
 
-  const [query] = useQueryParams({
-    oobCode: StringParam,
-  });
-
-  const oobCode = query.oobCode || "";
-
   const { loading, currentUser } = useSelector(authSelector);
 
   const dispatch = useAppDispatch();
 
-  const navigate = useNavigate();
-
   function onSubmit(values: z.infer<typeof newPasswordSchema>) {
     (async () => {
       try {
-        await dispatch(
-          newPassword({ oobCode: oobCode, newPassword: values.password })
-        ).unwrap();
+        await dispatch(changePassword(values.password)).unwrap();
         form.reset();
         toast.success("Change Password success");
-        navigate("/auth/login");
       } catch (error) {
         typeof error === "string" && toast.error(error);
       }
     })();
   }
 
-  const { t } = useTranslation("auth");
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if (currentUser) {
+    if (!currentUser) {
       navigate("/");
     }
-  }, []);
+  }, [currentUser]);
 
-  if (currentUser) {
+  if (!currentUser) {
     return <LoadingPage />;
   }
 
   return (
     <div className="flex justify-center items-center">
       <div className="flex justify-center items-start flex-col">
-        <h1 className="text-size-5xl text-secondary">{t("newPs.title")}</h1>
-        <div className="pt-4">{t("newPs.description")}</div>
+        <h1 className="text-size-5xl text-secondary">Change Password</h1>
+        <div className="pt-4">Create your new password</div>
         <div className="mt-16">
           <Form {...form}>
             <form
@@ -81,13 +68,13 @@ const NewPassword = () => {
               <InputAuth
                 form={form}
                 name="password"
-                title={t("newPs.password")}
+                title="Password"
                 type="password"
               />
               <InputAuth
                 form={form}
                 name="confirm"
-                title={t("newPs.confirm")}
+                title="Confirm Password"
                 type="password"
               />
               <div className="text-right">
@@ -95,7 +82,7 @@ const NewPassword = () => {
                   to="/auth/forgot-password"
                   className="text-four text-base"
                 >
-                  {t("newPs.forgot")}
+                  Forgot Password?
                 </Link>
               </div>
               <div className="flex flex-col gap-6 mt-6">
@@ -105,23 +92,23 @@ const NewPassword = () => {
                       <LoadingBtn />
                     </>
                   ) : (
-                    `${t("newPs.access")}`
+                    "Change password"
                   )}
                 </Button>
                 <Button variant={"six"} type="button">
                   <span>
                     <FaFacebook className="text-size-lg" />
                   </span>
-                  {t("newPs.signFb")}
+                  Sign in with FaceBook
                 </Button>
               </div>
             </form>
           </Form>
           <div className="mt-6">
             <span className="text-four">
-              {t("newPs.accCount")}{" "}
+              Don&apos;t have an account{" "}
               <Link to="/auth/register" className="text-primary">
-                {t("newPs.signUp")}
+                Sign up
               </Link>
             </span>
           </div>
@@ -131,4 +118,4 @@ const NewPassword = () => {
   );
 };
 
-export default NewPassword;
+export default ChangePassword;
