@@ -23,6 +23,8 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
+import { StringParam, useQueryParams } from "use-query-params";
+import { addDays } from "date-fns";
 
 const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
   const { locations, guests, types, filter } = useSelector(tourSelector);
@@ -31,7 +33,14 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
 
   const dispatch = useDispatch();
 
-  const [date, setDate] = useState<Date>(new Date());
+  const [query, setQuery] = useQueryParams({
+    from: StringParam,
+  });
+
+  const from = query.from ? new Date(query.from) : addDays(new Date(), 1);
+
+  const [date, setDate] = useState<Date>(from);
+
   const [locationFilter, setLocationFilter] = useState(location);
   const [typeFilter, setTypeFilter] = useState<string[]>(type);
 
@@ -79,7 +88,11 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
           </div>
 
           <div className="group bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
-            <DatePickerSingle date={date} setDate={setDate} />
+            <DatePickerSingle
+              date={date}
+              setDate={setDate}
+              setQuery={setQuery}
+            />
           </div>
 
           <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
@@ -134,7 +147,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
           </div>
         </div>
         <div className="lg:pt-6 pt-4">
-          <Link to="/tours">
+          <Link to={`/tours?from=${from.toDateString()}`}>
             <Button
               variant="primary"
               className="flex justify-center gap-2 text-third"

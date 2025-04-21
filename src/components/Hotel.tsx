@@ -13,7 +13,10 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
 
   const [query] = useQueryParams({
     guest: StringParam,
+    from: StringParam,
   });
+
+  const from = query.from || new Date().toDateString();
 
   return (
     <div className="w-full">
@@ -21,7 +24,7 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
         <Link
           to={`/hotel-detail/${hotel.id}?guest=${
             query.guest ? query.guest : ""
-          }`}
+          }&from=${from}`}
         >
           <LoadedImage alt={hotel.title} thumbnail={hotel.thumbnail} />
         </Link>
@@ -49,7 +52,9 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
           <span className="text-four">{hotel.location}</span>
         </div>
         <h5 className="text-size-lg font-medium pt-2 hover:underline h-[60px]">
-          <Link to={`/hotel-detail/${hotel.id}`}>{hotel.title}</Link>
+          <Link to={`/hotel-detail/${hotel.id}?from=${from}`}>
+            {hotel.title}
+          </Link>
         </h5>
         <div className="flex xl:items-center justify-between pt-4 xl:flex-row lg:flex-col flex-row lg:items-start items-center ">
           <div className="flex items-center gap-2">

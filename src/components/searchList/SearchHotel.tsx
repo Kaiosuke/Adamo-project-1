@@ -21,9 +21,9 @@ import { Link } from "react-router";
 import { useNavigate } from "react-router-dom";
 import { StringParam, useQueryParams } from "use-query-params";
 import { toast } from "sonner";
+import { addDays } from "date-fns";
 const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const { t } = useTranslation("search");
-  const [date, setDate] = useState<Date>(new Date());
 
   const { data } = useQuery({
     queryKey: ["filtersHotel"],
@@ -33,7 +33,12 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const [query, setQuery] = useQueryParams({
     location: StringParam,
     guest: StringParam,
+    from: StringParam,
   });
+
+  const from = query.from ? new Date(query.from) : addDays(new Date(), 1);
+
+  const [date, setDate] = useState<Date>(from);
 
   const [location, setLocation] = useState<string>(() => {
     const v = query.location;
@@ -91,7 +96,11 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
               </div>
 
               <div className="group bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
-                <DatePickerSingle date={date} setDate={setDate} />
+                <DatePickerSingle
+                  setQuery={setQuery}
+                  date={date}
+                  setDate={setDate}
+                />
               </div>
               <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
                 <LuUsers className="text-primary text-size-lg group-hover:text-third" />
@@ -113,7 +122,9 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
               </div>
             </div>
             <div className={` ${isHome ? "mb-8 " : "mt-4"}`}>
-              <Link to={`/hotels?location=${location}&guest=${guest}`}>
+              <Link
+                to={`/hotels?location=${location}&guest=${guest}&from=${from.toDateString()}`}
+              >
                 <Button
                   variant="primary"
                   className="flex justify-center gap-2 text-third h-[64px]"

@@ -29,18 +29,32 @@ import { bookingSelector } from "@/redux/selectors/bookingSelector";
 import { addBooking } from "@/redux/slices/bookingSlice";
 import { filterByGuest } from "@/redux/slices/toursSlice";
 import { useNavigate } from "react-router";
+import { toast } from "sonner";
+import { StringParam, useQueryParams } from "use-query-params";
 import DatePickerWithRange from "../DatePickerWithRange";
 import { Button } from "../ui/button";
-import { toast } from "sonner";
 
 const BillTourDetail = () => {
   const { tour } = useSelector(tourSelector);
 
   const { t } = useTranslation("search");
 
+  const [query, setQuery] = useQueryParams({
+    from: StringParam,
+    to: StringParam,
+    duration: StringParam,
+  });
+
+  const duration = query.duration || 3;
+  const from = query.from ? new Date(query.from) : new Date();
+  const to =
+    query.to && query.from
+      ? new Date(query.to)
+      : addDays(new Date(query.from ? query.from : ""), Number(duration));
+
   const [date, setDate] = useState<DateRange | undefined>({
-    from: addDays(new Date(), 1),
-    to: addDays(new Date(), tour!.duration),
+    from: from,
+    to: to,
   });
 
   const disPatch = useDispatch();
@@ -115,6 +129,7 @@ const BillTourDetail = () => {
                     <DatePickerWithRange
                       setDate={setDate}
                       date={date}
+                      setQuery={setQuery}
                       duration={tour.duration}
                     />
                     <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">

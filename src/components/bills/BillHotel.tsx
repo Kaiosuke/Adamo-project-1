@@ -43,28 +43,36 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { IBookingHotel } from "@/interfaces/booking";
+import { bookingSelector } from "@/redux/selectors/bookingSelector";
 import { addBookingHotel } from "@/redux/slices/bookingSlice";
 import { bookingHotelSchema } from "@/schemas/bookingSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { addDays } from "date-fns";
 import { DateRange } from "react-day-picker";
+import { useNavigate } from "react-router";
 import { useDebouncedCallback } from "use-debounce";
 import DatePickerWithRange from "../DatePickerWithRange";
-import { bookingSelector } from "@/redux/selectors/bookingSelector";
-import { useNavigate } from "react-router";
 
 const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
   const { t } = useTranslation(["search"]);
 
   const { rooms, breakfast, extraBed } = useSelector(roomSelector);
 
-  const [date, setDate] = useState<DateRange | undefined>({
-    from: addDays(new Date(), 1),
-    to: addDays(new Date(), 3),
-  });
-
   const [query, setQuery] = useQueryParams({
     guest: StringParam || "",
+    from: StringParam,
+    to: StringParam,
+  });
+
+  const from = query.from ? new Date(query.from) : new Date();
+  const to = query.to
+    ? new Date(query.to)
+    : query.from
+    ? new Date(query.from)
+    : new Date();
+
+  const [date, setDate] = useState<DateRange | undefined>({
+    from: from,
+    to: to,
   });
 
   const { data } = useQuery({
@@ -121,16 +129,16 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
   };
 
   const handleTotalMoney = () => {
-    let data = rooms.reduce((acc, cur) => {
+    let data = rooms.reduce((acc: number, cur) => {
       return (acc += cur.data.price * cur.quantity);
     }, 0);
 
     if (breakfast.status) data += breakfast.price * breakfast.quantity;
     if (extraBed.status) data += extraBed.price * extraBed.quantity;
     if (date?.from && date.to)
-      data *= date?.to?.getDate() - date?.from?.getDate() + 1;
+      data *= date?.to?.getTime() - date?.from?.getTime() + 1000 * 24 * 60 * 60;
 
-    return data;
+    return data / (1000 * 60 * 60 * 24);
   };
 
   const navigate = useNavigate();
@@ -144,6 +152,9 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
 
   const onSubmit = useDebouncedCallback(
     (values: z.infer<typeof bookingHotelSchema>) => {
+      if (rooms.length < 1) {
+        return toast.error("Please select at least 1 room");
+      }
       if (date?.from && date.to) {
         const data: IBookingHotel = {
           duration: {
@@ -188,7 +199,11 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
                 <div className="h-[1px] w-full bg-four opacity-50" />
                 <div className="lg:p-8 p-4 flex flex-col gap-6">
                   <div className="bg-third h-full">
-                    <DatePickerWithRange setDate={setDate} date={date} />
+                    <DatePickerWithRange
+                      setQuery={setQuery}
+                      setDate={setDate}
+                      date={date}
+                    />
                   </div>
                   <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
                     <GoPeople className="text-primary text-xl group-hover:text-third" />

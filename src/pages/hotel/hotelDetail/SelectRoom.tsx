@@ -72,19 +72,19 @@ const SelectRoom = () => {
                     thumbnail={room.thumbnail}
                   />
                 </div>
-                <div className="absolute top-2 left-2 w-8 h-8 rounded-full bg-four flex justify-center items-center">
+                <div className="absolute top-2 left-2 w-8 h-8 rounded-full bg-four flex justify-center items-center ">
                   <Dialog>
                     <DialogTrigger>
                       <FaImage className="text-third cursor-pointer" />
                     </DialogTrigger>
-                    <DialogContent className="lg:max-w-[1200px] md:max-w-[900px] max-w-[90%] h-[90%]">
+                    <DialogContent className="lg:max-w-[1200px] md:max-w-[900px] max-w-[90%] h-[90%] pb-6">
                       <DialogHeader>
                         <DialogTitle className="text-secondary text-size-3xl px-6 pt-6 ">
                           {room.type}
                         </DialogTitle>
                       </DialogHeader>
 
-                      <div className="flex gap-10 lg:flex-row flex-col overflow-auto px-6 pb-6">
+                      <div className="flex gap-10 lg:flex-row flex-col overflow-auto px-6">
                         <div className="lg:flex-[1_0_auto] flex-[0_0_100%] lg:max-w-[635px] w-full">
                           <div className="flex justify-between items-center">
                             <div className="flex items-center gap-2">

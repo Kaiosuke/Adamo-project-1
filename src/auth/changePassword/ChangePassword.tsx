@@ -16,6 +16,7 @@ import LoadingBtn from "@/components/LoadingList/LoadingBtn";
 import { toast } from "sonner";
 import LoadingPage from "@/components/LoadingList/LoadingPage";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const ChangePassword = () => {
   const form = useForm<z.infer<typeof newPasswordSchema>>({
@@ -54,11 +55,13 @@ const ChangePassword = () => {
     return <LoadingPage />;
   }
 
+  const { t } = useTranslation("auth");
+
   return (
     <div className="flex justify-center items-center">
       <div className="flex justify-center items-start flex-col">
-        <h1 className="text-size-5xl text-secondary">Change Password</h1>
-        <div className="pt-4">Create your new password</div>
+        <h1 className="text-size-5xl text-secondary">{t("changePs.title")}</h1>
+        <div className="pt-4">{t("changePs.description")}</div>
         <div className="mt-16">
           <Form {...form}>
             <form
@@ -68,13 +71,13 @@ const ChangePassword = () => {
               <InputAuth
                 form={form}
                 name="password"
-                title="Password"
+                title={t("changePs.password")}
                 type="password"
               />
               <InputAuth
                 form={form}
                 name="confirm"
-                title="Confirm Password"
+                title={t("changePs.confirm")}
                 type="password"
               />
               <div className="text-right">
@@ -82,7 +85,7 @@ const ChangePassword = () => {
                   to="/auth/forgot-password"
                   className="text-four text-base"
                 >
-                  Forgot Password?
+                  {t("changePs.forgot")}
                 </Link>
               </div>
               <div className="flex flex-col gap-6 mt-6">
@@ -92,23 +95,23 @@ const ChangePassword = () => {
                       <LoadingBtn />
                     </>
                   ) : (
-                    "Change password"
+                    `${t("changePs.access")}`
                   )}
                 </Button>
                 <Button variant={"six"} type="button">
                   <span>
                     <FaFacebook className="text-size-lg" />
                   </span>
-                  Sign in with FaceBook
+                  {t("changePs.signFb")}
                 </Button>
               </div>
             </form>
           </Form>
           <div className="mt-6">
             <span className="text-four">
-              Don&apos;t have an account{" "}
+              {t("changePs.accCount")}{" "}
               <Link to="/auth/register" className="text-primary">
-                Sign up
+                {t("changePs.signUp")}
               </Link>
             </span>
           </div>

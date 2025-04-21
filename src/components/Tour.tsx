@@ -7,14 +7,23 @@ import { CiLocationOn } from "react-icons/ci";
 import { MdCalendarMonth, MdOutlineStar } from "react-icons/md";
 import { Link } from "react-router";
 import LoadedImage from "./LoadingList/LoadedImage";
+import { StringParam, useQueryParams } from "use-query-params";
 
 const Tour = ({ tour }: { tour: ITour }) => {
+  const [query] = useQueryParams({
+    from: StringParam,
+  });
+
+  const from = query.from || "";
+
   return (
     <>
       {tour && (
         <div className="w-full ">
           <div className="relative">
-            <Link to={`/tour-detail/${tour.id}`}>
+            <Link
+              to={`/tour-detail/${tour.id}?from=${from}&duration=${tour.duration}`}
+            >
               <LoadedImage thumbnail={tour.thumbnail} alt={tour.title} />
             </Link>
             <div className="w-[32px] absolute top-[-1px] right-10">
@@ -35,7 +44,11 @@ const Tour = ({ tour }: { tour: ITour }) => {
               <span className="text-four">{tour.location}</span>
             </div>
             <h5 className="text-size-lg font-medium pt-2 hover:underline h-[40px] leading-1">
-              <Link to={`/tour-detail/${tour.id}`}>{tour.title}</Link>
+              <Link
+                to={`/tour-detail/${tour.id}?from=${from}&duration=${tour.duration}`}
+              >
+                {tour.title}
+              </Link>
             </h5>
             <div className="flex items-center justify-between pt-6">
               <div className="flex items-center gap-1">

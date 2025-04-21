@@ -51,6 +51,8 @@ const loginByFb = createAsyncThunk<IAuth, void, { rejectValue: string }>(
       const result = await signInWithPopup(auth, facebookProvider);
       const user = result.user;
 
+      console.log(result, user);
+
       const token = await user.getIdToken();
 
       Cookies.set("accessToken", token);
@@ -61,6 +63,7 @@ const loginByFb = createAsyncThunk<IAuth, void, { rejectValue: string }>(
         email: user.email,
       };
     } catch (error) {
+      console.log(error);
       if (error instanceof FirebaseError) {
         return rejectWithValue("Change Password failure!");
       }

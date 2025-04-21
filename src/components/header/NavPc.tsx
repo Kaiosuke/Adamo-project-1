@@ -84,6 +84,8 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
     }
   };
 
+  const { t } = useTranslation("header");
+
   return (
     <ul className="flex justify-between items-center gap-10 lg:flex-row flex-col">
       {(currentLanguage === "en" ? linkNavEn : linkNavVi).map((nav, index) => (
@@ -106,7 +108,11 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
         {currentUser ? (
           <DropdownMenu>
             <DropdownMenuTrigger>
-              <FaUser className="text-third cursor-pointer hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out" />
+              <FaUser
+                className={`cursor-pointer hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out
+                    ${getLinkColor()}
+                  `}
+              />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuLabel>
@@ -116,14 +122,16 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem className="cursor-pointer">
-                <Link to="/auth/change-password">Change password</Link>
+                <Link className="text-sm" to="/auth/change-password">
+                  {t("changPs")}
+                </Link>
               </DropdownMenuItem>
 
               <DropdownMenuItem
                 className="cursor-pointer"
                 onClick={handleLogout}
               >
-                Sign Out
+                {t("signOut")}
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

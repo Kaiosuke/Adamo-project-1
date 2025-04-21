@@ -12,10 +12,11 @@ import { cn } from "@/lib/utils";
 
 interface Props {
   date: Date;
+  setQuery: (query: { from: string | null }) => void;
   setDate: (v: any) => void;
 }
 
-function DatePickerSingle({ date, setDate }: Props) {
+function DatePickerSingle({ date, setDate, setQuery }: Props) {
   return (
     <Popover>
       <PopoverTrigger asChild className="cursor-pointer">
@@ -32,7 +33,18 @@ function DatePickerSingle({ date, setDate }: Props) {
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-full h-full p-0">
-        <Calendar mode="single" selected={date} onSelect={setDate} />
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={(v) => {
+            setDate(v);
+            setQuery({ from: v ? format(v, "yyyy-MM-dd") : null });
+          }}
+          disabled={(date) => {
+            const day = new Date();
+            return date < day;
+          }}
+        />
       </PopoverContent>
     </Popover>
   );

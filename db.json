@@ -4096,7 +4096,7 @@
       "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
       "type": "Family Suite",
       "quantity": 4,
-      "status": true,
+      "status": false,
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -4134,7 +4134,7 @@
       "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274611/Hotels/uykb9oefs9fdcvwezj56.png",
       "description": "Spacious family suite featuring modern decor, city and partial sea view, and a private balcony. Includes a comfortable sitting area, large flat-screen TV, mini fridge, and tea/coffee facilities. The en-suite bathroom offers a rain shower and deluxe amenities.@Maximum occupancy is 2 adults and 2 children under 6 years old. Extra beds are available upon request and subject to availability.",
       "quantity": 3,
-      "type": "Family Suite",
+      "type": "Family Suite 2",
       "status": true,
       "images": [
         "https://swiperjs.com/demos/images/nature-4.jpg",
@@ -4142,7 +4142,7 @@
         "https://swiperjs.com/demos/images/nature-6.jpg",
         "https://swiperjs.com/demos/images/nature-3.jpg"
       ],
-      "price": 45,
+      "price": 4,
       "square": "95 m2",
       "capacity": 5,
       "beds": "1 King Bed, 1 Sofa Bed",
@@ -4168,7 +4168,7 @@
       "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274611/Hotels/uykb9oefs9fdcvwezj56.png",
       "description": "Elegant family suite offering garden and mountain views from the private balcony. Features a spacious layout with two queen beds, a work desk, and a kitchenette. The bathroom includes a walk-in shower, complimentary toiletries, and a hairdryer.@Maximum occupancy is 4 adults. No extra beds allowed but cribs are available for infants under 3 years old.",
       "quantity": 0,
-      "type": "Family Suite",
+      "type": "Family Suite 3",
       "status": false,
       "images": [
         "https://swiperjs.com/demos/images/nature-7.jpg",
@@ -4230,7 +4230,7 @@
       "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274612/Hotels/qjbzhqlvdmx0e1cl8jjn.png",
       "description": "Simple and elegant room equipped with essentials for a comfortable stay. Includes a twin bed setup, a work desk, and private bathroom. Perfect for business or short-term travelers.@Maximum occupancy is 2 adults. Extra beds not available.",
       "quantity": 2,
-      "type": "Standard room",
+      "type": "Standard room 2",
       "status": false,
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
@@ -4259,7 +4259,7 @@
       "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274612/Hotels/qjbzhqlvdmx0e1cl8jjn.png",
       "description": "Bright standard room with large windows and garden view. Comes with modern furniture, a queen-size bed, and minimalist decor. Includes complimentary tea and high-speed internet.@Maximum occupancy is 2 adults and 1 child under 5 sharing existing bedding.",
       "quantity": 1,
-      "type": "Standard room",
+      "type": "Standard room 3",
       "status": false,
       "images": [
         "https://swiperjs.com/demos/images/nature-5.jpg",

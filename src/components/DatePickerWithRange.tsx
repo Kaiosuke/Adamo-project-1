@@ -1,5 +1,3 @@
-"use client";
-
 import { addDays, format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
 import { DateRange } from "react-day-picker";
@@ -16,10 +14,11 @@ import { cn } from "@/lib/utils";
 interface Props {
   setDate: (value: DateRange | undefined) => void;
   date: DateRange | undefined;
+  setQuery: ({ from, to }: { from: string | null; to: string | null }) => void;
   duration?: number;
 }
 
-function DatePickerWithRange({ date, setDate, duration }: Props) {
+function DatePickerWithRange({ date, setDate, duration, setQuery }: Props) {
   return (
     <div className={cn("grid gap-2")}>
       <Popover>
@@ -50,18 +49,20 @@ function DatePickerWithRange({ date, setDate, duration }: Props) {
         {duration ? (
           <PopoverContent className="w-auto p-0" align="start">
             <Calendar
-              mode="range"
+              mode="single"
               defaultMonth={date?.from}
-              selected={date}
-              onSelect={(range) => {
-                if (range?.from && range?.to) {
-                  const maxDate = addDays(range.from, duration);
-                  if (range.to > maxDate) {
-                    setDate({ from: range.from, to: maxDate });
-                    return;
-                  }
+              selected={date?.from}
+              onSelect={(selectedDate) => {
+                if (selectedDate) {
+                  setDate({
+                    from: selectedDate,
+                    to: addDays(selectedDate, duration),
+                  });
+                  setQuery({
+                    from: selectedDate.toDateString(),
+                    to: addDays(selectedDate, duration).toDateString(),
+                  });
                 }
-                setDate(range);
               }}
               disabled={(date) => {
                 const today = new Date();
@@ -76,7 +77,26 @@ function DatePickerWithRange({ date, setDate, duration }: Props) {
               mode="range"
               defaultMonth={date?.from}
               selected={date}
-              onSelect={setDate}
+              onSelect={(range) => {
+                if (range?.from && range?.to) {
+                  const maxDate = addDays(range.from, 30);
+                  if (range.to > maxDate) {
+                    setDate({ from: range.from, to: maxDate });
+                    setQuery({
+                      from: range?.from?.toDateString(),
+                      to: maxDate.toDateString(),
+                    });
+                    return;
+                  } else {
+                    setQuery({
+                      from: range?.from?.toDateString(),
+
+                      to: range?.to?.toDateString(),
+                    });
+                  }
+                }
+                setDate(range);
+              }}
               disabled={(date) => {
                 const today = new Date();
                 return date < today;

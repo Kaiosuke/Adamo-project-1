@@ -74,7 +74,7 @@ const roomsSlice = createSlice({
       const existRoom = state.rooms.find(
         (room) => room.data.id === action.payload.id
       );
-      if (existRoom && existRoom.quantity < 1) {
+      if (existRoom && existRoom.quantity < 2) {
         return;
       } else {
         state.rooms = state.rooms.map((room) => {

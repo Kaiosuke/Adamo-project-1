@@ -94,6 +94,8 @@ const Footer = () => {
 
   const currentLanguage = i18n.language;
 
+  console.log(t);
+
   return (
     <footer>
       <div className="lg:py-16 md:py-10 py-6 bg-secondary opacity-90 max-w-[1600px] m-auto">
