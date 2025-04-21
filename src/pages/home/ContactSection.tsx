@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import { contact } from "@/api/contactRequest";
 import {
   Form,
   FormControl,
@@ -13,6 +14,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { IContactOnlyEmail } from "@/interfaces/contact";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "sonner";
+import { useDebouncedCallback } from "use-debounce";
 
 const ContactSection = () => {
   const form = useForm<z.infer<typeof sendMailSchema>>({
@@ -22,11 +27,20 @@ const ContactSection = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof sendMailSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-  }
+  const { mutate } = useMutation({
+    mutationFn: (data: IContactOnlyEmail) => contact({ data }),
+    onSuccess: () => {
+      toast.success("Thanks for contact us");
+      form.reset();
+    },
+  });
+
+  const onSubmit = useDebouncedCallback(
+    (values: z.infer<typeof sendMailSchema>) => {
+      mutate({ ...values });
+    },
+    300
+  );
 
   return (
     <section className="main-container">
@@ -40,18 +54,7 @@ const ContactSection = () => {
             }}
           />
         </h2>
-        {/* <div className="relative w-[324px] h-[48px]">
-            <Input
-              placeholder="example@gmail.com"
-              className="rounded-none border-secondary w-full pl-10 text-four h-full"
-            />
-            <div className="absolute top-[50%] left-4 -translate-y-[50%]">
-              <CiMail className="text-size-lg text-primary" />
-            </div>
-          </div>
-          <div className="w-[100px] h-[48px] bg-secondary text-third flex items-center justify-center text-sm cursor-pointer hover:bg-secondary/80">
-            Send
-          </div> */}
+
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <div className="flex gap-4 lg:pt-0 pt-10 ">

@@ -1,4 +1,4 @@
-import { getFiltersHotel, getHotelById } from "@/api/hotelRequest";
+import { getFiltersHotel } from "@/api/hotelRequest";
 import { handleFormatMoney } from "@/helper";
 import { IHotel } from "@/interfaces/hotel";
 import { IRoom } from "@/interfaces/room";
@@ -43,7 +43,6 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { IBookingHotel } from "@/interfaces/booking";
-import { bookingSelector } from "@/redux/selectors/bookingSelector";
 import { addBookingHotel } from "@/redux/slices/bookingSlice";
 import { bookingHotelSchema } from "@/schemas/bookingSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -389,16 +388,12 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
   );
 };
 
-const BillHotelCheckOut = () => {
-  const { bookingHotel } = useSelector(bookingSelector);
+interface PropsBillCheckout {
+  data: IHotel;
+  bookingHotel: IBookingHotel;
+}
 
-  const id = bookingHotel?.hotelId;
-
-  const { data } = useQuery({
-    queryKey: ["hotelDetail", { id: id }],
-    queryFn: () => getHotelById(Number(id)),
-    enabled: id !== undefined,
-  });
+const BillHotelCheckOut = ({ data, bookingHotel }: PropsBillCheckout) => {
   const handleGetDay = (v: string) => {
     const time = new Date(v);
     return time.toLocaleDateString("vi-VN");
@@ -406,7 +401,7 @@ const BillHotelCheckOut = () => {
 
   return (
     <>
-      {data && bookingHotel && (
+      {
         <div className="bg-seven w-[380px]">
           <div className="lg:p-8 p-4 flex flex-col gap-6">
             <p className="text-secondary font-semibold">{data.title}</p>
@@ -506,7 +501,7 @@ const BillHotelCheckOut = () => {
             <span>{handleFormatMoney(bookingHotel.totalPrice)}</span>
           </div>
         </div>
-      )}
+      }
     </>
   );
 };

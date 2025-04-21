@@ -10,6 +10,19 @@ interface IBooking {
   tourId: number;
   totalPrice: number;
   guests: string;
+  user?: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phoneNumber: number;
+    address?: string;
+    city?: string;
+    state?: string;
+    zipCode?: string;
+    country?: string;
+    requirement?: string;
+    payMethod: string;
+  };
 }
 
 interface IBookingHotel {
@@ -23,6 +36,20 @@ interface IBookingHotel {
   breakFast: IBreakfast | undefined;
   extraBed: IExtraBed | undefined;
   totalPrice: number;
+
+  user?: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phoneNumber: number;
+    address?: string;
+    city?: string;
+    state?: string;
+    zipCode?: string;
+    country?: string;
+    requirement?: string;
+    payMethod: string;
+  };
 }
 
 export type { IBooking, IBookingHotel };

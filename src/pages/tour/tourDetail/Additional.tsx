@@ -1,6 +1,7 @@
 import AccordionCom from "@/components/AccordionCom";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import { useSelector } from "react-redux";
+import { Fragment } from "react/jsx-runtime";
 
 const Additional = () => {
   const { tour } = useSelector(tourSelector);
@@ -20,9 +21,9 @@ const Additional = () => {
           <h4 className="text-size-xl font-semibold text-secondary">FAQs</h4>
           <div className="flex flex-col gap-4 mt-4">
             {tour?.additionalInfo.faqs.map((v, index) => (
-              <div key={index}>
+              <Fragment key={index}>
                 <AccordionCom content={v} />
-              </div>
+              </Fragment>
             ))}
           </div>
         </div>

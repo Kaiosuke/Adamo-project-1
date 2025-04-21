@@ -4,6 +4,7 @@ import { tourSelector } from "@/redux/selectors/tourSelector";
 import { Trans } from "react-i18next";
 import { useSelector } from "react-redux";
 import { Link } from "react-router";
+import { Fragment } from "react/jsx-runtime";
 
 const TraditionalSection = () => {
   const { tours } = useSelector(tourSelector);
@@ -24,9 +25,9 @@ const TraditionalSection = () => {
       </div>
       <div className="grid lg:grid-cols-3 gap-4 md:grid-cols-2 grid-cols-1 pt-6">
         {newTours.map((tour) => (
-          <div key={tour.id}>
+          <Fragment key={tour.id}>
             <Tour tour={tour} />
-          </div>
+          </Fragment>
         ))}
       </div>
     </section>

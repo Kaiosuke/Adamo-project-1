@@ -1,3 +1,4 @@
+import { bookingTour } from "@/api/bookingRequest";
 import Card from "@/assets/images/card.png";
 import Paypal from "@/assets/images/paypal.png";
 import FormComp from "@/components/forms/FormCom";
@@ -11,16 +12,24 @@ import {
 } from "@/components/ui/form";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { IBooking } from "@/interfaces/booking";
 import { userSchema } from "@/schemas/userSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
+import { toast } from "sonner";
+import { useDebouncedCallback } from "use-debounce";
 
 import { StringParam, useQueryParams, withDefault } from "use-query-params";
 import { z } from "zod";
 
-const FormInfoUser = () => {
+interface Props {
+  booking: IBooking;
+}
+
+const FormInfoUser = ({ booking }: Props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const [query, setQuery] = useQueryParams({
@@ -70,11 +79,34 @@ const FormInfoUser = () => {
 
   const navigate = useNavigate();
 
-  function onSubmit(values: z.infer<typeof userSchema>) {
-    console.log(values);
-    setIsSubmitted(true);
-    navigate("/thanks", { replace: true });
-  }
+  const { mutate } = useMutation({
+    mutationFn: (data: IBooking) => bookingTour({ data }),
+    onSuccess: () => {
+      setIsSubmitted(true);
+      toast.success("Booking tour success");
+      setIsSubmitted(true);
+      form.reset();
+      navigate("/thanks");
+    },
+  });
+
+  const onSubmit = useDebouncedCallback(
+    (values: z.infer<typeof userSchema>) => {
+      const user = {
+        ...values,
+        phoneNumber: Number(values.phoneNumber),
+      };
+      mutate({
+        day: booking.day,
+        duration: booking.duration,
+        guests: booking.guests,
+        totalPrice: booking.totalPrice,
+        tourId: booking.tourId,
+        user: user,
+      });
+    },
+    300
+  );
 
   return (
     <Form {...form}>

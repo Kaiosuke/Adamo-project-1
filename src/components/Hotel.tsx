@@ -30,7 +30,7 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
         </Link>
 
         <div className="w-[32px] absolute top-[-1px] right-10">
-          {Number(hotel) % 2 === 0 ? (
+          {Number(hotel.id) % 2 === 0 ? (
             <img src={Shape} alt="shape" className="object-cover w-full" />
           ) : (
             <img src={Shape2} alt="shape" className="object-cover w-full" />

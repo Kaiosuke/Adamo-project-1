@@ -90,11 +90,9 @@ const pagesVi = [
 ];
 
 const Footer = () => {
-  const { t } = useTranslation();
+  useTranslation();
 
   const currentLanguage = i18n.language;
-
-  console.log(t);
 
   return (
     <footer>

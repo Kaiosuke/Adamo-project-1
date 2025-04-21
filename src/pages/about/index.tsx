@@ -5,8 +5,7 @@ import IntroduceSection from "./IntroduceSection";
 import TraditionalSection from "./TraditionalSection";
 
 const About = () => {
-  const { t } = useTranslation();
-  console.log(t);
+  useTranslation();
 
   return (
     <>

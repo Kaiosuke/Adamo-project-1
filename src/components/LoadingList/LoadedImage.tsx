@@ -8,7 +8,7 @@ const LoadedImage = ({
   thumbnail: string;
   alt: string;
 }) => {
-  const [isLoaded, setIsdLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <div className="overflow-hidden relative w-full h-full rounded-none aspect-3/2 object-cover">
@@ -17,10 +17,10 @@ const LoadedImage = ({
       )}
 
       <img
-        src={thumbnail}
+        src={`${thumbnail.replace("/upload/", `/upload/q_auto,f_auto/`)}`}
         alt={alt}
-        onLoad={() => setIsdLoaded(true)}
-        className={`object-cover hover:scale-125 tran-fast ${
+        onLoad={() => setIsLoaded(true)}
+        className={`object-cover hover:scale-125 w-full h-full tran-fast ${
           isLoaded ? "block" : "hidden"
         }`}
       />

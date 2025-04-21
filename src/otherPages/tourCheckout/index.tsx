@@ -10,6 +10,7 @@ import FormInfoUser from "./FormInfoUser";
 import { Link } from "react-router";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
+import { tourSelector } from "@/redux/selectors/tourSelector";
 
 const TourCheckOut = () => {
   const { booking } = useSelector(bookingSelector);
@@ -29,6 +30,8 @@ const TourCheckOut = () => {
   }, []);
 
   const { t } = useTranslation("checkout");
+
+  const { tour } = useSelector(tourSelector);
 
   return (
     <>
@@ -51,10 +54,12 @@ const TourCheckOut = () => {
               <h2 className="text-size-2xl">{t("tour.travel")}</h2>
               <p className="text-four">{t("tour.description")}</p>
             </div>
-            <FormInfoUser />
+            {booking && <FormInfoUser booking={booking} />}
           </div>
           <div className="lg:flex-[0_0_30%] flex-[0_0_auto] max-w-[380px] w-full bg-four h-fit">
-            <BillTourCheckOut />
+            {tour && booking && (
+              <BillTourCheckOut booking={booking} tour={tour} />
+            )}
           </div>
         </div>
       </section>

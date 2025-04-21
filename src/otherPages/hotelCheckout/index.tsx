@@ -1,13 +1,27 @@
+import { getHotelById } from "@/api/hotelRequest";
 import { BillHotelCheckOut } from "@/components/bills/BillHotel";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
+import { bookingSelector } from "@/redux/selectors/bookingSelector";
+import { useQuery } from "@tanstack/react-query";
+import { useTranslation } from "react-i18next";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 import { Link } from "react-router";
 import FormInfoUser from "./FormInfoUser";
-import { useTranslation } from "react-i18next";
 
 const HotelCheckOut = () => {
   const { t } = useTranslation("checkout");
+
+  const { bookingHotel } = useSelector(bookingSelector);
+
+  const id = bookingHotel?.hotelId;
+
+  const { data } = useQuery({
+    queryKey: ["hotelDetail", { id: id }],
+    queryFn: () => getHotelById(Number(id)),
+    enabled: id !== undefined,
+  });
 
   return (
     <>
@@ -31,10 +45,12 @@ const HotelCheckOut = () => {
               <h2 className="text-size-2xl">{t("tour.travel")}</h2>
               <p className="text-four">{t("tour.description")}</p>
             </div>
-            <FormInfoUser />
+            {bookingHotel && data && <FormInfoUser booking={bookingHotel} />}
           </div>
           <div className="lg:flex-[0_0_30%] flex-[0_0_auto] max-w-[380px] w-full bg-four h-fit">
-            <BillHotelCheckOut />
+            {data && bookingHotel && (
+              <BillHotelCheckOut data={data} bookingHotel={bookingHotel} />
+            )}
           </div>
         </div>
       </section>

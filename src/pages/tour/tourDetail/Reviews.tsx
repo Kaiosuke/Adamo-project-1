@@ -22,6 +22,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useParams } from "react-router";
 import { toast } from "sonner";
 import { useDebouncedCallback } from "use-debounce";
+import { Fragment } from "react/jsx-runtime";
 
 interface Props {
   currentPage: number;
@@ -295,9 +296,9 @@ const Reviews = ({ currentPage, pageCount, setCurrentPage }: Props) => {
           <div>
             <div className="flex flex-col gap-4">
               {reviewsTour.map((review, index) => (
-                <div key={index}>
+                <Fragment key={index}>
                   <ReviewTour review={review} />
-                </div>
+                </Fragment>
               ))}
             </div>
             <Pagination

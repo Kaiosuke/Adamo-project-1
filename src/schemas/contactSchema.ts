@@ -16,7 +16,9 @@ const contactSchema = z.object({
       message:
         "Phone number must be greater than 8 character and smaller than 11 character",
     }),
-  message: z.string().min(1, { message: "Please choice a pay method" }),
+  message: z
+    .string()
+    .min(6, { message: "Message must be greater than 6 character " }),
 });
 
 export { contactSchema };

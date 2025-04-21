@@ -5,6 +5,7 @@ import Viewer360 from "@/components/Viewer360";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import { useSelector } from "react-redux";
+import { Fragment } from "react/jsx-runtime";
 
 const Description = () => {
   const { tour } = useSelector(tourSelector);
@@ -69,9 +70,9 @@ const Description = () => {
         </h4>
         <div className="flex flex-col gap-4 mt-4">
           {tour?.description.itineraries.map((itinerary, index) => (
-            <div key={index}>
+            <Fragment key={index}>
               <AccordionCom content={itinerary} />
-            </div>
+            </Fragment>
           ))}
         </div>
       </div>

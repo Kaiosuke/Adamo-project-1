@@ -160,7 +160,7 @@
       "location": "Hoi An, Quang Nam",
       "score": 4.8,
       "time": "3 days - 2 night",
-      "duration": 4,
+      "duration": 3,
       "type": "cultural",
       "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/m8948eyrkfi7n6msloq6.png",
       "images": [
@@ -313,7 +313,7 @@
       "location": "Phu Quoc, Kien Giang",
       "score": 4.9,
       "time": "4 days - 3 nights",
-      "duration": 5,
+      "duration": 4,
       "type": "wildlife",
       "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/zinrqkzgwthvfjmhxlqh.png",
       "images": [
@@ -4096,7 +4096,7 @@
       "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
       "type": "Family Suite",
       "quantity": 4,
-      "status": false,
+      "status": true,
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -4142,7 +4142,7 @@
         "https://swiperjs.com/demos/images/nature-6.jpg",
         "https://swiperjs.com/demos/images/nature-3.jpg"
       ],
-      "price": 4,
+      "price": 45,
       "square": "95 m2",
       "capacity": 5,
       "beds": "1 King Bed, 1 Sofa Bed",
@@ -4283,6 +4283,311 @@
         "Electric kettle",
         "Flat-screen TV"
       ]
+    }
+  ],
+  "contacts": [
+    {
+      "name": "trongle",
+      "email": "trongleele@gmail.com",
+      "phoneNumber": 123456789,
+      "message": "312312312",
+      "id": 1
+    },
+    {
+      "name": "trongle",
+      "email": "trongleele@gmail.com",
+      "phoneNumber": 123456789,
+      "message": "312312312",
+      "id": 2
+    },
+    {
+      "name": "trongle",
+      "email": "trongleele@gmail.com",
+      "phoneNumber": 123456789,
+      "message": "312312312",
+      "id": 3
+    },
+    {
+      "name": "trongle",
+      "email": "trongleele@gmail.com",
+      "phoneNumber": 123456789,
+      "message": "312312312",
+      "id": 4
+    },
+    {
+      "name": "trongle",
+      "email": "trongleele@gmail.com",
+      "phoneNumber": 123456789,
+      "message": "312312312",
+      "id": 5
+    },
+    {
+      "email": "trongleele@gmail.com",
+      "id": 6
+    },
+    {
+      "email": "trongleele@gmail.com",
+      "id": 7
+    }
+  ],
+  "bookingTours": [
+    {
+      "day": 2,
+      "duration": {
+        "from": "2025-04-23T17:00:00.000Z",
+        "to": "2025-04-25T17:00:00.000Z"
+      },
+      "guests": "2 Adults - 2 Children",
+      "totalPrice": 240,
+      "tourId": 9,
+      "user": {
+        "firstName": "tronglke",
+        "lastName": "lehuutrong",
+        "email": "trongleele@gmail.com",
+        "phoneNumber": 3123123123,
+        "payMethod": "card",
+        "address": "eqwe",
+        "city": "eqwe",
+        "state": "weqw",
+        "zipCode": "qweq",
+        "country": "eqweq",
+        "requirement": "eqweqw"
+      },
+      "id": 1
+    },
+    {
+      "day": 2,
+      "duration": {
+        "from": "2025-04-23T17:00:00.000Z",
+        "to": "2025-04-25T17:00:00.000Z"
+      },
+      "guests": "2 Adults - 2 Children",
+      "totalPrice": 240,
+      "tourId": 9,
+      "user": {
+        "firstName": "tronglke321312",
+        "lastName": "lehuutrong",
+        "email": "trongleele@gmail.com",
+        "phoneNumber": 3123123123,
+        "payMethod": "card",
+        "address": "eqwe",
+        "city": "eqwe",
+        "state": "weqw",
+        "zipCode": "qweq",
+        "country": "eqweq",
+        "requirement": "eqweqw"
+      },
+      "id": 2
+    }
+  ],
+  "bookingHotels": [
+    {
+      "duration": {
+        "from": "Mon Apr 21 2025",
+        "to": "Mon Apr 21 2025"
+      },
+      "guests": "2 Adults - 1 Children",
+      "hotelId": 9,
+      "rooms": [
+        {
+          "data": {
+            "id": 1,
+            "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274611/Hotels/uykb9oefs9fdcvwezj56.png",
+            "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+            "type": "Family Suite",
+            "quantity": 4,
+            "status": false,
+            "images": [
+              "https://swiperjs.com/demos/images/nature-1.jpg",
+              "https://swiperjs.com/demos/images/nature-2.jpg",
+              "https://swiperjs.com/demos/images/nature-3.jpg",
+              "https://swiperjs.com/demos/images/nature-4.jpg"
+            ],
+            "price": 40,
+            "square": "90 m2",
+            "capacity": 4,
+            "beds": "2 Queen Bed",
+            "features": [
+              "Air conditioning",
+              "Private Bathroom",
+              "Free WiFi",
+              "Free toiletries",
+              "Shower",
+              "Safe",
+              "Toilet",
+              "Towels",
+              "Tile/Marble floor",
+              "Desk",
+              "Refrigerator",
+              "Telephone",
+              "Ironing facilities",
+              "Satellite channels",
+              "Tea/Coffee make",
+              "Hairdryer",
+              "Electric kettle",
+              "Wake-up service",
+              "Wardrobe or close"
+            ]
+          },
+          "quantity": 1
+        },
+        {
+          "data": {
+            "id": 2,
+            "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274611/Hotels/uykb9oefs9fdcvwezj56.png",
+            "description": "Spacious family suite featuring modern decor, city and partial sea view, and a private balcony. Includes a comfortable sitting area, large flat-screen TV, mini fridge, and tea/coffee facilities. The en-suite bathroom offers a rain shower and deluxe amenities.@Maximum occupancy is 2 adults and 2 children under 6 years old. Extra beds are available upon request and subject to availability.",
+            "quantity": 3,
+            "type": "Family Suite 2",
+            "status": false,
+            "images": [
+              "https://swiperjs.com/demos/images/nature-4.jpg",
+              "https://swiperjs.com/demos/images/nature-5.jpg",
+              "https://swiperjs.com/demos/images/nature-6.jpg",
+              "https://swiperjs.com/demos/images/nature-3.jpg"
+            ],
+            "price": 4,
+            "square": "95 m2",
+            "capacity": 5,
+            "beds": "1 King Bed, 1 Sofa Bed",
+            "features": [
+              "Rain Shower",
+              "Safe",
+              "Toilet",
+              "Towels",
+              "Hardwood floor",
+              "Seating Area",
+              "Refrigerator",
+              "Flat-screen TV",
+              "Satellite channels",
+              "Tea/Coffee maker",
+              "Hairdryer",
+              "Electric kettle",
+              "Blackout curtains",
+              "Wardrobe or closet"
+            ]
+          },
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 44,
+      "user": {
+        "firstName": "tronglke",
+        "lastName": "Trong",
+        "email": "trongleele@gmail.com",
+        "phoneNumber": 123456789,
+        "payMethod": "paypal",
+        "address": "Ninh Giang",
+        "city": "Hai Duong",
+        "state": "Hai Duong",
+        "zipCode": "Hai Duong",
+        "country": "USA",
+        "requirement": "dasdasdas"
+      },
+      "id": 1
+    },
+    {
+      "duration": {
+        "from": "Mon Apr 21 2025",
+        "to": "Mon Apr 21 2025"
+      },
+      "guests": "1 Adult - 1 Children",
+      "hotelId": 7,
+      "rooms": [
+        {
+          "data": {
+            "id": 1,
+            "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274611/Hotels/uykb9oefs9fdcvwezj56.png",
+            "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+            "type": "Family Suite",
+            "quantity": 4,
+            "status": false,
+            "images": [
+              "https://swiperjs.com/demos/images/nature-1.jpg",
+              "https://swiperjs.com/demos/images/nature-2.jpg",
+              "https://swiperjs.com/demos/images/nature-3.jpg",
+              "https://swiperjs.com/demos/images/nature-4.jpg"
+            ],
+            "price": 40,
+            "square": "90 m2",
+            "capacity": 4,
+            "beds": "2 Queen Bed",
+            "features": [
+              "Air conditioning",
+              "Private Bathroom",
+              "Free WiFi",
+              "Free toiletries",
+              "Shower",
+              "Safe",
+              "Toilet",
+              "Towels",
+              "Tile/Marble floor",
+              "Desk",
+              "Refrigerator",
+              "Telephone",
+              "Ironing facilities",
+              "Satellite channels",
+              "Tea/Coffee make",
+              "Hairdryer",
+              "Electric kettle",
+              "Wake-up service",
+              "Wardrobe or close"
+            ]
+          },
+          "quantity": 1
+        },
+        {
+          "data": {
+            "id": 2,
+            "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274611/Hotels/uykb9oefs9fdcvwezj56.png",
+            "description": "Spacious family suite featuring modern decor, city and partial sea view, and a private balcony. Includes a comfortable sitting area, large flat-screen TV, mini fridge, and tea/coffee facilities. The en-suite bathroom offers a rain shower and deluxe amenities.@Maximum occupancy is 2 adults and 2 children under 6 years old. Extra beds are available upon request and subject to availability.",
+            "quantity": 3,
+            "type": "Family Suite 2",
+            "status": false,
+            "images": [
+              "https://swiperjs.com/demos/images/nature-4.jpg",
+              "https://swiperjs.com/demos/images/nature-5.jpg",
+              "https://swiperjs.com/demos/images/nature-6.jpg",
+              "https://swiperjs.com/demos/images/nature-3.jpg"
+            ],
+            "price": 4,
+            "square": "95 m2",
+            "capacity": 5,
+            "beds": "1 King Bed, 1 Sofa Bed",
+            "features": [
+              "Rain Shower",
+              "Safe",
+              "Toilet",
+              "Towels",
+              "Hardwood floor",
+              "Seating Area",
+              "Refrigerator",
+              "Flat-screen TV",
+              "Satellite channels",
+              "Tea/Coffee maker",
+              "Hairdryer",
+              "Electric kettle",
+              "Blackout curtains",
+              "Wardrobe or closet"
+            ]
+          },
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 44,
+      "user": {
+        "firstName": "tronglke",
+        "lastName": "321312",
+        "email": "trongleele@gmail.com",
+        "phoneNumber": 321312321,
+        "payMethod": "card",
+        "address": "",
+        "city": "",
+        "state": "",
+        "zipCode": "",
+        "country": "",
+        "requirement": ""
+      },
+      "id": 2
     }
   ]
 }

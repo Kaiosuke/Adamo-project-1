@@ -4,12 +4,11 @@ import PdSub from "@/components/PdSub";
 import ReviewHotel from "@/components/reviews/ReviewHotel";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-
 import { IReviewHotel } from "@/interfaces/review";
 import { commentSchema } from "@/schemas/reviewSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaUserCircle } from "react-icons/fa";
 import { useParams } from "react-router";
@@ -40,8 +39,6 @@ const Reviews = () => {
   });
 
   const _page = query._page ? query._page : 1;
-
-  console.log(_page);
 
   const { data } = useQuery({
     queryKey: ["reviewHotel", { id, _page }],
@@ -104,11 +101,23 @@ const Reviews = () => {
     });
   }
 
+  const handleAverageRate = (): number => {
+    if (data) {
+      const score = data?.reduce((acc, cur) => {
+        return (acc += cur.rate);
+      }, 0);
+      return Math.floor(score / data?.length);
+    }
+    return NaN;
+  };
+
   return (
     <div>
       <div className="flex gap-8">
         <div className="w-[148px] h-[148px] bg-primary flex justify-center items-center">
-          <span className="text-third text-size-5xl">{9.4}</span>
+          <span className="text-third text-size-5xl">
+            {handleAverageRate()}
+          </span>
         </div>
         <div className="flex flex-col justify-between">
           <div className="text-size-4xl">Wonderful</div>
@@ -183,9 +192,9 @@ const Reviews = () => {
       <div className="flex flex-col gap-4">
         {data &&
           data.reverse().map((review: IReviewHotel) => (
-            <div key={review.id}>
+            <Fragment key={review.id}>
               <ReviewHotel review={review} />
-            </div>
+            </Fragment>
           ))}
       </div>
       <PdSub />

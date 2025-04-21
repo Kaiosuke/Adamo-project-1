@@ -20,9 +20,18 @@ import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router";
 
+import { bookingHotel } from "@/api/bookingRequest";
+import { IBookingHotel } from "@/interfaces/booking";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "sonner";
+import { useDebouncedCallback } from "use-debounce";
 import { StringParam, useQueryParams, withDefault } from "use-query-params";
 
-const FormInfoUser = () => {
+interface Props {
+  booking: IBookingHotel;
+}
+
+const FormInfoUser = ({ booking }: Props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const [query, setQuery] = useQueryParams({
@@ -71,11 +80,36 @@ const FormInfoUser = () => {
 
   const navigate = useNavigate();
 
-  function onSubmit(values: z.infer<typeof userSchema>) {
-    console.log(values);
-    setIsSubmitted(true);
-    navigate("/thanks");
-  }
+  const { mutate } = useMutation({
+    mutationFn: (data: IBookingHotel) => bookingHotel({ data }),
+    onSuccess: () => {
+      setIsSubmitted(true);
+      toast.success("Booking hotel success");
+      setIsSubmitted(true);
+      form.reset();
+      navigate("/thanks");
+    },
+  });
+
+  const onSubmit = useDebouncedCallback(
+    (values: z.infer<typeof userSchema>) => {
+      const user = {
+        ...values,
+        phoneNumber: Number(values.phoneNumber),
+      };
+      mutate({
+        breakFast: booking.breakFast,
+        duration: booking.duration,
+        extraBed: booking.extraBed,
+        guests: booking.guests,
+        hotelId: booking.hotelId,
+        rooms: booking.rooms,
+        totalPrice: booking.totalPrice,
+        user: user,
+      });
+    },
+    300
+  );
 
   return (
     <Form {...form}>

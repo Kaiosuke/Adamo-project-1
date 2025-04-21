@@ -4,6 +4,7 @@ import { IHotel } from "@/interfaces/hotel";
 import { Trans } from "react-i18next";
 import FilterHotel from "./FilterHotel";
 import SelectHotel from "./SelectHotel";
+import { Fragment } from "react/jsx-runtime";
 
 interface Props {
   data: IHotel[];
@@ -30,9 +31,9 @@ const HotelSection = ({ data, isLoading }: Props) => {
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 lg:pt-16 md:pt-10 pt-6">
         {data.length ? (
           data.map((hotel) => (
-            <div key={hotel.id}>
+            <Fragment key={hotel.id}>
               <Hotel hotel={hotel} />
-            </div>
+            </Fragment>
           ))
         ) : (
           <div className="text-size-2xl text-secondary">Not found Hotel</div>

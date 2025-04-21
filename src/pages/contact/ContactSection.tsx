@@ -10,6 +10,12 @@ import { contactSchema } from "@/schemas/contactSchema";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { Trans } from "react-i18next";
+import { useMutation } from "@tanstack/react-query";
+import { IContact } from "@/interfaces/contact";
+import { contact } from "@/api/contactRequest";
+import { toast } from "sonner";
+import { useDebouncedCallback } from "use-debounce";
+import LoadingBtn from "@/components/LoadingList/LoadingBtn";
 
 const ContactSection = () => {
   const form = useForm<z.infer<typeof contactSchema>>({
@@ -22,9 +28,20 @@ const ContactSection = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof contactSchema>) {
-    console.log(values);
-  }
+  const { mutate, isPending } = useMutation({
+    mutationFn: (data: IContact) => contact({ data }),
+    onSuccess: () => {
+      toast.success("Thanks for contact us");
+      form.reset();
+    },
+  });
+
+  const onSubmit = useDebouncedCallback(
+    (values: z.infer<typeof contactSchema>) => {
+      mutate({ ...values, phoneNumber: Number(values.phoneNumber) });
+    },
+    300
+  );
 
   return (
     <section className="main-container">
@@ -60,8 +77,14 @@ const ContactSection = () => {
                 />
               </div>
               <div className="w-full text-right">
-                <Button type="submit" className="max-w-[200px] w-full">
-                  Submit
+                <Button variant={"primary"} type="submit">
+                  {isPending ? (
+                    <>
+                      <LoadingBtn />
+                    </>
+                  ) : (
+                    `Submit`
+                  )}
                 </Button>
               </div>
             </form>
