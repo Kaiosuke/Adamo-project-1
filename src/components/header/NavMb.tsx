@@ -58,16 +58,21 @@ const linkNavVi = [
   },
 ];
 
-const NavMb = () => {
+interface Props {
+  isPage: string;
+  getLinkColor: () => void;
+}
+
+const NavMb = ({ isPage, getLinkColor }: Props) => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
   return (
-    <div className="lg:hidden block relative z-50">
+    <div className="lg:hidden block relative z-50 ">
       <Sheet>
         <SheetTrigger asChild>
           <div className="ml-6 lg:hidden block text-third text-3xl">
-            <FaBars className="cursor-pointer" />
+            <FaBars className={`${getLinkColor()} cursor-pointer`} />
           </div>
         </SheetTrigger>
         <SheetContent className="bg-secondary">

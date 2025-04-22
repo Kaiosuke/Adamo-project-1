@@ -18,6 +18,8 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
 
   const from = query.from || new Date().toDateString();
 
+  console.log("hotel");
+
   return (
     <div className="w-full mt-4">
       <div className="relative">

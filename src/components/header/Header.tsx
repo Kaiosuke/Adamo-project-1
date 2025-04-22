@@ -65,7 +65,7 @@ const Header = () => {
             </nav>
             <DarkMode />
             <Language getLinkColor={getLinkColor} />
-            <NavMb />
+            <NavMb isPage={isPage} getLinkColor={getLinkColor} />
           </div>
         </div>
       </div>

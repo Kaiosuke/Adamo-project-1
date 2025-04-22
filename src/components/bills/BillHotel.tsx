@@ -149,7 +149,7 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
     },
   });
 
-  console.log(1);
+  console.log("bill hotel");
 
   const onSubmit = useDebouncedCallback(
     (values: z.infer<typeof bookingHotelSchema>) => {

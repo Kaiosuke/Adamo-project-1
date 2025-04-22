@@ -37,9 +37,10 @@ const HotelDetail = () => {
     const totalData = JSON.parse(
       localStorage.getItem("totalReviewHotel") || "0"
     );
+    console.log(1);
     setTotalData(totalData);
   }, []);
-  console.log("hotel");
+
   return (
     <>
       <PdSub />
