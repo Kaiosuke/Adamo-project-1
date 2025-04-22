@@ -14,7 +14,7 @@ import {
 
 import { getFiltersHotel } from "@/api/hotelRequest";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LuUsers } from "react-icons/lu";
 import { Link } from "react-router";
@@ -52,11 +52,11 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
 
   const navigate = useNavigate();
 
-  const handleFilter = () => {
+  const handleFilter = useCallback(() => {
     setQuery({ location: location, guest: guest });
     toast.success("Filter successfully");
     navigate(`/hotels`);
-  };
+  }, []);
 
   return (
     <div
@@ -142,4 +142,4 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   );
 };
 
-export default SearchHotel;
+export default memo(SearchHotel);

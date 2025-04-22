@@ -3,7 +3,7 @@ import { getTourById } from "@/api/tourRequest";
 import BreadcrumbCom from "@/components/Breadcrumb";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
-import { BillTourDetail } from "@/components/bills/BillTour";
+import { BillTourDetail } from "@/components/bills/BillTourDetail";
 import { useAppDispatch } from "@/redux";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import { useEffect, useState } from "react";

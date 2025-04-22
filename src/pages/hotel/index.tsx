@@ -1,4 +1,3 @@
-import { getHotels } from "@/api/hotelRequest";
 import HotelImg from "@/assets/images/hotel.png";
 import BreadcrumbCom from "@/components/Breadcrumb";
 import HeroSectionCom from "@/components/HeroSectionCom";
@@ -6,17 +5,11 @@ import PaginationWithShow from "@/components/paginations/PaginationWithShow";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import SearchHotel from "@/components/searchList/SearchHotel";
-import { useQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import HotelSection from "./HotelSection";
 
-import {
-  NumberParam,
-  StringParam,
-  useQueryParams,
-  withDefault,
-} from "use-query-params";
+import { NumberParam, useQueryParams, withDefault } from "use-query-params";
 
 const Hotel = () => {
   const { t } = useTranslation("hotel");
@@ -27,32 +20,9 @@ const Hotel = () => {
 
   const [query, setQuery] = useQueryParams({
     _page: withDefault(NumberParam, 1),
-    _sort: StringParam,
-    _order: StringParam,
-    location: StringParam,
-    score: StringParam,
-    prices: StringParam,
-    star: StringParam,
-    guest: StringParam,
   });
 
   const _page = Number(query._page) || 1;
-  const _sort = query._sort || "price";
-  const _order = query._order || "asc";
-  const score = query.score || "";
-  const guest = query.guest || "";
-  const prices = query.prices || "0,300";
-  const location = query.location || "All";
-  const star = query.star || "";
-
-  const { data, isLoading } = useQuery({
-    queryKey: [
-      "hotels",
-      { _page, _sort, _order, location, score, prices, star, guest },
-    ],
-    queryFn: () =>
-      getHotels({ _page, _sort, _order, location, score, prices, star }),
-  });
 
   const totalData = Number(localStorage.getItem("totalHotel"));
 
@@ -61,6 +31,15 @@ const Hotel = () => {
   useEffect(() => {
     setCurrentPage(_page - 1);
   }, [_page]);
+
+  const current = useMemo(() => "Hotel Details", []);
+  const links = useMemo(
+    () => [
+      { href: "/", title: "Home" },
+      { href: "/hotels", title: "Hotels" },
+    ],
+    []
+  );
 
   return (
     <>
@@ -71,10 +50,9 @@ const Hotel = () => {
         des={t("banner.description")}
       />
       <PdSub />
-      <BreadcrumbCom links={[{ title: "home", href: "/" }]} current="hotels" />
+      <BreadcrumbCom links={links} current={current} />
       <PdSub />
-
-      <HotelSection data={data || []} isLoading={isLoading} />
+      <HotelSection />
       <PaginationWithShow
         currentPage={currentPage}
         items={ITEMS_PER_PAGE}

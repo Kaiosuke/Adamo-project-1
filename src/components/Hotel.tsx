@@ -7,6 +7,7 @@ import { FaStar } from "react-icons/fa6";
 import { Link } from "react-router";
 import { StringParam, useQueryParams } from "use-query-params";
 import LoadedImage from "./LoadingList/LoadedImage";
+import { memo } from "react";
 
 const Hotel = ({ hotel }: { hotel: IHotel }) => {
   const totalData = Number(localStorage.getItem("totalReviewHotel") || "0");
@@ -18,7 +19,7 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
 
   const from = query.from || new Date().toDateString();
 
-  console.log("hotel");
+  // console.log("hotel");
 
   return (
     <div className="w-full mt-4">
@@ -81,4 +82,4 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
   );
 };
 
-export default Hotel;
+export default memo(Hotel);

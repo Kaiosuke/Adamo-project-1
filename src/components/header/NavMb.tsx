@@ -1,4 +1,5 @@
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { FaBars } from "react-icons/fa6";
@@ -59,20 +60,21 @@ const linkNavVi = [
 ];
 
 interface Props {
-  isPage: string;
-  getLinkColor: () => void;
+  getLinkColor: "text-secondary" | "text-third";
 }
 
-const NavMb = ({ isPage, getLinkColor }: Props) => {
+const NavMb = ({ getLinkColor }: Props) => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
+
+  console.log("mobile");
 
   return (
     <div className="lg:hidden block relative z-50 ">
       <Sheet>
         <SheetTrigger asChild>
           <div className="ml-6 lg:hidden block text-third text-3xl">
-            <FaBars className={`${getLinkColor()} cursor-pointer`} />
+            <FaBars className={`${getLinkColor} cursor-pointer`} />
           </div>
         </SheetTrigger>
         <SheetContent className="bg-secondary">
@@ -98,4 +100,4 @@ const NavMb = ({ isPage, getLinkColor }: Props) => {
   );
 };
 
-export default NavMb;
+export default memo(NavMb);

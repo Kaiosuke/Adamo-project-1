@@ -7,12 +7,16 @@ import {
 } from "@/components/ui/select";
 import { languageSelector } from "@/redux/selectors/languageSelector";
 import { changeLanguage, Lg } from "@/redux/slices/languageSlice";
-import { useEffect } from "react";
+import { memo, useCallback, useEffect } from "react";
 
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
-const Language = ({ getLinkColor }: { getLinkColor: () => string }) => {
+interface Props {
+  getLinkColor: "text-secondary" | "text-third";
+}
+
+const Language = ({ getLinkColor }: Props) => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
@@ -20,23 +24,22 @@ const Language = ({ getLinkColor }: { getLinkColor: () => string }) => {
 
   const dispatch = useDispatch();
 
-  const handleChangeLanguage = (value: Lg) => {
+  const handleChangeLanguage = useCallback((value: Lg) => {
     i18n.changeLanguage(value);
     dispatch(changeLanguage(value));
-  };
+  }, []);
 
   useEffect(() => {
     i18n.changeLanguage(lg);
   }, []);
 
+  console.log("language");
+
   return (
     <div className="ml-6">
-      <Select
-        value={lg}
-        onValueChange={(value) => handleChangeLanguage(value as Lg)}
-      >
+      <Select value={lg} onValueChange={handleChangeLanguage}>
         <SelectTrigger className="w-[60px] text-secondary ">
-          <div className={getLinkColor()}>{currentLanguage}</div>
+          <div className={getLinkColor}>{currentLanguage}</div>
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
@@ -49,4 +52,4 @@ const Language = ({ getLinkColor }: { getLinkColor: () => string }) => {
   );
 };
 
-export default Language;
+export default memo(Language);

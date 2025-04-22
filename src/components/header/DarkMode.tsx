@@ -8,10 +8,11 @@ import {
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "../ThemeProvider";
 import { Button } from "../ui/button";
+import { memo } from "react";
 
 const DarkMode = () => {
   const { setTheme } = useTheme();
-
+  console.log("dark mode");
   return (
     <div className="ml-6">
       <DropdownMenu>
@@ -42,4 +43,4 @@ const DarkMode = () => {
   );
 };
 
-export default DarkMode;
+export default memo(DarkMode);

@@ -1,4 +1,3 @@
-import { BillHotelDetail } from "@/components/bills/BillHotel";
 import BreadcrumbCom from "@/components/Breadcrumb";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
@@ -13,6 +12,7 @@ import RelatedHotels from "./RelatedHotel";
 import { getHotelById } from "@/api/hotelRequest";
 import { useQuery } from "@tanstack/react-query";
 import { getReviewsHotel } from "@/api/reviewRequest";
+import BillHotelDetail from "@/components/bills/BillHotelDetail";
 
 const HotelDetail = () => {
   const { id } = useParams();
@@ -37,7 +37,6 @@ const HotelDetail = () => {
     const totalData = JSON.parse(
       localStorage.getItem("totalReviewHotel") || "0"
     );
-    console.log(1);
     setTotalData(totalData);
   }, []);
 

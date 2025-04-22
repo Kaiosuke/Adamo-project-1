@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -64,4 +64,4 @@ const SwiperCom = ({ images }: { images?: string[] }) => {
   );
 };
 
-export default SwiperCom;
+export default memo(SwiperCom);

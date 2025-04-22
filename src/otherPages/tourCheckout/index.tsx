@@ -1,5 +1,5 @@
 import { getTourById } from "@/api/tourRequest";
-import { BillTourCheckOut } from "@/components/bills/BillTour";
+import { BillTourCheckOut } from "@/components/bills/BillTourDetail";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import { useAppDispatch } from "@/redux";

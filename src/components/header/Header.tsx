@@ -2,7 +2,7 @@ import LogoBlack from "@/assets/images/logo-black.png";
 import Logo from "@/assets/images/logo.png";
 
 import useDetectScroll from "@smakss/react-scroll-direction";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router";
 import DarkMode from "./DarkMode";
 import Language from "./Language";
@@ -40,11 +40,13 @@ const Header = () => {
     return pages.includes(isPage) ? LogoBlack : Logo;
   };
 
+  const linkColor = useMemo(() => getLinkColor(), [isScroll, isPage]);
+
   return (
     <header
-      className={`fixed w-full py-4 z-50 transition-all duration-200 ease-in-out ${
-        isScroll ? "bg-third" : ""
-      } ${isScroll && scrollDir === "down" ? "translate-y-[-1000px]" : ""}`}
+      className={`fixed w-full z-50 tran-normal ${isScroll ? "bg-third" : ""} ${
+        isScroll && scrollDir === "down" ? "translate-y-[-1000px]" : ""
+      }`}
     >
       <div
         className={`main-container flex items-center relative ${
@@ -61,11 +63,11 @@ const Header = () => {
         <div className="ml-auto flex items-center">
           <div className="flex items-center ">
             <nav className="lg:block hidden">
-              <NavPc isPage={isPage} getLinkColor={getLinkColor} />
+              <NavPc isPage={isPage} getLinkColor={linkColor} />
             </nav>
             <DarkMode />
-            <Language getLinkColor={getLinkColor} />
-            <NavMb isPage={isPage} getLinkColor={getLinkColor} />
+            <Language getLinkColor={linkColor} />
+            <NavMb getLinkColor={linkColor} />
           </div>
         </div>
       </div>
@@ -73,4 +75,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);

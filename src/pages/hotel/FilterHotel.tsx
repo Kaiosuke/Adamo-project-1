@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import LoadingBtn from "@/components/LoadingList/LoadingBtn";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { useState } from "react";
+import { memo, useState } from "react";
 import { FaStar } from "react-icons/fa6";
 import { useDebouncedCallback } from "use-debounce";
 import { NumberParam, StringParam, useQueryParams } from "use-query-params";
@@ -84,8 +84,6 @@ const FilterHotel = () => {
     setQuery({ star: "" });
     toast.success("Reset successfully");
   }, 300);
-
-  console.log("filter");
 
   return (
     <DropdownMenu>
@@ -194,4 +192,4 @@ const FilterHotel = () => {
   );
 };
 
-export default FilterHotel;
+export default memo(FilterHotel);

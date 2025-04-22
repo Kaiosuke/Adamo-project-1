@@ -1,8 +1,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { IHotel } from "@/interfaces/hotel";
 import Descriptions from "./Descriptions";
 import Reviews from "./Reviews";
 import SelectRoom from "./SelectRoom";
-import { IHotel } from "@/interfaces/hotel";
 
 interface Props {
   data: IHotel;
@@ -42,7 +42,6 @@ const HotelDetailTabs = ({ data }: Props) => {
       <TabsContent value="descriptions">
         <Descriptions data={data} />
       </TabsContent>
-
       <TabsContent value="reviews">
         <Reviews />
       </TabsContent>

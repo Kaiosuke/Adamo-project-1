@@ -15,6 +15,7 @@ import {
 import { useAppDispatch } from "@/redux";
 import { FaUser } from "react-icons/fa6";
 import { toast } from "sonner";
+import { memo } from "react";
 
 const linkNavEn = [
   {
@@ -63,7 +64,7 @@ const linkNavVi = [
 ];
 
 interface Props {
-  getLinkColor: () => void;
+  getLinkColor: "text-secondary" | "text-third";
   isPage: string;
 }
 
@@ -86,6 +87,8 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
 
   const { t } = useTranslation("header");
 
+  console.log("nav pc");
+
   return (
     <ul className="flex justify-between items-center gap-10 lg:flex-row flex-col">
       {(currentLanguage === "en" ? linkNavEn : linkNavVi).map((nav, index) => (
@@ -96,7 +99,7 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
               duration-300 ease-in-out ${
                 isPage === nav.path.split("/")[1]
                   ? "text-primary"
-                  : getLinkColor()
+                  : getLinkColor
               }
             }`}
           >
@@ -110,7 +113,7 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
             <DropdownMenuTrigger>
               <FaUser
                 className={`cursor-pointer hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out
-                    ${getLinkColor()}
+                    ${getLinkColor}
                   `}
               />
             </DropdownMenuTrigger>
@@ -139,7 +142,7 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
           <Link
             to={"/auth/login"}
             className={` hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out
-                            ${getLinkColor()}
+                            ${getLinkColor}
                         `}
           >
             Login
@@ -150,4 +153,4 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
   );
 };
 
-export default NavPc;
+export default memo(NavPc);

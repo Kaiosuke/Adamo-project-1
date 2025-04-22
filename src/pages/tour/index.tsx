@@ -4,63 +4,20 @@ import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import AttractiveTourSection from "./AttractiveTourSection";
 
-import { getAllTour, getFiltersTour } from "@/api/tourRequest";
 import TourImg from "@/assets/images/hero-tour.png";
 import HeroSectionCom from "@/components/HeroSectionCom";
-import PaginationWithShow from "@/components/paginations/PaginationWithShow";
 import SearchTour from "@/components/searchList/SearchTour";
-import { useAppDispatch } from "@/redux";
-import { tourSelector } from "@/redux/selectors/tourSelector";
 
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
 
 const Tour = () => {
-  const dispatch = useAppDispatch();
-  const { filter } = useSelector(tourSelector);
-  const { location, type, duration, price } = filter;
-
   const { t } = useTranslation("tour");
 
-  const totalData = JSON.parse(localStorage.getItem("totalTour") || "0");
+  const links = useMemo(() => [{ title: "home", href: "/" }], []);
+  const current = useMemo(() => "tour", []);
 
-  const [pageCount, setPageCount] = useState(0);
-  const ITEMS_PER_PAGE = 4;
-
-  const [currentPage, setCurrentPage] = useState<number>(0);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        await dispatch(getFiltersTour());
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, []);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        await dispatch(
-          getAllTour({
-            location,
-            types: type,
-            durations: duration,
-            start: ITEMS_PER_PAGE * currentPage,
-            price: price,
-          })
-        );
-
-        setPageCount(Math.ceil(totalData / ITEMS_PER_PAGE));
-        const saved = localStorage.getItem("currentPageTour");
-        saved ? setCurrentPage(Number(saved)) : setCurrentPage(0);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, [dispatch, location, type, duration, price, currentPage, totalData]);
+  console.log("Tour");
 
   return (
     <>
@@ -71,20 +28,10 @@ const Tour = () => {
         des={t("banner.description")}
       />
       <PdSub />
-      <BreadcrumbCom links={[{ title: "home", href: "/" }]} current="tours" />
+      <BreadcrumbCom links={links} current={current} />
       <PdSub />
       <AttractiveTourSection />
 
-      <PaginationWithShow
-        currentPage={currentPage}
-        items={ITEMS_PER_PAGE}
-        pageCount={pageCount}
-        totalData={totalData}
-        onPageChange={(e) => {
-          setCurrentPage(e);
-          localStorage.setItem("currentPageTour", e.toLocaleString());
-        }}
-      />
       <PdMain />
     </>
   );

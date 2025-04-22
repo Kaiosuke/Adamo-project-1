@@ -7,6 +7,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
+import { memo } from "react";
 
 interface BreadcrumbIT {
   title: string;
@@ -20,6 +21,7 @@ const BreadcrumbCom = ({
   links: BreadcrumbIT[];
   current: string;
 }) => {
+  console.log("BreadcrumbCom");
   return (
     <div className="main-container">
       <Breadcrumb>
@@ -43,4 +45,4 @@ const BreadcrumbCom = ({
   );
 };
 
-export default BreadcrumbCom;
+export default memo(BreadcrumbCom);

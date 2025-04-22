@@ -1,17 +1,9 @@
-import Tour from "@/components/Tour";
-import { tourSelector } from "@/redux/selectors/tourSelector";
 import { Trans } from "react-i18next";
-import { useSelector } from "react-redux";
 import FilterTour from "./FilterTour";
-import LoadingItem from "@/components/LoadingList/LoadingItem";
-import { Fragment } from "react/jsx-runtime";
+import TourPage from "./TourPage";
 
 const AttractiveTourSection = () => {
-  const { tours, loading } = useSelector(tourSelector);
-
-  if (loading) {
-    return <LoadingItem />;
-  }
+  console.log("AttractiveTourSection");
 
   return (
     <section className="main-container">
@@ -21,18 +13,7 @@ const AttractiveTourSection = () => {
         </h2>
         <FilterTour />
       </div>
-
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 lg:pt-16 md:pt-10 pt-6">
-        {tours.length ? (
-          tours.map((tour, index) => (
-            <Fragment key={index}>
-              <Tour tour={tour} />
-            </Fragment>
-          ))
-        ) : (
-          <div className="text-size-2xl text-secondary">Not found Tour</div>
-        )}
-      </div>
+      <TourPage />
     </section>
   );
 };

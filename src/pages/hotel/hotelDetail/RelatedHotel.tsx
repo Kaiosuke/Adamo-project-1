@@ -2,6 +2,7 @@ import { getHotels } from "@/api/hotelRequest";
 import Hotel from "@/components/Hotel";
 import { IHotel } from "@/interfaces/hotel";
 import { useQuery } from "@tanstack/react-query";
+import { memo } from "react";
 import { Fragment } from "react/jsx-runtime";
 
 const RelatedHotels = () => {
@@ -9,6 +10,8 @@ const RelatedHotels = () => {
     queryKey: ["hotels"],
     queryFn: () => getHotels({ _page: 1, _limit: 3 }),
   });
+
+  console.log("RelatedHotels");
 
   return (
     <div>
@@ -24,4 +27,4 @@ const RelatedHotels = () => {
   );
 };
 
-export default RelatedHotels;
+export default memo(RelatedHotels);
