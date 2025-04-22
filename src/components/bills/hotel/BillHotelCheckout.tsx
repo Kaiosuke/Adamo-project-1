@@ -3,9 +3,10 @@ import { IHotel } from "@/interfaces/hotel";
 import { CiLocationOn } from "react-icons/ci";
 import { FaCalendarAlt } from "react-icons/fa";
 import { GoPeople } from "react-icons/go";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
+
 import { IBookingHotel } from "@/interfaces/booking";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 interface PropsBillCheckout {
   data: IHotel;
