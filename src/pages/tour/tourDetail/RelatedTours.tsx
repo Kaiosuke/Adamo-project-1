@@ -8,6 +8,8 @@ const RelatedTours = () => {
 
   const newTours = tours.slice(1, 7);
 
+  console.log("RelatedTours");
+
   return (
     <div>
       <h2 className="text-size-3xl text-secondary ">Related tours</h2>

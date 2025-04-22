@@ -1,6 +1,6 @@
 import { getHotelById } from "@/api/hotelRequest";
 
-import BillHotelCheckOut from "@/components/bills/BillHotelCheckout";
+import BillHotelCheckOut from "@/components/bills/hotel/BillHotelCheckout";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import { bookingSelector } from "@/redux/selectors/bookingSelector";

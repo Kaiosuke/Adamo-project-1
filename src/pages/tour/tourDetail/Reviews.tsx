@@ -1,27 +1,15 @@
 import Pagination from "@/components/paginations/Pagination";
 import ReviewTour from "@/components/reviews/ReviewTour";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { useAppDispatch } from "@/redux";
 import { reviewSelector } from "@/redux/selectors/reviewSelector";
 import { tourSelector } from "@/redux/selectors/tourSelector";
-import { commentSchema } from "@/schemas/reviewSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { FaUserCircle } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 import { useSelector } from "react-redux";
-import { z } from "zod";
 
-import { addReviewTour, getAllReviewTour } from "@/api/reviewRequest";
-import Rating from "@/components/Rating";
-import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
-import { IReviewTourLackId } from "@/interfaces/review";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { getAllReviewTour } from "@/api/reviewRequest";
+import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
-import { toast } from "sonner";
-import { useDebouncedCallback } from "use-debounce";
 import { Fragment } from "react/jsx-runtime";
+import TourReviewForm from "./TourReviewForm";
 
 interface Props {
   currentPage: number;
@@ -34,18 +22,6 @@ const Reviews = ({ currentPage, pageCount, setCurrentPage }: Props) => {
   const { reviewsTour } = useSelector(reviewSelector);
 
   const { id } = useParams();
-
-  const dispatch = useAppDispatch();
-
-  const form = useForm<z.infer<typeof commentSchema>>({
-    resolver: zodResolver(commentSchema),
-    defaultValues: {
-      message: "",
-      star: 0,
-    },
-  });
-
-  const queryClient = useQueryClient();
 
   const { data } = useQuery({
     queryKey: ["reviewsTour", { id }],
@@ -66,38 +42,6 @@ const Reviews = ({ currentPage, pageCount, setCurrentPage }: Props) => {
     }
     return 0;
   };
-
-  const onSubmit = useDebouncedCallback(
-    (values: z.infer<typeof commentSchema>) => {
-      (async () => {
-        if (id) {
-          const data: IReviewTourLackId = {
-            tourId: Number(id),
-            rate: values.star,
-            avatar: `url('@/assets/images/Avatar-1.png')`,
-            opinion: "Nevermind",
-            time: new Date().toDateString(),
-            title: "The best experience ever",
-            des: values.message,
-          };
-          try {
-            await dispatch(addReviewTour({ data: data })).unwrap();
-            toast.success("Comment successfully!!");
-            form.reset({
-              message: "",
-              star: 0,
-            });
-            queryClient.invalidateQueries({
-              queryKey: ["reviewsTour", { id }],
-            });
-          } catch (error) {
-            toast.error(String(error));
-          }
-        }
-      })();
-    },
-    300
-  );
 
   return (
     <>
@@ -239,57 +183,7 @@ const Reviews = ({ currentPage, pageCount, setCurrentPage }: Props) => {
             </div>
           </div>
           <div className="str-line-2" />
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <div className="flex gap-2">
-                      <div className="">
-                        <FaUserCircle className="lg:w-[56px] md:w-[48px] w-[40px] h-auto text-five" />
-                      </div>
-                      <Textarea
-                        value={field.value}
-                        onChange={(v) => {
-                          field.onChange(v);
-                        }}
-                        placeholder="Type anything"
-                        className="h-[128px] bg-seven text-four placeholder:text-four"
-                      />
-                    </div>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <div className="w-full mt-6 flex justify-between">
-                <FormField
-                  control={form.control}
-                  name="star"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="">
-                        <Rating
-                          rating={Number(field.value)}
-                          size={30}
-                          onRatingChange={(v) => {
-                            field.onChange(Number(v));
-                          }}
-                          variant="yellow"
-                          totalStars={5}
-                        />
-                      </div>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Button className="w-auto lg:px-10 md:px-8 px-6" size={"third"}>
-                  Comment
-                </Button>
-              </div>
-            </form>
-          </Form>
+          {id && <TourReviewForm id={id} />}
 
           <div className="str-line-2" />
           <div>

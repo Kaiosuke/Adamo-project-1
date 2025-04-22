@@ -1,5 +1,5 @@
 import { getTourById } from "@/api/tourRequest";
-import { BillTourCheckOut } from "@/components/bills/BillTourDetail";
+
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import { useAppDispatch } from "@/redux";
@@ -11,6 +11,7 @@ import { Link } from "react-router";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { tourSelector } from "@/redux/selectors/tourSelector";
+import BillTourCheckout from "@/components/bills/tour/BillTourCheckout";
 
 const TourCheckOut = () => {
   const { booking } = useSelector(bookingSelector);
@@ -58,7 +59,7 @@ const TourCheckOut = () => {
           </div>
           <div className="lg:flex-[0_0_30%] flex-[0_0_auto] max-w-[380px] w-full bg-four h-fit">
             {tour && booking && (
-              <BillTourCheckOut booking={booking} tour={tour} />
+              <BillTourCheckout booking={booking} tour={tour} />
             )}
           </div>
         </div>

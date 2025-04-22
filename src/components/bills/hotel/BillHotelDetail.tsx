@@ -23,8 +23,8 @@ import { GoPeople } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "sonner";
 import { StringParam, useQueryParams } from "use-query-params";
-import { Button } from "../ui/button";
-import { Checkbox } from "../ui/checkbox";
+import { Button } from "../../ui/button";
+import { Checkbox } from "../../ui/checkbox";
 import {
   Select,
   SelectContent,
@@ -32,7 +32,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
+} from "../../ui/select";
 
 import { Form, FormField, FormMessage } from "@/components/ui/form";
 
@@ -46,7 +46,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { DateRange } from "react-day-picker";
 import { useNavigate } from "react-router";
 import { useDebouncedCallback } from "use-debounce";
-import DatePickerWithRange from "../DatePickerWithRange";
+import DatePickerWithRange from "../../DatePickerWithRange";
 
 const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
   const { t } = useTranslation(["search"]);

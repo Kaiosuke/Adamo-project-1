@@ -7,40 +7,14 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-
-import { Checkbox } from "@/components/ui/checkbox";
-
-import { Button } from "@/components/ui/button";
-
-import LoadingBtn from "@/components/LoadingList/LoadingBtn";
-import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
-import { memo, useState } from "react";
-import { FaStar } from "react-icons/fa6";
+import SliderCom from "@/components/sliders/SliderCom";
+import { memo, useCallback, useState } from "react";
+import { toast } from "sonner";
 import { useDebouncedCallback } from "use-debounce";
 import { NumberParam, StringParam, useQueryParams } from "use-query-params";
-import { toast } from "sonner";
-
-const starList = ["1", "2", "3", "4", "5"];
-const scoreList = [
-  {
-    title: "Wonderful : 9.5+",
-    score: "9.5",
-  },
-  {
-    title: "Very Good : 9+",
-    score: "9",
-  },
-  {
-    title: "Good : 8+",
-    score: "8",
-  },
-  {
-    title: "Pleasant : 7+",
-    score: "7",
-  },
-];
+import HotelBtn from "./HotelBtn";
+import HotelScore from "./HotelScore";
+import HotelStar from "./HotelStar";
 
 const FilterHotel = () => {
   const [loading, setLoading] = useState(false);
@@ -80,10 +54,29 @@ const FilterHotel = () => {
 
   const handleResetFilter = useDebouncedCallback(() => {
     setQuery({ score: "" });
-    setQuery({ prices: `0,2000` });
+    setQuery({ prices: `0,300` });
     setQuery({ star: "" });
     toast.success("Reset successfully");
   }, 300);
+
+  const handleChangeValueSlide = useCallback((v: number[]) => {
+    setPrices(v);
+  }, []);
+
+  const handleValueChangeScore = useCallback((v: string) => {
+    setScore(v);
+  }, []);
+
+  const handleCheckChange = useCallback(
+    ({ checked, v }: { checked: boolean; v: string }) => {
+      if (checked) {
+        setStars((prev) => [...prev, v].sort());
+      } else {
+        setStars((prev) => prev.filter((value) => value !== v));
+      }
+    },
+    []
+  );
 
   return (
     <DropdownMenu>
@@ -105,88 +98,18 @@ const FilterHotel = () => {
         <div>
           <span className="text-secondary font-bold">Budget:</span>
           <div className="lg:mt-10 mt-6">
-            <div className="relative">
-              <Slider
-                value={prices}
-                max={300}
-                step={1}
-                onValueChange={(e) => setPrices(e)}
-              />
-              <div className="absolute -top-[30px]">${prices[0]}</div>
-              <div className="absolute -top-[30px] right-[10px]">
-                ${prices[1]}
-              </div>
-            </div>
+            <SliderCom
+              onValueChange={handleChangeValueSlide}
+              prices={prices}
+              max={300}
+            />
           </div>
         </div>
         <div className="str-line" />
-        <div>
-          <span className="text-secondary font-bold">Hotel star</span>
-          <div className="mt-4">
-            <RadioGroup defaultValue="option-one">
-              {starList.map((v, index) => (
-                <div className="mt-4 flex items-center gap-2" key={index}>
-                  <Checkbox
-                    id={v}
-                    checked={stars.includes(v)}
-                    onCheckedChange={(checked) => {
-                      if (checked) {
-                        setStars((prev) => [...prev, v].sort());
-                      } else {
-                        setStars((prev) => prev.filter((value) => value !== v));
-                      }
-                    }}
-                  />
-                  <label
-                    htmlFor={v}
-                    className="flex gap-2 text-sm text-secondary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    {Array.from({ length: Number(v) }).map((_, index) => (
-                      <FaStar className="text-nine" key={index} />
-                    ))}
-                  </label>
-                </div>
-              ))}
-            </RadioGroup>
-          </div>
-        </div>
+        <HotelStar stars={stars} onCheckChange={handleCheckChange} />
         <div className="str-line" />
-        <div>
-          <div>
-            <span className="text-secondary font-bold">Review Score</span>
-            <div className="mt-4">
-              <RadioGroup value={score} onValueChange={(v) => setScore(v)}>
-                {scoreList.map((v, index) => (
-                  <div className="mt-4 flex items-center gap-2" key={index}>
-                    <RadioGroupItem
-                      value={v.score}
-                      id={v.title}
-                      className="rounded-sm"
-                    />
-
-                    <Label
-                      htmlFor={v.title}
-                      className="text-sm text-secondary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      {v.title}
-                    </Label>
-                  </div>
-                ))}
-              </RadioGroup>
-            </div>
-          </div>
-        </div>
-        <div className="py-4" onClick={handleFilter}>
-          <Button variant={"primary"} size={"third"} className="h-[48px] ">
-            {loading ? (
-              <>
-                <LoadingBtn />
-              </>
-            ) : (
-              "Apply Filter"
-            )}
-          </Button>
-        </div>
+        <HotelScore score={score} onValueChange={handleValueChangeScore} />
+        <HotelBtn loading={loading} onClick={handleFilter} />
       </DropdownMenuContent>
     </DropdownMenu>
   );

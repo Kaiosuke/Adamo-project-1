@@ -52,7 +52,7 @@ const SwiperCom = ({ images }: { images?: string[] }) => {
             slidesPerView: 4,
           },
         }}
-        className="mySwiper mt-3"
+        className="mySwiper mt-3 cursor-pointer"
       >
         {images?.map((v, index) => (
           <SwiperSlide key={index}>

@@ -7,7 +7,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import SliderCom from "@/components/sliders/Slider";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import {
   filterByDuration,
@@ -21,6 +20,7 @@ import { useDebouncedCallback } from "use-debounce";
 import TourBtn from "./TourBtn";
 import TourDuration from "./TourDuration";
 import TourType from "./TourType";
+import SliderCom from "@/components/sliders/SliderCom";
 
 const FilterTour = () => {
   const { filter } = useSelector(tourSelector);

@@ -12,7 +12,7 @@ import RelatedHotels from "./RelatedHotel";
 import { getHotelById } from "@/api/hotelRequest";
 import { useQuery } from "@tanstack/react-query";
 import { getReviewsHotel } from "@/api/reviewRequest";
-import BillHotelDetail from "@/components/bills/BillHotelDetail";
+import BillHotelDetail from "@/components/bills/hotel/BillHotelDetail";
 
 const HotelDetail = () => {
   const { id } = useParams();

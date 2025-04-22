@@ -3,17 +3,19 @@ import { getTourById } from "@/api/tourRequest";
 import BreadcrumbCom from "@/components/Breadcrumb";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
-import { BillTourDetail } from "@/components/bills/BillTourDetail";
+
 import { useAppDispatch } from "@/redux";
 import { tourSelector } from "@/redux/selectors/tourSelector";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineStar } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import RelatedTours from "./RelatedTours";
-import TourDetailMain from "./TourDetailMain";
+
 import TourDetailTabs from "./TourDetailTabs";
+import BillTourDetail from "@/components/bills/tour/BillTourDetail";
+import SwiperCom from "@/components/SwiperCom";
 
 const TourDetail = () => {
   const { id } = useParams();
@@ -54,19 +56,23 @@ const TourDetail = () => {
     }
   }, [currentPage, totalData]);
 
+  const links = useMemo(
+    () => [
+      { href: "/", title: "Home" },
+      { href: "/tours", title: "Tours" },
+    ],
+    []
+  );
+
+  const current = useMemo(() => "Detail Tour", []);
+
   return (
     <>
       {tour && (
         <>
           <PdSub />
           <PdSub />
-          <BreadcrumbCom
-            current="Detail Tour"
-            links={[
-              { href: "/", title: "Home" },
-              { href: "/tours", title: "Tours" },
-            ]}
-          />
+          <BreadcrumbCom current={current} links={links} />
           <PdSub />
 
           <section className="main-container">
@@ -88,7 +94,7 @@ const TourDetail = () => {
             <div className="flex 2xl:gap-20 gap-10 lg:mt-8 mt-6 flex-wrap xl:flex-row flex-col-reverse">
               <div className="xl:flex-[1_0_auto] flex-[0_0_100%] xl:max-w-[635px] w-full">
                 <div className="h-[680px] ">
-                  <TourDetailMain />
+                  <SwiperCom images={tour.images} />
                 </div>
                 {totalData && (
                   <TourDetailTabs

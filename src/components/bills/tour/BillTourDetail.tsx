@@ -1,7 +1,7 @@
 import { handleFormatMoney } from "@/helper";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import { addDays } from "date-fns";
-import { useState } from "react";
+import { memo, useMemo, useState } from "react";
 import { DateRange } from "react-day-picker";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -20,14 +20,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import DatePickerWithRange from "@/components/DatePickerWithRange";
+import { Button } from "@/components/ui/button";
 import { Form, FormField, FormMessage } from "@/components/ui/form";
 import { addBooking } from "@/redux/slices/bookingSlice";
 import { filterByGuest } from "@/redux/slices/toursSlice";
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
 import { StringParam, useQueryParams } from "use-query-params";
-import DatePickerWithRange from "../DatePickerWithRange";
-import { Button } from "../ui/button";
 
 const BillTourDetail = () => {
   const { tour } = useSelector(tourSelector);
@@ -90,6 +90,12 @@ const BillTourDetail = () => {
       navigate("/tour-checkout");
     }
   }
+
+  const handleTotalMoney = useMemo(() => {
+    return tour ? tour.duration * tour.price : 0;
+  }, [tour]);
+
+  console.log("Bill tour detail");
 
   return (
     <>
@@ -157,7 +163,7 @@ const BillTourDetail = () => {
                     <div className="flex justify-between items-center">
                       <span className="text-secondary">Total</span>
                       <span className="text-secondary font-semibold">
-                        {handleFormatMoney(tour.duration * tour.price)}
+                        {handleFormatMoney(handleTotalMoney)}
                       </span>
                     </div>
                     <div className="mt-4">
@@ -176,4 +182,4 @@ const BillTourDetail = () => {
   );
 };
 
-export default BillTourDetail;
+export default memo(BillTourDetail);

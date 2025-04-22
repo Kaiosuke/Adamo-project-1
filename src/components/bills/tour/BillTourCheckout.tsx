@@ -5,7 +5,7 @@ import { GoPeople } from "react-icons/go";
 import { Input } from "@/components/ui/input";
 import { IBooking } from "@/interfaces/booking";
 import { ITour } from "@/interfaces/tour";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import { handleFormatMoney } from "@/helper";
 
 interface PropsTourCheckout {
