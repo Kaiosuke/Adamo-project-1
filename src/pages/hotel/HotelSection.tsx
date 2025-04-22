@@ -11,6 +11,7 @@ import {
 } from "use-query-params";
 import FilterHotel from "./FilterHotel";
 import SortHotel from "./SortHotel";
+import { memo } from "react";
 
 const HotelSection = () => {
   const [query] = useQueryParams({
@@ -57,11 +58,15 @@ const HotelSection = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {isLoading
-              ? Array.from({ length: 6 }).map((_, index) => (
-                  <SkeletonHotel key={index} />
-                ))
-              : data.map((hotel) => <Hotel key={hotel.id} hotel={hotel} />)}
+            {isLoading ? (
+              Array.from({ length: 6 }).map((_, index) => (
+                <SkeletonHotel key={index} />
+              ))
+            ) : data.length ? (
+              data.map((hotel) => <Hotel key={hotel.id} hotel={hotel} />)
+            ) : (
+              <div className="mt-4 text-size-2xl">Not found Hotel</div>
+            )}
           </div>
         </section>
       )}
@@ -69,4 +74,4 @@ const HotelSection = () => {
   );
 };
 
-export default HotelSection;
+export default memo(HotelSection);

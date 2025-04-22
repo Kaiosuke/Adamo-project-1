@@ -3,6 +3,7 @@ import { IHotel } from "@/interfaces/hotel";
 import Descriptions from "./Descriptions";
 import Reviews from "./Reviews";
 import SelectRoom from "./SelectRoom";
+import { memo } from "react";
 
 interface Props {
   data: IHotel;
@@ -49,4 +50,4 @@ const HotelDetailTabs = ({ data }: Props) => {
   );
 };
 
-export default HotelDetailTabs;
+export default memo(HotelDetailTabs);

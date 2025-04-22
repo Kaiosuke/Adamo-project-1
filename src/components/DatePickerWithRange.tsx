@@ -10,6 +10,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
+import { memo } from "react";
 
 interface Props {
   setDate: (value: DateRange | undefined) => void;
@@ -110,4 +111,4 @@ function DatePickerWithRange({ date, setDate, duration, setQuery }: Props) {
   );
 }
 
-export default DatePickerWithRange;
+export default memo(DatePickerWithRange);

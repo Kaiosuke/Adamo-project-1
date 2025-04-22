@@ -12,7 +12,7 @@ interface Props {
 }
 
 const ReviewHotel = ({ review }: { review: Props }) => {
-  // console.log(review);
+  console.log("hotel-review");
   return (
     <div>
       <div className="str-line-2" />

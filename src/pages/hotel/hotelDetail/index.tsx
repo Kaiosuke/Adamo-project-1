@@ -2,7 +2,7 @@ import BreadcrumbCom from "@/components/Breadcrumb";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
 import SwiperCom from "@/components/SwiperCom";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineStar } from "react-icons/md";
 import { useParams } from "react-router";
@@ -40,17 +40,21 @@ const HotelDetail = () => {
     setTotalData(totalData);
   }, []);
 
+  const links = useMemo(
+    () => [
+      { href: "/", title: "Home" },
+      { href: "/hotels", title: "Hotels" },
+    ],
+    []
+  );
+
+  const current = useMemo(() => "Detail Tour", []);
+
   return (
     <>
       <PdSub />
       <PdSub />
-      <BreadcrumbCom
-        current="Detail Tour"
-        links={[
-          { href: "/", title: "Home" },
-          { href: "/hotels", title: "Hotels" },
-        ]}
-      />
+      <BreadcrumbCom current={current} links={links} />
       <PdSub />
 
       <section className="main-container">

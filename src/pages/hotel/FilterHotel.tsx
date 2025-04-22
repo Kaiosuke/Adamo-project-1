@@ -78,6 +78,8 @@ const FilterHotel = () => {
     []
   );
 
+  console.log("hotel-filter");
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>

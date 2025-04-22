@@ -48,6 +48,8 @@ const SortHotel = () => {
     toast.success("Sort successfully");
   };
 
+  console.log("hotel-sort");
+
   return (
     <>
       <Select

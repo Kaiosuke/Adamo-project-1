@@ -11,8 +11,6 @@ const RelatedHotels = () => {
     queryFn: () => getHotels({ _page: 1, _limit: 3 }),
   });
 
-  console.log("RelatedHotels");
-
   return (
     <div>
       <h2 className="text-size-3xl text-secondary ">Recommend For you</h2>

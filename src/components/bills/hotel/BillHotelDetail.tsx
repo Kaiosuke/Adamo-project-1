@@ -3,20 +3,9 @@ import { handleFormatMoney } from "@/helper";
 import { IHotel } from "@/interfaces/hotel";
 import { IRoom } from "@/interfaces/room";
 import { roomSelector } from "@/redux/selectors/roomSelector";
-import {
-  changeBreakfast,
-  changeExtraBed,
-  deCreaseBreakfast,
-  deCreaseExtraBed,
-  decreaseRoom,
-  IBreakfast,
-  IExtraBed,
-  inCreaseBreakfast,
-  inCreaseExtraBed,
-  increaseRoom,
-} from "@/redux/slices/roomsSlice";
+import { decreaseRoom, increaseRoom } from "@/redux/slices/roomsSlice";
 import { useQuery } from "@tanstack/react-query";
-import { useCallback, useMemo, useState } from "react";
+import { memo, useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaCircleMinus, FaCirclePlus } from "react-icons/fa6";
 import { GoPeople } from "react-icons/go";
@@ -24,7 +13,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "sonner";
 import { StringParam, useQueryParams } from "use-query-params";
 import { Button } from "../../ui/button";
-import { Checkbox } from "../../ui/checkbox";
 import {
   Select,
   SelectContent,
@@ -47,6 +35,7 @@ import { DateRange } from "react-day-picker";
 import { useNavigate } from "react-router";
 import { useDebouncedCallback } from "use-debounce";
 import DatePickerWithRange from "../../DatePickerWithRange";
+import AddOne from "./AddOne";
 
 const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
   const { t } = useTranslation(["search"]);
@@ -84,44 +73,6 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
 
   const handleIncreaseRoom = (room: IRoom) => {
     dispatch(increaseRoom(room));
-  };
-
-  const handleChangeBreakfast = () => {
-    dispatch(changeBreakfast());
-  };
-
-  const handleDecreaseBreakfast = (breakfast: IBreakfast) => {
-    if (breakfast.quantity < 1) {
-      return toast.warning("Cannot decrease further");
-    }
-    dispatch(deCreaseBreakfast());
-  };
-
-  const handleIncreaseBreakfast = (breakfast: IBreakfast) => {
-    if (breakfast.quantity > 6) {
-      return toast.warning("Cannot increase further");
-    }
-
-    dispatch(inCreaseBreakfast());
-  };
-
-  const handleChangeExtraBed = () => {
-    dispatch(changeExtraBed());
-  };
-
-  const handleDecreaseExtraBed = (extraBed: IExtraBed) => {
-    if (extraBed.quantity < 1) {
-      return toast.warning("Cannot decrease further");
-    }
-
-    dispatch(deCreaseExtraBed());
-  };
-
-  const handleIncreaseExtraBed = (extraBed: IExtraBed) => {
-    if (extraBed.quantity > 6) {
-      return toast.warning("Cannot increase further");
-    }
-    dispatch(inCreaseExtraBed());
   };
 
   const handleTotalMoney = useMemo(() => {
@@ -263,109 +214,7 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
                     </div>
                   </div>
                   <div className="h-[1px] w-full bg-four opacity-30" />
-                  <div>
-                    <div className="font-bold text-secondary">Add-ons:</div>
-                    <div className={`grid grid-cols-3 items-center mt-2`}>
-                      <div className="flex items-center space-x-2">
-                        <Checkbox
-                          id="terms"
-                          className="bg-third"
-                          checked={breakfast.status}
-                        />
-                        <label
-                          htmlFor="terms"
-                          onClick={handleChangeBreakfast}
-                          className="text-base font-semibold flex items-center justify-center leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                        >
-                          Breakfast
-                        </label>
-                      </div>
-                      <div
-                        className={`flex w-full justify-between ml-auto col-span-2 ${
-                          breakfast.status
-                            ? ""
-                            : "pointer-events-none opacity-35"
-                        }`}
-                      >
-                        <div
-                          className={`flex items-center justify-between gap-2 ml-[40px]`}
-                        >
-                          <FaCircleMinus
-                            className="text-four text-xl cursor-pointer hover:text-four/80"
-                            onClick={() => {
-                              if (breakfast.status)
-                                handleDecreaseBreakfast(breakfast);
-                            }}
-                          />
-                          <span className="w-[10px] text-center">
-                            {breakfast.quantity}
-                          </span>
-                          <FaCirclePlus
-                            className="text-four text-xl cursor-pointer hover:text-four/80"
-                            onClick={() => {
-                              if (breakfast.status)
-                                handleIncreaseBreakfast(breakfast);
-                            }}
-                          />
-                        </div>
-                        <div className="font-bold text-six ml-auto">
-                          {handleFormatMoney(
-                            breakfast.price * breakfast.quantity
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                    <div className={`grid grid-cols-3 items-center mt-2`}>
-                      <div className="flex items-center space-x-2">
-                        <Checkbox
-                          id="terms"
-                          className="bg-third"
-                          checked={extraBed.status}
-                        />
-                        <label
-                          htmlFor="terms"
-                          onClick={handleChangeExtraBed}
-                          className="text-base font-semibold flex items-center justify-center leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                        >
-                          Extra Bed
-                        </label>
-                      </div>
-                      <div
-                        className={`flex w-full justify-between col-span-2 ${
-                          extraBed.status
-                            ? ""
-                            : "pointer-events-none opacity-35"
-                        }`}
-                      >
-                        <div
-                          className={`flex items-center justify-between gap-2 ml-[40px]`}
-                        >
-                          <FaCircleMinus
-                            className="text-four text-xl cursor-pointer hover:text-four/80"
-                            onClick={() => {
-                              if (extraBed.status)
-                                handleDecreaseExtraBed(extraBed);
-                            }}
-                          />
-                          <span className="w-[10px] text-center">
-                            {extraBed.quantity}
-                          </span>
-                          <FaCirclePlus
-                            className="text-four text-xl cursor-pointer hover:text-four/80"
-                            onClick={() => {
-                              if (extraBed.status)
-                                handleIncreaseExtraBed(extraBed);
-                            }}
-                          />
-                        </div>
-                        <div className="font-bold text-six ml-auto">
-                          {handleFormatMoney(
-                            extraBed.price * extraBed.quantity
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <AddOne breakfast={breakfast} extraBed={extraBed} />
                   <div className="h-[1px] w-full bg-four opacity-30" />
 
                   <div className="flex justify-between items-center text-size-xl">
@@ -387,4 +236,4 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
   );
 };
 
-export default BillHotelDetail;
+export default memo(BillHotelDetail);
