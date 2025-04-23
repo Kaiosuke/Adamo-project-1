@@ -1,47 +1,6 @@
 import { IHotel } from "@/interfaces/hotel";
 import { instanceLocal } from "./instance";
 
-// const getFiltersHotel = async ( { rejectWithValue } => {
-//   try {
-//     const getLocations = async () => {
-//       try {
-//         const res = await instanceLocal.get("/locationHotels");
-//         return res.data;
-//       } catch (error) {
-//         if (axios.isAxiosError(error)) {
-//           return rejectWithValue(error.response?.data?.message);
-//         }
-//         return rejectWithValue("Error");
-//       }
-//     };
-
-//     const getGuests = async () => {
-//       try {
-//         const res = await instanceLocal.get("/guests");
-//         return res.data;
-//       } catch (error) {
-//         if (axios.isAxiosError(error)) {
-//           return rejectWithValue(error.response?.data?.message);
-//         }
-//         return rejectWithValue("Error");
-//       }
-//     };
-
-//     const [locations, guests] = await Promise.all([
-//       getLocations(),
-
-//       getGuests(),
-//     ]);
-
-//     return { locations, guests };
-//   } catch (error) {
-//     if (axios.isAxiosError(error)) {
-//       return rejectWithValue(error.response?.data?.message);
-//     }
-//     return rejectWithValue("Error");
-//   }
-// });
-
 const getFiltersHotel = async (): Promise<{
   locations: string[];
   guests: string[];

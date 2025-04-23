@@ -1,39 +1,32 @@
 import { Button } from "@/components/ui/button";
 import { CiSearch } from "react-icons/ci";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import DatePickerSingle from "../DatePickerSingle";
-
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 import { getFiltersHotel } from "@/api/hotelRequest";
+import DatePickerSingle from "@/components/DatePickerSingle";
 import { useQuery } from "@tanstack/react-query";
+import { addDays } from "date-fns";
 import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { LuUsers } from "react-icons/lu";
 import { Link } from "react-router";
 import { useNavigate } from "react-router-dom";
-import { StringParam, useQueryParams } from "use-query-params";
 import { toast } from "sonner";
-import { addDays } from "date-fns";
+import { StringParam, useQueryParams } from "use-query-params";
+
+import GuestCom from "@/components/GuestCom";
+import LocationCom from "@/components/LocationCom";
+
 const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const { t } = useTranslation("search");
-
-  const { data } = useQuery({
-    queryKey: ["filtersHotel"],
-    queryFn: () => getFiltersHotel(),
-  });
 
   const [query, setQuery] = useQueryParams({
     location: StringParam,
     guest: StringParam,
     from: StringParam,
+  });
+
+  const { data } = useQuery({
+    queryKey: ["filtersHotel"],
+    queryFn: () => getFiltersHotel(),
   });
 
   const from = query.from ? new Date(query.from) : addDays(new Date(), 1);
@@ -71,29 +64,14 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
           <div className="text-size-2xl">{t("hotel.title")}</div>
           <div className="flex flex-col justify-between h-full">
             <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
-              <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
-                <FaMapMarkerAlt className="text-primary text-size-lg group-hover:text-third" />
-                <Select
-                  defaultValue={location}
-                  onValueChange={(v) => {
-                    setLocation(v);
-                  }}
-                >
-                  <SelectTrigger className="w-full group-hover:text-third ">
-                    <SelectValue placeholder={t("tour.location")} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      {data &&
-                        data.locations.map((v, index) => (
-                          <SelectItem value={v} key={index}>
-                            {v.length < 2 ? "All" : v}
-                          </SelectItem>
-                        ))}
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </div>
+              {data && (
+                <LocationCom
+                  location={location}
+                  setLocation={setLocation}
+                  t={t}
+                  data={data?.locations}
+                />
+              )}
 
               <div className="group bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
                 <DatePickerSingle
@@ -102,24 +80,14 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
                   setDate={setDate}
                 />
               </div>
-              <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
-                <LuUsers className="text-primary text-size-lg group-hover:text-third" />
-                <Select defaultValue={guest} onValueChange={(v) => setGuest(v)}>
-                  <SelectTrigger className="w-full group-hover:text-third">
-                    <SelectValue placeholder={t("tour.guest")} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      {data &&
-                        data.guests.map((v, index) => (
-                          <SelectItem value={v} key={index}>
-                            {v}
-                          </SelectItem>
-                        ))}
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </div>
+              {data && (
+                <GuestCom
+                  guest={guest}
+                  setGuest={setGuest}
+                  t={t}
+                  data={data.guests}
+                />
+              )}
             </div>
             <div className={` ${isHome ? "mb-8 " : "mt-4"}`}>
               <Link

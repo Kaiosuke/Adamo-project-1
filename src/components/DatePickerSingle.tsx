@@ -9,6 +9,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
+import { memo } from "react";
 
 interface Props {
   date: Date;
@@ -50,4 +51,4 @@ function DatePickerSingle({ date, setDate, setQuery }: Props) {
   );
 }
 
-export default DatePickerSingle;
+export default memo(DatePickerSingle);

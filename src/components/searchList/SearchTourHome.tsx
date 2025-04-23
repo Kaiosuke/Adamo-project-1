@@ -1,7 +1,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import SearchTour from "./SearchTour";
-import SearchHotel from "./SearchHotel";
+
 import { useTranslation } from "react-i18next";
+import SearchHotel from "./hotel/SearchHotel";
+import SearchTour from "./tour/SearchTour";
 
 const SearchTourHome = () => {
   const { t } = useTranslation("search");

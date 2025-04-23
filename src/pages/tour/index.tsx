@@ -6,10 +6,10 @@ import AttractiveTourSection from "./AttractiveTourSection";
 
 import TourImg from "@/assets/images/hero-tour.png";
 import HeroSectionCom from "@/components/HeroSectionCom";
-import SearchTour from "@/components/searchList/SearchTour";
 
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import SearchTour from "@/components/searchList/tour/SearchTour";
 
 const Tour = () => {
   const { t } = useTranslation("tour");

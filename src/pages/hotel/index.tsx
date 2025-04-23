@@ -3,12 +3,12 @@ import BreadcrumbCom from "@/components/Breadcrumb";
 import HeroSectionCom from "@/components/HeroSectionCom";
 import PdMain from "@/components/PdMain";
 import PdSub from "@/components/PdSub";
-import SearchHotel from "@/components/searchList/SearchHotel";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import HotelSection from "./HotelSection";
 
 import HotelPagination from "./HotelPagination";
+import SearchHotel from "@/components/searchList/hotel/SearchHotel";
 
 const Hotel = () => {
   const { t } = useTranslation("hotel");
