@@ -1,5 +1,5 @@
-import { getAllTour, getFiltersTour, getTours } from "@/api/tourRequest";
-import PdMain from "@/components/Padding/PdMain";
+import { getAllTour, getFiltersTour } from "@/api/tourRequest";
+import PdMain from "@/components/PdMain";
 import { useAppDispatch } from "@/redux";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -9,7 +9,6 @@ import DiscoverSection from "./DiscoverSection";
 import HeroSection from "./HeroSection";
 import IntroduceSection from "./IntroduceSection";
 import TraditionalSection from "./Traditional";
-import { useQuery } from "@tanstack/react-query";
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -26,12 +25,7 @@ const Home = () => {
   }, []);
 
   useTranslation();
-
-  const { data } = useQuery({
-    queryKey: ["tours"],
-    queryFn: () => getTours({}),
-  });
-
+  z;
   return (
     <>
       <HeroSection />
@@ -42,9 +36,9 @@ const Home = () => {
       <PdMain />
       <DiscoverSection />
       <PdMain />
-      {data && <AttractiveSection data={data} />}
+      <AttractiveSection />
       <PdMain />
-      {data && <TraditionalSection data={data} />}
+      <TraditionalSection />
       <PdMain />
       <ContactSection />
       <PdMain />
