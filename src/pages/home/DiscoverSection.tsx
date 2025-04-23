@@ -1,6 +1,5 @@
 import ButtonFeature from "@/components/ButtonFeature";
 import LoadedImage from "@/components/LoadingList/LoadedImage";
-import Tour from "@/components/Tour";
 import { ITour } from "@/interfaces/tour";
 
 import { Trans } from "react-i18next";
