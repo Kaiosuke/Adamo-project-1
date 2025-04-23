@@ -41,12 +41,13 @@ const TourDetail = () => {
   });
 
   const averageStar = useMemo(() => {
-    if (totalReviewHotel) {
+    if (totalReviewHotel?.length) {
       const score = totalReviewHotel.reduce((acc, cur) => {
         return acc + cur.rate;
       }, 0);
       return Math.floor(score / totalReviewHotel.length);
     }
+    return 5;
   }, [totalReviewHotel]);
 
   const totalData = Number(totalReviewHotel?.length);
@@ -114,7 +115,7 @@ const TourDetail = () => {
                 <div className="h-[680px] ">
                   <SwiperCom images={tour.images} />
                 </div>
-                {averageStar && (
+                {
                   <TourDetailTabs
                     averageStar={averageStar}
                     currentPage={currentPage}
@@ -122,7 +123,7 @@ const TourDetail = () => {
                     setCurrentPage={setCurrentPage}
                     totalData={totalData}
                   />
-                )}
+                }
               </div>
 
               <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit xl:sticky top-[20px]">

@@ -1836,6 +1836,160 @@
           }
         ]
       }
+    },
+    {
+      "id": 13,
+      "title": "Discover interesting things in the romantic coastal city of Vungtau",
+      "location": "Sapa, Laocai",
+      "score": 4.5,
+      "time": "3 days - 2 night",
+      "duration": 3,
+      "type": "city-break",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/pqsif5zyudt6ksfn3ant.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "price": 146,
+      "description": {
+        "overview": {
+          "title": "Set sail for the idyllic Italian island of Capri on this full-day tour, including round-trip jetfoil transfers from Naples or Sorrento. Stop to browse the handicraft stores of Anacapri and soak up the atmosphere in buzzing La Piazzetta. Top it off with a visit to the Blue Grotto and a funicular ride to Marina Grande.",
+          "list": [
+            "Full-day tour of Capri island from Naples or Sorrento Admire views along the coast as you cruise to the island by jetfoil",
+            "Visit the lively island towns of Anacapri and Capri Ride",
+            "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
+          ]
+        },
+        "included": [
+          "Port pickup and drop-off",
+          "Local guide",
+          "Local guide",
+          "Transport by minibus",
+          "Blue Grotto admission tickets",
+          "Shared boat ride tour around the island ( if Blue grotto is closed)"
+        ],
+        "departureReturn": {
+          "point": [
+            "Molo Beverello, 80133 Napoli NA, Italy",
+            "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
+          ],
+          "time": "8:00 AM"
+        },
+        "itineraries": [
+          {
+            "title": "Day 1: Molo Beverello (4 stops)",
+            "type": "location",
+            "locations": [
+              {
+                "title": "Molo Beverello",
+                "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
+                "duration": "5 minutes"
+              },
+              {
+                "title": "Marina Piccola",
+                "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
+                "duration": "1 hour 30 minutes"
+              },
+              {
+                "title": "Blue Grotto",
+                "des": "Pass trough the Ait Saouen Col in anti atlas"
+              },
+              {
+                "title": "Villa San Michele",
+                "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
+              }
+            ]
+          },
+          {
+            "title": "Day 2: Marina Piccola (1 stop)",
+            "type": "location",
+            "locations": [
+              {
+                "title": "Molo Beverello",
+                "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
+                "duration": "5 minutes"
+              },
+              {
+                "title": "Marina Piccola",
+                "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
+                "duration": "1 hour 30 minutes"
+              },
+              {
+                "title": "Blue Grotto",
+                "des": "Pass trough the Ait Saouen Col in anti atlas"
+              },
+              {
+                "title": "Villa San Michele",
+                "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
+              }
+            ]
+          },
+          {
+            "title": "Day 3: Marina Piccola (1 stop)",
+            "type": "location",
+            "locations": [
+              {
+                "title": "Molo Beverello",
+                "des": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
+                "duration": "5 minutes"
+              },
+              {
+                "title": "Marina Piccola",
+                "des": "so we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings, ",
+                "duration": "1 hour 30 minutes"
+              },
+              {
+                "title": "Blue Grotto",
+                "des": "Pass trough the Ait Saouen Col in anti atlas"
+              },
+              {
+                "title": "Villa San Michele",
+                "des": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
+              }
+            ]
+          }
+        ],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
+      },
+      "additionalInfo": {
+        "list": [
+          "Confirmation will be received at time of booking",
+          "Not recommended for travelers with back problems",
+          "Not recommended for pregnant travelers Infant seats available ",
+          "Not wheelchair accessible",
+          "Children must be accompanied by an adult",
+          "Vegetarian option is available, please advise at time of booking if required",
+          "Minimum numbers apply.",
+          "There is a possibility of cancellation after confirmation if the meteorological",
+          "conditions do not allow it",
+          "Stroller accessible",
+          "Service animals allowed",
+          "Near public transportation",
+          "Most travelers can participate ",
+          "This tour/activity will have a maximum of 17 travelers"
+        ],
+        "faqs": [
+          {
+            "title": "What is the maximum group size during 2 Days 1 Night To Zagora Desert From Marrakech?",
+            "description": "This activity will have a maximum of 17 travelers."
+          },
+          {
+            "title": "When and where does the tour start?",
+            "description": "This activity will have a maximum of 17 travelers."
+          },
+          {
+            "title": "Do you arrange airport transfers?",
+            "description": "This activity will have a maximum of 17 travelers."
+          }
+        ]
+      }
     }
   ],
   "hotels": [
@@ -2524,6 +2678,70 @@
           "Private Bathroom",
           "Free WiFi",
           "Free toiletries",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee make",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or close"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "Security deposit will not be collected at this hotel",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards are not accepted at this hotel",
+            "No additional tax has to be paid at the hotel",
+            "On-site parking is available",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples are allowed",
+            "Couples are welcome",
+            "Guests can check in using any Domestic or International ID proof with photograph"
+          ]
+        },
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
+      }
+    },
+    {
+      "id": 13,
+      "title": "Chic Urban Living in The heart of Ho Chi Minh City",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 9,
+      "price": 120,
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/r2m85wphhzqxhlqu8lvm.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "star": 5,
+      "description": {
+        "overview": {
+          "description": "Opposite Durban’s famous beachfront, Blue Waters Hotel is within walking distance of the Suncoast Casino and the iconic Moses Mabhida Stadium. Both uShaka Marine World and Greyville Racecourse are within 2.5 mi from the property.@The spacious rooms and suites feature LCD TVs along with coffee-and-tea-making facilities. Each is equipped with air conditioning and a work desk. There is also plenty of luggage storage space. Most rooms come with furnished balconies and offer a view of the Indian Ocean.@Guests at Blue Waters can enjoy afternoon tea and cake in the Florida Lounge overlooking the ocean. The Versailles Restaurant provides buffet and á la carte service for lunch and dinner.@Leisure facilities at the Hotel Blue Waters include an indoor swimming pool, sauna and a squash court. There is also an outdoor rooftop swimming pool and guests can enjoy drinks with sunset views at the rooftop bar.@The Durban North Beach area is a good location for walking, running and cycling. Hotel Blue Waters is 5 minutes’ drive from the Durban ICC and 10 minutes’ drive from Durban’s city center. Durban Station is 1.2 mi away, while King Shaka International Airport is 19 mi from the property.@Couples in particular like the location – they rated it 9.1 for a two-person trip.@We speak your language!"
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
           "Desk",
           "Refrigerator",
           "Telephone",
@@ -3305,6 +3523,66 @@
       "title": "The best experience ever",
       "des": "312wq",
       "id": 68
+    },
+    {
+      "tourId": 13,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Wed Apr 23 2025",
+      "title": "The best experience ever",
+      "des": "32321",
+      "id": 69
+    },
+    {
+      "tourId": 13,
+      "rate": 1,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Wed Apr 23 2025",
+      "title": "The best experience ever",
+      "des": "trongle",
+      "id": 70
+    },
+    {
+      "tourId": 13,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Wed Apr 23 2025",
+      "title": "The best experience ever",
+      "des": "321321",
+      "id": 71
+    },
+    {
+      "tourId": 13,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Wed Apr 23 2025",
+      "title": "The best experience ever",
+      "des": "daszda",
+      "id": 72
+    },
+    {
+      "tourId": 13,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Wed Apr 23 2025",
+      "title": "The best experience ever",
+      "des": "3213121",
+      "id": 73
+    },
+    {
+      "tourId": 13,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Wed Apr 23 2025",
+      "title": "The best experience ever",
+      "des": "hlzpzppzz",
+      "id": 74
     }
   ],
   "reviewsHotel": [
@@ -4497,6 +4775,186 @@
       "title": "Romantic escape",
       "des": "32312",
       "id": 126
+    },
+    {
+      "hotelId": 9,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "testsetCurrentPagesetCurrentPagesetCurrentPage",
+      "id": 127
+    },
+    {
+      "hotelId": 9,
+      "rate": 1,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "3231231",
+      "id": 128
+    },
+    {
+      "hotelId": 9,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "Q2121",
+      "id": 129
+    },
+    {
+      "hotelId": 9,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "321312",
+      "id": 130
+    },
+    {
+      "hotelId": 9,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "asda",
+      "id": 131
+    },
+    {
+      "hotelId": 6,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "helloweqweqweq",
+      "id": 132
+    },
+    {
+      "hotelId": 6,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "12311",
+      "id": 133
+    },
+    {
+      "hotelId": 7,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "312312",
+      "id": 134
+    },
+    {
+      "hotelId": 7,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "aaaaaaa",
+      "id": 135
+    },
+    {
+      "hotelId": 7,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "312312",
+      "id": 136
+    },
+    {
+      "hotelId": 9,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "312sa",
+      "id": 137
+    },
+    {
+      "hotelId": 9,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "trongle23123213",
+      "id": 138
+    },
+    {
+      "hotelId": 13,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "321a",
+      "id": 139
+    },
+    {
+      "hotelId": 13,
+      "rate": 4,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "312a",
+      "id": 140
+    },
+    {
+      "hotelId": 13,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "32112",
+      "id": 141
+    },
+    {
+      "hotelId": 13,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "tronle",
+      "id": 142
+    },
+    {
+      "hotelId": 13,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "aczxzxz",
+      "id": 143
+    },
+    {
+      "hotelId": 13,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Wed Apr 23 2025",
+      "title": "Romantic escape",
+      "des": "zzzzzz",
+      "id": 144
     }
   ],
   "rooms": [

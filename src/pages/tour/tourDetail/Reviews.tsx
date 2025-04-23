@@ -15,7 +15,7 @@ interface Props {
   currentPage: number;
   pageCount: number;
   totalData: number;
-  averageStar: number;
+  averageStar?: number;
   setCurrentPage: (value: number) => void;
 }
 
@@ -26,7 +26,7 @@ const Reviews = ({
   pageCount,
   totalData,
   setCurrentPage,
-  averageStar,
+  averageStar = 5,
 }: Props) => {
   const { tour } = useSelector(tourSelector);
   const { reviewsTour } = useSelector(reviewSelector);

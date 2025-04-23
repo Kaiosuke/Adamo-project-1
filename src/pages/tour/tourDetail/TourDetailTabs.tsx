@@ -7,7 +7,7 @@ import Reviews from "./Reviews";
 interface Props {
   currentPage: number;
   totalData: number;
-  averageStar: number;
+  averageStar?: number;
   pageCount: number;
   setCurrentPage: (value: number) => void;
 }

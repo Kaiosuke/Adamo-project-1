@@ -14,7 +14,7 @@ import LoadingPage from "@/components/LoadingList/LoadingPage";
 const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
   const { id } = useParams();
 
-  const ITEMS_PER_PAGE = 3;
+  const ITEMS_PER_PAGE = 4;
 
   const [query, setQuery] = useQueryParams({
     _page: NumberParam,
@@ -45,28 +45,27 @@ const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
     setPageCount(Math.ceil(Number(totalScore?.length) / ITEMS_PER_PAGE));
   }, [totalScore]);
 
-  const handleAverageRate = useMemo((): number => {
-    console.log("handleAverageRate");
-    if (totalScore) {
+  const handleAverageRate = useMemo(() => {
+    if (totalScore.length) {
       const score = totalScore?.reduce((acc, cur) => {
         return (acc += cur.rate);
       }, 0);
 
       return Math.floor(score / totalScore.length);
     }
-    return NaN;
+    return 5;
   }, [totalScore]);
 
   return (
     <>
-      {id && (
+      {id && handleAverageRate && (
         <ReviewForm
           id={id}
           setCurrentPage={setCurrentPage}
           setPageCount={setPageCount}
           totalData={Number(totalScore?.length)}
           ITEMS_PER_PAGE={ITEMS_PER_PAGE}
-          onAverageRate={() => handleAverageRate}
+          onAverageRate={handleAverageRate}
           setQuery={setQuery}
         />
       )}

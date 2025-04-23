@@ -12,6 +12,7 @@ import { z } from "zod";
 import Rating from "@/components/Rating";
 import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { ChangeEvent, memo, useCallback, useState } from "react";
+import { toast } from "sonner";
 
 interface Props {
   id: string;
@@ -19,7 +20,7 @@ interface Props {
   setPageCount: (v: number) => void;
   setCurrentPage: (v: number) => void;
   ITEMS_PER_PAGE: number;
-  onAverageRate: () => number;
+  onAverageRate: number;
   setQuery: (query: Record<string, any>) => void;
 }
 
@@ -27,7 +28,6 @@ const ReviewForm = ({
   totalData,
   id,
   setCurrentPage,
-
   onAverageRate,
   setQuery,
 }: Props) => {
@@ -41,9 +41,13 @@ const ReviewForm = ({
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["reviewHotel", "score"] });
+      queryClient.invalidateQueries({
+        queryKey: ["reviewHotel", { id, _page: 1 }],
+      });
       form.reset();
       setQuery({ _page: 1 });
       setCurrentPage(0);
+      toast.success("Comment success");
     },
   });
 
@@ -81,7 +85,7 @@ const ReviewForm = ({
     <>
       <div className="flex gap-8">
         <div className="w-[148px] h-[148px] bg-primary flex justify-center items-center">
-          <span className="text-third text-size-5xl">{onAverageRate()}</span>
+          <span className="text-third text-size-5xl">{onAverageRate}</span>
         </div>
         <div className="flex flex-col justify-between">
           <div className="text-size-4xl">Wonderful</div>
