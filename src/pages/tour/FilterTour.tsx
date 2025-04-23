@@ -25,7 +25,7 @@ import SliderCom from "@/components/sliders/SliderCom";
 const FilterTour = () => {
   const { filter } = useSelector(tourSelector);
 
-  const { duration, type, price } = filter;
+  const { duration, type, price, location } = filter;
 
   const [durationTour, setDurationTour] = useState(duration);
   const [prices, setPrices] = useState(price);
@@ -64,6 +64,8 @@ const FilterTour = () => {
     }
   }, []);
   console.log("tour-filter");
+
+  console.log(location);
 
   return (
     <DropdownMenu>

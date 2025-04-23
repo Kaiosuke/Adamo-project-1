@@ -7,6 +7,7 @@ import Reviews from "./Reviews";
 interface Props {
   currentPage: number;
   totalData: number;
+  averageStar: number;
   pageCount: number;
   setCurrentPage: (value: number) => void;
 }
@@ -15,6 +16,7 @@ const TourDetailTabs = ({
   totalData,
   currentPage,
   pageCount,
+  averageStar,
   setCurrentPage,
 }: Props) => {
   return (
@@ -48,8 +50,10 @@ const TourDetailTabs = ({
       </TabsContent>
       <TabsContent value="reviews">
         <Reviews
+          averageStar={averageStar}
           currentPage={currentPage}
           pageCount={pageCount}
+          totalData={totalData}
           setCurrentPage={setCurrentPage}
         />
       </TabsContent>

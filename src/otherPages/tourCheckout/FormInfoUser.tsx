@@ -1,22 +1,11 @@
 import { bookingTour } from "@/api/bookingRequest";
-import Card from "@/assets/images/card.png";
-import Paypal from "@/assets/images/paypal.png";
 import FormComp from "@/components/forms/FormCom";
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "@/components/ui/form";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Form } from "@/components/ui/form";
 import { IBooking } from "@/interfaces/booking";
 import { userSchema } from "@/schemas/userSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
@@ -24,14 +13,13 @@ import { useDebouncedCallback } from "use-debounce";
 
 import { StringParam, useQueryParams, withDefault } from "use-query-params";
 import { z } from "zod";
+import PayMethod from "./PayMethod";
 
 interface Props {
   booking: IBooking;
 }
 
 const FormInfoUser = ({ booking }: Props) => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
   const [query, setQuery] = useQueryParams({
     firstName: withDefault(StringParam, ""),
     lastName: withDefault(StringParam, ""),
@@ -63,28 +51,13 @@ const FormInfoUser = ({ booking }: Props) => {
     },
   });
 
-  const { watch } = form;
-
-  useEffect(() => {
-    const subscription = watch((value) => {
-      if (!isSubmitted) {
-        setQuery({
-          ...value,
-        });
-      }
-    });
-
-    return () => subscription.unsubscribe();
-  }, [watch, isSubmitted]);
-
   const navigate = useNavigate();
 
   const { mutate } = useMutation({
     mutationFn: (data: IBooking) => bookingTour({ data }),
     onSuccess: () => {
-      setIsSubmitted(true);
       toast.success("Booking tour success");
-      setIsSubmitted(true);
+
       form.reset();
       navigate("/thanks");
     },
@@ -120,6 +93,7 @@ const FormInfoUser = ({ booking }: Props) => {
               name="firstName"
               placeholder="First Name"
               isImportant
+              setQuery={setQuery}
             />
             <FormComp
               form={form}
@@ -127,6 +101,7 @@ const FormInfoUser = ({ booking }: Props) => {
               name="lastName"
               placeholder="Last Name"
               isImportant
+              setQuery={setQuery}
             />
 
             <FormComp
@@ -135,6 +110,7 @@ const FormInfoUser = ({ booking }: Props) => {
               name="email"
               placeholder="email@domain.com"
               isImportant
+              setQuery={setQuery}
             />
             <FormComp
               form={form}
@@ -142,6 +118,7 @@ const FormInfoUser = ({ booking }: Props) => {
               name="phoneNumber"
               placeholder="Your Phone"
               isImportant
+              setQuery={setQuery}
             />
           </div>
         </div>
@@ -153,6 +130,7 @@ const FormInfoUser = ({ booking }: Props) => {
             title="Your Address"
             placeholder="Your Address"
             name="address"
+            setQuery={setQuery}
           />
           <div className="grid grid-cols-2 xl:gap-8 gap-6">
             <FormComp
@@ -160,24 +138,28 @@ const FormInfoUser = ({ booking }: Props) => {
               title="City"
               placeholder="Your City"
               name="city"
+              setQuery={setQuery}
             />
             <FormComp
               form={form}
               title="State/Province/Region"
               placeholder="Your State/Province/Region"
               name="state"
+              setQuery={setQuery}
             />
             <FormComp
               form={form}
               title="Zip Code/ Postal Code"
               placeholder="Zip Code/ Postal Code"
               name="zipCode"
+              setQuery={setQuery}
             />
             <FormComp
               form={form}
               title="Country"
               placeholder="Your Country"
               name="country"
+              setQuery={setQuery}
             />
           </div>
         </div>
@@ -187,61 +169,11 @@ const FormInfoUser = ({ booking }: Props) => {
             title="Special Requirement"
             placeholder="Special Requirement"
             name="requirement"
+            setQuery={setQuery}
             isArea
           />
         </div>
-        <div>
-          <h3 className="text-size-xl">Payment Menthod</h3>
-          <p className="text-four">
-            Pay securely—we use SSL encryption to keep your data safe
-          </p>
-          <div className="mt-6">
-            <FormField
-              control={form.control}
-              name="payMethod"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <RadioGroup
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem
-                          value="card"
-                          id="r1"
-                          className=" w-[20px] h-[20px] "
-                        />
-                        <Label
-                          htmlFor="r1"
-                          className="text-size-base font-semibold flex items-center cursor-pointer"
-                        >
-                          <div className="w-[120px]">Credit Card</div>
-                          <img src={Card} />
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem
-                          value="paypal"
-                          id="r2"
-                          className=" w-[20px] h-[20px] "
-                        />
-                        <Label
-                          htmlFor="r2"
-                          className="text-size-base font-semibold flex items-center cursor-pointer"
-                        >
-                          <div className="w-[120px]">Paypal</div>
-                          <img src={Paypal} />
-                        </Label>
-                      </div>
-                    </RadioGroup>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-        </div>
+        <PayMethod form={form} name="payMethod" setQuery={setQuery} />
         <Button type="submit" className="lg:w-full w-fit px-10">
           Complete Booking
         </Button>

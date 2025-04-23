@@ -9,11 +9,10 @@ import { useParams } from "react-router";
 import { NumberParam, useQueryParams } from "use-query-params";
 import ReviewForm from "./ReviewForm";
 import ReviewPagination from "./ReviewPagination";
+import LoadingPage from "@/components/LoadingList/LoadingPage";
 
-const Reviews = () => {
+const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
   const { id } = useParams();
-
-  const [totalData, setTotalData] = useState(0);
 
   const ITEMS_PER_PAGE = 3;
 
@@ -30,38 +29,33 @@ const Reviews = () => {
     return saved ? Number(saved) : 0;
   });
 
-  const { data } = useQuery({
+  const { data, isFetching } = useQuery({
     queryKey: ["reviewHotel", { id, _page }],
     queryFn: () =>
       getReviewsHotel({
         hotelId: id as string,
         _page: _page,
+        _limit: 3,
       }),
     enabled: id !== undefined,
   });
 
   useEffect(() => {
-    const total = localStorage.getItem("totalReviewHotel") || "0";
-    setTotalData(Number(total));
-  }, []);
-
-  useEffect(() => {
-    const total = localStorage.getItem("totalReviewHotel") || "0";
     setCurrentPage(0);
-    setPageCount(Math.ceil(Number(total) / ITEMS_PER_PAGE));
-    setTotalData(Number(total));
-  }, []);
+    setPageCount(Math.ceil(Number(totalScore?.length) / ITEMS_PER_PAGE));
+  }, [totalScore]);
 
   const handleAverageRate = useMemo((): number => {
     console.log("handleAverageRate");
-    if (data) {
-      const score = data?.reduce((acc, cur) => {
+    if (totalScore) {
+      const score = totalScore?.reduce((acc, cur) => {
         return (acc += cur.rate);
       }, 0);
-      return Math.floor(score / data?.length);
+
+      return Math.floor(score / totalScore.length);
     }
     return NaN;
-  }, [data]);
+  }, [totalScore]);
 
   return (
     <>
@@ -70,8 +64,7 @@ const Reviews = () => {
           id={id}
           setCurrentPage={setCurrentPage}
           setPageCount={setPageCount}
-          setTotalData={setTotalData}
-          totalData={totalData}
+          totalData={Number(totalScore?.length)}
           ITEMS_PER_PAGE={ITEMS_PER_PAGE}
           onAverageRate={() => handleAverageRate}
           setQuery={setQuery}
@@ -79,10 +72,18 @@ const Reviews = () => {
       )}
 
       <div className="flex flex-col gap-4">
-        {data &&
-          data.map((review: IReviewHotel) => (
-            <ReviewHotel key={review.id} review={review} />
-          ))}
+        {isFetching ? (
+          <div>
+            <LoadingPage />
+          </div>
+        ) : (
+          <>
+            {data &&
+              data.map((review: IReviewHotel) => (
+                <ReviewHotel key={review.id} review={review} />
+              ))}
+          </>
+        )}
       </div>
       <PdSub />
       <ReviewPagination

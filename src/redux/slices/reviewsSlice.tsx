@@ -38,7 +38,7 @@ const reviewsSlice = createSlice({
       (state: IStateReview, action: PayloadAction<IReviewTour[]>) => {
         state.loading = false;
         state.error = undefined;
-        state.reviewsTour = action.payload.reverse();
+        state.reviewsTour = action.payload;
       }
     );
     builder.addCase(getReviewTourList.rejected, setError);
@@ -48,7 +48,7 @@ const reviewsSlice = createSlice({
       addReviewTour.fulfilled,
       (state: IStateReview, action: PayloadAction<IReviewTour>) => {
         (state.loading = false), (state.error = undefined);
-        state.reviewsTour = [...state.reviewsTour, action.payload].reverse();
+        state.reviewsTour = [...state.reviewsTour, action.payload];
       }
     );
   },

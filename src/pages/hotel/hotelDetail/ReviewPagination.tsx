@@ -1,5 +1,5 @@
 import Pagination from "@/components/paginations/Pagination";
-import { useCallback } from "react";
+import { memo } from "react";
 
 interface Props {
   currentPage: number;
@@ -18,15 +18,15 @@ const ReviewPagination = ({
     <>
       <Pagination
         currentPage={currentPage}
-        onPageChange={useCallback((v) => {
+        onPageChange={(v) => {
           setCurrentPage(v);
           setQuery({ _page: v + 1 });
           localStorage.setItem("currentPageHotel", v.toLocaleString());
-        }, [])}
+        }}
         pageCount={pageCount}
       />
     </>
   );
 };
 
-export default ReviewPagination;
+export default memo(ReviewPagination);

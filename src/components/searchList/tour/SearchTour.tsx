@@ -15,10 +15,10 @@ import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { CiSearch } from "react-icons/ci";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
 import { toast } from "sonner";
-import { StringParam, useQueryParams } from "use-query-params";
 import { useDebouncedCallback } from "use-debounce";
+import { StringParam, useQueryParams } from "use-query-params";
 
 const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
   const { locations, guests, types, filter } = useSelector(tourSelector);
@@ -38,14 +38,20 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
   const [locationFilter, setLocationFilter] = useState(location);
   const [typeFilter, setTypeFilter] = useState(type);
 
-  const handleFilterGuest = useCallback((value: string) => {
-    dispatch(filterByGuest(value));
-  }, []);
+  const handleFilterGuest = useCallback(
+    (value: string) => {
+      dispatch(filterByGuest(value));
+    },
+    [dispatch]
+  );
+
+  const navigate = useNavigate();
 
   const handleFilter = useDebouncedCallback(() => {
     dispatch(filterByLocation(locationFilter));
     dispatch(filterByType(typeFilter));
     toast.success("Filter successfully");
+    navigate(`/tours?from=${from.toDateString()}`);
   }, 300);
 
   return (
@@ -89,16 +95,14 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
           />
         </div>
         <div className="lg:pt-6 pt-4">
-          <Link to={`/tours?from=${from.toDateString()}`}>
-            <Button
-              variant="primary"
-              className="flex justify-center gap-2 text-third"
-              onClick={handleFilter}
-            >
-              <CiSearch className="text-size-lg" />
-              {t("tour.search")}
-            </Button>
-          </Link>
+          <Button
+            variant="primary"
+            className="flex justify-center gap-2 text-third"
+            onClick={handleFilter}
+          >
+            <CiSearch className="text-size-lg" />
+            {t("tour.search")}
+          </Button>
         </div>
       </div>
     </div>

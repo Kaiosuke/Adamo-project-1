@@ -17,9 +17,10 @@ import { useDebouncedCallback } from "use-debounce";
 
 interface Props {
   id: string;
+  setCurrentPage: (value: number) => void;
 }
 
-const TourReviewForm = ({ id }: Props) => {
+const TourReviewForm = ({ id, setCurrentPage }: Props) => {
   const dispatch = useAppDispatch();
 
   const form = useForm<z.infer<typeof commentSchema>>({
@@ -55,6 +56,7 @@ const TourReviewForm = ({ id }: Props) => {
             queryClient.invalidateQueries({
               queryKey: ["reviewsTour", { id }],
             });
+            setCurrentPage(0);
           } catch (error) {
             toast.error(String(error));
           }
@@ -63,6 +65,8 @@ const TourReviewForm = ({ id }: Props) => {
     },
     300
   );
+
+  console.log("trong");
 
   return (
     <Form {...form}>

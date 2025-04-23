@@ -13,7 +13,6 @@ import SearchHotel from "@/components/searchList/hotel/SearchHotel";
 const Hotel = () => {
   const { t } = useTranslation("hotel");
 
-  const current = useMemo(() => "Hotel Details", []);
   const links = useMemo(
     () => [
       { href: "/", title: "Home" },
@@ -21,6 +20,7 @@ const Hotel = () => {
     ],
     []
   );
+  const current = useMemo(() => "Hotel Details", []);
 
   return (
     <>

@@ -7,6 +7,7 @@ import { IBooking } from "@/interfaces/booking";
 import { ITour } from "@/interfaces/tour";
 import { Button } from "../../ui/button";
 import { handleFormatMoney } from "@/helper";
+import { memo } from "react";
 
 interface PropsTourCheckout {
   tour: ITour;
@@ -73,4 +74,4 @@ const BillTourCheckout = ({ booking, tour }: PropsTourCheckout) => {
   );
 };
 
-export default BillTourCheckout;
+export default memo(BillTourCheckout);

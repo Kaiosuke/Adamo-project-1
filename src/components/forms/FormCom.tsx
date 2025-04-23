@@ -5,9 +5,15 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { FieldValues, Path, UseFormReturn } from "react-hook-form";
-import { Input } from "../ui/input";
+import { useCallback } from "react";
+import {
+  ControllerRenderProps,
+  FieldValues,
+  Path,
+  UseFormReturn,
+} from "react-hook-form";
 import { FaStarOfLife } from "react-icons/fa6";
+import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 
 interface IFormComp<T extends FieldValues> {
@@ -17,6 +23,7 @@ interface IFormComp<T extends FieldValues> {
   placeholder?: string;
   isArea?: boolean;
   isImportant?: boolean;
+  setQuery?: any;
 }
 
 const FormComp = <T extends FieldValues>({
@@ -26,7 +33,21 @@ const FormComp = <T extends FieldValues>({
   placeholder = "",
   isArea = false,
   isImportant = false,
+  setQuery,
 }: IFormComp<T>) => {
+  const handleChange = useCallback(
+    (
+      e: React.ChangeEvent<HTMLInputElement>,
+      field: ControllerRenderProps<T, Path<T>>
+    ) => {
+      field.onChange(e.target.value);
+      if (setQuery) {
+        setQuery({ [name]: e.target.value });
+      }
+    },
+    []
+  );
+
   return (
     <FormField
       control={form.control}
@@ -50,7 +71,10 @@ const FormComp = <T extends FieldValues>({
                 />
               ) : (
                 <Input
-                  {...field}
+                  value={field.value}
+                  onChange={(e) => {
+                    handleChange(e, field);
+                  }}
                   id={name}
                   placeholder={placeholder}
                   className="peer mt-4 z-[1] placeholder:text-four shadow-none rounded-none pl-4 py-0 h-[54px] ring-transparent focus-visible:ring-transparent "

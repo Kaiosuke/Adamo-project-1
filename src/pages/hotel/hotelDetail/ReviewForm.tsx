@@ -17,7 +17,6 @@ interface Props {
   id: string;
   totalData: number;
   setPageCount: (v: number) => void;
-  setTotalData: (v: number) => void;
   setCurrentPage: (v: number) => void;
   ITEMS_PER_PAGE: number;
   onAverageRate: () => number;
@@ -26,11 +25,9 @@ interface Props {
 
 const ReviewForm = ({
   totalData,
-  setTotalData,
   id,
-  setPageCount,
   setCurrentPage,
-  ITEMS_PER_PAGE,
+
   onAverageRate,
   setQuery,
 }: Props) => {
@@ -38,20 +35,19 @@ const ReviewForm = ({
 
   const [isReview, setIsReview] = useState(false);
 
-  const handleRestTotal = () => {
-    const total = totalData + 1;
-    setPageCount(Math.ceil(Number(total) / ITEMS_PER_PAGE));
-    setTotalData(Number(total));
-  };
-
   const addComment = useMutation({
     mutationFn: (data: Omit<IReviewHotel, "id">) => {
       return addReviewHotel({ data });
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["reviewHotel"] });
+      queryClient.invalidateQueries({ queryKey: ["reviewHotel", "score"] });
+      form.reset();
+      setQuery({ _page: 1 });
+      setCurrentPage(0);
     },
   });
+
+  console.log(totalData);
 
   const form = useForm<z.infer<typeof commentSchema>>({
     resolver: zodResolver(commentSchema),
@@ -64,7 +60,7 @@ const ReviewForm = ({
   function onSubmit(values: z.infer<typeof commentSchema>) {
     const data = {
       hotelId: Number(id),
-      rate: 9,
+      rate: values.star,
       avatar: `url('@/assets/images/Avatar-30.png')`,
       opinion: "Dreamy!",
       time: new Date().toDateString(),
@@ -72,14 +68,7 @@ const ReviewForm = ({
       des: values.message,
     };
 
-    addComment.mutate(data, {
-      onSuccess: async () => {
-        form.reset();
-        setQuery({ _page: 1 });
-        handleRestTotal();
-        setCurrentPage(0);
-      },
-    });
+    addComment.mutate(data);
   }
 
   const handleOpenComment = useCallback(() => {

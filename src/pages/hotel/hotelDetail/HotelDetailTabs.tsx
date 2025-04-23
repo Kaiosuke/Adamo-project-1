@@ -4,13 +4,24 @@ import Descriptions from "./Descriptions";
 import Reviews from "./Reviews";
 import SelectRoom from "./SelectRoom";
 import { memo } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { getReviewsHotel } from "@/api/reviewRequest";
+import { useParams } from "react-router";
 
 interface Props {
   data: IHotel;
 }
 
 const HotelDetailTabs = ({ data }: Props) => {
-  const totalData = localStorage.getItem("totalReviewHotel");
+  const { id } = useParams();
+  const { data: totalScore } = useQuery({
+    queryKey: ["reviewHotel", "score"],
+    queryFn: () =>
+      getReviewsHotel({
+        hotelId: id as string,
+      }),
+    enabled: id !== undefined,
+  });
 
   return (
     <Tabs defaultValue="selectRoom" className="lg:pt-10 pt-6">
@@ -31,9 +42,9 @@ const HotelDetailTabs = ({ data }: Props) => {
           value="reviews"
           className="data-[state=active]:text-primary text-size-2xl px-0 flex-none data-[state=active]:shadow-none trans-slow hover:text-six cursor-pointer"
         >
-          {totalData && Number(totalData) > 0
-            ? `Reviews(${totalData})`
-            : `Review(${totalData})`}
+          {totalScore && Number(totalScore.length) > 0
+            ? `Reviews(${totalScore.length})`
+            : `Review(${totalScore?.length})`}
         </TabsTrigger>
       </TabsList>
       <div className="str-line" />
@@ -44,7 +55,7 @@ const HotelDetailTabs = ({ data }: Props) => {
         <Descriptions data={data} />
       </TabsContent>
       <TabsContent value="reviews">
-        <Reviews />
+        {totalScore && <Reviews totalScore={totalScore} />}
       </TabsContent>
     </Tabs>
   );

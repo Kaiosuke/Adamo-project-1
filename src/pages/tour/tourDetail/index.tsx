@@ -1,4 +1,4 @@
-import { getReviewTourList } from "@/api/reviewRequest";
+import { getAllReviewTour, getReviewTourList } from "@/api/reviewRequest";
 import { getTourById } from "@/api/tourRequest";
 import BreadcrumbCom from "@/components/Breadcrumb";
 import PdMain from "@/components/Padding/PdMain";
@@ -13,9 +13,10 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import RelatedTours from "./RelatedTours";
 
-import TourDetailTabs from "./TourDetailTabs";
 import BillTourDetail from "@/components/bills/tour/BillTourDetail";
 import SwiperCom from "@/components/swiper/SwiperCom";
+import { useQuery } from "@tanstack/react-query";
+import TourDetailTabs from "./TourDetailTabs";
 
 const TourDetail = () => {
   const { id } = useParams();
@@ -23,18 +24,35 @@ const TourDetail = () => {
   const dispatch = useAppDispatch();
 
   const { tour } = useSelector(tourSelector);
-  const [totalData, setTotalData] = useState();
 
-  const ITEMS_PER_PAGE = 3;
+  const ITEMS_PER_PAGE = 4;
 
-  const [pageCount, setPageCount] = useState(0);
+  const [pageCount, setPageCount] = useState<number>(0);
+
   const [currentPage, setCurrentPage] = useState(() => {
     const saved = localStorage.getItem("currentReviewTour");
     return saved ? Number(saved) : 0;
   });
 
+  const { data: totalReviewHotel } = useQuery({
+    queryKey: ["reviewsTour", { id }],
+    queryFn: () => getAllReviewTour(id as string),
+    enabled: id !== undefined,
+  });
+
+  const averageStar = useMemo(() => {
+    if (totalReviewHotel) {
+      const score = totalReviewHotel.reduce((acc, cur) => {
+        return acc + cur.rate;
+      }, 0);
+      return Math.floor(score / totalReviewHotel.length);
+    }
+  }, [totalReviewHotel]);
+
+  const totalData = Number(totalReviewHotel?.length);
+
   useEffect(() => {
-    if (id) {
+    if (id && totalReviewHotel) {
       (async () => {
         try {
           await dispatch(getTourById(Number(id))).unwrap();
@@ -42,19 +60,19 @@ const TourDetail = () => {
             getReviewTourList({
               tourId: Number(id),
               start: ITEMS_PER_PAGE * currentPage,
+              limit: ITEMS_PER_PAGE,
             })
           ).unwrap();
-          const total = JSON.parse(
-            localStorage.getItem("totalReviewTour") || "0"
+
+          setPageCount(
+            Math.ceil(Number(totalReviewHotel.length) / ITEMS_PER_PAGE)
           );
-          setTotalData(total);
-          setPageCount(Math.ceil(total / ITEMS_PER_PAGE));
         } catch (error) {
           console.log(error);
         }
       })();
     }
-  }, [currentPage, totalData]);
+  }, [currentPage, pageCount, totalReviewHotel]);
 
   const links = useMemo(
     () => [
@@ -96,8 +114,9 @@ const TourDetail = () => {
                 <div className="h-[680px] ">
                   <SwiperCom images={tour.images} />
                 </div>
-                {totalData && (
+                {averageStar && (
                   <TourDetailTabs
+                    averageStar={averageStar}
                     currentPage={currentPage}
                     pageCount={pageCount}
                     setCurrentPage={setCurrentPage}

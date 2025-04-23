@@ -57,10 +57,19 @@ const addReviewTour = createAsyncThunk<
   }
 });
 
+const getReviewsTour = async ({
+  hotelId,
+}: {
+  hotelId: number | string;
+}): Promise<IReviewHotel[]> => {
+  const res = await instanceLocal.get(`reviewsHotel?hotelId=${hotelId}`);
+  return res.data;
+};
+
 const getReviewsHotel = async ({
   hotelId,
   _page = 1,
-  _limit = 3,
+  _limit = 1000,
 }: {
   hotelId: number | string;
   _page?: number | string;
@@ -92,4 +101,5 @@ export {
   addReviewHotel,
   addReviewTour,
   getAllReviewTour,
+  getReviewsTour,
 };
