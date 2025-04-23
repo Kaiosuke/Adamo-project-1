@@ -47,7 +47,12 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
 
   const handleFilter = useCallback(() => {
     setQuery({ location: location, guest: guest });
-    toast.success("Filter successfully");
+    toast.success("Filter successfully", {
+      style: {
+        backgroundColor: "#4caf50",
+        color: "#ffffff",
+      },
+    });
     navigate(`/hotels`);
   }, []);
 

@@ -4964,7 +4964,7 @@
       "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
       "type": "Family Suite",
       "quantity": 4,
-      "status": false,
+      "status": true,
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -5270,6 +5270,78 @@
         "requirement": "312321"
       },
       "id": 3
+    },
+    {
+      "day": 5,
+      "duration": {
+        "from": "2025-04-23T17:00:00.000Z",
+        "to": "2025-04-29T17:00:00.000Z"
+      },
+      "guests": "2 Adults - 1 Children",
+      "totalPrice": 1600,
+      "tourId": 4,
+      "user": {
+        "firstName": "tronglke",
+        "lastName": "321312",
+        "email": "312@gmaill.co",
+        "phoneNumber": 323123123,
+        "payMethod": "paypal",
+        "address": "",
+        "city": "",
+        "state": "",
+        "zipCode": "",
+        "country": "",
+        "requirement": ""
+      },
+      "id": 4
+    },
+    {
+      "day": 5,
+      "duration": {
+        "from": "2025-04-23T17:00:00.000Z",
+        "to": "2025-04-29T17:00:00.000Z"
+      },
+      "guests": "2 Adults - 1 Children",
+      "totalPrice": 1600,
+      "tourId": 4,
+      "user": {
+        "firstName": "tronglke",
+        "lastName": "321312",
+        "email": "312@gmaill.co",
+        "phoneNumber": 323123123,
+        "payMethod": "card",
+        "address": "",
+        "city": "",
+        "state": "",
+        "zipCode": "",
+        "country": "",
+        "requirement": ""
+      },
+      "id": 5
+    },
+    {
+      "day": 5,
+      "duration": {
+        "from": "2025-04-23T17:00:00.000Z",
+        "to": "2025-04-29T17:00:00.000Z"
+      },
+      "guests": "2 Adults - 1 Children",
+      "totalPrice": 1600,
+      "tourId": 4,
+      "user": {
+        "firstName": "tronglke",
+        "lastName": "321312",
+        "email": "312@gmaill.co",
+        "phoneNumber": 323123123,
+        "payMethod": "card",
+        "address": "",
+        "city": "",
+        "state": "",
+        "zipCode": "",
+        "country": "",
+        "requirement": ""
+      },
+      "id": 6
     }
   ],
   "bookingHotels": [
@@ -5480,6 +5552,163 @@
         "requirement": ""
       },
       "id": 2
+    },
+    {
+      "duration": {
+        "from": "Wed Apr 23 2025",
+        "to": "Wed Apr 23 2025"
+      },
+      "guests": "1 Adult - 1 Children",
+      "hotelId": 9,
+      "rooms": [
+        {
+          "data": {
+            "id": 1,
+            "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274611/Hotels/uykb9oefs9fdcvwezj56.png",
+            "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+            "type": "Family Suite",
+            "quantity": 4,
+            "status": false,
+            "images": [
+              "https://swiperjs.com/demos/images/nature-1.jpg",
+              "https://swiperjs.com/demos/images/nature-2.jpg",
+              "https://swiperjs.com/demos/images/nature-3.jpg",
+              "https://swiperjs.com/demos/images/nature-4.jpg"
+            ],
+            "price": 40,
+            "square": "90 m2",
+            "capacity": 4,
+            "beds": "2 Queen Bed",
+            "features": [
+              "Air conditioning",
+              "Private Bathroom",
+              "Free WiFi",
+              "Free toiletries",
+              "Shower",
+              "Safe",
+              "Toilet",
+              "Towels",
+              "Tile/Marble floor",
+              "Desk",
+              "Refrigerator",
+              "Telephone",
+              "Ironing facilities",
+              "Satellite channels",
+              "Tea/Coffee make",
+              "Hairdryer",
+              "Electric kettle",
+              "Wake-up service",
+              "Wardrobe or close"
+            ]
+          },
+          "quantity": 2
+        }
+      ],
+      "totalPrice": 40,
+      "user": {
+        "firstName": "tronglke",
+        "lastName": "lehuutrong",
+        "email": "321312321@gmai.com",
+        "phoneNumber": 32132131232,
+        "payMethod": "card",
+        "address": "",
+        "city": "",
+        "state": "",
+        "zipCode": "",
+        "country": "",
+        "requirement": ""
+      },
+      "id": 3
+    },
+    {
+      "breakFast": {
+        "price": 120,
+        "quantity": 2,
+        "status": true,
+        "title": "breakfast"
+      },
+      "duration": {
+        "from": "Wed Apr 23 2025",
+        "to": "Wed Apr 23 2025"
+      },
+      "guests": "2 Adults - 2 Children",
+      "hotelId": 1,
+      "rooms": [
+        {
+          "data": {
+            "id": 1,
+            "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274611/Hotels/uykb9oefs9fdcvwezj56.png",
+            "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
+            "type": "Family Suite",
+            "quantity": 4,
+            "status": false,
+            "images": [
+              "https://swiperjs.com/demos/images/nature-1.jpg",
+              "https://swiperjs.com/demos/images/nature-2.jpg",
+              "https://swiperjs.com/demos/images/nature-3.jpg",
+              "https://swiperjs.com/demos/images/nature-4.jpg"
+            ],
+            "price": 40,
+            "square": "90 m2",
+            "capacity": 4,
+            "beds": "2 Queen Bed",
+            "features": [
+              "Air conditioning",
+              "Private Bathroom",
+              "Free WiFi",
+              "Free toiletries",
+              "Shower",
+              "Safe",
+              "Toilet",
+              "Towels",
+              "Tile/Marble floor",
+              "Desk",
+              "Refrigerator",
+              "Telephone",
+              "Ironing facilities",
+              "Satellite channels",
+              "Tea/Coffee make",
+              "Hairdryer",
+              "Electric kettle",
+              "Wake-up service",
+              "Wardrobe or close"
+            ]
+          },
+          "quantity": 3
+        }
+      ],
+      "totalPrice": 360,
+      "user": {
+        "firstName": "tronglke",
+        "lastName": "321321",
+        "email": "321321@gmail.com",
+        "phoneNumber": 321321321,
+        "payMethod": "card",
+        "address": "",
+        "city": "",
+        "state": "",
+        "zipCode": "",
+        "country": "",
+        "requirement": ""
+      },
+      "id": 4
+    }
+  ],
+  "codes": [
+    {
+      "id": 1,
+      "code": "code1",
+      "discount": 0.5
+    },
+    {
+      "id": 2,
+      "code": "code2",
+      "discount": 0.2
+    },
+    {
+      "id": 3,
+      "code": "code3",
+      "discount": 0.1
     }
   ]
 }

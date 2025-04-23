@@ -53,7 +53,12 @@ const Room = ({ room }: { room: IRoom }) => {
       changeStatusRoom(roomId, status),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["rooms"] });
-      toast.success("Successfully");
+      toast.success("Successfully", {
+        style: {
+          backgroundColor: "#4caf50",
+          color: "#ffffff",
+        },
+      });
     },
   });
 

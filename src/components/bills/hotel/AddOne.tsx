@@ -29,14 +29,24 @@ const AddOne = ({ breakfast, extraBed }: Props) => {
 
   const handleDecreaseBreakfast = (breakfast: IBreakfast) => {
     if (breakfast.quantity < 1) {
-      return toast.warning("Cannot decrease further");
+      return toast.warning("Cannot decrease further", {
+        style: {
+          backgroundColor: "#FF0B55",
+          color: "#ffffff",
+        },
+      });
     }
     dispatch(deCreaseBreakfast());
   };
 
   const handleIncreaseBreakfast = (breakfast: IBreakfast) => {
     if (breakfast.quantity > 6) {
-      return toast.warning("Cannot increase further");
+      return toast.warning("Cannot increase further", {
+        style: {
+          backgroundColor: "#FF0B55",
+          color: "#ffffff",
+        },
+      });
     }
 
     dispatch(inCreaseBreakfast());
@@ -48,7 +58,12 @@ const AddOne = ({ breakfast, extraBed }: Props) => {
 
   const handleDecreaseExtraBed = (extraBed: IExtraBed) => {
     if (extraBed.quantity < 1) {
-      return toast.warning("Cannot decrease further");
+      return toast.warning("Cannot decrease further", {
+        style: {
+          backgroundColor: "#FF0B55",
+          color: "#ffffff",
+        },
+      });
     }
 
     dispatch(deCreaseExtraBed());
@@ -56,7 +71,12 @@ const AddOne = ({ breakfast, extraBed }: Props) => {
 
   const handleIncreaseExtraBed = (extraBed: IExtraBed) => {
     if (extraBed.quantity > 6) {
-      return toast.warning("Cannot increase further");
+      return toast.warning("Cannot increase further", {
+        style: {
+          backgroundColor: "#FF0B55",
+          color: "#ffffff",
+        },
+      });
     }
     dispatch(inCreaseExtraBed());
   };

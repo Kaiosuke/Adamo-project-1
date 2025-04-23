@@ -2,23 +2,30 @@ import { CiLocationOn } from "react-icons/ci";
 import { FaCalendarAlt } from "react-icons/fa";
 import { GoPeople } from "react-icons/go";
 
-import { Input } from "@/components/ui/input";
+import { handleFormatMoney } from "@/helper";
 import { IBooking } from "@/interfaces/booking";
 import { ITour } from "@/interfaces/tour";
-import { Button } from "../../ui/button";
-import { handleFormatMoney } from "@/helper";
-import { memo } from "react";
+import { memo, useMemo } from "react";
+import Code from "../../Code";
 
-interface PropsTourCheckout {
+interface Props {
   tour: ITour;
   booking: IBooking;
+  discount?: number;
+  setDiscount: (v: number) => void;
 }
 
-const BillTourCheckout = ({ booking, tour }: PropsTourCheckout) => {
+const BillTourCheckout = ({ booking, tour, setDiscount, discount }: Props) => {
   const handleGetDay = (v: string) => {
     const time = new Date(v);
     return time.toLocaleDateString("vi-VN");
   };
+
+  const handleDisCount = useMemo(() => {
+    return discount
+      ? booking.totalPrice - booking.totalPrice * discount
+      : booking.totalPrice;
+  }, [discount, booking]);
 
   return (
     <>
@@ -51,23 +58,11 @@ const BillTourCheckout = ({ booking, tour }: PropsTourCheckout) => {
             <GoPeople className="text-primary text-xl" />
             <div className="text-secondary">{booking.guests}</div>
           </div>
-          <div className="w-full h-[56px] flex items-center gap-4 text-sm">
-            <div className="flex-[1_0_auto]  h-full">
-              <Input
-                className="bg-third rounded-none h-full p-0 py-2 pl-3 placeholder:text-four"
-                placeholder="Promo Code"
-              />
-            </div>
-            <div className="text-secondary w-[112px] h-full">
-              <Button variant={"outline"} className="font-bold border-2 h-full">
-                Apply
-              </Button>
-            </div>
-          </div>
+          <Code setDiscount={setDiscount} />
         </div>
         <div className="flex justify-between items-center bg-secondary text-third text-size-xl lg:p-8 p-4">
           <span>Total</span>
-          <span>{handleFormatMoney(booking.totalPrice)}</span>
+          <span>{handleFormatMoney(handleDisCount)}</span>
         </div>
       </div>
     </>

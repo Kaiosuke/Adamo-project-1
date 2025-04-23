@@ -37,14 +37,24 @@ const FilterTour = () => {
     dispatch(filterByType(typeTour));
     dispatch(filterByDuration(durationTour));
     dispatch(filterByPrice(prices));
-    toast.success("Filter successfully");
+    toast.success("Filter successfully", {
+      style: {
+        backgroundColor: "#4caf50",
+        color: "#ffffff",
+      },
+    });
     localStorage.setItem("currentPageTour", "0");
   }, 1000);
 
   const handleResetFilter = () => {
-    toast.success("Reset successfully");
+    toast.success("Reset successfully", {
+      style: {
+        backgroundColor: "#4caf50",
+        color: "#ffffff",
+      },
+    });
     setDurationTour("");
-    setPrices([0, 1200]);
+    setPrices([0, 300]);
     setTypeTour([]);
   };
 

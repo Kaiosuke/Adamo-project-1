@@ -1,16 +1,6 @@
-import Card from "@/assets/images/card.png";
-import Paypal from "@/assets/images/paypal.png";
 import FormComp from "@/components/forms/FormCom";
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "@/components/ui/form";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Form } from "@/components/ui/form";
 import { userSchema } from "@/schemas/userSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -21,6 +11,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
 import { bookingHotel } from "@/api/bookingRequest";
+import PayMethod from "@/components/PayMethod";
 import { IBookingHotel } from "@/interfaces/booking";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
@@ -29,9 +20,10 @@ import { StringParam, useQueryParams, withDefault } from "use-query-params";
 
 interface Props {
   booking: IBookingHotel;
+  discount?: number;
 }
 
-const FormInfoUser = ({ booking }: Props) => {
+const FormInfoUser = ({ booking, discount }: Props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const [query, setQuery] = useQueryParams({
@@ -97,6 +89,9 @@ const FormInfoUser = ({ booking }: Props) => {
         ...values,
         phoneNumber: Number(values.phoneNumber),
       };
+      const priceDiscount = discount
+        ? booking.totalPrice - booking.totalPrice * discount
+        : booking.totalPrice;
       mutate({
         breakFast: booking.breakFast,
         duration: booking.duration,
@@ -104,7 +99,7 @@ const FormInfoUser = ({ booking }: Props) => {
         guests: booking.guests,
         hotelId: booking.hotelId,
         rooms: booking.rooms,
-        totalPrice: booking.totalPrice,
+        totalPrice: priceDiscount,
         user: user,
       });
     },
@@ -193,58 +188,7 @@ const FormInfoUser = ({ booking }: Props) => {
             isArea
           />
         </div>
-        <div>
-          <h3 className="text-size-xl">Payment Menthod</h3>
-          <p className="text-four">
-            Pay securely—we use SSL encryption to keep your data safe
-          </p>
-          <div className="mt-6">
-            <FormField
-              control={form.control}
-              name="payMethod"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <RadioGroup
-                      value={field.value}
-                      onValueChange={field.onChange}
-                    >
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem
-                          value="card"
-                          id="r1"
-                          className=" w-[20px] h-[20px] "
-                        />
-                        <Label
-                          htmlFor="r1"
-                          className="text-size-base font-semibold flex items-center cursor-pointer"
-                        >
-                          <div className="w-[120px]">Credit Card</div>
-                          <img src={Card} />
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem
-                          value="paypal"
-                          id="r2"
-                          className=" w-[20px] h-[20px] "
-                        />
-                        <Label
-                          htmlFor="r2"
-                          className="text-size-base font-semibold flex items-center cursor-pointer"
-                        >
-                          <div className="w-[120px]">Paypal</div>
-                          <img src={Paypal} />
-                        </Label>
-                      </div>
-                    </RadioGroup>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-        </div>
+        <PayMethod form={form} name="payMethod" setQuery={setQuery} />
         <Button type="submit" className="lg:w-full w-fit px-10">
           Complete Booking
         </Button>

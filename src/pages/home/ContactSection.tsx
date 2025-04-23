@@ -30,7 +30,12 @@ const ContactSection = () => {
   const { mutate } = useMutation({
     mutationFn: (data: IContactOnlyEmail) => contact({ data }),
     onSuccess: () => {
-      toast.success("Thanks for contact us");
+      toast.success("Thanks for contact us", {
+        style: {
+          backgroundColor: "#4caf50",
+          color: "#ffffff",
+        },
+      });
       form.reset();
     },
   });

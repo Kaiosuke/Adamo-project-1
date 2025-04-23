@@ -48,7 +48,12 @@ const TourReviewForm = ({ id, setCurrentPage }: Props) => {
           };
           try {
             await dispatch(addReviewTour({ data: data })).unwrap();
-            toast.success("Comment successfully!!");
+            toast.success("Comment successfully!!", {
+              style: {
+                backgroundColor: "#4caf50",
+                color: "#ffffff",
+              },
+            });
             form.reset({
               message: "",
               star: 0,
@@ -58,7 +63,12 @@ const TourReviewForm = ({ id, setCurrentPage }: Props) => {
             });
             setCurrentPage(0);
           } catch (error) {
-            toast.error(String(error));
+            toast.error(String(error), {
+              style: {
+                backgroundColor: "#FF0B55",
+                color: "#ffffff",
+              },
+            });
           }
         }
       })();

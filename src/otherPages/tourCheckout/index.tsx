@@ -4,7 +4,7 @@ import PdMain from "@/components/Padding/PdMain";
 import PdSub from "@/components/Padding/PdSub";
 import { useAppDispatch } from "@/redux";
 import { bookingSelector } from "@/redux/selectors/bookingSelector";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import FormInfoUser from "./FormInfoUser";
 import { Link } from "react-router";
@@ -33,6 +33,8 @@ const TourCheckOut = () => {
   const { t } = useTranslation("checkout");
 
   const { tour } = useSelector(tourSelector);
+
+  const [discount, setDiscount] = useState<number>();
 
   return (
     <>
@@ -63,7 +65,12 @@ const TourCheckOut = () => {
           </div>
           <div className="lg:flex-[0_0_30%] flex-[0_0_auto] max-w-[380px] w-full bg-four h-fit">
             {tour && booking && (
-              <BillTourCheckout booking={booking} tour={tour} />
+              <BillTourCheckout
+                booking={booking}
+                tour={tour}
+                setDiscount={setDiscount}
+                discount={discount}
+              />
             )}
           </div>
         </div>

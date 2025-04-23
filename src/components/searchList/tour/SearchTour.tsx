@@ -50,7 +50,12 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
   const handleFilter = useDebouncedCallback(() => {
     dispatch(filterByLocation(locationFilter));
     dispatch(filterByType(typeFilter));
-    toast.success("Filter successfully");
+    toast.success("Filter successfully", {
+      style: {
+        backgroundColor: "#4caf50",
+        color: "#ffffff",
+      },
+    });
     navigate(`/tours?from=${from.toDateString()}`);
   }, 300);
 

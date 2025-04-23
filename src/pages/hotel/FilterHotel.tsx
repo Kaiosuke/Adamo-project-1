@@ -49,14 +49,24 @@ const FilterHotel = () => {
       _page: 1,
     });
     setLoading(false);
-    toast.success("Filter successfully");
+    toast.success("Filter successfully", {
+      style: {
+        backgroundColor: "#4caf50",
+        color: "#ffffff",
+      },
+    });
   }, 300);
 
   const handleResetFilter = useDebouncedCallback(() => {
     setQuery({ score: "" });
     setQuery({ prices: `0,300` });
     setQuery({ star: "" });
-    toast.success("Reset successfully");
+    toast.success("Reset successfully", {
+      style: {
+        backgroundColor: "#4caf50",
+        color: "#ffffff",
+      },
+    });
   }, 300);
 
   const handleChangeValueSlide = useCallback((v: number[]) => {

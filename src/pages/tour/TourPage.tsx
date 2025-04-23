@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 import PaginationWithShow from "@/components/paginations/PaginationWithShow";
 import Tour from "@/components/Tour";
-import LoadingItem from "@/components/LoadingList/LoadingItem";
+import SkeletonData from "@/components/SkeletonHotel";
 
 const TourPage = () => {
   const { tours, loading } = useSelector(tourSelector);
@@ -59,17 +59,17 @@ const TourPage = () => {
     localStorage.setItem("currentPageTour", e.toLocaleString());
   }, []);
 
-  if (loading) {
-    return <LoadingItem />;
-  }
-
   return (
     <>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 lg:pt-16 md:pt-10 pt-6">
-        {tours.length ? (
+        {loading ? (
+          Array.from({ length: 6 }).map((_, index) => (
+            <SkeletonData key={index} />
+          ))
+        ) : tours.length ? (
           tours.map((tour) => <Tour key={tour.id} tour={tour} />)
         ) : (
-          <div className="text-size-2xl text-secondary">Not found Tour</div>
+          <div className="mt-4 text-size-2xl">Not found Tour</div>
         )}
       </div>
       <PaginationWithShow

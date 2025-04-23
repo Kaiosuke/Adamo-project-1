@@ -10,6 +10,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import { Link } from "react-router";
 import FormInfoUser from "./FormInfoUser";
+import { useState } from "react";
 
 const HotelCheckOut = () => {
   const { t } = useTranslation("checkout");
@@ -23,6 +24,8 @@ const HotelCheckOut = () => {
     queryFn: () => getHotelById(Number(id)),
     enabled: id !== undefined,
   });
+
+  const [discount, setDiscount] = useState<number>();
 
   return (
     <>
@@ -46,11 +49,18 @@ const HotelCheckOut = () => {
               <h2 className="text-size-2xl">{t("tour.travel")}</h2>
               <p className="text-four">{t("tour.description")}</p>
             </div>
-            {bookingHotel && data && <FormInfoUser booking={bookingHotel} />}
+            {bookingHotel && data && (
+              <FormInfoUser booking={bookingHotel} discount={discount} />
+            )}
           </div>
           <div className="lg:flex-[0_0_30%] flex-[0_0_auto] max-w-[380px] w-full bg-four h-fit">
             {data && bookingHotel && (
-              <BillHotelCheckOut data={data} bookingHotel={bookingHotel} />
+              <BillHotelCheckOut
+                data={data}
+                bookingHotel={bookingHotel}
+                discount={discount}
+                setDiscount={setDiscount}
+              />
             )}
           </div>
         </div>

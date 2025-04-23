@@ -86,7 +86,12 @@ const BillTourDetail = () => {
       };
 
       disPatch(addBooking(data));
-      toast.success("Booking successfully");
+      toast.success("Booking successfully", {
+        style: {
+          backgroundColor: "#4caf50",
+          color: "#ffffff",
+        },
+      });
       navigate("/tour-checkout");
     }
   }

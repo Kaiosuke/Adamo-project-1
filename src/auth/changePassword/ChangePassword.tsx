@@ -35,9 +35,20 @@ const ChangePassword = () => {
       try {
         await dispatch(changePassword(values.password)).unwrap();
         form.reset();
-        toast.success("Change Password success");
+        toast.success("Change Password success", {
+          style: {
+            backgroundColor: "#4caf50",
+            color: "#ffffff",
+          },
+        });
       } catch (error) {
-        typeof error === "string" && toast.error(error);
+        typeof error === "string" &&
+          toast.error(error, {
+            style: {
+              backgroundColor: "#FF0B55",
+              color: "#ffffff",
+            },
+          });
       }
     })();
   }

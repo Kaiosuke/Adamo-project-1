@@ -47,7 +47,12 @@ const ReviewForm = ({
       form.reset();
       setQuery({ _page: 1 });
       setCurrentPage(0);
-      toast.success("Comment success");
+      toast.success("Comment success", {
+        style: {
+          backgroundColor: "#4caf50",
+          color: "#ffffff",
+        },
+      });
     },
   });
 

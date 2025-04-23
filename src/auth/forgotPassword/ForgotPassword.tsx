@@ -32,9 +32,20 @@ const ForgotPassword = () => {
       try {
         await dispatch(forgotPassword(values.email));
         form.reset();
-        toast.success("Please check your email");
+        toast.success("Please check your email", {
+          style: {
+            backgroundColor: "#4caf50",
+            color: "#ffffff",
+          },
+        });
       } catch (error) {
-        typeof error === "string" && toast.error(error);
+        typeof error === "string" &&
+          toast.error(error, {
+            style: {
+              backgroundColor: "#FF0B55",
+              color: "#ffffff",
+            },
+          });
       }
     })();
   }

@@ -45,7 +45,12 @@ const SortHotel = () => {
   const handleSelect = (v: string) => {
     const [sort, order] = v.split("-");
     setQuery({ _sort: sort, _order: order, _page: 1 });
-    toast.success("Sort successfully");
+    toast.success("Sort successfully", {
+      style: {
+        backgroundColor: "#4caf50",
+        color: "#ffffff",
+      },
+    });
   };
 
   console.log("hotel-sort");

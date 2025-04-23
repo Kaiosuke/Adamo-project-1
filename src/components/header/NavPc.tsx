@@ -79,7 +79,12 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
   const handleLogout = async () => {
     try {
       await dispatch(logout()).unwrap();
-      toast.success("Sign Success");
+      toast.success("Sign Success", {
+        style: {
+          backgroundColor: "#4caf50",
+          color: "#ffffff",
+        },
+      });
     } catch (error) {
       console.log(error);
     }

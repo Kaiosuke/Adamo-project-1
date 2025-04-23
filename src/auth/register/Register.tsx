@@ -36,10 +36,21 @@ const Login = () => {
       const user = await dispatch(loginByFb()).unwrap();
       if (user) {
         navigate("/");
-        toast.success("Login Success");
+        toast.success("Login Success", {
+          style: {
+            backgroundColor: "#4caf50",
+            color: "#ffffff",
+          },
+        });
       }
     } catch (error) {
-      typeof error === "string" && toast.error(error);
+      typeof error === "string" &&
+        toast.error(error, {
+          style: {
+            backgroundColor: "#FF0B55",
+            color: "#ffffff",
+          },
+        });
     }
   };
 
@@ -56,10 +67,21 @@ const Login = () => {
             lastName: values.lastName,
           })
         ).unwrap();
-        toast.success("Register Success");
+        toast.success("Register Success", {
+          style: {
+            backgroundColor: "#4caf50",
+            color: "#ffffff",
+          },
+        });
         form.reset();
       } catch (error) {
-        typeof error === "string" && toast.error(error);
+        typeof error === "string" &&
+          toast.error(error, {
+            style: {
+              backgroundColor: "#FF0B55",
+              color: "#ffffff",
+            },
+          });
       }
     })();
   }

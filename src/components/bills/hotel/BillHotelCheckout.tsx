@@ -4,20 +4,33 @@ import { CiLocationOn } from "react-icons/ci";
 import { FaCalendarAlt } from "react-icons/fa";
 import { GoPeople } from "react-icons/go";
 
+import Code from "@/components/Code";
 import { IBookingHotel } from "@/interfaces/booking";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Fragment, useMemo } from "react";
 
-interface PropsBillCheckout {
+interface Props {
   data: IHotel;
   bookingHotel: IBookingHotel;
+  setDiscount: (v: number) => void;
+  discount?: number;
 }
 
-const BillHotelCheckOut = ({ data, bookingHotel }: PropsBillCheckout) => {
+const BillHotelCheckOut = ({
+  data,
+  bookingHotel,
+  discount,
+  setDiscount,
+}: Props) => {
   const handleGetDay = (v: string) => {
     const time = new Date(v);
     return time.toLocaleDateString("vi-VN");
   };
+
+  const handleDisCount = useMemo(() => {
+    return discount
+      ? bookingHotel.totalPrice - bookingHotel.totalPrice * discount
+      : bookingHotel.totalPrice;
+  }, [discount, bookingHotel]);
 
   return (
     <>
@@ -48,8 +61,8 @@ const BillHotelCheckOut = ({ data, bookingHotel }: PropsBillCheckout) => {
               <div className="text-secondary">{bookingHotel.guests}</div>
             </div>
             <div>
-              {bookingHotel.rooms.map((room) => (
-                <>
+              {bookingHotel.rooms.map((room, index) => (
+                <Fragment key={index}>
                   {room.quantity > 0 && (
                     <div
                       key={room.data.id}
@@ -65,7 +78,7 @@ const BillHotelCheckOut = ({ data, bookingHotel }: PropsBillCheckout) => {
                       </div>
                     </div>
                   )}
-                </>
+                </Fragment>
               ))}
             </div>
             <div>
@@ -99,26 +112,11 @@ const BillHotelCheckOut = ({ data, bookingHotel }: PropsBillCheckout) => {
                 )}
               </div>
             </div>
-            <div className="w-full h-[56px] flex items-center gap-4 text-sm">
-              <div className="flex-[1_0_auto]  h-full">
-                <Input
-                  className="bg-third rounded-none h-full p-0 py-2 pl-3 placeholder:text-four"
-                  placeholder="Promo Code"
-                />
-              </div>
-              <div className="text-secondary w-[112px] h-full">
-                <Button
-                  variant={"outline"}
-                  className="font-bold border-2 h-full"
-                >
-                  Apply
-                </Button>
-              </div>
-            </div>
+            <Code setDiscount={setDiscount} />
           </div>
           <div className="flex justify-between items-center bg-secondary text-third text-size-xl lg:p-8 p-4">
             <span>Total</span>
-            <span>{handleFormatMoney(bookingHotel.totalPrice)}</span>
+            <span>{handleFormatMoney(handleDisCount)}</span>
           </div>
         </div>
       }

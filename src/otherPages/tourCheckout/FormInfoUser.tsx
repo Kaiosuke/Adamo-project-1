@@ -13,13 +13,14 @@ import { useDebouncedCallback } from "use-debounce";
 
 import { StringParam, useQueryParams, withDefault } from "use-query-params";
 import { z } from "zod";
-import PayMethod from "./PayMethod";
+import PayMethod from "../../components/PayMethod";
 
 interface Props {
   booking: IBooking;
+  discount?: number;
 }
 
-const FormInfoUser = ({ booking }: Props) => {
+const FormInfoUser = ({ booking, discount }: Props) => {
   const [query, setQuery] = useQueryParams({
     firstName: withDefault(StringParam, ""),
     lastName: withDefault(StringParam, ""),
@@ -56,7 +57,12 @@ const FormInfoUser = ({ booking }: Props) => {
   const { mutate } = useMutation({
     mutationFn: (data: IBooking) => bookingTour({ data }),
     onSuccess: () => {
-      toast.success("Booking tour success");
+      toast.success("Booking tour success", {
+        style: {
+          backgroundColor: "#4caf50",
+          color: "#ffffff",
+        },
+      });
 
       form.reset();
       navigate("/thanks");
@@ -69,11 +75,14 @@ const FormInfoUser = ({ booking }: Props) => {
         ...values,
         phoneNumber: Number(values.phoneNumber),
       };
+      const priceDiscount = discount
+        ? booking.totalPrice - booking.totalPrice * discount
+        : booking.totalPrice;
       mutate({
         day: booking.day,
         duration: booking.duration,
         guests: booking.guests,
-        totalPrice: booking.totalPrice,
+        totalPrice: priceDiscount,
         tourId: booking.tourId,
         user: user,
       });

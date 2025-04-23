@@ -29,8 +29,9 @@ const PayMethod = <T extends FieldValues>({
 }: Props<T>) => {
   const handleChangeValue = useCallback(
     (v: string, field: ControllerRenderProps<T, Path<T>>) => {
-      field.onChange;
+      field.onChange(v);
       setQuery && setQuery({ [name]: v });
+      console.log(v);
     },
     []
   );

@@ -1,7 +1,9 @@
 import { getHotels } from "@/api/hotelRequest";
 import Hotel from "@/components/Hotel";
-import SkeletonHotel from "@/components/SkeletonHotel";
+
+import { Skeleton } from "@/components/ui/skeleton";
 import { useQuery } from "@tanstack/react-query";
+import { memo } from "react";
 import { Trans } from "react-i18next";
 import {
   NumberParam,
@@ -11,7 +13,6 @@ import {
 } from "use-query-params";
 import FilterHotel from "./FilterHotel";
 import SortHotel from "./SortHotel";
-import { memo } from "react";
 
 const HotelSection = () => {
   const [query] = useQueryParams({
@@ -59,7 +60,7 @@ const HotelSection = () => {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {isLoading ? (
             Array.from({ length: 6 }).map((_, index) => (
-              <SkeletonHotel key={index} />
+              <Skeleton key={index} />
             ))
           ) : data && data.length ? (
             data.map((hotel) => <Hotel key={hotel.id} hotel={hotel} />)

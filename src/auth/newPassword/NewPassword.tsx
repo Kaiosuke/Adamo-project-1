@@ -47,10 +47,21 @@ const NewPassword = () => {
           newPassword({ oobCode: oobCode, newPassword: values.password })
         ).unwrap();
         form.reset();
-        toast.success("Change Password success");
+        toast.success("Change Password success", {
+          style: {
+            backgroundColor: "#4caf50",
+            color: "#ffffff",
+          },
+        });
         navigate("/auth/login");
       } catch (error) {
-        typeof error === "string" && toast.error(error);
+        typeof error === "string" &&
+          toast.error(error, {
+            style: {
+              backgroundColor: "#FF0B55",
+              color: "#ffffff",
+            },
+          });
       }
     })();
   }
@@ -62,10 +73,21 @@ const NewPassword = () => {
       const user = await dispatch(loginByFb()).unwrap();
       if (user) {
         navigate("/");
-        toast.success("Login Success");
+        toast.success("Login Success", {
+          style: {
+            backgroundColor: "#4caf50",
+            color: "#ffffff",
+          },
+        });
       }
     } catch (error) {
-      typeof error === "string" && toast.error(error);
+      typeof error === "string" &&
+        toast.error(error, {
+          style: {
+            backgroundColor: "#FF0B55",
+            color: "#ffffff",
+          },
+        });
     }
   };
 

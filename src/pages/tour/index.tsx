@@ -14,8 +14,8 @@ import SearchTour from "@/components/searchList/tour/SearchTour";
 const Tour = () => {
   const { t } = useTranslation("tour");
 
-  const links = useMemo(() => [{ title: "home", href: "/" }], []);
-  const current = useMemo(() => "tour", []);
+  const links = useMemo(() => [{ title: "Home", href: "/" }], []);
+  const current = useMemo(() => "Tour", []);
 
   console.log("Tour");
 

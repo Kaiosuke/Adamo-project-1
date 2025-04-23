@@ -101,7 +101,12 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
   const onSubmit = useDebouncedCallback(
     (values: z.infer<typeof bookingHotelSchema>) => {
       if (rooms.length < 1) {
-        return toast.error("Please select at least 1 room");
+        return toast.error("Please select at least 1 room", {
+          style: {
+            backgroundColor: "#FF0B55",
+            color: "#ffffff",
+          },
+        });
       }
       if (date?.from && date.to) {
         const data: IBookingHotel = {
@@ -120,10 +125,20 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
         };
 
         dispatch(addBookingHotel(data));
-        toast.success("Booking successfully");
+        toast.success("Booking successfully", {
+          style: {
+            backgroundColor: "#4caf50",
+            color: "#ffffff",
+          },
+        });
         navigate("/hotel-checkout");
       } else {
-        toast.warning("Please choose dates");
+        toast.warning("Please choose dates", {
+          style: {
+            backgroundColor: "#FF0B55",
+            color: "#ffffff",
+          },
+        });
       }
     },
     300
