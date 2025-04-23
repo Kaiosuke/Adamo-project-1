@@ -1,4 +1,4 @@
-import PdMain from "@/components/PdMain";
+import PdMain from "@/components/Padding/PdMain";
 import HeroSection from "./HeroSection";
 import { useTranslation } from "react-i18next";
 import IntroduceSection from "./IntroduceSection";

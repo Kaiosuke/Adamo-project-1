@@ -152,4 +152,21 @@ const getFiltersTour = createAsyncThunk<
   }
 });
 
-export { getAllTour, getTourById, getFiltersTour };
+const getTours = async ({
+  _page = 1,
+  _limit = 10,
+}: {
+  _page?: number;
+  _limit?: number;
+}): Promise<ITour[]> => {
+  const res = await instanceLocal("tours", {
+    params: {
+      _page: _page,
+      _limit: _limit,
+    },
+  });
+
+  return res.data;
+};
+
+export { getAllTour, getTourById, getFiltersTour, getTours };

@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import LoadedImage from "./LoadingList/LoadedImage";
+import LoadedImage from "../LoadingList/LoadedImage";
 
 const SwiperCom = ({ images }: { images?: string[] }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);

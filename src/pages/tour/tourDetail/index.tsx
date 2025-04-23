@@ -1,8 +1,8 @@
 import { getReviewTourList } from "@/api/reviewRequest";
 import { getTourById } from "@/api/tourRequest";
 import BreadcrumbCom from "@/components/Breadcrumb";
-import PdMain from "@/components/PdMain";
-import PdSub from "@/components/PdSub";
+import PdMain from "@/components/Padding/PdMain";
+import PdSub from "@/components/Padding/PdSub";
 
 import { useAppDispatch } from "@/redux";
 import { tourSelector } from "@/redux/selectors/tourSelector";
@@ -15,7 +15,7 @@ import RelatedTours from "./RelatedTours";
 
 import TourDetailTabs from "./TourDetailTabs";
 import BillTourDetail from "@/components/bills/tour/BillTourDetail";
-import SwiperCom from "@/components/SwiperCom";
+import SwiperCom from "@/components/swiper/SwiperCom";
 
 const TourDetail = () => {
   const { id } = useParams();

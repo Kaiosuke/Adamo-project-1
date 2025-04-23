@@ -1,7 +1,7 @@
 import BreadcrumbCom from "@/components/Breadcrumb";
-import PdMain from "@/components/PdMain";
-import PdSub from "@/components/PdSub";
-import SwiperCom from "@/components/SwiperCom";
+import PdMain from "@/components/Padding/PdMain";
+import PdSub from "@/components/Padding/PdSub";
+
 import { useEffect, useMemo, useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineStar } from "react-icons/md";
@@ -13,6 +13,7 @@ import { getHotelById } from "@/api/hotelRequest";
 import { useQuery } from "@tanstack/react-query";
 import { getReviewsHotel } from "@/api/reviewRequest";
 import BillHotelDetail from "@/components/bills/hotel/BillHotelDetail";
+import SwiperCom from "@/components/swiper/SwiperCom";
 
 const HotelDetail = () => {
   const { id } = useParams();

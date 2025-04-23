@@ -1,8 +1,8 @@
 import HotelImg from "@/assets/images/hotel.png";
 import BreadcrumbCom from "@/components/Breadcrumb";
 import HeroSectionCom from "@/components/HeroSectionCom";
-import PdMain from "@/components/PdMain";
-import PdSub from "@/components/PdSub";
+import PdMain from "@/components/Padding/PdMain";
+import PdSub from "@/components/Padding/PdSub";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import HotelSection from "./HotelSection";

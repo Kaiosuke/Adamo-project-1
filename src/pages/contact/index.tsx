@@ -1,8 +1,8 @@
 import HeroImage from "@/assets/images/hero-contact.png";
 import BreadcrumbCom from "@/components/Breadcrumb";
 import MapCom from "@/components/MapCom";
-import PdMain from "@/components/PdMain";
-import PdSub from "@/components/PdSub";
+import PdMain from "@/components/Padding/PdMain";
+import PdSub from "@/components/Padding/PdSub";
 import ContactSection from "./ContactSection";
 import { Trans, useTranslation } from "react-i18next";
 

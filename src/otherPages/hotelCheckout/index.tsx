@@ -1,8 +1,8 @@
 import { getHotelById } from "@/api/hotelRequest";
 
 import BillHotelCheckOut from "@/components/bills/hotel/BillHotelCheckout";
-import PdMain from "@/components/PdMain";
-import PdSub from "@/components/PdSub";
+import PdMain from "@/components/Padding/PdMain";
+import PdSub from "@/components/Padding/PdSub";
 import { bookingSelector } from "@/redux/selectors/bookingSelector";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";

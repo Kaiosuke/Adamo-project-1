@@ -1,16 +1,13 @@
 import ButtonFeature from "@/components/ButtonFeature";
 import Tour from "@/components/Tour";
-import { tourSelector } from "@/redux/selectors/tourSelector";
+import { ITour } from "@/interfaces/tour";
 import { Trans } from "react-i18next";
-import { useSelector } from "react-redux";
 import { Link } from "react-router";
-import { Fragment } from "react/jsx-runtime";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-const AttractiveSection = () => {
-  const { tours } = useSelector(tourSelector);
-
-  const newTours = tours.slice(1, 4);
-
+const AttractiveSection = ({ data }: { data: ITour[] }) => {
   return (
     <section className="main-container">
       <div className="flex">
@@ -23,13 +20,21 @@ const AttractiveSection = () => {
           </Link>
         </div>
       </div>
-      <div className="grid lg:grid-cols-3 gap-4 md:grid-cols-2 grid-cols-1 pt-6">
-        {newTours.map((tour) => (
-          <Fragment key={tour.id}>
-            <Tour tour={tour} />
-          </Fragment>
-        ))}
-      </div>
+
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={12}
+        className="mySwiper2 opacity-none"
+      >
+        <div className="grid lg:grid-cols-3 gap-4 md:grid-cols-2 grid-cols-1 pt-6 opacity-none">
+          {data?.length &&
+            data.map((v) => (
+              <SwiperSlide>
+                <Tour key={v.id} tour={v} />
+              </SwiperSlide>
+            ))}
+        </div>
+      </Swiper>
     </section>
   );
 };
