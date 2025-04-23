@@ -19,9 +19,11 @@ import { useNavigate } from "react-router";
 import { toast } from "sonner";
 import { useDebouncedCallback } from "use-debounce";
 import { StringParam, useQueryParams } from "use-query-params";
+import LoadingSearch from "@/components/LoadingList/LoadingSearch";
 
 const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
-  const { locations, guests, types, filter } = useSelector(tourSelector);
+  const { locations, guests, types, filter, loading } =
+    useSelector(tourSelector);
   const { location, type, guest } = filter;
   const { t } = useTranslation("search");
 
@@ -61,55 +63,63 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
 
   return (
     <div
-      className={`w-full bg-third/80 ${
+      className={`w-full h-full bg-third/80 ${
         !isHome
           ? "flex-[0_0_30%] 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8"
           : null
       }`}
     >
-      <div className="lg:px-8 lg:py-8 px-6 py-6">
-        <p className="text-size-2xl">{t("tour.description")}</p>
-        <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
-          <LocationCom
-            data={locations}
-            location={location}
-            setLocation={setLocationFilter}
-            t={t}
-          />
+      {loading ? (
+        <div className="lg:h-[503px] w-[100%]">
+          <LoadingSearch />
+        </div>
+      ) : (
+        <>
+          <div className="lg:px-8 lg:py-8 px-6 py-6">
+            <p className="text-size-2xl">{t("tour.description")}</p>
+            <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
+              <LocationCom
+                data={locations}
+                location={location}
+                setLocation={setLocationFilter}
+                t={t}
+              />
 
-          <div className="group bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
-            <DatePickerSingle
-              date={date}
-              setDate={setDate}
-              setQuery={setQuery}
-            />
+              <div className="group bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
+                <DatePickerSingle
+                  date={date}
+                  setDate={setDate}
+                  setQuery={setQuery}
+                />
+              </div>
+
+              <TypeCom
+                data={types}
+                setTypeFilter={setTypeFilter}
+                t={t}
+                type={type}
+              />
+
+              <GuestCom
+                data={guests}
+                guest={guest}
+                setGuest={handleFilterGuest}
+                t={t}
+              />
+            </div>
+            <div className="lg:pt-6 pt-4">
+              <Button
+                variant="primary"
+                className="flex justify-center gap-2 text-third"
+                onClick={handleFilter}
+              >
+                <CiSearch className="text-size-lg" />
+                {t("tour.search")}
+              </Button>
+            </div>
           </div>
-
-          <TypeCom
-            data={types}
-            setTypeFilter={setTypeFilter}
-            t={t}
-            type={type}
-          />
-
-          <GuestCom
-            data={guests}
-            guest={guest}
-            setGuest={handleFilterGuest}
-            t={t}
-          />
-        </div>
-        <div className="lg:pt-6 pt-4">
-          <Button
-            variant="primary"
-            className="flex justify-center gap-2 text-third"
-            onClick={handleFilter}
-          >
-            <CiSearch className="text-size-lg" />
-            {t("tour.search")}
-          </Button>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 };

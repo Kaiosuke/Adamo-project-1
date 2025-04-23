@@ -17,10 +17,6 @@ const ReviewTour = ({ review }: { review: IReviewTour }) => {
             {Array.from({ length: review.rate }).map((_, index) => (
               <FaStar className="text-nine" key={index} />
             ))}
-            {/* <FaStar className="text-nine" />
-            <FaStar className="text-nine" />
-            <FaStar className="text-nine" />
-            <FaStar className="text-four" /> */}
           </div>
           <div className="font-bold">{review.title}</div>
           <div className="flex gap-2 items-center">

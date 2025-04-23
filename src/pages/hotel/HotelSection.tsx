@@ -1,7 +1,7 @@
 import { getHotels } from "@/api/hotelRequest";
 import Hotel from "@/components/Hotel";
 
-import { Skeleton } from "@/components/ui/skeleton";
+import SkeletonData from "@/components/SkeletonHotel";
 import { useQuery } from "@tanstack/react-query";
 import { memo } from "react";
 import { Trans } from "react-i18next";
@@ -60,7 +60,7 @@ const HotelSection = () => {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {isLoading ? (
             Array.from({ length: 6 }).map((_, index) => (
-              <Skeleton key={index} />
+              <SkeletonData key={index} />
             ))
           ) : data && data.length ? (
             data.map((hotel) => <Hotel key={hotel.id} hotel={hotel} />)

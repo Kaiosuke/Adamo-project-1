@@ -28,11 +28,12 @@ const GuestCom = ({ guest, setGuest, t, data }: Props) => {
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            {data.map((v, index) => (
-              <SelectItem value={v} key={index}>
-                {v}
-              </SelectItem>
-            ))}
+            {data.length &&
+              data.map((v, index) => (
+                <SelectItem value={v} key={index}>
+                  {v}
+                </SelectItem>
+              ))}
           </SelectGroup>
         </SelectContent>
       </Select>

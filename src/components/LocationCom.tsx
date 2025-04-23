@@ -33,11 +33,12 @@ const LocationCom = ({ location, setLocation, t, data }: Props) => {
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            {data.map((v, index) => (
-              <SelectItem value={v} key={index}>
-                {v.length < 2 ? "All" : v}
-              </SelectItem>
-            ))}
+            {data.length &&
+              data.map((v, index) => (
+                <SelectItem value={v} key={index}>
+                  {v.length < 2 ? "All" : v}
+                </SelectItem>
+              ))}
           </SelectGroup>
         </SelectContent>
       </Select>

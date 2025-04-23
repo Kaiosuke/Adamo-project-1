@@ -14,6 +14,7 @@ import { StringParam, useQueryParams } from "use-query-params";
 
 import GuestCom from "@/components/GuestCom";
 import LocationCom from "@/components/LocationCom";
+import LoadingSearch from "@/components/LoadingList/LoadingSearch";
 
 const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const { t } = useTranslation("search");
@@ -24,7 +25,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
     from: StringParam,
   });
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["filtersHotel"],
     queryFn: () => getFiltersHotel(),
   });
@@ -64,53 +65,57 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
           : "flex-[0_0_30%] lg:w-auto w-full 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8 "
       }`}
     >
-      <div className="z-10 relative h-full">
-        <div className="lg:px-8 lg:py-8 px-6 py-6 h-full">
-          <div className="text-size-2xl">{t("hotel.title")}</div>
-          <div className="flex flex-col justify-between h-full">
-            <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
-              {data && (
-                <LocationCom
-                  location={location}
-                  setLocation={setLocation}
-                  t={t}
-                  data={data?.locations}
-                />
-              )}
+      {isLoading ? (
+        <LoadingSearch />
+      ) : (
+        <div className="z-10 relative h-full">
+          <div className="lg:px-8 lg:py-8 px-6 py-6 h-full">
+            <div className="text-size-2xl">{t("hotel.title")}</div>
+            <div className="flex flex-col justify-between h-full">
+              <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
+                {data && (
+                  <LocationCom
+                    location={location}
+                    setLocation={setLocation}
+                    t={t}
+                    data={data?.locations}
+                  />
+                )}
 
-              <div className="group bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
-                <DatePickerSingle
-                  setQuery={setQuery}
-                  date={date}
-                  setDate={setDate}
-                />
+                <div className="group bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
+                  <DatePickerSingle
+                    setQuery={setQuery}
+                    date={date}
+                    setDate={setDate}
+                  />
+                </div>
+                {data && (
+                  <GuestCom
+                    guest={guest}
+                    setGuest={setGuest}
+                    t={t}
+                    data={data.guests}
+                  />
+                )}
               </div>
-              {data && (
-                <GuestCom
-                  guest={guest}
-                  setGuest={setGuest}
-                  t={t}
-                  data={data.guests}
-                />
-              )}
-            </div>
-            <div className={` ${isHome ? "mb-8 " : "mt-4"}`}>
-              <Link
-                to={`/hotels?location=${location}&guest=${guest}&from=${from.toDateString()}`}
-              >
-                <Button
-                  variant="primary"
-                  className="flex justify-center gap-2 text-third h-[64px]"
-                  onClick={handleFilter}
+              <div className={` ${isHome ? "mb-8 " : "mt-4"}`}>
+                <Link
+                  to={`/hotels?location=${location}&guest=${guest}&from=${from.toDateString()}`}
                 >
-                  <CiSearch className="text-size-lg " />
-                  Search
-                </Button>
-              </Link>
+                  <Button
+                    variant="primary"
+                    className="flex justify-center gap-2 text-third h-[64px]"
+                    onClick={handleFilter}
+                  >
+                    <CiSearch className="text-size-lg " />
+                    Search
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

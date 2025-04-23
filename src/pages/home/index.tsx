@@ -1,6 +1,8 @@
-import { getAllTour, getFiltersTour } from "@/api/tourRequest";
-import PdMain from "@/components/PdMain";
+import { getAllTour, getFiltersTour, getTours } from "@/api/tourRequest";
+import PdMain from "@/components/Padding/PdMain";
+import SkeletonData from "@/components/SkeletonHotel";
 import { useAppDispatch } from "@/redux";
+import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import AttractiveSection from "./AttractiveSection";
@@ -25,7 +27,12 @@ const Home = () => {
   }, []);
 
   useTranslation();
-  z;
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["tours"],
+    queryFn: () => getTours({}),
+  });
+
   return (
     <>
       <HeroSection />
@@ -34,11 +41,38 @@ const Home = () => {
       <PdMain />
       <PdMain />
       <PdMain />
-      <DiscoverSection />
+
+      {isLoading ? (
+        <div className="main-container grid lg:grid-cols-3 gap-4 md:grid-cols-2 grid-cols-1 pt-6 opacity-none">
+          {Array.from({ length: 3 }).map((_, index) => (
+            <SkeletonData key={index} />
+          ))}
+        </div>
+      ) : (
+        <>{data && <DiscoverSection data={data} />}</>
+      )}
+
       <PdMain />
-      <AttractiveSection />
+      {isLoading ? (
+        <div className="main-container grid lg:grid-cols-3 gap-4 md:grid-cols-2 grid-cols-1 pt-6 opacity-none">
+          {Array.from({ length: 3 }).map((_, index) => (
+            <SkeletonData key={index} />
+          ))}
+        </div>
+      ) : (
+        <>{data && <AttractiveSection data={data} />}</>
+      )}
       <PdMain />
-      <TraditionalSection />
+
+      {isLoading ? (
+        <div className="main-container grid lg:grid-cols-3 gap-4 md:grid-cols-2 grid-cols-1 pt-6 opacity-none">
+          {Array.from({ length: 3 }).map((_, index) => (
+            <SkeletonData key={index} />
+          ))}
+        </div>
+      ) : (
+        <>{data && <TraditionalSection data={data} />}</>
+      )}
       <PdMain />
       <ContactSection />
       <PdMain />

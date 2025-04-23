@@ -37,11 +37,12 @@ const TypeCom = ({ data, setTypeFilter, type, t }: Props) => {
         <SelectContent>
           <SelectGroup>
             <SelectItem value=" ">All</SelectItem>
-            {data.map((v, index) => (
-              <SelectItem value={v} key={index}>
-                {v}
-              </SelectItem>
-            ))}
+            {data.length &&
+              data.map((v, index) => (
+                <SelectItem value={v} key={index}>
+                  {v}
+                </SelectItem>
+              ))}
           </SelectGroup>
         </SelectContent>
       </Select>

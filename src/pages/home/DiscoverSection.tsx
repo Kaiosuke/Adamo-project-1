@@ -1,16 +1,14 @@
 import ButtonFeature from "@/components/ButtonFeature";
 import LoadedImage from "@/components/LoadingList/LoadedImage";
+import Tour from "@/components/Tour";
+import { ITour } from "@/interfaces/tour";
 
-import { tourSelector } from "@/redux/selectors/tourSelector";
 import { Trans } from "react-i18next";
-import { useSelector } from "react-redux";
 import { Link } from "react-router";
+import { SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
 
-const DiscoverSection = () => {
-  const { tours } = useSelector(tourSelector);
-
-  const newTours = tours.slice(2, 6);
-
+const DiscoverSection = ({ data }: { data: ITour[] }) => {
   return (
     <section className="main-container">
       <div className="flex">
@@ -23,24 +21,43 @@ const DiscoverSection = () => {
           </Link>
         </div>
       </div>
-      <div className="grid lg:grid-cols-4 gap-4 md:grid-cols-2 grid-cols-1 pt-6">
-        {newTours.map((tour) => (
-          <div className="w-full" key={tour.id}>
-            <Link to={`/tour-detail/${tour.id}`} className="w-full">
-              <div className="relative">
-                <LoadedImage thumbnail={tour.thumbnail} alt={tour.title} />
-              </div>
-            </Link>
+      <Swiper
+        spaceBetween={12}
+        className="mySwiper2 opacity-none mt-4"
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+        }}
+      >
+        <div className="grid lg:grid-cols-4 gap-4 md:grid-cols-2 grid-cols-1 pt-6">
+          {data?.length &&
+            data.map((v) => (
+              <SwiperSlide>
+                <div className="w-full" key={v.id}>
+                  <Link to={`/tour-detail/${v.id}`} className="w-full">
+                    <div className="relative h-[291px]">
+                      <LoadedImage thumbnail={v.thumbnail} alt={v.title} />
+                    </div>
+                  </Link>
 
-            <div className="pt-4">
-              <h4 className="text-size-xl text-secondary">
-                <Link to="#!">Sapa, Lao Cai</Link>
-              </h4>
-              <span className="text-four text-base">24 experiences</span>
-            </div>
-          </div>
-        ))}
-      </div>
+                  <div className="pt-4 text-left">
+                    <h4 className="text-size-xl text-secondary">
+                      <Link to={`/tour-detail/${v.id}`}>{v.location}</Link>
+                    </h4>
+                    <span className="text-four text-base">24 experiences</span>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+        </div>
+      </Swiper>
     </section>
   );
 };

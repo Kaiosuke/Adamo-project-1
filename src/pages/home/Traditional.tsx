@@ -22,9 +22,17 @@ const TraditionalSection = ({ data }: { data: ITour[] }) => {
         </div>
       </div>
       <Swiper
-        slidesPerView={3}
         spaceBetween={12}
-        className="mySwiper2 opacity-none"
+        className="mySwiper2 opacity-none mt-4"
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+          },
+
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
       >
         <div className="grid lg:grid-cols-3 gap-4 md:grid-cols-2 grid-cols-1 pt-6 opacity-none">
           {data?.length &&
