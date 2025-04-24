@@ -9,10 +9,12 @@ import { useForm } from "react-hook-form";
 import { FaUserCircle } from "react-icons/fa";
 import { z } from "zod";
 
+import LoadingBtn from "@/components/LoadingList/LoadingBtn";
 import Rating from "@/components/Rating";
 import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { ChangeEvent, memo, useCallback, useState } from "react";
 import { toast } from "sonner";
+import { useDebouncedCallback } from "use-debounce";
 
 interface Props {
   id: string;
@@ -56,8 +58,6 @@ const ReviewForm = ({
     },
   });
 
-  console.log(totalData);
-
   const form = useForm<z.infer<typeof commentSchema>>({
     resolver: zodResolver(commentSchema),
     defaultValues: {
@@ -66,19 +66,22 @@ const ReviewForm = ({
     },
   });
 
-  function onSubmit(values: z.infer<typeof commentSchema>) {
-    const data = {
-      hotelId: Number(id),
-      rate: values.star,
-      avatar: `url('@/assets/images/Avatar-30.png')`,
-      opinion: "Dreamy!",
-      time: new Date().toDateString(),
-      title: "Romantic escape",
-      des: values.message,
-    };
+  const onSubmit = useDebouncedCallback(
+    (values: z.infer<typeof commentSchema>) => {
+      const data = {
+        hotelId: Number(id),
+        rate: values.star,
+        avatar: `url('@/assets/images/Avatar-30.png')`,
+        opinion: "Dreamy!",
+        time: new Date().toDateString(),
+        title: "Romantic escape",
+        des: values.message,
+      };
 
-    addComment.mutate(data);
-  }
+      addComment.mutate(data);
+    },
+    300
+  );
 
   const handleOpenComment = useCallback(() => {
     setIsReview((prev) => !prev);
@@ -158,7 +161,7 @@ const ReviewForm = ({
                 )}
               />
               <Button className="w-auto lg:px-10 md:px-8 px-6" size={"third"}>
-                Comment
+                {addComment.isPending ? <LoadingBtn /> : "Comment"}
               </Button>
             </div>
           </form>

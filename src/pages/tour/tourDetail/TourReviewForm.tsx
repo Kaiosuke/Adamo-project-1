@@ -76,8 +76,6 @@ const TourReviewForm = ({ id, setCurrentPage }: Props) => {
     300
   );
 
-  console.log("trong");
-
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

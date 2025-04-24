@@ -3977,26 +3977,6 @@
       "des": "Good experience overall. Loved the breakfast variety and fast check-out."
     },
     {
-      "hotelId": "7",
-      "rate": 9,
-      "avatar": "url('@/assets/images/Avatar-30.png')",
-      "opinion": "Dreamy!",
-      "time": "Feb 2023",
-      "title": "Romantic escape",
-      "des": "321321",
-      "id": 46
-    },
-    {
-      "hotelId": 7,
-      "rate": 9,
-      "avatar": "url('@/assets/images/Avatar-30.png')",
-      "opinion": "Dreamy!",
-      "time": "Feb 2023",
-      "title": "Romantic escape",
-      "des": "312321",
-      "id": 47
-    },
-    {
       "hotelId": 7,
       "rate": 9,
       "avatar": "url('@/assets/images/Avatar-30.png')",
@@ -4908,63 +4888,53 @@
     },
     {
       "hotelId": 13,
-      "rate": 5,
+      "rate": 3,
       "avatar": "url('@/assets/images/Avatar-30.png')",
       "opinion": "Dreamy!",
-      "time": "Wed Apr 23 2025",
+      "time": "Thu Apr 24 2025",
       "title": "Romantic escape",
-      "des": "321a",
-      "id": 139
-    },
-    {
-      "hotelId": 13,
-      "rate": 4,
-      "avatar": "url('@/assets/images/Avatar-30.png')",
-      "opinion": "Dreamy!",
-      "time": "Wed Apr 23 2025",
-      "title": "Romantic escape",
-      "des": "312a",
-      "id": 140
+      "des": "hellooa",
+      "id": 150
     },
     {
       "hotelId": 13,
       "rate": 5,
       "avatar": "url('@/assets/images/Avatar-30.png')",
       "opinion": "Dreamy!",
-      "time": "Wed Apr 23 2025",
+      "time": "Thu Apr 24 2025",
       "title": "Romantic escape",
-      "des": "32112",
-      "id": 141
+      "des": "321312z",
+      "id": 151
     },
     {
       "hotelId": 13,
       "rate": 5,
       "avatar": "url('@/assets/images/Avatar-30.png')",
       "opinion": "Dreamy!",
-      "time": "Wed Apr 23 2025",
+      "time": "Thu Apr 24 2025",
       "title": "Romantic escape",
-      "des": "tronle",
-      "id": 142
+      "des": "hayqua",
+      "id": 152
     },
     {
       "hotelId": 13,
       "rate": 5,
       "avatar": "url('@/assets/images/Avatar-30.png')",
       "opinion": "Dreamy!",
-      "time": "Wed Apr 23 2025",
+      "time": "Thu Apr 24 2025",
       "title": "Romantic escape",
-      "des": "aczxzxz",
-      "id": 143
+      "des": "123211",
+      "id": 153
     },
     {
       "hotelId": 13,
       "rate": 5,
       "avatar": "url('@/assets/images/Avatar-30.png')",
       "opinion": "Dreamy!",
-      "time": "Wed Apr 23 2025",
+      "time": "Thu Apr 24 2025",
       "title": "Romantic escape",
-      "des": "zzzzzz",
-      "id": 144
+      "des": "zzzzz",
+      "id": 154
     }
   ],
   "rooms": [

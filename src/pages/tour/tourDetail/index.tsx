@@ -107,7 +107,17 @@ const TourDetail = () => {
                 {tour?.score}
               </div>
               <span className="text-four">
-                {totalData} {totalData && totalData > 0 ? `Reviews` : `Review`}{" "}
+                {!totalData ? (
+                  <div className="flex items-center gap-4 text-base">
+                    Reviews: Loading...
+                  </div>
+                ) : (
+                  <>
+                    {totalData > 0
+                      ? `Reviews(${totalData})`
+                      : `Review(${totalData})`}
+                  </>
+                )}
               </span>
             </div>
             <div className="flex 2xl:gap-20 gap-10 lg:mt-8 mt-6 flex-wrap xl:flex-row flex-col-reverse">

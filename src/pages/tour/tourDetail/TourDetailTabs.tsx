@@ -19,6 +19,8 @@ const TourDetailTabs = ({
   averageStar,
   setCurrentPage,
 }: Props) => {
+  console.log(totalData);
+
   return (
     <Tabs defaultValue="descriptions" className="lg:pt-10 pt-6">
       <TabsList className="w-full bg-third justify-between p-0">
@@ -38,7 +40,15 @@ const TourDetailTabs = ({
           value="reviews"
           className="data-[state=active]:text-primary text-size-2xl px-0 flex-none data-[state=active]:shadow-none trans-slow hover:text-six cursor-pointer"
         >
-          {totalData > 0 ? `Reviews(${totalData})` : `Review(${totalData})`}
+          {!totalData ? (
+            <div className="flex items-center gap-4 text-size-2xl">
+              Reviews: Loading...
+            </div>
+          ) : (
+            <>
+              {totalData > 0 ? `Reviews(${totalData})` : `Review(${totalData})`}
+            </>
+          )}
         </TabsTrigger>
       </TabsList>
       <div className="str-line" />

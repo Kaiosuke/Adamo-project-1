@@ -19,9 +19,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const HotelDetail = () => {
   const { id } = useParams();
-  const [totalData, setTotalData] = useState();
 
-  useQuery({
+  const { data: totalData } = useQuery({
     queryKey: ["reviewHotel", { id }],
     queryFn: () =>
       getReviewsHotel({
@@ -35,13 +34,6 @@ const HotelDetail = () => {
     queryFn: () => getHotelById(Number(id)),
     enabled: id !== undefined,
   });
-
-  useEffect(() => {
-    const totalData = JSON.parse(
-      localStorage.getItem("totalReviewHotel") || "0"
-    );
-    setTotalData(totalData);
-  }, []);
 
   const links = useMemo(
     () => [
@@ -72,7 +64,17 @@ const HotelDetail = () => {
             {data?.score}
           </div>
           <span className="text-four">
-            {totalData} {totalData && totalData > 0 ? `Reviews` : `Review`}
+            {!totalData ? (
+              <div className="flex items-center gap-4 text-base">
+                Reviews: Loading...
+              </div>
+            ) : (
+              <>
+                {totalData.length > 0
+                  ? `Reviews(${totalData.length})`
+                  : `Review(${totalData.length})`}
+              </>
+            )}
           </span>
         </div>
         <div className="flex 2xl:gap-20 gap-10 lg:mt-8 mt-6 flex-wrap xl:flex-row flex-col-reverse">

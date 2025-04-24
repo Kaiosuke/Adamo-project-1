@@ -35,13 +35,14 @@ const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
       getReviewsHotel({
         hotelId: id as string,
         _page: _page,
-        _limit: 3,
+        _limit: ITEMS_PER_PAGE,
       }),
     enabled: id !== undefined,
   });
 
   useEffect(() => {
     setCurrentPage(0);
+
     setPageCount(Math.ceil(Number(totalScore?.length) / ITEMS_PER_PAGE));
   }, [totalScore]);
 
@@ -55,6 +56,8 @@ const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
     }
     return 5;
   }, [totalScore]);
+
+  console.log(pageCount);
 
   return (
     <>
