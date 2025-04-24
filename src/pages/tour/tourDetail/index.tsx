@@ -1,8 +1,6 @@
 import { getAllReviewTour, getReviewTourList } from "@/api/reviewRequest";
 import { getTourById } from "@/api/tourRequest";
 import BreadcrumbCom from "@/components/Breadcrumb";
-import PdMain from "@/components/padding/PdMain";
-import PdSub from "@/components/padding/PdSub";
 
 import { useAppDispatch } from "@/redux";
 import { tourSelector } from "@/redux/selectors/tourSelector";
@@ -17,6 +15,8 @@ import BillTourDetail from "@/components/bills/tour/BillTourDetail";
 import SwiperCom from "@/components/swiper/SwiperCom";
 import { useQuery } from "@tanstack/react-query";
 import TourDetailTabs from "./TourDetailTabs";
+import PdSub from "@/components/padding/PdSub";
+import PdMain from "@/components/padding/PdMain";
 
 const TourDetail = () => {
   const { id } = useParams();

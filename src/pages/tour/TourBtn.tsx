@@ -6,8 +6,6 @@ interface Props {
 }
 
 const TourBtn = ({ onFilter }: Props) => {
-  console.log("tour-btn");
-
   return (
     <div className="py-4">
       <Button

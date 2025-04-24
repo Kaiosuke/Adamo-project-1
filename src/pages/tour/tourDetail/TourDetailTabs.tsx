@@ -19,8 +19,6 @@ const TourDetailTabs = ({
   averageStar,
   setCurrentPage,
 }: Props) => {
-  console.log(totalData);
-
   return (
     <Tabs defaultValue="descriptions" className="lg:pt-10 pt-6">
       <TabsList className="w-full bg-third justify-between p-0">

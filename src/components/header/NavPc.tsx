@@ -92,8 +92,6 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
 
   const { t } = useTranslation("header");
 
-  console.log("nav pc");
-
   return (
     <ul className="flex justify-between items-center gap-10 lg:flex-row flex-col">
       {(currentLanguage === "en" ? linkNavEn : linkNavVi).map((nav, index) => (

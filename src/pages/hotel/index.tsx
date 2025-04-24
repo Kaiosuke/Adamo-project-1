@@ -1,14 +1,14 @@
 import HotelImg from "@/assets/images/hotel.png";
 import BreadcrumbCom from "@/components/Breadcrumb";
 import HeroSectionCom from "@/components/HeroSectionCom";
-import PdMain from "@/components/padding/PdMain";
-import PdSub from "@/components/padding/PdSub";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import HotelSection from "./HotelSection";
 
 import HotelPagination from "./HotelPagination";
 import SearchHotel from "@/components/searchList/hotel/SearchHotel";
+import PdSub from "@/components/padding/PdSub";
+import PdMain from "@/components/padding/PdMain";
 
 const Hotel = () => {
   const { t } = useTranslation("hotel");

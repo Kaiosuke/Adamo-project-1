@@ -87,8 +87,6 @@ const ReviewForm = ({
     setIsReview((prev) => !prev);
   }, []);
 
-  console.log("review-form");
-
   return (
     <>
       <div className="flex gap-8">

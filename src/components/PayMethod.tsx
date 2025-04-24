@@ -31,7 +31,6 @@ const PayMethod = <T extends FieldValues>({
     (v: string, field: ControllerRenderProps<T, Path<T>>) => {
       field.onChange(v);
       setQuery && setQuery({ [name]: v });
-      console.log(v);
     },
     []
   );

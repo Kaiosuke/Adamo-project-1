@@ -1,8 +1,7 @@
 import { getHotelById } from "@/api/hotelRequest";
 
 import BillHotelCheckOut from "@/components/bills/hotel/BillHotelCheckout";
-import PdMain from "@/components/padding/PdMain";
-import PdSub from "@/components/padding/PdSub";
+
 import { bookingSelector } from "@/redux/selectors/bookingSelector";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
@@ -11,6 +10,8 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router";
 import FormInfoUser from "./FormInfoUser";
 import { useState } from "react";
+import PdSub from "@/components/padding/PdSub";
+import PdMain from "@/components/padding/PdMain";
 
 const HotelCheckOut = () => {
   const { t } = useTranslation("checkout");
@@ -30,7 +31,6 @@ const HotelCheckOut = () => {
   return (
     <>
       <PdSub />
-
       <section className="main-container">
         <Link
           to="/"

@@ -12,7 +12,7 @@ import { memo } from "react";
 
 const DarkMode = () => {
   const { setTheme } = useTheme();
-  console.log("dark mode");
+
   return (
     <div className="ml-6">
       <DropdownMenu>

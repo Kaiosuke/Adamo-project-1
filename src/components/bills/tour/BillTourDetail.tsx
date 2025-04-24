@@ -100,8 +100,6 @@ const BillTourDetail = () => {
     return tour ? tour.duration * tour.price : 0;
   }, [tour]);
 
-  console.log("Bill tour detail");
-
   return (
     <>
       {tour && (

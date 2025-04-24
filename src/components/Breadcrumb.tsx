@@ -21,7 +21,6 @@ const BreadcrumbCom = ({
   links: BreadcrumbIT[];
   current: string;
 }) => {
-  console.log("BreadcrumbCom");
   return (
     <div className="main-container">
       <Breadcrumb>

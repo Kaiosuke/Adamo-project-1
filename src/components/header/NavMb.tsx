@@ -67,8 +67,6 @@ const NavMb = ({ getLinkColor }: Props) => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
-  console.log("mobile");
-
   return (
     <div className="lg:hidden block relative z-50 ">
       <Sheet>

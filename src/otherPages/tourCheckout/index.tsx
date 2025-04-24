@@ -1,7 +1,5 @@
 import { getTourById } from "@/api/tourRequest";
 
-import PdMain from "@/components/padding/PdMain";
-import PdSub from "@/components/padding/PdSub";
 import { useAppDispatch } from "@/redux";
 import { bookingSelector } from "@/redux/selectors/bookingSelector";
 import { useEffect, useState } from "react";
@@ -12,6 +10,8 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import BillTourCheckout from "@/components/bills/tour/BillTourCheckout";
+import PdSub from "@/components/padding/PdSub";
+import PdMain from "@/components/padding/PdMain";
 
 const TourCheckOut = () => {
   const { booking } = useSelector(bookingSelector);

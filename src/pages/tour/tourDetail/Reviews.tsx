@@ -1,4 +1,3 @@
-import Pagination from "@/components/paginations/Pagination";
 import ReviewTour from "@/components/reviews/ReviewTour";
 import { reviewSelector } from "@/redux/selectors/reviewSelector";
 import { tourSelector } from "@/redux/selectors/tourSelector";
@@ -10,6 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
 import TourReviewForm from "./TourReviewForm";
 import Star from "./Star";
+import Pagination from "@/components/paginations/Pagination";
 
 interface Props {
   currentPage: number;

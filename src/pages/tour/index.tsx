@@ -1,23 +1,21 @@
 import BreadcrumbCom from "@/components/Breadcrumb";
 
-import PdMain from "@/components/padding/PdMain";
-import PdSub from "@/components/padding/PdSub";
 import AttractiveTourSection from "./AttractiveTourSection";
 
 import TourImg from "@/assets/images/hero-tour.png";
 import HeroSectionCom from "@/components/HeroSectionCom";
 
+import PdMain from "@/components/padding/PdMain";
+import PdSub from "@/components/padding/PdSub";
+import SearchTour from "@/components/searchList/tour/SearchTour";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import SearchTour from "@/components/searchList/tour/SearchTour";
 
 const Tour = () => {
   const { t } = useTranslation("tour");
 
   const links = useMemo(() => [{ title: "Home", href: "/" }], []);
   const current = useMemo(() => "Tour", []);
-
-  console.log("Tour");
 
   return (
     <>

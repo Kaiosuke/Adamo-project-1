@@ -23,8 +23,6 @@ const HotelDetailTabs = ({ data }: Props) => {
     enabled: id !== undefined,
   });
 
-  console.log("HotelDetailTabs", totalScore);
-
   return (
     <>
       <Tabs defaultValue="selectRoom" className="lg:pt-10 pt-6">

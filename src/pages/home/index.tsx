@@ -1,5 +1,4 @@
 import { getAllTour, getFiltersTour, getTours } from "@/api/tourRequest";
-import PdMain from "@/components/padding/PdMain";
 import SkeletonData from "@/components/LoadingList/SkeletonData";
 import { useAppDispatch } from "@/redux";
 import { useQuery } from "@tanstack/react-query";
@@ -11,6 +10,7 @@ import DiscoverSection from "./DiscoverSection";
 import HeroSection from "./HeroSection";
 import IntroduceSection from "./IntroduceSection";
 import TraditionalSection from "./Traditional";
+import PdMain from "@/components/padding/PdMain";
 
 const Home = () => {
   const dispatch = useAppDispatch();

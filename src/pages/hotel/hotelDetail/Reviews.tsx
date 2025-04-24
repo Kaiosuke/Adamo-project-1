@@ -1,5 +1,5 @@
 import { getReviewsHotel } from "@/api/reviewRequest";
-import PdSub from "@/components/padding/PdSub";
+
 import ReviewHotel from "@/components/reviews/ReviewHotel";
 import { IReviewHotel } from "@/interfaces/review";
 import { useQuery } from "@tanstack/react-query";
@@ -10,6 +10,7 @@ import LoadingReview from "@/components/LoadingList/LoadingReview";
 import { NumberParam, useQueryParams } from "use-query-params";
 import ReviewForm from "./ReviewForm";
 import ReviewPagination from "./ReviewPagination";
+import PdSub from "@/components/padding/PdSub";
 
 const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
   const { id } = useParams();
@@ -56,8 +57,6 @@ const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
     }
     return 5;
   }, [totalScore]);
-
-  console.log(pageCount);
 
   return (
     <>

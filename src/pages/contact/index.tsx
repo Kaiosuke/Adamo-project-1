@@ -1,10 +1,11 @@
 import HeroImage from "@/assets/images/hero-contact.png";
 import BreadcrumbCom from "@/components/Breadcrumb";
 import MapCom from "@/components/MapCom";
-import PdMain from "@/components/padding/PdMain";
-import PdSub from "@/components/padding/PdSub";
+
 import ContactSection from "./ContactSection";
 import { Trans, useTranslation } from "react-i18next";
+import PdSub from "@/components/padding/PdSub";
+import PdMain from "@/components/padding/PdMain";
 
 const Contact = () => {
   useTranslation("contact");

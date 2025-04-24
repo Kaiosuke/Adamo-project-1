@@ -16,8 +16,6 @@ interface Props {
 }
 
 const HeroSectionCom = ({ image, title, des, Tour }: Props) => {
-  console.log("HeroSectionCom");
-
   return (
     <section className="w-full max-w-[1600px] m-auto">
       <div className="relative flex">

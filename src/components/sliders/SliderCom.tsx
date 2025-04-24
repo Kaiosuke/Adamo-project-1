@@ -9,7 +9,7 @@ interface Props {
 
 const SliderCom = ({ prices, onValueChange, max = 1200 }: Props) => {
   const [livePrice, setLivePrice] = useState(prices);
-  console.log("tour-slider");
+
   return (
     <div className="relative">
       <Slider

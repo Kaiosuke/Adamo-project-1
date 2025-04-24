@@ -40,7 +40,6 @@ const getAllTour = createAsyncThunk<
       const isAll = types.toString().startsWith(" ");
 
       const dataType = isAll ? "&" : separateType();
-      console.log(dataType);
 
       const res = await instanceLocal.get(
         `/tours?location_like=${location}&${types && dataType}${

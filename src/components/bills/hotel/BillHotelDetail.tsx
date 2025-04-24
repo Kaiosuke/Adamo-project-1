@@ -76,7 +76,6 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
   };
 
   const handleTotalMoney = useMemo(() => {
-    console.log("totalMoney");
     let data = rooms.reduce((acc: number, cur) => {
       return (acc += cur.data.price * cur.quantity);
     }, 0);
@@ -143,7 +142,6 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
     },
     300
   );
-  console.log("bill hotel");
 
   return (
     <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit">

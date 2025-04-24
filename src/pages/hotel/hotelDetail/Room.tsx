@@ -62,8 +62,6 @@ const Room = ({ room }: { room: IRoom }) => {
     },
   });
 
-  console.log("room");
-
   return (
     <div className="flex flex-col gap-4 mt-4" key={room.id}>
       <div className="w-full bg-seven">

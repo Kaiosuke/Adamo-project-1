@@ -3,8 +3,6 @@ import FilterTour from "./FilterTour";
 import TourPage from "./TourPage";
 
 const AttractiveTourSection = () => {
-  console.log("AttractiveTourSection");
-
   return (
     <section className="main-container">
       <div className="flex justify-between ">

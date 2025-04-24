@@ -53,8 +53,6 @@ const SortHotel = () => {
     });
   };
 
-  console.log("hotel-sort");
-
   return (
     <>
       <Select

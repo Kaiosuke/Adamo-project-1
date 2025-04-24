@@ -33,8 +33,6 @@ const Language = ({ getLinkColor }: Props) => {
     i18n.changeLanguage(lg);
   }, []);
 
-  console.log("language");
-
   return (
     <div className="ml-6">
       <Select value={lg} onValueChange={handleChangeLanguage}>

@@ -5,7 +5,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 const HeroSection = () => {
   const { t } = useTranslation("home");
-  console.log("home-hero");
+
   return (
     <section className="sub-2-container">
       <div className="relative flex h-full">
