@@ -100,7 +100,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
                   />
                 )}
               </div>
-              <div className={` ${isHome ? "lg:mb-8 mt-4" : "lg:mt-4"}`}>
+              <div className={` ${isHome ? "lg:mb-8 mt-4" : "mt-4"}`}>
                 <Link
                   to={`/hotels?location=${location}&guest=${guest}&from=${from.toDateString()}`}
                 >

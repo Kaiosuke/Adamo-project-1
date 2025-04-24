@@ -1,10 +1,10 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { DialogTitle } from "@radix-ui/react-dialog";
 
 import React from "react";
 
@@ -45,7 +45,7 @@ const HeroSectionCom = ({ image, title, des, Tour }: Props) => {
           </DialogTrigger>
           <DialogContent className="bg-third/60">
             <DialogHeader>
-              <DialogDescription>{Tour}</DialogDescription>
+              <DialogTitle>{Tour}</DialogTitle>
             </DialogHeader>
           </DialogContent>
         </Dialog>
