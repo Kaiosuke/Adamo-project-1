@@ -1,30 +1,19 @@
 import Hero from "@/assets/images/hero.png";
-import LoadingBanner from "@/components/LoadingList/LoadingBanner";
 import SearchTourHome from "@/components/searchList/SearchTourHome";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 const HeroSection = () => {
   const { t } = useTranslation("home");
 
-  const [loaded, setLoaded] = useState(false);
-
   return (
     <section className="sub-2-container">
       <div className="relative flex h-full">
-        {!loaded ? (
-          <LoadingBanner />
-        ) : (
-          <img
-            src={Hero}
-            alt="hero-image"
-            onLoad={() => setLoaded(true)}
-            className={`w-full h-[726px] object-cover ${
-              loaded ? "block" : "hidden"
-            }`}
-          />
-        )}
+        <img
+          src={Hero}
+          alt="hero-image"
+          className="w-full h-[726px] object-cover"
+        />
         <div className="flex gap-2 absolute top-[20%] w-full">
           <div className="lg:pt-20 md:pt-12 pt-6 sub-container">
             <p className="text-size-xl text-banner">
