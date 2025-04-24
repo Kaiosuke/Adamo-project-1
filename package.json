@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "server": "json-server db.json --watch --delay 3000",
+    "server": "json-server db.json --watch --delay 2000",
     "typecheck": "tsc --noEmit",
     "build": "npm run typecheck && vite build",
     "lint": "eslint .",
