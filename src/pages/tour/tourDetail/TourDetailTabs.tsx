@@ -38,7 +38,7 @@ const TourDetailTabs = ({
           value="reviews"
           className="data-[state=active]:text-primary text-size-2xl px-0 flex-none data-[state=active]:shadow-none trans-slow hover:text-six cursor-pointer"
         >
-          {!totalData ? (
+          {!totalData && totalData !== 0 ? (
             <div className="flex items-center gap-4 text-size-2xl">
               Reviews: Loading...
             </div>

@@ -114,7 +114,10 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       },
@@ -262,8 +265,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -410,8 +418,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -558,8 +571,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -706,8 +724,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -854,8 +877,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1002,8 +1030,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1150,8 +1183,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1298,8 +1336,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1446,8 +1489,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1594,8 +1642,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1742,8 +1795,13 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
-        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": [
+          "https://photo-sphere-viewer-data.netlify.app/assets/"
+        ],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1782,7 +1840,7 @@
     {
       "id": 13,
       "title": "Discover interesting things in the romantic coastal city of Vungtau",
-      "location": "Sapa, Laocai",
+      "location": "Sapa, Laocai 2",
       "score": 4.5,
       "time": "3 days - 2 night",
       "duration": 3,
@@ -1893,7 +1951,10 @@
             ]
           }
         ],
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       },
@@ -1960,7 +2021,10 @@
           "Lantern-making class"
         ],
         "departureReturn": {
-          "point": ["Da Nang International Airport", "Hoi An Center"],
+          "point": [
+            "Da Nang International Airport",
+            "Hoi An Center"
+          ],
           "time": "9:00 AM"
         },
         "itineraries": [
@@ -1997,7 +2061,10 @@
             ]
           }
         ],
-        "maps": [15.8801, 108.338],
+        "maps": [
+          15.8801,
+          108.338
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/hoian360/",
         "video": "url('@/assets/videos/hoian.mp4')"
       },
@@ -2023,8 +2090,10 @@
       "time": "3 days - 2 nights",
       "duration": 3,
       "type": "adventure",
-      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/fansipan.png",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274577/Tours/lqwwfvjqqyxijs9b3elr.png",
       "images": [
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg",
         "https://swiperjs.com/demos/images/nature-3.jpg",
         "https://swiperjs.com/demos/images/nature-4.jpg"
       ],
@@ -2045,7 +2114,10 @@
           "Cable car descent (optional)"
         ],
         "departureReturn": {
-          "point": ["Sapa Town Center", "Fansipan base station"],
+          "point": [
+            "Sapa Town Center",
+            "Fansipan base station"
+          ],
           "time": "6:00 AM"
         },
         "itineraries": [
@@ -2066,7 +2138,10 @@
             ]
           }
         ],
-        "maps": [22.3, 103.8],
+        "maps": [
+          22.3,
+          103.8
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/fansipan/",
         "video": "url('@/assets/videos/fansipan.mp4')"
       },
@@ -2092,8 +2167,10 @@
       "time": "2 days - 1 night",
       "duration": 2,
       "type": "cruise",
-      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/halong_cruise.png",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274578/Tours/z5uitbtlibctm1jmwjtb.png",
       "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg"
       ],
@@ -2114,7 +2191,10 @@
           "Kayak & swimming gear"
         ],
         "departureReturn": {
-          "point": ["Hanoi Old Quarter", "Ha Long Pier"],
+          "point": [
+            "Hanoi Old Quarter",
+            "Ha Long Pier"
+          ],
           "time": "7:00 AM"
         },
         "itineraries": [
@@ -2135,7 +2215,10 @@
             ]
           }
         ],
-        "maps": [20.9101, 107.1839],
+        "maps": [
+          20.9101,
+          107.1839
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/halong360/",
         "video": "url('@/assets/videos/halong.mp4')"
       },
@@ -2161,8 +2244,10 @@
       "time": "1 day trip",
       "duration": 1,
       "type": "nature",
-      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/ninhbinh.png",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274578/Tours/dttwcxihcn2psyx55t4b.png",
       "images": [
+        "https://swiperjs.com/demos/images/nature-7.jpg",
+        "https://swiperjs.com/demos/images/nature-8.jpg",
         "https://swiperjs.com/demos/images/nature-7.jpg",
         "https://swiperjs.com/demos/images/nature-8.jpg"
       ],
@@ -2183,7 +2268,9 @@
           "English-speaking guide"
         ],
         "departureReturn": {
-          "point": ["Hanoi Old Quarter"],
+          "point": [
+            "Hanoi Old Quarter"
+          ],
           "time": "8:00 AM"
         },
         "itineraries": [
@@ -2209,7 +2296,10 @@
             ]
           }
         ],
-        "maps": [20.254, 105.974],
+        "maps": [
+          20.254,
+          105.974
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/ninhbinh360/",
         "video": "url('@/assets/videos/ninhbinh.mp4')"
       },
@@ -2227,7 +2317,6 @@
         ]
       }
     },
-
     {
       "id": 18,
       "title": "Relax in the tranquil highlands of Da Lat",
@@ -2236,8 +2325,10 @@
       "time": "2 days - 1 night",
       "duration": 2,
       "type": "leisure",
-      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/dalat1.png",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274580/Tours/llogdfww2cth0sjl83si.png",
       "images": [
+        "https://swiperjs.com/demos/images/nature-9.jpg",
+        "https://swiperjs.com/demos/images/nature-10.jpg",
         "https://swiperjs.com/demos/images/nature-9.jpg",
         "https://swiperjs.com/demos/images/nature-10.jpg"
       ],
@@ -2260,11 +2351,17 @@
           "English-speaking guide"
         ],
         "departureReturn": {
-          "point": ["Lien Khuong Airport", "City Center Hotel"],
+          "point": [
+            "Lien Khuong Airport",
+            "City Center Hotel"
+          ],
           "time": "9:00 AM"
         },
         "itineraries": [],
-        "maps": [11.9404, 108.4583],
+        "maps": [
+          11.9404,
+          108.4583
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/dalat/",
         "video": "url('@/assets/videos/dalat.mp4')"
       },
@@ -2285,10 +2382,12 @@
       "time": "1 day",
       "duration": 1,
       "type": "culture",
-      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/hoian1.png",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274579/Tours/vydazqs3l1rnmiwnolug.png",
       "images": [
-        "https://swiperjs.com/demos/images/nature-11.jpg",
-        "https://swiperjs.com/demos/images/nature-12.jpg"
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg"
       ],
       "price": 95,
       "description": {
@@ -2309,11 +2408,17 @@
           "Old Town entrance fee"
         ],
         "departureReturn": {
-          "point": ["Da Nang City Center", "Hoi An Old Quarter"],
+          "point": [
+            "Da Nang City Center",
+            "Hoi An Old Quarter"
+          ],
           "time": "8:30 AM"
         },
         "itineraries": [],
-        "maps": [15.8801, 108.338],
+        "maps": [
+          15.8801,
+          108.338
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/hoian/",
         "video": "url('@/assets/videos/hoian.mp4')"
       },
@@ -2334,10 +2439,12 @@
       "time": "1 day",
       "duration": 1,
       "type": "leisure",
-      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/halong2.png",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274578/Tours/vf8la4imrkziidn5nqba.png",
       "images": [
-        "https://swiperjs.com/demos/images/nature-13.jpg",
-        "https://swiperjs.com/demos/images/nature-14.jpg"
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
       ],
       "price": 120,
       "description": {
@@ -2357,11 +2464,17 @@
           "Cruise guide and insurance"
         ],
         "departureReturn": {
-          "point": ["Tuan Chau Marina", "Back at Marina"],
+          "point": [
+            "Tuan Chau Marina",
+            "Back at Marina"
+          ],
           "time": "2:00 PM"
         },
         "itineraries": [],
-        "maps": [20.9214, 107.1839],
+        "maps": [
+          20.9214,
+          107.1839
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/halong2/",
         "video": "url('@/assets/videos/halong-sunset.mp4')"
       },
@@ -2432,7 +2545,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2489,7 +2605,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2546,7 +2665,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2604,7 +2726,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2661,7 +2786,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2718,7 +2846,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2774,7 +2905,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2830,7 +2964,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2887,7 +3024,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2945,7 +3085,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -3000,7 +3143,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -3056,7 +3202,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -3117,7 +3266,10 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [21.028511, 105.804817],
+        "maps": [
+          21.028511,
+          105.804817
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -3128,8 +3280,10 @@
       "location": "Phu Nhuan, Ho Chi Minh",
       "score": 8.6,
       "price": 94,
-      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/muongthanh.png",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274577/Tours/jbmclib6dom8sdcs67k7.png",
       "images": [
+        "https://swiperjs.com/demos/images/nature-5.jpg",
+        "https://swiperjs.com/demos/images/nature-6.jpg",
         "https://swiperjs.com/demos/images/nature-5.jpg",
         "https://swiperjs.com/demos/images/nature-6.jpg"
       ],
@@ -3156,7 +3310,10 @@
             "Có chỗ đậu xe miễn phí"
           ]
         },
-        "maps": [10.7995, 106.6781],
+        "maps": [
+          10.7995,
+          106.6781
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/muongthanh/",
         "video": "url('@/assets/videos/muongthanh.mp4')"
       }
@@ -3167,8 +3324,10 @@
       "location": "Phu Nhuan, Ho Chi Minh",
       "score": 8.9,
       "price": 92,
-      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/eastingrand.png",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274613/Hotels/nfyy8cprk0mupmospzjl.png",
       "images": [
+        "https://swiperjs.com/demos/images/nature-7.jpg",
+        "https://swiperjs.com/demos/images/nature-8.jpg",
         "https://swiperjs.com/demos/images/nature-7.jpg",
         "https://swiperjs.com/demos/images/nature-8.jpg"
       ],
@@ -3195,7 +3354,10 @@
             "Có chỗ đậu xe miễn phí"
           ]
         },
-        "maps": [10.8002, 106.6785],
+        "maps": [
+          10.8002,
+          106.6785
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/eastingrand/",
         "video": "url('@/assets/videos/eastingrand.mp4')"
       }
@@ -3206,8 +3368,10 @@
       "location": "Phu Nhuan, Ho Chi Minh",
       "score": 8.5,
       "price": 86,
-      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/tansonnhat.png",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274612/Hotels/qjbzhqlvdmx0e1cl8jjn.png",
       "images": [
+        "https://swiperjs.com/demos/images/nature-9.jpg",
+        "https://swiperjs.com/demos/images/nature-10.jpg",
         "https://swiperjs.com/demos/images/nature-9.jpg",
         "https://swiperjs.com/demos/images/nature-10.jpg"
       ],
@@ -3234,7 +3398,10 @@
             "Có chỗ đậu xe miễn phí"
           ]
         },
-        "maps": [10.8005, 106.6789],
+        "maps": [
+          10.8005,
+          106.6789
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/tansonnhat/",
         "video": "url('@/assets/videos/tansonnhat.mp4')"
       }
@@ -3245,10 +3412,12 @@
       "location": "Phu Nhuan, Ho Chi Minh",
       "score": 8.7,
       "price": 75,
-      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/alcove.png",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274611/Hotels/urqhsq4o0nhbjha8hedg.png",
       "images": [
-        "https://swiperjs.com/demos/images/nature-11.jpg",
-        "https://swiperjs.com/demos/images/nature-12.jpg"
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-1.jpg"
       ],
       "star": 4,
       "description": {
@@ -3272,7 +3441,10 @@
             "Có chỗ đậu xe miễn phí"
           ]
         },
-        "maps": [10.801, 106.6792],
+        "maps": [
+          10.801,
+          106.6792
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/alcove/",
         "video": "url('@/assets/videos/alcove.mp4')"
       }
@@ -3283,10 +3455,12 @@
       "location": "Phu Nhuan, Ho Chi Minh",
       "score": 8.8,
       "price": 98,
-      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/parkroyal.png",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274611/Hotels/l2yq4l54sfd89tduztvp.png",
       "images": [
-        "https://swiperjs.com/demos/images/nature-13.jpg",
-        "https://swiperjs.com/demos/images/nature-14.jpg"
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
       ],
       "star": 4,
       "description": {
@@ -3312,7 +3486,10 @@
             "Phù hợp cho gia đình"
           ]
         },
-        "maps": [10.8009, 106.6787],
+        "maps": [
+          10.8009,
+          106.6787
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/parkroyal/",
         "video": "url('@/assets/videos/parkroyal.mp4')"
       }
@@ -3323,10 +3500,12 @@
       "location": "Phu Nhuan, Ho Chi Minh",
       "score": 8.3,
       "price": 65,
-      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/lesaigon.png",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274612/Hotels/s8wmff7v37hlurwpgwkz.png",
       "images": [
-        "https://swiperjs.com/demos/images/nature-15.jpg",
-        "https://swiperjs.com/demos/images/nature-16.jpg"
+        "https://swiperjs.com/demos/images/nature-5.jpg",
+        "https://swiperjs.com/demos/images/nature-6.jpg",
+        "https://swiperjs.com/demos/images/nature-5.jpg",
+        "https://swiperjs.com/demos/images/nature-6.jpg"
       ],
       "star": 3,
       "description": {
@@ -3351,7 +3530,10 @@
             "Có dịch vụ giặt là"
           ]
         },
-        "maps": [10.7981, 106.6769],
+        "maps": [
+          10.7981,
+          106.6769
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/lesaigon/",
         "video": "url('@/assets/videos/lesaigon.mp4')"
       }
@@ -3360,12 +3542,14 @@
       "id": 20,
       "title": "Saigon Sky Garden Hotel",
       "location": "Phu Nhuan, Ho Chi Minh",
-      "score": 9.0,
+      "score": 9,
       "price": 110,
-      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/skygarden.png",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/zinrqkzgwthvfjmhxlqh.png",
       "images": [
-        "https://swiperjs.com/demos/images/nature-17.jpg",
-        "https://swiperjs.com/demos/images/nature-18.jpg"
+        "https://swiperjs.com/demos/images/nature-4.jpg",
+        "https://swiperjs.com/demos/images/nature-5.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg",
+        "https://swiperjs.com/demos/images/nature-5.jpg"
       ],
       "star": 5,
       "description": {
@@ -3391,7 +3575,10 @@
             "Có bãi đậu xe miễn phí"
           ]
         },
-        "maps": [10.8022, 106.6778],
+        "maps": [
+          10.8022,
+          106.6778
+        ],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/skygarden/",
         "video": "url('@/assets/videos/skygarden.mp4')"
       }
@@ -4211,6 +4398,16 @@
       "title": "The best experience ever",
       "des": "3213ZZZ",
       "id": 75
+    },
+    {
+      "tourId": 15,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Thu Apr 24 2025",
+      "title": "The best experience ever",
+      "des": "comment 1",
+      "id": 76
     }
   ],
   "reviewsHotel": [
@@ -5573,6 +5770,16 @@
       "title": "Romantic escape",
       "des": "nnfghfghfg",
       "id": 156
+    },
+    {
+      "hotelId": 16,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Thu Apr 24 2025",
+      "title": "Romantic escape",
+      "des": "111zzz",
+      "id": 157
     }
   ],
   "rooms": [

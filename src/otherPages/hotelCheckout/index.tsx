@@ -12,6 +12,7 @@ import FormInfoUser from "./FormInfoUser";
 import { useState } from "react";
 import PdSub from "@/components/paddingList/PbSub";
 import PdMain from "@/components/paddingList/PbMain";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const HotelCheckOut = () => {
   const { t } = useTranslation("checkout");
@@ -20,7 +21,7 @@ const HotelCheckOut = () => {
 
   const id = bookingHotel?.hotelId;
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["hotelDetail", { id: id }],
     queryFn: () => getHotelById(Number(id)),
     enabled: id !== undefined,
@@ -49,12 +50,16 @@ const HotelCheckOut = () => {
               <h2 className="text-size-2xl">{t("tour.travel")}</h2>
               <p className="text-four">{t("tour.description")}</p>
             </div>
-            {bookingHotel && data && (
+            {isLoading || !bookingHotel || !data ? (
+              <Skeleton className="h-screen bg-five" />
+            ) : (
               <FormInfoUser booking={bookingHotel} discount={discount} />
             )}
           </div>
-          <div className="lg:flex-[0_0_30%] flex-[0_0_auto] max-w-[380px] w-full bg-four h-fit">
-            {data && bookingHotel && (
+          <div className="lg:flex-[0_0_30%] flex-[0_0_auto] max-w-[380px] w-full h-fit ">
+            {isLoading || !data || !bookingHotel ? (
+              <Skeleton className="h-[524px] bg-five" />
+            ) : (
               <BillHotelCheckOut
                 data={data}
                 bookingHotel={bookingHotel}
