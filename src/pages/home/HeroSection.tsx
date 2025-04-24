@@ -8,7 +8,7 @@ import { Trans, useTranslation } from "react-i18next";
 const HeroSection = () => {
   const { t } = useTranslation("home");
 
-  const [loaded, setLoaded] = useState(true);
+  const [loaded, setLoaded] = useState(false);
 
   return (
     <section className="sub-2-container">
