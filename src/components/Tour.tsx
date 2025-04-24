@@ -8,6 +8,10 @@ import { MdCalendarMonth, MdOutlineStar } from "react-icons/md";
 import { Link } from "react-router";
 import LoadedImage from "./LoadingList/LoadedImage";
 import { StringParam, useQueryParams } from "use-query-params";
+import { useAppDispatch } from "@/redux";
+import { changeFavoriteTour } from "@/api/tourRequest";
+import { toast } from "sonner";
+import { useDebouncedCallback } from "use-debounce";
 
 const Tour = ({ tour }: { tour: ITour }) => {
   const [query] = useQueryParams({
@@ -15,6 +19,25 @@ const Tour = ({ tour }: { tour: ITour }) => {
   });
 
   const from = query.from || "";
+
+  const dispatch = useAppDispatch();
+
+  const handleChangeFavorite = useDebouncedCallback(async () => {
+    try {
+      const data = {
+        favorite: !tour.favorite,
+      };
+      await dispatch(changeFavoriteTour({ id: tour.id, data: data })).unwrap();
+      toast.success("Successfully", {
+        style: {
+          backgroundColor: "#4caf50",
+          color: "#ffffff",
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }, 300);
 
   return (
     <>
@@ -26,9 +49,18 @@ const Tour = ({ tour }: { tour: ITour }) => {
             >
               <LoadedImage thumbnail={tour.thumbnail} alt={tour.title} />
             </Link>
-            <div className="w-[32px] absolute top-[-1px] right-10">
-              {Number(tour) % 2 === 0 ? (
-                <img src={Shape} alt="shape" className="object-cover w-full" />
+            <div
+              className={`w-[32px] absolute top-[-1px] right-10 cursor-pointer ${
+                tour.favorite ? "animate-jump" : ""
+              }`}
+              onClick={handleChangeFavorite}
+            >
+              {tour.favorite ? (
+                <img
+                  src={Shape}
+                  alt="shape"
+                  className={`object-cover w-full `}
+                />
               ) : (
                 <img src={Shape2} alt="shape" className="object-cover w-full" />
               )}

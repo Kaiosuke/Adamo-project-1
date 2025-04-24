@@ -8,6 +8,10 @@ import { Link } from "react-router";
 import { StringParam, useQueryParams } from "use-query-params";
 import LoadedImage from "./LoadingList/LoadedImage";
 import { memo } from "react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { changeStatusFavorite } from "@/api/hotelRequest";
+import { toast } from "sonner";
+import { useDebouncedCallback } from "use-debounce";
 
 const Hotel = ({ hotel }: { hotel: IHotel }) => {
   const totalData = Number(localStorage.getItem("totalReviewHotel") || "0");
@@ -17,7 +21,27 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
     from: StringParam,
   });
 
+  const queryClient = useQueryClient();
+
   const from = query.from || new Date().toDateString();
+
+  const changeStatus = useMutation({
+    mutationFn: ({ id, data }: { id: number; data: { favorite: boolean } }) =>
+      changeStatusFavorite({ id, data }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["hotels"] });
+      toast.success("Successfully!", {
+        style: {
+          backgroundColor: "#4caf50",
+          color: "#ffffff",
+        },
+      });
+    },
+  });
+
+  const handleChangeStatusFavorite = useDebouncedCallback(() => {
+    changeStatus.mutate({ id: hotel.id, data: { favorite: !hotel.favorite } });
+  }, 300);
 
   return (
     <div className="w-full mt-4">
@@ -30,8 +54,13 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
           <LoadedImage alt={hotel.title} thumbnail={hotel.thumbnail} />
         </Link>
 
-        <div className="w-[32px] absolute top-[-1px] right-10">
-          {Number(hotel.id) % 2 === 0 ? (
+        <div
+          className={`w-[32px] absolute top-[-1px] right-10 cursor-pointer ${
+            hotel.favorite ? "animate-jump" : ""
+          }`}
+          onClick={handleChangeStatusFavorite}
+        >
+          {hotel.favorite ? (
             <img src={Shape} alt="shape" className="object-cover w-full" />
           ) : (
             <img src={Shape2} alt="shape" className="object-cover w-full" />
@@ -57,7 +86,7 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
             {hotel.title}
           </Link>
         </h5>
-        <div className="flex xl:items-center justify-between pt-4 xl:flex-row lg:flex-col flex-row lg:items-start items-center ">
+        <div className="flex xl:items-center justify-between xl:pt-4 xl:flex-row lg:flex-col flex-row lg:items-start items-center ">
           <div className="flex items-center gap-2">
             <div className="w-fit px-2 py-0.5 flex items-center justify-center text-sm bg-primary text-third gap-1">
               Rating:{" "}
@@ -67,7 +96,7 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
               {totalData} {`${totalData > 0 ? "Reviews" : "Review"}`}
             </span>
           </div>
-          <div className="flex items-end gap-1">
+          <div className="flex items-baseline gap-1">
             <span className="text-four text-sm">from</span>
             <span className="text-secondary text-size-xl font-bold">
               {handleFormatMoney(hotel.price)}

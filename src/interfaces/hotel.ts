@@ -2,6 +2,7 @@ interface IHotel {
   id: number;
   title: string;
   location: string;
+  favorite: boolean;
   score: number;
   price: number;
   duration: string;

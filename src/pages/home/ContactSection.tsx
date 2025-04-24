@@ -48,7 +48,7 @@ const ContactSection = () => {
   );
 
   return (
-    <section className="main-container">
+    <section className="main-container animate-fade-down">
       <div className="lg:flex lg:justify-between">
         <h2 className=" lg:pr-20 pt-0 ">
           <Trans

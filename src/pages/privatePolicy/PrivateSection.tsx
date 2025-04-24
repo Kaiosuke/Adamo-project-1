@@ -14,7 +14,7 @@ const PrivateSection = () => {
 
   return (
     <>
-      <div className="main-container pt-6 text-four">
+      <div className="main-container pt-6 text-four animate-fade-down">
         <h1 className="text-size-4xl text-secondary">Privacy Policy</h1>
         <div className="mt-6">Last Updated: Feb 03, 2020</div>
         <Button

@@ -46,7 +46,7 @@ const HotelSection = () => {
 
   return (
     <>
-      <section className="main-container">
+      <section className="main-container animate-fade-down">
         <div className="flex justify-between ">
           <h2 className="text-size-4xl text-secondary">
             <Trans ns="hotel" i18nKey={"hotels.hotels"} />

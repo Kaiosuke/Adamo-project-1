@@ -44,9 +44,9 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full z-50 tran-normal ${isScroll ? "bg-third" : ""} ${
-        isScroll && scrollDir === "down" ? "translate-y-[-1000px]" : ""
-      }`}
+      className={`fixed w-full md:py-8 py-6 z-50 tran-normal ${
+        isScroll ? "bg-third" : ""
+      } ${isScroll && scrollDir === "down" ? "translate-y-[-1000px]" : ""}`}
     >
       <div
         className={`main-container flex items-center relative ${

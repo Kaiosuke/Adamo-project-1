@@ -29,7 +29,6 @@ const Tour = () => {
       <BreadcrumbCom links={links} current={current} />
       <PdSub />
       <AttractiveTourSection />
-
       <PdMain />
     </>
   );

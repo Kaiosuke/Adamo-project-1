@@ -76,6 +76,24 @@ const getTourById = createAsyncThunk<
   }
 });
 
+const changeFavoriteTour = createAsyncThunk<
+  ITour,
+  { id: number; data: { favorite: boolean } },
+  { rejectValue: string }
+>("tour/favorite", async ({ id, data }, { rejectWithValue }) => {
+  try {
+    const res = await instanceLocal.patch(`/tours/${id}`, data);
+    console.log(res.data);
+    return res.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      console.log(error);
+      return rejectWithValue(error.response?.data.message);
+    }
+    return rejectWithValue("error");
+  }
+});
+
 const getFiltersTour = createAsyncThunk<
   {
     locations: string[];
@@ -168,4 +186,10 @@ const getTours = async ({
   return res.data;
 };
 
-export { getAllTour, getTourById, getFiltersTour, getTours };
+export {
+  getAllTour,
+  getTourById,
+  getFiltersTour,
+  getTours,
+  changeFavoriteTour,
+};

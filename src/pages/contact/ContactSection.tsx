@@ -47,7 +47,7 @@ const ContactSection = () => {
   );
 
   return (
-    <section className="main-container">
+    <section className="main-container animate-fade-down">
       <div className="flex gap-10 lg:flex-row flex-col-reverse">
         <div className="flex-[1_0_40%] flex flex-col justify-between">
           <div>

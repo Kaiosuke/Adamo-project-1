@@ -4,7 +4,7 @@ import TourPage from "./TourPage";
 
 const AttractiveTourSection = () => {
   return (
-    <section className="main-container">
+    <section className="main-container animate-fade-down">
       <div className="flex justify-between ">
         <h2 className="text-size-4xl text-secondary">
           <Trans i18nKey={"attractiveTour.title"} ns="tour" />

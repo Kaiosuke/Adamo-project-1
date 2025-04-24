@@ -1,4 +1,9 @@
-import { getAllTour, getFiltersTour, getTourById } from "@/api/tourRequest";
+import {
+  changeFavoriteTour,
+  getAllTour,
+  getFiltersTour,
+  getTourById,
+} from "@/api/tourRequest";
 import { ITour } from "@/interfaces/tour";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
@@ -93,6 +98,22 @@ const toursSlice = createSlice({
       }
     );
     build.addCase(getTourById.rejected, setError);
+
+    build.addCase(
+      changeFavoriteTour.fulfilled,
+      (state: ITourState, action: PayloadAction<ITour>) => {
+        state.loading = false;
+        state.error = false;
+
+        state.tours = state.tours.map((tour) => {
+          if (tour.id === action.payload.id) {
+            return { ...tour, favorite: action.payload.favorite };
+          }
+          return tour;
+        });
+      }
+    );
+    build.addCase(changeFavoriteTour.rejected, setError);
 
     build.addCase(getFiltersTour.pending, setLoading);
     build.addCase(

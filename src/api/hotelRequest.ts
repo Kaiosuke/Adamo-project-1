@@ -59,4 +59,15 @@ const getHotelById = async (id: number | string): Promise<IHotel> => {
   return res.data;
 };
 
-export { getFiltersHotel, getHotels, getHotelById };
+const changeStatusFavorite = async ({
+  id,
+  data,
+}: {
+  id: number;
+  data: { favorite: boolean };
+}): Promise<IHotel> => {
+  const res = await instanceLocal.patch(`hotels/${id}`, data);
+  return res.data;
+};
+
+export { getFiltersHotel, getHotels, getHotelById, changeStatusFavorite };

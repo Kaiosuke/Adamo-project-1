@@ -8,7 +8,7 @@ import { Trans } from "react-i18next";
 
 const IntroduceSection = () => {
   return (
-    <section className="main-container">
+    <section className="main-container animate-fade-down">
       <div className="flex gap-6 lg:flex-row flex-col h-[100%]">
         <div className="lg:flex-[0_0_50%] flex-[0_0_100%] relative">
           <div className="lg:block flex gap-2">

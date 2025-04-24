@@ -9,7 +9,7 @@ import { Swiper } from "swiper/react";
 
 const DiscoverSection = ({ data }: { data: ITour[] }) => {
   return (
-    <section className="main-container">
+    <section className="main-container animate-fade-down">
       <div className="flex">
         <h3 className="text-secondary text-size-4xl">
           <Trans i18nKey={"discover.title"} />
