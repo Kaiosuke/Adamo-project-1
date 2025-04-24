@@ -84,9 +84,15 @@ const Reviews = ({
           <div className="str-line-2" />
           <div>
             <div className="flex flex-col gap-4">
-              {[...reviewsTour].reverse().map((review) => (
-                <ReviewTour key={review.id} review={review} />
-              ))}
+              {reviewsTour.length === 0 ? (
+                <div className="text-size-2xl mb-8">No comment!</div>
+              ) : (
+                <>
+                  {[...reviewsTour].reverse().map((review) => (
+                    <ReviewTour key={review.id} review={review} />
+                  ))}
+                </>
+              )}
             </div>
             <Pagination
               currentPage={currentPage}

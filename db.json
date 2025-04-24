@@ -4408,6 +4408,26 @@
       "title": "The best experience ever",
       "des": "comment 1",
       "id": 76
+    },
+    {
+      "tourId": 19,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Thu Apr 24 2025",
+      "title": "The best experience ever",
+      "des": "312qqqq",
+      "id": 77
+    },
+    {
+      "tourId": 19,
+      "rate": 1,
+      "avatar": "url('@/assets/images/Avatar-1.png')",
+      "opinion": "Nevermind",
+      "time": "Thu Apr 24 2025",
+      "title": "The best experience ever",
+      "des": "zzzzz",
+      "id": 78
     }
   ],
   "reviewsHotel": [
@@ -5780,6 +5800,16 @@
       "title": "Romantic escape",
       "des": "111zzz",
       "id": 157
+    },
+    {
+      "hotelId": 17,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Thu Apr 24 2025",
+      "title": "Romantic escape",
+      "des": "test comment",
+      "id": 158
     }
   ],
   "rooms": [
@@ -5789,7 +5819,7 @@
       "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.@Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
       "type": "Family Suite",
       "quantity": 4,
-      "status": true,
+      "status": false,
       "images": [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",

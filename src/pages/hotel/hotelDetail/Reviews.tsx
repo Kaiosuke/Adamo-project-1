@@ -58,6 +58,8 @@ const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
     return 5;
   }, [totalScore]);
 
+  console.log(data?.length);
+
   return (
     <>
       {id && handleAverageRate && (
@@ -79,6 +81,8 @@ const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
               <LoadingReview key={index} />
             ))}
           </div>
+        ) : data?.length === 0 ? (
+          <div className="mt-4 text-size-2xl">No comment!</div>
         ) : (
           <>
             {data.map((review: IReviewHotel) => (

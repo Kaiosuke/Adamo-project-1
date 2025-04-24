@@ -29,37 +29,62 @@ const Room = ({ room }: { room: IRoom }) => {
 
   const queryClient = useQueryClient();
 
-  const handleAddRoom = useDebouncedCallback((room: IRoom) => {
+  const handleAddRoom = (room: IRoom) => {
     const roomData = {
       data: room,
       quantity: 1,
     };
     dispatch(addRoom(roomData));
-  }, 300);
+  };
 
-  const handleDeleteRoom = useDebouncedCallback((room: IRoom) => {
+  const handleDeleteRoom = (room: IRoom) => {
     dispatch(deleteRoom(room));
-  }, 300);
+  };
 
-  const handleChangeStatus = useDebouncedCallback(
-    (roomId: number, status: boolean) => {
-      changeStatusMutation.mutate({ roomId, status });
+  const handleSelectRoom = useDebouncedCallback(
+    (room: IRoom, status: boolean) => {
+      changeStatusMutation.mutate(
+        { roomId: room.id, status },
+        {
+          onSuccess: async () => {
+            await queryClient.invalidateQueries({ queryKey: ["rooms"] });
+            handleAddRoom(room);
+            toast.success("Remove room Successfully", {
+              style: {
+                backgroundColor: "#4caf50",
+                color: "#ffffff",
+              },
+            });
+          },
+        }
+      );
     },
     300
   );
 
+  const handleNotSelectRoom = useDebouncedCallback(
+    (room: IRoom, status: boolean) => {
+      changeStatusMutation.mutate(
+        { roomId: room.id, status },
+        {
+          onSuccess: async () => {
+            await queryClient.invalidateQueries({ queryKey: ["rooms"] });
+            handleDeleteRoom(room);
+            toast.success("Remove room Successfully", {
+              style: {
+                backgroundColor: "#4caf50",
+                color: "#ffffff",
+              },
+            });
+          },
+        }
+      );
+    },
+    300
+  );
   const changeStatusMutation = useMutation({
     mutationFn: ({ roomId, status }: { roomId: number; status: boolean }) =>
       changeStatusRoom(roomId, status),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["rooms"] });
-      toast.success("Successfully", {
-        style: {
-          backgroundColor: "#4caf50",
-          color: "#ffffff",
-        },
-      });
-    },
   });
 
   return (
@@ -111,8 +136,7 @@ const Room = ({ room }: { room: IRoom }) => {
                               type="button"
                               className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full"
                               onClick={() => {
-                                handleAddRoom(room);
-                                handleChangeStatus(room.id, true);
+                                handleSelectRoom(room, true);
                               }}
                             >
                               Select room
@@ -126,7 +150,7 @@ const Room = ({ room }: { room: IRoom }) => {
                             className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full"
                             onClick={() => {
                               handleDeleteRoom(room);
-                              handleChangeStatus(room.id, false);
+                              handleNotSelectRoom(room, false);
                             }}
                           >
                             <FaCheck className="text-third" />
@@ -227,8 +251,7 @@ const Room = ({ room }: { room: IRoom }) => {
                     type="button"
                     className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full"
                     onClick={() => {
-                      handleAddRoom(room);
-                      handleChangeStatus(room.id, true);
+                      handleSelectRoom(room, true);
                     }}
                   >
                     Select room
@@ -242,7 +265,7 @@ const Room = ({ room }: { room: IRoom }) => {
                   className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full"
                   onClick={() => {
                     handleDeleteRoom(room);
-                    handleChangeStatus(room.id, false);
+                    handleNotSelectRoom(room, false);
                   }}
                 >
                   <FaCheck className="text-third" />
