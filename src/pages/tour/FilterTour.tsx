@@ -13,7 +13,7 @@ import {
   filterByPrice,
   filterByType,
 } from "@/redux/slices/toursSlice";
-import { memo, useCallback, useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "sonner";
 import { useDebouncedCallback } from "use-debounce";
@@ -57,6 +57,10 @@ const FilterTour = () => {
     setPrices([0, 300]);
     setTypeTour([]);
   };
+
+  useEffect(() => {
+    setTypeTour(type);
+  }, [type]);
 
   const handleOnValueChange = useCallback((v: number[]) => {
     setPrices(v);
