@@ -2,7 +2,8 @@ import Home19 from "@/assets/images/home 19.png";
 import Home18 from "@/assets/images/home-18.png";
 import Pagoda from "@/assets/images/pagoda.png";
 import Quote from "@/assets/images/quote.png";
-import PdMain from "@/components/padding/PdMain";
+import PdMain from "@/components/paddingList/PbMain";
+
 import { Trans } from "react-i18next";
 
 const IntroduceSection = () => {

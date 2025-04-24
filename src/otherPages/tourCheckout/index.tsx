@@ -10,8 +10,8 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import BillTourCheckout from "@/components/bills/tour/BillTourCheckout";
-import PdSub from "@/components/padding/PdSub";
-import PdMain from "@/components/padding/PdMain";
+import PdSub from "@/components/paddingList/PbSub";
+import PdMain from "@/components/paddingList/PbMain";
 
 const TourCheckOut = () => {
   const { booking } = useSelector(bookingSelector);

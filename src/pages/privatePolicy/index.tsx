@@ -1,7 +1,7 @@
 import BreadcrumbCom from "@/components/Breadcrumb";
 
 import PrivateSection from "./PrivateSection";
-import PdMain from "@/components/padding/PdMain";
+import PdMain from "@/components/paddingList/PbMain";
 
 const PrivatePolicy = () => {
   return (

@@ -10,7 +10,7 @@ import DiscoverSection from "./DiscoverSection";
 import HeroSection from "./HeroSection";
 import IntroduceSection from "./IntroduceSection";
 import TraditionalSection from "./Traditional";
-import PdMain from "@/components/padding/PdMain";
+import PdMain from "@/components/paddingList/PbMain";
 
 const Home = () => {
   const dispatch = useAppDispatch();

@@ -7,8 +7,8 @@ import HotelSection from "./HotelSection";
 
 import HotelPagination from "./HotelPagination";
 import SearchHotel from "@/components/searchList/hotel/SearchHotel";
-import PdSub from "@/components/padding/PdSub";
-import PdMain from "@/components/padding/PdMain";
+import PdSub from "@/components/paddingList/PbSub";
+import PdMain from "@/components/paddingList/PbMain";
 
 const Hotel = () => {
   const { t } = useTranslation("hotel");

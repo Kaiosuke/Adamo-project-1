@@ -9,7 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
 import TourReviewForm from "./TourReviewForm";
 import Star from "./Star";
-import Pagination from "@/components/paginations/Pagination";
+import Pagination from "@/components/paginationList/Pagination";
 
 interface Props {
   currentPage: number;

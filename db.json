@@ -4935,6 +4935,26 @@
       "title": "Romantic escape",
       "des": "zzzzz",
       "id": 154
+    },
+    {
+      "hotelId": 13,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Thu Apr 24 2025",
+      "title": "Romantic escape",
+      "des": "312312",
+      "id": 155
+    },
+    {
+      "hotelId": 13,
+      "rate": 5,
+      "avatar": "url('@/assets/images/Avatar-30.png')",
+      "opinion": "Dreamy!",
+      "time": "Thu Apr 24 2025",
+      "title": "Romantic escape",
+      "des": "nnfghfghfg",
+      "id": 156
     }
   ],
   "rooms": [

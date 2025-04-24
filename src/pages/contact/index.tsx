@@ -4,8 +4,8 @@ import MapCom from "@/components/MapCom";
 
 import ContactSection from "./ContactSection";
 import { Trans, useTranslation } from "react-i18next";
-import PdSub from "@/components/padding/PdSub";
-import PdMain from "@/components/padding/PdMain";
+import PdSub from "@/components/paddingList/PbSub";
+import PdMain from "@/components/paddingList/PbMain";
 
 const Contact = () => {
   useTranslation("contact");

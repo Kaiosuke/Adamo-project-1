@@ -10,7 +10,7 @@ import LoadingReview from "@/components/LoadingList/LoadingReview";
 import { NumberParam, useQueryParams } from "use-query-params";
 import ReviewForm from "./ReviewForm";
 import ReviewPagination from "./ReviewPagination";
-import PdSub from "@/components/padding/PdSub";
+import PdSub from "@/components/paddingList/PbSub";
 
 const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
   const { id } = useParams();

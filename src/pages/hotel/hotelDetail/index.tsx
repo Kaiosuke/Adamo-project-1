@@ -14,8 +14,8 @@ import SwiperCom from "@/components/swiper/SwiperCom";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useQuery } from "@tanstack/react-query";
 import LoadingSlideDetail from "./LoadingSlideDetail";
-import PdSub from "@/components/padding/PdSub";
-import PdMain from "@/components/padding/PdMain";
+import PdMain from "@/components/paddingList/PbMain";
+import PdSub from "@/components/paddingList/PbSub";
 
 const HotelDetail = () => {
   const { id } = useParams();

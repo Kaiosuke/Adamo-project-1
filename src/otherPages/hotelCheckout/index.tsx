@@ -10,8 +10,8 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router";
 import FormInfoUser from "./FormInfoUser";
 import { useState } from "react";
-import PdSub from "@/components/padding/PdSub";
-import PdMain from "@/components/padding/PdMain";
+import PdSub from "@/components/paddingList/PbSub";
+import PdMain from "@/components/paddingList/PbMain";
 
 const HotelCheckOut = () => {
   const { t } = useTranslation("checkout");
