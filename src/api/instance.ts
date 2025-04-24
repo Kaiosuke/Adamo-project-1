@@ -2,13 +2,16 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const controller = new AbortController();
+
+const url = import.meta.env.VITE_APP_URL_LOCAL;
+
 const instance = axios.create({
   baseURL: "https://hotel-backend-production-a519.up.railway.app/",
   headers: { "Content-Type": "application/json" },
 });
 
 const instanceLocal = axios.create({
-  baseURL: "http://localhost:3000/",
+  baseURL: url,
   headers: { "Content-Type": "application/json" },
   signal: controller.signal,
 });

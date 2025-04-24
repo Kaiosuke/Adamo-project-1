@@ -3,13 +3,16 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, FacebookAuthProvider } from "firebase/auth";
 
+const apiKey = import.meta.env.VITE_APP_API_KEY;
+const appId = import.meta.env.VITE_APP_APP_ID;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCkwHzuXzIt0BmUZyUhk0abOPfYZiPrbV0",
+  apiKey: apiKey,
   authDomain: "authentication-5af5a.firebaseapp.com",
   projectId: "authentication-5af5a",
   storageBucket: "authentication-5af5a.firebasestorage.app",
   messagingSenderId: "311211569121",
-  appId: "1:311211569121:web:e5b3db5b76d236506aaca0",
+  appId: appId,
   measurementId: "G-0EN9PXKXY7",
 };
 
