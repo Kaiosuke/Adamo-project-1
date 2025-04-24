@@ -19,7 +19,7 @@ const HeroSection = () => {
           <img
             src={Hero}
             alt="hero-image"
-            onLoad={() => setLoaded(false)}
+            onLoad={() => setLoaded(true)}
             className={`w-full h-[726px] object-cover ${
               loaded ? "block" : "hidden"
             }`}
