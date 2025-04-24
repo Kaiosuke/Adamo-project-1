@@ -24,6 +24,7 @@ import LoadingSearch from "@/components/LoadingList/LoadingSearch";
 const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
   const { locations, guests, types, filter, loading } =
     useSelector(tourSelector);
+
   const { location, type, guest } = filter;
   const { t } = useTranslation("search");
 
@@ -63,10 +64,10 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
 
   return (
     <div
-      className={`w-full h-full bg-third/80 ${
+      className={`h-full bg-third/80 w-full ${
         !isHome
           ? "flex-[0_0_30%] 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8"
-          : null
+          : ""
       }`}
     >
       {loading ? (
@@ -75,7 +76,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
         </div>
       ) : (
         <>
-          <div className="lg:px-8 lg:py-8 px-6 py-6">
+          <div className="lg:px-8 lg:py-8 w-full p-4">
             <p className="text-size-2xl">{t("tour.description")}</p>
             <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
               <LocationCom
@@ -85,7 +86,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
                 t={t}
               />
 
-              <div className="group bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
+              <div className="group bg-third lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
                 <DatePickerSingle
                   date={date}
                   setDate={setDate}

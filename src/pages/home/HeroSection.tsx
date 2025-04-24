@@ -1,12 +1,6 @@
 import Hero from "@/assets/images/hero.png";
 import SearchTourHome from "@/components/searchList/SearchTourHome";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Trans, useTranslation } from "react-i18next";
 
 const HeroSection = () => {
@@ -62,11 +56,7 @@ const HeroSection = () => {
             <div className="px-6 py-3 text-third bg-primary">Open Search</div>
           </DialogTrigger>
           <DialogContent className="bg-third/60">
-            <DialogHeader>
-              <DialogDescription>
-                <SearchTourHome />
-              </DialogDescription>
-            </DialogHeader>
+            <SearchTourHome />
           </DialogContent>
         </Dialog>
       </div>

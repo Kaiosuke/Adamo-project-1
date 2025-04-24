@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 import PaginationWithShow from "@/components/paginations/PaginationWithShow";
 import Tour from "@/components/Tour";
-import SkeletonData from "@/components/SkeletonHotel";
+import SkeletonData from "@/components/LoadingList/SkeletonData";
 
 const TourPage = () => {
   const { tours, loading } = useSelector(tourSelector);

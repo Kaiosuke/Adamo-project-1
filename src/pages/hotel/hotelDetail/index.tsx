@@ -10,10 +10,12 @@ import HotelDetailTabs from "./HotelDetailTabs";
 import RelatedHotels from "./RelatedHotel";
 
 import { getHotelById } from "@/api/hotelRequest";
-import { useQuery } from "@tanstack/react-query";
 import { getReviewsHotel } from "@/api/reviewRequest";
 import BillHotelDetail from "@/components/bills/hotel/BillHotelDetail";
 import SwiperCom from "@/components/swiper/SwiperCom";
+import { useQuery } from "@tanstack/react-query";
+import LoadingSlideDetail from "./LoadingSlideDetail";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const HotelDetail = () => {
   const { id } = useParams();
@@ -28,7 +30,7 @@ const HotelDetail = () => {
     enabled: id !== undefined,
   });
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["hotelDetail", { id: id }],
     queryFn: () => getHotelById(Number(id)),
     enabled: id !== undefined,
@@ -76,9 +78,20 @@ const HotelDetail = () => {
         <div className="flex 2xl:gap-20 gap-10 lg:mt-8 mt-6 flex-wrap xl:flex-row flex-col-reverse">
           <div className="lg:flex-[1_0_auto] flex-[0_0_100%] lg:max-w-[635px] w-full">
             <div className="h-[680px]">
-              <SwiperCom images={data?.images} />
+              {isLoading ? (
+                <LoadingSlideDetail />
+              ) : (
+                <SwiperCom images={data?.images} />
+              )}
             </div>
-            {data && <HotelDetailTabs data={data} />}
+
+            <div className="">
+              {isLoading || !data ? (
+                <Skeleton className="bg-five h-screen mt-10" />
+              ) : (
+                <HotelDetailTabs data={data} />
+              )}
+            </div>
           </div>
           <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit xl:sticky top-[20px]">
             <BillHotelDetail hotel={data} />

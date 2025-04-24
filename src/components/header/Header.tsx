@@ -50,7 +50,7 @@ const Header = () => {
     >
       <div
         className={`main-container flex items-center relative ${
-          isScroll ? "pt-0" : "pt-4"
+          isScroll ? "pt-0" : "pt-0"
         }`}
       >
         <Link to="/">

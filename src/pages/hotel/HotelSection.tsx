@@ -1,7 +1,7 @@
 import { getHotels } from "@/api/hotelRequest";
 import Hotel from "@/components/Hotel";
 
-import SkeletonData from "@/components/SkeletonHotel";
+import SkeletonData from "@/components/LoadingList/SkeletonData";
 import { useQuery } from "@tanstack/react-query";
 import { memo } from "react";
 import { Trans } from "react-i18next";

@@ -1,11 +1,16 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+import { tourSelector } from "@/redux/selectors/tourSelector";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import LoadingSearch from "../LoadingList/LoadingSearch";
 import SearchHotel from "./hotel/SearchHotel";
 import SearchTour from "./tour/SearchTour";
 
 const SearchTourHome = () => {
   const { t } = useTranslation("search");
+
+  const { loading } = useSelector(tourSelector);
 
   return (
     <div className=" 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8 lg:max-w-[446px] w-full">
@@ -26,10 +31,26 @@ const SearchTourHome = () => {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="tour">
-            <SearchTour isHome />
+            {loading ? (
+              <div className="h-[372px]">
+                <LoadingSearch />
+              </div>
+            ) : (
+              <>
+                <SearchTour isHome />
+              </>
+            )}
           </TabsContent>
           <TabsContent value="hotel">
-            <SearchHotel isHome />
+            {loading ? (
+              <div className="h-[372px]">
+                <LoadingSearch />
+              </div>
+            ) : (
+              <>
+                <SearchHotel isHome />
+              </>
+            )}
           </TabsContent>
         </Tabs>
       </div>

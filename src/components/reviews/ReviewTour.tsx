@@ -26,7 +26,7 @@ const ReviewTour = ({ review }: { review: IReviewTour }) => {
         </div>
       </div>
       <div className="mt-4">
-        <p className="leading-6 text-four">{review.des}</p>
+        <p className="leading-6 text-four h-[60px]">{review.des}</p>
       </div>
       <div className="str-line-2" />
     </div>

@@ -1,6 +1,6 @@
 import { getAllTour, getFiltersTour, getTours } from "@/api/tourRequest";
 import PdMain from "@/components/Padding/PdMain";
-import SkeletonData from "@/components/SkeletonHotel";
+import SkeletonData from "@/components/LoadingList/SkeletonData";
 import { useAppDispatch } from "@/redux";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";

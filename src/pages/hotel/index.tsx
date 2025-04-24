@@ -13,14 +13,8 @@ import SearchHotel from "@/components/searchList/hotel/SearchHotel";
 const Hotel = () => {
   const { t } = useTranslation("hotel");
 
-  const links = useMemo(
-    () => [
-      { href: "/", title: "Home" },
-      { href: "/hotels", title: "Hotels" },
-    ],
-    []
-  );
-  const current = useMemo(() => "Hotel Details", []);
+  const links = useMemo(() => [{ href: "/", title: "Home" }], []);
+  const current = useMemo(() => "Hotel", []);
 
   return (
     <>

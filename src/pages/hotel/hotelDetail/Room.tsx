@@ -72,14 +72,14 @@ const Room = ({ room }: { room: IRoom }) => {
             <LoadedImageWidth alt={room.type} thumbnail={room.thumbnail} />
           </div>
 
-          <div className="absolute top-2 left-2 w-8 h-8 rounded-full bg-four flex justify-center items-center ">
+          <div className="absolute top-2 left-2 w-8 h-8 rounded-full bg-four flex justify-center items-center">
             <Dialog>
               <DialogTrigger>
                 <FaImage className="text-third cursor-pointer" />
               </DialogTrigger>
-              <DialogContent className="lg:max-w-[1200px] md:max-w-[900px] max-w-[90%] h-[90%] pb-6">
+              <DialogContent className="lg:max-w-[1200px] md:max-w-[90%] m-auto h-[60%] pb-6">
                 <DialogHeader>
-                  <DialogTitle className="text-secondary text-size-3xl px-6 pt-6 ">
+                  <DialogTitle className="text-secondary text-size-3xl px-6 pt-6">
                     {room.type}
                   </DialogTitle>
                 </DialogHeader>

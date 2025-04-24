@@ -66,10 +66,12 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
       }`}
     >
       {isLoading ? (
-        <LoadingSearch />
+        <div className="h-[503px] w-[100%]">
+          <LoadingSearch />
+        </div>
       ) : (
         <div className="z-10 relative h-full">
-          <div className="lg:px-8 lg:py-8 px-6 py-6 h-full">
+          <div className="lg:px-8 lg:py-8 p-4 h-full">
             <div className="text-size-2xl">{t("hotel.title")}</div>
             <div className="flex flex-col justify-between h-full">
               <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
@@ -98,13 +100,13 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
                   />
                 )}
               </div>
-              <div className={` ${isHome ? "mb-8 " : "mt-4"}`}>
+              <div className={` ${isHome ? "lg:mb-8 mt-4" : "lg:mt-4"}`}>
                 <Link
                   to={`/hotels?location=${location}&guest=${guest}&from=${from.toDateString()}`}
                 >
                   <Button
                     variant="primary"
-                    className="flex justify-center gap-2 text-third h-[64px]"
+                    className="flex justify-center gap-2 text-third h-[64px] "
                     onClick={handleFilter}
                   >
                     <CiSearch className="text-size-lg " />

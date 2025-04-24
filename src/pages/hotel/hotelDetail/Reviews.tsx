@@ -6,10 +6,10 @@ import { useQuery } from "@tanstack/react-query";
 import { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router";
 
+import LoadingReview from "@/components/LoadingList/LoadingReview";
 import { NumberParam, useQueryParams } from "use-query-params";
 import ReviewForm from "./ReviewForm";
 import ReviewPagination from "./ReviewPagination";
-import LoadingPage from "@/components/LoadingList/LoadingPage";
 
 const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
   const { id } = useParams();
@@ -29,7 +29,7 @@ const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
     return saved ? Number(saved) : 0;
   });
 
-  const { data, isFetching } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["reviewHotel", { id, _page }],
     queryFn: () =>
       getReviewsHotel({
@@ -71,16 +71,17 @@ const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
       )}
 
       <div className="flex flex-col gap-4">
-        {isFetching ? (
-          <div>
-            <LoadingPage />
+        {isLoading || !data ? (
+          <div className="flex flex-col gap-6 mt-10">
+            {Array.from({ length: 4 }).map((_, index) => (
+              <LoadingReview key={index} />
+            ))}
           </div>
         ) : (
           <>
-            {data &&
-              data.map((review: IReviewHotel) => (
-                <ReviewHotel key={review.id} review={review} />
-              ))}
+            {data.map((review: IReviewHotel) => (
+              <ReviewHotel key={review.id} review={review} />
+            ))}
           </>
         )}
       </div>
