@@ -4,6 +4,7 @@ import Cookies from "js-cookie";
 const controller = new AbortController();
 
 const url = import.meta.env.VITE_APP_URL_LOCAL;
+// const urlServer = import.meta.env.VITE_APP_URL_SERVER;
 
 const instance = axios.create({
   baseURL: "https://hotel-backend-production-a519.up.railway.app/",

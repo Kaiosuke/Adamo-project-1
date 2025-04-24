@@ -179,16 +179,26 @@ const Footer = () => {
               <div className="md:flex-[0_0_50%] flex-[0_0_100%] md:pt-0 pt-6">
                 <div className="flex md:justify-end justify-start">
                   <div>
-                    <div className="flex gap-4 items-start">
+                    <div className="flex gap-4 items-center">
                       <CiLocationOn className="text-size-lg" />
-                      <span>
+                      <a
+                        href="https://www.google.com/maps?q=Lilama+10+Tower,+56+To+Huu,+Trung+Van,+Nam+Tu+Liem,+Ha+Noi"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline text-third hover:text-primary"
+                      >
                         Lilama 10 Tower, 56 To Huu, <br /> Trung Van, Nam Tu
                         Liem, Ha Noi
-                      </span>
+                      </a>
                     </div>
-                    <div className="flex gap-4 pt-6">
+                    <div className="flex gap-4 pt-6 items-center">
                       <CiMail className="text-size-lg" />
-                      <span>hello@adamotravel.com</span>
+                      <a
+                        href="mailto:hello@adamotravel.com"
+                        className="hover:underline text-third hover:text-primary"
+                      >
+                        hello@adamotravel.com
+                      </a>
                     </div>
                   </div>
                 </div>

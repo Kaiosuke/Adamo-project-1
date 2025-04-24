@@ -201,9 +201,14 @@ const Room = ({ room }: { room: IRoom }) => {
                   <span>{room.capacity} Guest</span>
                 </div>
               </div>
-              <p className="text-four">
-                Air Conditioning • Airport Transport • Restaurant • 15 more
-              </p>
+              <div className="text-four flex gap-2">
+                {room.features.slice(1, 3).map((v, index) => (
+                  <span key={index} className="flex gap-2 items-center">
+                    {v} •
+                  </span>
+                ))}
+                <span className="text-six font-bold">15 More</span>
+              </div>
             </div>
             <div className="mt-2 flex items-center justify-between">
               {room.quantity < 1 ? (

@@ -4,7 +4,7 @@ import { NumberParam, useQueryParams, withDefault } from "use-query-params";
 
 const HotelPagination = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const ITEMS_PER_PAGE = 4;
+  const ITEMS_PER_PAGE = 6;
 
   const [query, setQuery] = useQueryParams({
     _page: withDefault(NumberParam, 1),

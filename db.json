@@ -114,10 +114,7 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       },
@@ -265,13 +262,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -418,13 +410,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -571,13 +558,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -724,13 +706,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -877,13 +854,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1030,13 +1002,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1183,13 +1150,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1336,13 +1298,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1489,13 +1446,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1642,13 +1594,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1795,13 +1742,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1951,10 +1893,7 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       },
@@ -1989,6 +1928,450 @@
             "description": "This activity will have a maximum of 17 travelers."
           }
         ]
+      }
+    },
+    {
+      "id": 14,
+      "title": "Adventure to the ancient beauty of Hoi An old town",
+      "location": "Hoi An, Quang Nam",
+      "score": 4.8,
+      "time": "2 days - 1 night",
+      "duration": 2,
+      "type": "culture-tour",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/hoian_tour.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-5.jpg",
+        "https://swiperjs.com/demos/images/nature-6.jpg"
+      ],
+      "price": 99,
+      "description": {
+        "overview": {
+          "title": "Immerse yourself in the charming streets of Hoi An, discover its heritage sites, and enjoy traditional food with a local guide.",
+          "list": [
+            "Visit Hoi An Ancient Town and Japanese Covered Bridge",
+            "Experience lantern-making workshop",
+            "Enjoy a traditional boat ride on Hoai River"
+          ]
+        },
+        "included": [
+          "Hotel pickup and drop-off",
+          "Local guide",
+          "Boat ride ticket",
+          "Lantern-making class"
+        ],
+        "departureReturn": {
+          "point": ["Da Nang International Airport", "Hoi An Center"],
+          "time": "9:00 AM"
+        },
+        "itineraries": [
+          {
+            "title": "Day 1: Hoi An exploration",
+            "type": "location",
+            "locations": [
+              {
+                "title": "Japanese Bridge",
+                "des": "Discover the iconic bridge built in the 17th century.",
+                "duration": "1 hour"
+              },
+              {
+                "title": "Hoi An Market",
+                "des": "Try local delicacies and shop for handicrafts.",
+                "duration": "1.5 hours"
+              }
+            ]
+          },
+          {
+            "title": "Day 2: Lantern & River tour",
+            "type": "location",
+            "locations": [
+              {
+                "title": "Lantern Workshop",
+                "des": "Make your own colorful lantern to bring home.",
+                "duration": "2 hours"
+              },
+              {
+                "title": "Boat Ride",
+                "des": "Cruise on the river at sunset for a magical view.",
+                "duration": "45 minutes"
+              }
+            ]
+          }
+        ],
+        "maps": [15.8801, 108.338],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/hoian360/",
+        "video": "url('@/assets/videos/hoian.mp4')"
+      },
+      "additionalInfo": {
+        "list": [
+          "Vegetarian options available",
+          "Children must be accompanied",
+          "Weather dependent activity"
+        ],
+        "faqs": [
+          {
+            "title": "Is lantern-making suitable for kids?",
+            "description": "Yes, it’s a family-friendly activity."
+          }
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "title": "Trekking through majestic Fansipan Mountain",
+      "location": "Lao Cai, Vietnam",
+      "score": 4.9,
+      "time": "3 days - 2 nights",
+      "duration": 3,
+      "type": "adventure",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/fansipan.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "price": 189,
+      "description": {
+        "overview": {
+          "title": "Challenge yourself with a hike to the Roof of Indochina - Fansipan peak!",
+          "list": [
+            "Trek with a professional mountain guide",
+            "Camp under the stars near the summit",
+            "Panoramic views from the peak at sunrise"
+          ]
+        },
+        "included": [
+          "Experienced guide",
+          "Meals and camping gear",
+          "Entrance fees",
+          "Cable car descent (optional)"
+        ],
+        "departureReturn": {
+          "point": ["Sapa Town Center", "Fansipan base station"],
+          "time": "6:00 AM"
+        },
+        "itineraries": [
+          {
+            "title": "Day 1: Sapa to Camp 1",
+            "type": "location",
+            "locations": [
+              {
+                "title": "Heaven’s Gate",
+                "des": "First stop to admire the view over the valley.",
+                "duration": "30 minutes"
+              },
+              {
+                "title": "Camp 1",
+                "des": "Set up camp and dinner under the stars.",
+                "duration": "overnight"
+              }
+            ]
+          }
+        ],
+        "maps": [22.3, 103.8],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/fansipan/",
+        "video": "url('@/assets/videos/fansipan.mp4')"
+      },
+      "additionalInfo": {
+        "list": [
+          "Challenging physical activity",
+          "Not recommended for beginners",
+          "Good health required"
+        ],
+        "faqs": [
+          {
+            "title": "Do I need prior trekking experience?",
+            "description": "Not mandatory but physical fitness is essential."
+          }
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "title": "Ha Long Bay Cruise with Overnight Stay",
+      "location": "Ha Long, Quang Ninh",
+      "score": 4.7,
+      "time": "2 days - 1 night",
+      "duration": 2,
+      "type": "cruise",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/halong_cruise.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg"
+      ],
+      "price": 220,
+      "description": {
+        "overview": {
+          "title": "Sail through the emerald waters of Ha Long Bay on a luxury cruise.",
+          "list": [
+            "Enjoy a seafood buffet on board",
+            "Kayak through limestone caves",
+            "Sunset party on the sundeck"
+          ]
+        },
+        "included": [
+          "Round-trip transport from Hanoi",
+          "All meals on cruise",
+          "English-speaking guide",
+          "Kayak & swimming gear"
+        ],
+        "departureReturn": {
+          "point": ["Hanoi Old Quarter", "Ha Long Pier"],
+          "time": "7:00 AM"
+        },
+        "itineraries": [
+          {
+            "title": "Day 1: Hanoi - Ha Long Bay",
+            "type": "location",
+            "locations": [
+              {
+                "title": "Surprise Cave",
+                "des": "One of the most beautiful caves in Ha Long.",
+                "duration": "1 hour"
+              },
+              {
+                "title": "Titov Island",
+                "des": "Swim or hike to the top for panoramic views.",
+                "duration": "1.5 hours"
+              }
+            ]
+          }
+        ],
+        "maps": [20.9101, 107.1839],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/halong360/",
+        "video": "url('@/assets/videos/halong.mp4')"
+      },
+      "additionalInfo": {
+        "list": [
+          "Bring swimwear and sunscreen",
+          "Not suitable for wheelchairs",
+          "Children under 5 free of charge"
+        ],
+        "faqs": [
+          {
+            "title": "Can I bring my own food?",
+            "description": "Not allowed, meals are included on the cruise."
+          }
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "title": "Discover the peaceful beauty of Ninh Binh",
+      "location": "Ninh Binh, Vietnam",
+      "score": 4.6,
+      "time": "1 day trip",
+      "duration": 1,
+      "type": "nature",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/ninhbinh.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-7.jpg",
+        "https://swiperjs.com/demos/images/nature-8.jpg"
+      ],
+      "price": 59,
+      "description": {
+        "overview": {
+          "title": "Visit ancient temples, ride a boat along Tam Coc and cycle through rice fields in Ninh Binh.",
+          "list": [
+            "Explore Hoa Lu Ancient Capital",
+            "Rowing boat tour in Tam Coc",
+            "Cycling through local villages"
+          ]
+        },
+        "included": [
+          "Transportation from Hanoi",
+          "Lunch buffet",
+          "Boat and bike rental",
+          "English-speaking guide"
+        ],
+        "departureReturn": {
+          "point": ["Hanoi Old Quarter"],
+          "time": "8:00 AM"
+        },
+        "itineraries": [
+          {
+            "title": "Day 1: Ninh Binh Highlights",
+            "type": "location",
+            "locations": [
+              {
+                "title": "Hoa Lu",
+                "des": "Visit the ancient capital of Vietnam with stunning temples.",
+                "duration": "1 hour"
+              },
+              {
+                "title": "Tam Coc",
+                "des": "Row through caves and limestone karsts.",
+                "duration": "2 hours"
+              },
+              {
+                "title": "Cycling tour",
+                "des": "Ride through beautiful rice paddies and local villages.",
+                "duration": "1 hour"
+              }
+            ]
+          }
+        ],
+        "maps": [20.254, 105.974],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/ninhbinh360/",
+        "video": "url('@/assets/videos/ninhbinh.mp4')"
+      },
+      "additionalInfo": {
+        "list": [
+          "Dress modestly when visiting temples",
+          "Hat and sunscreen recommended",
+          "Children must be accompanied"
+        ],
+        "faqs": [
+          {
+            "title": "Is the boat ride safe for kids?",
+            "description": "Yes, life jackets are provided for all."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": 18,
+      "title": "Relax in the tranquil highlands of Da Lat",
+      "location": "Da Lat, Lam Dong",
+      "score": 4.6,
+      "time": "2 days - 1 night",
+      "duration": 2,
+      "type": "leisure",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/dalat1.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-9.jpg",
+        "https://swiperjs.com/demos/images/nature-10.jpg"
+      ],
+      "price": 180,
+      "description": {
+        "overview": {
+          "title": "Escape the heat and unwind in Da Lat – the city of flowers. Visit coffee farms, romantic waterfalls, and charming French villas.",
+          "list": [
+            "Visit the Valley of Love and Crazy House",
+            "Enjoy coffee tasting at local farms",
+            "Relax by Tuyen Lam Lake",
+            "Stay in a cozy boutique hotel"
+          ]
+        },
+        "included": [
+          "Accommodation",
+          "Breakfast and lunch",
+          "Transportation in Da Lat",
+          "Entrance tickets",
+          "English-speaking guide"
+        ],
+        "departureReturn": {
+          "point": ["Lien Khuong Airport", "City Center Hotel"],
+          "time": "9:00 AM"
+        },
+        "itineraries": [],
+        "maps": [11.9404, 108.4583],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/dalat/",
+        "video": "url('@/assets/videos/dalat.mp4')"
+      },
+      "additionalInfo": {
+        "list": [
+          "Ideal for couples and small families",
+          "Cool climate, bring warm clothing",
+          "Wheelchair accessible"
+        ],
+        "faqs": []
+      }
+    },
+    {
+      "id": 19,
+      "title": "Cultural heritage tour in Hoi An Ancient Town",
+      "location": "Hoi An, Quang Nam",
+      "score": 4.9,
+      "time": "1 day",
+      "duration": 1,
+      "type": "culture",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/hoian1.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-11.jpg",
+        "https://swiperjs.com/demos/images/nature-12.jpg"
+      ],
+      "price": 95,
+      "description": {
+        "overview": {
+          "title": "Experience the charm of Hoi An’s lantern-lit streets, ancient temples, and bustling markets on this immersive cultural day tour.",
+          "list": [
+            "Walking tour through Hoi An Old Town",
+            "Traditional lantern-making workshop",
+            "Try local food specialties like Cao Lau and Banh Mi",
+            "Boat ride on Thu Bon River"
+          ]
+        },
+        "included": [
+          "Local guide",
+          "Workshop materials",
+          "Lunch",
+          "River boat ticket",
+          "Old Town entrance fee"
+        ],
+        "departureReturn": {
+          "point": ["Da Nang City Center", "Hoi An Old Quarter"],
+          "time": "8:30 AM"
+        },
+        "itineraries": [],
+        "maps": [15.8801, 108.338],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/hoian/",
+        "video": "url('@/assets/videos/hoian.mp4')"
+      },
+      "additionalInfo": {
+        "list": [
+          "Easy walking tour, suitable for all ages",
+          "Bring sun protection",
+          "Street food tastings included"
+        ],
+        "faqs": []
+      }
+    },
+    {
+      "id": 20,
+      "title": "Sunset Cruise in Ha Long Bay",
+      "location": "Ha Long, Quang Ninh",
+      "score": 4.8,
+      "time": "1 day",
+      "duration": 1,
+      "type": "leisure",
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/halong2.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-13.jpg",
+        "https://swiperjs.com/demos/images/nature-14.jpg"
+      ],
+      "price": 120,
+      "description": {
+        "overview": {
+          "title": "Enjoy a luxurious sunset cruise through the limestone islets of Ha Long Bay. Perfect for couples and those looking to unwind with a glass of wine as the sun sets over the Gulf of Tonkin.",
+          "list": [
+            "Cruise through iconic limestone karsts",
+            "Sunset view on the sundeck",
+            "Seafood buffet on board",
+            "Kayaking and swimming stops included"
+          ]
+        },
+        "included": [
+          "Round-trip transport from Ha Long City",
+          "Welcome drink and seafood dinner",
+          "Kayaking and swimming gear",
+          "Cruise guide and insurance"
+        ],
+        "departureReturn": {
+          "point": ["Tuan Chau Marina", "Back at Marina"],
+          "time": "2:00 PM"
+        },
+        "itineraries": [],
+        "maps": [20.9214, 107.1839],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/halong2/",
+        "video": "url('@/assets/videos/halong-sunset.mp4')"
+      },
+      "additionalInfo": {
+        "list": [
+          "Not recommended for children under 6",
+          "Wear light clothing and bring swimwear",
+          "Alcoholic beverages available at extra cost"
+        ],
+        "faqs": []
       }
     }
   ],
@@ -2049,10 +2432,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2109,10 +2489,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2169,10 +2546,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2230,10 +2604,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2290,10 +2661,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2350,10 +2718,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2409,10 +2774,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2468,10 +2830,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2528,10 +2887,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2589,10 +2945,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2647,10 +3000,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2706,10 +3056,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2770,12 +3117,283 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
+      }
+    },
+    {
+      "id": 14,
+      "title": "Muong Thanh Luxury Saigon Hotel",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 8.6,
+      "price": 94,
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/muongthanh.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-5.jpg",
+        "https://swiperjs.com/demos/images/nature-6.jpg"
+      ],
+      "star": 5,
+      "description": {
+        "overview": {
+          "description": "Khách sạn 5 sao với hồ bơi vô cực, sky bar và nhà hàng phục vụ ẩm thực Việt, Á và Âu. Vị trí thuận tiện gần sân bay Tân Sơn Nhất và trung tâm thành phố."
+        },
+        "amenities": [
+          "Hồ bơi ngoài trời",
+          "Wi-Fi miễn phí",
+          "Nhà hàng",
+          "Phòng gym",
+          "Dịch vụ spa",
+          "Quầy bar"
+        ],
+        "rules": {
+          "checkIn": "02:00 PM",
+          "checkOut": "12:00 PM",
+          "information": [
+            "Không hút thuốc trong phòng",
+            "Không cho phép thú cưng",
+            "Chấp nhận thẻ tín dụng",
+            "Có chỗ đậu xe miễn phí"
+          ]
+        },
+        "maps": [10.7995, 106.6781],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/muongthanh/",
+        "video": "url('@/assets/videos/muongthanh.mp4')"
+      }
+    },
+    {
+      "id": 15,
+      "title": "Eastin Grand Hotel Saigon",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 8.9,
+      "price": 92,
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/eastingrand.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-7.jpg",
+        "https://swiperjs.com/demos/images/nature-8.jpg"
+      ],
+      "star": 5,
+      "description": {
+        "overview": {
+          "description": "Khách sạn sang trọng với hồ bơi ngoài trời, nhà hàng quốc tế và quầy bar. Gần sân bay và các điểm tham quan nổi tiếng."
+        },
+        "amenities": [
+          "Hồ bơi",
+          "Wi-Fi miễn phí",
+          "Nhà hàng",
+          "Phòng gym",
+          "Dịch vụ spa",
+          "Quầy bar"
+        ],
+        "rules": {
+          "checkIn": "02:00 PM",
+          "checkOut": "12:00 PM",
+          "information": [
+            "Không hút thuốc trong phòng",
+            "Không cho phép thú cưng",
+            "Chấp nhận thẻ tín dụng",
+            "Có chỗ đậu xe miễn phí"
+          ]
+        },
+        "maps": [10.8002, 106.6785],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/eastingrand/",
+        "video": "url('@/assets/videos/eastingrand.mp4')"
+      }
+    },
+    {
+      "id": 16,
+      "title": "Tan Son Nhat Saigon Hotel",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 8.5,
+      "price": 86,
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/tansonnhat.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-9.jpg",
+        "https://swiperjs.com/demos/images/nature-10.jpg"
+      ],
+      "star": 4,
+      "description": {
+        "overview": {
+          "description": "Khách sạn 4 sao với hồ bơi, nhà hàng và quầy bar. Vị trí thuận tiện gần sân bay và trung tâm thành phố."
+        },
+        "amenities": [
+          "Hồ bơi",
+          "Wi-Fi miễn phí",
+          "Nhà hàng",
+          "Phòng gym",
+          "Dịch vụ spa",
+          "Quầy bar"
+        ],
+        "rules": {
+          "checkIn": "02:00 PM",
+          "checkOut": "12:00 PM",
+          "information": [
+            "Không hút thuốc trong phòng",
+            "Không cho phép thú cưng",
+            "Chấp nhận thẻ tín dụng",
+            "Có chỗ đậu xe miễn phí"
+          ]
+        },
+        "maps": [10.8005, 106.6789],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/tansonnhat/",
+        "video": "url('@/assets/videos/tansonnhat.mp4')"
+      }
+    },
+    {
+      "id": 17,
+      "title": "The Alcove Library Hotel",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 8.7,
+      "price": 75,
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/alcove.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-11.jpg",
+        "https://swiperjs.com/demos/images/nature-12.jpg"
+      ],
+      "star": 4,
+      "description": {
+        "overview": {
+          "description": "Khách sạn boutique với thiết kế thư viện độc đáo, cung cấp không gian yên tĩnh và ấm cúng. Gần sân bay và trung tâm thành phố."
+        },
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Nhà hàng",
+          "Thư viện",
+          "Dịch vụ giặt ủi",
+          "Quầy bar"
+        ],
+        "rules": {
+          "checkIn": "02:00 PM",
+          "checkOut": "12:00 PM",
+          "information": [
+            "Không hút thuốc trong phòng",
+            "Không cho phép thú cưng",
+            "Chấp nhận thẻ tín dụng",
+            "Có chỗ đậu xe miễn phí"
+          ]
+        },
+        "maps": [10.801, 106.6792],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/alcove/",
+        "video": "url('@/assets/videos/alcove.mp4')"
+      }
+    },
+    {
+      "id": 18,
+      "title": "Parkroyal Saigon Hotel",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 8.8,
+      "price": 98,
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/parkroyal.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-13.jpg",
+        "https://swiperjs.com/demos/images/nature-14.jpg"
+      ],
+      "star": 4,
+      "description": {
+        "overview": {
+          "description": "Parkroyal Saigon là khách sạn hiện đại với vị trí thuận tiện gần sân bay và các trung tâm thương mại. Cung cấp dịch vụ chuyên nghiệp, tiện nghi hiện đại, phù hợp cho cả doanh nhân và khách du lịch."
+        },
+        "amenities": [
+          "Hồ bơi ngoài trời",
+          "Wi-Fi miễn phí",
+          "Phòng họp",
+          "Dịch vụ spa",
+          "Nhà hàng",
+          "Quầy bar"
+        ],
+        "rules": {
+          "checkIn": "02:00 PM",
+          "checkOut": "12:00 PM",
+          "information": [
+            "Không hút thuốc trong phòng",
+            "Không cho phép thú cưng",
+            "Chấp nhận thẻ tín dụng",
+            "Có chỗ đậu xe miễn phí",
+            "Phù hợp cho gia đình"
+          ]
+        },
+        "maps": [10.8009, 106.6787],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/parkroyal/",
+        "video": "url('@/assets/videos/parkroyal.mp4')"
+      }
+    },
+    {
+      "id": 19,
+      "title": "Le Saigon Hotel",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 8.3,
+      "price": 65,
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/lesaigon.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-15.jpg",
+        "https://swiperjs.com/demos/images/nature-16.jpg"
+      ],
+      "star": 3,
+      "description": {
+        "overview": {
+          "description": "Le Saigon Hotel có thiết kế hiện đại, trang nhã. Nằm gần trung tâm và sân bay, khách sạn phù hợp với cả khách du lịch và công tác."
+        },
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Nhà hàng",
+          "Bãi đậu xe riêng",
+          "Dịch vụ phòng",
+          "Lễ tân 24/7"
+        ],
+        "rules": {
+          "checkIn": "01:00 PM",
+          "checkOut": "12:00 PM",
+          "information": [
+            "Không hút thuốc trong phòng",
+            "Chấp nhận thẻ tín dụng",
+            "Phù hợp cho cặp đôi",
+            "Không có hồ bơi",
+            "Có dịch vụ giặt là"
+          ]
+        },
+        "maps": [10.7981, 106.6769],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/lesaigon/",
+        "video": "url('@/assets/videos/lesaigon.mp4')"
+      }
+    },
+    {
+      "id": 20,
+      "title": "Saigon Sky Garden Hotel",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 9.0,
+      "price": 110,
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/skygarden.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-17.jpg",
+        "https://swiperjs.com/demos/images/nature-18.jpg"
+      ],
+      "star": 5,
+      "description": {
+        "overview": {
+          "description": "Saigon Sky Garden là khách sạn cao cấp với không gian xanh, hồ bơi, và phòng tập thể dục hiện đại. Mang đến trải nghiệm lưu trú đẳng cấp tại trung tâm Phú Nhuận."
+        },
+        "amenities": [
+          "Hồ bơi",
+          "Wi-Fi miễn phí",
+          "Sân vườn",
+          "Phòng gym",
+          "Bồn tắm nước nóng",
+          "Sân chơi trẻ em"
+        ],
+        "rules": {
+          "checkIn": "02:00 PM",
+          "checkOut": "12:00 PM",
+          "information": [
+            "Không hút thuốc",
+            "Không cho phép thú cưng",
+            "Có khu vực BBQ",
+            "Chấp nhận thẻ tín dụng",
+            "Có bãi đậu xe miễn phí"
+          ]
+        },
+        "maps": [10.8022, 106.6778],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/skygarden/",
+        "video": "url('@/assets/videos/skygarden.mp4')"
       }
     }
   ],

@@ -17,7 +17,7 @@ const getAllTour = createAsyncThunk<
 >(
   "tour/getAll",
   async (
-    { location = "", types = [], durations, price, start = 0, limit = 4 },
+    { location = "", types = [], durations, price, start = 0, limit = 6 },
     { rejectWithValue }
   ) => {
     try {

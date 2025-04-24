@@ -28,7 +28,7 @@ interface IGetHotels {
 
 const getHotels = async ({
   _page = 1,
-  _limit = 4,
+  _limit = 6,
   _sort = "price",
   _order = "asc",
   location = " ",

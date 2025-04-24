@@ -16,7 +16,7 @@ const TourPage = () => {
   const { location, type, duration, price } = filter;
 
   const [pageCount, setPageCount] = useState(0);
-  const ITEMS_PER_PAGE = 4;
+  const ITEMS_PER_PAGE = 6;
 
   const totalData = JSON.parse(localStorage.getItem("totalTour") || "0");
 
