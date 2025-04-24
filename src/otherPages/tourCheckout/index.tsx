@@ -1,7 +1,7 @@
 import { getTourById } from "@/api/tourRequest";
 
-import PdMain from "@/components/Padding/PdMain";
-import PdSub from "@/components/Padding/PdSub";
+import PdMain from "@/components/padding/PdMain";
+import PdSub from "@/components/padding/PdSub";
 import { useAppDispatch } from "@/redux";
 import { bookingSelector } from "@/redux/selectors/bookingSelector";
 import { useEffect, useState } from "react";

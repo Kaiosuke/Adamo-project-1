@@ -32,7 +32,7 @@ const SearchTourHome = () => {
           </TabsList>
           <TabsContent value="tour">
             {loading ? (
-              <div className="h-[372px]">
+              <div className="h-[503px]">
                 <LoadingSearch />
               </div>
             ) : (
@@ -43,7 +43,7 @@ const SearchTourHome = () => {
           </TabsContent>
           <TabsContent value="hotel">
             {loading ? (
-              <div className="h-[372px]">
+              <div className="h-[503px]">
                 <LoadingSearch />
               </div>
             ) : (

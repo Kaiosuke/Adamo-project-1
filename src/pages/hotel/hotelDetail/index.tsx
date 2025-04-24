@@ -1,8 +1,8 @@
 import BreadcrumbCom from "@/components/Breadcrumb";
-import PdMain from "@/components/Padding/PdMain";
-import PdSub from "@/components/Padding/PdSub";
+import PdMain from "@/components/padding/PdMain";
+import PdSub from "@/components/padding/PdSub";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineStar } from "react-icons/md";
 import { useParams } from "react-router";
@@ -13,9 +13,9 @@ import { getHotelById } from "@/api/hotelRequest";
 import { getReviewsHotel } from "@/api/reviewRequest";
 import BillHotelDetail from "@/components/bills/hotel/BillHotelDetail";
 import SwiperCom from "@/components/swiper/SwiperCom";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useQuery } from "@tanstack/react-query";
 import LoadingSlideDetail from "./LoadingSlideDetail";
-import { Skeleton } from "@/components/ui/skeleton";
 
 const HotelDetail = () => {
   const { id } = useParams();

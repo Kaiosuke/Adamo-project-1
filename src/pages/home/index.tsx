@@ -1,5 +1,5 @@
 import { getAllTour, getFiltersTour, getTours } from "@/api/tourRequest";
-import PdMain from "@/components/Padding/PdMain";
+import PdMain from "@/components/padding/PdMain";
 import SkeletonData from "@/components/LoadingList/SkeletonData";
 import { useAppDispatch } from "@/redux";
 import { useQuery } from "@tanstack/react-query";

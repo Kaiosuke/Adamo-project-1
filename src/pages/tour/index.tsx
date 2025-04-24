@@ -1,7 +1,7 @@
 import BreadcrumbCom from "@/components/Breadcrumb";
 
-import PdMain from "@/components/Padding/PdMain";
-import PdSub from "@/components/Padding/PdSub";
+import PdMain from "@/components/padding/PdMain";
+import PdSub from "@/components/padding/PdSub";
 import AttractiveTourSection from "./AttractiveTourSection";
 
 import TourImg from "@/assets/images/hero-tour.png";

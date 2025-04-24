@@ -1,5 +1,5 @@
 import { getReviewsHotel } from "@/api/reviewRequest";
-import PdSub from "@/components/Padding/PdSub";
+import PdSub from "@/components/padding/PdSub";
 import ReviewHotel from "@/components/reviews/ReviewHotel";
 import { IReviewHotel } from "@/interfaces/review";
 import { useQuery } from "@tanstack/react-query";

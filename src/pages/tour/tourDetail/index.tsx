@@ -1,8 +1,8 @@
 import { getAllReviewTour, getReviewTourList } from "@/api/reviewRequest";
 import { getTourById } from "@/api/tourRequest";
 import BreadcrumbCom from "@/components/Breadcrumb";
-import PdMain from "@/components/Padding/PdMain";
-import PdSub from "@/components/Padding/PdSub";
+import PdMain from "@/components/padding/PdMain";
+import PdSub from "@/components/padding/PdSub";
 
 import { useAppDispatch } from "@/redux";
 import { tourSelector } from "@/redux/selectors/tourSelector";
