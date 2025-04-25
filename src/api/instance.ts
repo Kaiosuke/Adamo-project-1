@@ -44,7 +44,7 @@ instanceLocal.interceptors.response.use(
     ) {
       originalRequest._retry = true;
       try {
-        const res = await instanceLocal.post("", {}, { withCredentials: true });
+        const res = await instanceLocal.post("/refreshToken");
         const newAccessToken = res.data.newAccessToken;
 
         Cookies.set("accessToken", newAccessToken, {
