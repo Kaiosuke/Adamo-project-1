@@ -100,7 +100,7 @@ const Room = ({ room }: { room: IRoom }) => {
               <DialogTrigger>
                 <FaImage className="text-third cursor-pointer" />
               </DialogTrigger>
-              <DialogContent className="lg:max-w-[1200px] md:max-w-[90%] m-auto h-[60%] pb-6">
+              <DialogContent className="2xl:max-w-[1200px] md:max-w-[90%] m-auto 2xl:h-fit h-[60%] pb-6">
                 <DialogHeader>
                   <DialogTitle className="text-secondary text-size-3xl px-6 pt-6">
                     {room.type}

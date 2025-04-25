@@ -51,6 +51,12 @@ function DatePickerWithRange({ date, setDate, duration, setQuery }: Props) {
           <PopoverContent className="w-auto p-0" align="start">
             <Calendar
               mode="single"
+              classNames={{
+                selected: "bg-primary text-third",
+                disabled: "text-five",
+                day_button:
+                  "hover:bg-six tran-fast w-full h-full cursor-pointer hover:text-third",
+              }}
               defaultMonth={date?.from}
               selected={date?.from}
               onSelect={(selectedDate) => {
@@ -69,7 +75,8 @@ function DatePickerWithRange({ date, setDate, duration, setQuery }: Props) {
                 const today = new Date();
                 return date < today;
               }}
-              numberOfMonths={2}
+              className=""
+              numberOfMonths={1}
             />
           </PopoverContent>
         ) : (
@@ -78,6 +85,9 @@ function DatePickerWithRange({ date, setDate, duration, setQuery }: Props) {
               mode="range"
               defaultMonth={date?.from}
               selected={date}
+              classNames={{
+                disabled: "text-five",
+              }}
               onSelect={(range) => {
                 if (range?.from && range?.to) {
                   const maxDate = addDays(range.from, 30);

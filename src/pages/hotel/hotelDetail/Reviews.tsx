@@ -38,6 +38,7 @@ const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
         _page: _page,
         _limit: ITEMS_PER_PAGE,
       }),
+    refetchOnMount: false,
     enabled: id !== undefined,
   });
 

@@ -35,6 +35,12 @@ function DatePickerSingle({ date, setDate, setQuery }: Props) {
       </PopoverTrigger>
       <PopoverContent className="w-full h-full p-0">
         <Calendar
+          classNames={{
+            disabled: "text-five",
+            selected: "bg-primary text-third",
+            day_button:
+              "hover:bg-six tran-fast w-full h-full cursor-pointer hover:text-third",
+          }}
           mode="single"
           selected={date}
           onSelect={(v) => {

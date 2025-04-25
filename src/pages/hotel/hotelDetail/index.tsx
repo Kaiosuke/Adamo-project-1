@@ -51,7 +51,7 @@ const HotelDetail = () => {
       <PdSub />
       <BreadcrumbCom current={current} links={links} />
       <PdSub />
-      <section className="main-container animate-fade-down">
+      <section className="main-container animate-fade-down ">
         <h1 className="text-size-4xl text-secondary">{data?.title}</h1>
         <div className="lg:mt-6 mg-4 flex items-center gap-2">
           <CiLocationOn className="text-primary text-size-xl" />
