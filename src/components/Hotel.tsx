@@ -68,11 +68,9 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
         </div>
         <div className="absolute left-2 bottom-2 ">
           <div className="flex items-center gap-2">
-            <FaStar className="text-nine" />
-            <FaStar className="text-nine" />
-            <FaStar className="text-nine" />
-            <FaStar className="text-nine" />
-            <FaStar className="text-nine" />
+            {Array.from({ length: hotel.star }).map((_, index) => (
+              <FaStar className="text-nine" key={index} />
+            ))}
           </div>
         </div>
       </div>
