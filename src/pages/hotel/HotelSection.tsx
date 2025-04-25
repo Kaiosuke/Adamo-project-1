@@ -1,49 +1,18 @@
-import { getHotels } from "@/api/hotelRequest";
 import Hotel from "@/components/Hotel";
 
 import SkeletonData from "@/components/LoadingList/SkeletonData";
-import { useQuery } from "@tanstack/react-query";
 import { memo } from "react";
 import { Trans } from "react-i18next";
-import {
-  NumberParam,
-  StringParam,
-  useQueryParams,
-  withDefault,
-} from "use-query-params";
 import FilterHotel from "./FilterHotel";
 import SortHotel from "./SortHotel";
+import { IHotel } from "@/interfaces/hotel";
 
-const HotelSection = () => {
-  const [query] = useQueryParams({
-    _page: withDefault(NumberParam, 1),
-    _sort: StringParam,
-    _order: StringParam,
-    location: StringParam,
-    score: StringParam,
-    prices: StringParam,
-    star: StringParam,
-    guest: StringParam,
-  });
+interface Props {
+  isLoading: boolean;
+  data?: IHotel[];
+}
 
-  const _page = Number(query._page) || 1;
-  const _sort = query._sort || "price";
-  const _order = query._order || "asc";
-  const score = query.score || "";
-  const guest = query.guest || "";
-  const prices = query.prices || "0,300";
-  const location = query.location || "All";
-  const star = query.star || "";
-
-  const { data, isLoading } = useQuery({
-    queryKey: [
-      "hotels",
-      { _page, _sort, _order, location, score, prices, star, guest },
-    ],
-    queryFn: () =>
-      getHotels({ _page, _sort, _order, location, score, prices, star }),
-  });
-
+const HotelSection = ({ isLoading, data }: Props) => {
   return (
     <>
       <section className="main-container animate-fade-down">

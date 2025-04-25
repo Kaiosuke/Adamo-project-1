@@ -21,7 +21,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
 import { useDebounce, useDebouncedCallback } from "use-debounce";
-import { StringParam, useQueryParams } from "use-query-params";
+import {
+  NumberParam,
+  StringParam,
+  useQueryParams,
+  withDefault,
+} from "use-query-params";
 
 const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
   const { guests, types, filter, loading } = useSelector(tourSelector);
@@ -33,6 +38,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
 
   const [query, setQuery] = useQueryParams({
     from: StringParam,
+    _page: withDefault(NumberParam, 0),
   });
 
   const from = query.from ? new Date(query.from) : addDays(new Date(), 1);
@@ -60,6 +66,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
         color: "#ffffff",
       },
     });
+    localStorage.setItem("currentPageTour", "0");
     navigate(`/tours?from=${from.toDateString()}`);
   }, 300);
 
@@ -70,8 +77,6 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
     queryFn: () => getLocationTour({ data: value }),
     enabled: !!value,
   });
-
-  console.log(locationFilter);
 
   return (
     <div

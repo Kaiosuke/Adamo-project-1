@@ -7,10 +7,14 @@ import { useQuery } from "@tanstack/react-query";
 import { addDays } from "date-fns";
 import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import { StringParam, useQueryParams } from "use-query-params";
+import {
+  NumberParam,
+  StringParam,
+  useQueryParams,
+  withDefault,
+} from "use-query-params";
 
 import GuestCom from "@/components/GuestCom";
 import InputSearch from "@/components/InputSearch";
@@ -22,6 +26,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
 
   const [query, setQuery] = useQueryParams({
     location: StringParam,
+    _page: withDefault(NumberParam, 1),
     guest: StringParam,
     from: StringParam,
   });
@@ -44,21 +49,25 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const navigate = useNavigate();
 
   const handleFilter = useCallback(() => {
-    setQuery({ location: location, guest: guest });
     toast.success("Filter successfully", {
       style: {
         backgroundColor: "#4caf50",
         color: "#ffffff",
       },
     });
-    navigate(`/hotels`);
-  }, []);
+
+    navigate(
+      `/hotels?location=${location}&guest=${guest}&from=${from.toDateString()}&_page=1`
+    );
+  }, [location, guest, from]);
 
   const [value] = useDebounce(location, 300);
 
   const { data: locationData } = useQuery({
     queryKey: ["locationHotel", { value }],
-    queryFn: () => getLocationHotel({ data: value }),
+    queryFn: () => {
+      return getLocationHotel({ data: value });
+    },
     enabled: !!value,
   });
 
@@ -106,18 +115,14 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
                 )}
               </div>
               <div className={` ${isHome ? "lg:mb-8 mt-4" : "mt-4"}`}>
-                <Link
-                  to={`/hotels?location=${location}&guest=${guest}&from=${from.toDateString()}`}
+                <Button
+                  variant="primary"
+                  className="flex justify-center gap-2 text-third h-[64px] "
+                  onClick={handleFilter}
                 >
-                  <Button
-                    variant="primary"
-                    className="flex justify-center gap-2 text-third h-[64px] "
-                    onClick={handleFilter}
-                  >
-                    <CiSearch className="text-size-lg " />
-                    Search
-                  </Button>
-                </Link>
+                  <CiSearch className="text-size-lg " />
+                  Search
+                </Button>
               </div>
             </div>
           </div>

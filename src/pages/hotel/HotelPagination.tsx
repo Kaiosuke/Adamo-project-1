@@ -2,7 +2,7 @@ import PaginationWithShow from "@/components/paginationList/PaginationWithShow";
 import { useEffect, useState } from "react";
 import { NumberParam, useQueryParams, withDefault } from "use-query-params";
 
-const HotelPagination = () => {
+const HotelPagination = ({ totalData }: { totalData: number }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const ITEMS_PER_PAGE = 6;
 
@@ -11,8 +11,6 @@ const HotelPagination = () => {
   });
 
   const _page = Number(query._page) || 1;
-
-  const totalData = Number(localStorage.getItem("totalHotel"));
 
   const pageCount = Math.ceil(totalData / ITEMS_PER_PAGE);
 
