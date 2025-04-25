@@ -66,7 +66,7 @@ const InputSearch = ({
                   key={v.id}
                   className="cursor-pointer hover:text-primary tran-fast "
                   onClick={() => {
-                    setLocation(v.location);
+                    setLocation(v.location.trim());
                     setShowResult(false);
                   }}
                 >

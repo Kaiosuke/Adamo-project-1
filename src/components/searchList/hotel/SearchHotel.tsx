@@ -61,7 +61,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
     );
   }, [location, guest, from]);
 
-  const [value] = useDebounce(location, 300);
+  const [value] = useDebounce(location.trim(), 300);
 
   const { data: locationData } = useQuery({
     queryKey: ["locationHotel", { value }],

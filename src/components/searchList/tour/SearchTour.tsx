@@ -70,7 +70,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
     navigate(`/tours?from=${from.toDateString()}`);
   }, 300);
 
-  const [value] = useDebounce(locationFilter, 300);
+  const [value] = useDebounce(locationFilter.trim(), 300);
 
   const { data: locationData } = useQuery({
     queryKey: ["locationHotel", { value }],
