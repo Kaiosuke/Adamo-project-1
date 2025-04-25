@@ -25,7 +25,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const { t } = useTranslation("search");
 
   const [query, setQuery] = useQueryParams({
-    location: StringParam,
+    location: withDefault(StringParam, ""),
     _page: withDefault(NumberParam, 1),
     guest: StringParam,
     from: StringParam,
@@ -39,7 +39,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const from = query.from ? new Date(query.from) : addDays(new Date(), 1);
 
   const [date, setDate] = useState<Date>(from);
-  const [location, setLocation] = useState<string>("");
+  const [location, setLocation] = useState<string>(query.location);
 
   const [guest, setGuest] = useState<string>(() => {
     const v = query.guest;

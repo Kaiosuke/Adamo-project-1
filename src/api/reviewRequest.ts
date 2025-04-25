@@ -75,12 +75,15 @@ const getReviewsHotel = async ({
   _page?: number | string;
   _limit?: number | string;
 }): Promise<IReviewHotel[]> => {
-  const res = await instanceLocal.get(`reviewsHotel?hotelId=${hotelId}`, {
-    params: {
-      _page,
-      _limit,
-    },
-  });
+  const res = await instanceLocal.get(
+    `reviewsHotel?hotelId=${hotelId}&_sort=id&_order=desc`,
+    {
+      params: {
+        _page,
+        _limit,
+      },
+    }
+  );
   localStorage.setItem("totalReviewHotel", res.headers["x-total-count"]);
   return res.data;
 };

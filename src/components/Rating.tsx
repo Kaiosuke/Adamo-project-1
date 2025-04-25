@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { FaStar } from "react-icons/fa";
 
 interface RatingProps {
@@ -43,4 +43,4 @@ const Rating: React.FC<RatingProps> = ({
   );
 };
 
-export default Rating;
+export default memo(Rating);

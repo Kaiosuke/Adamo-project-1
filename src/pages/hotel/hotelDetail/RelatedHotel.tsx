@@ -24,7 +24,7 @@ const RelatedHotels = () => {
           </>
         ) : (
           <>
-            {data?.map((hotel: IHotel) => (
+            {data?.data?.map((hotel: IHotel) => (
               <Fragment key={hotel.id}>
                 <Hotel hotel={hotel} />
               </Fragment>
