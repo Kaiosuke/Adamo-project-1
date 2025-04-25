@@ -27,7 +27,7 @@ const PrivateSection = () => {
           Download
         </Button>
       </div>
-      <section ref={contentRef} className="main-container">
+      <section ref={contentRef} className="main-container animate-fade-down">
         <section className=" max-w-[880px] w-full">
           <div className="italic mt-4">
             <p>
