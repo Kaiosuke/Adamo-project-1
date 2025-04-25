@@ -70,7 +70,7 @@ const Hotel = () => {
       <PdSub />
       <HotelSection isLoading={isLoading} data={data?.data} />
       {isLoading || !totalData ? (
-        <div></div>
+        <div>Loading...</div>
       ) : (
         <HotelPagination totalData={totalData} />
       )}

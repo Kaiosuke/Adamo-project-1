@@ -7,19 +7,25 @@ import { FaStar } from "react-icons/fa6";
 import { Link } from "react-router";
 import { StringParam, useQueryParams } from "use-query-params";
 import LoadedImage from "./LoadingList/LoadedImage";
-import { memo } from "react";
+import { memo, useMemo } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { changeStatusFavorite } from "@/api/hotelRequest";
 import { toast } from "sonner";
 import { useDebouncedCallback } from "use-debounce";
+import { IReviewHotel } from "@/interfaces/review";
 
-const Hotel = ({ hotel }: { hotel: IHotel }) => {
-  const totalData = Number(localStorage.getItem("totalReviewHotel") || "0");
-
+const Hotel = ({
+  hotel,
+  totalReview,
+}: {
+  hotel: IHotel;
+  totalReview?: IReviewHotel[];
+}) => {
   const [query] = useQueryParams({
     guest: StringParam,
     from: StringParam,
   });
+  const totalData = Number(localStorage.getItem("totalReviewHotel") || "0");
 
   const queryClient = useQueryClient();
 
@@ -42,6 +48,12 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
   const handleChangeStatusFavorite = useDebouncedCallback(() => {
     changeStatus.mutate({ id: hotel.id, data: { favorite: !hotel.favorite } });
   }, 300);
+
+  const review = useMemo(() => {
+    return totalReview
+      ? totalReview.filter((v) => v.hotelId === hotel.id).length
+      : totalData;
+  }, [hotel, totalReview]);
 
   return (
     <div className="w-full mt-4">
@@ -91,7 +103,7 @@ const Hotel = ({ hotel }: { hotel: IHotel }) => {
               <span className="text-base font-semibold">{hotel.score}</span>
             </div>
             <span className="text-sm">
-              {totalData} {`${totalData > 0 ? "Reviews" : "Review"}`}
+              {review} {`${review > 0 ? "Reviews" : "Review"}`}
             </span>
           </div>
           <div className="flex items-baseline gap-1">

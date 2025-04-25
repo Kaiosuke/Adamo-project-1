@@ -115,10 +115,7 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       },
@@ -267,13 +264,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -421,13 +413,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -575,13 +562,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -729,13 +711,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -883,13 +860,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1037,13 +1009,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1191,13 +1158,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1345,13 +1307,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1499,13 +1456,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1653,13 +1605,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1807,13 +1754,8 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
-        "image360": [
-          "https://photo-sphere-viewer-data.netlify.app/assets/"
-        ],
+        "maps": [21.028511, 105.804817],
+        "image360": ["https://photo-sphere-viewer-data.netlify.app/assets/"],
         "video": "url('@/assets/videos/dog.mp4')"
       },
       "additionalInfo": {
@@ -1964,10 +1906,7 @@
             ]
           }
         ],
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       },
@@ -2035,10 +1974,7 @@
           "Lantern-making class"
         ],
         "departureReturn": {
-          "point": [
-            "Da Nang International Airport",
-            "Hoi An Center"
-          ],
+          "point": ["Da Nang International Airport", "Hoi An Center"],
           "time": "9:00 AM"
         },
         "itineraries": [
@@ -2075,10 +2011,7 @@
             ]
           }
         ],
-        "maps": [
-          15.8801,
-          108.338
-        ],
+        "maps": [15.8801, 108.338],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/hoian360/",
         "video": "url('@/assets/videos/hoian.mp4')"
       },
@@ -2129,10 +2062,7 @@
           "Cable car descent (optional)"
         ],
         "departureReturn": {
-          "point": [
-            "Sapa Town Center",
-            "Fansipan base station"
-          ],
+          "point": ["Sapa Town Center", "Fansipan base station"],
           "time": "6:00 AM"
         },
         "itineraries": [
@@ -2153,10 +2083,7 @@
             ]
           }
         ],
-        "maps": [
-          22.3,
-          103.8
-        ],
+        "maps": [22.3, 103.8],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/fansipan/",
         "video": "url('@/assets/videos/fansipan.mp4')"
       },
@@ -2207,10 +2134,7 @@
           "Kayak & swimming gear"
         ],
         "departureReturn": {
-          "point": [
-            "Hanoi Old Quarter",
-            "Ha Long Pier"
-          ],
+          "point": ["Hanoi Old Quarter", "Ha Long Pier"],
           "time": "7:00 AM"
         },
         "itineraries": [
@@ -2231,10 +2155,7 @@
             ]
           }
         ],
-        "maps": [
-          20.9101,
-          107.1839
-        ],
+        "maps": [20.9101, 107.1839],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/halong360/",
         "video": "url('@/assets/videos/halong.mp4')"
       },
@@ -2285,9 +2206,7 @@
           "English-speaking guide"
         ],
         "departureReturn": {
-          "point": [
-            "Hanoi Old Quarter"
-          ],
+          "point": ["Hanoi Old Quarter"],
           "time": "8:00 AM"
         },
         "itineraries": [
@@ -2313,10 +2232,7 @@
             ]
           }
         ],
-        "maps": [
-          20.254,
-          105.974
-        ],
+        "maps": [20.254, 105.974],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/ninhbinh360/",
         "video": "url('@/assets/videos/ninhbinh.mp4')"
       },
@@ -2369,17 +2285,11 @@
           "English-speaking guide"
         ],
         "departureReturn": {
-          "point": [
-            "Lien Khuong Airport",
-            "City Center Hotel"
-          ],
+          "point": ["Lien Khuong Airport", "City Center Hotel"],
           "time": "9:00 AM"
         },
         "itineraries": [],
-        "maps": [
-          11.9404,
-          108.4583
-        ],
+        "maps": [11.9404, 108.4583],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/dalat/",
         "video": "url('@/assets/videos/dalat.mp4')"
       },
@@ -2427,17 +2337,11 @@
           "Old Town entrance fee"
         ],
         "departureReturn": {
-          "point": [
-            "Da Nang City Center",
-            "Hoi An Old Quarter"
-          ],
+          "point": ["Da Nang City Center", "Hoi An Old Quarter"],
           "time": "8:30 AM"
         },
         "itineraries": [],
-        "maps": [
-          15.8801,
-          108.338
-        ],
+        "maps": [15.8801, 108.338],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/hoian/",
         "video": "url('@/assets/videos/hoian.mp4')"
       },
@@ -2484,17 +2388,11 @@
           "Cruise guide and insurance"
         ],
         "departureReturn": {
-          "point": [
-            "Tuan Chau Marina",
-            "Back at Marina"
-          ],
+          "point": ["Tuan Chau Marina", "Back at Marina"],
           "time": "2:00 PM"
         },
         "itineraries": [],
-        "maps": [
-          20.9214,
-          107.1839
-        ],
+        "maps": [20.9214, 107.1839],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/halong2/",
         "video": "url('@/assets/videos/halong-sunset.mp4')"
       },
@@ -2566,10 +2464,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2627,10 +2522,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2688,10 +2580,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2750,10 +2639,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2811,10 +2697,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2872,10 +2755,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2932,10 +2812,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -2992,10 +2869,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -3053,10 +2927,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -3115,10 +2986,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -3174,10 +3042,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -3234,10 +3099,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -3299,10 +3161,7 @@
             "Guests can check in using any Domestic or International ID proof with photograph"
           ]
         },
-        "maps": [
-          21.028511,
-          105.804817
-        ],
+        "maps": [21.028511, 105.804817],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
         "video": "url('@/assets/videos/dog.mp4')"
       }
@@ -3344,10 +3203,7 @@
             "Có chỗ đậu xe miễn phí"
           ]
         },
-        "maps": [
-          10.7995,
-          106.6781
-        ],
+        "maps": [10.7995, 106.6781],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/muongthanh/",
         "video": "url('@/assets/videos/muongthanh.mp4')"
       }
@@ -3389,10 +3245,7 @@
             "Có chỗ đậu xe miễn phí"
           ]
         },
-        "maps": [
-          10.8002,
-          106.6785
-        ],
+        "maps": [10.8002, 106.6785],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/eastingrand/",
         "video": "url('@/assets/videos/eastingrand.mp4')"
       }
@@ -3434,10 +3287,7 @@
             "Có chỗ đậu xe miễn phí"
           ]
         },
-        "maps": [
-          10.8005,
-          106.6789
-        ],
+        "maps": [10.8005, 106.6789],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/tansonnhat/",
         "video": "url('@/assets/videos/tansonnhat.mp4')"
       }
@@ -3478,10 +3328,7 @@
             "Có chỗ đậu xe miễn phí"
           ]
         },
-        "maps": [
-          10.801,
-          106.6792
-        ],
+        "maps": [10.801, 106.6792],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/alcove/",
         "video": "url('@/assets/videos/alcove.mp4')"
       }
@@ -3524,10 +3371,7 @@
             "Phù hợp cho gia đình"
           ]
         },
-        "maps": [
-          10.8009,
-          106.6787
-        ],
+        "maps": [10.8009, 106.6787],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/parkroyal/",
         "video": "url('@/assets/videos/parkroyal.mp4')"
       }
@@ -3569,10 +3413,7 @@
             "Có dịch vụ giặt là"
           ]
         },
-        "maps": [
-          10.7981,
-          106.6769
-        ],
+        "maps": [10.7981, 106.6769],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/lesaigon/",
         "video": "url('@/assets/videos/lesaigon.mp4')"
       }
@@ -3615,10 +3456,7 @@
             "Có bãi đậu xe miễn phí"
           ]
         },
-        "maps": [
-          10.8022,
-          106.6778
-        ],
+        "maps": [10.8022, 106.6778],
         "image360": "https://photo-sphere-viewer-data.netlify.app/assets/skygarden/",
         "video": "url('@/assets/videos/skygarden.mp4')"
       }

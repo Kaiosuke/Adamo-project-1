@@ -1,11 +1,13 @@
 import Hotel from "@/components/Hotel";
 
+import { instanceLocal } from "@/api/instance";
 import SkeletonData from "@/components/LoadingList/SkeletonData";
+import { IHotel } from "@/interfaces/hotel";
+import { useQuery } from "@tanstack/react-query";
 import { memo } from "react";
 import { Trans } from "react-i18next";
 import FilterHotel from "./FilterHotel";
 import SortHotel from "./SortHotel";
-import { IHotel } from "@/interfaces/hotel";
 
 interface Props {
   isLoading: boolean;
@@ -13,6 +15,16 @@ interface Props {
 }
 
 const HotelSection = ({ isLoading, data }: Props) => {
+  const { data: totalReview } = useQuery({
+    queryKey: ["totalReview"],
+    queryFn: () => {
+      return (async () => {
+        const res = instanceLocal.get("reviewsHotel");
+        return (await res).data;
+      })();
+    },
+  });
+
   return (
     <>
       <section className="main-container animate-fade-down">
@@ -32,7 +44,9 @@ const HotelSection = ({ isLoading, data }: Props) => {
               <SkeletonData key={index} />
             ))
           ) : data && data.length ? (
-            data.map((hotel) => <Hotel key={hotel.id} hotel={hotel} />)
+            data.map((hotel) => (
+              <Hotel key={hotel.id} hotel={hotel} totalReview={totalReview} />
+            ))
           ) : (
             <div className="mt-4 text-size-2xl">Not found Hotel</div>
           )}
