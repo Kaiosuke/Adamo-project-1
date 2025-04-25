@@ -24,6 +24,7 @@ const LayoutAuth = () => {
       </Link>
       <div className="grid lg:grid-cols-2 h-screen w-screen grid-cols-1">
         <Outlet />
+
         <div className="w-full">
           <div
             className="w-full h-full bg-cover bg-center bg-no-repeat lg:block hidden"

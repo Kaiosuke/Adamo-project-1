@@ -186,10 +186,20 @@ const getTours = async ({
   return res.data;
 };
 
+const getLocationTour = async ({
+  data,
+}: {
+  data: string;
+}): Promise<ITour[]> => {
+  const res = await instanceLocal(`/tours?location_like=${data}`);
+  return res.data;
+};
+
 export {
   getAllTour,
   getTourById,
   getFiltersTour,
   getTours,
   changeFavoriteTour,
+  getLocationTour,
 };

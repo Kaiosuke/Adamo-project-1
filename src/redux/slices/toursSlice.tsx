@@ -115,7 +115,6 @@ const toursSlice = createSlice({
     );
     build.addCase(changeFavoriteTour.rejected, setError);
 
-    build.addCase(getFiltersTour.pending, setLoading);
     build.addCase(
       getFiltersTour.fulfilled,
       (

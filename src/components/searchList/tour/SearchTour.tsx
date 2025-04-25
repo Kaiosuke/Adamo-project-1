@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 
+import { getLocationTour } from "@/api/tourRequest";
 import DatePickerSingle from "@/components/DatePickerSingle";
 import GuestCom from "@/components/GuestCom";
-import LocationCom from "@/components/LocationCom";
+import InputSearch from "@/components/InputSearch";
+import LoadingSearch from "@/components/LoadingList/LoadingSearch";
 import TypeCom from "@/components/TypeCom";
 import { tourSelector } from "@/redux/selectors/tourSelector";
 import {
@@ -10,6 +12,7 @@ import {
   filterByLocation,
   filterByType,
 } from "@/redux/slices/toursSlice";
+import { useQuery } from "@tanstack/react-query";
 import { addDays } from "date-fns";
 import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -17,13 +20,11 @@ import { CiSearch } from "react-icons/ci";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
-import { useDebouncedCallback } from "use-debounce";
+import { useDebounce, useDebouncedCallback } from "use-debounce";
 import { StringParam, useQueryParams } from "use-query-params";
-import LoadingSearch from "@/components/LoadingList/LoadingSearch";
 
 const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
-  const { locations, guests, types, filter, loading } =
-    useSelector(tourSelector);
+  const { guests, types, filter, loading } = useSelector(tourSelector);
 
   const { location, type, guest } = filter;
   const { t } = useTranslation("search");
@@ -62,6 +63,16 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
     navigate(`/tours?from=${from.toDateString()}`);
   }, 300);
 
+  const [value] = useDebounce(locationFilter, 300);
+
+  const { data: locationData } = useQuery({
+    queryKey: ["locationHotel", { value }],
+    queryFn: () => getLocationTour({ data: value }),
+    enabled: !!value,
+  });
+
+  console.log(locationFilter);
+
   return (
     <div
       className={`h-full bg-third/80 w-full ${
@@ -79,13 +90,12 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
           <div className="lg:px-8 lg:py-8 w-full p-4">
             <p className="text-size-2xl">{t("tour.description")}</p>
             <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
-              <LocationCom
-                data={locations}
-                location={location}
+              <InputSearch
+                location={locationFilter}
                 setLocation={setLocationFilter}
-                t={t}
+                locationData={locationData}
+                placeHolder="Search Location Tour"
               />
-
               <div className="group bg-third lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
                 <DatePickerSingle
                   date={date}

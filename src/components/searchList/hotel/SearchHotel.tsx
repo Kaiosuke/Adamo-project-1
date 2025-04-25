@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { CiSearch } from "react-icons/ci";
 
-import { getFiltersHotel } from "@/api/hotelRequest";
+import { getFiltersHotel, getLocationHotel } from "@/api/hotelRequest";
 import DatePickerSingle from "@/components/DatePickerSingle";
 import { useQuery } from "@tanstack/react-query";
 import { addDays } from "date-fns";
@@ -13,8 +13,9 @@ import { toast } from "sonner";
 import { StringParam, useQueryParams } from "use-query-params";
 
 import GuestCom from "@/components/GuestCom";
-import LocationCom from "@/components/LocationCom";
+import InputSearch from "@/components/InputSearch";
 import LoadingSearch from "@/components/LoadingList/LoadingSearch";
+import { useDebounce } from "use-debounce";
 
 const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const { t } = useTranslation("search");
@@ -33,11 +34,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const from = query.from ? new Date(query.from) : addDays(new Date(), 1);
 
   const [date, setDate] = useState<Date>(from);
-
-  const [location, setLocation] = useState<string>(() => {
-    const v = query.location;
-    return v ? v : "All";
-  });
+  const [location, setLocation] = useState<string>("");
 
   const [guest, setGuest] = useState<string>(() => {
     const v = query.guest;
@@ -57,6 +54,14 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
     navigate(`/hotels`);
   }, []);
 
+  const [value] = useDebounce(location, 300);
+
+  const { data: locationData } = useQuery({
+    queryKey: ["locationHotel", { value }],
+    queryFn: () => getLocationHotel({ data: value }),
+    enabled: !!value,
+  });
+
   return (
     <div
       className={`bg-third/80 ${
@@ -75,14 +80,14 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
             <div className="text-size-2xl">{t("hotel.title")}</div>
             <div className="flex flex-col justify-between h-full">
               <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
-                {data && (
-                  <LocationCom
+                {
+                  <InputSearch
                     location={location}
+                    locationData={locationData}
                     setLocation={setLocation}
-                    t={t}
-                    data={data?.locations}
+                    placeHolder="Search Location Hotel"
                   />
-                )}
+                }
 
                 <div className="group bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
                   <DatePickerSingle

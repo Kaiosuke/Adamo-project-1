@@ -70,4 +70,19 @@ const changeStatusFavorite = async ({
   return res.data;
 };
 
-export { getFiltersHotel, getHotels, getHotelById, changeStatusFavorite };
+const getLocationHotel = async ({
+  data,
+}: {
+  data: string;
+}): Promise<IHotel[]> => {
+  const res = await instanceLocal(`/hotels?location_like=${data}`);
+  return res.data;
+};
+
+export {
+  getFiltersHotel,
+  getHotels,
+  getHotelById,
+  changeStatusFavorite,
+  getLocationHotel,
+};
