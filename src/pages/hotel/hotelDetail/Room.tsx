@@ -41,6 +41,11 @@ const Room = ({ room }: { room: IRoom }) => {
     dispatch(deleteRoom(room));
   };
 
+  const changeStatusMutation = useMutation({
+    mutationFn: ({ roomId, status }: { roomId: number; status: boolean }) =>
+      changeStatusRoom(roomId, status),
+  });
+
   const handleSelectRoom = useDebouncedCallback(
     (room: IRoom, status: boolean) => {
       changeStatusMutation.mutate(
@@ -82,10 +87,6 @@ const Room = ({ room }: { room: IRoom }) => {
     },
     300
   );
-  const changeStatusMutation = useMutation({
-    mutationFn: ({ roomId, status }: { roomId: number; status: boolean }) =>
-      changeStatusRoom(roomId, status),
-  });
 
   return (
     <div className="flex flex-col gap-4 mt-4" key={room.id}>

@@ -30,7 +30,7 @@ const Rating: React.FC<RatingProps> = ({
               starValue <= (hoveredStar || rating)
                 ? variant === "yellow"
                   ? "text-yellow-500"
-                  : "text-gray-500"
+                  : "text-four"
                 : "text-gray-300"
             }`}
             onClick={() => onRatingChange(starValue)}
