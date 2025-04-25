@@ -83,7 +83,6 @@ const changeFavoriteTour = createAsyncThunk<
 >("tour/favorite", async ({ id, data }, { rejectWithValue }) => {
   try {
     const res = await instanceLocal.patch(`/tours/${id}`, data);
-    console.log(res.data);
     return res.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
