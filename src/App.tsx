@@ -33,7 +33,8 @@ const NotFoundPage = lazy(() => import('./otherPages/notFoundPage'))
 
 function App() {
   const a = 1
-  console.log('31231')
+
+  console.log('aaz')
 
   return (
     <BrowserRouter>
