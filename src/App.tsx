@@ -32,6 +32,9 @@ const HotelCheckOut = lazy(() => import('./otherPages/hotelCheckout'))
 const NotFoundPage = lazy(() => import('./otherPages/notFoundPage'))
 
 function App() {
+  const a = 1
+  console.log('31231')
+
   return (
     <BrowserRouter>
       <QueryParamProvider adapter={ReactRouter6Adapter}>
