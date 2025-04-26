@@ -9,13 +9,12 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-import { useAppDispatch } from '@/redux'
+import { useAppDispatch } from '@/redux/index'
+import { memo } from 'react'
 import { FaUser } from 'react-icons/fa6'
 import { toast } from 'sonner'
-import { memo } from 'react'
 
 const linkNavEn = [
   {
@@ -120,13 +119,11 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
               <DropdownMenuLabel>
                 {currentUser.displayName ? currentUser.displayName : currentUser.email}
               </DropdownMenuLabel>
-              <DropdownMenuSeparator />
               <DropdownMenuItem className="cursor-pointer">
                 <Link className="text-sm" to="/auth/change-password">
                   {t('changPs')}
                 </Link>
               </DropdownMenuItem>
-
               <DropdownMenuItem className="cursor-pointer" onClick={handleLogout}>
                 {t('signOut')}
               </DropdownMenuItem>
