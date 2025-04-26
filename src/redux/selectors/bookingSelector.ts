@@ -1,5 +1,5 @@
-import { RootState } from "..";
+import { RootState } from '..'
 
-const bookingSelector = (state: RootState) => state.bookingSlice;
+const bookingSelector = (state: RootState) => state.bookingSlice
 
-export { bookingSelector };
+export { bookingSelector }

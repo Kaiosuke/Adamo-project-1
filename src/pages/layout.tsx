@@ -1,6 +1,6 @@
-import Footer from "@/components/footer/Footer";
-import Header from "@/components/header/Header";
-import { Outlet } from "react-router-dom";
+import Footer from '@/components/footer/Footer'
+import Header from '@/components/header/Header'
+import { Outlet } from 'react-router-dom'
 
 const LayoutPage = () => {
   return (
@@ -9,7 +9,7 @@ const LayoutPage = () => {
       <Outlet />
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default LayoutPage;
+export default LayoutPage

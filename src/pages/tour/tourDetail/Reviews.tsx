@@ -1,43 +1,37 @@
-import ReviewTour from "@/components/reviews/ReviewTour";
-import { reviewSelector } from "@/redux/selectors/reviewSelector";
-import { tourSelector } from "@/redux/selectors/tourSelector";
-import { FaStar } from "react-icons/fa6";
-import { useSelector } from "react-redux";
+import ReviewTour from '@/components/reviews/ReviewTour'
+import { reviewSelector } from '@/redux/selectors/reviewSelector'
+import { tourSelector } from '@/redux/selectors/tourSelector'
+import { FaStar } from 'react-icons/fa6'
+import { useSelector } from 'react-redux'
 
-import { getAllReviewTour } from "@/api/reviewRequest";
-import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router";
-import TourReviewForm from "./TourReviewForm";
-import Star from "./Star";
-import Pagination from "@/components/paginationList/Pagination";
+import { getAllReviewTour } from '@/api/reviewRequest'
+import { useQuery } from '@tanstack/react-query'
+import { useParams } from 'react-router'
+import TourReviewForm from './TourReviewForm'
+import Star from './Star'
+import Pagination from '@/components/paginationList/Pagination'
 
 interface Props {
-  currentPage: number;
-  pageCount: number;
-  totalData: number;
-  averageStar?: number;
-  setCurrentPage: (value: number) => void;
+  currentPage: number
+  pageCount: number
+  totalData: number
+  averageStar?: number
+  setCurrentPage: (v: number) => void
 }
 
-const starList = ["5", "4", "3", "2", "1"];
+const starList = ['5', '4', '3', '2', '1']
 
-const Reviews = ({
-  currentPage,
-  pageCount,
-  totalData,
-  setCurrentPage,
-  averageStar = 5,
-}: Props) => {
-  const { tour } = useSelector(tourSelector);
-  const { reviewsTour } = useSelector(reviewSelector);
+const Reviews = ({ currentPage, pageCount, totalData, setCurrentPage, averageStar = 5 }: Props) => {
+  const { tour } = useSelector(tourSelector)
+  const { reviewsTour } = useSelector(reviewSelector)
 
-  const { id } = useParams();
+  const { id } = useParams()
 
   const { data } = useQuery({
-    queryKey: ["reviewsTour", { id }],
+    queryKey: ['reviewsTour', { id }],
     queryFn: () => getAllReviewTour(id as string),
-    enabled: id !== undefined,
-  });
+    enabled: id !== undefined
+  })
 
   return (
     <>
@@ -47,9 +41,7 @@ const Reviews = ({
             <div className="flex h-full md:flex-row flex-col">
               <div className="flex-[0_0_35%]">
                 <div className="flex justify-center md:items-center h-full flex-col gap-2">
-                  <div className="text-secondary text-size-5xl">
-                    {averageStar}/5
-                  </div>
+                  <div className="text-secondary text-size-5xl">{averageStar}/5</div>
                   <div className="text-secondary flex items-center gap-2">
                     <FaStar className="text-nine" />
                     <FaStar className="text-nine" />
@@ -58,9 +50,9 @@ const Reviews = ({
                     <FaStar className="text-four" />
                   </div>
                   <div className="text-four font-semibold">
-                    Based on{" "}
+                    Based on{' '}
                     <span className="text-secondary">
-                      {totalData} {totalData > 0 ? "reviews" : "review"}
+                      {totalData} {totalData > 0 ? 'reviews' : 'review'}
                     </span>
                   </div>
                 </div>
@@ -70,10 +62,7 @@ const Reviews = ({
 
               <div className="flex-[0_0_64%]">
                 <div className="flex flex-col h-full justify-evenly">
-                  {data &&
-                    starList.map((v, index) => (
-                      <Star data={data} key={index} v={Number(v)} />
-                    ))}
+                  {data && starList.map((v, index) => <Star data={data} key={index} v={Number(v)} />)}
                 </div>
               </div>
             </div>
@@ -98,15 +87,15 @@ const Reviews = ({
               currentPage={currentPage}
               pageCount={pageCount}
               onPageChange={(e) => {
-                setCurrentPage(e);
-                localStorage.setItem("currentReviewTour", e.toLocaleString());
+                setCurrentPage(e)
+                localStorage.setItem('currentReviewTour', e.toLocaleString())
               }}
             />
           </div>
         </>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Reviews;
+export default Reviews

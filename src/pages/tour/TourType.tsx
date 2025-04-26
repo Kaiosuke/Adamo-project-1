@@ -1,15 +1,15 @@
-import { Checkbox } from "@/components/ui/checkbox";
-import { tourSelector } from "@/redux/selectors/tourSelector";
-import { memo } from "react";
-import { useSelector } from "react-redux";
+import { Checkbox } from '@/components/ui/checkbox'
+import { tourSelector } from '@/redux/selectors/tourSelector'
+import { memo } from 'react'
+import { useSelector } from 'react-redux'
 
 interface Props {
-  onCheckChangeType: (checked: boolean, v: string) => void;
-  typeTour: string[];
+  onCheckChangeType: (_checked: boolean, _v: string) => void
+  typeTour: string[]
 }
 
 const TourType = ({ typeTour, onCheckChangeType }: Props) => {
-  const { types } = useSelector(tourSelector);
+  const { types } = useSelector(tourSelector)
 
   return (
     <div>
@@ -20,9 +20,7 @@ const TourType = ({ typeTour, onCheckChangeType }: Props) => {
             <Checkbox
               id={v}
               checked={typeTour.includes(v)}
-              onCheckedChange={(checked) =>
-                onCheckChangeType(Boolean(checked), v)
-              }
+              onCheckedChange={(checked) => onCheckChangeType(Boolean(checked), v)}
             />
             <label
               htmlFor={v}
@@ -34,7 +32,7 @@ const TourType = ({ typeTour, onCheckChangeType }: Props) => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default memo(TourType);
+export default memo(TourType)

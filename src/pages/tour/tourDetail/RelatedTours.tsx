@@ -1,10 +1,10 @@
-import Tour from "@/components/Tour";
-import { tourSelector } from "@/redux/selectors/tourSelector";
-import { useSelector } from "react-redux";
-import { Fragment } from "react/jsx-runtime";
+import Tour from '@/components/Tour'
+import { tourSelector } from '@/redux/selectors/tourSelector'
+import { useSelector } from 'react-redux'
+import { Fragment } from 'react/jsx-runtime'
 
 const RelatedTours = () => {
-  const { tours } = useSelector(tourSelector);
+  const { tours } = useSelector(tourSelector)
 
   return (
     <div>
@@ -17,7 +17,7 @@ const RelatedTours = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default RelatedTours;
+export default RelatedTours

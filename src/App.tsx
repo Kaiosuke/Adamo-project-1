@@ -34,7 +34,7 @@ const ThankYou = lazy(() => import("./otherPages/thanks"));
 const TourCheckOut = lazy(() => import("./otherPages/tourCheckout"));
 const HotelCheckOut = lazy(() => import("./otherPages/hotelCheckout"));
 const NotFoundPage = lazy(() => import("./otherPages/notFoundPage"));
-
+console.log(import.meta.env.VITE_ABC);
 function App() {
   return (
     <BrowserRouter>

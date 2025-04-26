@@ -1,5 +1,5 @@
-import { RootState } from "..";
+import { RootState } from '..'
 
-const languageSelector = (state: RootState) => state.languageSlice;
+const languageSelector = (state: RootState) => state.languageSlice
 
-export { languageSelector };
+export { languageSelector }

@@ -1,5 +1,5 @@
-import { RootState } from "../index";
+import { RootState } from '../index'
 
-const tourSelector = (state: RootState) => state.toursSlice;
+const tourSelector = (state: RootState) => state.toursSlice
 
-export { tourSelector };
+export { tourSelector }

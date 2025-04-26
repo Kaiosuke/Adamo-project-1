@@ -1,5 +1,5 @@
-import { RootState } from "..";
+import { RootState } from '..'
 
-const reviewSelector = (state: RootState) => state.reviewsSlice;
+const reviewSelector = (state: RootState) => state.reviewsSlice
 
-export { reviewSelector };
+export { reviewSelector }

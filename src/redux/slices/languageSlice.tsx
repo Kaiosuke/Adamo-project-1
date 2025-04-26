@@ -1,27 +1,28 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+/* eslint-disable no-unused-vars */
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export enum Lg {
-  en = "en",
-  vi = "vi",
+  en = 'en',
+  vi = 'vi'
 }
 
 interface IStateLanguage {
-  lg: Lg;
+  lg: Lg
 }
 
 const initialState: IStateLanguage = {
-  lg: Lg.en,
-};
+  lg: Lg.en
+}
 
 const languageSlice = createSlice({
-  name: "language",
+  name: 'language',
   initialState,
   reducers: {
     changeLanguage: (state: IStateLanguage, action: PayloadAction<Lg>) => {
-      state.lg = action.payload;
-    },
-  },
-});
+      state.lg = action.payload
+    }
+  }
+})
 
-export const { changeLanguage } = languageSlice.actions;
-export default languageSlice.reducer;
+export const { changeLanguage } = languageSlice.actions
+export default languageSlice.reducer

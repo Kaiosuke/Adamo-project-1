@@ -11,7 +11,7 @@ const LayoutAuth = () => {
 
   useEffect(() => {
     i18n.changeLanguage(lg);
-  }, []);
+  }, [lg]);
 
   return (
     <>

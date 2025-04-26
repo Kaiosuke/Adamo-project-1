@@ -1,24 +1,18 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
-import Additional from "./Additional";
-import Description from "./Description";
-import Reviews from "./Reviews";
+import Additional from './Additional'
+import Description from './Description'
+import Reviews from './Reviews'
 
 interface Props {
-  currentPage: number;
-  totalData: number;
-  averageStar?: number;
-  pageCount: number;
-  setCurrentPage: (value: number) => void;
+  currentPage: number
+  totalData: number
+  averageStar?: number
+  pageCount: number
+  setCurrentPage: (_v: number) => void
 }
 
-const TourDetailTabs = ({
-  totalData,
-  currentPage,
-  pageCount,
-  averageStar,
-  setCurrentPage,
-}: Props) => {
+const TourDetailTabs = ({ totalData, currentPage, pageCount, averageStar, setCurrentPage }: Props) => {
   return (
     <Tabs defaultValue="descriptions" className="lg:pt-10 pt-6">
       <TabsList className="w-full bg-third justify-between p-0">
@@ -39,13 +33,9 @@ const TourDetailTabs = ({
           className="data-[state=active]:text-primary text-size-2xl px-0 flex-none data-[state=active]:shadow-none trans-slow hover:text-six cursor-pointer"
         >
           {!totalData && totalData !== 0 ? (
-            <div className="flex items-center gap-4 text-size-2xl">
-              Reviews: Loading...
-            </div>
+            <div className="flex items-center gap-4 text-size-2xl">Reviews: Loading...</div>
           ) : (
-            <>
-              {totalData > 0 ? `Reviews(${totalData})` : `Review(${totalData})`}
-            </>
+            <>{totalData > 0 ? `Reviews(${totalData})` : `Review(${totalData})`}</>
           )}
         </TabsTrigger>
       </TabsList>
@@ -66,7 +56,7 @@ const TourDetailTabs = ({
         />
       </TabsContent>
     </Tabs>
-  );
-};
+  )
+}
 
-export default TourDetailTabs;
+export default TourDetailTabs

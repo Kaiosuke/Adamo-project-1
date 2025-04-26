@@ -1,89 +1,87 @@
-import { getAllReviewTour, getReviewTourList } from "@/api/reviewRequest";
-import { getTourById } from "@/api/tourRequest";
-import BreadcrumbCom from "@/components/Breadcrumb";
+import { getAllReviewTour, getReviewTourList } from '@/api/reviewRequest'
+import { getTourById } from '@/api/tourRequest'
+import BreadcrumbCom from '@/components/Breadcrumb'
 
-import { useAppDispatch } from "@/redux";
-import { tourSelector } from "@/redux/selectors/tourSelector";
-import { useEffect, useMemo, useState } from "react";
-import { CiLocationOn } from "react-icons/ci";
-import { MdOutlineStar } from "react-icons/md";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router";
-import RelatedTours from "./RelatedTours";
+import { useAppDispatch } from '@/redux'
+import { tourSelector } from '@/redux/selectors/tourSelector'
+import { useEffect, useMemo, useState } from 'react'
+import { CiLocationOn } from 'react-icons/ci'
+import { MdOutlineStar } from 'react-icons/md'
+import { useSelector } from 'react-redux'
+import { useParams } from 'react-router'
+import RelatedTours from './RelatedTours'
 
-import BillTourDetail from "@/components/bills/tour/BillTourDetail";
-import SwiperCom from "@/components/swiper/SwiperCom";
-import { useQuery } from "@tanstack/react-query";
-import TourDetailTabs from "./TourDetailTabs";
-import PdSub from "@/components/paddingList/PbSub";
-import PdMain from "@/components/paddingList/PbMain";
+import BillTourDetail from '@/components/bills/tour/BillTourDetail'
+import SwiperCom from '@/components/swiper/SwiperCom'
+import { useQuery } from '@tanstack/react-query'
+import TourDetailTabs from './TourDetailTabs'
+import PdSub from '@/components/paddingList/PbSub'
+import PdMain from '@/components/paddingList/PbMain'
 
 const TourDetail = () => {
-  const { id } = useParams();
+  const { id } = useParams()
 
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
-  const { tour } = useSelector(tourSelector);
+  const { tour } = useSelector(tourSelector)
 
-  const ITEMS_PER_PAGE = 4;
+  const ITEMS_PER_PAGE = 4
 
-  const [pageCount, setPageCount] = useState<number>(0);
+  const [pageCount, setPageCount] = useState<number>(0)
 
   const [currentPage, setCurrentPage] = useState(() => {
-    const saved = localStorage.getItem("currentReviewTour");
-    return saved ? Number(saved) : 0;
-  });
+    const saved = localStorage.getItem('currentReviewTour')
+    return saved ? Number(saved) : 0
+  })
 
   const { data: totalReviewHotel } = useQuery({
-    queryKey: ["reviewsTour", { id }],
+    queryKey: ['reviewsTour', { id }],
     queryFn: () => getAllReviewTour(id as string),
-    enabled: id !== undefined,
-  });
+    enabled: id !== undefined
+  })
 
   const averageStar = useMemo(() => {
     if (totalReviewHotel?.length) {
       const score = totalReviewHotel.reduce((acc, cur) => {
-        return acc + cur.rate;
-      }, 0);
-      return Math.floor(score / totalReviewHotel.length);
+        return acc + cur.rate
+      }, 0)
+      return Math.floor(score / totalReviewHotel.length)
     }
-    return 5;
-  }, [totalReviewHotel]);
+    return 5
+  }, [totalReviewHotel])
 
-  const totalData = Number(totalReviewHotel?.length);
+  const totalData = Number(totalReviewHotel?.length)
 
   useEffect(() => {
     if (id && totalReviewHotel) {
-      (async () => {
+      ;(async () => {
         try {
-          await dispatch(getTourById(Number(id))).unwrap();
+          await dispatch(getTourById(Number(id))).unwrap()
           await dispatch(
             getReviewTourList({
               tourId: Number(id),
               start: ITEMS_PER_PAGE * currentPage,
-              limit: ITEMS_PER_PAGE,
+              limit: ITEMS_PER_PAGE
             })
-          ).unwrap();
+          ).unwrap()
 
-          setPageCount(
-            Math.ceil(Number(totalReviewHotel.length) / ITEMS_PER_PAGE)
-          );
+          setPageCount(Math.ceil(Number(totalReviewHotel.length) / ITEMS_PER_PAGE))
         } catch (error) {
-          console.log(error);
+          return error
         }
-      })();
+      })()
     }
-  }, [currentPage, pageCount, totalReviewHotel]);
+  }, [id, dispatch, currentPage, pageCount, totalReviewHotel])
 
   const links = useMemo(
     () => [
-      { href: "/", title: "Home" },
-      { href: "/tours", title: "Tours" },
+      { href: '/', title: 'Home' },
+      { href: '/tours', title: 'Tours' }
     ],
     []
-  );
+  )
 
-  const current = useMemo(() => "Detail Tour", []);
+  const current = useMemo(() => 'Detail Tour', [])
 
   return (
     <>
@@ -108,15 +106,9 @@ const TourDetail = () => {
               </div>
               <span className="text-four">
                 {!totalData && totalData !== 0 ? (
-                  <div className="flex items-center gap-4 text-base">
-                    Reviews: Loading...
-                  </div>
+                  <div className="flex items-center gap-4 text-base">Reviews: Loading...</div>
                 ) : (
-                  <>
-                    {totalData > 0
-                      ? `Reviews(${totalData})`
-                      : `Review(${totalData})`}
-                  </>
+                  <>{totalData > 0 ? `Reviews(${totalData})` : `Review(${totalData})`}</>
                 )}
               </span>
             </div>
@@ -149,7 +141,7 @@ const TourDetail = () => {
       )}
       <PdMain />
     </>
-  );
-};
+  )
+}
 
-export default TourDetail;
+export default TourDetail
