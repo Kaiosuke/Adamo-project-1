@@ -1,14 +1,15 @@
-import { Checkbox } from "@/components/ui/checkbox";
-import { RadioGroup } from "@/components/ui/radio-group";
-import { memo } from "react";
+import { Checkbox } from '@/components/ui/checkbox'
+import { RadioGroup } from '@/components/ui/radio-group'
+import { memo } from 'react'
 
-import { FaStar } from "react-icons/fa6";
+import { FaStar } from 'react-icons/fa6'
 
-const starList = ["1", "2", "3", "4", "5"];
+const starList = ['1', '2', '3', '4', '5']
 
 interface Props {
-  stars: string[];
-  onCheckChange: ({ checked, v }: { checked: boolean; v: string }) => void;
+  stars: string[]
+  // eslint-disable-next-line no-unused-vars
+  onCheckChange: ({ checked, v }: { checked: boolean; v: string }) => void
 }
 
 const HotelStar = ({ onCheckChange, stars }: Props) => {
@@ -23,7 +24,7 @@ const HotelStar = ({ onCheckChange, stars }: Props) => {
                 id={v}
                 checked={stars.includes(v)}
                 onCheckedChange={(checked) => {
-                  onCheckChange({ checked: Boolean(checked), v: v });
+                  onCheckChange({ checked: Boolean(checked), v: v })
                 }}
               />
               <label
@@ -39,7 +40,7 @@ const HotelStar = ({ onCheckChange, stars }: Props) => {
         </RadioGroup>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default memo(HotelStar);
+export default memo(HotelStar)

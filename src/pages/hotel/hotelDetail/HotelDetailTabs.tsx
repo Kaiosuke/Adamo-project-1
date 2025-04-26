@@ -1,27 +1,27 @@
-import { getReviewsHotel } from "@/api/reviewRequest";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { IHotel } from "@/interfaces/hotel";
-import { useQuery } from "@tanstack/react-query";
-import { memo } from "react";
-import { useParams } from "react-router";
-import Descriptions from "./Descriptions";
-import Reviews from "./Reviews";
-import SelectRoom from "./SelectRoom";
+import { getReviewsHotel } from '@/api/reviewRequest'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { IHotel } from '@/interfaces/hotel'
+import { useQuery } from '@tanstack/react-query'
+import { memo } from 'react'
+import { useParams } from 'react-router'
+import Descriptions from './Descriptions'
+import Reviews from './Reviews'
+import SelectRoom from './SelectRoom'
 
 interface Props {
-  data: IHotel;
+  data: IHotel
 }
 
 const HotelDetailTabs = ({ data }: Props) => {
-  const { id } = useParams();
+  const { id } = useParams()
   const { data: totalScore, isLoading } = useQuery({
-    queryKey: ["reviewHotel", "score"],
+    queryKey: ['reviewHotel', 'score'],
     queryFn: () =>
       getReviewsHotel({
-        hotelId: id as string,
+        hotelId: id as string
       }),
-    enabled: id !== undefined,
-  });
+    enabled: id !== undefined
+  })
 
   return (
     <>
@@ -44,9 +44,7 @@ const HotelDetailTabs = ({ data }: Props) => {
             className="data-[state=active]:text-primary text-size-2xl px-0 flex-none data-[state=active]:shadow-none trans-slow hover:text-six cursor-pointer"
           >
             {isLoading ? (
-              <div className="flex items-center gap-4 text-size-2xl">
-                Reviews: Loading...
-              </div>
+              <div className="flex items-center gap-4 text-size-2xl">Reviews: Loading...</div>
             ) : (
               <>
                 {totalScore && Number(totalScore.length) > 0
@@ -63,12 +61,10 @@ const HotelDetailTabs = ({ data }: Props) => {
         <TabsContent value="descriptions">
           <Descriptions data={data} />
         </TabsContent>
-        <TabsContent value="reviews">
-          {totalScore && <Reviews totalScore={totalScore} />}
-        </TabsContent>
+        <TabsContent value="reviews">{totalScore && <Reviews totalScore={totalScore} />}</TabsContent>
       </Tabs>
     </>
-  );
-};
+  )
+}
 
-export default memo(HotelDetailTabs);
+export default memo(HotelDetailTabs)

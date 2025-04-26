@@ -1,65 +1,63 @@
-import { getReviewsHotel } from "@/api/reviewRequest";
+import { getReviewsHotel } from '@/api/reviewRequest'
 
-import ReviewHotel from "@/components/reviews/ReviewHotel";
-import { IReviewHotel } from "@/interfaces/review";
-import { useQuery } from "@tanstack/react-query";
-import { useEffect, useMemo, useState } from "react";
-import { useParams } from "react-router";
+import ReviewHotel from '@/components/reviews/ReviewHotel'
+import { IReviewHotel } from '@/interfaces/review'
+import { useQuery } from '@tanstack/react-query'
+import { useEffect, useMemo, useState } from 'react'
+import { useParams } from 'react-router'
 
-import LoadingReview from "@/components/LoadingList/LoadingReview";
-import { NumberParam, useQueryParams } from "use-query-params";
-import ReviewForm from "./ReviewForm";
-import ReviewPagination from "./ReviewPagination";
-import PdSub from "@/components/paddingList/PbSub";
+import LoadingReview from '@/components/LoadingList/LoadingReview'
+import { NumberParam, useQueryParams } from 'use-query-params'
+import ReviewForm from './ReviewForm'
+import ReviewPagination from './ReviewPagination'
+import PdSub from '@/components/paddingList/PbSub'
 
 const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
-  const { id } = useParams();
+  const { id } = useParams()
 
-  const ITEMS_PER_PAGE = 4;
+  const ITEMS_PER_PAGE = 4
 
   const [query, setQuery] = useQueryParams({
-    _page: NumberParam,
-  });
+    _page: NumberParam
+  })
 
-  const _page = query._page ? query._page : 1;
+  const _page = query._page ? query._page : 1
 
-  const [pageCount, setPageCount] = useState(0);
+  const [pageCount, setPageCount] = useState(0)
 
   const [currentPage, setCurrentPage] = useState(() => {
-    const saved = localStorage.getItem("currentPageHotel");
-    return saved ? Number(saved) : 0;
-  });
+    const saved = localStorage.getItem('currentPageHotel')
+    return saved ? Number(saved) : 0
+  })
 
   const { data, isLoading } = useQuery({
-    queryKey: ["reviewHotel", { id, _page }],
+    queryKey: ['reviewHotel', { id, _page }],
     queryFn: () =>
       getReviewsHotel({
         hotelId: id as string,
         _page: _page,
-        _limit: ITEMS_PER_PAGE,
+        _limit: ITEMS_PER_PAGE
       }),
     refetchOnMount: false,
-    enabled: id !== undefined,
-  });
+    enabled: id !== undefined
+  })
 
   useEffect(() => {
-    setCurrentPage(0);
+    setCurrentPage(0)
 
-    setPageCount(Math.ceil(Number(totalScore?.length) / ITEMS_PER_PAGE));
-  }, [totalScore]);
+    setPageCount(Math.ceil(Number(totalScore?.length) / ITEMS_PER_PAGE))
+  }, [totalScore])
 
   const handleAverageRate = useMemo(() => {
     if (totalScore.length) {
       const score = totalScore?.reduce((acc, cur) => {
-        return (acc += cur.rate);
-      }, 0);
+        return (acc += cur.rate)
+      }, 0)
 
-      return Math.floor(score / totalScore.length);
+      return Math.floor(score / totalScore.length)
     }
-    return 5;
-  }, [totalScore]);
-
-  console.log(data?.length);
+    return 5
+  }, [totalScore])
 
   return (
     <>
@@ -100,7 +98,7 @@ const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
         setQuery={setQuery}
       />
     </>
-  );
-};
+  )
+}
 
-export default Reviews;
+export default Reviews

@@ -1,7 +1,7 @@
-import Home19 from "@/assets/images/home 19.png";
-import Home18 from "@/assets/images/home-18.png";
-import Quote from "@/assets/images/quote.png";
-import { Trans } from "react-i18next";
+import Home19 from '@/assets/images/home 19.png'
+import Home18 from '@/assets/images/home-18.png'
+import Quote from '@/assets/images/quote.png'
+import { Trans } from 'react-i18next'
 
 const IntroduceSection = () => {
   return (
@@ -24,7 +24,7 @@ const IntroduceSection = () => {
             ns="home"
             components={{
               h2: <h2 className="text-secondary text-size-4xl lg:pr-20 pt-0" />,
-              span: <span className="text-primary text-size-4xl" />,
+              span: <span className="text-primary text-size-4xl" />
             }}
           />
 
@@ -36,7 +36,7 @@ const IntroduceSection = () => {
                 i18nKey="introduce.description"
                 ns="home"
                 components={{
-                  p: <p className="lg:pt-6 md:pt-4 pt-2" />,
+                  p: <p className="lg:pt-6 md:pt-4 pt-2" />
                 }}
               />
             </div>
@@ -44,7 +44,7 @@ const IntroduceSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default IntroduceSection;
+export default IntroduceSection

@@ -1,92 +1,79 @@
-import { changeStatusRoom } from "@/api/roomRequest";
-import LoadedImageWidth from "@/components/LoadingList/LoadedImageWidth";
-import SwiperCom from "@/components/swiper/SwiperCom";
+import { changeStatusRoom } from '@/api/roomRequest'
+import LoadedImageWidth from '@/components/LoadingList/LoadedImageWidth'
+import SwiperCom from '@/components/swiper/SwiperCom'
 
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { handleFormatMoney, handleSeparateWord } from "@/helper";
-import { IRoom } from "@/interfaces/room";
-import { addRoom, deleteRoom } from "@/redux/slices/roomsSlice";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { memo } from "react";
-import { FaCheck, FaImage } from "react-icons/fa6";
-import { IoBedOutline } from "react-icons/io5";
-import { LuUsers } from "react-icons/lu";
-import { RiShape2Line } from "react-icons/ri";
+import { Button } from '@/components/ui/button'
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { handleFormatMoney, handleSeparateWord } from '@/helper'
+import { IRoom } from '@/interfaces/room'
+import { addRoom, deleteRoom } from '@/redux/slices/roomsSlice'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { memo } from 'react'
+import { FaCheck, FaImage } from 'react-icons/fa6'
+import { IoBedOutline } from 'react-icons/io5'
+import { LuUsers } from 'react-icons/lu'
+import { RiShape2Line } from 'react-icons/ri'
 
-import { useDispatch } from "react-redux";
-import { toast } from "sonner";
-import { useDebouncedCallback } from "use-debounce";
+import { useDispatch } from 'react-redux'
+import { toast } from 'sonner'
+import { useDebouncedCallback } from 'use-debounce'
 
 const Room = ({ room }: { room: IRoom }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
-  const queryClient = useQueryClient();
+  const queryClient = useQueryClient()
 
   const handleAddRoom = (room: IRoom) => {
     const roomData = {
       data: room,
-      quantity: 1,
-    };
-    dispatch(addRoom(roomData));
-  };
+      quantity: 1
+    }
+    dispatch(addRoom(roomData))
+  }
 
   const handleDeleteRoom = (room: IRoom) => {
-    dispatch(deleteRoom(room));
-  };
+    dispatch(deleteRoom(room))
+  }
 
   const changeStatusMutation = useMutation({
-    mutationFn: ({ roomId, status }: { roomId: number; status: boolean }) =>
-      changeStatusRoom(roomId, status),
-  });
+    mutationFn: ({ roomId, status }: { roomId: number; status: boolean }) => changeStatusRoom(roomId, status)
+  })
 
-  const handleSelectRoom = useDebouncedCallback(
-    (room: IRoom, status: boolean) => {
-      changeStatusMutation.mutate(
-        { roomId: room.id, status },
-        {
-          onSuccess: async () => {
-            await queryClient.invalidateQueries({ queryKey: ["rooms"] });
-            handleAddRoom(room);
-            toast.success("Remove room Successfully", {
-              style: {
-                backgroundColor: "#4caf50",
-                color: "#ffffff",
-              },
-            });
-          },
+  const handleSelectRoom = useDebouncedCallback((room: IRoom, status: boolean) => {
+    changeStatusMutation.mutate(
+      { roomId: room.id, status },
+      {
+        onSuccess: async () => {
+          await queryClient.invalidateQueries({ queryKey: ['rooms'] })
+          handleAddRoom(room)
+          toast.success('Remove room Successfully', {
+            style: {
+              backgroundColor: '#4caf50',
+              color: '#ffffff'
+            }
+          })
         }
-      );
-    },
-    300
-  );
+      }
+    )
+  }, 300)
 
-  const handleNotSelectRoom = useDebouncedCallback(
-    (room: IRoom, status: boolean) => {
-      changeStatusMutation.mutate(
-        { roomId: room.id, status },
-        {
-          onSuccess: async () => {
-            await queryClient.invalidateQueries({ queryKey: ["rooms"] });
-            handleDeleteRoom(room);
-            toast.success("Remove room Successfully", {
-              style: {
-                backgroundColor: "#4caf50",
-                color: "#ffffff",
-              },
-            });
-          },
+  const handleNotSelectRoom = useDebouncedCallback((room: IRoom, status: boolean) => {
+    changeStatusMutation.mutate(
+      { roomId: room.id, status },
+      {
+        onSuccess: async () => {
+          await queryClient.invalidateQueries({ queryKey: ['rooms'] })
+          handleDeleteRoom(room)
+          toast.success('Remove room Successfully', {
+            style: {
+              backgroundColor: '#4caf50',
+              color: '#ffffff'
+            }
+          })
         }
-      );
-    },
-    300
-  );
+      }
+    )
+  }, 300)
 
   return (
     <div className="flex flex-col gap-4 mt-4" key={room.id}>
@@ -103,9 +90,7 @@ const Room = ({ room }: { room: IRoom }) => {
               </DialogTrigger>
               <DialogContent className="2xl:max-w-[1200px] md:max-w-[90%] m-auto 2xl:h-fit h-[60%] pb-6">
                 <DialogHeader>
-                  <DialogTitle className="text-secondary text-size-3xl px-6 pt-6">
-                    {room.type}
-                  </DialogTitle>
+                  <DialogTitle className="text-secondary text-size-3xl px-6 pt-6">{room.type}</DialogTitle>
                 </DialogHeader>
 
                 <div className="flex gap-10 lg:flex-row flex-col overflow-auto px-6">
@@ -115,16 +100,14 @@ const Room = ({ room }: { room: IRoom }) => {
                         <span className="line-through text-four">
                           {handleFormatMoney(room.price * 0.1 + room.price)}
                         </span>
-                        <span className="text-size-2xl text-red-700 font-bold">
-                          {handleFormatMoney(room.price)}
-                        </span>
+                        <span className="text-size-2xl text-red-700 font-bold">{handleFormatMoney(room.price)}</span>
                         <span className="text-four">/night</span>
                       </div>
                       <div>
                         {room.quantity < 1 ? (
                           <Button
-                            variant={"eight"}
-                            size={"third"}
+                            variant={'eight'}
+                            size={'third'}
                             className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full cursor-not-allowed"
                           >
                             Out of Room
@@ -132,12 +115,12 @@ const Room = ({ room }: { room: IRoom }) => {
                         ) : !room.status ? (
                           <div>
                             <Button
-                              variant={"outline"}
-                              size={"third"}
+                              variant={'outline'}
+                              size={'third'}
                               type="button"
                               className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full"
                               onClick={() => {
-                                handleSelectRoom(room, true);
+                                handleSelectRoom(room, true)
                               }}
                             >
                               Select room
@@ -145,13 +128,13 @@ const Room = ({ room }: { room: IRoom }) => {
                           </div>
                         ) : (
                           <Button
-                            variant={"primary"}
-                            size={"third"}
+                            variant={'primary'}
+                            size={'third'}
                             type="button"
                             className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full"
                             onClick={() => {
-                              handleDeleteRoom(room);
-                              handleNotSelectRoom(room, false);
+                              handleDeleteRoom(room)
+                              handleNotSelectRoom(room, false)
                             }}
                           >
                             <FaCheck className="text-third" />
@@ -190,9 +173,7 @@ const Room = ({ room }: { room: IRoom }) => {
                     <div className="str-line" />
 
                     <div className="">
-                      <span className="text-secondary font-bold text-size-lg">
-                        Room Facilities:
-                      </span>
+                      <span className="text-secondary font-bold text-size-lg">Room Facilities:</span>
                       <ul className="text-four grid grid-cols-2 gap-2 mt-2">
                         {room.features.map((v, index) => (
                           <li className="flex items-center gap-2" key={index}>
@@ -238,8 +219,8 @@ const Room = ({ room }: { room: IRoom }) => {
             <div className="mt-2 flex items-center justify-between">
               {room.quantity < 1 ? (
                 <Button
-                  variant={"eight"}
-                  size={"third"}
+                  variant={'eight'}
+                  size={'third'}
                   className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full cursor-not-allowed"
                 >
                   Out of Room
@@ -247,12 +228,12 @@ const Room = ({ room }: { room: IRoom }) => {
               ) : !room.status ? (
                 <div>
                   <Button
-                    variant={"outline"}
-                    size={"third"}
+                    variant={'outline'}
+                    size={'third'}
                     type="button"
                     className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full"
                     onClick={() => {
-                      handleSelectRoom(room, true);
+                      handleSelectRoom(room, true)
                     }}
                   >
                     Select room
@@ -260,13 +241,13 @@ const Room = ({ room }: { room: IRoom }) => {
                 </div>
               ) : (
                 <Button
-                  variant={"primary"}
-                  size={"third"}
+                  variant={'primary'}
+                  size={'third'}
                   type="button"
                   className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full"
                   onClick={() => {
-                    handleDeleteRoom(room);
-                    handleNotSelectRoom(room, false);
+                    handleDeleteRoom(room)
+                    handleNotSelectRoom(room, false)
                   }}
                 >
                   <FaCheck className="text-third" />
@@ -275,9 +256,7 @@ const Room = ({ room }: { room: IRoom }) => {
               )}
 
               <div>
-                <span className="text-red-600 text-size-xl font-bold">
-                  {handleFormatMoney(room.price)}
-                </span>
+                <span className="text-red-600 text-size-xl font-bold">{handleFormatMoney(room.price)}</span>
                 <span className="text-four">/night</span>
               </div>
             </div>
@@ -285,7 +264,7 @@ const Room = ({ room }: { room: IRoom }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default memo(Room);
+export default memo(Room)

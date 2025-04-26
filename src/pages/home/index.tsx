@@ -1,37 +1,37 @@
-import { getAllTour, getFiltersTour, getTours } from "@/api/tourRequest";
-import SkeletonData from "@/components/LoadingList/SkeletonData";
-import { useAppDispatch } from "@/redux";
-import { useQuery } from "@tanstack/react-query";
-import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import AttractiveSection from "./AttractiveSection";
-import ContactSection from "./ContactSection";
-import DiscoverSection from "./DiscoverSection";
-import HeroSection from "./HeroSection";
-import IntroduceSection from "./IntroduceSection";
-import TraditionalSection from "./Traditional";
-import PdMain from "@/components/paddingList/PbMain";
+import { getAllTour, getFiltersTour, getTours } from '@/api/tourRequest'
+import SkeletonData from '@/components/LoadingList/SkeletonData'
+import { useAppDispatch } from '@/redux'
+import { useQuery } from '@tanstack/react-query'
+import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import AttractiveSection from './AttractiveSection'
+import ContactSection from './ContactSection'
+import DiscoverSection from './DiscoverSection'
+import HeroSection from './HeroSection'
+import IntroduceSection from './IntroduceSection'
+import TraditionalSection from './Traditional'
+import PdMain from '@/components/paddingList/PbMain'
 
 const Home = () => {
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       try {
-        await dispatch(getFiltersTour());
-        await dispatch(getAllTour({}));
+        await dispatch(getFiltersTour())
+        await dispatch(getAllTour({}))
       } catch (error) {
-        console.log(error);
+        return error
       }
-    })();
-  }, []);
+    })()
+  }, [dispatch])
 
-  useTranslation();
+  useTranslation()
 
   const { data, isLoading } = useQuery({
-    queryKey: ["tours"],
-    queryFn: () => getTours({}),
-  });
+    queryKey: ['tours'],
+    queryFn: () => getTours({})
+  })
 
   return (
     <>
@@ -77,7 +77,7 @@ const Home = () => {
       <ContactSection />
       <PdMain />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

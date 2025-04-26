@@ -1,61 +1,52 @@
-import { Trans } from "react-i18next";
+import { Trans } from 'react-i18next'
 
-import { sendMailSchema } from "@/schemas/authSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { sendMailSchema } from '@/schemas/authSchema'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
 
-import { contact } from "@/api/contactRequest";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { IContactOnlyEmail } from "@/interfaces/contact";
-import { useMutation } from "@tanstack/react-query";
-import { toast } from "sonner";
-import { useDebouncedCallback } from "use-debounce";
+import { contact } from '@/api/contactRequest'
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
+import { IContactOnlyEmail } from '@/interfaces/contact'
+import { useMutation } from '@tanstack/react-query'
+import { toast } from 'sonner'
+import { useDebouncedCallback } from 'use-debounce'
 
 const ContactSection = () => {
   const form = useForm<z.infer<typeof sendMailSchema>>({
     resolver: zodResolver(sendMailSchema),
     defaultValues: {
-      email: "",
-    },
-  });
+      email: ''
+    }
+  })
 
   const { mutate } = useMutation({
     mutationFn: (data: IContactOnlyEmail) => contact({ data }),
     onSuccess: () => {
-      toast.success("Thanks for contact us", {
+      toast.success('Thanks for contact us', {
         style: {
-          backgroundColor: "#4caf50",
-          color: "#ffffff",
-        },
-      });
-      form.reset();
-    },
-  });
+          backgroundColor: '#4caf50',
+          color: '#ffffff'
+        }
+      })
+      form.reset()
+    }
+  })
 
-  const onSubmit = useDebouncedCallback(
-    (values: z.infer<typeof sendMailSchema>) => {
-      mutate({ ...values });
-    },
-    300
-  );
+  const onSubmit = useDebouncedCallback((values: z.infer<typeof sendMailSchema>) => {
+    mutate({ ...values })
+  }, 300)
 
   return (
     <section className="main-container animate-fade-down">
       <div className="lg:flex lg:justify-between">
         <h2 className=" lg:pr-20 pt-0 ">
           <Trans
-            i18nKey={"contact.title"}
+            i18nKey={'contact.title'}
             components={{
               div: <div className="text-secondary text-size-4xl" />,
-              span: <span className="text-primary text-size-4xl" />,
+              span: <span className="text-primary text-size-4xl" />
             }}
           />
         </h2>
@@ -91,7 +82,7 @@ const ContactSection = () => {
         </Form>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ContactSection;
+export default ContactSection

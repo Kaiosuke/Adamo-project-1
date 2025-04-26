@@ -39,7 +39,8 @@ const reviewsSlice = createSlice({
 
     builder.addCase(addReviewTour.pending, setLoading)
     builder.addCase(addReviewTour.fulfilled, (state: IStateReview, action: PayloadAction<IReviewTour>) => {
-      ;(state.loading = false), (state.error = undefined)
+      state.loading = false
+      state.error = undefined
       state.reviewsTour = [...state.reviewsTour, action.payload]
     })
   }

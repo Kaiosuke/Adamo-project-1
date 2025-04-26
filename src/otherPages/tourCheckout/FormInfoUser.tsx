@@ -1,39 +1,39 @@
-import { bookingTour } from "@/api/bookingRequest";
-import FormComp from "@/components/forms/FormCom";
-import { Button } from "@/components/ui/button";
-import { Form } from "@/components/ui/form";
-import { IBooking } from "@/interfaces/booking";
-import { userSchema } from "@/schemas/userSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router";
-import { toast } from "sonner";
-import { useDebouncedCallback } from "use-debounce";
+import { bookingTour } from '@/api/bookingRequest'
+import FormComp from '@/components/forms/FormCom'
+import { Button } from '@/components/ui/button'
+import { Form } from '@/components/ui/form'
+import { IBooking } from '@/interfaces/booking'
+import { userSchema } from '@/schemas/userSchema'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useMutation } from '@tanstack/react-query'
+import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router'
+import { toast } from 'sonner'
+import { useDebouncedCallback } from 'use-debounce'
 
-import { StringParam, useQueryParams, withDefault } from "use-query-params";
-import { z } from "zod";
-import PayMethod from "../../components/PayMethod";
+import { StringParam, useQueryParams, withDefault } from 'use-query-params'
+import { z } from 'zod'
+import PayMethod from '../../components/PayMethod'
 
 interface Props {
-  booking: IBooking;
-  discount?: number;
+  booking: IBooking
+  discount?: number
 }
 
 const FormInfoUser = ({ booking, discount }: Props) => {
   const [query, setQuery] = useQueryParams({
-    firstName: withDefault(StringParam, ""),
-    lastName: withDefault(StringParam, ""),
-    email: withDefault(StringParam, ""),
-    phoneNumber: withDefault(StringParam, ""),
-    address: withDefault(StringParam, ""),
-    city: withDefault(StringParam, ""),
-    state: withDefault(StringParam, ""),
-    zipCode: withDefault(StringParam, ""),
-    country: withDefault(StringParam, ""),
-    requirement: withDefault(StringParam, ""),
-    payMethod: withDefault(StringParam, ""),
-  });
+    firstName: withDefault(StringParam, ''),
+    lastName: withDefault(StringParam, ''),
+    email: withDefault(StringParam, ''),
+    phoneNumber: withDefault(StringParam, ''),
+    address: withDefault(StringParam, ''),
+    city: withDefault(StringParam, ''),
+    state: withDefault(StringParam, ''),
+    zipCode: withDefault(StringParam, ''),
+    country: withDefault(StringParam, ''),
+    requirement: withDefault(StringParam, ''),
+    payMethod: withDefault(StringParam, '')
+  })
 
   const form = useForm<z.infer<typeof userSchema>>({
     resolver: zodResolver(userSchema),
@@ -48,47 +48,42 @@ const FormInfoUser = ({ booking, discount }: Props) => {
       zipCode: query.zipCode,
       country: query.country,
       requirement: query.requirement,
-      payMethod: query.payMethod,
-    },
-  });
+      payMethod: query.payMethod
+    }
+  })
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const { mutate } = useMutation({
     mutationFn: (data: IBooking) => bookingTour({ data }),
     onSuccess: () => {
-      toast.success("Booking tour success", {
+      toast.success('Booking tour success', {
         style: {
-          backgroundColor: "#4caf50",
-          color: "#ffffff",
-        },
-      });
+          backgroundColor: '#4caf50',
+          color: '#ffffff'
+        }
+      })
 
-      form.reset();
-      navigate("/thanks");
-    },
-  });
+      form.reset()
+      navigate('/thanks')
+    }
+  })
 
-  const onSubmit = useDebouncedCallback(
-    (values: z.infer<typeof userSchema>) => {
-      const user = {
-        ...values,
-        phoneNumber: Number(values.phoneNumber),
-      };
-      const priceDiscount = discount
-        ? booking.totalPrice - booking.totalPrice * discount
-        : booking.totalPrice;
-      mutate({
-        day: booking.day,
-        duration: booking.duration,
-        guests: booking.guests,
-        totalPrice: priceDiscount,
-        tourId: booking.tourId,
-        user: user,
-      });
-    },
-    300
-  );
+  const onSubmit = useDebouncedCallback((values: z.infer<typeof userSchema>) => {
+    const user = {
+      ...values,
+      phoneNumber: Number(values.phoneNumber)
+    }
+    const priceDiscount = discount ? booking.totalPrice - booking.totalPrice * discount : booking.totalPrice
+    mutate({
+      day: booking.day,
+      duration: booking.duration,
+      guests: booking.guests,
+      totalPrice: priceDiscount,
+      tourId: booking.tourId,
+      user: user
+    })
+  }, 300)
 
   return (
     <Form {...form}>
@@ -134,21 +129,9 @@ const FormInfoUser = ({ booking, discount }: Props) => {
 
         <h3 className="text-size-xl">Address</h3>
         <div className="flex flex-col gap-6">
-          <FormComp
-            form={form}
-            title="Your Address"
-            placeholder="Your Address"
-            name="address"
-            setQuery={setQuery}
-          />
+          <FormComp form={form} title="Your Address" placeholder="Your Address" name="address" setQuery={setQuery} />
           <div className="grid grid-cols-2 xl:gap-8 gap-6">
-            <FormComp
-              form={form}
-              title="City"
-              placeholder="Your City"
-              name="city"
-              setQuery={setQuery}
-            />
+            <FormComp form={form} title="City" placeholder="Your City" name="city" setQuery={setQuery} />
             <FormComp
               form={form}
               title="State/Province/Region"
@@ -163,13 +146,7 @@ const FormInfoUser = ({ booking, discount }: Props) => {
               name="zipCode"
               setQuery={setQuery}
             />
-            <FormComp
-              form={form}
-              title="Country"
-              placeholder="Your Country"
-              name="country"
-              setQuery={setQuery}
-            />
+            <FormComp form={form} title="Country" placeholder="Your Country" name="country" setQuery={setQuery} />
           </div>
         </div>
         <div className="">
@@ -188,7 +165,7 @@ const FormInfoUser = ({ booking, discount }: Props) => {
         </Button>
       </form>
     </Form>
-  );
-};
+  )
+}
 
-export default FormInfoUser;
+export default FormInfoUser

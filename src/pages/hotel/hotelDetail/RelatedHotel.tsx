@@ -1,16 +1,16 @@
-import { getHotels } from "@/api/hotelRequest";
-import Hotel from "@/components/Hotel";
-import SkeletonData from "@/components/LoadingList/SkeletonData";
-import { IHotel } from "@/interfaces/hotel";
-import { useQuery } from "@tanstack/react-query";
-import { memo } from "react";
-import { Fragment } from "react/jsx-runtime";
+import { getHotels } from '@/api/hotelRequest'
+import Hotel from '@/components/Hotel'
+import SkeletonData from '@/components/LoadingList/SkeletonData'
+import { IHotel } from '@/interfaces/hotel'
+import { useQuery } from '@tanstack/react-query'
+import { memo } from 'react'
+import { Fragment } from 'react/jsx-runtime'
 
 const RelatedHotels = () => {
   const { data, isLoading } = useQuery({
-    queryKey: ["hotels"],
-    queryFn: () => getHotels({ _page: 1, _limit: 3 }),
-  });
+    queryKey: ['hotels'],
+    queryFn: () => getHotels({ _page: 1, _limit: 3 })
+  })
 
   return (
     <div>
@@ -33,7 +33,7 @@ const RelatedHotels = () => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default memo(RelatedHotels);
+export default memo(RelatedHotels)

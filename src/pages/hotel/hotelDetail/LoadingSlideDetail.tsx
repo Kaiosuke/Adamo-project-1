@@ -1,4 +1,4 @@
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from '@/components/ui/skeleton'
 
 const LoadingSlideDetail = () => {
   return (
@@ -11,7 +11,7 @@ const LoadingSlideDetail = () => {
         <Skeleton className="h-[200px] lg:block hidden" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LoadingSlideDetail;
+export default LoadingSlideDetail

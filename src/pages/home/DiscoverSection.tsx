@@ -1,18 +1,18 @@
-import ButtonFeature from "@/components/ButtonFeature";
-import LoadedImage from "@/components/LoadingList/LoadedImage";
-import { ITour } from "@/interfaces/tour";
+import ButtonFeature from '@/components/ButtonFeature'
+import LoadedImage from '@/components/LoadingList/LoadedImage'
+import { ITour } from '@/interfaces/tour'
 
-import { Trans } from "react-i18next";
-import { Link } from "react-router";
-import { SwiperSlide } from "swiper/react";
-import { Swiper } from "swiper/react";
+import { Trans } from 'react-i18next'
+import { Link } from 'react-router'
+import { SwiperSlide } from 'swiper/react'
+import { Swiper } from 'swiper/react'
 
 const DiscoverSection = ({ data }: { data: ITour[] }) => {
   return (
     <section className="main-container animate-fade-down">
       <div className="flex">
         <h3 className="text-secondary text-size-4xl">
-          <Trans i18nKey={"discover.title"} />
+          <Trans i18nKey={'discover.title'} />
         </h3>
         <div className="ml-auto">
           <Link to="/tours">
@@ -25,21 +25,21 @@ const DiscoverSection = ({ data }: { data: ITour[] }) => {
         className="mySwiper2 opacity-none mt-4"
         breakpoints={{
           640: {
-            slidesPerView: 2,
+            slidesPerView: 2
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: 3
           },
           1024: {
-            slidesPerView: 4,
-          },
+            slidesPerView: 4
+          }
         }}
       >
         <div className="grid lg:grid-cols-4 gap-4 md:grid-cols-2 grid-cols-1 pt-6">
           {data?.length &&
             data.map((v) => (
-              <SwiperSlide>
-                <div className="w-full" key={v.id}>
+              <SwiperSlide key={v.id}>
+                <div className="w-full">
                   <Link to={`/tour-detail/${v.id}`} className="w-full">
                     <div className="relative h-[291px]">
                       <LoadedImage thumbnail={v.thumbnail} alt={v.title} />
@@ -58,7 +58,7 @@ const DiscoverSection = ({ data }: { data: ITour[] }) => {
         </div>
       </Swiper>
     </section>
-  );
-};
+  )
+}
 
-export default DiscoverSection;
+export default DiscoverSection

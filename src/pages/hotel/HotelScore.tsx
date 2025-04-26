@@ -1,29 +1,29 @@
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 
-import { Label } from "@/components/ui/label";
-import { memo } from "react";
+import { Label } from '@/components/ui/label'
+import { memo } from 'react'
 const scoreList = [
   {
-    title: "Wonderful : 9.5+",
-    score: "9.5",
+    title: 'Wonderful : 9.5+',
+    score: '9.5'
   },
   {
-    title: "Very Good : 9+",
-    score: "9",
+    title: 'Very Good : 9+',
+    score: '9'
   },
   {
-    title: "Good : 8+",
-    score: "8",
+    title: 'Good : 8+',
+    score: '8'
   },
   {
-    title: "Pleasant : 7+",
-    score: "7",
-  },
-];
+    title: 'Pleasant : 7+',
+    score: '7'
+  }
+]
 
 interface Props {
-  score: string;
-  onValueChange: (v: string) => void;
+  score: string
+  onValueChange: (_v: string) => void
 }
 
 const HotelScore = ({ score, onValueChange }: Props) => {
@@ -34,11 +34,7 @@ const HotelScore = ({ score, onValueChange }: Props) => {
         <RadioGroup value={score} onValueChange={onValueChange}>
           {scoreList.map((v, index) => (
             <div className="mt-4 flex items-center gap-2" key={index}>
-              <RadioGroupItem
-                value={v.score}
-                id={v.title}
-                className="rounded-sm"
-              />
+              <RadioGroupItem value={v.score} id={v.title} className="rounded-sm" />
 
               <Label
                 htmlFor={v.title}
@@ -51,7 +47,7 @@ const HotelScore = ({ score, onValueChange }: Props) => {
         </RadioGroup>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default memo(HotelScore);
+export default memo(HotelScore)

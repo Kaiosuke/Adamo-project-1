@@ -16,7 +16,7 @@ interface Props {
   pageCount: number
   totalData: number
   averageStar?: number
-  setCurrentPage: (v: number) => void
+  setCurrentPage: (_v: number) => void
 }
 
 const starList = ['5', '4', '3', '2', '1']

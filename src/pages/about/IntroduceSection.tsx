@@ -1,10 +1,10 @@
-import Home19 from "@/assets/images/home 19.png";
-import Home18 from "@/assets/images/home-18.png";
-import Pagoda from "@/assets/images/pagoda.png";
-import Quote from "@/assets/images/quote.png";
-import PdMain from "@/components/paddingList/PbMain";
+import Home19 from '@/assets/images/home 19.png'
+import Home18 from '@/assets/images/home-18.png'
+import Pagoda from '@/assets/images/pagoda.png'
+import Quote from '@/assets/images/quote.png'
+import PdMain from '@/components/paddingList/PbMain'
 
-import { Trans } from "react-i18next";
+import { Trans } from 'react-i18next'
 
 const IntroduceSection = () => {
   return (
@@ -27,7 +27,7 @@ const IntroduceSection = () => {
             ns="about"
             components={{
               h2: <h2 className="text-secondary text-size-4xl lg:pr-20 pt-0" />,
-              span: <span className="text-primary text-size-4xl" />,
+              span: <span className="text-primary text-size-4xl" />
             }}
           />
 
@@ -39,7 +39,7 @@ const IntroduceSection = () => {
                 i18nKey="introduce.description"
                 ns="about"
                 components={{
-                  p: <p className="lg:pt-6 md:pt-4 pt-2" />,
+                  p: <p className="lg:pt-6 md:pt-4 pt-2" />
                 }}
               />
             </div>
@@ -56,7 +56,7 @@ const IntroduceSection = () => {
             ns="about"
             components={{
               h2: <h2 className="text-secondary text-size-4xl lg:pr-20 pt-0" />,
-              span: <span className="text-primary text-size-4xl" />,
+              span: <span className="text-primary text-size-4xl" />
             }}
           />
           <div className="flex md:gap-8 gap-4 items-start lg:pt-10 md:pt-6 pt-4 lg: w-[80%]">
@@ -65,7 +65,7 @@ const IntroduceSection = () => {
                 i18nKey="introduce.description"
                 ns="about"
                 components={{
-                  p: <p className="lg:pt-6 md:pt-4 pt-2" />,
+                  p: <p className="lg:pt-6 md:pt-4 pt-2" />
                 }}
               />
             </div>
@@ -78,7 +78,7 @@ const IntroduceSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default IntroduceSection;
+export default IntroduceSection

@@ -1,14 +1,13 @@
-import LoadingBtn from '@/components/LoadingList/LoadingBtn';
-import { Button } from '@/components/ui/button';
-import { memo } from 'react';
+import LoadingBtn from '@/components/LoadingList/LoadingBtn'
+import { Button } from '@/components/ui/button'
+import { memo } from 'react'
 
 interface Props {
-  loading: boolean;
-  onClick: () => void;
+  loading: boolean
+  onClick: () => void
 }
 
 const HotelBtn = ({ loading, onClick }: Props) => {
-    
   return (
     <div className="py-4" onClick={onClick}>
       <Button variant={'primary'} size={'third'} className="h-[48px] ">
@@ -21,7 +20,7 @@ const HotelBtn = ({ loading, onClick }: Props) => {
         )}
       </Button>
     </div>
-  );
-};
+  )
+}
 
-export default memo(HotelBtn);
+export default memo(HotelBtn)

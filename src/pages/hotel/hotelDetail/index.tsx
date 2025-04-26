@@ -1,49 +1,49 @@
-import BreadcrumbCom from "@/components/Breadcrumb";
+import BreadcrumbCom from '@/components/Breadcrumb'
 
-import { useMemo } from "react";
-import { CiLocationOn } from "react-icons/ci";
-import { MdOutlineStar } from "react-icons/md";
-import { useParams } from "react-router";
-import HotelDetailTabs from "./HotelDetailTabs";
-import RelatedHotels from "./RelatedHotel";
+import { useMemo } from 'react'
+import { CiLocationOn } from 'react-icons/ci'
+import { MdOutlineStar } from 'react-icons/md'
+import { useParams } from 'react-router'
+import HotelDetailTabs from './HotelDetailTabs'
+import RelatedHotels from './RelatedHotel'
 
-import { getHotelById } from "@/api/hotelRequest";
-import { getReviewsHotel } from "@/api/reviewRequest";
-import BillHotelDetail from "@/components/bills/hotel/BillHotelDetail";
-import SwiperCom from "@/components/swiper/SwiperCom";
-import { Skeleton } from "@/components/ui/skeleton";
-import { useQuery } from "@tanstack/react-query";
-import LoadingSlideDetail from "./LoadingSlideDetail";
-import PdMain from "@/components/paddingList/PbMain";
-import PdSub from "@/components/paddingList/PbSub";
+import { getHotelById } from '@/api/hotelRequest'
+import { getReviewsHotel } from '@/api/reviewRequest'
+import BillHotelDetail from '@/components/bills/hotel/BillHotelDetail'
+import SwiperCom from '@/components/swiper/SwiperCom'
+import { Skeleton } from '@/components/ui/skeleton'
+import { useQuery } from '@tanstack/react-query'
+import LoadingSlideDetail from './LoadingSlideDetail'
+import PdMain from '@/components/paddingList/PbMain'
+import PdSub from '@/components/paddingList/PbSub'
 
 const HotelDetail = () => {
-  const { id } = useParams();
+  const { id } = useParams()
 
   const { data: totalData } = useQuery({
-    queryKey: ["reviewHotel", { id }],
+    queryKey: ['reviewHotel', { id }],
     queryFn: () =>
       getReviewsHotel({
-        hotelId: id as string,
+        hotelId: id as string
       }),
-    enabled: id !== undefined,
-  });
+    enabled: id !== undefined
+  })
 
   const { data, isLoading } = useQuery({
-    queryKey: ["hotelDetail", { id: id }],
+    queryKey: ['hotelDetail', { id: id }],
     queryFn: () => getHotelById(Number(id)),
-    enabled: id !== undefined,
-  });
+    enabled: id !== undefined
+  })
 
   const links = useMemo(
     () => [
-      { href: "/", title: "Home" },
-      { href: "/hotels", title: "Hotels" },
+      { href: '/', title: 'Home' },
+      { href: '/hotels', title: 'Hotels' }
     ],
     []
-  );
+  )
 
-  const current = useMemo(() => "Detail Tour", []);
+  const current = useMemo(() => 'Detail Tour', [])
 
   return (
     <>
@@ -65,34 +65,18 @@ const HotelDetail = () => {
           </div>
           <span className="text-four">
             {!totalData ? (
-              <div className="flex items-center gap-4 text-base">
-                Reviews: Loading...
-              </div>
+              <div className="flex items-center gap-4 text-base">Reviews: Loading...</div>
             ) : (
-              <>
-                {totalData.length > 0
-                  ? `Reviews(${totalData.length})`
-                  : `Review(${totalData.length})`}
-              </>
+              <>{totalData.length > 0 ? `Reviews(${totalData.length})` : `Review(${totalData.length})`}</>
             )}
           </span>
         </div>
         <div className="flex 2xl:gap-20 gap-10 lg:mt-8 mt-6 flex-wrap xl:flex-row flex-col-reverse">
           <div className="lg:flex-[1_0_auto] flex-[0_0_100%] lg:max-w-[635px] w-full">
-            <div className="h-[680px]">
-              {isLoading ? (
-                <LoadingSlideDetail />
-              ) : (
-                <SwiperCom images={data?.images} />
-              )}
-            </div>
+            <div className="h-[680px]">{isLoading ? <LoadingSlideDetail /> : <SwiperCom images={data?.images} />}</div>
 
             <div className="">
-              {isLoading || !data ? (
-                <Skeleton className="bg-five h-screen mt-10" />
-              ) : (
-                <HotelDetailTabs data={data} />
-              )}
+              {isLoading || !data ? <Skeleton className="bg-five h-screen mt-10" /> : <HotelDetailTabs data={data} />}
             </div>
           </div>
           <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit xl:sticky top-[20px]">
@@ -106,7 +90,7 @@ const HotelDetail = () => {
       </section>
       <PdMain />
     </>
-  );
-};
+  )
+}
 
-export default HotelDetail;
+export default HotelDetail

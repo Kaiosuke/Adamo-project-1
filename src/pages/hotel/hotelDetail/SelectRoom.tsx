@@ -1,14 +1,14 @@
-import { getAllRoom } from "@/api/roomRequest";
+import { getAllRoom } from '@/api/roomRequest'
 
-import { useQuery } from "@tanstack/react-query";
-import Room from "./Room";
-import { Skeleton } from "@/components/ui/skeleton";
+import { useQuery } from '@tanstack/react-query'
+import Room from './Room'
+import { Skeleton } from '@/components/ui/skeleton'
 
 const SelectRoom = () => {
   const { data, isLoading } = useQuery({
-    queryKey: ["rooms"],
-    queryFn: () => getAllRoom(),
-  });
+    queryKey: ['rooms'],
+    queryFn: () => getAllRoom()
+  })
 
   return (
     <>
@@ -20,7 +20,7 @@ const SelectRoom = () => {
         data.map((room) => <Room key={room.id} room={room} />)
       )}
     </>
-  );
-};
+  )
+}
 
-export default SelectRoom;
+export default SelectRoom

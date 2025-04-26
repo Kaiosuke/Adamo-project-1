@@ -1,9 +1,9 @@
-import Map from "@/components/MapCom";
-import { Button } from "@/components/ui/button";
-import { handleSeparateWord } from "@/helper";
-import { IHotel } from "@/interfaces/hotel";
+import Map from '@/components/MapCom'
+import { Button } from '@/components/ui/button'
+import { handleSeparateWord } from '@/helper'
+import { IHotel } from '@/interfaces/hotel'
 
-import { IoCheckmarkSharp } from "react-icons/io5";
+import { IoCheckmarkSharp } from 'react-icons/io5'
 
 const Descriptions = ({ data }: { data: IHotel }) => {
   return (
@@ -12,13 +12,11 @@ const Descriptions = ({ data }: { data: IHotel }) => {
         <h4 className="text-size-xl text-secondary">Overview</h4>
         <div className="mt-4 text-secondary">
           {data.description.overview.description &&
-            handleSeparateWord(data.description.overview.description).map(
-              (v, index) => (
-                <p key={index} className="mt-4">
-                  {v}
-                </p>
-              )
-            )}
+            handleSeparateWord(data.description.overview.description).map((v, index) => (
+              <p key={index} className="mt-4">
+                {v}
+              </p>
+            ))}
         </div>
       </div>
       <div className="py-6">
@@ -43,19 +41,13 @@ const Descriptions = ({ data }: { data: IHotel }) => {
         <div className="mt-2 flex gap-8">
           <div className="font-bold">
             <div className="text-primary">Checkin</div>
-            <Button
-              variant={"seven"}
-              className=" md:w-[270px] w-[200px] rounded-lg px-4 cursor-auto mt-2"
-            >
+            <Button variant={'seven'} className=" md:w-[270px] w-[200px] rounded-lg px-4 cursor-auto mt-2">
               {data.description.rules.checkIn}
             </Button>
           </div>
           <div className="font-bold">
             <div className="text-primary">Checkout</div>
-            <Button
-              variant={"seven"}
-              className=" md:w-[270px] w-[200px] rounded-lg px-4 cursor-auto mt-2"
-            >
+            <Button variant={'seven'} className=" md:w-[270px] w-[200px] rounded-lg px-4 cursor-auto mt-2">
               {data.description.rules.checkOut}
             </Button>
           </div>
@@ -80,7 +72,7 @@ const Descriptions = ({ data }: { data: IHotel }) => {
         <div className="str-line " />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Descriptions;
+export default Descriptions

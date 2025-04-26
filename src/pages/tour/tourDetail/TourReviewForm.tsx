@@ -17,7 +17,7 @@ import { useDebouncedCallback } from 'use-debounce'
 
 interface Props {
   id: string
-  setCurrentPage: (v: number) => void
+  setCurrentPage: (_v: number) => void
 }
 
 const TourReviewForm = ({ id, setCurrentPage }: Props) => {
