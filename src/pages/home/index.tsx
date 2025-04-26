@@ -1,6 +1,6 @@
 import { getAllTour, getFiltersTour, getTours } from '@/api/tourRequest'
 import SkeletonData from '@/components/LoadingList/SkeletonData'
-import { useAppDispatch } from '@/redux'
+import { useAppDispatch } from '@/redux/index'
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'

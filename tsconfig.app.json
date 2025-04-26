@@ -15,9 +15,21 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@/*": ["src/*"]
+      "@/components/*": ["./components/*"],
+      "@/api/*": ["./api/*"],
+      "@/assets/*": ["./assets/*"],
+      "@/auth/*": ["./auth/*"],
+      "@/firebase/*": ["./firebase/*"],
+      "@/helper/*": ["./helper/*"],
+      "@/hooks/*": ["./hooks/*"],
+      "@/i18n/*": ["./i18n/*"],
+      "@/locales/*": ["./locales/*"],
+      "@/redux/*": ["./redux/*"],
+      "@/schemas/*": ["./schemas/*"],
+      "@/styles/*": ["./styles/*"],
+      "@/lib/*": ["./lib/*"]
     },
 
     /* Linting */

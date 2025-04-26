@@ -5,11 +5,12 @@ import LayoutPage from './pages/layout'
 
 import { QueryParamProvider } from 'use-query-params'
 import { ReactRouter6Adapter } from 'use-query-params/adapters/react-router-6'
-import ScrollPage from './components/scrollTop/ScrollPage'
+
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 import { lazy, Suspense } from 'react'
 import LoadingPage from './components/LoadingList/LoadingPage'
+import ScrollPage from './components/scrollTop/ScrollPage'
 
 const Home = lazy(() => import('./pages/home'))
 const About = lazy(() => import('./pages/about'))
