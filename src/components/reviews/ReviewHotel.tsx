@@ -1,14 +1,14 @@
-import Avatar1 from "@/assets/images/Avatar-1.png";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { TbPointFilled } from "react-icons/tb";
+import Avatar1 from '@/assets/images/Avatar-1.png'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { TbPointFilled } from 'react-icons/tb'
 
 interface Props {
-  rate: number;
-  avatar: string;
-  opinion: string;
-  time: string;
-  title: string;
-  des: string;
+  rate: number
+  avatar: string
+  opinion: string
+  time: string
+  title: string
+  des: string
 }
 
 const ReviewHotel = ({ review }: { review: Props }) => {
@@ -36,7 +36,7 @@ const ReviewHotel = ({ review }: { review: Props }) => {
         <p className="leading-6 text-four h-[60px]">{review.des}</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ReviewHotel;
+export default ReviewHotel

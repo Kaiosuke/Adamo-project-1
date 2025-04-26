@@ -1,6 +1,6 @@
 interface ICode {
-  id: number;
-  code: string;
-  discount: number;
+  id: number
+  code: string
+  discount: number
 }
-export type { ICode };
+export type { ICode }

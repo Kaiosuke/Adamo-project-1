@@ -1,24 +1,21 @@
-import ImageSign from "@/assets/images/sign.png";
-import i18n from "@/i18n/i18n";
-import { languageSelector } from "@/redux/selectors/languageSelector";
-import { useEffect } from "react";
-import { FaArrowLeftLong } from "react-icons/fa6";
-import { useSelector } from "react-redux";
-import { Link, Outlet } from "react-router";
+import ImageSign from '@/assets/images/sign.png'
+import i18n from '@/i18n/i18n'
+import { languageSelector } from '@/redux/selectors/languageSelector'
+import { useEffect } from 'react'
+import { FaArrowLeftLong } from 'react-icons/fa6'
+import { useSelector } from 'react-redux'
+import { Link, Outlet } from 'react-router'
 
 const LayoutAuth = () => {
-  const { lg } = useSelector(languageSelector);
+  const { lg } = useSelector(languageSelector)
 
   useEffect(() => {
-    i18n.changeLanguage(lg);
-  }, [lg]);
+    i18n.changeLanguage(lg)
+  }, [lg])
 
   return (
     <>
-      <Link
-        to="/"
-        className="fixed top-10 left-10 text-primary flex items-center gap-2  text-size-3xl"
-      >
+      <Link to="/" className="fixed top-10 left-10 text-primary flex items-center gap-2  text-size-3xl">
         <FaArrowLeftLong />
         Home
       </Link>
@@ -33,7 +30,7 @@ const LayoutAuth = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default LayoutAuth;
+export default LayoutAuth

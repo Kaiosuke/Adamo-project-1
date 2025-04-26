@@ -1,24 +1,24 @@
-import { memo, useState } from "react";
-import "swiper/css";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { memo, useState } from 'react'
+import 'swiper/css'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
+import 'swiper/css'
+import 'swiper/css/free-mode'
+import 'swiper/css/navigation'
+import 'swiper/css/thumbs'
 
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import LoadedImage from "../LoadingList/LoadedImage";
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
+import LoadedImage from '../LoadingList/LoadedImage'
 
 const SwiperCom = ({ images }: { images?: string[] }) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null)
 
   return (
     <>
       <Swiper
         style={{
-          "--swiper-navigation-color": "#fff",
-          "--swiper-pagination-color": "#fff",
+          '--swiper-navigation-color': '#fff',
+          '--swiper-pagination-color': '#fff'
         }}
         loop={true}
         spaceBetween={10}
@@ -43,14 +43,14 @@ const SwiperCom = ({ images }: { images?: string[] }) => {
         modules={[FreeMode, Navigation, Thumbs]}
         breakpoints={{
           640: {
-            slidesPerView: 2,
+            slidesPerView: 2
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: 3
           },
           1024: {
-            slidesPerView: 4,
-          },
+            slidesPerView: 4
+          }
         }}
         className="mySwiper mt-3 cursor-pointer"
       >
@@ -61,7 +61,7 @@ const SwiperCom = ({ images }: { images?: string[] }) => {
         ))}
       </Swiper>
     </>
-  );
-};
+  )
+}
 
-export default memo(SwiperCom);
+export default memo(SwiperCom)

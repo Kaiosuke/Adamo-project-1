@@ -1,108 +1,75 @@
-import {
-  IReviewHotel,
-  IReviewTour,
-  IReviewTourLackId,
-} from "@/interfaces/review";
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-import { instanceLocal } from "./instance";
+import { IReviewHotel, IReviewTour, IReviewTourLackId } from '@/interfaces/review'
+import { createAsyncThunk } from '@reduxjs/toolkit'
+import axios from 'axios'
+import { instanceLocal } from './instance'
 
 const getReviewTourList = createAsyncThunk<
   IReviewTour[],
   { tourId: number; start?: number; limit?: number },
   { rejectValue: string }
->(
-  "review/tour",
-  async ({ tourId, start = 0, limit = 3 }, { rejectWithValue }) => {
-    try {
-      const res = await instanceLocal.get(
-        `reviewsTour?tourId=${tourId}&_start=${start}&_limit=${limit}`
-      );
-
-      localStorage.setItem(
-        "totalReviewTour",
-        JSON.stringify(parseInt(res.headers["x-total-count"]))
-      );
-
-      return res.data;
-    } catch (error) {
-      if (axios.isAxiosError(error)) {
-        return rejectWithValue(error.response?.data.message);
-      }
-      return rejectWithValue("error");
-    }
-  }
-);
-
-const getAllReviewTour = async (
-  id: number | string
-): Promise<IReviewTour[]> => {
-  const res = await instanceLocal.get(`reviewsTour?tourId=${id}`);
-  return res.data;
-};
-
-const addReviewTour = createAsyncThunk<
-  IReviewTour,
-  { data: IReviewTourLackId },
-  { rejectValue: string }
->("review/add", async ({ data }, { rejectWithValue }) => {
+>('review/tour', async ({ tourId, start = 0, limit = 3 }, { rejectWithValue }) => {
   try {
-    const res = await instanceLocal.post("reviewsTour", data);
-    return res.data;
+    const res = await instanceLocal.get(`reviewsTour?tourId=${tourId}&_start=${start}&_limit=${limit}`)
+
+    localStorage.setItem('totalReviewTour', JSON.stringify(parseInt(res.headers['x-total-count'])))
+
+    return res.data
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      return rejectWithValue(error.response?.data.message);
+      return rejectWithValue(error.response?.data.message)
     }
-    rejectWithValue("error");
+    return rejectWithValue('error')
   }
-});
+})
 
-const getReviewsTour = async ({
-  hotelId,
-}: {
-  hotelId: number | string;
-}): Promise<IReviewHotel[]> => {
-  const res = await instanceLocal.get(`reviewsHotel?hotelId=${hotelId}`);
-  return res.data;
-};
+const getAllReviewTour = async (id: number | string): Promise<IReviewTour[]> => {
+  const res = await instanceLocal.get(`reviewsTour?tourId=${id}`)
+  return res.data
+}
+
+const addReviewTour = createAsyncThunk<IReviewTour, { data: IReviewTourLackId }, { rejectValue: string }>(
+  'review/add',
+  async ({ data }, { rejectWithValue }) => {
+    try {
+      const res = await instanceLocal.post('reviewsTour', data)
+      return res.data
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        return rejectWithValue(error.response?.data.message)
+      }
+      rejectWithValue('error')
+    }
+  }
+)
+
+const getReviewsTour = async ({ hotelId }: { hotelId: number | string }): Promise<IReviewHotel[]> => {
+  const res = await instanceLocal.get(`reviewsHotel?hotelId=${hotelId}`)
+  return res.data
+}
 
 const getReviewsHotel = async ({
   hotelId,
   _page = 1,
-  _limit = 1000,
+  _limit = 1000
 }: {
-  hotelId: number | string;
-  _page?: number | string;
-  _limit?: number | string;
+  hotelId: number | string
+  _page?: number | string
+  _limit?: number | string
 }): Promise<IReviewHotel[]> => {
-  const res = await instanceLocal.get(
-    `reviewsHotel?hotelId=${hotelId}&_sort=id&_order=desc`,
-    {
-      params: {
-        _page,
-        _limit,
-      },
+  const res = await instanceLocal.get(`reviewsHotel?hotelId=${hotelId}&_sort=id&_order=desc`, {
+    params: {
+      _page,
+      _limit
     }
-  );
-  localStorage.setItem("totalReviewHotel", res.headers["x-total-count"]);
-  return res.data;
-};
+  })
+  localStorage.setItem('totalReviewHotel', res.headers['x-total-count'])
+  return res.data
+}
 
-const addReviewHotel = async ({
-  data,
-}: {
-  data: Omit<IReviewHotel, "id">;
-}): Promise<IReviewHotel> => {
-  const res = await instanceLocal.post("reviewsHotel", data);
-  localStorage.setItem("totalReviewHotel", res.headers["x-total-count"]);
-  return res.data;
-};
+const addReviewHotel = async ({ data }: { data: Omit<IReviewHotel, 'id'> }): Promise<IReviewHotel> => {
+  const res = await instanceLocal.post('reviewsHotel', data)
+  localStorage.setItem('totalReviewHotel', res.headers['x-total-count'])
+  return res.data
+}
 
-export {
-  getReviewsHotel,
-  getReviewTourList,
-  addReviewHotel,
-  addReviewTour,
-  getAllReviewTour,
-  getReviewsTour,
-};
+export { getReviewsHotel, getReviewTourList, addReviewHotel, addReviewTour, getAllReviewTour, getReviewsTour }

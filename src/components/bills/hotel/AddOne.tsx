@@ -1,5 +1,5 @@
-import { Checkbox } from "@/components/ui/checkbox";
-import { handleFormatMoney } from "@/helper";
+import { Checkbox } from '@/components/ui/checkbox'
+import { handleFormatMoney } from '@/helper'
 import {
   changeBreakfast,
   changeExtraBed,
@@ -8,89 +8,85 @@ import {
   IBreakfast,
   IExtraBed,
   inCreaseBreakfast,
-  inCreaseExtraBed,
-} from "@/redux/slices/roomsSlice";
-import { memo } from "react";
-import { FaCircleMinus, FaCirclePlus } from "react-icons/fa6";
-import { useDispatch } from "react-redux";
-import { toast } from "sonner";
+  inCreaseExtraBed
+} from '@/redux/slices/roomsSlice'
+import { memo } from 'react'
+import { FaCircleMinus, FaCirclePlus } from 'react-icons/fa6'
+import { useDispatch } from 'react-redux'
+import { toast } from 'sonner'
 
 interface Props {
-  breakfast: IBreakfast;
-  extraBed: IExtraBed;
+  breakfast: IBreakfast
+  extraBed: IExtraBed
 }
 
 const AddOne = ({ breakfast, extraBed }: Props) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const handleChangeBreakfast = () => {
-    dispatch(changeBreakfast());
-  };
+    dispatch(changeBreakfast())
+  }
 
   const handleDecreaseBreakfast = (breakfast: IBreakfast) => {
     if (breakfast.quantity < 1) {
-      return toast.warning("Cannot decrease further", {
+      return toast.warning('Cannot decrease further', {
         style: {
-          backgroundColor: "#FF0B55",
-          color: "#ffffff",
-        },
-      });
+          backgroundColor: '#FF0B55',
+          color: '#ffffff'
+        }
+      })
     }
-    dispatch(deCreaseBreakfast());
-  };
+    dispatch(deCreaseBreakfast())
+  }
 
   const handleIncreaseBreakfast = (breakfast: IBreakfast) => {
     if (breakfast.quantity > 6) {
-      return toast.warning("Cannot increase further", {
+      return toast.warning('Cannot increase further', {
         style: {
-          backgroundColor: "#FF0B55",
-          color: "#ffffff",
-        },
-      });
+          backgroundColor: '#FF0B55',
+          color: '#ffffff'
+        }
+      })
     }
 
-    dispatch(inCreaseBreakfast());
-  };
+    dispatch(inCreaseBreakfast())
+  }
 
   const handleChangeExtraBed = () => {
-    dispatch(changeExtraBed());
-  };
+    dispatch(changeExtraBed())
+  }
 
   const handleDecreaseExtraBed = (extraBed: IExtraBed) => {
     if (extraBed.quantity < 1) {
-      return toast.warning("Cannot decrease further", {
+      return toast.warning('Cannot decrease further', {
         style: {
-          backgroundColor: "#FF0B55",
-          color: "#ffffff",
-        },
-      });
+          backgroundColor: '#FF0B55',
+          color: '#ffffff'
+        }
+      })
     }
 
-    dispatch(deCreaseExtraBed());
-  };
+    dispatch(deCreaseExtraBed())
+  }
 
   const handleIncreaseExtraBed = (extraBed: IExtraBed) => {
     if (extraBed.quantity > 6) {
-      return toast.warning("Cannot increase further", {
+      return toast.warning('Cannot increase further', {
         style: {
-          backgroundColor: "#FF0B55",
-          color: "#ffffff",
-        },
-      });
+          backgroundColor: '#FF0B55',
+          color: '#ffffff'
+        }
+      })
     }
-    dispatch(inCreaseExtraBed());
-  };
+    dispatch(inCreaseExtraBed())
+  }
 
   return (
     <>
       <div className="font-bold text-secondary">Add-ons:</div>
-      <div className={`grid grid-cols-3 items-center mt-2`}>
+      <div className={'grid grid-cols-3 items-center mt-2'}>
         <div className="flex items-center space-x-2">
-          <Checkbox
-            id="terms"
-            className="bg-third"
-            checked={breakfast.status}
-          />
+          <Checkbox id="terms" className="bg-third" checked={breakfast.status} />
           <label
             htmlFor="terms"
             onClick={handleChangeBreakfast}
@@ -101,30 +97,28 @@ const AddOne = ({ breakfast, extraBed }: Props) => {
         </div>
         <div
           className={`flex w-full justify-between ml-auto col-span-2 ${
-            breakfast.status ? "" : "pointer-events-none opacity-35"
+            breakfast.status ? '' : 'pointer-events-none opacity-35'
           }`}
         >
-          <div className={`flex items-center justify-between gap-2 ml-[40px]`}>
+          <div className={'flex items-center justify-between gap-2 ml-[40px]'}>
             <FaCircleMinus
               className="text-four text-xl cursor-pointer hover:text-four/80"
               onClick={() => {
-                if (breakfast.status) handleDecreaseBreakfast(breakfast);
+                if (breakfast.status) handleDecreaseBreakfast(breakfast)
               }}
             />
             <span className="w-[10px] text-center">{breakfast.quantity}</span>
             <FaCirclePlus
               className="text-four text-xl cursor-pointer hover:text-four/80"
               onClick={() => {
-                if (breakfast.status) handleIncreaseBreakfast(breakfast);
+                if (breakfast.status) handleIncreaseBreakfast(breakfast)
               }}
             />
           </div>
-          <div className="font-bold text-six ml-auto">
-            {handleFormatMoney(breakfast.price * breakfast.quantity)}
-          </div>
+          <div className="font-bold text-six ml-auto">{handleFormatMoney(breakfast.price * breakfast.quantity)}</div>
         </div>
       </div>
-      <div className={`grid grid-cols-3 items-center mt-2`}>
+      <div className={'grid grid-cols-3 items-center mt-2'}>
         <div className="flex items-center space-x-2">
           <Checkbox id="terms" className="bg-third" checked={extraBed.status} />
           <label
@@ -137,31 +131,29 @@ const AddOne = ({ breakfast, extraBed }: Props) => {
         </div>
         <div
           className={`flex w-full justify-between col-span-2 ${
-            extraBed.status ? "" : "pointer-events-none opacity-35"
+            extraBed.status ? '' : 'pointer-events-none opacity-35'
           }`}
         >
-          <div className={`flex items-center justify-between gap-2 ml-[40px]`}>
+          <div className={'flex items-center justify-between gap-2 ml-[40px]'}>
             <FaCircleMinus
               className="text-four text-xl cursor-pointer hover:text-four/80"
               onClick={() => {
-                if (extraBed.status) handleDecreaseExtraBed(extraBed);
+                if (extraBed.status) handleDecreaseExtraBed(extraBed)
               }}
             />
             <span className="w-[10px] text-center">{extraBed.quantity}</span>
             <FaCirclePlus
               className="text-four text-xl cursor-pointer hover:text-four/80"
               onClick={() => {
-                if (extraBed.status) handleIncreaseExtraBed(extraBed);
+                if (extraBed.status) handleIncreaseExtraBed(extraBed)
               }}
             />
           </div>
-          <div className="font-bold text-six ml-auto">
-            {handleFormatMoney(extraBed.price * extraBed.quantity)}
-          </div>
+          <div className="font-bold text-six ml-auto">{handleFormatMoney(extraBed.price * extraBed.quantity)}</div>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default memo(AddOne);
+export default memo(AddOne)

@@ -1,8 +1,8 @@
 interface IAuth {
-  uid: string;
-  email: string | null;
-  displayName?: string | null;
-  password?: string;
+  uid: string
+  email: string | null
+  displayName?: string | null
+  password?: string
 }
 
-export type { IAuth };
+export type { IAuth }

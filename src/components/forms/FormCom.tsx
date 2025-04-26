@@ -1,52 +1,38 @@
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { useCallback } from "react";
-import {
-  ControllerRenderProps,
-  FieldValues,
-  Path,
-  UseFormReturn,
-} from "react-hook-form";
-import { FaStarOfLife } from "react-icons/fa6";
-import { Input } from "../ui/input";
-import { Textarea } from "../ui/textarea";
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
+import { useCallback } from 'react'
+import { ControllerRenderProps, FieldValues, Path, UseFormReturn } from 'react-hook-form'
+import { FaStarOfLife } from 'react-icons/fa6'
+import { Input } from '../ui/input'
+import { Textarea } from '../ui/textarea'
 
 interface IFormComp<T extends FieldValues> {
-  form: UseFormReturn<T>;
-  title: string;
-  name: Path<T>;
-  placeholder?: string;
-  isArea?: boolean;
-  isImportant?: boolean;
-  setQuery?: any;
+  form: UseFormReturn<T>
+  title: string
+  name: Path<T>
+  placeholder?: string
+  isArea?: boolean
+  isImportant?: boolean
+  setQuery?: (_query: Record<string, unknown>) => void
 }
 
 const FormComp = <T extends FieldValues>({
   form,
   title,
   name,
-  placeholder = "",
+  placeholder = '',
   isArea = false,
   isImportant = false,
-  setQuery,
+  setQuery
 }: IFormComp<T>) => {
   const handleChange = useCallback(
-    (
-      e: React.ChangeEvent<HTMLInputElement>,
-      field: ControllerRenderProps<T, Path<T>>
-    ) => {
-      field.onChange(e.target.value);
+    (e: React.ChangeEvent<HTMLInputElement>, field: ControllerRenderProps<T, Path<T>>) => {
+      field.onChange(e.target.value)
       if (setQuery) {
-        setQuery({ [name]: e.target.value });
+        setQuery({ [name]: e.target.value })
       }
     },
-    []
-  );
+    [name, setQuery]
+  )
 
   return (
     <FormField
@@ -58,9 +44,7 @@ const FormComp = <T extends FieldValues>({
             <div className="">
               <FormLabel htmlFor={name} className="font-medium text-base">
                 {title}
-                {isImportant ? (
-                  <FaStarOfLife className="text-red-600 text-[6px] -ml-2" />
-                ) : null}
+                {isImportant ? <FaStarOfLife className="text-red-600 text-[6px] -ml-2" /> : null}
               </FormLabel>
               {isArea ? (
                 <Textarea
@@ -73,7 +57,7 @@ const FormComp = <T extends FieldValues>({
                 <Input
                   value={field.value}
                   onChange={(e) => {
-                    handleChange(e, field);
+                    handleChange(e, field)
                   }}
                   id={name}
                   placeholder={placeholder}
@@ -86,7 +70,7 @@ const FormComp = <T extends FieldValues>({
         </FormItem>
       )}
     />
-  );
-};
+  )
+}
 
-export default FormComp;
+export default FormComp

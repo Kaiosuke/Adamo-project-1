@@ -8,6 +8,7 @@ import reactHooks from 'eslint-plugin-react-hooks'
 export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    ignores: ['dist/**', 'node_modules/**'],
     languageOptions: {
       globals: globals.browser
     },

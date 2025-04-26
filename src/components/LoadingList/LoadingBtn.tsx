@@ -8,7 +8,7 @@ const LoadingBtn = () => {
         Loading...
       </span>
     </div>
-  );
-};
+  )
+}
 
-export default LoadingBtn;
+export default LoadingBtn

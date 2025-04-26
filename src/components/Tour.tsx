@@ -1,66 +1,58 @@
-import Shape2 from "@/assets/images/Shape-2png.png";
-import Shape from "@/assets/images/shape.png";
+import Shape2 from '@/assets/images/Shape-2png.png'
+import Shape from '@/assets/images/shape.png'
 
-import { handleFormatMoney } from "@/helper";
-import { ITour } from "@/interfaces/tour";
-import { CiLocationOn } from "react-icons/ci";
-import { MdCalendarMonth, MdOutlineStar } from "react-icons/md";
-import { Link } from "react-router";
-import LoadedImage from "./LoadingList/LoadedImage";
-import { StringParam, useQueryParams } from "use-query-params";
-import { useAppDispatch } from "@/redux";
-import { changeFavoriteTour } from "@/api/tourRequest";
-import { toast } from "sonner";
-import { useDebouncedCallback } from "use-debounce";
+import { handleFormatMoney } from '@/helper'
+import { ITour } from '@/interfaces/tour'
+import { CiLocationOn } from 'react-icons/ci'
+import { MdCalendarMonth, MdOutlineStar } from 'react-icons/md'
+import { Link } from 'react-router'
+import LoadedImage from './LoadingList/LoadedImage'
+import { StringParam, useQueryParams } from 'use-query-params'
+import { useAppDispatch } from '@/redux'
+import { changeFavoriteTour } from '@/api/tourRequest'
+import { toast } from 'sonner'
+import { useDebouncedCallback } from 'use-debounce'
 
 const Tour = ({ tour }: { tour: ITour }) => {
   const [query] = useQueryParams({
-    from: StringParam,
-  });
+    from: StringParam
+  })
 
-  const from = query.from || "";
+  const from = query.from || ''
 
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
   const handleChangeFavorite = useDebouncedCallback(async () => {
     try {
       const data = {
-        favorite: !tour.favorite,
-      };
-      await dispatch(changeFavoriteTour({ id: tour.id, data: data })).unwrap();
-      toast.success("Successfully", {
+        favorite: !tour.favorite
+      }
+      await dispatch(changeFavoriteTour({ id: tour.id, data: data })).unwrap()
+      toast.success('Successfully', {
         style: {
-          backgroundColor: "#4caf50",
-          color: "#ffffff",
-        },
-      });
+          backgroundColor: '#4caf50',
+          color: '#ffffff'
+        }
+      })
     } catch (error) {
-      console.log(error);
+      return error
     }
-  }, 300);
+  }, 300)
 
   return (
     <>
       {tour && (
         <div className="w-full ">
           <div className="relative">
-            <Link
-              to={`/tour-detail/${tour.id}?from=${from}&duration=${tour.duration}`}
-            >
+            <Link to={`/tour-detail/${tour.id}?from=${from}&duration=${tour.duration}`}>
               <LoadedImage thumbnail={tour.thumbnail} alt={tour.title} />
             </Link>
             <div
-              className={`w-[32px] absolute top-[-1px] right-10 cursor-pointer ${
-                tour.favorite ? "animate-jump" : ""
-              }`}
+              className={`w-[32px] absolute top-[-1px] right-10 cursor-pointer ${tour.favorite ? 'animate-jump' : ''}`}
               onClick={handleChangeFavorite}
             >
               {tour.favorite ? (
-                <img
-                  src={Shape}
-                  alt="shape"
-                  className={`object-cover w-full `}
-                />
+                <img src={Shape} alt="shape" className={'object-cover w-full '} />
               ) : (
                 <img src={Shape2} alt="shape" className="object-cover w-full" />
               )}
@@ -76,11 +68,7 @@ const Tour = ({ tour }: { tour: ITour }) => {
               <span className="text-four">{tour.location}</span>
             </div>
             <h5 className="text-size-lg font-medium pt-2 hover:underline h-[40px] leading-1">
-              <Link
-                to={`/tour-detail/${tour.id}?from=${from}&duration=${tour.duration}`}
-              >
-                {tour.title}
-              </Link>
+              <Link to={`/tour-detail/${tour.id}?from=${from}&duration=${tour.duration}`}>{tour.title}</Link>
             </h5>
             <div className="flex items-center justify-between pt-6">
               <div className="flex items-center gap-1">
@@ -89,16 +77,14 @@ const Tour = ({ tour }: { tour: ITour }) => {
               </div>
               <div className="flex items-end gap-1">
                 <span className="text-four">from</span>
-                <span className="text-secondary text-size-xl font-bold">
-                  {handleFormatMoney(tour.price)}
-                </span>
+                <span className="text-secondary text-size-xl font-bold">{handleFormatMoney(tour.price)}</span>
               </div>
             </div>
           </div>
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Tour;
+export default Tour

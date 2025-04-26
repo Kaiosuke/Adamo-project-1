@@ -1,44 +1,35 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { useState } from "react";
-import { FaMapMarkerAlt, FaRegQuestionCircle } from "react-icons/fa";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { useState } from 'react'
+import { FaMapMarkerAlt, FaRegQuestionCircle } from 'react-icons/fa'
 
 interface Prop {
-  title: string;
-  type?: string;
-  description?: string;
+  title: string
+  type?: string
+  description?: string
   locations?: {
-    title: string;
-    des: string;
-    duration?: string;
-  }[];
+    title: string
+    des: string
+    duration?: string
+  }[]
 }
 
 function AccordionCom({ content }: { content: Prop }) {
-  const [isSelected, setIsSelected] = useState(false);
+  const [isSelected, setIsSelected] = useState(false)
 
   return (
     <Accordion
       type="single"
       collapsible
       onValueChange={(value) => {
-        setIsSelected(value === "title");
+        setIsSelected(value === 'title')
       }}
       className={`w-full bg-five rounded-lg tran-slow border ${
-        isSelected
-          ? "bg-five px-4 border-transparent"
-          : "bg-third border-four px-4"
+        isSelected ? 'bg-five px-4 border-transparent' : 'bg-third border-four px-4'
       }`}
     >
       <AccordionItem value="title">
         <AccordionTrigger
-          className={`cursor-pointer text-lg font-semibold ${
-            isSelected ? "text-eight" : "text-secondary"
-          }`}
+          className={`cursor-pointer text-lg font-semibold ${isSelected ? 'text-eight' : 'text-secondary'}`}
         >
           {content.type && content.type ? (
             <>{content.title}</>
@@ -57,26 +48,19 @@ function AccordionCom({ content }: { content: Prop }) {
               content.locations.map((v, index) => (
                 <div key={index} className="flex gap-2 ">
                   {v.duration ? (
-                    <div className="pt-1 text-eight text-lg">
-                      {<FaMapMarkerAlt />}
-                    </div>
+                    <div className="pt-1 text-eight text-lg">{<FaMapMarkerAlt />}</div>
                   ) : (
                     <div className="ml-4" />
                   )}
                   <div>
-                    {v.duration ? (
-                      <h5 className="text-eight text-base font-semibold">
-                        {v.title}
-                      </h5>
-                    ) : null}
+                    {v.duration ? <h5 className="text-eight text-base font-semibold">{v.title}</h5> : null}
 
                     <div className="text-four flex flex-col gap-8">
                       <p>{v.des}</p>
                       {v.duration && (
                         <div>
                           <div>
-                            <span className="font-semibold">Duration</span>:{" "}
-                            {v.duration}
+                            <span className="font-semibold">Duration</span>: {v.duration}
                           </div>
                           <div>Admission Ticket Free</div>
                         </div>
@@ -92,7 +76,7 @@ function AccordionCom({ content }: { content: Prop }) {
         </AccordionContent>
       </AccordionItem>
     </Accordion>
-  );
+  )
 }
 
-export default AccordionCom;
+export default AccordionCom

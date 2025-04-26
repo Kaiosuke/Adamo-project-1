@@ -1,71 +1,71 @@
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { memo } from "react";
-import { useTranslation } from "react-i18next";
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { memo } from 'react'
+import { useTranslation } from 'react-i18next'
 
-import { FaBars } from "react-icons/fa6";
-import { Link } from "react-router";
+import { FaBars } from 'react-icons/fa6'
+import { Link } from 'react-router'
 
 const linkNavEn = [
   {
-    title: "Home",
-    path: "/",
+    title: 'Home',
+    path: '/'
   },
   {
-    title: "About",
-    path: "about",
+    title: 'About',
+    path: 'about'
   },
   {
-    title: "Tours",
-    path: "/tours",
+    title: 'Tours',
+    path: '/tours'
   },
   {
-    title: "Hotels",
-    path: "/hotels",
+    title: 'Hotels',
+    path: '/hotels'
   },
   {
-    title: "Contact",
-    path: "/contact",
+    title: 'Contact',
+    path: '/contact'
   },
   {
-    title: "Login",
-    path: "/login",
-  },
-];
+    title: 'Login',
+    path: '/login'
+  }
+]
 
 const linkNavVi = [
   {
-    title: "Trang chủ",
-    path: "/",
+    title: 'Trang chủ',
+    path: '/'
   },
   {
-    title: "Chúng tôi",
-    path: "about",
+    title: 'Chúng tôi',
+    path: 'about'
   },
   {
-    title: "Tham quan",
-    path: "/tours",
+    title: 'Tham quan',
+    path: '/tours'
   },
   {
-    title: "Khách sạn",
-    path: "/hotels",
+    title: 'Khách sạn',
+    path: '/hotels'
   },
   {
-    title: "Liên hệ",
-    path: "/contact",
+    title: 'Liên hệ',
+    path: '/contact'
   },
   {
-    title: "Đăng nhập",
-    path: "/login",
-  },
-];
+    title: 'Đăng nhập',
+    path: '/login'
+  }
+]
 
 interface Props {
-  getLinkColor: "text-secondary" | "text-third";
+  getLinkColor: 'text-secondary' | 'text-third'
 }
 
 const NavMb = ({ getLinkColor }: Props) => {
-  const { i18n } = useTranslation();
-  const currentLanguage = i18n.language;
+  const { i18n } = useTranslation()
+  const currentLanguage = i18n.language
 
   return (
     <div className="lg:hidden block relative z-50 ">
@@ -78,24 +78,22 @@ const NavMb = ({ getLinkColor }: Props) => {
         <SheetContent className="bg-secondary">
           <nav className="pt-20">
             <ul className="flex justify-between items-center gap-6 lg:flex-row flex-col">
-              {(currentLanguage === "en" ? linkNavEn : linkNavVi).map(
-                (nav, index) => (
-                  <li key={index}>
-                    <Link
-                      to={nav.path}
-                      className="text-third hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out"
-                    >
-                      {nav.title}
-                    </Link>
-                  </li>
-                )
-              )}
+              {(currentLanguage === 'en' ? linkNavEn : linkNavVi).map((nav, index) => (
+                <li key={index}>
+                  <Link
+                    to={nav.path}
+                    className="text-third hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out"
+                  >
+                    {nav.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </SheetContent>
       </Sheet>
     </div>
-  );
-};
+  )
+}
 
-export default memo(NavMb);
+export default memo(NavMb)

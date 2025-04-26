@@ -1,40 +1,36 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LayoutAuth from "./auth/LayoutAuth";
-import LayoutOtherPages from "./otherPages/LayoutOtherPages";
-import LayoutPage from "./pages/layout";
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import LayoutAuth from './auth/LayoutAuth'
+import LayoutOtherPages from './otherPages/LayoutOtherPages'
+import LayoutPage from './pages/layout'
 
-import { QueryParamProvider } from "use-query-params";
-import { ReactRouter6Adapter } from "use-query-params/adapters/react-router-6";
-import ScrollPage from "./components/scrollTop/ScrollPage";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { QueryParamProvider } from 'use-query-params'
+import { ReactRouter6Adapter } from 'use-query-params/adapters/react-router-6'
+import ScrollPage from './components/scrollTop/ScrollPage'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
-import { lazy, Suspense } from "react";
-import LoadingPage from "./components/LoadingList/LoadingPage";
+import { lazy, Suspense } from 'react'
+import LoadingPage from './components/LoadingList/LoadingPage'
 
-const Home = lazy(() => import("./pages/home"));
-const About = lazy(() => import("./pages/about"));
-const Contact = lazy(() => import("./pages/contact"));
-const Tours = lazy(() => import("./pages/tour"));
-const TourDetail = lazy(() => import("./pages/tour/tourDetail"));
-const Hotel = lazy(() => import("./pages/hotel"));
-const HotelDetail = lazy(() => import("./pages/hotel/hotelDetail"));
-const PrivatePolicy = lazy(() => import("./pages/privatePolicy"));
+const Home = lazy(() => import('./pages/home'))
+const About = lazy(() => import('./pages/about'))
+const Contact = lazy(() => import('./pages/contact'))
+const Tours = lazy(() => import('./pages/tour'))
+const TourDetail = lazy(() => import('./pages/tour/tourDetail'))
+const Hotel = lazy(() => import('./pages/hotel'))
+const HotelDetail = lazy(() => import('./pages/hotel/hotelDetail'))
+const PrivatePolicy = lazy(() => import('./pages/privatePolicy'))
 
-const Login = lazy(() => import("./auth/login/Login"));
-const Register = lazy(() => import("./auth/register/Register"));
-const NewPassword = lazy(() => import("./auth/newPassword/NewPassword"));
-const ChangePassword = lazy(
-  () => import("./auth/changePassword/ChangePassword")
-);
-const ForgotPassword = lazy(
-  () => import("./auth/forgotPassword/ForgotPassword")
-);
+const Login = lazy(() => import('./auth/login/Login'))
+const Register = lazy(() => import('./auth/register/Register'))
+const NewPassword = lazy(() => import('./auth/newPassword/NewPassword'))
+const ChangePassword = lazy(() => import('./auth/changePassword/ChangePassword'))
+const ForgotPassword = lazy(() => import('./auth/forgotPassword/ForgotPassword'))
 
-const ThankYou = lazy(() => import("./otherPages/thanks"));
-const TourCheckOut = lazy(() => import("./otherPages/tourCheckout"));
-const HotelCheckOut = lazy(() => import("./otherPages/hotelCheckout"));
-const NotFoundPage = lazy(() => import("./otherPages/notFoundPage"));
-console.log(import.meta.env.VITE_ABC);
+const ThankYou = lazy(() => import('./otherPages/thanks'))
+const TourCheckOut = lazy(() => import('./otherPages/tourCheckout'))
+const HotelCheckOut = lazy(() => import('./otherPages/hotelCheckout'))
+const NotFoundPage = lazy(() => import('./otherPages/notFoundPage'))
+
 function App() {
   return (
     <BrowserRouter>
@@ -183,7 +179,7 @@ function App() {
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryParamProvider>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

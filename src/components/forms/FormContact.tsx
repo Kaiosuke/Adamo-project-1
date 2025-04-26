@@ -1,27 +1,17 @@
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "@/components/ui/form";
-import { FieldValues, Path, UseFormReturn } from "react-hook-form";
-import { Input } from "../ui/input";
-import { Textarea } from "../ui/textarea";
+import { FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
+import { FieldValues, Path, UseFormReturn } from 'react-hook-form'
+import { Input } from '../ui/input'
+import { Textarea } from '../ui/textarea'
 
 interface IFormContact<T extends FieldValues> {
-  form: UseFormReturn<T>;
-  name: Path<T>;
-  placeholder?: string;
-  isArea?: boolean;
-  isImportant?: boolean;
+  form: UseFormReturn<T>
+  name: Path<T>
+  placeholder?: string
+  isArea?: boolean
+  isImportant?: boolean
 }
 
-const FormContact = <T extends FieldValues>({
-  form,
-  name,
-  placeholder = "",
-  isArea = false,
-}: IFormContact<T>) => {
+const FormContact = <T extends FieldValues>({ form, name, placeholder = '', isArea = false }: IFormContact<T>) => {
   return (
     <FormField
       control={form.control}
@@ -51,7 +41,7 @@ const FormContact = <T extends FieldValues>({
         </FormItem>
       )}
     />
-  );
-};
+  )
+}
 
-export default FormContact;
+export default FormContact

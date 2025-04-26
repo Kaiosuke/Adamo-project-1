@@ -1,29 +1,29 @@
 interface IHotel {
-  id: number;
-  title: string;
-  location: string;
-  favorite: boolean;
-  star: number;
-  score: number;
-  price: number;
-  duration: string;
-  type: string;
-  thumbnail: string;
-  images: string[];
+  id: number
+  title: string
+  location: string
+  favorite: boolean
+  star: number
+  score: number
+  price: number
+  duration: string
+  type: string
+  thumbnail: string
+  images: string[]
   description: {
     overview: {
-      description: string;
-    };
-    amenities: string[];
+      description: string
+    }
+    amenities: string[]
     rules: {
-      checkIn: string;
-      checkOut: string;
-      information: string[];
-    };
-    maps: [number, number];
-    image360: string;
-    video: string;
-  };
+      checkIn: string
+      checkOut: string
+      information: string[]
+    }
+    maps: [number, number]
+    image360: string
+    video: string
+  }
 }
 
 // export type IHotel2 = Pick<
@@ -33,4 +33,4 @@ interface IHotel {
 
 // Omit<IHotel, "description">;
 
-export type { IHotel };
+export type { IHotel }

@@ -1,19 +1,18 @@
-import { IRoom } from "@/interfaces/room";
-import { instanceLocal } from "./instance";
+import { IRoom } from '@/interfaces/room'
+import { instanceLocal } from './instance'
 
 const getAllRoom = async (): Promise<IRoom[]> => {
-  const res = await instanceLocal("/rooms");
-  return res.data;
-};
+  const res = await instanceLocal('/rooms')
+  return res.data
+}
 
 const changeStatusRoom = async (roomId: number, status: boolean) => {
   try {
-    const res = await instanceLocal.patch(`/rooms/${roomId}`, { status });
-    return res.data;
+    const res = await instanceLocal.patch(`/rooms/${roomId}`, { status })
+    return res.data
   } catch (error) {
-    console.error("Error in changeStatusRoom:", error);
-    throw error;
+    return error
   }
-};
+}
 
-export { getAllRoom, changeStatusRoom };
+export { getAllRoom, changeStatusRoom }

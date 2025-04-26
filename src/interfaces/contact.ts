@@ -1,10 +1,10 @@
 interface IContact {
-  name: string;
-  email: string;
-  phoneNumber: number;
-  message: string;
+  name: string
+  email: string
+  phoneNumber: number
+  message: string
 }
 
-type IContactOnlyEmail = Omit<IContact, "name" | "phoneNumber" | "message">;
+type IContactOnlyEmail = Omit<IContact, 'name' | 'phoneNumber' | 'message'>
 
-export type { IContact, IContactOnlyEmail };
+export type { IContact, IContactOnlyEmail }

@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router";
+import { Button } from '@/components/ui/button'
+import { Link } from 'react-router'
 
 const NotFoundPage = () => {
   return (
@@ -14,19 +14,19 @@ const NotFoundPage = () => {
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Link to="/">
-            <Button variant={"primary"} className="px-6">
+            <Button variant={'primary'} className="px-6">
               Not Found Page
             </Button>
           </Link>
           <Link to="/contact" className="text-sm font-semibold text-gray-900">
-            <Button variant={"six"} className="px-6">
+            <Button variant={'six'} className="px-6">
               Contact support
             </Button>
           </Link>
         </div>
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default NotFoundPage;
+export default NotFoundPage

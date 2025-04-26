@@ -1,22 +1,20 @@
-import React, { Suspense, useState } from "react";
-import LazyScrollCom from "./LazyScrollCom";
+import React, { Suspense, useState } from 'react'
+import LazyScrollCom from './LazyScrollCom'
 
 interface Props {
-  loader: () => Promise<{ default: React.ComponentType<unknown> }>;
-  fallback?: React.ReactNode;
+  loader: () => Promise<{ default: React.ComponentType<unknown> }>
+  fallback?: React.ReactNode
 }
 
 const LazyWrapper = ({ loader, fallback }: Props) => {
-  const [Component, setComponent] = useState<React.LazyExoticComponent<
-    React.ComponentType<unknown>
-  > | null>(null);
+  const [Component, setComponent] = useState<React.LazyExoticComponent<React.ComponentType<unknown>> | null>(null)
 
   return (
     <LazyScrollCom
       onVisible={() => {
         if (!Component) {
-          const LazyCom = React.lazy(loader);
-          setComponent(() => LazyCom);
+          const LazyCom = React.lazy(loader)
+          setComponent(() => LazyCom)
         }
       }}
     >
@@ -26,7 +24,7 @@ const LazyWrapper = ({ loader, fallback }: Props) => {
         </Suspense>
       ) : null}
     </LazyScrollCom>
-  );
-};
+  )
+}
 
-export default LazyWrapper;
+export default LazyWrapper

@@ -1,26 +1,14 @@
-import { Dot } from "lucide-react";
+import { Dot } from 'lucide-react'
 
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-} from "@/components/ui/breadcrumb";
-import { memo } from "react";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage } from '@/components/ui/breadcrumb'
+import { memo } from 'react'
 
 interface BreadcrumbIT {
-  title: string;
-  href: string;
+  title: string
+  href: string
 }
 
-const BreadcrumbCom = ({
-  links,
-  current,
-}: {
-  links: BreadcrumbIT[];
-  current: string;
-}) => {
+const BreadcrumbCom = ({ links, current }: { links: BreadcrumbIT[]; current: string }) => {
   return (
     <div className="main-container">
       <Breadcrumb>
@@ -41,7 +29,7 @@ const BreadcrumbCom = ({
         </BreadcrumbList>
       </Breadcrumb>
     </div>
-  );
-};
+  )
+}
 
-export default memo(BreadcrumbCom);
+export default memo(BreadcrumbCom)

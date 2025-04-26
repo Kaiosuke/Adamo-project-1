@@ -1,36 +1,29 @@
-import { handleFormatMoney } from "@/helper";
-import { IHotel } from "@/interfaces/hotel";
-import { CiLocationOn } from "react-icons/ci";
-import { FaCalendarAlt } from "react-icons/fa";
-import { GoPeople } from "react-icons/go";
+import { handleFormatMoney } from '@/helper'
+import { IHotel } from '@/interfaces/hotel'
+import { CiLocationOn } from 'react-icons/ci'
+import { FaCalendarAlt } from 'react-icons/fa'
+import { GoPeople } from 'react-icons/go'
 
-import Code from "@/components/Code";
-import { IBookingHotel } from "@/interfaces/booking";
-import { Fragment, useMemo } from "react";
+import Code from '@/components/Code'
+import { IBookingHotel } from '@/interfaces/booking'
+import { Fragment, useMemo } from 'react'
 
 interface Props {
-  data: IHotel;
-  bookingHotel: IBookingHotel;
-  setDiscount: (v: number) => void;
-  discount?: number;
+  data: IHotel
+  bookingHotel: IBookingHotel
+  setDiscount: (_v: number) => void
+  discount?: number
 }
 
-const BillHotelCheckOut = ({
-  data,
-  bookingHotel,
-  discount,
-  setDiscount,
-}: Props) => {
+const BillHotelCheckOut = ({ data, bookingHotel, discount, setDiscount }: Props) => {
   const handleGetDay = (v: string) => {
-    const time = new Date(v);
-    return time.toLocaleDateString("vi-VN");
-  };
+    const time = new Date(v)
+    return time.toLocaleDateString('vi-VN')
+  }
 
   const handleDisCount = useMemo(() => {
-    return discount
-      ? bookingHotel.totalPrice - bookingHotel.totalPrice * discount
-      : bookingHotel.totalPrice;
-  }, [discount, bookingHotel]);
+    return discount ? bookingHotel.totalPrice - bookingHotel.totalPrice * discount : bookingHotel.totalPrice
+  }, [discount, bookingHotel])
 
   return (
     <>
@@ -64,18 +57,13 @@ const BillHotelCheckOut = ({
               {bookingHotel.rooms.map((room, index) => (
                 <Fragment key={index}>
                   {room.quantity > 0 && (
-                    <div
-                      key={room.data.id}
-                      className="flex items-center justify-between font-bold"
-                    >
+                    <div key={room.data.id} className="flex items-center justify-between font-bold">
                       <div className="flex items-center gap-0.5">
                         <div className="text-primary">{room.quantity}</div>
                         <div className="text-primary">x</div>
                         <div className="text-secondary">{room.data.type}</div>
                       </div>
-                      <div>
-                        {handleFormatMoney(room.data.price * room.quantity)}
-                      </div>
+                      <div>{handleFormatMoney(room.data.price * room.quantity)}</div>
                     </div>
                   )}
                 </Fragment>
@@ -87,9 +75,7 @@ const BillHotelCheckOut = ({
                 {bookingHotel.breakFast && (
                   <div className="flex items-center justify-between text-secondary font-bold">
                     <div className="flex items-center gap-0.5">
-                      <div className="text-primary">
-                        {bookingHotel.breakFast.quantity}
-                      </div>
+                      <div className="text-primary">{bookingHotel.breakFast.quantity}</div>
                       <div className="text-primary">x</div>
                       <div className="text-secondary">Breakfast</div>
                     </div>
@@ -101,9 +87,7 @@ const BillHotelCheckOut = ({
                 {bookingHotel.extraBed && (
                   <div className="flex items-center justify-between text-secondary font-bold">
                     <div className="flex items-center gap-0.5">
-                      <div className="text-primary">
-                        {bookingHotel.extraBed.quantity}
-                      </div>
+                      <div className="text-primary">{bookingHotel.extraBed.quantity}</div>
                       <div className="text-primary">x</div>
                       <div className="text-secondary">extraBed</div>
                     </div>
@@ -121,7 +105,7 @@ const BillHotelCheckOut = ({
         </div>
       }
     </>
-  );
-};
+  )
+}
 
-export default BillHotelCheckOut;
+export default BillHotelCheckOut

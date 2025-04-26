@@ -1,147 +1,149 @@
-import { getFiltersHotel } from "@/api/hotelRequest";
-import { handleFormatMoney } from "@/helper";
-import { IHotel } from "@/interfaces/hotel";
-import { IRoom } from "@/interfaces/room";
-import { roomSelector } from "@/redux/selectors/roomSelector";
-import { decreaseRoom, increaseRoom } from "@/redux/slices/roomsSlice";
-import { useQuery } from "@tanstack/react-query";
-import { memo, useCallback, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { FaCircleMinus, FaCirclePlus } from "react-icons/fa6";
-import { GoPeople } from "react-icons/go";
-import { useDispatch, useSelector } from "react-redux";
-import { toast } from "sonner";
-import { StringParam, useQueryParams } from "use-query-params";
-import { Button } from "../../ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../../ui/select";
+import { getFiltersHotel } from '@/api/hotelRequest'
+import { handleFormatMoney } from '@/helper'
+import { IHotel } from '@/interfaces/hotel'
+import { IRoom } from '@/interfaces/room'
+import { roomSelector } from '@/redux/selectors/roomSelector'
+import { decreaseRoom, increaseRoom } from '@/redux/slices/roomsSlice'
+import { useQuery } from '@tanstack/react-query'
+import { memo, useCallback, useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { FaCircleMinus, FaCirclePlus } from 'react-icons/fa6'
+import { GoPeople } from 'react-icons/go'
+import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'sonner'
+import { StringParam, useQueryParams } from 'use-query-params'
+import { Button } from '../../ui/button'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '../../ui/select'
 
-import { Form, FormField, FormMessage } from "@/components/ui/form";
+import { Form, FormField, FormMessage } from '@/components/ui/form'
 
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { ControllerRenderProps, useForm } from 'react-hook-form'
+import { z } from 'zod'
 
-import { IBookingHotel } from "@/interfaces/booking";
-import { addBookingHotel } from "@/redux/slices/bookingSlice";
-import { bookingHotelSchema } from "@/schemas/bookingSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { DateRange } from "react-day-picker";
-import { useNavigate } from "react-router";
-import { useDebouncedCallback } from "use-debounce";
-import DatePickerWithRange from "../../DatePickerWithRange";
-import AddOne from "./AddOne";
+import { IBookingHotel } from '@/interfaces/booking'
+import { addBookingHotel } from '@/redux/slices/bookingSlice'
+import { bookingHotelSchema } from '@/schemas/bookingSchema'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { DateRange } from 'react-day-picker'
+import { useNavigate } from 'react-router'
+import { useDebouncedCallback } from 'use-debounce'
+import DatePickerWithRange from '../../DatePickerWithRange'
+import AddOne from './AddOne'
 
 const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
-  const { t } = useTranslation(["search"]);
+  const { t } = useTranslation(['search'])
 
-  const { rooms, breakfast, extraBed } = useSelector(roomSelector);
+  const { rooms, breakfast, extraBed } = useSelector(roomSelector)
 
   const [query, setQuery] = useQueryParams({
-    guest: StringParam || "",
+    guest: StringParam || '',
     from: StringParam,
-    to: StringParam,
-  });
+    to: StringParam
+  })
 
-  const from = query.from ? new Date(query.from) : new Date();
-  const to = query.to
-    ? new Date(query.to)
-    : query.from
-    ? new Date(query.from)
-    : new Date();
+  const from = query.from ? new Date(query.from) : new Date()
+  const to = query.to ? new Date(query.to) : query.from ? new Date(query.from) : new Date()
 
   const [date, setDate] = useState<DateRange | undefined>({
     from: from,
-    to: to,
-  });
+    to: to
+  })
 
   const { data } = useQuery({
-    queryKey: ["guests"],
-    queryFn: () => getFiltersHotel(),
-  });
+    queryKey: ['guests'],
+    queryFn: () => getFiltersHotel()
+  })
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const handleDecreaseRoom = (room: IRoom) => {
-    dispatch(decreaseRoom(room));
-  };
+    dispatch(decreaseRoom(room))
+  }
 
   const handleIncreaseRoom = (room: IRoom) => {
-    dispatch(increaseRoom(room));
-  };
+    dispatch(increaseRoom(room))
+  }
 
   const handleTotalMoney = useMemo(() => {
     let data = rooms.reduce((acc: number, cur) => {
-      return (acc += cur.data.price * cur.quantity);
-    }, 0);
+      return (acc += cur.data.price * cur.quantity)
+    }, 0)
 
-    if (breakfast.status) data += breakfast.price * breakfast.quantity;
-    if (extraBed.status) data += extraBed.price * extraBed.quantity;
-    if (date?.from && date.to)
-      data *= date?.to?.getTime() - date?.from?.getTime() + 1000 * 24 * 60 * 60;
+    if (breakfast.status) data += breakfast.price * breakfast.quantity
+    if (extraBed.status) data += extraBed.price * extraBed.quantity
+    if (date?.from && date.to) data *= date?.to?.getTime() - date?.from?.getTime() + 1000 * 24 * 60 * 60
 
-    return data / (1000 * 60 * 60 * 24);
-  }, [rooms, breakfast, date, extraBed]);
+    return data / (1000 * 60 * 60 * 24)
+  }, [rooms, breakfast, date, extraBed])
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const form = useForm<z.infer<typeof bookingHotelSchema>>({
     resolver: zodResolver(bookingHotelSchema),
     defaultValues: {
-      guests: query.guest ? query.guest : "",
-    },
-  });
+      guests: query.guest ? query.guest : ''
+    }
+  })
 
-  const onSubmit = useDebouncedCallback(
-    (values: z.infer<typeof bookingHotelSchema>) => {
-      if (rooms.length < 1) {
-        return toast.error("Please select at least 1 room", {
-          style: {
-            backgroundColor: "#FF0B55",
-            color: "#ffffff",
-          },
-        });
+  const onSubmit = useDebouncedCallback((values: z.infer<typeof bookingHotelSchema>) => {
+    if (rooms.length < 1) {
+      return toast.error('Please select at least 1 room', {
+        style: {
+          backgroundColor: '#FF0B55',
+          color: '#ffffff'
+        }
+      })
+    }
+    if (date?.from && date.to) {
+      const data: IBookingHotel = {
+        duration: {
+          from: date?.from.toDateString(),
+          to: date?.to.toDateString()
+        },
+        breakFast: breakfast.status && breakfast.quantity > 0 ? breakfast : undefined,
+        extraBed: extraBed.status && extraBed.quantity > 0 ? extraBed : undefined,
+        rooms: rooms,
+        guests: values.guests,
+        hotelId: hotel!.id,
+        totalPrice: handleTotalMoney
       }
-      if (date?.from && date.to) {
-        const data: IBookingHotel = {
-          duration: {
-            from: date?.from.toDateString(),
-            to: date?.to.toDateString(),
-          },
-          breakFast:
-            breakfast.status && breakfast.quantity > 0 ? breakfast : undefined,
-          extraBed:
-            extraBed.status && extraBed.quantity > 0 ? extraBed : undefined,
-          rooms: rooms,
-          guests: values.guests,
-          hotelId: hotel!.id,
-          totalPrice: handleTotalMoney,
-        };
 
-        dispatch(addBookingHotel(data));
-        toast.success("Booking successfully", {
-          style: {
-            backgroundColor: "#4caf50",
-            color: "#ffffff",
-          },
-        });
-        navigate("/hotel-checkout");
-      } else {
-        toast.warning("Please choose dates", {
-          style: {
-            backgroundColor: "#FF0B55",
-            color: "#ffffff",
-          },
-        });
-      }
+      dispatch(addBookingHotel(data))
+      toast.success('Booking successfully', {
+        style: {
+          backgroundColor: '#4caf50',
+          color: '#ffffff'
+        }
+      })
+      navigate('/hotel-checkout')
+    } else {
+      toast.warning('Please choose dates', {
+        style: {
+          backgroundColor: '#FF0B55',
+          color: '#ffffff'
+        }
+      })
+    }
+  }, 300)
+
+  const handleChangeValue = useCallback(
+    ({
+      field,
+      v
+    }: {
+      field: ControllerRenderProps<
+        {
+          guests: string
+        },
+        'guests'
+      >
+      v: string
+    }) => {
+      setQuery({ guest: v })
+      return field.onChange(v)
     },
-    300
-  );
+    [setQuery]
+  )
 
   return (
     <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit">
@@ -161,23 +163,18 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
                 <div className="h-[1px] w-full bg-four opacity-50" />
                 <div className="lg:p-8 p-4 flex flex-col gap-6">
                   <div className="bg-third h-full">
-                    <DatePickerWithRange
-                      setQuery={setQuery}
-                      setDate={setDate}
-                      date={date}
-                    />
+                    <DatePickerWithRange setQuery={setQuery} setDate={setDate} date={date} />
                   </div>
                   <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
                     <GoPeople className="text-primary text-xl group-hover:text-third" />
                     <Select
-                      onValueChange={useCallback((v: string) => {
-                        setQuery({ guest: v });
-                        return field.onChange(v);
-                      }, [])}
+                      onValueChange={(v) => {
+                        handleChangeValue({ field, v })
+                      }}
                       value={field.value}
                     >
                       <SelectTrigger className="w-full group-hover:text-third">
-                        <SelectValue placeholder={t("hotel.guest")} />
+                        <SelectValue placeholder={t('hotel.guest')} />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectGroup {...field}>
@@ -195,32 +192,21 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
                   <div>
                     <div className="flex flex-col gap-2">
                       {rooms.map((room) => (
-                        <div
-                          key={room.data.id}
-                          className="grid grid-cols-3 items-center"
-                        >
-                          <div className="font-bold w-[122px]">
-                            {room?.data?.type}
-                          </div>
+                        <div key={room.data.id} className="grid grid-cols-3 items-center">
+                          <div className="font-bold w-[122px]">{room?.data?.type}</div>
                           <div className="flex items-center justify-between gap-2 ml-auto">
                             <FaCircleMinus
                               className="text-four text-xl cursor-pointer hover:text-four/80"
                               onClick={() => handleDecreaseRoom(room.data)}
                             />
-                            <span className="w-[10px] text-center">
-                              {room.quantity}
-                            </span>
+                            <span className="w-[10px] text-center">{room.quantity}</span>
                             <FaCirclePlus
                               className="text-four text-xl cursor-pointer hover:text-four/80"
                               onClick={() => handleIncreaseRoom(room.data)}
                             />
                           </div>
                           <div className="font-bold text-six ml-auto">
-                            {room.quantity &&
-                              room.data?.price &&
-                              handleFormatMoney(
-                                room.quantity * room.data.price
-                              )}
+                            {room.quantity && room.data?.price && handleFormatMoney(room.quantity * room.data.price)}
                           </div>
                         </div>
                       ))}
@@ -232,12 +218,10 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
 
                   <div className="flex justify-between items-center text-size-xl">
                     <span className="text-secondary">Total</span>
-                    <span className="text-secondary font-semibold">
-                      {handleFormatMoney(handleTotalMoney)}
-                    </span>
+                    <span className="text-secondary font-semibold">{handleFormatMoney(handleTotalMoney)}</span>
                   </div>
                   <div className="">
-                    <Button variant={"primary"}>Book now</Button>
+                    <Button variant={'primary'}>Book now</Button>
                   </div>
                 </div>
               </div>
@@ -246,7 +230,7 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
         </form>
       </Form>
     </div>
-  );
-};
+  )
+}
 
-export default memo(BillHotelDetail);
+export default memo(BillHotelDetail)

@@ -1,16 +1,16 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
-import { tourSelector } from "@/redux/selectors/tourSelector";
-import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
-import LoadingSearch from "../LoadingList/LoadingSearch";
-import SearchHotel from "./hotel/SearchHotel";
-import SearchTour from "./tour/SearchTour";
+import { tourSelector } from '@/redux/selectors/tourSelector'
+import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import LoadingSearch from '../LoadingList/LoadingSearch'
+import SearchHotel from './hotel/SearchHotel'
+import SearchTour from './tour/SearchTour'
 
 const SearchTourHome = () => {
-  const { t } = useTranslation("search");
+  const { t } = useTranslation('search')
 
-  const { loading } = useSelector(tourSelector);
+  const { loading } = useSelector(tourSelector)
 
   return (
     <div className=" 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8 lg:max-w-[446px] w-full">
@@ -21,13 +21,13 @@ const SearchTourHome = () => {
               value="tour"
               className="rounded-none data-[state=active]:bg-primary data-[state=active]:text-third cursor-pointer"
             >
-              {t("tour.title")}
+              {t('tour.title')}
             </TabsTrigger>
             <TabsTrigger
               value="hotel"
               className="rounded-none data-[state=active]:bg-primary data-[state=active]:text-third cursor-pointer"
             >
-              {t("hotel.title")}
+              {t('hotel.title')}
             </TabsTrigger>
           </TabsList>
           <TabsContent value="tour">
@@ -55,7 +55,7 @@ const SearchTourHome = () => {
         </Tabs>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SearchTourHome;
+export default SearchTourHome

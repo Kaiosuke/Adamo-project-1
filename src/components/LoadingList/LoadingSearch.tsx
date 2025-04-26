@@ -1,7 +1,7 @@
-import { Skeleton } from "../ui/skeleton";
+import { Skeleton } from '../ui/skeleton'
 
 const LoadingSearch = () => {
-  return <Skeleton className="bg-five h-full rounded-none" />;
-};
+  return <Skeleton className="bg-five h-full rounded-none" />
+}
 
-export default LoadingSearch;
+export default LoadingSearch

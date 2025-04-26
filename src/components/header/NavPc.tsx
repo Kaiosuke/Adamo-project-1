@@ -1,109 +1,105 @@
-import { authSelector } from "@/redux/selectors/authSelector";
-import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
-import { Link } from "react-router";
+import { authSelector } from '@/redux/selectors/authSelector'
+import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router'
 
-import { logout } from "@/api/authRequest";
+import { logout } from '@/api/authRequest'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useAppDispatch } from "@/redux";
-import { FaUser } from "react-icons/fa6";
-import { toast } from "sonner";
-import { memo } from "react";
+  DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu'
+import { useAppDispatch } from '@/redux'
+import { FaUser } from 'react-icons/fa6'
+import { toast } from 'sonner'
+import { memo } from 'react'
 
 const linkNavEn = [
   {
-    title: "Home",
-    path: "/",
+    title: 'Home',
+    path: '/'
   },
   {
-    title: "About",
-    path: "/about",
+    title: 'About',
+    path: '/about'
   },
   {
-    title: "Tours",
-    path: "/tours",
+    title: 'Tours',
+    path: '/tours'
   },
   {
-    title: "Hotels",
-    path: "/hotels",
+    title: 'Hotels',
+    path: '/hotels'
   },
   {
-    title: "Contact",
-    path: "/contact",
-  },
-];
+    title: 'Contact',
+    path: '/contact'
+  }
+]
 
 const linkNavVi = [
   {
-    title: "Trang chủ",
-    path: "/",
+    title: 'Trang chủ',
+    path: '/'
   },
   {
-    title: "Chúng tôi",
-    path: "/about",
+    title: 'Chúng tôi',
+    path: '/about'
   },
   {
-    title: "Tham quan",
-    path: "/tours",
+    title: 'Tham quan',
+    path: '/tours'
   },
   {
-    title: "Khách sạn",
-    path: "/hotels",
+    title: 'Khách sạn',
+    path: '/hotels'
   },
   {
-    title: "Liên hệ",
-    path: "/contact",
-  },
-];
+    title: 'Liên hệ',
+    path: '/contact'
+  }
+]
 
 interface Props {
-  getLinkColor: "text-secondary" | "text-third";
-  isPage: string;
+  getLinkColor: 'text-secondary' | 'text-third'
+  isPage: string
 }
 
 const NavPc = ({ getLinkColor, isPage }: Props) => {
-  const { currentUser } = useSelector(authSelector);
-  const { i18n } = useTranslation();
+  const { currentUser } = useSelector(authSelector)
+  const { i18n } = useTranslation()
 
-  const currentLanguage = i18n.language;
+  const currentLanguage = i18n.language
 
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
   const handleLogout = async () => {
     try {
-      await dispatch(logout()).unwrap();
-      toast.success("Sign Success", {
+      await dispatch(logout()).unwrap()
+      toast.success('Sign Success', {
         style: {
-          backgroundColor: "#4caf50",
-          color: "#ffffff",
-        },
-      });
+          backgroundColor: '#4caf50',
+          color: '#ffffff'
+        }
+      })
     } catch (error) {
-      console.log(error);
+      return error
     }
-  };
+  }
 
-  const { t } = useTranslation("header");
+  const { t } = useTranslation('header')
 
   return (
     <ul className="flex justify-between items-center gap-10 lg:flex-row flex-col">
-      {(currentLanguage === "en" ? linkNavEn : linkNavVi).map((nav, index) => (
+      {(currentLanguage === 'en' ? linkNavEn : linkNavVi).map((nav, index) => (
         <li key={index}>
           <Link
             to={nav.path}
             className={` hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all 
-              duration-300 ease-in-out ${
-                isPage === nav.path.split("/")[1]
-                  ? "text-primary"
-                  : getLinkColor
-              }
+              duration-300 ease-in-out ${isPage === nav.path.split('/')[1] ? 'text-primary' : getLinkColor}
             }`}
           >
             {nav.title}
@@ -122,28 +118,23 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuLabel>
-                {currentUser.displayName
-                  ? currentUser.displayName
-                  : currentUser.email}
+                {currentUser.displayName ? currentUser.displayName : currentUser.email}
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem className="cursor-pointer">
                 <Link className="text-sm" to="/auth/change-password">
-                  {t("changPs")}
+                  {t('changPs')}
                 </Link>
               </DropdownMenuItem>
 
-              <DropdownMenuItem
-                className="cursor-pointer"
-                onClick={handleLogout}
-              >
-                {t("signOut")}
+              <DropdownMenuItem className="cursor-pointer" onClick={handleLogout}>
+                {t('signOut')}
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         ) : (
           <Link
-            to={"/auth/login"}
+            to={'/auth/login'}
             className={` hover:underline text-[16px] font-semibold hover:text-[#f5b041] transition-all duration-300 ease-in-out
                             ${getLinkColor}
                         `}
@@ -153,7 +144,7 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
         )}
       </li>
     </ul>
-  );
-};
+  )
+}
 
-export default memo(NavPc);
+export default memo(NavPc)

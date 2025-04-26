@@ -1,44 +1,44 @@
-import FormComp from "@/components/forms/FormCom";
-import { Button } from "@/components/ui/button";
-import { Form } from "@/components/ui/form";
-import { userSchema } from "@/schemas/userSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import FormComp from '@/components/forms/FormCom'
+import { Button } from '@/components/ui/button'
+import { Form } from '@/components/ui/form'
+import { userSchema } from '@/schemas/userSchema'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
-import { useNavigate } from "react-router";
+import { useNavigate } from 'react-router'
 
-import { bookingHotel } from "@/api/bookingRequest";
-import PayMethod from "@/components/PayMethod";
-import { IBookingHotel } from "@/interfaces/booking";
-import { useMutation } from "@tanstack/react-query";
-import { toast } from "sonner";
-import { useDebouncedCallback } from "use-debounce";
-import { StringParam, useQueryParams, withDefault } from "use-query-params";
+import { bookingHotel } from '@/api/bookingRequest'
+import PayMethod from '@/components/PayMethod'
+import { IBookingHotel } from '@/interfaces/booking'
+import { useMutation } from '@tanstack/react-query'
+import { toast } from 'sonner'
+import { useDebouncedCallback } from 'use-debounce'
+import { StringParam, useQueryParams, withDefault } from 'use-query-params'
 
 interface Props {
-  booking: IBookingHotel;
-  discount?: number;
+  booking: IBookingHotel
+  discount?: number
 }
 
 const FormInfoUser = ({ booking, discount }: Props) => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const [query, setQuery] = useQueryParams({
-    firstName: withDefault(StringParam, ""),
-    lastName: withDefault(StringParam, ""),
-    email: withDefault(StringParam, ""),
-    phoneNumber: withDefault(StringParam, ""),
-    address: withDefault(StringParam, ""),
-    city: withDefault(StringParam, ""),
-    state: withDefault(StringParam, ""),
-    zipCode: withDefault(StringParam, ""),
-    country: withDefault(StringParam, ""),
-    requirement: withDefault(StringParam, ""),
-    payMethod: withDefault(StringParam, ""),
-  });
+    firstName: withDefault(StringParam, ''),
+    lastName: withDefault(StringParam, ''),
+    email: withDefault(StringParam, ''),
+    phoneNumber: withDefault(StringParam, ''),
+    address: withDefault(StringParam, ''),
+    city: withDefault(StringParam, ''),
+    state: withDefault(StringParam, ''),
+    zipCode: withDefault(StringParam, ''),
+    country: withDefault(StringParam, ''),
+    requirement: withDefault(StringParam, ''),
+    payMethod: withDefault(StringParam, '')
+  })
 
   const form = useForm<z.infer<typeof userSchema>>({
     resolver: zodResolver(userSchema),
@@ -53,58 +53,53 @@ const FormInfoUser = ({ booking, discount }: Props) => {
       zipCode: query.zipCode,
       country: query.country,
       requirement: query.requirement,
-      payMethod: query.payMethod,
-    },
-  });
+      payMethod: query.payMethod
+    }
+  })
 
-  const { watch } = form;
+  const { watch } = form
 
   useEffect(() => {
     if (!isSubmitted) {
       const subscription = watch((value) => {
         setQuery({
-          ...value,
-        });
-      });
-      return () => subscription.unsubscribe();
+          ...value
+        })
+      })
+      return () => subscription.unsubscribe()
     }
-  }, [watch, isSubmitted]);
+  }, [watch, isSubmitted, setQuery])
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const { mutate } = useMutation({
     mutationFn: (data: IBookingHotel) => bookingHotel({ data }),
     onSuccess: () => {
-      setIsSubmitted(true);
-      toast.success("Booking hotel success");
-      setIsSubmitted(true);
-      form.reset();
-      navigate("/thanks");
-    },
-  });
+      setIsSubmitted(true)
+      toast.success('Booking hotel success')
+      setIsSubmitted(true)
+      form.reset()
+      navigate('/thanks')
+    }
+  })
 
-  const onSubmit = useDebouncedCallback(
-    (values: z.infer<typeof userSchema>) => {
-      const user = {
-        ...values,
-        phoneNumber: Number(values.phoneNumber),
-      };
-      const priceDiscount = discount
-        ? booking.totalPrice - booking.totalPrice * discount
-        : booking.totalPrice;
-      mutate({
-        breakFast: booking.breakFast,
-        duration: booking.duration,
-        extraBed: booking.extraBed,
-        guests: booking.guests,
-        hotelId: booking.hotelId,
-        rooms: booking.rooms,
-        totalPrice: priceDiscount,
-        user: user,
-      });
-    },
-    300
-  );
+  const onSubmit = useDebouncedCallback((values: z.infer<typeof userSchema>) => {
+    const user = {
+      ...values,
+      phoneNumber: Number(values.phoneNumber)
+    }
+    const priceDiscount = discount ? booking.totalPrice - booking.totalPrice * discount : booking.totalPrice
+    mutate({
+      breakFast: booking.breakFast,
+      duration: booking.duration,
+      extraBed: booking.extraBed,
+      guests: booking.guests,
+      hotelId: booking.hotelId,
+      rooms: booking.rooms,
+      totalPrice: priceDiscount,
+      user: user
+    })
+  }, 300)
 
   return (
     <Form {...form}>
@@ -112,71 +107,22 @@ const FormInfoUser = ({ booking, discount }: Props) => {
         <h3 className="text-size-xl">Traveler Details</h3>
         <div className="flex flex-col gap-6">
           <div className="grid grid-cols-2 xl:gap-8 gap-6">
-            <FormComp
-              form={form}
-              title="First Name"
-              name="firstName"
-              placeholder="First Name"
-              isImportant
-            />
-            <FormComp
-              form={form}
-              title="Last Name"
-              name="lastName"
-              placeholder="Last Name"
-              isImportant
-            />
+            <FormComp form={form} title="First Name" name="firstName" placeholder="First Name" isImportant />
+            <FormComp form={form} title="Last Name" name="lastName" placeholder="Last Name" isImportant />
 
-            <FormComp
-              form={form}
-              title="Email"
-              name="email"
-              placeholder="email@domain.com"
-              isImportant
-            />
-            <FormComp
-              form={form}
-              title="Phone Number"
-              name="phoneNumber"
-              placeholder="Your Phone"
-              isImportant
-            />
+            <FormComp form={form} title="Email" name="email" placeholder="email@domain.com" isImportant />
+            <FormComp form={form} title="Phone Number" name="phoneNumber" placeholder="Your Phone" isImportant />
           </div>
         </div>
 
         <h3 className="text-size-xl">Address</h3>
         <div className="flex flex-col gap-6">
-          <FormComp
-            form={form}
-            title="Your Address"
-            placeholder="Your Address"
-            name="address"
-          />
+          <FormComp form={form} title="Your Address" placeholder="Your Address" name="address" />
           <div className="grid grid-cols-2 xl:gap-8 gap-6">
-            <FormComp
-              form={form}
-              title="City"
-              placeholder="Your City"
-              name="city"
-            />
-            <FormComp
-              form={form}
-              title="State/Province/Region"
-              placeholder="Your State/Province/Region"
-              name="state"
-            />
-            <FormComp
-              form={form}
-              title="Zip Code/ Postal Code"
-              placeholder="Zip Code/ Postal Code"
-              name="zipCode"
-            />
-            <FormComp
-              form={form}
-              title="Country"
-              placeholder="Your Country"
-              name="country"
-            />
+            <FormComp form={form} title="City" placeholder="Your City" name="city" />
+            <FormComp form={form} title="State/Province/Region" placeholder="Your State/Province/Region" name="state" />
+            <FormComp form={form} title="Zip Code/ Postal Code" placeholder="Zip Code/ Postal Code" name="zipCode" />
+            <FormComp form={form} title="Country" placeholder="Your Country" name="country" />
           </div>
         </div>
         <div className="">
@@ -194,7 +140,7 @@ const FormInfoUser = ({ booking, discount }: Props) => {
         </Button>
       </form>
     </Form>
-  );
-};
+  )
+}
 
-export default FormInfoUser;
+export default FormInfoUser

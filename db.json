@@ -1953,10 +1953,7 @@
       "duration": 2,
       "type": "culture-tour",
       "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274581/Tours/hoian_tour.png",
-      "images": [
-        "https://swiperjs.com/demos/images/nature-5.jpg",
-        "https://swiperjs.com/demos/images/nature-6.jpg"
-      ],
+      "images": ["https://swiperjs.com/demos/images/nature-5.jpg", "https://swiperjs.com/demos/images/nature-6.jpg"],
       "price": 99,
       "description": {
         "overview": {
@@ -1967,12 +1964,7 @@
             "Enjoy a traditional boat ride on Hoai River"
           ]
         },
-        "included": [
-          "Hotel pickup and drop-off",
-          "Local guide",
-          "Boat ride ticket",
-          "Lantern-making class"
-        ],
+        "included": ["Hotel pickup and drop-off", "Local guide", "Boat ride ticket", "Lantern-making class"],
         "departureReturn": {
           "point": ["Da Nang International Airport", "Hoi An Center"],
           "time": "9:00 AM"
@@ -2016,11 +2008,7 @@
         "video": "url('@/assets/videos/hoian.mp4')"
       },
       "additionalInfo": {
-        "list": [
-          "Vegetarian options available",
-          "Children must be accompanied",
-          "Weather dependent activity"
-        ],
+        "list": ["Vegetarian options available", "Children must be accompanied", "Weather dependent activity"],
         "faqs": [
           {
             "title": "Is lantern-making suitable for kids?",
@@ -2055,12 +2043,7 @@
             "Panoramic views from the peak at sunrise"
           ]
         },
-        "included": [
-          "Experienced guide",
-          "Meals and camping gear",
-          "Entrance fees",
-          "Cable car descent (optional)"
-        ],
+        "included": ["Experienced guide", "Meals and camping gear", "Entrance fees", "Cable car descent (optional)"],
         "departureReturn": {
           "point": ["Sapa Town Center", "Fansipan base station"],
           "time": "6:00 AM"
@@ -2088,11 +2071,7 @@
         "video": "url('@/assets/videos/fansipan.mp4')"
       },
       "additionalInfo": {
-        "list": [
-          "Challenging physical activity",
-          "Not recommended for beginners",
-          "Good health required"
-        ],
+        "list": ["Challenging physical activity", "Not recommended for beginners", "Good health required"],
         "faqs": [
           {
             "title": "Do I need prior trekking experience?",
@@ -2121,11 +2100,7 @@
       "description": {
         "overview": {
           "title": "Sail through the emerald waters of Ha Long Bay on a luxury cruise.",
-          "list": [
-            "Enjoy a seafood buffet on board",
-            "Kayak through limestone caves",
-            "Sunset party on the sundeck"
-          ]
+          "list": ["Enjoy a seafood buffet on board", "Kayak through limestone caves", "Sunset party on the sundeck"]
         },
         "included": [
           "Round-trip transport from Hanoi",
@@ -2160,11 +2135,7 @@
         "video": "url('@/assets/videos/halong.mp4')"
       },
       "additionalInfo": {
-        "list": [
-          "Bring swimwear and sunscreen",
-          "Not suitable for wheelchairs",
-          "Children under 5 free of charge"
-        ],
+        "list": ["Bring swimwear and sunscreen", "Not suitable for wheelchairs", "Children under 5 free of charge"],
         "faqs": [
           {
             "title": "Can I bring my own food?",
@@ -2193,18 +2164,9 @@
       "description": {
         "overview": {
           "title": "Visit ancient temples, ride a boat along Tam Coc and cycle through rice fields in Ninh Binh.",
-          "list": [
-            "Explore Hoa Lu Ancient Capital",
-            "Rowing boat tour in Tam Coc",
-            "Cycling through local villages"
-          ]
+          "list": ["Explore Hoa Lu Ancient Capital", "Rowing boat tour in Tam Coc", "Cycling through local villages"]
         },
-        "included": [
-          "Transportation from Hanoi",
-          "Lunch buffet",
-          "Boat and bike rental",
-          "English-speaking guide"
-        ],
+        "included": ["Transportation from Hanoi", "Lunch buffet", "Boat and bike rental", "English-speaking guide"],
         "departureReturn": {
           "point": ["Hanoi Old Quarter"],
           "time": "8:00 AM"
@@ -2294,11 +2256,7 @@
         "video": "url('@/assets/videos/dalat.mp4')"
       },
       "additionalInfo": {
-        "list": [
-          "Ideal for couples and small families",
-          "Cool climate, bring warm clothing",
-          "Wheelchair accessible"
-        ],
+        "list": ["Ideal for couples and small families", "Cool climate, bring warm clothing", "Wheelchair accessible"],
         "faqs": []
       }
     },
@@ -2329,13 +2287,7 @@
             "Boat ride on Thu Bon River"
           ]
         },
-        "included": [
-          "Local guide",
-          "Workshop materials",
-          "Lunch",
-          "River boat ticket",
-          "Old Town entrance fee"
-        ],
+        "included": ["Local guide", "Workshop materials", "Lunch", "River boat ticket", "Old Town entrance fee"],
         "departureReturn": {
           "point": ["Da Nang City Center", "Hoi An Old Quarter"],
           "time": "8:30 AM"
@@ -2346,11 +2298,7 @@
         "video": "url('@/assets/videos/hoian.mp4')"
       },
       "additionalInfo": {
-        "list": [
-          "Easy walking tour, suitable for all ages",
-          "Bring sun protection",
-          "Street food tastings included"
-        ],
+        "list": ["Easy walking tour, suitable for all ages", "Bring sun protection", "Street food tastings included"],
         "faqs": []
       }
     },
@@ -3185,14 +3133,7 @@
         "overview": {
           "description": "Khách sạn 5 sao với hồ bơi vô cực, sky bar và nhà hàng phục vụ ẩm thực Việt, Á và Âu. Vị trí thuận tiện gần sân bay Tân Sơn Nhất và trung tâm thành phố."
         },
-        "amenities": [
-          "Hồ bơi ngoài trời",
-          "Wi-Fi miễn phí",
-          "Nhà hàng",
-          "Phòng gym",
-          "Dịch vụ spa",
-          "Quầy bar"
-        ],
+        "amenities": ["Hồ bơi ngoài trời", "Wi-Fi miễn phí", "Nhà hàng", "Phòng gym", "Dịch vụ spa", "Quầy bar"],
         "rules": {
           "checkIn": "02:00 PM",
           "checkOut": "12:00 PM",
@@ -3227,14 +3168,7 @@
         "overview": {
           "description": "Khách sạn sang trọng với hồ bơi ngoài trời, nhà hàng quốc tế và quầy bar. Gần sân bay và các điểm tham quan nổi tiếng."
         },
-        "amenities": [
-          "Hồ bơi",
-          "Wi-Fi miễn phí",
-          "Nhà hàng",
-          "Phòng gym",
-          "Dịch vụ spa",
-          "Quầy bar"
-        ],
+        "amenities": ["Hồ bơi", "Wi-Fi miễn phí", "Nhà hàng", "Phòng gym", "Dịch vụ spa", "Quầy bar"],
         "rules": {
           "checkIn": "02:00 PM",
           "checkOut": "12:00 PM",
@@ -3269,14 +3203,7 @@
         "overview": {
           "description": "Khách sạn 4 sao với hồ bơi, nhà hàng và quầy bar. Vị trí thuận tiện gần sân bay và trung tâm thành phố."
         },
-        "amenities": [
-          "Hồ bơi",
-          "Wi-Fi miễn phí",
-          "Nhà hàng",
-          "Phòng gym",
-          "Dịch vụ spa",
-          "Quầy bar"
-        ],
+        "amenities": ["Hồ bơi", "Wi-Fi miễn phí", "Nhà hàng", "Phòng gym", "Dịch vụ spa", "Quầy bar"],
         "rules": {
           "checkIn": "02:00 PM",
           "checkOut": "12:00 PM",
@@ -3311,13 +3238,7 @@
         "overview": {
           "description": "Khách sạn boutique với thiết kế thư viện độc đáo, cung cấp không gian yên tĩnh và ấm cúng. Gần sân bay và trung tâm thành phố."
         },
-        "amenities": [
-          "Wi-Fi miễn phí",
-          "Nhà hàng",
-          "Thư viện",
-          "Dịch vụ giặt ủi",
-          "Quầy bar"
-        ],
+        "amenities": ["Wi-Fi miễn phí", "Nhà hàng", "Thư viện", "Dịch vụ giặt ủi", "Quầy bar"],
         "rules": {
           "checkIn": "02:00 PM",
           "checkOut": "12:00 PM",
@@ -3352,14 +3273,7 @@
         "overview": {
           "description": "Parkroyal Saigon là khách sạn hiện đại với vị trí thuận tiện gần sân bay và các trung tâm thương mại. Cung cấp dịch vụ chuyên nghiệp, tiện nghi hiện đại, phù hợp cho cả doanh nhân và khách du lịch."
         },
-        "amenities": [
-          "Hồ bơi ngoài trời",
-          "Wi-Fi miễn phí",
-          "Phòng họp",
-          "Dịch vụ spa",
-          "Nhà hàng",
-          "Quầy bar"
-        ],
+        "amenities": ["Hồ bơi ngoài trời", "Wi-Fi miễn phí", "Phòng họp", "Dịch vụ spa", "Nhà hàng", "Quầy bar"],
         "rules": {
           "checkIn": "02:00 PM",
           "checkOut": "12:00 PM",
@@ -3395,13 +3309,7 @@
         "overview": {
           "description": "Le Saigon Hotel có thiết kế hiện đại, trang nhã. Nằm gần trung tâm và sân bay, khách sạn phù hợp với cả khách du lịch và công tác."
         },
-        "amenities": [
-          "Wi-Fi miễn phí",
-          "Nhà hàng",
-          "Bãi đậu xe riêng",
-          "Dịch vụ phòng",
-          "Lễ tân 24/7"
-        ],
+        "amenities": ["Wi-Fi miễn phí", "Nhà hàng", "Bãi đậu xe riêng", "Dịch vụ phòng", "Lễ tân 24/7"],
         "rules": {
           "checkIn": "01:00 PM",
           "checkOut": "12:00 PM",
@@ -3437,14 +3345,7 @@
         "overview": {
           "description": "Saigon Sky Garden là khách sạn cao cấp với không gian xanh, hồ bơi, và phòng tập thể dục hiện đại. Mang đến trải nghiệm lưu trú đẳng cấp tại trung tâm Phú Nhuận."
         },
-        "amenities": [
-          "Hồ bơi",
-          "Wi-Fi miễn phí",
-          "Sân vườn",
-          "Phòng gym",
-          "Bồn tắm nước nóng",
-          "Sân chơi trẻ em"
-        ],
+        "amenities": ["Hồ bơi", "Wi-Fi miễn phí", "Sân vườn", "Phòng gym", "Bồn tắm nước nóng", "Sân chơi trẻ em"],
         "rules": {
           "checkIn": "02:00 PM",
           "checkOut": "12:00 PM",
@@ -3492,13 +3393,7 @@
     "Bai Chay, Ha Long",
     "Ward 3, Da Lat"
   ],
-  "typeTours": [
-    "city-break",
-    "cultural",
-    "wildlife",
-    "ecotourism",
-    "sun and beaches"
-  ],
+  "typeTours": ["city-break", "cultural", "wildlife", "ecotourism", "sun and beaches"],
   "guests": [
     "All",
     "1 Adult",

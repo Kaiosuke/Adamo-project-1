@@ -1,4 +1,4 @@
-import { Skeleton } from "../ui/skeleton";
+import { Skeleton } from '../ui/skeleton'
 
 function SkeletonData() {
   return (
@@ -7,7 +7,7 @@ function SkeletonData() {
       <Skeleton className="bg-five h-10 w-3/4 mb-2" />
       <Skeleton className="bg-five h-8 w-1/2" />
     </div>
-  );
+  )
 }
 
-export default SkeletonData;
+export default SkeletonData

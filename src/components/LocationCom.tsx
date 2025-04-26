@@ -1,21 +1,14 @@
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from 'react-icons/fa'
 
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { TFunction } from "i18next";
-import { memo } from "react";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { TFunction } from 'i18next'
+import { memo } from 'react'
 
 interface Props {
-  location: string;
-  setLocation: (v: string) => void;
-  t: TFunction<"search", undefined>;
-  data: string[];
+  location: string
+  setLocation: (_v: string) => void
+  t: TFunction<'search', undefined>
+  data: string[]
 }
 
 const LocationCom = ({ location, setLocation, t, data }: Props) => {
@@ -25,25 +18,25 @@ const LocationCom = ({ location, setLocation, t, data }: Props) => {
       <Select
         defaultValue={location}
         onValueChange={(v) => {
-          setLocation(v);
+          setLocation(v)
         }}
       >
         <SelectTrigger className="w-full group-hover:text-third ">
-          <SelectValue placeholder={t("tour.location")} />
+          <SelectValue placeholder={t('tour.location')} />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
             {data.length &&
               data.map((v, index) => (
                 <SelectItem value={v} key={index}>
-                  {v.length < 2 ? "All" : v}
+                  {v.length < 2 ? 'All' : v}
                 </SelectItem>
               ))}
           </SelectGroup>
         </SelectContent>
       </Select>
     </div>
-  );
-};
+  )
+}
 
-export default memo(LocationCom);
+export default memo(LocationCom)

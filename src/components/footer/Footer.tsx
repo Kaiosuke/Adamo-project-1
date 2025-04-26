@@ -1,98 +1,98 @@
-import Logo from "@/assets/images/logo.png";
-import i18n from "@/i18n/i18n";
-import { useTranslation } from "react-i18next";
-import { CiLocationOn, CiMail } from "react-icons/ci";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
-import { Link } from "react-router";
+import Logo from '@/assets/images/logo.png'
+import i18n from '@/i18n/i18n'
+import { useTranslation } from 'react-i18next'
+import { CiLocationOn, CiMail } from 'react-icons/ci'
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa6'
+import { Link } from 'react-router'
 
 const linksEn = [
   {
-    title: "Home",
-    link: "/",
+    title: 'Home',
+    link: '/'
   },
   {
-    title: "About",
-    link: "/about",
+    title: 'About',
+    link: '/about'
   },
   {
-    title: "Hotels",
-    link: "/hotels",
+    title: 'Hotels',
+    link: '/hotels'
   },
   {
-    title: "Tours",
-    link: "/tours",
+    title: 'Tours',
+    link: '/tours'
   },
   {
-    title: "Contact",
-    link: "/contact",
-  },
-];
+    title: 'Contact',
+    link: '/contact'
+  }
+]
 
 const linksVi = [
   {
-    title: "Trang chủ",
-    link: "/",
+    title: 'Trang chủ',
+    link: '/'
   },
   {
-    title: "Chúng tôi",
-    link: "/about",
+    title: 'Chúng tôi',
+    link: '/about'
   },
   {
-    title: "Tham quan",
-    link: "/hotels",
+    title: 'Tham quan',
+    link: '/hotels'
   },
   {
-    title: "Khách sạn",
-    link: "/tours",
+    title: 'Khách sạn',
+    link: '/tours'
   },
   {
-    title: "Liên hệ",
-    link: "/contact",
-  },
-];
+    title: 'Liên hệ',
+    link: '/contact'
+  }
+]
 
 const pagesEn = [
   {
-    title: "Partner with us",
-    link: "/privacy-policy",
+    title: 'Partner with us',
+    link: '/privacy-policy'
   },
   {
-    title: "Terms & Conditions",
-    link: "/privacy-policy",
+    title: 'Terms & Conditions',
+    link: '/privacy-policy'
   },
   {
-    title: "Privacy Policy",
-    link: "/privacy-policy",
+    title: 'Privacy Policy',
+    link: '/privacy-policy'
   },
   {
-    title: "Guest Policy",
-    link: "/privacy-policy",
-  },
-];
+    title: 'Guest Policy',
+    link: '/privacy-policy'
+  }
+]
 
 const pagesVi = [
   {
-    title: "Hợp tác với chúng tôi",
-    link: "/privacy-policy",
+    title: 'Hợp tác với chúng tôi',
+    link: '/privacy-policy'
   },
   {
-    title: "Điều khoản & Điều kiện",
-    link: "/privacy-policy",
+    title: 'Điều khoản & Điều kiện',
+    link: '/privacy-policy'
   },
   {
-    title: "Chính sách Bảo mật",
-    link: "/privacy-policy",
+    title: 'Chính sách Bảo mật',
+    link: '/privacy-policy'
   },
   {
-    title: "Chính sách Khách hàng",
-    link: "/privacy-policy",
-  },
-];
+    title: 'Chính sách Khách hàng',
+    link: '/privacy-policy'
+  }
+]
 
 const Footer = () => {
-  useTranslation();
+  useTranslation()
 
-  const currentLanguage = i18n.language;
+  const currentLanguage = i18n.language
 
   return (
     <footer>
@@ -124,13 +124,10 @@ const Footer = () => {
             <div className="text-base text-third flex justify-between flex-wrap">
               <div className="md:flex-[0_0_25%] sm:flex-[0_0_50%] flex-[0_0_100%]">
                 <ul className="flex flex-col md:gap-6 gap:4">
-                  {currentLanguage === "en" ? (
+                  {currentLanguage === 'en' ? (
                     <>
                       {linksEn.map((v, index) => (
-                        <li
-                          key={index}
-                          className="text-third hover:text-primary"
-                        >
+                        <li key={index} className="text-third hover:text-primary">
                           <Link to={v.link}>{v.title}</Link>
                         </li>
                       ))}
@@ -138,10 +135,7 @@ const Footer = () => {
                   ) : (
                     <>
                       {linksVi.map((v, index) => (
-                        <li
-                          key={index}
-                          className="text-third hover:text-primary"
-                        >
+                        <li key={index} className="text-third hover:text-primary">
                           <Link to={v.link}>{v.title}</Link>
                         </li>
                       ))}
@@ -151,13 +145,10 @@ const Footer = () => {
               </div>
               <div className="lg:flex-[0_0_25%] sm:flex-[0_0_50%] flex-[0_0_100%] sm:pt-0 pt-6">
                 <ul className="flex flex-col md:gap-6 gap:4">
-                  {currentLanguage === "en" ? (
+                  {currentLanguage === 'en' ? (
                     <>
                       {pagesEn.map((v, index) => (
-                        <li
-                          key={index}
-                          className="text-third hover:text-primary"
-                        >
+                        <li key={index} className="text-third hover:text-primary">
                           <Link to={v.link}>{v.title}</Link>
                         </li>
                       ))}
@@ -165,10 +156,7 @@ const Footer = () => {
                   ) : (
                     <>
                       {pagesVi.map((v, index) => (
-                        <li
-                          key={index}
-                          className="text-third hover:text-primary"
-                        >
+                        <li key={index} className="text-third hover:text-primary">
                           <Link to={v.link}>{v.title}</Link>
                         </li>
                       ))}
@@ -187,16 +175,12 @@ const Footer = () => {
                         rel="noopener noreferrer"
                         className="hover:underline text-third hover:text-primary"
                       >
-                        Lilama 10 Tower, 56 To Huu, <br /> Trung Van, Nam Tu
-                        Liem, Ha Noi
+                        Lilama 10 Tower, 56 To Huu, <br /> Trung Van, Nam Tu Liem, Ha Noi
                       </a>
                     </div>
                     <div className="flex gap-4 pt-6 items-center">
                       <CiMail className="text-size-lg" />
-                      <a
-                        href="mailto:hello@adamotravel.com"
-                        className="hover:underline text-third hover:text-primary"
-                      >
+                      <a href="mailto:hello@adamotravel.com" className="hover:underline text-third hover:text-primary">
                         hello@adamotravel.com
                       </a>
                     </div>
@@ -207,11 +191,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-center bg-secondary text-third py-2">
-        Copyright © We.travel. All rights reserved
-      </div>
+      <div className="text-center bg-secondary text-third py-2">Copyright © We.travel. All rights reserved</div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

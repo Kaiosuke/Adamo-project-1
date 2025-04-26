@@ -1,21 +1,14 @@
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
-import { TFunction } from "i18next";
-import { memo } from "react";
-import { LuUsers } from "react-icons/lu";
+import { TFunction } from 'i18next'
+import { memo } from 'react'
+import { LuUsers } from 'react-icons/lu'
 
 interface Props {
-  guest: string;
-  setGuest: (v: string) => void;
-  t: TFunction<"search", undefined>;
-  data: string[];
+  guest: string
+  setGuest: (_v: string) => void
+  t: TFunction<'search', undefined>
+  data: string[]
 }
 
 const GuestCom = ({ guest, setGuest, t, data }: Props) => {
@@ -24,7 +17,7 @@ const GuestCom = ({ guest, setGuest, t, data }: Props) => {
       <LuUsers className="text-primary text-size-lg group-hover:text-third" />
       <Select defaultValue={guest} onValueChange={(v) => setGuest(v)}>
         <SelectTrigger className="w-full group-hover:text-third">
-          <SelectValue placeholder={t("tour.guest")} />
+          <SelectValue placeholder={t('tour.guest')} />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
@@ -38,7 +31,7 @@ const GuestCom = ({ guest, setGuest, t, data }: Props) => {
         </SelectContent>
       </Select>
     </div>
-  );
-};
+  )
+}
 
-export default memo(GuestCom);
+export default memo(GuestCom)

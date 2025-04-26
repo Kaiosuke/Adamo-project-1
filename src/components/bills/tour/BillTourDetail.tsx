@@ -1,104 +1,94 @@
-import { handleFormatMoney } from "@/helper";
-import { tourSelector } from "@/redux/selectors/tourSelector";
-import { addDays } from "date-fns";
-import { memo, useMemo, useState } from "react";
-import { DateRange } from "react-day-picker";
-import { useDispatch, useSelector } from "react-redux";
+import { handleFormatMoney } from '@/helper'
+import { tourSelector } from '@/redux/selectors/tourSelector'
+import { addDays } from 'date-fns'
+import { memo, useMemo, useState } from 'react'
+import { DateRange } from 'react-day-picker'
+import { useDispatch, useSelector } from 'react-redux'
 
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { useTranslation } from "react-i18next";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { useTranslation } from 'react-i18next'
 
-import { bookingSchema } from "@/schemas/bookingSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { bookingSchema } from '@/schemas/bookingSchema'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
 
-import DatePickerWithRange from "@/components/DatePickerWithRange";
-import { Button } from "@/components/ui/button";
-import { Form, FormField, FormMessage } from "@/components/ui/form";
-import { addBooking } from "@/redux/slices/bookingSlice";
-import { filterByGuest } from "@/redux/slices/toursSlice";
-import { useNavigate } from "react-router";
-import { toast } from "sonner";
-import { StringParam, useQueryParams } from "use-query-params";
+import DatePickerWithRange from '@/components/DatePickerWithRange'
+import { Button } from '@/components/ui/button'
+import { Form, FormField, FormMessage } from '@/components/ui/form'
+import { addBooking } from '@/redux/slices/bookingSlice'
+import { filterByGuest } from '@/redux/slices/toursSlice'
+import { useNavigate } from 'react-router'
+import { toast } from 'sonner'
+import { StringParam, useQueryParams } from 'use-query-params'
 
 const BillTourDetail = () => {
-  const { tour } = useSelector(tourSelector);
+  const { tour } = useSelector(tourSelector)
 
-  const { t } = useTranslation("search");
+  const { t } = useTranslation('search')
 
   const [query, setQuery] = useQueryParams({
     from: StringParam,
     to: StringParam,
-    duration: StringParam,
-  });
+    duration: StringParam
+  })
 
-  const duration = query.duration || 3;
-  const from = query.from ? new Date(query.from) : new Date();
+  const duration = query.duration || 3
+  const from = query.from ? new Date(query.from) : new Date()
   const to =
     query.to && query.from
       ? new Date(query.to)
-      : addDays(
-          new Date(query.from ? query.from : new Date()),
-          Number(duration)
-        );
+      : addDays(new Date(query.from ? query.from : new Date()), Number(duration))
 
   const [date, setDate] = useState<DateRange | undefined>({
     from: from,
-    to: to,
-  });
+    to: to
+  })
 
-  const disPatch = useDispatch();
+  const disPatch = useDispatch()
 
-  const { guests, filter } = useSelector(tourSelector);
+  const { guests, filter } = useSelector(tourSelector)
 
-  const { guest } = filter;
+  const { guest } = filter
 
   const form = useForm<z.infer<typeof bookingSchema>>({
     resolver: zodResolver(bookingSchema),
     defaultValues: {
-      guests: guest,
-    },
-  });
+      guests: guest
+    }
+  })
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   function onSubmit(values: z.infer<typeof bookingSchema>) {
     if (tour && date?.from && date?.to) {
-      const totalPrice = tour?.price && tour?.price * tour?.duration;
+      const totalPrice = tour?.price && tour?.price * tour?.duration
 
       const data = {
         duration: {
           from: date.from.toISOString(),
-          to: date.to.toISOString(),
+          to: date.to.toISOString()
         },
         day: tour.duration,
         tourId: tour.id,
         totalPrice: totalPrice,
-        guests: values.guests,
-      };
+        guests: values.guests
+      }
 
-      disPatch(addBooking(data));
-      toast.success("Booking successfully", {
+      disPatch(addBooking(data))
+      toast.success('Booking successfully', {
         style: {
-          backgroundColor: "#4caf50",
-          color: "#ffffff",
-        },
-      });
-      navigate("/tour-checkout");
+          backgroundColor: '#4caf50',
+          color: '#ffffff'
+        }
+      })
+      navigate('/tour-checkout')
     }
   }
 
   const handleTotalMoney = useMemo(() => {
-    return tour ? tour.duration * tour.price : 0;
-  }, [tour]);
+    return tour ? tour.duration * tour.price : 0
+  }, [tour])
 
   return (
     <>
@@ -112,43 +102,32 @@ const BillTourDetail = () => {
                 <div className="w-full h-full bg-seven">
                   <div className="lg:p-8 p-4 flex gap-2 items-end">
                     <span className="text-four">from</span>
-                    <span className="text-secondary text-size-xl font-semibold">
-                      {handleFormatMoney(tour?.price)}
-                    </span>
+                    <span className="text-secondary text-size-xl font-semibold">{handleFormatMoney(tour?.price)}</span>
                   </div>
                   <div className="h-[1px] w-full bg-four opacity-50" />
                   <div className="lg:p-8 p-4 flex flex-col gap-6">
                     <div className="flex gap-10">
                       <div>
                         <div className="text-four">Duration:</div>
-                        <div className="font-semibold text-secondary">
-                          {tour.time}
-                        </div>
+                        <div className="font-semibold text-secondary">{tour.time}</div>
                       </div>
                       <div>
                         <div className="text-four">Tour type:</div>
-                        <div className="font-semibold text-secondary">
-                          {tour.type}
-                        </div>
+                        <div className="font-semibold text-secondary">{tour.type}</div>
                       </div>
                     </div>
 
-                    <DatePickerWithRange
-                      setDate={setDate}
-                      date={date}
-                      setQuery={setQuery}
-                      duration={tour.duration}
-                    />
+                    <DatePickerWithRange setDate={setDate} date={date} setQuery={setQuery} duration={tour.duration} />
                     <div className="group tran-fast bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center gap-4 p-6 hover:bg-primary">
                       <Select
                         onValueChange={(v) => {
-                          field.onChange(v);
-                          disPatch(filterByGuest(v));
+                          field.onChange(v)
+                          disPatch(filterByGuest(v))
                         }}
                         value={field.value}
                       >
                         <SelectTrigger className="w-full group-hover:text-third">
-                          <SelectValue placeholder={t("tour.guest")} />
+                          <SelectValue placeholder={t('tour.guest')} />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectGroup {...field}>
@@ -165,12 +144,10 @@ const BillTourDetail = () => {
                     <FormMessage />
                     <div className="flex justify-between items-center">
                       <span className="text-secondary">Total</span>
-                      <span className="text-secondary font-semibold">
-                        {handleFormatMoney(handleTotalMoney)}
-                      </span>
+                      <span className="text-secondary font-semibold">{handleFormatMoney(handleTotalMoney)}</span>
                     </div>
                     <div className="mt-4">
-                      <Button variant={"primary"} type="submit">
+                      <Button variant={'primary'} type="submit">
                         Book now
                       </Button>
                     </div>
@@ -182,7 +159,7 @@ const BillTourDetail = () => {
         </Form>
       )}
     </>
-  );
-};
+  )
+}
 
-export default memo(BillTourDetail);
+export default memo(BillTourDetail)

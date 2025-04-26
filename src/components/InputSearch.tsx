@@ -1,41 +1,36 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react'
 
-import { Input } from "@/components/ui/input";
+import { Input } from '@/components/ui/input'
 
-import { IHotel } from "@/interfaces/hotel";
-import { ITour } from "@/interfaces/tour";
-import { FaLocationDot } from "react-icons/fa6";
+import { IHotel } from '@/interfaces/hotel'
+import { ITour } from '@/interfaces/tour'
+import { FaLocationDot } from 'react-icons/fa6'
 
 interface Props {
-  location: string;
-  setLocation: (v: string) => void;
-  locationData?: ITour[] | IHotel[];
-  placeHolder?: string;
+  location: string
+  setLocation: (_v: string) => void
+  locationData?: ITour[] | IHotel[]
+  placeHolder?: string
 }
 
-const InputSearch = ({
-  location,
-  setLocation,
-  locationData,
-  placeHolder = "",
-}: Props) => {
-  const [showResult, setShowResult] = useState(false);
+const InputSearch = ({ location, setLocation, locationData, placeHolder = '' }: Props) => {
+  const [showResult, setShowResult] = useState(false)
 
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     const handleMouse = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) {
-        setShowResult(false);
+        setShowResult(false)
       }
-    };
+    }
 
-    window.addEventListener("mousedown", handleMouse);
+    window.addEventListener('mousedown', handleMouse)
 
     return () => {
-      window.removeEventListener("mousedown", handleMouse);
-    };
-  }, []);
+      window.removeEventListener('mousedown', handleMouse)
+    }
+  }, [])
 
   return (
     <div className="bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] relative">
@@ -43,11 +38,11 @@ const InputSearch = ({
         value={location}
         placeholder={placeHolder}
         onClick={() => {
-          setShowResult(true);
+          setShowResult(true)
         }}
         onChange={(e) => {
-          setLocation(e.target.value);
-          setShowResult(true);
+          setLocation(e.target.value)
+          setShowResult(true)
         }}
         className="border-none h-full w-full rounded-none placeholder:text-five text-2xl pl-14"
       />
@@ -66,8 +61,8 @@ const InputSearch = ({
                   key={v.id}
                   className="cursor-pointer hover:text-primary tran-fast "
                   onClick={() => {
-                    setLocation(v.location.trim());
-                    setShowResult(false);
+                    setLocation(v.location.trim())
+                    setShowResult(false)
                   }}
                 >
                   {v.location}
@@ -80,7 +75,7 @@ const InputSearch = ({
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default InputSearch;
+export default InputSearch

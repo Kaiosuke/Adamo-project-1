@@ -1,25 +1,25 @@
 interface IReviewTour {
-  id: number;
-  tourId: number;
-  rate: number;
-  avatar: string;
-  opinion: string;
-  time: string;
-  title: string;
-  des: string;
+  id: number
+  tourId: number
+  rate: number
+  avatar: string
+  opinion: string
+  time: string
+  title: string
+  des: string
 }
 
 interface IReviewHotel {
-  id: number;
-  hotelId: number;
-  rate: number;
-  avatar: string;
-  opinion: string;
-  time: string;
-  title: string;
-  des: string;
+  id: number
+  hotelId: number
+  rate: number
+  avatar: string
+  opinion: string
+  time: string
+  title: string
+  des: string
 }
 
-type IReviewTourLackId = Omit<IReviewTour, "id">;
+type IReviewTourLackId = Omit<IReviewTour, 'id'>
 
-export type { IReviewHotel, IReviewTour, IReviewTourLackId };
+export type { IReviewHotel, IReviewTour, IReviewTourLackId }

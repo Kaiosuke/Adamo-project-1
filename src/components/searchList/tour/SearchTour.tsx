@@ -1,89 +1,78 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 
-import { getLocationTour } from "@/api/tourRequest";
-import DatePickerSingle from "@/components/DatePickerSingle";
-import GuestCom from "@/components/GuestCom";
-import InputSearch from "@/components/InputSearch";
-import LoadingSearch from "@/components/LoadingList/LoadingSearch";
-import TypeCom from "@/components/TypeCom";
-import { tourSelector } from "@/redux/selectors/tourSelector";
-import {
-  filterByGuest,
-  filterByLocation,
-  filterByType,
-} from "@/redux/slices/toursSlice";
-import { useQuery } from "@tanstack/react-query";
-import { addDays } from "date-fns";
-import { useCallback, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { CiSearch } from "react-icons/ci";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router";
-import { toast } from "sonner";
-import { useDebounce, useDebouncedCallback } from "use-debounce";
-import {
-  NumberParam,
-  StringParam,
-  useQueryParams,
-  withDefault,
-} from "use-query-params";
+import { getLocationTour } from '@/api/tourRequest'
+import DatePickerSingle from '@/components/DatePickerSingle'
+import GuestCom from '@/components/GuestCom'
+import InputSearch from '@/components/InputSearch'
+import LoadingSearch from '@/components/LoadingList/LoadingSearch'
+import TypeCom from '@/components/TypeCom'
+import { tourSelector } from '@/redux/selectors/tourSelector'
+import { filterByGuest, filterByLocation, filterByType } from '@/redux/slices/toursSlice'
+import { useQuery } from '@tanstack/react-query'
+import { addDays } from 'date-fns'
+import { useCallback, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { CiSearch } from 'react-icons/ci'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router'
+import { toast } from 'sonner'
+import { useDebounce, useDebouncedCallback } from 'use-debounce'
+import { NumberParam, StringParam, useQueryParams, withDefault } from 'use-query-params'
 
 const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
-  const { guests, types, filter, loading } = useSelector(tourSelector);
+  const { guests, types, filter, loading } = useSelector(tourSelector)
 
-  const { location, type, guest } = filter;
-  const { t } = useTranslation("search");
+  const { location, type, guest } = filter
+  const { t } = useTranslation('search')
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const [query, setQuery] = useQueryParams({
     from: StringParam,
-    _page: withDefault(NumberParam, 0),
-  });
+    _page: withDefault(NumberParam, 0)
+  })
 
-  const from = query.from ? new Date(query.from) : addDays(new Date(), 1);
+  const from = query.from ? new Date(query.from) : addDays(new Date(), 1)
 
-  const [date, setDate] = useState<Date>(from);
+  const [date, setDate] = useState<Date>(from)
 
-  const [locationFilter, setLocationFilter] = useState(location);
-  const [typeFilter, setTypeFilter] = useState(type);
+  const [locationFilter, setLocationFilter] = useState(location)
+  const [typeFilter, setTypeFilter] = useState(type)
 
   const handleFilterGuest = useCallback(
     (value: string) => {
-      dispatch(filterByGuest(value));
+      dispatch(filterByGuest(value))
     },
     [dispatch]
-  );
+  )
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const handleFilter = useDebouncedCallback(() => {
-    dispatch(filterByLocation(locationFilter));
-    dispatch(filterByType(typeFilter));
-    toast.success("Filter successfully", {
+    dispatch(filterByLocation(locationFilter))
+    dispatch(filterByType(typeFilter))
+    toast.success('Filter successfully', {
       style: {
-        backgroundColor: "#4caf50",
-        color: "#ffffff",
-      },
-    });
-    localStorage.setItem("currentPageTour", "0");
-    navigate(`/tours?from=${from.toDateString()}`);
-  }, 300);
+        backgroundColor: '#4caf50',
+        color: '#ffffff'
+      }
+    })
+    localStorage.setItem('currentPageTour', '0')
+    navigate(`/tours?from=${from.toDateString()}`)
+  }, 300)
 
-  const [value] = useDebounce(locationFilter.trim(), 300);
+  const [value] = useDebounce(locationFilter.trim(), 300)
 
   const { data: locationData } = useQuery({
-    queryKey: ["locationHotel", { value }],
+    queryKey: ['locationHotel', { value }],
     queryFn: () => getLocationTour({ data: value }),
-    enabled: !!value,
-  });
+    enabled: !!value
+  })
 
   return (
     <div
       className={`h-full bg-third/80 w-full ${
-        !isHome
-          ? "flex-[0_0_30%] 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8"
-          : ""
+        !isHome ? 'flex-[0_0_30%] 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8' : ''
       }`}
     >
       {loading ? (
@@ -93,7 +82,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
       ) : (
         <>
           <div className="lg:px-8 lg:py-8 w-full p-4">
-            <p className="text-size-2xl">{t("tour.description")}</p>
+            <p className="text-size-2xl">{t('tour.description')}</p>
             <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
               <InputSearch
                 location={locationFilter}
@@ -102,42 +91,24 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
                 placeHolder="Search Location Tour"
               />
               <div className="group bg-third lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
-                <DatePickerSingle
-                  date={date}
-                  setDate={setDate}
-                  setQuery={setQuery}
-                />
+                <DatePickerSingle date={date} setDate={setDate} setQuery={setQuery} />
               </div>
 
-              <TypeCom
-                data={types}
-                setTypeFilter={setTypeFilter}
-                t={t}
-                type={type}
-              />
+              <TypeCom data={types} setTypeFilter={setTypeFilter} t={t} type={type} />
 
-              <GuestCom
-                data={guests}
-                guest={guest}
-                setGuest={handleFilterGuest}
-                t={t}
-              />
+              <GuestCom data={guests} guest={guest} setGuest={handleFilterGuest} t={t} />
             </div>
             <div className="lg:pt-6 pt-4">
-              <Button
-                variant="primary"
-                className="flex justify-center gap-2 text-third"
-                onClick={handleFilter}
-              >
+              <Button variant="primary" className="flex justify-center gap-2 text-third" onClick={handleFilter}>
                 <CiSearch className="text-size-lg" />
-                {t("tour.search")}
+                {t('tour.search')}
               </Button>
             </div>
           </div>
         </>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default SearchTour;
+export default SearchTour

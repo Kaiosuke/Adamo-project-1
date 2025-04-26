@@ -1,20 +1,13 @@
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { TFunction } from "i18next";
-import { memo, SetStateAction } from "react";
-import { CiFlag1 } from "react-icons/ci";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { TFunction } from 'i18next'
+import { memo, SetStateAction } from 'react'
+import { CiFlag1 } from 'react-icons/ci'
 
 interface Props {
-  type: string[];
-  setTypeFilter: (value: SetStateAction<string[]>) => void;
-  data: string[];
-  t: TFunction<"search", undefined>;
+  type: string[]
+  setTypeFilter: (_value: SetStateAction<string[]>) => void
+  data: string[]
+  t: TFunction<'search', undefined>
 }
 
 const TypeCom = ({ data, setTypeFilter, type, t }: Props) => {
@@ -25,14 +18,14 @@ const TypeCom = ({ data, setTypeFilter, type, t }: Props) => {
         defaultValue={type.length < 1 ? type.toString() : type[0].toString()}
         onValueChange={(value) =>
           setTypeFilter(() => {
-            const arr = [];
-            arr.push(value);
-            return arr;
+            const arr = []
+            arr.push(value)
+            return arr
           })
         }
       >
         <SelectTrigger className="w-full group-hover:text-third ">
-          <SelectValue placeholder={t("tour.type")} />
+          <SelectValue placeholder={t('tour.type')} />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
@@ -47,7 +40,7 @@ const TypeCom = ({ data, setTypeFilter, type, t }: Props) => {
         </SelectContent>
       </Select>
     </div>
-  );
-};
+  )
+}
 
-export default memo(TypeCom);
+export default memo(TypeCom)

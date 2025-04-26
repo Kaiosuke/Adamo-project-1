@@ -1,58 +1,52 @@
-import LogoBlack from "@/assets/images/logo-black.png";
-import Logo from "@/assets/images/logo.png";
+import LogoBlack from '@/assets/images/logo-black.png'
+import Logo from '@/assets/images/logo.png'
 
-import useDetectScroll from "@smakss/react-scroll-direction";
-import { memo, useEffect, useMemo, useState } from "react";
-import { Link, useLocation } from "react-router";
-import DarkMode from "./DarkMode";
-import Language from "./Language";
-import NavMb from "./NavMb";
-import NavPc from "./NavPc";
+import useDetectScroll from '@smakss/react-scroll-direction'
+import { memo, useEffect, useMemo, useState } from 'react'
+import { Link, useLocation } from 'react-router'
+import DarkMode from './DarkMode'
+import Language from './Language'
+import NavMb from './NavMb'
+import NavPc from './NavPc'
 
-const pages = ["tour-detail", "hotel-detail", "privacy-policy"];
+const pages = ['tour-detail', 'hotel-detail', 'privacy-policy']
 
 const Header = () => {
-  const [isScroll, setIsScroll] = useState(false);
-  const { scrollDir } = useDetectScroll();
+  const [isScroll, setIsScroll] = useState(false)
+  const { scrollDir } = useDetectScroll()
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScroll(window.scrollY > 10);
-    };
+      setIsScroll(window.scrollY > 10)
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
-  const location = useLocation();
+  const location = useLocation()
 
-  const isPage = location.pathname.split("/")[1];
+  const isPage = location.pathname.split('/')[1]
 
-  const getLinkColor = () => {
-    if (isScroll) return "text-secondary";
-    return pages.includes(isPage) ? "text-secondary" : "text-third";
-  };
+  const getLinkColor = useMemo(() => {
+    if (isScroll) return 'text-secondary'
+    return pages.includes(isPage) ? 'text-secondary' : 'text-third'
+  }, [isPage, isScroll])
 
   const getLogoColor = () => {
-    if (isScroll) return LogoBlack;
-    return pages.includes(isPage) ? LogoBlack : Logo;
-  };
-
-  const linkColor = useMemo(() => getLinkColor(), [isScroll, isPage]);
+    if (isScroll) return LogoBlack
+    return pages.includes(isPage) ? LogoBlack : Logo
+  }
 
   return (
     <header
       className={`fixed w-full md:py-8 py-6 z-50 tran-normal ${
-        isScroll ? "bg-third" : ""
-      } ${isScroll && scrollDir === "down" ? "translate-y-[-1000px]" : ""}`}
+        isScroll ? 'bg-third' : ''
+      } ${isScroll && scrollDir === 'down' ? 'translate-y-[-1000px]' : ''}`}
     >
-      <div
-        className={`main-container flex items-center relative ${
-          isScroll ? "pt-0" : "pt-0"
-        }`}
-      >
+      <div className={`main-container flex items-center relative ${isScroll ? 'pt-0' : 'pt-0'}`}>
         <Link to="/">
           <img
             src={getLogoColor()}
@@ -63,16 +57,16 @@ const Header = () => {
         <div className="ml-auto flex items-center">
           <div className="flex items-center ">
             <nav className="lg:block hidden">
-              <NavPc isPage={isPage} getLinkColor={linkColor} />
+              <NavPc isPage={isPage} getLinkColor={getLinkColor} />
             </nav>
             <DarkMode />
-            <Language getLinkColor={linkColor} />
-            <NavMb getLinkColor={linkColor} />
+            <Language getLinkColor={getLinkColor} />
+            <NavMb getLinkColor={getLinkColor} />
           </div>
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default memo(Header);
+export default memo(Header)

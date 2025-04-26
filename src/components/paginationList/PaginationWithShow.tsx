@@ -1,21 +1,15 @@
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
-import ReactPaginate from "react-paginate";
+import { GoArrowLeft, GoArrowRight } from 'react-icons/go'
+import ReactPaginate from 'react-paginate'
 
 type PaginationProps = {
-  currentPage: number;
-  pageCount: number;
-  totalData: number;
-  items: number;
-  onPageChange: (page: number) => void;
-};
+  currentPage: number
+  pageCount: number
+  totalData: number
+  items: number
+  onPageChange: (_page: number) => void
+}
 
-const PaginationWithShow = ({
-  currentPage,
-  pageCount,
-  totalData,
-  items,
-  onPageChange,
-}: PaginationProps) => {
+const PaginationWithShow = ({ currentPage, pageCount, totalData, items, onPageChange }: PaginationProps) => {
   return (
     <div className="lg:pt-16 md:pt-10 pt-6 flex items-center justify-end main-container">
       <div className="flex md:w-2/3 justify-between w-full sm:flex-row flex-col items-center">
@@ -23,7 +17,7 @@ const PaginationWithShow = ({
           <span>Showing</span>
           <span>
             {Math.ceil(totalData / items) < 1 ? (
-              "0"
+              '0'
             ) : (
               <span>
                 {currentPage + 1} / {Math.ceil(totalData / items)}
@@ -44,7 +38,7 @@ const PaginationWithShow = ({
             </div>
           }
           onPageChange={(e) => {
-            onPageChange(e.selected);
+            onPageChange(e.selected)
           }}
           pageRangeDisplayed={3}
           marginPagesDisplayed={1}
@@ -59,7 +53,7 @@ const PaginationWithShow = ({
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PaginationWithShow;
+export default PaginationWithShow

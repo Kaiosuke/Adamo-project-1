@@ -1,4 +1,4 @@
-import { Skeleton } from "../ui/skeleton";
+import { Skeleton } from '../ui/skeleton'
 
 const LoadingReview = () => {
   return (
@@ -12,7 +12,7 @@ const LoadingReview = () => {
       </div>
       <Skeleton className="w-[full] h-[40px] " />
     </>
-  );
-};
+  )
+}
 
-export default LoadingReview;
+export default LoadingReview

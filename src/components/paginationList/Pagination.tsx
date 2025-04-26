@@ -1,17 +1,13 @@
-import ReactPaginate from "react-paginate";
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import ReactPaginate from 'react-paginate'
+import { GoArrowLeft, GoArrowRight } from 'react-icons/go'
 
 type PaginationProps = {
-  currentPage: number;
-  pageCount: number;
-  onPageChange: (page: number) => void;
-};
+  currentPage: number
+  pageCount: number
+  onPageChange: (_page: number) => void
+}
 
-const Pagination = ({
-  currentPage,
-  pageCount,
-  onPageChange,
-}: PaginationProps) => {
+const Pagination = ({ currentPage, pageCount, onPageChange }: PaginationProps) => {
   return (
     <ReactPaginate
       breakLabel="..."
@@ -37,7 +33,7 @@ const Pagination = ({
       pageLinkClassName="w-full h-full flex items-center justify-center cursor-pointer bg-five text-four font-semibold"
       activeLinkClassName="bg-secondary text-third"
     />
-  );
-};
+  )
+}
 
-export default Pagination;
+export default Pagination

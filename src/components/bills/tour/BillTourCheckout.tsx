@@ -1,31 +1,29 @@
-import { CiLocationOn } from "react-icons/ci";
-import { FaCalendarAlt } from "react-icons/fa";
-import { GoPeople } from "react-icons/go";
+import { CiLocationOn } from 'react-icons/ci'
+import { FaCalendarAlt } from 'react-icons/fa'
+import { GoPeople } from 'react-icons/go'
 
-import { handleFormatMoney } from "@/helper";
-import { IBooking } from "@/interfaces/booking";
-import { ITour } from "@/interfaces/tour";
-import { memo, useMemo } from "react";
-import Code from "../../Code";
+import { handleFormatMoney } from '@/helper'
+import { IBooking } from '@/interfaces/booking'
+import { ITour } from '@/interfaces/tour'
+import { memo, useMemo } from 'react'
+import Code from '../../Code'
 
 interface Props {
-  tour: ITour;
-  booking: IBooking;
-  discount?: number;
-  setDiscount: (v: number) => void;
+  tour: ITour
+  booking: IBooking
+  discount?: number
+  setDiscount: (_v: number) => void
 }
 
 const BillTourCheckout = ({ booking, tour, setDiscount, discount }: Props) => {
   const handleGetDay = (v: string) => {
-    const time = new Date(v);
-    return time.toLocaleDateString("vi-VN");
-  };
+    const time = new Date(v)
+    return time.toLocaleDateString('vi-VN')
+  }
 
   const handleDisCount = useMemo(() => {
-    return discount
-      ? booking.totalPrice - booking.totalPrice * discount
-      : booking.totalPrice;
-  }, [discount, booking]);
+    return discount ? booking.totalPrice - booking.totalPrice * discount : booking.totalPrice
+  }, [discount, booking])
 
   return (
     <>
@@ -66,7 +64,7 @@ const BillTourCheckout = ({ booking, tour, setDiscount, discount }: Props) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default memo(BillTourCheckout);
+export default memo(BillTourCheckout)

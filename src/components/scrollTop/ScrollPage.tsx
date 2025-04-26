@@ -1,12 +1,12 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router";
+import { useEffect } from 'react'
+import { useLocation } from 'react-router'
 
 const ScrollPage = () => {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-};
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
 
-export default ScrollPage;
+export default ScrollPage
