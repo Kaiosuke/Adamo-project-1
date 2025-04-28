@@ -29,7 +29,8 @@
       "@/redux/*": ["./redux/*"],
       "@/schemas/*": ["./schemas/*"],
       "@/styles/*": ["./styles/*"],
-      "@/lib/*": ["./lib/*"]
+      "@/lib/*": ["./lib/*"],
+      "@/interfaces/*": ["./interfaces/*"]
     },
 
     /* Linting */

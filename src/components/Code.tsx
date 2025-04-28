@@ -42,25 +42,23 @@ const Code = ({ setDiscount }: Props) => {
   }
 
   return (
-    <>
-      <div className="w-full h-[56px] flex items-center gap-4 text-sm">
-        <div className="flex-[1_0_auto]  h-full">
-          <Input
-            value={code}
-            onChange={(v) => {
-              setCode(v.target.value)
-            }}
-            className="bg-third rounded-none h-full p-0 py-2 pl-3 placeholder:text-four"
-            placeholder="Promo Code"
-          />
-        </div>
-        <div className="text-secondary w-[112px] h-full">
-          <Button variant={'outline'} className="font-bold border-2 h-full" onClick={handleCheckCode}>
-            Apply
-          </Button>
-        </div>
+    <div className="w-full h-[56px] flex items-center gap-4 text-sm">
+      <div className="flex-[1_0_auto]  h-full">
+        <Input
+          value={code}
+          onChange={(v) => {
+            setCode(v.target.value)
+          }}
+          className="bg-third rounded-none h-full p-0 py-2 pl-3 placeholder:text-four"
+          placeholder="Promo Code"
+        />
       </div>
-    </>
+      <div className="text-secondary w-[112px] h-full">
+        <Button variant={'outline'} className="font-bold border-2 h-full" onClick={handleCheckCode}>
+          Apply
+        </Button>
+      </div>
+    </div>
   )
 }
 

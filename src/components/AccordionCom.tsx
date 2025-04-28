@@ -2,7 +2,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { useState } from 'react'
 import { FaMapMarkerAlt, FaRegQuestionCircle } from 'react-icons/fa'
 
-interface Prop {
+interface Props {
   title: string
   type?: string
   description?: string
@@ -13,7 +13,7 @@ interface Prop {
   }[]
 }
 
-function AccordionCom({ content }: { content: Prop }) {
+const AccordionCom: React.FC<{ content: Props }> = ({ content }) => {
   const [isSelected, setIsSelected] = useState(false)
 
   return (
