@@ -1,4 +1,4 @@
-import { handleFormatMoney } from '@/helper'
+import { handleFormatMoney } from '@/helper/index'
 import { IHotel } from '@/interfaces/hotel'
 import { CiLocationOn } from 'react-icons/ci'
 import { FaCalendarAlt } from 'react-icons/fa'

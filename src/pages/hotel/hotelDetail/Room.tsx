@@ -4,7 +4,7 @@ import SwiperCom from '@/components/swiper/SwiperCom'
 
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-import { handleFormatMoney, handleSeparateWord } from '@/helper'
+import { handleFormatMoney, handleSeparateWord } from '@/helper/index'
 import { IRoom } from '@/interfaces/room'
 import { addRoom, deleteRoom } from '@/redux/slices/roomsSlice'
 import { useMutation, useQueryClient } from '@tanstack/react-query'

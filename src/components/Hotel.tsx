@@ -1,6 +1,6 @@
 import Shape2 from '@/assets/images/Shape-2png.png'
 import Shape from '@/assets/images/shape.png'
-import { handleFormatMoney } from '@/helper'
+import { handleFormatMoney } from '@/helper/index'
 import { IHotel } from '@/interfaces/hotel'
 import { CiLocationOn } from 'react-icons/ci'
 import { FaStar } from 'react-icons/fa6'

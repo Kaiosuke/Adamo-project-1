@@ -1,0 +1,49 @@
+{
+  "tour": {
+    "reviewTitle": "Đánh giá ({{count}})",
+    "description": {
+      "title": "Mô tả",
+      "overview": "Tổng quan",
+      "include": "Bao gồm gì",
+      "departure": "Khởi hành & Trở về",
+      "map": "Bản đồ",
+      "media": "Hình ảnh và video toàn cảnh 360°"
+    },
+    "additional": {
+      "title": "Thông tin thêm"
+    },
+    "review": {
+      "title": "Đánh giá ({{count}})",
+      "base": "Dựa trên {{count}} {{count, plural, one {đánh giá} other {đánh giá}}}",
+      "review": "Đánh giá",
+      "textArea": "Nhập gì đó",
+      "button": "Bình luận",
+      "content": "Không có bình luận"
+    },
+    "relatedTours": "Chuyến tham quan liên quan"
+  },
+  "hotel": {
+    "reviews": "Đánh giá",
+    "selectRoom": {
+      "title": "Chọn phòng",
+      "room": "Phòng",
+      "selected": "Đã chọn",
+      "selectRoom": "Chọn phòng",
+      "outOfRoom": "Hết phòng"
+    },
+    "description": {
+      "overview": "Tổng quan",
+      "hotelAmenities": "Tiện nghi khách sạn",
+      "rules": "Quy định",
+      "checkIn": "Nhận phòng",
+      "checkOut": "Trả phòng",
+      "map": "Bản đồ"
+    },
+    "review": {
+      "content": "Không có bình luận",
+      "button": "Bình luận",
+      "textArea": "Nhập gì đó"
+    },
+    "recommender": "Gợi ý cho bạn"
+  }
+}

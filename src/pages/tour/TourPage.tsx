@@ -1,5 +1,5 @@
 import { getAllTour, getFiltersTour } from '@/api/tourRequest'
-import { useAppDispatch } from '@/redux'
+import { useAppDispatch } from '@/redux/index'
 import { tourSelector } from '@/redux/selectors/tourSelector'
 import { useCallback, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'

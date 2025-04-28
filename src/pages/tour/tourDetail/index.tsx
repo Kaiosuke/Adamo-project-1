@@ -2,7 +2,7 @@ import { getAllReviewTour, getReviewTourList } from '@/api/reviewRequest'
 import { getTourById } from '@/api/tourRequest'
 import BreadcrumbCom from '@/components/Breadcrumb'
 
-import { useAppDispatch } from '@/redux'
+import { useAppDispatch } from '@/redux/index'
 import { tourSelector } from '@/redux/selectors/tourSelector'
 import { useEffect, useMemo, useState } from 'react'
 import { CiLocationOn } from 'react-icons/ci'
@@ -12,14 +12,17 @@ import { useParams } from 'react-router'
 import RelatedTours from './RelatedTours'
 
 import BillTourDetail from '@/components/bills/tour/BillTourDetail'
+import PdMain from '@/components/paddingList/PbMain'
+import PdSub from '@/components/paddingList/PbSub'
 import SwiperCom from '@/components/swiper/SwiperCom'
 import { useQuery } from '@tanstack/react-query'
+import { Trans, useTranslation } from 'react-i18next'
 import TourDetailTabs from './TourDetailTabs'
-import PdSub from '@/components/paddingList/PbSub'
-import PdMain from '@/components/paddingList/PbMain'
 
 const TourDetail = () => {
   const { id } = useParams()
+
+  useTranslation()
 
   const dispatch = useAppDispatch()
 
@@ -108,7 +111,7 @@ const TourDetail = () => {
                 {!totalData && totalData !== 0 ? (
                   <div className="flex items-center gap-4 text-base">Reviews: Loading...</div>
                 ) : (
-                  <>{totalData > 0 ? `Reviews(${totalData})` : `Review(${totalData})`}</>
+                  <Trans ns="detail" i18nKey={'tour.reviewTitle'} count={totalData} />
                 )}
               </span>
             </div>

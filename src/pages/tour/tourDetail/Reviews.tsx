@@ -10,6 +10,7 @@ import { useParams } from 'react-router'
 import TourReviewForm from './TourReviewForm'
 import Star from './Star'
 import Pagination from '@/components/paginationList/Pagination'
+import { Trans, useTranslation } from 'react-i18next'
 
 interface Props {
   currentPage: number
@@ -33,6 +34,10 @@ const Reviews = ({ currentPage, pageCount, totalData, setCurrentPage, averageSta
     enabled: id !== undefined
   })
 
+  useTranslation('detail')
+
+  const count = totalData
+
   return (
     <>
       {tour && (
@@ -49,12 +54,7 @@ const Reviews = ({ currentPage, pageCount, totalData, setCurrentPage, averageSta
                     <FaStar className="text-nine" />
                     <FaStar className="text-four" />
                   </div>
-                  <div className="text-four font-semibold">
-                    Based on{' '}
-                    <span className="text-secondary">
-                      {totalData} {totalData > 0 ? 'reviews' : 'review'}
-                    </span>
-                  </div>
+                  <Trans ns="detail" count={count} i18nKey={'tour.review.base'} />
                 </div>
               </div>
               <div className="flex-[0_0_auto] w-[2px] h-full bg-five mx-6 md:block hidden" />

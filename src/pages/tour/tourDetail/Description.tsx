@@ -3,20 +3,21 @@ import AccordionCom from '@/components/AccordionCom'
 import Map from '@/components/MapCom'
 import Viewer360 from '@/components/Viewer360'
 import { tourSelector } from '@/redux/selectors/tourSelector'
+import { useTranslation } from 'react-i18next'
 import { IoCheckmarkSharp } from 'react-icons/io5'
 import { useSelector } from 'react-redux'
 import { Fragment } from 'react/jsx-runtime'
 
 const Description = () => {
   const { tour } = useSelector(tourSelector)
-
+  const { t } = useTranslation('detail')
   return (
     <>
       <div>
-        <h4 className="text-size-xl font-semibold text-secondary">Overview</h4>
+        <h4 className="text-size-xl font-semibold text-secondary">{t('tour.description.overview')}</h4>
         <p className="mt-4 text-secondary">{tour?.description.overview.title}</p>
         <ul className="list-disc list-inside mt-6 flex flex-col gap-2 text-secondary">
-          {tour?.description.overview.list.map((v, index) => (
+          {tour?.description.overview.list.map((v: string, index: number) => (
             <li className="" key={index}>
               {v}
             </li>
@@ -27,9 +28,9 @@ const Description = () => {
         <div className="str-line " />
       </div>
       <div>
-        <h4 className="text-size-xl font-semibold text-secondary">What is Included</h4>
+        <h4 className="text-size-xl font-semibold text-secondary">{t('tour.description.include')}</h4>
         <ul className="flex  flex-col gap-2 mt-6 text-secondary">
-          {tour?.description.included.map((v, index) => (
+          {tour?.description.included.map((v: string, index: number) => (
             <li className="flex items-center gap-2" key={index}>
               <IoCheckmarkSharp className="text-[#28B554]" />
               {v}
@@ -41,11 +42,11 @@ const Description = () => {
         <div className="str-line " />
       </div>
       <div>
-        <h4 className="text-size-xl font-semibold text-secondary">Departure & Return</h4>
+        <h4 className="text-size-xl font-semibold text-secondary">{t('tour.description.include')}</h4>
         <div className="text-four mt-3">
           <span className="font-semibold">Departure Point</span>
           <ul className="mt-2 flex flex-col gap-2 list-decimal ml-2.5">
-            {tour?.description.departureReturn.point.map((v, index) => <li key={index}>{v}</li>)}
+            {tour?.description.departureReturn.point.map((v: string, index: number) => <li key={index}>{v}</li>)}
           </ul>
         </div>
         <div className="flex flex-col gap-2 text-four mt-3">
@@ -57,20 +58,34 @@ const Description = () => {
         <div className="str-line " />
       </div>
       <div>
-        <h4 className="text-size-xl font-semibold text-secondary">Departure & Return</h4>
+        <h4 className="text-size-xl font-semibold text-secondary">{t('tour.description.departure')}</h4>
         <div className="flex flex-col gap-4 mt-4">
-          {tour?.description.itineraries.map((itinerary, index) => (
-            <Fragment key={index}>
-              <AccordionCom content={itinerary} />
-            </Fragment>
-          ))}
+          {tour?.description.itineraries.map(
+            (
+              itinerary: {
+                title: string
+                type?: string
+                description?: string
+                locations?: {
+                  title: string
+                  des: string
+                  duration?: string
+                }[]
+              },
+              index: number
+            ) => (
+              <Fragment key={index}>
+                <AccordionCom content={itinerary} />
+              </Fragment>
+            )
+          )}
         </div>
       </div>
       <div className="py-6">
         <div className="str-line " />
       </div>
       <div>
-        <h4 className="text-size-xl font-semibold text-secondary">Map</h4>
+        <h4 className="text-size-xl font-semibold text-secondary">{t('tour.description.map')}</h4>
         <div className="mt-4">
           <Map coordinates={tour?.description.maps} />
         </div>
@@ -79,7 +94,7 @@ const Description = () => {
         <div className="str-line " />
       </div>
       <div className="h-full">
-        <h4 className="text-size-xl font-semibold text-secondary">360° Panoramic Images and Videos</h4>
+        <h4 className="text-size-xl font-semibold text-secondary">{t('tour.description.media')}</h4>
         <div className="mt-4 h-[400px]">
           <Viewer360 url={tour?.description.image360} />
         </div>

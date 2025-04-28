@@ -1,5 +1,5 @@
 import { Checkbox } from '@/components/ui/checkbox'
-import { handleFormatMoney } from '@/helper'
+import { handleFormatMoney } from '@/helper/index'
 import {
   changeBreakfast,
   changeExtraBed,

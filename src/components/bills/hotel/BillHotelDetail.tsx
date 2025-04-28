@@ -1,5 +1,5 @@
 import { getFiltersHotel } from '@/api/hotelRequest'
-import { handleFormatMoney } from '@/helper'
+import { handleFormatMoney } from '@/helper/index'
 import { IHotel } from '@/interfaces/hotel'
 import { IRoom } from '@/interfaces/room'
 import { roomSelector } from '@/redux/selectors/roomSelector'

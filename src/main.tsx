@@ -10,7 +10,13 @@ import './i18n/i18n.ts'
 import './index.css'
 import store, { persistor } from './redux/index.ts'
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: true
+    }
+  }
+})
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

@@ -2,7 +2,7 @@ import { CiLocationOn } from 'react-icons/ci'
 import { FaCalendarAlt } from 'react-icons/fa'
 import { GoPeople } from 'react-icons/go'
 
-import { handleFormatMoney } from '@/helper'
+import { handleFormatMoney } from '@/helper/index'
 import { IBooking } from '@/interfaces/booking'
 import { ITour } from '@/interfaces/tour'
 import { memo, useMemo } from 'react'

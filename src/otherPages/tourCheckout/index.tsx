@@ -1,6 +1,6 @@
 import { getTourById } from '@/api/tourRequest'
 
-import { useAppDispatch } from '@/redux'
+import { useAppDispatch } from '@/redux/index'
 import { bookingSelector } from '@/redux/selectors/bookingSelector'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'

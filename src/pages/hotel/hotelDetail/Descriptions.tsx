@@ -1,6 +1,6 @@
 import Map from '@/components/MapCom'
 import { Button } from '@/components/ui/button'
-import { handleSeparateWord } from '@/helper'
+import { handleSeparateWord } from '@/helper/index'
 import { IHotel } from '@/interfaces/hotel'
 
 import { IoCheckmarkSharp } from 'react-icons/io5'

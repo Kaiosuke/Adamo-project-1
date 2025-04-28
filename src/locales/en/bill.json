@@ -1,0 +1,36 @@
+{
+  "billDetailTour": {
+    "from": "From",
+    "duration": "Duration",
+    "tourType": "Tour type",
+    "total": "Total",
+    "bookNow": "Book Now",
+    "select": "Number of guests"
+  },
+  "billCheckOutTour": {
+    "from": "From",
+    "duration": "Duration",
+    "tourType": "Tour type",
+    "promo": "Promo Code",
+    "apply": "Apply",
+    "total": "Total"
+  },
+  "billDetailHotel": {
+    "from": "From",
+    "addOn": "Add-ons",
+    "breakfast": "Break Fast",
+    "extraBed": "Extra Bed",
+    "total": "Total",
+    "bookNow": "Book Now",
+    "select": "Number of guests"
+  },
+  "billCheckOutHotel": {
+    "from": "From",
+    "addOn": "Add-ons",
+    "breakfast": "Break Fast",
+    "extraBed": "Extra Bed",
+    "promo": "Promo Code",
+    "apply": "Apply",
+    "total": "Total"
+  }
+}

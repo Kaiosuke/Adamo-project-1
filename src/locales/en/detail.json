@@ -1,0 +1,49 @@
+{
+  "tour": {
+    "reviewTitle": "Review ({{count}})",
+    "description": {
+      "title": "Description",
+      "overview": "Overview",
+      "include": "What is Included",
+      "departure": "Departure & Return",
+      "map": "Map",
+      "media": "360° Panoramic Images and Videos"
+    },
+    "additional": {
+      "title": "Additional"
+    },
+    "review": {
+      "title": "Review ({{count}})",
+      "base": "Base on {{count}} {{count, plural, one review other reviews}}",
+      "review": "Reviews",
+      "textArea": "Type anything",
+      "button": "Comment",
+      "content": "No Comment"
+    },
+    "relatedTours": "Related tours"
+  },
+  "hotel": {
+    "reviews": "Reviews",
+    "selectRoom": {
+      "title": "Select room",
+      "room": "Room",
+      "selected": "Selected",
+      "selectRoom": "Select room",
+      "outOfRoom": "Out of Room"
+    },
+    "description": {
+      "overview": "Overview",
+      "hotelAmenities": "Hotel Amenities",
+      "rules": "rules",
+      "checkIn": "Checkin",
+      "checkOut": "Checkout",
+      "map": "Map"
+    },
+    "review": {
+      "content": "No Comment",
+      "button": "Comment",
+      "textArea": "Type anything"
+    },
+    "recommender": "Recommender For You"
+  }
+}

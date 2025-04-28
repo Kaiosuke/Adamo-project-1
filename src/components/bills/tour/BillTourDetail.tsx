@@ -1,4 +1,4 @@
-import { handleFormatMoney } from '@/helper'
+import { handleFormatMoney } from '@/helper/index'
 import { tourSelector } from '@/redux/selectors/tourSelector'
 import { addDays } from 'date-fns'
 import { memo, useMemo, useState } from 'react'
@@ -25,7 +25,7 @@ import { StringParam, useQueryParams } from 'use-query-params'
 const BillTourDetail = () => {
   const { tour } = useSelector(tourSelector)
 
-  const { t } = useTranslation('search')
+  const { t } = useTranslation(['search', 'bill'])
 
   const [query, setQuery] = useQueryParams({
     from: StringParam,
@@ -101,18 +101,18 @@ const BillTourDetail = () => {
               render={({ field }) => (
                 <div className="w-full h-full bg-seven">
                   <div className="lg:p-8 p-4 flex gap-2 items-end">
-                    <span className="text-four">from</span>
+                    <span className="text-four">{t('bill:billDetailTour.from')}</span>
                     <span className="text-secondary text-size-xl font-semibold">{handleFormatMoney(tour?.price)}</span>
                   </div>
                   <div className="h-[1px] w-full bg-four opacity-50" />
                   <div className="lg:p-8 p-4 flex flex-col gap-6">
                     <div className="flex gap-10">
                       <div>
-                        <div className="text-four">Duration:</div>
+                        <div className="text-four">{t('bill:billDetailTour.duration')}:</div>
                         <div className="font-semibold text-secondary">{tour.time}</div>
                       </div>
                       <div>
-                        <div className="text-four">Tour type:</div>
+                        <div className="text-four">{t('bill:billDetailTour.tourType')}:</div>
                         <div className="font-semibold text-secondary">{tour.type}</div>
                       </div>
                     </div>
@@ -132,7 +132,7 @@ const BillTourDetail = () => {
                         <SelectContent>
                           <SelectGroup {...field}>
                             {guests.length &&
-                              guests.map((v, index) => (
+                              guests.map((v: string, index: number) => (
                                 <SelectItem value={v} key={index}>
                                   {v}
                                 </SelectItem>
@@ -143,12 +143,12 @@ const BillTourDetail = () => {
                     </div>
                     <FormMessage />
                     <div className="flex justify-between items-center">
-                      <span className="text-secondary">Total</span>
+                      <span className="text-secondary">{t('bill:billDetailTour.total')}</span>
                       <span className="text-secondary font-semibold">{handleFormatMoney(handleTotalMoney)}</span>
                     </div>
                     <div className="mt-4">
                       <Button variant={'primary'} type="submit">
-                        Book now
+                        {t('bill:billDetailTour.bookNow')}
                       </Button>
                     </div>
                   </div>

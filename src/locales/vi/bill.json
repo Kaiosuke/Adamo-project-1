@@ -1,0 +1,36 @@
+{
+  "billDetailTour": {
+    "from": "Từ",
+    "duration": "Thời gian",
+    "tourType": "Loại tour",
+    "total": "Tổng cộng",
+    "bookNow": "Đặt ngay",
+    "select": "Số lượng khách"
+  },
+  "billCheckOutTour": {
+    "from": "Từ",
+    "duration": "Thời gian",
+    "tourType": "Loại tour",
+    "promo": "Mã khuyến mãi",
+    "apply": "Áp dụng",
+    "total": "Tổng cộng"
+  },
+  "billDetailHotel": {
+    "from": "Từ",
+    "addOn": "Phụ thu",
+    "breakfast": "Bữa sáng",
+    "extraBed": "Giường phụ",
+    "total": "Tổng cộng",
+    "bookNow": "Đặt ngay",
+    "select": "Số lượng khách"
+  },
+  "billCheckOutHotel": {
+    "from": "Từ",
+    "addOn": "Phụ thu",
+    "breakfast": "Bữa sáng",
+    "extraBed": "Giường phụ",
+    "promo": "Mã khuyến mãi",
+    "apply": "Áp dụng",
+    "total": "Tổng cộng"
+  }
+}
