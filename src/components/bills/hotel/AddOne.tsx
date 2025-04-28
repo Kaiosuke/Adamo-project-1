@@ -11,6 +11,7 @@ import {
   inCreaseExtraBed
 } from '@/redux/slices/roomsSlice'
 import { memo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { FaCircleMinus, FaCirclePlus } from 'react-icons/fa6'
 import { useDispatch } from 'react-redux'
 import { toast } from 'sonner'
@@ -81,9 +82,11 @@ const AddOne = ({ breakfast, extraBed }: Props) => {
     dispatch(inCreaseExtraBed())
   }
 
+  const { t } = useTranslation('bill')
+
   return (
     <>
-      <div className="font-bold text-secondary">Add-ons:</div>
+      <div className="font-bold text-secondary">{t('billDetailHotel.addOn')}:</div>
       <div className={'grid grid-cols-3 items-center mt-2'}>
         <div className="flex items-center space-x-2">
           <Checkbox id="terms" className="bg-third" checked={breakfast.status} />
@@ -92,7 +95,7 @@ const AddOne = ({ breakfast, extraBed }: Props) => {
             onClick={handleChangeBreakfast}
             className="text-base font-semibold flex items-center justify-center leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
-            Breakfast
+            {t('billDetailHotel.breakfast')}
           </label>
         </div>
         <div
@@ -126,7 +129,7 @@ const AddOne = ({ breakfast, extraBed }: Props) => {
             onClick={handleChangeExtraBed}
             className="text-base font-semibold flex items-center justify-center leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
-            Extra Bed
+            {t('billDetailHotel.extraBed')}
           </label>
         </div>
         <div

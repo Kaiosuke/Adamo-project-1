@@ -31,7 +31,7 @@ import DatePickerWithRange from '../../DatePickerWithRange'
 import AddOne from './AddOne'
 
 const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
-  const { t } = useTranslation(['search'])
+  const { t } = useTranslation(['search', 'bill'])
 
   const { rooms, breakfast, extraBed } = useSelector(roomSelector)
 
@@ -65,7 +65,7 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
   }
 
   const handleTotalMoney = useMemo(() => {
-    let data = rooms.reduce((acc: number, cur) => {
+    let data = rooms.reduce((acc: number, cur: { data: IRoom; quantity: number }) => {
       return (acc += cur.data.price * cur.quantity)
     }, 0)
 
@@ -155,7 +155,7 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
             render={({ field }) => (
               <div className="w-full h-full bg-seven">
                 <div className="lg:p-8 p-4 flex gap-2 items-end">
-                  <span className="text-four">from</span>
+                  <span className="text-four">{t('bill:billDetailHotel.from')}</span>
                   <span className="text-secondary text-size-xl font-semibold">
                     {hotel && handleFormatMoney(hotel.price)}
                   </span>
@@ -191,7 +191,7 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
                   <FormMessage />
                   <div>
                     <div className="flex flex-col gap-2">
-                      {rooms.map((room) => (
+                      {rooms.map((room: { data: IRoom; quantity: number }) => (
                         <div key={room.data.id} className="grid grid-cols-3 items-center">
                           <div className="font-bold w-[122px]">{room?.data?.type}</div>
                           <div className="flex items-center justify-between gap-2 ml-auto">
@@ -217,11 +217,11 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
                   <div className="h-[1px] w-full bg-four opacity-30" />
 
                   <div className="flex justify-between items-center text-size-xl">
-                    <span className="text-secondary">Total</span>
+                    <span className="text-secondary">{t('bill:billDetailHotel.total')}</span>
                     <span className="text-secondary font-semibold">{handleFormatMoney(handleTotalMoney)}</span>
                   </div>
                   <div className="">
-                    <Button variant={'primary'}>Book now</Button>
+                    <Button variant={'primary'}>{t('bill:billDetailHotel.bookNow')}</Button>
                   </div>
                 </div>
               </div>

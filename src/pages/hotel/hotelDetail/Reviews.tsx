@@ -11,6 +11,7 @@ import { NumberParam, useQueryParams } from 'use-query-params'
 import ReviewForm from './ReviewForm'
 import ReviewPagination from './ReviewPagination'
 import PdSub from '@/components/paddingList/PbSub'
+import { useTranslation } from 'react-i18next'
 
 const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
   const { id } = useParams()
@@ -58,6 +59,8 @@ const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
     return 5
   }, [totalScore])
 
+  const { t } = useTranslation('detail')
+
   return (
     <>
       {id && handleAverageRate && (
@@ -80,7 +83,7 @@ const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
             ))}
           </div>
         ) : data?.length === 0 ? (
-          <div className="mt-4 text-size-2xl">No comment!</div>
+          <div className="mt-4 text-size-2xl">{t('hotel.review.content')}</div>
         ) : (
           <>
             {data.map((review: IReviewHotel) => (

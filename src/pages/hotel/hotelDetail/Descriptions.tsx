@@ -2,14 +2,17 @@ import Map from '@/components/MapCom'
 import { Button } from '@/components/ui/button'
 import { handleSeparateWord } from '@/helper/index'
 import { IHotel } from '@/interfaces/hotel'
+import { useTranslation } from 'react-i18next'
 
 import { IoCheckmarkSharp } from 'react-icons/io5'
 
 const Descriptions = ({ data }: { data: IHotel }) => {
+  const { t } = useTranslation('detail')
+
   return (
     <>
       <div>
-        <h4 className="text-size-xl text-secondary">Overview</h4>
+        <h4 className="text-size-xl text-secondary">{t('hotel.description.overview')}</h4>
         <div className="mt-4 text-secondary">
           {data.description.overview.description &&
             handleSeparateWord(data.description.overview.description).map((v, index) => (
@@ -23,7 +26,7 @@ const Descriptions = ({ data }: { data: IHotel }) => {
         <div className="str-line " />
       </div>
       <div>
-        <h4 className="text-size-xl text-secondary">Hotel Amenities</h4>
+        <h4 className="text-size-xl text-secondary">{t('hotel.description.hotelAmenities')}</h4>
         <ul className="grid grid-cols-2 gap-2 mt-6 text-secondary">
           {data.description.amenities.map((v, index) => (
             <li className="flex items-center gap-2" key={index}>
@@ -37,7 +40,7 @@ const Descriptions = ({ data }: { data: IHotel }) => {
         <div className="str-line " />
       </div>
       <div>
-        <h4 className="text-size-xl text-secondary ">Rules</h4>
+        <h4 className="text-size-xl text-secondary ">{t('hotel.description.rules')}</h4>
         <div className="mt-2 flex gap-8">
           <div className="font-bold">
             <div className="text-primary">Checkin</div>
@@ -63,7 +66,7 @@ const Descriptions = ({ data }: { data: IHotel }) => {
       </div>
 
       <div>
-        <h4 className="text-size-xl text-secondary">Map</h4>
+        <h4 className="text-size-xl text-secondary">{t('hotel.description.map')}</h4>
         <div className="mt-4">
           <Map coordinates={data.description.maps} />
         </div>

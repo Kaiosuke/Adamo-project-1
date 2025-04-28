@@ -1,19 +1,20 @@
 import Tour from '@/components/Tour'
+import { ITour } from '@/interfaces/tour'
 import { tourSelector } from '@/redux/selectors/tourSelector'
+import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { Fragment } from 'react/jsx-runtime'
 
 const RelatedTours = () => {
   const { tours } = useSelector(tourSelector)
 
+  const { t } = useTranslation('detail')
+
   return (
     <div>
-      <h2 className="text-size-3xl text-secondary ">Related tours</h2>
+      <h2 className="text-size-3xl text-secondary ">{t('tour.relatedTours')}</h2>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-10 md:gap-8 gap-10 lg:mt-10 mt-8">
-        {tours.map((tour) => (
-          <Fragment key={tour.id}>
-            <Tour tour={tour} />
-          </Fragment>
+        {tours.map((tour: ITour) => (
+          <Tour tour={tour} key={tour.id} />
         ))}
       </div>
     </div>

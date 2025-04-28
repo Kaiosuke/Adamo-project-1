@@ -14,6 +14,7 @@ import { IReviewTourLackId } from '@/interfaces/review'
 import { useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   id: string
@@ -31,6 +32,7 @@ const TourReviewForm = ({ id, setCurrentPage }: Props) => {
     }
   })
 
+  const { t } = useTranslation('detail')
   const queryClient = useQueryClient()
 
   const onSubmit = useDebouncedCallback((values: z.infer<typeof commentSchema>) => {
@@ -90,7 +92,7 @@ const TourReviewForm = ({ id, setCurrentPage }: Props) => {
                   onChange={(v) => {
                     field.onChange(v)
                   }}
-                  placeholder="Type anything"
+                  placeholder={t('tour.review.textArea')}
                   className="h-[128px] bg-seven text-four placeholder:text-four"
                 />
               </div>
@@ -120,7 +122,7 @@ const TourReviewForm = ({ id, setCurrentPage }: Props) => {
             )}
           />
           <Button className="w-auto lg:px-10 md:px-8 px-6" size={'third'}>
-            Comment
+            {t('tour.review.button')}
           </Button>
         </div>
       </form>

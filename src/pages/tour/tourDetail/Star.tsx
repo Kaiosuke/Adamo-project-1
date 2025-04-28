@@ -1,5 +1,6 @@
 import { IReviewTour } from '@/interfaces/review'
 import { memo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { FaStar } from 'react-icons/fa6'
 
 const Star = ({ data, v }: { data: IReviewTour[]; v: number }) => {
@@ -17,9 +18,11 @@ const Star = ({ data, v }: { data: IReviewTour[]; v: number }) => {
     return 0
   }
 
+  const { t } = useTranslation('detail')
+
   return (
     <div className="flex items-center gap-2">
-      <span>{v}</span>
+      <span className="w-[12px]">{v}</span>
       <FaStar className="text-four" />
       <div className="flex-[0_0_50%] h-[8px] rounded-2xl flex">
         <div
@@ -31,7 +34,7 @@ const Star = ({ data, v }: { data: IReviewTour[]; v: number }) => {
 
         <div className="bg-five flex-[1_0_auto] rounded-r-lg" />
       </div>
-      <span>{handleFilterRate(v) > 0 ? `${handleFilterRate(v)} Reviews` : '0 Review'}</span>
+      <span>{`${handleFilterRate(v)} ${t('tour.review.review')} `}</span>
     </div>
   )
 }

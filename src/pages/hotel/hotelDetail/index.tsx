@@ -16,9 +16,12 @@ import { useQuery } from '@tanstack/react-query'
 import LoadingSlideDetail from './LoadingSlideDetail'
 import PdMain from '@/components/paddingList/PbMain'
 import PdSub from '@/components/paddingList/PbSub'
+import { Trans, useTranslation } from 'react-i18next'
 
 const HotelDetail = () => {
   const { id } = useParams()
+
+  useTranslation('detail')
 
   const { data: totalData } = useQuery({
     queryKey: ['reviewHotel', { id }],
@@ -67,7 +70,9 @@ const HotelDetail = () => {
             {!totalData ? (
               <div className="flex items-center gap-4 text-base">Reviews: Loading...</div>
             ) : (
-              <>{totalData.length > 0 ? `Reviews(${totalData.length})` : `Review(${totalData.length})`}</>
+              <>
+                <Trans ns="detail" i18nKey={'hotel.reviews'} count={totalData.length} />
+              </>
             )}
           </span>
         </div>

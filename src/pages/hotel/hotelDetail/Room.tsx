@@ -9,6 +9,7 @@ import { IRoom } from '@/interfaces/room'
 import { addRoom, deleteRoom } from '@/redux/slices/roomsSlice'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { memo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { FaCheck, FaImage } from 'react-icons/fa6'
 import { IoBedOutline } from 'react-icons/io5'
 import { LuUsers } from 'react-icons/lu'
@@ -56,6 +57,8 @@ const Room = ({ room }: { room: IRoom }) => {
       }
     )
   }, 300)
+
+  const { t } = useTranslation('detail')
 
   const handleNotSelectRoom = useDebouncedCallback((room: IRoom, status: boolean) => {
     changeStatusMutation.mutate(
@@ -110,7 +113,7 @@ const Room = ({ room }: { room: IRoom }) => {
                             size={'third'}
                             className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full cursor-not-allowed"
                           >
-                            Out of Room
+                            {t('hotel.selectRoom.outOfRoom')}
                           </Button>
                         ) : !room.status ? (
                           <div>
@@ -123,7 +126,7 @@ const Room = ({ room }: { room: IRoom }) => {
                                 handleSelectRoom(room, true)
                               }}
                             >
-                              Select room
+                              {t('hotel.selectRoom.selectRoom')}
                             </Button>
                           </div>
                         ) : (
@@ -138,7 +141,7 @@ const Room = ({ room }: { room: IRoom }) => {
                             }}
                           >
                             <FaCheck className="text-third" />
-                            Selected
+                            {t('hotel.selectRoom.selected')}
                           </Button>
                         )}
                       </div>
@@ -223,7 +226,7 @@ const Room = ({ room }: { room: IRoom }) => {
                   size={'third'}
                   className="px-4 font-semibold lg:max-w-[170px] max-w-[120px] w-full cursor-not-allowed"
                 >
-                  Out of Room
+                  {t('hotel.selectRoom.outOfRoom')}
                 </Button>
               ) : !room.status ? (
                 <div>
@@ -236,7 +239,7 @@ const Room = ({ room }: { room: IRoom }) => {
                       handleSelectRoom(room, true)
                     }}
                   >
-                    Select room
+                    {t('hotel.selectRoom.selectRoom')}
                   </Button>
                 </div>
               ) : (
@@ -251,7 +254,7 @@ const Room = ({ room }: { room: IRoom }) => {
                   }}
                 >
                   <FaCheck className="text-third" />
-                  Selected
+                  {t('hotel.selectRoom.selected')}
                 </Button>
               )}
 

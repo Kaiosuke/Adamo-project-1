@@ -7,6 +7,7 @@ import { useParams } from 'react-router'
 import Descriptions from './Descriptions'
 import Reviews from './Reviews'
 import SelectRoom from './SelectRoom'
+import { Trans, useTranslation } from 'react-i18next'
 
 interface Props {
   data: IHotel
@@ -23,6 +24,8 @@ const HotelDetailTabs = ({ data }: Props) => {
     enabled: id !== undefined
   })
 
+  const { t } = useTranslation('detail')
+
   return (
     <>
       <Tabs defaultValue="selectRoom" className="lg:pt-10 pt-6">
@@ -31,13 +34,13 @@ const HotelDetailTabs = ({ data }: Props) => {
             value="selectRoom"
             className="data-[state=active]:text-primary text-size-2xl px-0 flex-none data-[state=active]:shadow-none trans-slow hover:text-six cursor-pointer"
           >
-            Select room
+            {t('hotel.selectRoom.title')}
           </TabsTrigger>
           <TabsTrigger
             value="descriptions"
             className="data-[state=active]:text-primary text-size-2xl px-0 flex-none data-[state=active]:shadow-none trans-slow hover:text-six cursor-pointer"
           >
-            Descriptions
+            {t('hotel.description.title')}
           </TabsTrigger>
           <TabsTrigger
             value="reviews"
@@ -46,11 +49,7 @@ const HotelDetailTabs = ({ data }: Props) => {
             {isLoading ? (
               <div className="flex items-center gap-4 text-size-2xl">Reviews: Loading...</div>
             ) : (
-              <>
-                {totalScore && Number(totalScore.length) > 0
-                  ? `Reviews(${totalScore.length})`
-                  : `Review(${totalScore?.length})`}
-              </>
+              <Trans ns="detail" i18nKey={'hotel.review.review'} count={totalScore?.length} />
             )}
           </TabsTrigger>
         </TabsList>

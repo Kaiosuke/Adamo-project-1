@@ -1,6 +1,6 @@
 {
   "tour": {
-    "reviewTitle": "Review ({{count}})",
+    "reviewTitle": "Reviews ({{count}})",
     "description": {
       "title": "Description",
       "overview": "Overview",
@@ -13,8 +13,8 @@
       "title": "Additional"
     },
     "review": {
-      "title": "Review ({{count}})",
-      "base": "Base on {{count}} {{count, plural, one review other reviews}}",
+      "title": "Reviews ({{count}})",
+      "base": "Base on {{count}} reviews",
       "review": "Reviews",
       "textArea": "Type anything",
       "button": "Comment",
@@ -23,7 +23,7 @@
     "relatedTours": "Related tours"
   },
   "hotel": {
-    "reviews": "Reviews",
+    "reviews": "Reviews ({{count}})",
     "selectRoom": {
       "title": "Select room",
       "room": "Room",
@@ -32,6 +32,7 @@
       "outOfRoom": "Out of Room"
     },
     "description": {
+      "title": "Description",
       "overview": "Overview",
       "hotelAmenities": "Hotel Amenities",
       "rules": "rules",
@@ -40,9 +41,12 @@
       "map": "Map"
     },
     "review": {
+      "review": "Reviews ({{count}})",
       "content": "No Comment",
       "button": "Comment",
-      "textArea": "Type anything"
+      "textArea": "Type anything",
+      "close": "Close",
+      "write": "Write a Review"
     },
     "recommender": "Recommender For You"
   }

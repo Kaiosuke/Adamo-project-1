@@ -25,6 +25,7 @@ const starList = ['5', '4', '3', '2', '1']
 const Reviews = ({ currentPage, pageCount, totalData, setCurrentPage, averageStar = 5 }: Props) => {
   const { tour } = useSelector(tourSelector)
   const { reviewsTour } = useSelector(reviewSelector)
+  const { t } = useTranslation('detail')
 
   const { id } = useParams()
 
@@ -74,7 +75,7 @@ const Reviews = ({ currentPage, pageCount, totalData, setCurrentPage, averageSta
           <div>
             <div className="flex flex-col gap-4">
               {reviewsTour.length === 0 ? (
-                <div className="text-size-2xl mb-8">No comment!</div>
+                <div className="text-size-2xl mb-8">{t('tour.review.content')}</div>
               ) : (
                 <>
                   {[...reviewsTour].reverse().map((review) => (

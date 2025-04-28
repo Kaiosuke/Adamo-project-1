@@ -14,7 +14,7 @@
     },
     "review": {
       "title": "Đánh giá ({{count}})",
-      "base": "Dựa trên {{count}} {{count, plural, one {đánh giá} other {đánh giá}}}",
+      "base": "Dựa trên {{count}} đánh giá",
       "review": "Đánh giá",
       "textArea": "Nhập gì đó",
       "button": "Bình luận",
@@ -23,7 +23,7 @@
     "relatedTours": "Chuyến tham quan liên quan"
   },
   "hotel": {
-    "reviews": "Đánh giá",
+    "reviews": "Đánh giá ({{count}})",
     "selectRoom": {
       "title": "Chọn phòng",
       "room": "Phòng",
@@ -32,6 +32,7 @@
       "outOfRoom": "Hết phòng"
     },
     "description": {
+      "title": "Mô tả",
       "overview": "Tổng quan",
       "hotelAmenities": "Tiện nghi khách sạn",
       "rules": "Quy định",
@@ -40,9 +41,12 @@
       "map": "Bản đồ"
     },
     "review": {
+      "review": "Đánh giá ({{count}})",
       "content": "Không có bình luận",
       "button": "Bình luận",
-      "textArea": "Nhập gì đó"
+      "textArea": "Nhập gì đó",
+      "close": "Đóng",
+      "write": "Đánh giá ngay"
     },
     "recommender": "Gợi ý cho bạn"
   }
