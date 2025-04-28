@@ -6,7 +6,6 @@ import { tourSelector } from '@/redux/selectors/tourSelector'
 import { useTranslation } from 'react-i18next'
 import { IoCheckmarkSharp } from 'react-icons/io5'
 import { useSelector } from 'react-redux'
-import { Fragment } from 'react/jsx-runtime'
 
 const Description = () => {
   const { tour } = useSelector(tourSelector)
@@ -60,25 +59,7 @@ const Description = () => {
       <div>
         <h4 className="text-size-xl font-semibold text-secondary">{t('tour.description.departure')}</h4>
         <div className="flex flex-col gap-4 mt-4">
-          {tour?.description.itineraries.map(
-            (
-              itinerary: {
-                title: string
-                type?: string
-                description?: string
-                locations?: {
-                  title: string
-                  des: string
-                  duration?: string
-                }[]
-              },
-              index: number
-            ) => (
-              <Fragment key={index}>
-                <AccordionCom content={itinerary} />
-              </Fragment>
-            )
-          )}
+          {tour?.description.itineraries.map((itinerary, index) => <AccordionCom content={itinerary} key={index} />)}
         </div>
       </div>
       <div className="py-6">

@@ -6,15 +6,19 @@ import PdSub from '@/components/paddingList/PbSub'
 import { useTranslation } from 'react-i18next'
 import ContactSection from './ContactSection'
 import HeroSection from './HeroSection'
+import { useMemo } from 'react'
 
 const Contact = () => {
-  useTranslation('contact')
+  const { t } = useTranslation(['contact', 'others'])
+
+  const links = useMemo(() => [{ href: '/', title: t('others:home') }], [t])
+  const current = useMemo(() => t('others:contact'), [t])
 
   return (
     <>
       <HeroSection />
       <PdSub />
-      <BreadcrumbCom links={[{ title: 'Home', href: '/' }]} current="Contact" />
+      <BreadcrumbCom links={links} current={current} />
       <PdSub />
       <ContactSection />
       <PdMain />

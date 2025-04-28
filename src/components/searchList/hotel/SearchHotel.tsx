@@ -34,6 +34,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const from = useMemo(() => (query.from ? new Date(query.from) : addDays(new Date(), 1)), [query.from])
 
   const [date, setDate] = useState(from)
+
   const [location, setLocation] = useState<string>(query.location)
 
   const [guest, setGuest] = useState<string>(() => {
@@ -101,7 +102,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
                   onClick={handleFilter}
                 >
                   <CiSearch className="text-size-lg " />
-                  Search
+                  {t('hotel.search')}
                 </Button>
               </div>
             </div>

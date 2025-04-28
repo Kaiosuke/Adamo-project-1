@@ -76,15 +76,17 @@ const TourDetail = () => {
     }
   }, [id, dispatch, currentPage, pageCount, totalReviewHotel])
 
+  const { t } = useTranslation('others')
+
   const links = useMemo(
     () => [
-      { href: '/', title: 'Home' },
-      { href: '/tours', title: 'Tours' }
+      { href: '/', title: t('home') },
+      { href: '/tours', title: t('tour') }
     ],
-    []
+    [t]
   )
 
-  const current = useMemo(() => 'Detail Tour', [])
+  const current = useMemo(() => t('detailTour'), [t])
 
   return (
     <>

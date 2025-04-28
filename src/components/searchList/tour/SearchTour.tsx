@@ -10,7 +10,7 @@ import { tourSelector } from '@/redux/selectors/tourSelector'
 import { filterByGuest, filterByLocation, filterByType } from '@/redux/slices/toursSlice'
 import { useQuery } from '@tanstack/react-query'
 import { addDays } from 'date-fns'
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CiSearch } from 'react-icons/ci'
 import { useDispatch, useSelector } from 'react-redux'
@@ -32,9 +32,9 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
     _page: withDefault(NumberParam, 0)
   })
 
-  const from = query.from ? new Date(query.from) : addDays(new Date(), 1)
+  const from = useMemo(() => (query.from ? new Date(query.from) : addDays(new Date(), 1)), [query.from])
 
-  const [date, setDate] = useState<Date>(from)
+  const [date, setDate] = useState(from)
 
   const [locationFilter, setLocationFilter] = useState(location)
   const [typeFilter, setTypeFilter] = useState(type)
@@ -91,7 +91,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
                 placeHolder="Search Location Tour"
               />
               <div className="group bg-third lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
-                <DatePickerSingle date={date} setDate={setDate} setQuery={setQuery} />
+                <DatePickerSingle date={date} setDate={(v) => setDate(v ?? date)} setQuery={setQuery} />
               </div>
 
               <TypeCom data={types} setTypeFilter={setTypeFilter} t={t} type={type} />

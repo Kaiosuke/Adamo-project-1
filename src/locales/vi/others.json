@@ -10,7 +10,10 @@
   "showing": "Hiển thị",
   "home": "Trang chủ",
   "tour": "Tham quan",
+  "detailTour": "Chi tiết tham quan",
   "hotel": "Khách sạn",
+  "detailHotel": "Chi tiết khách sạn",
+  "contact": "Liên hệ",
   "stars": "Hạng sao khách sạn",
   "reviewScore": "Điểm đánh giá"
 }

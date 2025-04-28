@@ -10,7 +10,10 @@
   "showing": "Showing",
   "home": "Home",
   "tour": "Tour",
+  "detailTour": "Detail Tour",
   "hotel": "Hotel",
+  "detailHotel": "Detail Hotel",
+  "contact": "Contact",
   "stars": "Hotel Star",
   "reviewScore": "Review Score"
 }

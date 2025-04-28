@@ -21,8 +21,6 @@ import { Trans, useTranslation } from 'react-i18next'
 const HotelDetail = () => {
   const { id } = useParams()
 
-  useTranslation('detail')
-
   const { data: totalData } = useQuery({
     queryKey: ['reviewHotel', { id }],
     queryFn: () =>
@@ -38,15 +36,17 @@ const HotelDetail = () => {
     enabled: id !== undefined
   })
 
+  const { t } = useTranslation('others')
+
   const links = useMemo(
     () => [
-      { href: '/', title: 'Home' },
-      { href: '/hotels', title: 'Hotels' }
+      { href: '/', title: t('home') },
+      { href: '/hotels', title: t('hotel') }
     ],
-    []
+    [t]
   )
 
-  const current = useMemo(() => 'Detail Tour', [])
+  const current = useMemo(() => t('detailHotel'), [t])
 
   return (
     <>

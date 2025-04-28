@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 const contactSchema = z.object({
-  name: z.string().trim().min(4, { message: 'Your name must be greater than 4 character ' }),
+  name: z.string().trim().min(4, { message: 'Your name must be greater than 4 character' }),
   email: z.string().email({ message: 'Invalid Email' }),
   phoneNumber: z
     .string()
@@ -11,7 +11,7 @@ const contactSchema = z.object({
     .max(11, {
       message: 'Phone number must be greater than 8 character and smaller than 11 character'
     }),
-  message: z.string().min(6, { message: 'Message must be greater than 6 character ' })
+  message: z.string().min(4, { message: 'Message must be greater than 4 character' })
 })
 
 export { contactSchema }
