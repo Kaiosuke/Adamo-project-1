@@ -1,6 +1,8 @@
 import { Checkbox } from '@/components/ui/checkbox'
 import { tourSelector } from '@/redux/selectors/tourSelector'
+import { ITourState } from '@/redux/slices/toursSlice'
 import { memo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 interface Props {
@@ -9,11 +11,13 @@ interface Props {
 }
 
 const TourType = ({ typeTour, onCheckChangeType }: Props) => {
-  const { types } = useSelector(tourSelector)
+  const { types }: ITourState = useSelector(tourSelector)
+
+  const { t } = useTranslation('others')
 
   return (
     <div>
-      <span className="text-secondary font-bold">Type of Tours</span>
+      <span className="text-secondary font-bold">{t('type')}</span>
       <div className="flex flex-col">
         {types.map((v, index) => (
           <div className="mt-4 flex items-center gap-2" key={index}>

@@ -1,7 +1,9 @@
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { tourSelector } from '@/redux/selectors/tourSelector'
+import { ITourState } from '@/redux/slices/toursSlice'
 import { memo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 interface Props {
@@ -10,11 +12,13 @@ interface Props {
 }
 
 const TourDuration = ({ durationTour, onValueChange }: Props) => {
-  const { durations } = useSelector(tourSelector)
+  const { durations }: ITourState = useSelector(tourSelector)
+
+  const { t } = useTranslation('others')
 
   return (
     <div>
-      <span className="text-secondary font-bold">Duration</span>
+      <span className="text-secondary font-bold">{t('duration')}</span>
       <div className="mt-4">
         <RadioGroup value={durationTour} onValueChange={onValueChange}>
           {durations.map((v, index) => (

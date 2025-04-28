@@ -1,6 +1,7 @@
 import { Checkbox } from '@/components/ui/checkbox'
 import { RadioGroup } from '@/components/ui/radio-group'
 import { memo } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { FaStar } from 'react-icons/fa6'
 
@@ -13,9 +14,11 @@ interface Props {
 }
 
 const HotelStar = ({ onCheckChange, stars }: Props) => {
+  const { t } = useTranslation('others')
+
   return (
     <>
-      <span className="text-secondary font-bold">Hotel star</span>
+      <span className="text-secondary font-bold">{t('stars')}</span>
       <div className="mt-4">
         <RadioGroup defaultValue="option-one">
           {starList.map((v, index) => (

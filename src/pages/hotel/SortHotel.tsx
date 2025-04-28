@@ -1,9 +1,11 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { memo } from 'react'
+import i18n from '@/i18n/i18n'
+import { memo, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { toast } from 'sonner'
 import { NumberParam, StringParam, useQueryParams, withDefault } from 'use-query-params'
 
-const sortList = [
+const sortListEN = [
   {
     title: 'Price: Low to High',
     value: 'price-asc'
@@ -18,6 +20,24 @@ const sortList = [
   },
   {
     title: 'Rate: High to Low',
+    value: 'score-desc'
+  }
+]
+const sortListVI = [
+  {
+    title: 'Giá: Thấp đến Cao',
+    value: 'price-asc'
+  },
+  {
+    title: 'Giá: Cao đến Thấp',
+    value: 'price-desc'
+  },
+  {
+    title: 'Đánh giá: Thấp đến Cao',
+    value: 'score-asc'
+  },
+  {
+    title: 'Đánh giá: Cao đến Thấp',
     value: 'score-desc'
   }
 ]
@@ -42,18 +62,30 @@ const SortHotel = () => {
     })
   }
 
+  useTranslation('others')
+
+  const currentLanguage = i18n.language
+
+  const handleLanguage = useMemo(() => {
+    if (currentLanguage === 'en') {
+      return sortListEN
+    } else {
+      return sortListVI
+    }
+  }, [currentLanguage])
+
   return (
     <>
       <Select
-        defaultValue={!defaultValue.includes('undefined') ? defaultValue : sortList[0].value}
+        defaultValue={!defaultValue.includes('undefined') ? defaultValue : handleLanguage[0].value}
         onValueChange={handleSelect}
       >
         <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Theme" className="placeholder:text-primary text-primary" />
+          <SelectValue placeholder="Sort" className="placeholder:text-primary text-primary" />
         </SelectTrigger>
         <SelectContent>
           <SelectContent>
-            {sortList.map((v, index) => (
+            {handleLanguage.map((v, index) => (
               <SelectItem value={v.value} key={index}>
                 {v.title}
               </SelectItem>

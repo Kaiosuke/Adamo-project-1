@@ -16,7 +16,7 @@ import { useQuery } from '@tanstack/react-query'
 import { NumberParam, StringParam, useQueryParams, withDefault } from 'use-query-params'
 
 const Hotel = () => {
-  const { t } = useTranslation('hotel')
+  const { t } = useTranslation(['hotel', 'others'])
 
   const [query] = useQueryParams({
     _page: withDefault(NumberParam, 1),
@@ -45,8 +45,8 @@ const Hotel = () => {
 
   const totalData = data?.totalData
 
-  const links = useMemo(() => [{ href: '/', title: 'Home' }], [])
-  const current = useMemo(() => 'Hotel', [])
+  const links = useMemo(() => [{ href: '/', title: t('others:home') }], [t])
+  const current = useMemo(() => t('others:hotel'), [t])
 
   return (
     <>

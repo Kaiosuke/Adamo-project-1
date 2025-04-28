@@ -1,4 +1,4 @@
-import { Trans } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 
 import { sendMailSchema } from '@/schemas/authSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -38,6 +38,8 @@ const ContactSection = () => {
     mutate({ ...values })
   }, 300)
 
+  const { t } = useTranslation('others')
+
   return (
     <section className="main-container animate-fade-down">
       <div className="lg:flex lg:justify-between">
@@ -75,7 +77,7 @@ const ContactSection = () => {
                 type="submit"
                 className="w-[100px] h-[48px] bg-secondary text-third flex items-center justify-center text-sm cursor-pointer hover:bg-secondary/80"
               >
-                Send
+                {t('send')}
               </button>
             </div>
           </form>

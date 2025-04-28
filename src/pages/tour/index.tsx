@@ -12,10 +12,10 @@ import PdMain from '@/components/paddingList/PbMain'
 import PdSub from '@/components/paddingList/PbSub'
 
 const Tour = () => {
-  const { t } = useTranslation('tour')
+  const { t } = useTranslation(['tour', 'others'])
 
-  const links = useMemo(() => [{ title: 'Home', href: '/' }], [])
-  const current = useMemo(() => 'Tour', [])
+  const links = useMemo(() => [{ title: t('others:home'), href: '/' }], [t])
+  const current = useMemo(() => t('others:tour'), [t])
 
   return (
     <>

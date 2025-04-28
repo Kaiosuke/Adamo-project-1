@@ -1,7 +1,7 @@
 import { IBooking, IBookingHotel } from '@/interfaces/booking'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-interface IStateBooking {
+export interface IStateBooking {
   loading: boolean
   error: undefined | string
   booking: IBooking | undefined

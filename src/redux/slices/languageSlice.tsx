@@ -6,7 +6,7 @@ export enum Lg {
   vi = 'vi'
 }
 
-interface IStateLanguage {
+export interface IStateLanguage {
   lg: Lg
 }
 

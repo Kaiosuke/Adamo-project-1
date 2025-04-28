@@ -12,6 +12,8 @@ import CHECKOUT_EN from '@/locales/en/checkout.json'
 import HEADER_EN from '@/locales/en/header.json'
 import DETAIL_EN from '@/locales/en/detail.json'
 import BILL_EN from '@/locales/en/bill.json'
+import THANKS_EN from '@/locales/en/thanks.json'
+import OTHERS_EN from '@/locales/en/others.json'
 
 import HOME_VI from '@/locales/vi/home.json'
 import ABOUT_VI from '@/locales/vi/about.json'
@@ -24,6 +26,8 @@ import CHECKOUT_VI from '@/locales/vi/checkout.json'
 import HEADER_VI from '@/locales/vi/header.json'
 import DETAIL_VI from '@/locales/vi/detail.json'
 import BILL_VI from '@/locales/vi/bill.json'
+import THANKS_VI from '@/locales/vi/thanks.json'
+import OTHERS_VI from '@/locales/vi/others.json'
 
 export const resources = {
   en: {
@@ -37,7 +41,9 @@ export const resources = {
     checkout: CHECKOUT_EN,
     header: HEADER_EN,
     detail: DETAIL_EN,
-    bill: BILL_EN
+    bill: BILL_EN,
+    thanks: THANKS_EN,
+    others: OTHERS_EN
   },
   vi: {
     home: HOME_VI,
@@ -50,7 +56,9 @@ export const resources = {
     checkout: CHECKOUT_VI,
     header: HEADER_VI,
     detail: DETAIL_VI,
-    bill: BILL_VI
+    bill: BILL_VI,
+    thanks: THANKS_VI,
+    others: OTHERS_VI
   }
 }
 
@@ -61,7 +69,7 @@ export const locales = {
 
 export const defaultNS = 'home'
 
-const ns = ['home', 'about', 'tour', 'hotel', 'contact', 'search', 'header', 'detail', 'bill']
+const ns = ['home', 'about', 'tour', 'hotel', 'contact', 'search', 'header', 'detail', 'bill', 'thanks', 'others']
 
 i18n.use(initReactI18next).init({
   resources,

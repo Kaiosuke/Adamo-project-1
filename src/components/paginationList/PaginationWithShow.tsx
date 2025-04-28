@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go'
 import ReactPaginate from 'react-paginate'
 
@@ -10,11 +11,13 @@ type PaginationProps = {
 }
 
 const PaginationWithShow = ({ currentPage, pageCount, totalData, items, onPageChange }: PaginationProps) => {
+  const { t } = useTranslation('others')
+
   return (
     <div className="lg:pt-16 md:pt-10 pt-6 flex items-center justify-end main-container">
       <div className="flex md:w-2/3 justify-between w-full sm:flex-row flex-col items-center">
         <div className="flex items-center gap-4 text-four">
-          <span>Showing</span>
+          <span>{t('showing')}</span>
           <span>
             {Math.ceil(totalData / items) < 1 ? (
               '0'

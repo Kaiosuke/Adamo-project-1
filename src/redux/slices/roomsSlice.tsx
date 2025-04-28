@@ -15,7 +15,7 @@ export interface IExtraBed {
   quantity: number
 }
 
-interface IStateRoom {
+export interface IStateRoom {
   loading: boolean
   error: undefined | string
   rooms: { data: IRoomWithQuantity; quantity: number }[]

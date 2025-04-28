@@ -5,7 +5,7 @@ import SkeletonData from '@/components/LoadingList/SkeletonData'
 import { IHotel } from '@/interfaces/hotel'
 import { useQuery } from '@tanstack/react-query'
 import { memo } from 'react'
-import { Trans } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import FilterHotel from './FilterHotel'
 import SortHotel from './SortHotel'
 
@@ -24,6 +24,8 @@ const HotelSection = ({ isLoading, data }: Props) => {
       })()
     }
   })
+
+  useTranslation()
 
   return (
     <section className="main-container animate-fade-down">

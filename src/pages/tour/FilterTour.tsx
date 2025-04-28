@@ -17,6 +17,7 @@ import TourBtn from './TourBtn'
 import TourDuration from './TourDuration'
 import TourType from './TourType'
 import SliderCom from '@/components/sliders/SliderCom'
+import { useTranslation } from 'react-i18next'
 
 const FilterTour = () => {
   const { filter } = useSelector(tourSelector)
@@ -74,20 +75,22 @@ const FilterTour = () => {
     }
   }, [])
 
+  const { t } = useTranslation('others')
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <ButtonFeature content="FILTER" />
+        <ButtonFeature content={t('filter')} />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="mt-4 rounded-none w-[351px] py-4 px-4">
         <DropdownMenuLabel className="flex justify-between items-center px-0">
-          <span className="text-[#03387D] text-size-lg font-semibold">FILTER:</span>
+          <span className="text-[#03387D] text-size-lg font-semibold">{t('filter')}:</span>
           <span className="text-five cursor-pointer hover:underline" onClick={handleResetFilter}>
-            CLEAR
+            {t('clear')}
           </span>
         </DropdownMenuLabel>
         <div>
-          <span className="text-secondary font-bold">Budget:</span>
+          <span className="text-secondary font-bold"> {t('budget')}:</span>
           <div className="lg:mt-10 mt-6">
             <SliderCom prices={prices} max={600} onValueChange={handleOnValueChange} />
           </div>

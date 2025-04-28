@@ -1,13 +1,15 @@
 import ButtonFeature from '@/components/ButtonFeature'
 import Tour from '@/components/Tour'
 import { ITour } from '@/interfaces/tour'
-import { Trans } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 const AttractiveSection = ({ data }: { data: ITour[] }) => {
+  const { t } = useTranslation('others')
+
   return (
     <section className="main-container animate-fade-down">
       <div className="flex">
@@ -16,7 +18,7 @@ const AttractiveSection = ({ data }: { data: ITour[] }) => {
         </h3>
         <div className="ml-auto">
           <Link to="/tours">
-            <ButtonFeature content="View All" />
+            <ButtonFeature content={t('viewAll')} />
           </Link>
         </div>
       </div>
