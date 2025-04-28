@@ -3,6 +3,57 @@
     "home": "Trang chủ",
     "title": "Xác nhận đặt tour",
     "travel": "Thông tin khách du lịch",
-    "description": "Chúng tôi cần thông tin này để xác nhận tour hoặc hoạt động của bạn"
+    "description": "Chúng tôi cần thông tin để xác nhận tour hoặc hoạt động của bạn",
+    "travelDetail": {
+      "title": "Thông tin khách du lịch",
+      "firstName": "Tên",
+      "lastName": "Họ",
+      "email": "Email",
+      "phone": "Số điện thoại"
+    },
+    "address": {
+      "address": "Địa chỉ",
+      "city": "Thành phố",
+      "state": "Bang/Tỉnh/Vùng",
+      "zipCode": "Mã bưu điện",
+      "country": "Đất nước",
+      "requirement": "Yêu cầu đặc biệt"
+    },
+    "payment": {
+      "title": "Phương thức thanh toán",
+      "description": "Thanh toán an toàn — chúng tôi sử dụng mã hóa SSL để bảo vệ dữ liệu của bạn",
+      "card": "Thẻ tín dụng",
+      "paypal": "Paypal"
+    },
+    "button": "Hoàn tất đặt tour"
+  },
+
+  "hotel": {
+    "home": "Trang chủ",
+    "title": "Xác nhận đặt tour",
+    "travel": "Thông tin khách du lịch",
+    "description": "Chúng tôi cần thông tin để xác nhận tour hoặc hoạt động của bạn",
+    "travelDetail": {
+      "title": "Thông tin khách du lịch",
+      "firstName": "Tên",
+      "lastName": "Họ",
+      "email": "Email",
+      "phone": "Số điện thoại"
+    },
+    "address": {
+      "address": "Địa chỉ",
+      "city": "Thành phố",
+      "state": "Bang/Tỉnh/Vùng",
+      "zipCode": "Mã bưu điện",
+      "country": "Đất nước",
+      "requirement": "Yêu cầu đặc biệt"
+    },
+    "payment": {
+      "title": "Phương thức thanh toán",
+      "description": "Thanh toán an toàn — chúng tôi sử dụng mã hóa SSL để bảo vệ dữ liệu của bạn",
+      "card": "Thẻ tín dụng",
+      "paypal": "Paypal"
+    },
+    "button": "Hoàn tất đặt tour"
   }
 }

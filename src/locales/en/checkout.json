@@ -3,6 +3,56 @@
     "home": "Home",
     "title": "Booking Submission",
     "travel": "Traveler Details",
-    "description": "Information we need to confirm your tour or activity"
+    "description": "Information we need to confirm your tour or activity",
+    "travelDetail": {
+      "title": "Traveler Details",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone Number"
+    },
+    "address": {
+      "address": "Address",
+      "city": "City",
+      "state": "State/Province/Region",
+      "zipCode": "Zip Code/ Postal Code",
+      "country": "Country",
+      "requirement": "Special Requirement"
+    },
+    "payment": {
+      "title": "Payment Method",
+      "description": "Pay securely—we use SSL encryption to keep your data safe",
+      "card": "Credit Card",
+      "paypal": "Paypal"
+    },
+    "button": "Complete Booking"
+  },
+  "hotel": {
+    "home": "Home",
+    "title": "Booking Submission",
+    "travel": "Traveler Details",
+    "description": "Information we need to confirm your tour or activity",
+    "travelDetail": {
+      "title": "Traveler Details",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone Number"
+    },
+    "address": {
+      "address": "Address",
+      "city": "City",
+      "state": "State/Province/Region",
+      "zipCode": "Zip Code/ Postal Code",
+      "country": "Country",
+      "requirement": "Special Requirement"
+    },
+    "payment": {
+      "title": "Payment Method",
+      "description": "Pay securely—we use SSL encryption to keep your data safe",
+      "card": "Credit Card",
+      "paypal": "Paypal"
+    },
+    "button": "Complete Booking"
   }
 }

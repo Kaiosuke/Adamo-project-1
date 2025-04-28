@@ -14,6 +14,7 @@ import { useDebouncedCallback } from 'use-debounce'
 import { StringParam, useQueryParams, withDefault } from 'use-query-params'
 import { z } from 'zod'
 import PayMethod from '../../components/PayMethod'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   booking: IBooking
@@ -85,32 +86,34 @@ const FormInfoUser = ({ booking, discount }: Props) => {
     })
   }, 300)
 
+  const { t } = useTranslation('checkout')
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mt-2">
-        <h3 className="text-size-xl">Traveler Details</h3>
+        <h3 className="text-size-xl">{t('tour.travelDetail.title')}</h3>
         <div className="flex flex-col gap-6">
           <div className="grid grid-cols-2 xl:gap-8 gap-6">
             <FormComp
               form={form}
-              title="First Name"
+              title={t('tour.travelDetail.firstName')}
               name="firstName"
-              placeholder="First Name"
+              placeholder={t('tour.travelDetail.firstName')}
               isImportant
               setQuery={setQuery}
             />
             <FormComp
               form={form}
-              title="Last Name"
+              title={t('tour.travelDetail.lastName')}
               name="lastName"
-              placeholder="Last Name"
+              placeholder={t('tour.travelDetail.lastName')}
               isImportant
               setQuery={setQuery}
             />
 
             <FormComp
               form={form}
-              title="Email"
+              title={t('tour.travelDetail.email')}
               name="email"
               placeholder="email@domain.com"
               isImportant
@@ -118,42 +121,60 @@ const FormInfoUser = ({ booking, discount }: Props) => {
             />
             <FormComp
               form={form}
-              title="Phone Number"
+              title={t('tour.travelDetail.phone')}
               name="phoneNumber"
-              placeholder="Your Phone"
+              placeholder={t('tour.travelDetail.phone')}
               isImportant
               setQuery={setQuery}
             />
           </div>
         </div>
 
-        <h3 className="text-size-xl">Address</h3>
+        <h3 className="text-size-xl">{t('tour.address.address')}</h3>
         <div className="flex flex-col gap-6">
-          <FormComp form={form} title="Your Address" placeholder="Your Address" name="address" setQuery={setQuery} />
+          <FormComp
+            form={form}
+            title={t('tour.address.address')}
+            placeholder={t('tour.address.address')}
+            name="address"
+            setQuery={setQuery}
+          />
           <div className="grid grid-cols-2 xl:gap-8 gap-6">
-            <FormComp form={form} title="City" placeholder="Your City" name="city" setQuery={setQuery} />
             <FormComp
               form={form}
-              title="State/Province/Region"
-              placeholder="Your State/Province/Region"
+              title={t('tour.address.city')}
+              placeholder={t('tour.address.city')}
+              name="city"
+              setQuery={setQuery}
+            />
+            <FormComp
+              form={form}
+              title={t('tour.address.state')}
+              placeholder={t('tour.address.state')}
               name="state"
               setQuery={setQuery}
             />
             <FormComp
               form={form}
-              title="Zip Code/ Postal Code"
-              placeholder="Zip Code/ Postal Code"
+              title={t('tour.address.zipCode')}
+              placeholder={t('tour.address.zipCode')}
               name="zipCode"
               setQuery={setQuery}
             />
-            <FormComp form={form} title="Country" placeholder="Your Country" name="country" setQuery={setQuery} />
+            <FormComp
+              form={form}
+              title={t('tour.address.country')}
+              placeholder={t('tour.address.country')}
+              name="country"
+              setQuery={setQuery}
+            />
           </div>
         </div>
         <div className="">
           <FormComp
             form={form}
-            title="Special Requirement"
-            placeholder="Special Requirement"
+            title={t('tour.address.requirement')}
+            placeholder={t('tour.address.requirement')}
             name="requirement"
             setQuery={setQuery}
             isArea
@@ -161,7 +182,7 @@ const FormInfoUser = ({ booking, discount }: Props) => {
         </div>
         <PayMethod form={form} name="payMethod" setQuery={setQuery} />
         <Button type="submit" className="lg:w-full w-fit px-10">
-          Complete Booking
+          {t('tour.button')}
         </Button>
       </form>
     </Form>

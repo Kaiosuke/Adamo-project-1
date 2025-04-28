@@ -7,6 +7,7 @@ import { IBooking } from '@/interfaces/booking'
 import { ITour } from '@/interfaces/tour'
 import { memo, useMemo } from 'react'
 import Code from '../../Code'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   tour: ITour
@@ -25,6 +26,8 @@ const BillTourCheckout = ({ booking, tour, setDiscount, discount }: Props) => {
     return discount ? booking.totalPrice - booking.totalPrice * discount : booking.totalPrice
   }, [discount, booking])
 
+  const { t } = useTranslation('bill')
+
   return (
     <>
       <div className="bg-seven w-[380px]">
@@ -36,11 +39,11 @@ const BillTourCheckout = ({ booking, tour, setDiscount, discount }: Props) => {
           </div>
           <div className="flex gap-10">
             <div>
-              <div className="text-four">Duration:</div>
+              <div className="text-four">{t('billCheckOutTour.duration')}:</div>
               <div className="font-semibold text-secondary">{tour.time}</div>
             </div>
             <div>
-              <div className="text-four">Tour type:</div>
+              <div className="text-four">{t('billCheckOutTour.tourType')}:</div>
               <div className="font-semibold text-secondary">{tour.type}</div>
             </div>
           </div>
@@ -59,7 +62,7 @@ const BillTourCheckout = ({ booking, tour, setDiscount, discount }: Props) => {
           <Code setDiscount={setDiscount} />
         </div>
         <div className="flex justify-between items-center bg-secondary text-third text-size-xl lg:p-8 p-4">
-          <span>Total</span>
+          <span>{t('billCheckOutTour.total')}</span>
           <span>{handleFormatMoney(handleDisCount)}</span>
         </div>
       </div>

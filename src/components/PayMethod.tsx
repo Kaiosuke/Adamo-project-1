@@ -5,6 +5,7 @@ import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { useCallback } from 'react'
 import { ControllerRenderProps, FieldValues, Path, UseFormReturn } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 
 interface Props<T extends FieldValues> {
   form: UseFormReturn<T>
@@ -21,10 +22,12 @@ const PayMethod = <T extends FieldValues>({ form, name, setQuery }: Props<T>) =>
     [name, setQuery]
   )
 
+  const { t } = useTranslation('checkout')
+
   return (
     <>
-      <h3 className="text-size-xl">Payment Method</h3>
-      <p className="text-four">Pay securely—we use SSL encryption to keep your data safe</p>
+      <h3 className="text-size-xl">{t('tour.payment.title')}</h3>
+      <p className="text-four">{t('tour.payment.description')}</p>
       <div className="mt-6">
         <FormField
           control={form.control}
@@ -36,14 +39,14 @@ const PayMethod = <T extends FieldValues>({ form, name, setQuery }: Props<T>) =>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="card" id="r1" className=" w-[20px] h-[20px] " />
                     <Label htmlFor="r1" className="text-size-base font-semibold flex items-center cursor-pointer">
-                      <div className="w-[120px]">Credit Card</div>
+                      <div className="w-[120px]">{t('tour.payment.card')}</div>
                       <img src={Card} />
                     </Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="paypal" id="r2" className=" w-[20px] h-[20px] " />
                     <Label htmlFor="r2" className="text-size-base font-semibold flex items-center cursor-pointer">
-                      <div className="w-[120px]">Paypal</div>
+                      <div className="w-[120px]">{t('tour.payment.paypal')}</div>
                       <img src={Paypal} />
                     </Label>
                   </div>
