@@ -176,6 +176,22 @@
 }
 
 @layer utilities {
+  /* Background animated */
+
+  .bg-animate {
+    color: transparent;
+    animation: back 20s linear infinite;
+    -webkit-text-stroke: 1px #fff;
+    -webkit-background-clip: text;
+    background-image: url('./assets/images/image.png');
+    background-position: 0 0;
+  }
+
+  @keyframes back {
+    100% {
+      background-position: 200rem 0;
+    }
+  }
   /* Container */
   .main-container {
     @apply max-w-[1164px] m-auto w-full xl:px-0 lg:px-18 md:px-12 sm:px-8 px-4;

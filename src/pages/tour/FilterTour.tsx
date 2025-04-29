@@ -92,7 +92,7 @@ const FilterTour = () => {
         <div>
           <span className="text-secondary font-bold"> {t('budget')}:</span>
           <div className="lg:mt-10 mt-6">
-            <SliderCom prices={prices} max={600} onValueChange={handleOnValueChange} />
+            <SliderCom prices={prices} max={300} onValueChange={handleOnValueChange} />
           </div>
         </div>
         <div className="str-line" />

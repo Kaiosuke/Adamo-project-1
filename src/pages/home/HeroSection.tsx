@@ -17,7 +17,7 @@ const HeroSection = () => {
             <p className="text-size-xl text-banner">
               <Trans i18nKey={'banner.title'} />
             </p>
-            <h1 className="text-size-6xl text-third md:pt-4 pt-2 lg:w-[75%] md:w-[90%] w-[80%]">
+            <h1 className="text-size-6xl text-third md:pt-4 pt-2 lg:w-[75%] md:w-[90%] w-[80%] bg-animate">
               <Trans i18nKey={'banner.description'} />
             </h1>
           </div>

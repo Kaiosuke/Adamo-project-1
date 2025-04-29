@@ -68,7 +68,7 @@ const Tour = ({ tour }: { tour: ITour }) => {
               <CiLocationOn className="text-size-xl text-primary" />
               <span className="text-four">{tour.location}</span>
             </div>
-            <h5 className="text-size-lg font-medium pt-2 hover:underline h-[40px] leading-1">
+            <h5 className="text-size-lg font-medium pt-2 hover:underline h-[40px] leading-1 text-left">
               <Link to={`/tour-detail/${tour.id}?from=${from}&duration=${tour.duration}`}>{tour.title}</Link>
             </h5>
             <div className="flex items-center justify-between pt-6">

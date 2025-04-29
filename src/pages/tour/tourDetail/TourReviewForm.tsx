@@ -15,6 +15,8 @@ import { useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { authSelector } from '@/redux/selectors/authSelector'
 
 interface Props {
   id: string
@@ -23,6 +25,7 @@ interface Props {
 
 const TourReviewForm = ({ id, setCurrentPage }: Props) => {
   const dispatch = useAppDispatch()
+  const { currentUser } = useSelector(authSelector)
 
   const form = useForm<z.infer<typeof commentSchema>>({
     resolver: zodResolver(commentSchema),
@@ -48,6 +51,14 @@ const TourReviewForm = ({ id, setCurrentPage }: Props) => {
           des: values.message
         }
         try {
+          if (!currentUser) {
+            return toast.error('Please Login to comment', {
+              style: {
+                backgroundColor: '#FF0B55',
+                color: '#ffffff'
+              }
+            })
+          }
           await dispatch(addReviewTour({ data: data })).unwrap()
           toast.success('Comment successfully!!', {
             style: {

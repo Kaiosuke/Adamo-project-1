@@ -7,7 +7,7 @@ interface Props {
   onValueChange: (_v: number[]) => void
 }
 
-const SliderCom = ({ prices, onValueChange, max = 1200 }: Props) => {
+const SliderCom = ({ prices, onValueChange, max = 300 }: Props) => {
   const [livePrice, setLivePrice] = useState(prices)
 
   return (

@@ -21,9 +21,12 @@ import { filterByGuest } from '@/redux/slices/toursSlice'
 import { useNavigate } from 'react-router'
 import { toast } from 'sonner'
 import { StringParam, useQueryParams } from 'use-query-params'
+import { authSelector } from '@/redux/selectors/authSelector'
 
 const BillTourDetail = () => {
   const { tour } = useSelector(tourSelector)
+
+  const { currentUser } = useSelector(authSelector)
 
   const { t } = useTranslation(['search', 'bill'])
 
@@ -73,6 +76,15 @@ const BillTourDetail = () => {
         tourId: tour.id,
         totalPrice: totalPrice,
         guests: values.guests
+      }
+
+      if (!currentUser) {
+        return toast.error('Please Login to booking', {
+          style: {
+            backgroundColor: '#FF0B55',
+            color: '#ffffff'
+          }
+        })
       }
 
       disPatch(addBooking(data))

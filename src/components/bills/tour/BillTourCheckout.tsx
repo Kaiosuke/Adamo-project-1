@@ -8,6 +8,9 @@ import { ITour } from '@/interfaces/tour'
 import { memo, useMemo } from 'react'
 import Code from '../../Code'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { authSelector } from '@/redux/selectors/authSelector'
+import { useNavigate } from 'react-router'
 
 interface Props {
   tour: ITour
@@ -17,6 +20,7 @@ interface Props {
 }
 
 const BillTourCheckout = ({ booking, tour, setDiscount, discount }: Props) => {
+  const { currentUser } = useSelector(authSelector)
   const handleGetDay = (v: string) => {
     const time = new Date(v)
     return time.toLocaleDateString('vi-VN')
@@ -27,6 +31,12 @@ const BillTourCheckout = ({ booking, tour, setDiscount, discount }: Props) => {
   }, [discount, booking])
 
   const { t } = useTranslation('bill')
+
+  const navigate = useNavigate()
+
+  if (!currentUser) {
+    navigate('/')
+  }
 
   return (
     <>

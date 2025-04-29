@@ -33,7 +33,7 @@ const initialState: ITourState = {
     location: '',
     type: [],
     guest: '',
-    price: [0, 1200],
+    price: [0, 300],
     duration: ''
   }
 }
