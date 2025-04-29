@@ -1,6 +1,6 @@
-import Home19 from '@/assets/images/home 19.png'
-import Home18 from '@/assets/images/home-18.png'
-import Quote from '@/assets/images/quote.png'
+import Home19 from '@assets/images/home 19.png'
+import Home18 from '@assets/images/home-18.png'
+import Quote from '@assets/images/quote.png'
 import { Trans } from 'react-i18next'
 
 const IntroduceSection = () => {

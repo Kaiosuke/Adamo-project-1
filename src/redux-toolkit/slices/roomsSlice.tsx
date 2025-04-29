@@ -1,4 +1,4 @@
-import { IRoom, IRoomWithQuantity } from '@/interfaces/room'
+import { IRoom, IRoomWithQuantity } from '@interfaces/room'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export interface IBreakfast {

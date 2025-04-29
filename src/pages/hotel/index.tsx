@@ -1,16 +1,16 @@
-import HotelImg from '@/assets/images/hotel.png'
-import BreadcrumbCom from '@/components/Breadcrumb'
-import HeroSectionCom from '@/components/HeroSectionCom'
+import HotelImg from '@assets/images/hotel.png'
+import BreadcrumbCom from '@components/Breadcrumb'
+import HeroSectionCom from '@components/HeroSectionCom'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import HotelSection from './HotelSection'
 
-import PdMain from '@/components/paddingList/PbMain'
-import PdSub from '@/components/paddingList/PbSub'
-import SearchHotel from '@/components/searchList/hotel/SearchHotel'
+import PdMain from '@components/paddingList/PbMain'
+import PdSub from '@components/paddingList/PbSub'
+import SearchHotel from '@components/searchList/hotel/SearchHotel'
 import HotelPagination from './HotelPagination'
 
-import { getHotels } from '@/api/hotelRequest'
+import { getHotels } from '@api/hotelRequest'
 
 import { useQuery } from '@tanstack/react-query'
 import { NumberParam, StringParam, useQueryParams, withDefault } from 'use-query-params'

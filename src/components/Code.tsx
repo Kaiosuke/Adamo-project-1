@@ -1,5 +1,5 @@
-import { getCode } from '@/api/codeRequest'
-import { Input } from '@/components/ui/input'
+import { getCode } from '@api/codeRequest'
+import { Input } from '@components/ui/input'
 import { useMutation } from '@tanstack/react-query'
 import { useState } from 'react'
 import { toast } from 'sonner'

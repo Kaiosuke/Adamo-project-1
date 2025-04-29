@@ -1,4 +1,4 @@
-import { IHotel } from '@/interfaces/hotel'
+import { IHotel } from '@interfaces/hotel'
 import { instanceLocal } from './instance'
 
 const getFiltersHotel = async (): Promise<{

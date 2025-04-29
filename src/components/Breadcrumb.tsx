@@ -1,6 +1,6 @@
 import { Dot } from 'lucide-react'
 
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage } from '@/components/ui/breadcrumb'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage } from '@components/ui/breadcrumb'
 import { memo } from 'react'
 
 interface BreadcrumbIT {

@@ -1,5 +1,5 @@
-import { changePassword, forgotPassword, login, loginByFb, logout, register } from '@/api/authRequest'
-import { IAuth } from '@/interfaces/auth'
+import { changePassword, forgotPassword, login, loginByFb, logout, register } from '@api/authRequest'
+import { IAuth } from '@interfaces/auth'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export interface IStateAuth {

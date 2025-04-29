@@ -1,6 +1,6 @@
-import ButtonFeature from '@/components/ButtonFeature'
-import LoadedImage from '@/components/LoadingList/LoadedImage'
-import { ITour } from '@/interfaces/tour'
+import ButtonFeature from '@components/ButtonFeature'
+import LoadedImage from '@components/LoadingList/LoadedImage'
+import { ITour } from '@interfaces/tour'
 
 import { Trans, useTranslation } from 'react-i18next'
 import { Link } from 'react-router'

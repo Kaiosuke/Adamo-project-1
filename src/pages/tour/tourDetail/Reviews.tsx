@@ -1,17 +1,17 @@
-import ReviewTour from '@/components/reviews/ReviewTour'
-import { reviewSelector } from '@/redux-toolkit/selectors/reviewSelector'
-import { tourSelector } from '@/redux-toolkit/selectors/tourSelector'
+import ReviewTour from '@components/reviews/ReviewTour'
+import { reviewSelector } from '@redux-toolkit/selectors/reviewSelector'
+import { tourSelector } from '@redux-toolkit/selectors/tourSelector'
 import { FaStar } from 'react-icons/fa6'
 import { useSelector } from 'react-redux'
 
-import { getAllReviewTour } from '@/api/reviewRequest'
+import { getAllReviewTour } from '@api/reviewRequest'
 import { useQuery } from '@tanstack/react-query'
 import { useParams } from 'react-router'
 import TourReviewForm from './TourReviewForm'
 import Star from './Star'
-import Pagination from '@/components/paginationList/Pagination'
+import Pagination from '@components/paginationList/Pagination'
 import { Trans, useTranslation } from 'react-i18next'
-import { authSelector } from '@/redux-toolkit/selectors/authSelector'
+import { authSelector } from '@redux-toolkit/selectors/authSelector'
 
 interface Props {
   currentPage: number

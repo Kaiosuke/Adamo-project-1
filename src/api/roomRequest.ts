@@ -1,4 +1,4 @@
-import { IRoom } from '@/interfaces/room'
+import { IRoom } from '@interfaces/room'
 import { instanceLocal } from './instance'
 
 const getAllRoom = async (): Promise<IRoom[]> => {

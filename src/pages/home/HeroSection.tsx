@@ -1,6 +1,6 @@
-import Hero from '@/assets/images/hero.png'
-import SearchTourHome from '@/components/searchList/SearchTourHome'
-import { Dialog, DialogContent, DialogHeader, DialogTrigger } from '@/components/ui/dialog'
+import Hero from '@assets/images/hero.png'
+import SearchTourHome from '@components/searchList/SearchTourHome'
+import { Dialog, DialogContent, DialogHeader, DialogTrigger } from '@components/ui/dialog'
 
 import { DialogTitle } from '@radix-ui/react-dialog'
 import { Trans, useTranslation } from 'react-i18next'

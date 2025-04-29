@@ -1,8 +1,8 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '@components/ui/button'
 import { CiSearch } from 'react-icons/ci'
 
-import { getFiltersHotel, getLocationHotel } from '@/api/hotelRequest'
-import DatePickerSingle from '@/components/DatePickerSingle'
+import { getFiltersHotel, getLocationHotel } from '@api/hotelRequest'
+import DatePickerSingle from '@components/DatePickerSingle'
 import { useQuery } from '@tanstack/react-query'
 import { addDays } from 'date-fns'
 import { memo, useCallback, useMemo, useState } from 'react'
@@ -11,9 +11,9 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 import { NumberParam, StringParam, useQueryParams, withDefault } from 'use-query-params'
 
-import GuestCom from '@/components/GuestCom'
-import InputSearch from '@/components/InputSearch'
-import LoadingSearch from '@/components/LoadingList/LoadingSearch'
+import GuestCom from '@components/GuestCom'
+import InputSearch from '@components/InputSearch'
+import LoadingSearch from '@components/LoadingList/LoadingSearch'
 import { useDebounce } from 'use-debounce'
 
 const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {

@@ -1,4 +1,4 @@
-import Hero from '@/assets/images/hero.png'
+import Hero from '@assets/images/hero.png'
 import { Trans } from 'react-i18next'
 
 const HeroSection = () => {

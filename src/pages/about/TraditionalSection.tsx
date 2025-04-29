@@ -1,6 +1,6 @@
-import About1 from '@/assets/images/about 1.png'
-import About2 from '@/assets/images/about-2.png'
-import Com from '@/assets/images/com.png'
+import About1 from '@assets/images/about 1.png'
+import About2 from '@assets/images/about-2.png'
+import Com from '@assets/images/com.png'
 import { Trans } from 'react-i18next'
 
 const TraditionalSection = () => {

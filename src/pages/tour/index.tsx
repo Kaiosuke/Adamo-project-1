@@ -1,15 +1,15 @@
-import BreadcrumbCom from '@/components/Breadcrumb'
+import BreadcrumbCom from '@components/Breadcrumb'
 
 import AttractiveTourSection from './AttractiveTourSection'
 
-import TourImg from '@/assets/images/hero-tour.png'
-import HeroSectionCom from '@/components/HeroSectionCom'
+import TourImg from '@assets/images/hero-tour.png'
+import HeroSectionCom from '@components/HeroSectionCom'
 
-import SearchTour from '@/components/searchList/tour/SearchTour'
+import SearchTour from '@components/searchList/tour/SearchTour'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import PdMain from '@/components/paddingList/PbMain'
-import PdSub from '@/components/paddingList/PbSub'
+import PdMain from '@components/paddingList/PbMain'
+import PdSub from '@components/paddingList/PbSub'
 
 const Tour = () => {
   const { t } = useTranslation(['tour', 'others'])

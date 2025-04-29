@@ -1,4 +1,4 @@
-import { FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
+import { FormControl, FormField, FormItem, FormMessage } from '@components/ui/form'
 import { FieldValues, Path, UseFormReturn } from 'react-hook-form'
 import { Input } from '../ui/input'
 import { Textarea } from '../ui/textarea'

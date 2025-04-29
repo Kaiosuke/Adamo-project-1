@@ -1,4 +1,4 @@
-import Pagination from '@/components/paginationList/Pagination'
+import Pagination from '@components/paginationList/Pagination'
 import { memo } from 'react'
 
 interface Props {

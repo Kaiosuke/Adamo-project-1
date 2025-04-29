@@ -1,4 +1,4 @@
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@components/ui/select'
 import { TFunction } from 'i18next'
 import { memo, SetStateAction } from 'react'
 import { CiFlag1 } from 'react-icons/ci'

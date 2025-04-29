@@ -1,4 +1,4 @@
-import OurOffice from '@/assets/images/our office.png'
+import OurOffice from '@assets/images/our office.png'
 import { IoHomeOutline } from 'react-icons/io5'
 
 const Office = () => {

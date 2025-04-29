@@ -1,4 +1,4 @@
-import { Dialog, DialogContent, DialogHeader, DialogTrigger } from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogHeader, DialogTrigger } from '@components/ui/dialog'
 import { DialogTitle } from '@radix-ui/react-dialog'
 
 import React from 'react'

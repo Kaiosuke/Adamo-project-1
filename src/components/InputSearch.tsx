@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 
-import { Input } from '@/components/ui/input'
+import { Input } from '@components/ui/input'
 
-import { IHotel } from '@/interfaces/hotel'
-import { ITour } from '@/interfaces/tour'
+import { IHotel } from '@interfaces/hotel'
+import { ITour } from '@interfaces/tour'
 import { FaLocationDot } from 'react-icons/fa6'
 
 interface Props {

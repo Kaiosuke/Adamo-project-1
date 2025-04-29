@@ -1,6 +1,6 @@
-import ImageSign from '@/assets/images/sign.png'
-import i18n from '@/i18n/i18n'
-import { languageSelector } from '@/redux-toolkit/selectors/languageSelector'
+import ImageSign from '@assets/images/sign.png'
+import i18n from '@i18n/i18n'
+import { languageSelector } from '@redux-toolkit/selectors/languageSelector'
 
 import { useEffect } from 'react'
 import { FaArrowLeftLong } from 'react-icons/fa6'

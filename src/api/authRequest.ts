@@ -1,5 +1,5 @@
-import { auth, facebookProvider } from '@/firebase/firebase'
-import { IAuth } from '@/interfaces/auth'
+import { auth, facebookProvider } from '@firebase/firebase'
+import { IAuth } from '@interfaces/auth'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { FirebaseError } from 'firebase/app'
 import {

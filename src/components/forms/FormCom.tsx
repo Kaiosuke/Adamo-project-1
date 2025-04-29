@@ -1,4 +1,4 @@
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@components/ui/form'
 import { useCallback } from 'react'
 import { ControllerRenderProps, FieldValues, Path, UseFormReturn } from 'react-hook-form'
 import { FaStarOfLife } from 'react-icons/fa6'

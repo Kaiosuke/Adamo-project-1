@@ -1,4 +1,4 @@
-import { IReviewHotel, IReviewTour, IReviewTourLackId } from '@/interfaces/review'
+import { IReviewHotel, IReviewTour, IReviewTourLackId } from '@interfaces/review'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { instanceLocal } from './instance'

@@ -1,8 +1,8 @@
-import Hotel from '@/components/Hotel'
+import Hotel from '@components/Hotel'
 
-import { instanceLocal } from '@/api/instance'
-import SkeletonData from '@/components/LoadingList/SkeletonData'
-import { IHotel } from '@/interfaces/hotel'
+import { instanceLocal } from '@api/instance'
+import SkeletonData from '@components/LoadingList/SkeletonData'
+import { IHotel } from '@interfaces/hotel'
 import { useQuery } from '@tanstack/react-query'
 import { memo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'

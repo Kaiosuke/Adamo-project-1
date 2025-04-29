@@ -1,5 +1,5 @@
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import i18n from '@/i18n/i18n'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@components/ui/select'
+import i18n from '@i18n/i18n'
 import { memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { toast } from 'sonner'

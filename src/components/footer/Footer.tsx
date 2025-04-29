@@ -1,5 +1,5 @@
-import Logo from '@/assets/images/logo.png'
-import i18n from '@/i18n/i18n'
+import Logo from '@assets/images/logo.png'
+import i18n from '@i18n/i18n'
 import { useTranslation } from 'react-i18next'
 import { CiLocationOn, CiMail } from 'react-icons/ci'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa6'

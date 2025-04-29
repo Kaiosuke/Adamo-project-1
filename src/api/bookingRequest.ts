@@ -1,4 +1,4 @@
-import { IBooking, IBookingHotel } from '@/interfaces/booking'
+import { IBooking, IBookingHotel } from '@interfaces/booking'
 import { instanceLocal } from './instance'
 
 const bookingTour = async ({ data }: { data: IBooking }) => {

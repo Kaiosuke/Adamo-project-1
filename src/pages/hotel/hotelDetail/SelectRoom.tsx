@@ -1,8 +1,8 @@
-import { getAllRoom } from '@/api/roomRequest'
+import { getAllRoom } from '@api/roomRequest'
 
 import { useQuery } from '@tanstack/react-query'
 import Room from './Room'
-import { Skeleton } from '@/components/ui/skeleton'
+import { Skeleton } from '@components/ui/skeleton'
 import { useTranslation } from 'react-i18next'
 
 const SelectRoom = () => {

@@ -1,5 +1,5 @@
-import { Checkbox } from '@/components/ui/checkbox'
-import { handleFormatMoney } from '@/helper/index'
+import { Checkbox } from '@components/ui/checkbox'
+import { handleFormatMoney } from '@helper/index'
 import {
   changeBreakfast,
   changeExtraBed,
@@ -9,7 +9,7 @@ import {
   IExtraBed,
   inCreaseBreakfast,
   inCreaseExtraBed
-} from '@/redux-toolkit/slices/roomsSlice'
+} from '@redux-toolkit/slices/roomsSlice'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FaCircleMinus, FaCirclePlus } from 'react-icons/fa6'

@@ -1,19 +1,19 @@
-import Avatar1 from '@/assets/images/Avatar-1.png'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { IAuth } from '@/interfaces/auth'
-import { IReviewHotel } from '@/interfaces/review'
+import Avatar1 from '@assets/images/Avatar-1.png'
+import { Avatar, AvatarFallback, AvatarImage } from '@components/ui/avatar'
+import { IAuth } from '@interfaces/auth'
+import { IReviewHotel } from '@interfaces/review'
 import { HiDotsVertical } from 'react-icons/hi'
 import { TbPointFilled } from 'react-icons/tb'
 
-import { deleteReviewHotel, editReviewHotel } from '@/api/reviewRequest'
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
+import { deleteReviewHotel, editReviewHotel } from '@api/reviewRequest'
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@components/ui/dialog'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
+} from '@components/ui/dropdown-menu'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
 import { CiEdit } from 'react-icons/ci'
@@ -24,9 +24,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { Button } from '@/components/ui/button'
-import { Form, FormField, FormItem, FormMessage } from '@/components/ui/form'
-import { commentSchema } from '@/schemas/reviewSchema'
+import { Button } from '@components/ui/button'
+import { Form, FormField, FormItem, FormMessage } from '@components/ui/form'
+import { commentSchema } from '@schemas/reviewSchema'
 import { useTranslation } from 'react-i18next'
 import LoadingBtn from '../LoadingList/LoadingBtn'
 import Rating from '../Rating'

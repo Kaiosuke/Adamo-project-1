@@ -1,12 +1,12 @@
-import { getAllTour, getFiltersTour } from '@/api/tourRequest'
-import { useAppDispatch } from '@/redux-toolkit/index'
-import { tourSelector } from '@/redux-toolkit/selectors/tourSelector'
+import { getAllTour, getFiltersTour } from '@api/tourRequest'
+import { useAppDispatch } from '@redux-toolkit/index'
+import { tourSelector } from '@redux-toolkit/selectors/tourSelector'
 import { useCallback, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
-import SkeletonData from '@/components/LoadingList/SkeletonData'
-import PaginationWithShow from '@/components/paginationList/PaginationWithShow'
-import Tour from '@/components/Tour'
+import SkeletonData from '@components/LoadingList/SkeletonData'
+import PaginationWithShow from '@components/paginationList/PaginationWithShow'
+import Tour from '@components/Tour'
 
 const TourPage = () => {
   const { tours, loading } = useSelector(tourSelector)

@@ -1,4 +1,4 @@
-import { IContact, IContactOnlyEmail } from '@/interfaces/contact'
+import { IContact, IContactOnlyEmail } from '@interfaces/contact'
 import { instanceLocal } from './instance'
 
 const contact = async ({ data }: { data: IContact | IContactOnlyEmail }) => {

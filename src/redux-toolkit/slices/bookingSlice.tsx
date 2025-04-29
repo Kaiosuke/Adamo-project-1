@@ -1,4 +1,4 @@
-import { IBooking, IBookingHotel } from '@/interfaces/booking'
+import { IBooking, IBookingHotel } from '@interfaces/booking'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export interface IStateBooking {

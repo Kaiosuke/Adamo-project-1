@@ -1,5 +1,5 @@
-import { addReviewTour, getReviewTourList } from '@/api/reviewRequest'
-import { IReviewTour } from '@/interfaces/review'
+import { addReviewTour, getReviewTourList } from '@api/reviewRequest'
+import { IReviewTour } from '@interfaces/review'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export interface IStateReview {

@@ -1,6 +1,6 @@
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger } from '@/components/ui/select'
-import { languageSelector } from '@/redux-toolkit/selectors/languageSelector'
-import { changeLanguage, Lg } from '@/redux-toolkit/slices/languageSlice'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger } from '@components/ui/select'
+import { languageSelector } from '@redux-toolkit/selectors/languageSelector'
+import { changeLanguage, Lg } from '@redux-toolkit/slices/languageSlice'
 import { memo, useCallback, useEffect } from 'react'
 
 import { useTranslation } from 'react-i18next'

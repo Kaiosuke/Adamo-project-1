@@ -1,5 +1,5 @@
-import LogoBlack from '@/assets/images/logo-black.png'
-import Logo from '@/assets/images/logo.png'
+import LogoBlack from '@assets/images/logo-black.png'
+import Logo from '@assets/images/logo.png'
 
 import useDetectScroll from '@smakss/react-scroll-direction'
 import { memo, useEffect, useMemo, useState } from 'react'

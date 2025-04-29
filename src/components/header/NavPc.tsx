@@ -2,19 +2,19 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router'
 
-import { logout } from '@/api/authRequest'
+import { logout } from '@api/authRequest'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
-import { useAppDispatch } from '@/redux-toolkit/index'
+} from '@components/ui/dropdown-menu'
+import { useAppDispatch } from '@redux-toolkit/index'
 import { memo } from 'react'
 import { FaUser } from 'react-icons/fa6'
 import { toast } from 'sonner'
-import { authSelector } from '@/redux-toolkit/selectors/authSelector'
+import { authSelector } from '@redux-toolkit/selectors/authSelector'
 
 const linkNavEn = [
   {

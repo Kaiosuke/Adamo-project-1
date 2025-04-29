@@ -1,4 +1,4 @@
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@components/ui/form'
 import { useState } from 'react'
 import { FieldValues, Path, UseFormReturn } from 'react-hook-form'
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa6'

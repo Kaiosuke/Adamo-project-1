@@ -1,14 +1,9 @@
-import ButtonFeature from '@/components/ButtonFeature'
+import ButtonFeature from '@components/ButtonFeature'
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from '@components/ui/dropdown-menu'
 
-import { tourSelector } from '@/redux-toolkit/selectors/tourSelector'
-import { filterByDuration, filterByPrice, filterByType } from '@/redux-toolkit/slices/toursSlice'
+import { tourSelector } from '@redux-toolkit/selectors/tourSelector'
+import { filterByDuration, filterByPrice, filterByType } from '@redux-toolkit/slices/toursSlice'
 import { memo, useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'sonner'
@@ -16,7 +11,7 @@ import { useDebouncedCallback } from 'use-debounce'
 import TourBtn from './TourBtn'
 import TourDuration from './TourDuration'
 import TourType from './TourType'
-import SliderCom from '@/components/sliders/SliderCom'
+import SliderCom from '@components/sliders/SliderCom'
 import { useTranslation } from 'react-i18next'
 
 const FilterTour = () => {

@@ -1,4 +1,4 @@
-import { IReviewTour } from '@/interfaces/review'
+import { IReviewTour } from '@interfaces/review'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FaStar } from 'react-icons/fa6'

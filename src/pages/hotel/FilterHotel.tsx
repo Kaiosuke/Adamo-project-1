@@ -1,13 +1,8 @@
-import ButtonFeature from '@/components/ButtonFeature'
+import ButtonFeature from '@components/ButtonFeature'
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from '@components/ui/dropdown-menu'
 
-import SliderCom from '@/components/sliders/SliderCom'
+import SliderCom from '@components/sliders/SliderCom'
 import { memo, useCallback, useState } from 'react'
 import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'

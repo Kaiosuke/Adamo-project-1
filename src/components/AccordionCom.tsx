@@ -1,4 +1,4 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@components/ui/accordion'
 import { useState } from 'react'
 import { FaMapMarkerAlt, FaRegQuestionCircle } from 'react-icons/fa'
 

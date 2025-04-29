@@ -1,27 +1,27 @@
-import { handleFormatMoney } from '@/helper/index'
-import { tourSelector } from '@/redux-toolkit/selectors/tourSelector'
+import { handleFormatMoney } from '@helper/index'
+import { tourSelector } from '@redux-toolkit/selectors/tourSelector'
 import { addDays } from 'date-fns'
 import { memo, useMemo, useState } from 'react'
 import { DateRange } from 'react-day-picker'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@components/ui/select'
 import { useTranslation } from 'react-i18next'
 
-import { bookingSchema } from '@/schemas/bookingSchema'
+import { bookingSchema } from '@schemas/bookingSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import DatePickerWithRange from '@/components/DatePickerWithRange'
-import { Button } from '@/components/ui/button'
-import { Form, FormField, FormMessage } from '@/components/ui/form'
-import { addBooking } from '@/redux-toolkit/slices/bookingSlice'
-import { filterByGuest } from '@/redux-toolkit/slices/toursSlice'
+import DatePickerWithRange from '@components/DatePickerWithRange'
+import { Button } from '@components/ui/button'
+import { Form, FormField, FormMessage } from '@components/ui/form'
+import { addBooking } from '@redux-toolkit/slices/bookingSlice'
+import { filterByGuest } from '@redux-toolkit/slices/toursSlice'
 import { useNavigate } from 'react-router'
 import { toast } from 'sonner'
 import { StringParam, useQueryParams } from 'use-query-params'
-import { authSelector } from '@/redux-toolkit/selectors/authSelector'
+import { authSelector } from '@redux-toolkit/selectors/authSelector'
 
 const BillTourDetail = () => {
   const { tour } = useSelector(tourSelector)

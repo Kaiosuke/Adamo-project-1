@@ -1,10 +1,10 @@
-import Avatar1 from '@/assets/images/Avatar-1.png'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { IReviewTour } from '@/interfaces/review'
+import Avatar1 from '@assets/images/Avatar-1.png'
+import { Avatar, AvatarFallback, AvatarImage } from '@components/ui/avatar'
+import { IReviewTour } from '@interfaces/review'
 import { FaStar } from 'react-icons/fa6'
 import { TbPointFilled } from 'react-icons/tb'
 
-import { deleteReviewTour, editReviewTour } from '@/api/reviewRequest'
+import { deleteReviewTour, editReviewTour } from '@api/reviewRequest'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
 import { toast } from 'sonner'
@@ -13,13 +13,13 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { commentSchema } from '@/schemas/reviewSchema'
+import { commentSchema } from '@schemas/reviewSchema'
 import { useTranslation } from 'react-i18next'
 
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@components/ui/dialog'
 
-import { Button } from '@/components/ui/button'
-import { Form, FormField, FormItem, FormMessage } from '@/components/ui/form'
+import { Button } from '@components/ui/button'
+import { Form, FormField, FormItem, FormMessage } from '@components/ui/form'
 import LoadingBtn from '../LoadingList/LoadingBtn'
 import Rating from '../Rating'
 import { Textarea } from '../ui/textarea'
@@ -32,8 +32,8 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
-import { IAuth } from '@/interfaces/auth'
+} from '@components/ui/dropdown-menu'
+import { IAuth } from '@interfaces/auth'
 import { CiEdit } from 'react-icons/ci'
 import { MdDeleteForever } from 'react-icons/md'
 

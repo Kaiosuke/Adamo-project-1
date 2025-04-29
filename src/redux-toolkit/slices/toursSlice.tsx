@@ -1,5 +1,5 @@
-import { changeFavoriteTour, getAllTour, getFiltersTour, getTourById } from '@/api/tourRequest'
-import { ITour } from '@/interfaces/tour'
+import { changeFavoriteTour, getAllTour, getFiltersTour, getTourById } from '@api/tourRequest'
+import { ITour } from '@interfaces/tour'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export interface ITourState {

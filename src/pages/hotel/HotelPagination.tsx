@@ -1,4 +1,4 @@
-import PaginationWithShow from '@/components/paginationList/PaginationWithShow'
+import PaginationWithShow from '@components/paginationList/PaginationWithShow'
 import { useEffect, useState } from 'react'
 import { NumberParam, useQueryParams, withDefault } from 'use-query-params'
 

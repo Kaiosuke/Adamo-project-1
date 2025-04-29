@@ -1,4 +1,4 @@
-import { IBreakfast, IExtraBed } from '@/redux-toolkit/slices/roomsSlice'
+import { IBreakfast, IExtraBed } from '@redux-toolkit/slices/roomsSlice'
 import { IRoom } from './room'
 
 interface IBooking {

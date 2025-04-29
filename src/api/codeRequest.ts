@@ -1,4 +1,4 @@
-import { ICode } from '@/interfaces/code'
+import { ICode } from '@interfaces/code'
 import { instanceLocal } from './instance'
 
 const getCode = async (code: string): Promise<ICode> => {

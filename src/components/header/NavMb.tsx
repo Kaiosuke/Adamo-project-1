@@ -1,4 +1,4 @@
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetTrigger } from '@components/ui/sheet'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 

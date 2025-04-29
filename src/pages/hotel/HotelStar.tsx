@@ -1,5 +1,5 @@
-import { Checkbox } from '@/components/ui/checkbox'
-import { RadioGroup } from '@/components/ui/radio-group'
+import { Checkbox } from '@components/ui/checkbox'
+import { RadioGroup } from '@components/ui/radio-group'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 

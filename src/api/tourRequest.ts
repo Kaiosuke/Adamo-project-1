@@ -1,4 +1,4 @@
-import { ITour } from '@/interfaces/tour'
+import { ITour } from '@interfaces/tour'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { instanceLocal } from './instance'

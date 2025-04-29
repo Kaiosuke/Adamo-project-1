@@ -1,4 +1,4 @@
-import HeroImage from '@/assets/images/hero-contact.png'
+import HeroImage from '@assets/images/hero-contact.png'
 
 import { Trans } from 'react-i18next'
 

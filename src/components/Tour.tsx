@@ -1,5 +1,5 @@
-import Shape2 from '@/assets/images/Shape-2png.png'
-import Shape from '@/assets/images/shape.png'
+import Shape2 from '@assets/images/Shape-2png.png'
+import Shape from '@assets/images/shape.png'
 
 import { CiLocationOn } from 'react-icons/ci'
 import { MdCalendarMonth, MdOutlineStar } from 'react-icons/md'
@@ -7,11 +7,11 @@ import { Link } from 'react-router'
 import LoadedImage from './LoadingList/LoadedImage'
 import { StringParam, useQueryParams } from 'use-query-params'
 
-import { changeFavoriteTour } from '@/api/tourRequest'
+import { changeFavoriteTour } from '@api/tourRequest'
 import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
-import { ITour } from '@/interfaces/tour'
-import { useAppDispatch } from '@/redux-toolkit/index'
+import { ITour } from '@interfaces/tour'
+import { useAppDispatch } from '@redux-toolkit/index'
 import { handleFormatMoney } from '../helper'
 
 const Tour = ({ tour }: { tour: ITour }) => {
