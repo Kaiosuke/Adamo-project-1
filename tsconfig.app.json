@@ -15,9 +15,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
       "@api/*": ["./src/api/*"],
       "@assets/*": ["./src/assets/*"],
@@ -31,7 +30,8 @@
       "@schemas/*": ["./src/schemas/*"],
       "@styles/*": ["./src/styles/*"],
       "@lib/*": ["./src/lib/*"],
-      "@interfaces/*": ["./src/interfaces/*"]
+      "@interfaces/*": ["./src/interfaces/*"],
+      "@/*": ["./src/*"]
     },
 
     /* Linting */

@@ -19,6 +19,9 @@ export default defineConfig({
       '@schemas': path.resolve(__dirname, 'src/schemas'),
       '@styles': path.resolve(__dirname, 'src/styles'),
       '@interfaces': path.resolve(__dirname, 'src/interfaces'),
+      '@helper': path.resolve(__dirname, 'src/helper'),
+      '@redux-toolkit': path.resolve(__dirname, 'src/redux-toolkit'),
+      '@lib': path.resolve(__dirname, 'src/lib'),
       '@': path.resolve(__dirname, './src')
     }
   },
