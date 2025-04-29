@@ -54,14 +54,13 @@ const ChangePassword = () => {
   }
 
   const navigate = useNavigate()
+  const { t } = useTranslation('auth')
 
   useEffect(() => {
     if (!currentUser) {
       navigate('/')
     }
   }, [currentUser, navigate])
-
-  const { t } = useTranslation('auth')
 
   if (!currentUser) {
     return <LoadingPage />

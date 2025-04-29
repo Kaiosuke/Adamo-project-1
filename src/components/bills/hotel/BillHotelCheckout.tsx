@@ -6,7 +6,7 @@ import { GoPeople } from 'react-icons/go'
 
 import Code from '@/components/Code'
 import { IBookingHotel } from '@/interfaces/booking'
-import { Fragment, useMemo } from 'react'
+import { Fragment, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { authSelector } from '@/redux-toolkit/selectors/authSelector'
@@ -36,11 +36,14 @@ const BillHotelCheckOut = ({ data, bookingHotel, discount, setDiscount }: Props)
 
   const navigate = useNavigate()
 
+  useEffect(() => {
+    if (!currentUser) {
+      navigate('/')
+    }
+  }, [currentUser, navigate])
+
   if (!currentUser) {
     return <LoadingPage />
-  }
-  if (!currentUser) {
-    navigate('/')
   }
 
   return (

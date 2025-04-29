@@ -7,7 +7,7 @@ import { handleFormatMoney } from '@/helper/index'
 import { IBooking } from '@/interfaces/booking'
 import { ITour } from '@/interfaces/tour'
 
-import { memo, useMemo } from 'react'
+import { memo, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
@@ -36,8 +36,13 @@ const BillTourCheckout = ({ booking, tour, setDiscount, discount }: Props) => {
 
   const navigate = useNavigate()
 
+  useEffect(() => {
+    if (!currentUser) {
+      navigate('/')
+    }
+  }, [currentUser, navigate])
+
   if (!currentUser) {
-    navigate('/')
     return <LoadingPage />
   }
 
