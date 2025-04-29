@@ -23,11 +23,19 @@ const bookingSlice = createSlice({
       state.booking = action.payload
     },
 
+    deleteBooking: (state: IStateBooking) => {
+      state.booking = undefined
+    },
+
     addBookingHotel: (state: IStateBooking, action: PayloadAction<IBookingHotel>) => {
       state.bookingHotel = action.payload
+    },
+
+    deleteBookingHotel: (state: IStateBooking) => {
+      state.bookingHotel = undefined
     }
   }
 })
 
 export default bookingSlice.reducer
-export const { addBooking, addBookingHotel } = bookingSlice.actions
+export const { addBooking, addBookingHotel, deleteBooking, deleteBookingHotel } = bookingSlice.actions

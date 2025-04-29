@@ -7,12 +7,13 @@ import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import { FaArrowLeftLong } from 'react-icons/fa6'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import FormInfoUser from './FormInfoUser'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import PdSub from '@/components/paddingList/PbSub'
 import PdMain from '@/components/paddingList/PbMain'
 import { Skeleton } from '@/components/ui/skeleton'
+import LoadingPage from '@/components/LoadingList/LoadingPage'
 
 const HotelCheckOut = () => {
   const { t } = useTranslation('checkout')
@@ -28,6 +29,18 @@ const HotelCheckOut = () => {
   })
 
   const [discount, setDiscount] = useState<number>()
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!bookingHotel) {
+      navigate('/')
+    }
+  }, [bookingHotel, navigate])
+
+  if (!bookingHotel) {
+    return <LoadingPage />
+  }
 
   return (
     <>

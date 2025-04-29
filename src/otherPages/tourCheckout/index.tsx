@@ -1,17 +1,18 @@
 import { getTourById } from '@/api/tourRequest'
 
+import BillTourCheckout from '@/components/bills/tour/BillTourCheckout'
+import LoadingPage from '@/components/LoadingList/LoadingPage'
+import PdMain from '@/components/paddingList/PbMain'
+import PdSub from '@/components/paddingList/PbSub'
 import { useAppDispatch } from '@/redux-toolkit/index'
 import { bookingSelector } from '@/redux-toolkit/selectors/bookingSelector'
-import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import FormInfoUser from './FormInfoUser'
-import { Link } from 'react-router'
-import { FaArrowLeftLong } from 'react-icons/fa6'
-import { useTranslation } from 'react-i18next'
 import { tourSelector } from '@/redux-toolkit/selectors/tourSelector'
-import BillTourCheckout from '@/components/bills/tour/BillTourCheckout'
-import PdSub from '@/components/paddingList/PbSub'
-import PdMain from '@/components/paddingList/PbMain'
+import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { FaArrowLeftLong } from 'react-icons/fa6'
+import { useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router'
+import FormInfoUser from './FormInfoUser'
 
 const TourCheckOut = () => {
   const { booking } = useSelector(bookingSelector)
@@ -35,6 +36,18 @@ const TourCheckOut = () => {
   const { tour } = useSelector(tourSelector)
 
   const [discount, setDiscount] = useState<number>()
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!booking) {
+      navigate('/')
+    }
+  }, [booking, navigate])
+
+  if (!booking) {
+    return <LoadingPage />
+  }
 
   return (
     <>

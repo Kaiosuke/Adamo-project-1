@@ -142,7 +142,6 @@ const ReviewTour = ({ review, user }: { review: IReviewTour; user?: IAuth }) => 
         )}
       </div>
       <div className="str-line-2" />
-
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent>
           <DialogHeader className="p-4">

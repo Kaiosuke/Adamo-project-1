@@ -1,9 +1,19 @@
 import { Button } from '@/components/ui/button'
+import { useAppDispatch } from '@/redux-toolkit/index'
+import { deleteBooking, deleteBookingHotel } from '@/redux-toolkit/slices/bookingSlice'
+import { useEffect } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 
 const ThankYou = () => {
   const { t } = useTranslation('thanks')
+
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(deleteBooking())
+    dispatch(deleteBookingHotel())
+  }, [dispatch])
 
   return (
     <div

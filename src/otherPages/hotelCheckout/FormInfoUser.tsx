@@ -14,10 +14,10 @@ import { bookingHotel } from '@/api/bookingRequest'
 import PayMethod from '@/components/PayMethod'
 import { IBookingHotel } from '@/interfaces/booking'
 import { useMutation } from '@tanstack/react-query'
+import { useTranslation } from 'react-i18next'
 import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 import { StringParam, useQueryParams, withDefault } from 'use-query-params'
-import { useTranslation } from 'react-i18next'
 
 interface Props {
   booking: IBookingHotel

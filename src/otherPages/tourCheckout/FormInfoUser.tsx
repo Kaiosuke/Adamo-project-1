@@ -11,10 +11,10 @@ import { useNavigate } from 'react-router'
 import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 
+import { useTranslation } from 'react-i18next'
 import { StringParam, useQueryParams, withDefault } from 'use-query-params'
 import { z } from 'zod'
 import PayMethod from '../../components/PayMethod'
-import { useTranslation } from 'react-i18next'
 
 interface Props {
   booking: IBooking
@@ -57,7 +57,8 @@ const FormInfoUser = ({ booking, discount }: Props) => {
 
   const { mutate } = useMutation({
     mutationFn: (data: IBooking) => bookingTour({ data }),
-    onSuccess: () => {
+    onSuccess: async () => {
+      await navigate('/thanks')
       toast.success('Booking tour success', {
         style: {
           backgroundColor: '#4caf50',
@@ -66,7 +67,6 @@ const FormInfoUser = ({ booking, discount }: Props) => {
       })
 
       form.reset()
-      navigate('/thanks')
     }
   })
 
