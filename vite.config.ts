@@ -12,7 +12,7 @@ export default defineConfig({
       '@api': path.resolve(__dirname, 'src/api'),
       '@assets': path.resolve(__dirname, 'src/assets'),
       '@auth': path.resolve(__dirname, 'src/auth'),
-      '@firebase': path.resolve(__dirname, 'src/firebase'),
+      '@firebaseConfig': path.resolve(__dirname, 'src/firebase'),
       '@hooks': path.resolve(__dirname, 'src/hooks'),
       '@i18n': path.resolve(__dirname, 'src/i18n'),
       '@locales': path.resolve(__dirname, 'src/locales'),

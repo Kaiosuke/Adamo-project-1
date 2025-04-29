@@ -21,7 +21,7 @@
       "@api/*": ["./src/api/*"],
       "@assets/*": ["./src/assets/*"],
       "@auth/*": ["./src/auth/*"],
-      "@firebase/*": ["./src/firebase/*"],
+      "@firebaseConfig/*": ["./src/firebase/*"],
       "@helper/*": ["./src/helper/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@i18n/*": ["./src/i18n/*"],

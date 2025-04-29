@@ -1,5 +1,5 @@
 import { Button } from '@components/ui/button'
-import { privatePolicy } from '@data.json'
+import { privatePolicy } from '@/data.json'
 import { handleSeparateWord } from '@helper/index'
 import { FaDownload } from 'react-icons/fa6'
 import { Link } from 'react-router'
