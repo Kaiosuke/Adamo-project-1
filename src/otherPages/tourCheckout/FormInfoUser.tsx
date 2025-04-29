@@ -14,7 +14,7 @@ import { useDebouncedCallback } from 'use-debounce'
 import { useTranslation } from 'react-i18next'
 import { StringParam, useQueryParams, withDefault } from 'use-query-params'
 import { z } from 'zod'
-import PayMethod from '../../components/PayMethod'
+import PayMethod from '@/components/PayMethod'
 
 interface Props {
   booking: IBooking
