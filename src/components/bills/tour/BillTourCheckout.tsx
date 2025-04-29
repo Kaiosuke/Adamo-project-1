@@ -31,10 +31,9 @@ const BillTourCheckout = ({ booking, tour, setDiscount, discount }: Props) => {
   const handleDisCount = useMemo(() => {
     return discount ? booking.totalPrice - booking.totalPrice * discount : booking.totalPrice
   }, [discount, booking])
+  const navigate = useNavigate()
 
   const { t } = useTranslation('bill')
-
-  const navigate = useNavigate()
 
   useEffect(() => {
     if (!currentUser) {
