@@ -72,7 +72,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
   return (
     <div
       className={`h-full bg-third/80 w-full ${
-        !isHome ? 'flex-[0_0_30%] 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8' : ''
+        !isHome ? 'flex-[0_0_30%] h-[503px] 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8' : ''
       }`}
     >
       {loading ? (
@@ -81,7 +81,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
         </div>
       ) : (
         <>
-          <div className="lg:px-8 lg:py-8 w-full p-4">
+          <div className="lg:px-8 lg:py-8 w-full h-full p-4">
             <p className="text-size-2xl">{t('tour.description')}</p>
             <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
               <InputSearch

@@ -15,22 +15,23 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-      "@/components/*": ["./components/*"],
-      "@/api/*": ["./api/*"],
-      "@/assets/*": ["./assets/*"],
-      "@/auth/*": ["./auth/*"],
-      "@/firebase/*": ["./firebase/*"],
-      "@/helper/*": ["./helper/*"],
-      "@/hooks/*": ["./hooks/*"],
-      "@/i18n/*": ["./i18n/*"],
-      "@/locales/*": ["./locales/*"],
-      "@/redux-toolkit/*": ["./redux-toolkit/*"],
-      "@/schemas/*": ["./schemas/*"],
-      "@/styles/*": ["./styles/*"],
-      "@/lib/*": ["./lib/*"],
-      "@/interfaces/*": ["./interfaces/*"]
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@api/*": ["./src/api/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@auth/*": ["./src/auth/*"],
+      "@firebase/*": ["./src/firebase/*"],
+      "@helper/*": ["./src/helper/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@i18n/*": ["./src/i18n/*"],
+      "@locales/*": ["./src/locales/*"],
+      "@redux-toolkit/*": ["./src/redux-toolkit/*"],
+      "@schemas/*": ["./src/schemas/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@interfaces/*": ["./src/interfaces/*"]
     },
 
     /* Linting */

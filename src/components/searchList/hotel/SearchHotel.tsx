@@ -68,7 +68,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   return (
     <div
       className={`bg-third/80 ${
-        isHome ? 'lg:h-[503px] w-[100%]' : 'flex-[0_0_30%] lg:w-auto w-full 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8 '
+        isHome ? 'lg:h-[504px] w-[100%]' : 'flex-[0_0_30%] lg:w-auto w-full 2xl:mr-48 lg:mr-32 md:mr-12 sm:mr-24 mr-8 '
       }`}
     >
       {isLoading ? (
