@@ -1,5 +1,5 @@
 import AccordionCom from '@/components/AccordionCom'
-import { tourSelector } from '@/redux/selectors/tourSelector'
+import { tourSelector } from '@/redux-toolkit/selectors/tourSelector'
 import { useSelector } from 'react-redux'
 import { Fragment } from 'react/jsx-runtime'
 

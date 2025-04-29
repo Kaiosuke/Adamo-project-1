@@ -5,13 +5,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 export interface IStateAuth {
   loading: boolean
   error: string | undefined
-  currentUser: IAuth | null
+  currentUser: IAuth | undefined
 }
 
 const initialState: IStateAuth = {
   loading: false,
   error: undefined,
-  currentUser: null
+  currentUser: undefined
 }
 
 const setLoading = (state: IStateAuth) => {
@@ -47,7 +47,7 @@ const authSlice = createSlice({
     build.addCase(logout.pending, setLoading)
     build.addCase(logout.fulfilled, (state: IStateAuth) => {
       state.loading = false
-      state.currentUser = null
+      state.currentUser = undefined
       state.error = undefined
     })
     build.addCase(logout.rejected, setError)

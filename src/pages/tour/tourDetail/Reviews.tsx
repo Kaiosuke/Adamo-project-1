@@ -1,6 +1,6 @@
 import ReviewTour from '@/components/reviews/ReviewTour'
-import { reviewSelector } from '@/redux/selectors/reviewSelector'
-import { tourSelector } from '@/redux/selectors/tourSelector'
+import { reviewSelector } from '@/redux-toolkit/selectors/reviewSelector'
+import { tourSelector } from '@/redux-toolkit/selectors/tourSelector'
 import { FaStar } from 'react-icons/fa6'
 import { useSelector } from 'react-redux'
 
@@ -11,6 +11,7 @@ import TourReviewForm from './TourReviewForm'
 import Star from './Star'
 import Pagination from '@/components/paginationList/Pagination'
 import { Trans, useTranslation } from 'react-i18next'
+import { authSelector } from '@/redux-toolkit/selectors/authSelector'
 
 interface Props {
   currentPage: number
@@ -37,7 +38,7 @@ const Reviews = ({ currentPage, pageCount, totalData, setCurrentPage, averageSta
 
   useTranslation('detail')
 
-  const count = totalData
+  const { currentUser } = useSelector(authSelector)
 
   return (
     <>
@@ -55,7 +56,7 @@ const Reviews = ({ currentPage, pageCount, totalData, setCurrentPage, averageSta
                     <FaStar className="text-nine" />
                     <FaStar className="text-four" />
                   </div>
-                  <Trans ns="detail" count={count} i18nKey={'tour.review.base'} />
+                  <Trans ns="detail" count={totalData} i18nKey={'tour.review.base'} />
                 </div>
               </div>
               <div className="flex-[0_0_auto] w-[2px] h-full bg-five mx-6 md:block hidden" />
@@ -79,7 +80,7 @@ const Reviews = ({ currentPage, pageCount, totalData, setCurrentPage, averageSta
               ) : (
                 <>
                   {[...reviewsTour].reverse().map((review) => (
-                    <ReviewTour key={review.id} review={review} />
+                    <ReviewTour key={review.id} review={review} user={currentUser} />
                   ))}
                 </>
               )}

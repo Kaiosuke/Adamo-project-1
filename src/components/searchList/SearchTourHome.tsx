@@ -1,6 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
-import { tourSelector } from '@/redux/selectors/tourSelector'
+import { tourSelector } from '@/redux-toolkit/selectors/tourSelector'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import LoadingSearch from '../LoadingList/LoadingSearch'

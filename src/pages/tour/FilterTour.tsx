@@ -7,8 +7,8 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 
-import { tourSelector } from '@/redux/selectors/tourSelector'
-import { filterByDuration, filterByPrice, filterByType } from '@/redux/slices/toursSlice'
+import { tourSelector } from '@/redux-toolkit/selectors/tourSelector'
+import { filterByDuration, filterByPrice, filterByType } from '@/redux-toolkit/slices/toursSlice'
 import { memo, useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'sonner'

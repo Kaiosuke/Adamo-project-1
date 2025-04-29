@@ -8,6 +8,10 @@ import Code from '@/components/Code'
 import { IBookingHotel } from '@/interfaces/booking'
 import { Fragment, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { authSelector } from '@/redux-toolkit/selectors/authSelector'
+import LoadingPage from '@/components/LoadingList/LoadingPage'
+import { useNavigate } from 'react-router'
 
 interface Props {
   data: IHotel
@@ -27,6 +31,17 @@ const BillHotelCheckOut = ({ data, bookingHotel, discount, setDiscount }: Props)
   }, [discount, bookingHotel])
 
   const { t } = useTranslation('bill')
+
+  const { currentUser } = useSelector(authSelector)
+
+  const navigate = useNavigate()
+
+  if (!currentUser) {
+    return <LoadingPage />
+  }
+  if (!currentUser) {
+    navigate('/')
+  }
 
   return (
     <>

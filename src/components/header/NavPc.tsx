@@ -1,4 +1,3 @@
-import { authSelector } from '@/redux/selectors/authSelector'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router'
@@ -11,10 +10,11 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-import { useAppDispatch } from '@/redux/index'
+import { useAppDispatch } from '@/redux-toolkit/index'
 import { memo } from 'react'
 import { FaUser } from 'react-icons/fa6'
 import { toast } from 'sonner'
+import { authSelector } from '@/redux-toolkit/selectors/authSelector'
 
 const linkNavEn = [
   {

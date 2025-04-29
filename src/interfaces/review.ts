@@ -1,5 +1,6 @@
 interface IReviewTour {
   id: number
+  userId: string
   tourId: number
   rate: number
   avatar: string
@@ -11,6 +12,7 @@ interface IReviewTour {
 
 interface IReviewHotel {
   id: number
+  userId: string
   hotelId: number
   rate: number
   avatar: string

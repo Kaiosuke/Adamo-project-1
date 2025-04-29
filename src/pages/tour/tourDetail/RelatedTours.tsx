@@ -1,6 +1,6 @@
 import Tour from '@/components/Tour'
 import { ITour } from '@/interfaces/tour'
-import { tourSelector } from '@/redux/selectors/tourSelector'
+import { tourSelector } from '@/redux-toolkit/selectors/tourSelector'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 

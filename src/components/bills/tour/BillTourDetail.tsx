@@ -1,5 +1,5 @@
 import { handleFormatMoney } from '@/helper/index'
-import { tourSelector } from '@/redux/selectors/tourSelector'
+import { tourSelector } from '@/redux-toolkit/selectors/tourSelector'
 import { addDays } from 'date-fns'
 import { memo, useMemo, useState } from 'react'
 import { DateRange } from 'react-day-picker'
@@ -16,12 +16,12 @@ import { z } from 'zod'
 import DatePickerWithRange from '@/components/DatePickerWithRange'
 import { Button } from '@/components/ui/button'
 import { Form, FormField, FormMessage } from '@/components/ui/form'
-import { addBooking } from '@/redux/slices/bookingSlice'
-import { filterByGuest } from '@/redux/slices/toursSlice'
+import { addBooking } from '@/redux-toolkit/slices/bookingSlice'
+import { filterByGuest } from '@/redux-toolkit/slices/toursSlice'
 import { useNavigate } from 'react-router'
 import { toast } from 'sonner'
 import { StringParam, useQueryParams } from 'use-query-params'
-import { authSelector } from '@/redux/selectors/authSelector'
+import { authSelector } from '@/redux-toolkit/selectors/authSelector'
 
 const BillTourDetail = () => {
   const { tour } = useSelector(tourSelector)

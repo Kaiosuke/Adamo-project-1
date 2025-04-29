@@ -2,15 +2,17 @@ import { CiLocationOn } from 'react-icons/ci'
 import { FaCalendarAlt } from 'react-icons/fa'
 import { GoPeople } from 'react-icons/go'
 
+import LoadingPage from '@/components/LoadingList/LoadingPage'
 import { handleFormatMoney } from '@/helper/index'
 import { IBooking } from '@/interfaces/booking'
 import { ITour } from '@/interfaces/tour'
+
 import { memo, useMemo } from 'react'
-import Code from '../../Code'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { authSelector } from '@/redux/selectors/authSelector'
 import { useNavigate } from 'react-router'
+import Code from '../../Code'
+import { authSelector } from '@/redux-toolkit/selectors/authSelector'
 
 interface Props {
   tour: ITour
@@ -36,6 +38,7 @@ const BillTourCheckout = ({ booking, tour, setDiscount, discount }: Props) => {
 
   if (!currentUser) {
     navigate('/')
+    return <LoadingPage />
   }
 
   return (

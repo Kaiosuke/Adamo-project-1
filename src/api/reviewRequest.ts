@@ -72,4 +72,49 @@ const addReviewHotel = async ({ data }: { data: Omit<IReviewHotel, 'id'> }): Pro
   return res.data
 }
 
-export { getReviewsHotel, getReviewTourList, addReviewHotel, addReviewTour, getAllReviewTour, getReviewsTour }
+const editReviewHotel = async ({
+  id,
+  data
+}: {
+  id: string
+  data: { des: string; rate: number }
+}): Promise<IReviewHotel> => {
+  const res = await instanceLocal.patch(`reviewsHotel/${id}`, data)
+  return res.data
+}
+
+const deleteReviewHotel = async ({ id }: { id: string }): Promise<IReviewHotel> => {
+  const res = await instanceLocal.delete(`reviewsHotel/${id}`)
+  localStorage.setItem('totalReviewHotel', res.headers['x-total-count'])
+  return res.data
+}
+
+const editReviewTour = async ({
+  id,
+  data
+}: {
+  id: string
+  data: { des: string; rate: number }
+}): Promise<IReviewTour> => {
+  const res = await instanceLocal.patch(`reviewsTour/${id}`, data)
+  return res.data
+}
+
+const deleteReviewTour = async ({ id }: { id: string }): Promise<IReviewTour> => {
+  const res = await instanceLocal.delete(`reviewsTour/${id}`)
+  localStorage.setItem('totalReviewHotel', res.headers['x-total-count'])
+  return res.data
+}
+
+export {
+  getReviewsHotel,
+  getReviewTourList,
+  addReviewHotel,
+  addReviewTour,
+  getAllReviewTour,
+  getReviewsTour,
+  editReviewHotel,
+  deleteReviewHotel,
+  editReviewTour,
+  deleteReviewTour
+}

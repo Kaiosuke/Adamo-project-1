@@ -7,14 +7,17 @@ import { useEffect, useMemo, useState } from 'react'
 import { useParams } from 'react-router'
 
 import LoadingReview from '@/components/LoadingList/LoadingReview'
+import PdSub from '@/components/paddingList/PbSub'
+import { authSelector } from '@/redux-toolkit/selectors/authSelector'
+import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
 import { NumberParam, useQueryParams } from 'use-query-params'
 import ReviewForm from './ReviewForm'
 import ReviewPagination from './ReviewPagination'
-import PdSub from '@/components/paddingList/PbSub'
-import { useTranslation } from 'react-i18next'
 
 const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
   const { id } = useParams()
+  const { currentUser } = useSelector(authSelector)
 
   const ITEMS_PER_PAGE = 4
 
@@ -87,7 +90,7 @@ const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
         ) : (
           <>
             {data.map((review: IReviewHotel) => (
-              <ReviewHotel key={review.id} review={review} />
+              <ReviewHotel key={review.id} review={review} user={currentUser} />
             ))}
           </>
         )}

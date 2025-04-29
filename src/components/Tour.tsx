@@ -11,7 +11,7 @@ import { changeFavoriteTour } from '@/api/tourRequest'
 import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 import { ITour } from '@/interfaces/tour'
-import { useAppDispatch } from '@/redux/index'
+import { useAppDispatch } from '@/redux-toolkit/index'
 import { handleFormatMoney } from '../helper'
 
 const Tour = ({ tour }: { tour: ITour }) => {

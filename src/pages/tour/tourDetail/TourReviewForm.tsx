@@ -2,7 +2,7 @@ import Rating from '@/components/Rating'
 import { Button } from '@/components/ui/button'
 import { Form, FormField, FormItem, FormMessage } from '@/components/ui/form'
 import { Textarea } from '@/components/ui/textarea'
-import { useAppDispatch } from '@/redux/index'
+import { useAppDispatch } from '@/redux-toolkit/index'
 import { commentSchema } from '@/schemas/reviewSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -16,7 +16,7 @@ import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { authSelector } from '@/redux/selectors/authSelector'
+import { authSelector } from '@/redux-toolkit/selectors/authSelector'
 
 interface Props {
   id: string
@@ -41,7 +41,16 @@ const TourReviewForm = ({ id, setCurrentPage }: Props) => {
   const onSubmit = useDebouncedCallback((values: z.infer<typeof commentSchema>) => {
     ;(async () => {
       if (id) {
+        if (!currentUser) {
+          return toast.error('Please Login to comment', {
+            style: {
+              backgroundColor: '#FF0B55',
+              color: '#ffffff'
+            }
+          })
+        }
         const data: IReviewTourLackId = {
+          userId: currentUser?.uid,
           tourId: Number(id),
           rate: values.star,
           avatar: 'url("@/assets/images/Avatar-1.png")',
@@ -51,14 +60,6 @@ const TourReviewForm = ({ id, setCurrentPage }: Props) => {
           des: values.message
         }
         try {
-          if (!currentUser) {
-            return toast.error('Please Login to comment', {
-              style: {
-                backgroundColor: '#FF0B55',
-                color: '#ffffff'
-              }
-            })
-          }
           await dispatch(addReviewTour({ data: data })).unwrap()
           toast.success('Comment successfully!!', {
             style: {

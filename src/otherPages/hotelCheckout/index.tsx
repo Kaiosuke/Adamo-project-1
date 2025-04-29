@@ -2,7 +2,7 @@ import { getHotelById } from '@/api/hotelRequest'
 
 import BillHotelCheckOut from '@/components/bills/hotel/BillHotelCheckout'
 
-import { bookingSelector } from '@/redux/selectors/bookingSelector'
+import { bookingSelector } from '@/redux-toolkit/selectors/bookingSelector'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import { FaArrowLeftLong } from 'react-icons/fa6'

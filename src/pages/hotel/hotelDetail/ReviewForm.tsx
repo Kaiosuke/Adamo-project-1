@@ -17,6 +17,8 @@ import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 import { Trans, useTranslation } from 'react-i18next'
 import i18n from '@/i18n/i18n'
+import { useSelector } from 'react-redux'
+import { authSelector } from '@/redux-toolkit/selectors/authSelector'
 
 interface Props {
   id: string
@@ -76,6 +78,7 @@ const listEvaluateVI = [
 
 const ReviewForm = ({ totalData, id, setCurrentPage, onAverageRate, setQuery }: Props) => {
   const queryClient = useQueryClient()
+  const { currentUser } = useSelector(authSelector)
 
   const [isReview, setIsReview] = useState(false)
 
@@ -109,7 +112,17 @@ const ReviewForm = ({ totalData, id, setCurrentPage, onAverageRate, setQuery }: 
   })
 
   const onSubmit = useDebouncedCallback((values: z.infer<typeof commentSchema>) => {
+    if (!currentUser) {
+      return toast.warning('Please login to comment', {
+        style: {
+          backgroundColor: '#FF0B55',
+          color: '#ffffff'
+        }
+      })
+    }
+
     const data = {
+      userId: currentUser.uid,
       hotelId: Number(id),
       rate: values.star,
       avatar: 'url("@/assets/images/Avatar-30.png")',

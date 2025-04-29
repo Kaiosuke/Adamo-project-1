@@ -26,7 +26,7 @@
       "@/hooks/*": ["./hooks/*"],
       "@/i18n/*": ["./i18n/*"],
       "@/locales/*": ["./locales/*"],
-      "@/redux/*": ["./redux/*"],
+      "@/redux-toolkit/*": ["./redux-toolkit/*"],
       "@/schemas/*": ["./schemas/*"],
       "@/styles/*": ["./styles/*"],
       "@/lib/*": ["./lib/*"],

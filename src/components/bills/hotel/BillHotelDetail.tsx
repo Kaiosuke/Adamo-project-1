@@ -2,8 +2,8 @@ import { getFiltersHotel } from '@/api/hotelRequest'
 import { handleFormatMoney } from '@/helper/index'
 import { IHotel } from '@/interfaces/hotel'
 import { IRoom } from '@/interfaces/room'
-import { roomSelector } from '@/redux/selectors/roomSelector'
-import { decreaseRoom, increaseRoom } from '@/redux/slices/roomsSlice'
+import { roomSelector } from '@/redux-toolkit/selectors/roomSelector'
+import { decreaseRoom, increaseRoom } from '@/redux-toolkit/slices/roomsSlice'
 import { useQuery } from '@tanstack/react-query'
 import { memo, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -21,7 +21,7 @@ import { ControllerRenderProps, useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 import { IBookingHotel } from '@/interfaces/booking'
-import { addBookingHotel } from '@/redux/slices/bookingSlice'
+import { addBookingHotel } from '@/redux-toolkit/slices/bookingSlice'
 import { bookingHotelSchema } from '@/schemas/bookingSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { DateRange } from 'react-day-picker'
@@ -29,9 +29,11 @@ import { useNavigate } from 'react-router'
 import { useDebouncedCallback } from 'use-debounce'
 import DatePickerWithRange from '../../DatePickerWithRange'
 import AddOne from './AddOne'
+import { authSelector } from '@/redux-toolkit/selectors/authSelector'
 
 const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
   const { t } = useTranslation(['search', 'bill'])
+  const { currentUser } = useSelector(authSelector)
 
   const { rooms, breakfast, extraBed } = useSelector(roomSelector)
 
@@ -106,6 +108,15 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
         guests: values.guests,
         hotelId: hotel!.id,
         totalPrice: handleTotalMoney
+      }
+
+      if (!currentUser) {
+        return toast.warning('Please login to booking', {
+          style: {
+            backgroundColor: '#FF0B55',
+            color: '#ffffff'
+          }
+        })
       }
 
       dispatch(addBookingHotel(data))

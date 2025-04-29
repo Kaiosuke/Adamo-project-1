@@ -8,7 +8,7 @@ import { Toaster } from 'sonner'
 import App from './App.tsx'
 import './i18n/i18n.ts'
 import './index.css'
-import store, { persistor } from './redux/index.ts'
+import store, { persistor } from './redux-toolkit/index.ts'
 
 const queryClient = new QueryClient({
   defaultOptions: {
