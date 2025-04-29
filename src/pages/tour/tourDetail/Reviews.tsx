@@ -12,6 +12,7 @@ import Star from './Star'
 import Pagination from '@components/paginationList/Pagination'
 import { Trans, useTranslation } from 'react-i18next'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
+import { memo } from 'react'
 
 interface Props {
   currentPage: number
@@ -100,4 +101,4 @@ const Reviews = ({ currentPage, pageCount, totalData, setCurrentPage, averageSta
   )
 }
 
-export default Reviews
+export default memo(Reviews)

@@ -4,6 +4,7 @@ import Additional from './Additional'
 import Description from './Description'
 import Reviews from './Reviews'
 import { Trans, useTranslation } from 'react-i18next'
+import { memo } from 'react'
 
 interface Props {
   currentPage: number
@@ -63,4 +64,4 @@ const TourDetailTabs = ({ totalData, currentPage, pageCount, averageStar, setCur
   )
 }
 
-export default TourDetailTabs
+export default memo(TourDetailTabs)

@@ -1,5 +1,6 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
+import { memo } from 'react'
 
 const position: [number, number] = [30.028511, 105.804817]
 
@@ -24,4 +25,4 @@ function MapCom({ coordinates = position }: { coordinates?: [number, number] }) 
   )
 }
 
-export default MapCom
+export default memo(MapCom)

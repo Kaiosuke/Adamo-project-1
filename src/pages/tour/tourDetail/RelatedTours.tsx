@@ -1,6 +1,7 @@
 import Tour from '@components/Tour'
 import { ITour } from '@interfaces/tour'
 import { tourSelector } from '@redux-toolkit/selectors/tourSelector'
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
@@ -21,4 +22,4 @@ const RelatedTours = () => {
   )
 }
 
-export default RelatedTours
+export default memo(RelatedTours)

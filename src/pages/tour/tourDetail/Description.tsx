@@ -3,6 +3,7 @@ import AccordionCom from '@components/AccordionCom'
 import Map from '@components/MapCom'
 import Viewer360 from '@components/Viewer360'
 import { tourSelector } from '@redux-toolkit/selectors/tourSelector'
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { IoCheckmarkSharp } from 'react-icons/io5'
 import { useSelector } from 'react-redux'
@@ -87,4 +88,4 @@ const Description = () => {
   )
 }
 
-export default Description
+export default memo(Description)

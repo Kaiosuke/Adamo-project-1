@@ -122,15 +122,14 @@ const TourDetail = () => {
                 <div className="h-[680px] ">
                   <SwiperCom images={tour.images} />
                 </div>
-                {
-                  <TourDetailTabs
-                    averageStar={averageStar}
-                    currentPage={currentPage}
-                    pageCount={pageCount}
-                    setCurrentPage={setCurrentPage}
-                    totalData={totalData}
-                  />
-                }
+
+                <TourDetailTabs
+                  averageStar={averageStar}
+                  currentPage={currentPage}
+                  pageCount={pageCount}
+                  setCurrentPage={setCurrentPage}
+                  totalData={totalData}
+                />
               </div>
 
               <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit xl:sticky top-[20px]">

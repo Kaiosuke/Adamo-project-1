@@ -1,5 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@components/ui/accordion'
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import { FaMapMarkerAlt, FaRegQuestionCircle } from 'react-icons/fa'
 
 interface Props {
@@ -79,4 +79,4 @@ const AccordionCom: React.FC<{ content: Props }> = ({ content }) => {
   )
 }
 
-export default AccordionCom
+export default memo(AccordionCom)

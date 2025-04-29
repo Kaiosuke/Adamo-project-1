@@ -1,4 +1,4 @@
-import BreadcrumbCom from '@components/Breadcrumb'
+import BreadcrumbCom from '@/components/Breadcrumb'
 
 import { useMemo } from 'react'
 import { CiLocationOn } from 'react-icons/ci'
@@ -7,15 +7,15 @@ import { useParams } from 'react-router'
 import HotelDetailTabs from './HotelDetailTabs'
 import RelatedHotels from './RelatedHotel'
 
-import { getHotelById } from '@api/hotelRequest'
-import { getReviewsHotel } from '@api/reviewRequest'
-import BillHotelDetail from '@components/bills/hotel/BillHotelDetail'
-import SwiperCom from '@components/swiper/SwiperCom'
-import { Skeleton } from '@components/ui/skeleton'
+import { getHotelById } from '@/api/hotelRequest'
+import { getReviewsHotel } from '@/api/reviewRequest'
+import BillHotelDetail from '@/components/bills/hotel/BillHotelDetail'
+import SwiperCom from '@/components/swiper/SwiperCom'
+import { Skeleton } from '@/components/ui/skeleton'
 import { useQuery } from '@tanstack/react-query'
 import LoadingSlideDetail from './LoadingSlideDetail'
-import PdMain from '@components/paddingList/PbMain'
-import PdSub from '@components/paddingList/PbSub'
+import PdMain from '@/components/paddingList/PbMain'
+import PdSub from '@/components/paddingList/PbSub'
 import { Trans, useTranslation } from 'react-i18next'
 
 const HotelDetail = () => {

@@ -1,5 +1,3 @@
-import { Button } from '@components/ui/button'
-
 import { getLocationTour } from '@api/tourRequest'
 import DatePickerSingle from '@components/DatePickerSingle'
 import GuestCom from '@components/GuestCom'
@@ -12,12 +10,12 @@ import { useQuery } from '@tanstack/react-query'
 import { addDays } from 'date-fns'
 import { useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CiSearch } from 'react-icons/ci'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { toast } from 'sonner'
 import { useDebounce, useDebouncedCallback } from 'use-debounce'
 import { NumberParam, StringParam, useQueryParams, withDefault } from 'use-query-params'
+import SearchTourBtn from './SearchTourBtn'
 
 const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
   const { guests, types, filter, loading } = useSelector(tourSelector)
@@ -80,32 +78,25 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
           <LoadingSearch />
         </div>
       ) : (
-        <>
-          <div className="lg:px-8 lg:py-8 w-full h-full p-4">
-            <p className="text-size-2xl">{t('tour.description')}</p>
-            <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
-              <InputSearch
-                location={locationFilter}
-                setLocation={setLocationFilter}
-                locationData={locationData}
-                placeHolder="Search Location Tour"
-              />
-              <div className="group bg-third lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
-                <DatePickerSingle date={date} setDate={(v) => setDate(v ?? date)} setQuery={setQuery} />
-              </div>
-
-              <TypeCom data={types} setTypeFilter={setTypeFilter} t={t} type={type} />
-
-              <GuestCom data={guests} guest={guest} setGuest={handleFilterGuest} t={t} />
+        <div className="lg:px-8 lg:py-8 w-full h-full p-4">
+          <p className="text-size-2xl">{t('tour.description')}</p>
+          <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
+            <InputSearch
+              location={locationFilter}
+              setLocation={setLocationFilter}
+              locationData={locationData}
+              placeHolder="Search Location Tour"
+            />
+            <div className="group bg-third lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
+              <DatePickerSingle date={date} setDate={(v) => setDate(v ?? date)} setQuery={setQuery} />
             </div>
-            <div className="lg:pt-6 pt-4">
-              <Button variant="primary" className="flex justify-center gap-2 text-third" onClick={handleFilter}>
-                <CiSearch className="text-size-lg" />
-                {t('tour.search')}
-              </Button>
-            </div>
+
+            <TypeCom data={types} setTypeFilter={setTypeFilter} t={t} type={type} />
+
+            <GuestCom data={guests} guest={guest} setGuest={handleFilterGuest} t={t} />
           </div>
-        </>
+          <SearchTourBtn handleFilter={handleFilter} />
+        </div>
       )}
     </div>
   )
