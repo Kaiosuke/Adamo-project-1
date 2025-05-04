@@ -13,6 +13,7 @@ import { useDebouncedCallback } from 'use-debounce'
 import { ITour } from '@interfaces/tour'
 import { useAppDispatch } from '@redux-toolkit/index'
 import { handleFormatMoney } from '../helper'
+import StyledButton from './styled/button/Button'
 
 const Tour = ({ tour }: { tour: ITour }) => {
   const [query] = useQueryParams({
@@ -58,9 +59,11 @@ const Tour = ({ tour }: { tour: ITour }) => {
                 <img src={Shape2} alt="shape" className="object-cover w-full" />
               )}
             </div>
-            <div className="text-third px-4 py-1.5 bg-primary w-fit flex items-center gap-1 absolute left-0 bottom-8">
-              <MdOutlineStar />
-              {tour.score}
+            <div className="text-third  absolute left-0 bottom-8">
+              <StyledButton className="flex items-center gap-1" variant="primary" mouse>
+                <MdOutlineStar />
+                {tour.score}
+              </StyledButton>
             </div>
           </div>
           <div>

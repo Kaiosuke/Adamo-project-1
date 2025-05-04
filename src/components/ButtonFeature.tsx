@@ -1,9 +1,7 @@
+import StyledButton from './styled/button/Button'
+
 const ButtonFeature = ({ content }: { content: string }) => {
-  return (
-    <div className="w-[80px] h-[32px] bg-secondary text-third flex items-center justify-center text-sm cursor-pointer hover:bg-secondary/80">
-      {content}
-    </div>
-  )
+  return <StyledButton>{content}</StyledButton>
 }
 
 export default ButtonFeature
