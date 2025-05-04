@@ -63,7 +63,7 @@ const linkNavVi = [
 ]
 
 interface Props {
-  getLinkColor: 'text-secondary' | 'text-third'
+  getLinkColor: string
   isPage: string
 }
 
@@ -92,7 +92,7 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
   const { t } = useTranslation('header')
 
   return (
-    <ul className="flex justify-between items-center gap-10 lg:flex-row flex-col">
+    <ul className="flex justify-between items-center gap-10 lg:flex-row flex-col ">
       {(currentLanguage === 'en' ? linkNavEn : linkNavVi).map((nav, index) => (
         <li key={index}>
           <Link

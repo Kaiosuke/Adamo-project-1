@@ -12,6 +12,8 @@ import NavPc from './NavPc'
 const pages = ['tour-detail', 'hotel-detail', 'privacy-policy']
 
 const Header = () => {
+  const theme = localStorage.getItem('vite-ui-theme')
+
   const [isScroll, setIsScroll] = useState(false)
   const { scrollDir } = useDetectScroll()
 
@@ -31,14 +33,16 @@ const Header = () => {
   const isPage = location.pathname.split('/')[1]
 
   const getLinkColor = useMemo(() => {
+    if (theme === 'dark') return 'text-white'
     if (isScroll) return 'text-secondary'
     return pages.includes(isPage) ? 'text-secondary' : 'text-third'
-  }, [isPage, isScroll])
+  }, [isPage, isScroll, theme])
 
-  const getLogoColor = () => {
+  const getLogoColor = useMemo(() => {
+    if (theme === 'dark') return Logo
     if (isScroll) return LogoBlack
     return pages.includes(isPage) ? LogoBlack : Logo
-  }
+  }, [isPage, isScroll, theme])
 
   return (
     <header
@@ -49,7 +53,7 @@ const Header = () => {
       <div className={`main-container flex items-center relative ${isScroll ? 'pt-0' : 'pt-0'}`}>
         <Link to="/">
           <img
-            src={getLogoColor()}
+            src={getLogoColor}
             className="lg:w-[90px] lg:h-[90px] md:w-[68px] md:h-[68px] w-[48px] h-[48px]"
             alt="logo"
           />

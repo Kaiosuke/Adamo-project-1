@@ -60,7 +60,7 @@ const linkNavVi = [
 ]
 
 interface Props {
-  getLinkColor: 'text-secondary' | 'text-third'
+  getLinkColor: string
 }
 
 const NavMb = ({ getLinkColor }: Props) => {

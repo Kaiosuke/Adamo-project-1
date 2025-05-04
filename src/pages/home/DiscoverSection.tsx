@@ -48,7 +48,7 @@ const DiscoverSection = ({ data }: { data: ITour[] }) => {
                     </div>
                   </Link>
 
-                  <div className="pt-4 text-left">
+                  <div className="pt-4 text-left dark:bg-[#2c2c2c]">
                     <h4 className="text-size-xl text-secondary">
                       <Link to={`/tour-detail/${v.id}`}>{v.location}</Link>
                     </h4>

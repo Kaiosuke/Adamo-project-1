@@ -64,14 +64,8 @@ const ForgotPassword = () => {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-[350px]">
               <InputAuth form={form} name="email" title={t('forgotPs.email')} />
               <div className="flex flex-col gap-6 mt-6">
-                <Button variant={'primary'} type="submit">
-                  {loading ? (
-                    <>
-                      <LoadingBtn />
-                    </>
-                  ) : (
-                    `${t('forgotPs.send')}`
-                  )}
+                <Button variant={'primary'} type="submit" className="text-ten">
+                  {loading ? <LoadingBtn /> : `${t('forgotPs.send')}`}
                 </Button>
                 <Link to="/auth/login">
                   <Button variant={'outline'} type="button">

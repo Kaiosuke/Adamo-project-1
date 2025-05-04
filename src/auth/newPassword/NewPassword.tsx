@@ -115,14 +115,8 @@ const NewPassword = () => {
                 </Link>
               </div>
               <div className="flex flex-col gap-6 mt-6">
-                <Button variant={'primary'} type="submit">
-                  {loading ? (
-                    <>
-                      <LoadingBtn />
-                    </>
-                  ) : (
-                    `${t('newPs.access')}`
-                  )}
+                <Button variant={'primary'} type="submit" className="text-ten">
+                  {loading ? <LoadingBtn /> : `${t('newPs.access')}`}
                 </Button>
                 <Button variant={'six'} type="button" onClick={handleLoginByFb}>
                   <span>

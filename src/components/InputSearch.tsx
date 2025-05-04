@@ -44,7 +44,7 @@ const InputSearch = ({ location, setLocation, locationData, placeHolder = '' }: 
           setLocation(e.target.value)
           setShowResult(true)
         }}
-        className="border-none h-full w-full rounded-none placeholder:text-five text-2xl pl-14"
+        className="border-none h-full w-full rounded-none text-2xl pl-14 secondary placeholder:secondary"
       />
       <div className="absolute top-1/2 -translate-y-1/2 pl-6 text-primary text-size-2xl">
         <FaLocationDot />

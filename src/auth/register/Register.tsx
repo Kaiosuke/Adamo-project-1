@@ -106,19 +106,12 @@ const Login = () => {
               <InputAuth form={form} name="confirm" title={t('signUp.confirm')} type="password" />
 
               <div className="flex flex-col gap-6 mt-6">
-                <Button variant={'primary'} type="submit">
-                  {loading ? (
-                    <>
-                      <LoadingBtn />
-                    </>
-                  ) : (
-                    `${t('signUp.register')}`
-                  )}
+                <Button variant={'primary'} type="submit" className="text-ten">
+                  {loading ? <LoadingBtn /> : `${t('signUp.register')}`}
                 </Button>
-                <Button variant={'six'} type="button" onClick={handleLoginByFb}>
-                  <span>
-                    <FaFacebook className="text-size-lg" />
-                  </span>
+                <Button variant={'six'} type="button" onClick={handleLoginByFb} className="text-ten">
+                  <FaFacebook className="text-size-lg" />
+
                   {t('signUp.signFb')}
                 </Button>
               </div>

@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 
 interface Props {
-  getLinkColor: 'text-secondary' | 'text-third'
+  getLinkColor: string
 }
 
 const Language = ({ getLinkColor }: Props) => {

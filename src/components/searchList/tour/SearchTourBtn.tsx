@@ -13,7 +13,7 @@ const SearchTourBtn = ({ handleFilter }: Props) => {
 
   return (
     <div className="lg:pt-6 pt-4">
-      <Button variant="primary" className="flex justify-center gap-2 text-third" onClick={handleFilter}>
+      <Button variant="primary" className="flex justify-center gap-2 text-ten" onClick={handleFilter}>
         <CiSearch className="text-size-lg" />
         {t('tour.search')}
       </Button>

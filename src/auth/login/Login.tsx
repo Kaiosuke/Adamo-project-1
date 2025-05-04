@@ -98,20 +98,13 @@ const Login = () => {
                   {t('signIn.forgotPs')}
                 </Link>
               </div>
-              <div className="flex flex-col gap-6 mt-6">
-                <Button variant={'primary'} type="submit">
-                  {loading ? (
-                    <>
-                      <LoadingBtn />
-                    </>
-                  ) : (
-                    `${t('signIn.title')}`
-                  )}
+              <div className="flex flex-col gap-6 mt-6 ">
+                <Button variant={'primary'} type="submit" className="text-ten">
+                  {loading ? <LoadingBtn /> : `${t('signIn.title')}`}
                 </Button>
-                <Button variant={'six'} type="button" onClick={handleLoginByFb}>
-                  <span>
-                    <FaFacebook className="text-size-lg" />
-                  </span>
+                <Button variant={'six'} type="button" onClick={handleLoginByFb} className="text-ten">
+                  <FaFacebook className="text-size-lg " />
+
                   {t('signIn.signFb')}
                 </Button>
               </div>

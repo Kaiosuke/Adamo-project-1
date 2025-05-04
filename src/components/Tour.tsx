@@ -44,7 +44,7 @@ const Tour = ({ tour }: { tour: ITour }) => {
   return (
     <>
       {tour && (
-        <div className="w-full ">
+        <div className="w-full dark:bg-[#2c2c2c]">
           <div className="relative">
             <Link to={`/tour-detail/${tour.id}?from=${from}&duration=${tour.duration}`}>
               <LoadedImage thumbnail={tour.thumbnail} alt={tour.title} />
