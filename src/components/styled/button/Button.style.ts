@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 interface Props {
   variant?: string
-  mouse?: boolean
+  cursor?: string
 }
 
 export const StyledButton = styled.button<Props>`
@@ -14,7 +14,7 @@ export const StyledButton = styled.button<Props>`
   display: flex;
   font-size: 14px;
   justify-content: center;
-  cursor: ${(props) => (props.mouse ? 'mouse' : 'pointer')};
+  cursor: ${(props) => (props.cursor === 'mouse' ? 'mouse' : 'pointer')};
   transition: all 0.1s ease-in-out;
   align-items: center;
   &:hover {

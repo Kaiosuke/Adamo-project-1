@@ -60,7 +60,7 @@ const Tour = ({ tour }: { tour: ITour }) => {
               )}
             </div>
             <div className="text-third  absolute left-0 bottom-8">
-              <StyledButton className="flex items-center gap-1" variant="primary" mouse>
+              <StyledButton className="flex items-center gap-1" variant="primary" cursor="mouse">
                 <MdOutlineStar />
                 {tour.score}
               </StyledButton>
