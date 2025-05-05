@@ -22,7 +22,7 @@ const HeroSection = () => {
             </h1>
           </div>
         </div>
-        <div className="absolute -bottom-1 sub-2-container flex items-end justify-between">
+        <div className="absolute bottom-0 sub-2-container flex items-end justify-between">
           <div className="bg-third h-[100px] flex flex-col gap-2 justify-center items-start w-full xl:px-46 lg:pl-26 lg:py-10 md:px-12 sm:px-8 px-4">
             <div className="text-size-base font-semibold flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary"></div>

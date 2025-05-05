@@ -24,7 +24,7 @@ const HeroSectionCom = ({ image, title, des, Tour }: Props) => {
             <h1 className="text-size-6xl text-third md:pt-4 pt-2 lg:w-[45%] md:w-[90%] w-[80%] bg-animate">{des}</h1>
           </div>
         </div>
-        <div className="absolute -bottom-1 w-full items-end lg:flex hidden">
+        <div className="absolute bottom-0 w-full items-end lg:flex hidden">
           <div className="bg-third w-full lg:h-[98px] h-0" />
           {Tour}
         </div>
