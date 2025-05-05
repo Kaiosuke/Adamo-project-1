@@ -2,6 +2,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTrigger } from '@components/
 import { DialogTitle } from '@radix-ui/react-dialog'
 
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   image: string
@@ -11,6 +12,8 @@ interface Props {
 }
 
 const HeroSectionCom = ({ image, title, des, Tour }: Props) => {
+  const { t } = useTranslation('others')
+
   return (
     <section className="w-full max-w-[1600px] m-auto">
       <div className="relative flex">
@@ -29,7 +32,7 @@ const HeroSectionCom = ({ image, title, des, Tour }: Props) => {
 
       <div className="lg:hidden block main-container">
         <Dialog>
-          <DialogTrigger className="px-6 py-3 text-third bg-primary mt-8">Open Search</DialogTrigger>
+          <DialogTrigger className="px-6 py-3 text-third bg-primary mt-8">{t('openSearch')}</DialogTrigger>
           <DialogContent className="bg-third/60">
             <DialogHeader>
               <DialogTitle>{Tour}</DialogTitle>

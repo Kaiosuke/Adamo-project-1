@@ -1,18 +1,17 @@
-import ButtonFeature from '@components/ButtonFeature'
-
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from '@components/ui/dropdown-menu'
 
+import SliderCom from '@components/sliders/SliderCom'
+import { StyledButton } from '@components/styled/button/Button.style'
 import { tourSelector } from '@redux-toolkit/selectors/tourSelector'
 import { filterByDuration, filterByPrice, filterByType } from '@redux-toolkit/slices/toursSlice'
 import { memo, useCallback, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 import TourBtn from './TourBtn'
 import TourDuration from './TourDuration'
 import TourType from './TourType'
-import SliderCom from '@components/sliders/SliderCom'
-import { useTranslation } from 'react-i18next'
 
 const FilterTour = () => {
   const { filter } = useSelector(tourSelector)
@@ -75,7 +74,7 @@ const FilterTour = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <ButtonFeature content={t('filter')} />
+        <StyledButton>{t('filter')}</StyledButton>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="mt-4 rounded-none w-[351px] py-4 px-4">
         <DropdownMenuLabel className="flex justify-between items-center px-0">
@@ -86,7 +85,7 @@ const FilterTour = () => {
         </DropdownMenuLabel>
         <div>
           <span className="text-secondary font-bold"> {t('budget')}:</span>
-          <div className="lg:mt-10 mt-6">
+          <div className="mt-10">
             <SliderCom prices={prices} max={300} onValueChange={handleOnValueChange} />
           </div>
         </div>

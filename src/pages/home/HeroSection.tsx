@@ -6,7 +6,7 @@ import { DialogTitle } from '@radix-ui/react-dialog'
 import { Trans, useTranslation } from 'react-i18next'
 
 const HeroSection = () => {
-  const { t } = useTranslation('home')
+  const { t } = useTranslation(['home', 'others'])
 
   return (
     <section className="sub-2-container">
@@ -51,7 +51,7 @@ const HeroSection = () => {
       <div className="lg:hidden block main-container">
         <Dialog>
           <DialogTrigger>
-            <div className="px-6 py-3 text-third bg-primary mt-8">Open Search</div>
+            <div className="px-6 py-3 text-third bg-primary mt-8">{t('others:openSearch')}</div>
           </DialogTrigger>
           <DialogContent className="bg-third/60">
             <DialogHeader>

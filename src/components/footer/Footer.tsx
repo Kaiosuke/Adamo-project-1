@@ -192,7 +192,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-center bg-secondary text-third py-2">Copyright © We.travel. All rights reserved</div>
+      <div className="max-w-[1600px] m-auto text-center bg-secondary text-third py-2">
+        Copyright © We.travel. All rights reserved
+      </div>
     </footer>
   )
 }
