@@ -1,16 +1,15 @@
-import ButtonFeature from '@components/ButtonFeature'
-
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from '@components/ui/dropdown-menu'
 
 import SliderCom from '@components/sliders/SliderCom'
+import { StyledLikeButton } from '@components/styled/likeButton/LikeButton'
 import { memo, useCallback, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 import { NumberParam, StringParam, useQueryParams } from 'use-query-params'
 import HotelBtn from './HotelBtn'
 import HotelScore from './HotelScore'
 import HotelStar from './HotelStar'
-import { useTranslation } from 'react-i18next'
 
 const FilterHotel = () => {
   const [loading, setLoading] = useState(false)
@@ -86,7 +85,7 @@ const FilterHotel = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <ButtonFeature content={t('filter')} />
+        <StyledLikeButton>{t('filter')}</StyledLikeButton>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="mt-4 rounded-none w-[351px] py-4 px-4">
         <DropdownMenuLabel className="flex justify-between items-center px-0">

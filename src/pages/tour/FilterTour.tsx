@@ -1,7 +1,7 @@
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from '@components/ui/dropdown-menu'
 
 import SliderCom from '@components/sliders/SliderCom'
-import { StyledButton } from '@components/styled/button/Button.style'
+import { StyledLikeButton } from '@components/styled/likeButton/LikeButton'
 import { tourSelector } from '@redux-toolkit/selectors/tourSelector'
 import { filterByDuration, filterByPrice, filterByType } from '@redux-toolkit/slices/toursSlice'
 import { memo, useCallback, useEffect, useState } from 'react'
@@ -74,7 +74,7 @@ const FilterTour = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <StyledButton>{t('filter')}</StyledButton>
+        <StyledLikeButton>{t('filter')}</StyledLikeButton>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="mt-4 rounded-none w-[351px] py-4 px-4">
         <DropdownMenuLabel className="flex justify-between items-center px-0">

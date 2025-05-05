@@ -12,7 +12,7 @@ import HotelPagination from './HotelPagination'
 
 import { getHotels } from '@api/hotelRequest'
 
-import { keepPreviousData, useQuery } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import { NumberParam, StringParam, useQueryParams, withDefault } from 'use-query-params'
 
 const Hotel = () => {
@@ -40,8 +40,7 @@ const Hotel = () => {
 
   const { data, isLoading } = useQuery({
     queryKey: ['hotels', { _page, _sort, _order, location, score, prices, star, guest }],
-    queryFn: () => getHotels({ _page, _sort, _order, location, score, prices, star }),
-    placeholderData: keepPreviousData
+    queryFn: () => getHotels({ _page, _sort, _order, location, score, prices, star })
   })
 
   const totalData = data?.totalData
