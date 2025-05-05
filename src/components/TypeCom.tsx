@@ -24,7 +24,7 @@ const TypeCom = ({ data, setTypeFilter, type, t }: Props) => {
           })
         }
       >
-        <SelectTrigger className="w-full group-hover:text-third ">
+        <SelectTrigger className="w-full group-hover:text-third group-hover:data-[placeholder]:text-third">
           <SelectValue placeholder={t('tour.type')} />
         </SelectTrigger>
         <SelectContent>
