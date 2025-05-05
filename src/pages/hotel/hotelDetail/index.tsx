@@ -52,6 +52,7 @@ const HotelDetail = () => {
     <>
       <PdSub />
       <PdSub />
+      <div className="mt-10 md:mt-0" />
       <BreadcrumbCom current={current} links={links} />
       <PdSub />
       <section className="main-container animate-fade-down ">
