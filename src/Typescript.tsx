@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // const fnTest = (): number => {
 //   return 1
 // }
@@ -33,8 +34,31 @@
 
 // type User2 = User & { age: number }
 
+// type Letter = 'a' | 'b' | 'c'
+
+// type Remove<TType> = TType extends 'c' | 'b' ? never : TType
+
+// type TypeC = Remove<Letter>
+
+type TIConSize2<T extends string> = T | Omit<string, T>
+
+type TIConSize = TIConSize2<'sm' | 'xs'>
+
+interface Props {
+  size: TIConSize
+}
+
+const IconCom = (_prop: Props) => {
+  return <></>
+}
+
 const Typescript = () => {
-  return <div>Typescript</div>
+  return (
+    <>
+      <div>Typescript</div>
+      <IconCom size="lg" />
+    </>
+  )
 }
 
 export default Typescript

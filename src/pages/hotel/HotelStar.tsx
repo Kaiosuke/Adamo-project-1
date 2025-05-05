@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 
 import { FaStar } from 'react-icons/fa6'
 
-const starList = ['1', '2', '3', '4', '5']
+const starList = ['5', '4', '3', '2', '1']
 
 interface Props {
   stars: string[]

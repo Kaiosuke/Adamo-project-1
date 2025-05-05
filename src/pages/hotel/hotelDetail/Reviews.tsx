@@ -2,7 +2,7 @@ import { getReviewsHotel } from '@api/reviewRequest'
 
 import ReviewHotel from '@components/reviews/ReviewHotel'
 import { IReviewHotel } from '@interfaces/review'
-import { useQuery } from '@tanstack/react-query'
+import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import { useEffect, useMemo, useState } from 'react'
 import { useParams } from 'react-router'
 
@@ -42,6 +42,7 @@ const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
         _page: _page,
         _limit: ITEMS_PER_PAGE
       }),
+    placeholderData: keepPreviousData,
     enabled: id !== undefined
   })
 
