@@ -51,7 +51,7 @@ const HeroSection = () => {
       <div className="lg:hidden block main-container">
         <Dialog>
           <DialogTrigger>
-            <div className="px-6 py-3 text-third bg-primary">Open Search</div>
+            <div className="px-6 py-3 text-third bg-primary mt-8">Open Search</div>
           </DialogTrigger>
           <DialogContent className="bg-third/60">
             <DialogHeader>
