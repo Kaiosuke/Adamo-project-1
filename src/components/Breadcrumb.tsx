@@ -15,7 +15,7 @@ const BreadcrumbCom = ({ links, current }: { links: BreadcrumbIT[]; current: str
         <BreadcrumbList>
           {links.map((link, index) => (
             <BreadcrumbItem key={index}>
-              <BreadcrumbLink href={link.href} className="text-size-lg">
+              <BreadcrumbLink href={link.href} className="text-size-lg hover:underline">
                 {link.title}
               </BreadcrumbLink>
               <Dot />

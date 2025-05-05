@@ -4,6 +4,12 @@
   },
   "contact": {
     "title": "Chúng tôi rất mong nhận được phản hồi từ bạn",
-    "description": "Gửi cho chúng tôi một tin nhắn và chúng tôi sẽ phản hồi sớm nhất có thể"
+    "description": "Gửi cho chúng tôi một tin nhắn và chúng tôi sẽ phản hồi sớm nhất có thể",
+    "name": "Tên của bạn",
+    "email": "Email của bạn",
+    "phone": "Số điện thoại",
+    "message": "Tin nhắn",
+    "submit": "Gửi",
+    "ourOffice": "Địa chỉ văn phòng"
   }
 }

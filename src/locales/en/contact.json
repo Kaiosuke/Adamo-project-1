@@ -4,6 +4,12 @@
   },
   "contact": {
     "title": "We'd love to hear from you",
-    "description": "Send us a message and we'll respond as soon as possible"
+    "description": "Send us a message and we'll respond as soon as possible",
+    "name": "Your Name",
+    "email": "Your email",
+    "phone": "Your phone",
+    "message": "Message",
+    "submit": "Submit",
+    "ourOffice": "Our Office"
   }
 }

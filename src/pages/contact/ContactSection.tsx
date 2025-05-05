@@ -10,7 +10,7 @@ import { Form } from '@components/ui/form'
 import { IContact } from '@interfaces/contact'
 import { contactSchema } from '@schemas/contactSchema'
 import { useMutation } from '@tanstack/react-query'
-import { Trans } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 import Office from './Office'
@@ -43,6 +43,8 @@ const ContactSection = () => {
     mutate({ ...values, phoneNumber: Number(values.phoneNumber) })
   }, 300)
 
+  const { t } = useTranslation('contact')
+
   return (
     <section className="main-container animate-fade-down">
       <div className="flex gap-10 lg:flex-row flex-col-reverse">
@@ -58,10 +60,10 @@ const ContactSection = () => {
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <div className="flex flex-col justify-between">
-                <FormContact form={form} placeholder="Your Name" name="name" />
-                <FormContact form={form} placeholder="Your Email" name="email" />
-                <FormContact form={form} placeholder="Your Phone" name="phoneNumber" />
-                <FormContact form={form} placeholder="Message" name="message" isArea />
+                <FormContact form={form} placeholder={t('contact.name')} name="name" />
+                <FormContact form={form} placeholder={t('contact.email')} name="email" />
+                <FormContact form={form} placeholder={t('contact.phone')} name="phoneNumber" />
+                <FormContact form={form} placeholder={t('contact.message')} name="message" isArea />
               </div>
               <div className="w-full text-right">
                 <Button variant={'primary'} type="submit">
@@ -70,7 +72,7 @@ const ContactSection = () => {
                       <LoadingBtn />
                     </>
                   ) : (
-                    'Submit'
+                    t('contact.submit')
                   )}
                 </Button>
               </div>
