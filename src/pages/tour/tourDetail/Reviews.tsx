@@ -51,11 +51,9 @@ const Reviews = ({ currentPage, pageCount, totalData, setCurrentPage, averageSta
                 <div className="flex justify-center md:items-center h-full flex-col gap-2">
                   <div className="text-secondary text-size-5xl">{averageStar}/5</div>
                   <div className="text-secondary flex items-center gap-2">
-                    <FaStar className="text-nine" />
-                    <FaStar className="text-nine" />
-                    <FaStar className="text-nine" />
-                    <FaStar className="text-nine" />
-                    <FaStar className="text-four" />
+                    {[...Array(5)].map((_, index) => (
+                      <FaStar className={`${index < averageStar ? 'text-nine' : 'text-four'}`} key={index} />
+                    ))}
                   </div>
                   <Trans ns="detail" count={totalData} i18nKey={'tour.review.base'} />
                 </div>
