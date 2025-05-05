@@ -1,4 +1,4 @@
-import { getFiltersHotel, getLocationHotel } from '@api/hotelRequest'
+import { getFiltersHotel } from '@api/hotelRequest'
 import DatePickerSingle from '@components/DatePickerSingle'
 import { useQuery } from '@tanstack/react-query'
 import { addDays } from 'date-fns'
@@ -9,10 +9,9 @@ import { toast } from 'sonner'
 import { NumberParam, StringParam, useQueryParams, withDefault } from 'use-query-params'
 
 import GuestCom from '@components/GuestCom'
-import InputSearch from '@components/InputSearch'
 import LoadingSearch from '@components/LoadingList/LoadingSearch'
-import { useDebounce } from 'use-debounce'
 import SearchHotelBtn from './SearchHotelBtn'
+import SearchLocation from './SearchLocation'
 
 const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const { t } = useTranslation(['search', 'others'])
@@ -53,16 +52,6 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
     navigate(`/hotels?location=${location}&guest=${guest}&from=${from.toDateString()}&_page=1`)
   }
 
-  const [value] = useDebounce(location.trim(), 300)
-
-  const { data: locationData } = useQuery({
-    queryKey: ['locationHotel', { value }],
-    queryFn: () => {
-      return getLocationHotel({ data: value })
-    },
-    enabled: !!value
-  })
-
   return (
     <div
       className={`bg-third/80 ${
@@ -79,12 +68,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
             <div className="text-size-2xl">{t('hotel.title')}</div>
             <div className="flex flex-col justify-between h-full">
               <div className="lg:mt-6 mt-4 flex flex-col lg:gap-4 gap-2">
-                <InputSearch
-                  location={location}
-                  locationData={locationData}
-                  setLocation={setLocation}
-                  placeHolder={t('others:searchHotel')}
-                />
+                <SearchLocation location={location} setLocation={setLocation} t={t} />
 
                 <div className="group bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
                   <DatePickerSingle setQuery={setQuery} date={date} setDate={(value) => setDate(value ?? date)} />
