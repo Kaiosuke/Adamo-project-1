@@ -21,7 +21,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
   const { guests, types, filter, loading } = useSelector(tourSelector)
 
   const { location, type, guest } = filter
-  const { t } = useTranslation('search')
+  const { t } = useTranslation(['search', 'others'])
 
   const dispatch = useDispatch()
 
@@ -85,7 +85,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
               location={locationFilter}
               setLocation={setLocationFilter}
               locationData={locationData}
-              placeHolder="Search Location Tour"
+              placeHolder={t('others:searchTour')}
             />
             <div className="group bg-third lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">
               <DatePickerSingle date={date} setDate={(v) => setDate(v ?? date)} setQuery={setQuery} />

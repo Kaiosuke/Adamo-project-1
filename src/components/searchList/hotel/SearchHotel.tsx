@@ -15,7 +15,7 @@ import { useDebounce } from 'use-debounce'
 import SearchHotelBtn from './SearchHotelBtn'
 
 const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
-  const { t } = useTranslation('search')
+  const { t } = useTranslation(['search', 'others'])
 
   const [query, setQuery] = useQueryParams({
     location: withDefault(StringParam, ''),
@@ -83,7 +83,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
                   location={location}
                   locationData={locationData}
                   setLocation={setLocation}
-                  placeHolder="Search Location Hotel"
+                  placeHolder={t('others:searchHotel')}
                 />
 
                 <div className="group bg-third w-full lg:h-[64px] md:h-[48px] h-[36px] flex items-center hover:bg-primary">

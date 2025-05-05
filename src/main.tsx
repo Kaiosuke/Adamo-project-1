@@ -13,6 +13,7 @@ import store, { persistor } from './redux-toolkit/index.ts'
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
+      staleTime: 1 * 60 * 1000,
       refetchOnWindowFocus: true
     }
   }

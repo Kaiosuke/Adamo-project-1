@@ -1,8 +1,9 @@
 import Logo from '@assets/images/logo.png'
-import i18n from '@i18n/i18n'
+import { languageSelector } from '@redux-toolkit/selectors/languageSelector'
 import { useTranslation } from 'react-i18next'
 import { CiLocationOn, CiMail } from 'react-icons/ci'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa6'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router'
 
 const linksEn = [
@@ -92,7 +93,7 @@ const pagesVi = [
 const Footer = () => {
   useTranslation()
 
-  const currentLanguage = i18n.language
+  const { lg } = useSelector(languageSelector)
 
   return (
     <footer>
@@ -104,19 +105,19 @@ const Footer = () => {
             </div>
             <ul className="flex lg:pt-8 md:pt-6 pt-4 lg:gap-8 md:gap-6 gap-4">
               <li className="text-third text-size-xl">
-                <a href="#!">
+                <Link to="#!">
                   <FaFacebook />
-                </a>
+                </Link>
               </li>
               <li className="text-third text-size-xl ">
-                <a href="#!">
+                <Link to="#!">
                   <FaInstagram />
-                </a>
+                </Link>
               </li>
               <li className="text-third text-size-xl">
-                <a href="#!">
+                <Link to="#!">
                   <FaTwitter />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -124,7 +125,7 @@ const Footer = () => {
             <div className="text-base text-third flex justify-between flex-wrap">
               <div className="md:flex-[0_0_25%] sm:flex-[0_0_50%] flex-[0_0_100%]">
                 <ul className="flex flex-col md:gap-6 gap:4">
-                  {currentLanguage === 'en' ? (
+                  {lg === 'en' ? (
                     <>
                       {linksEn.map((v, index) => (
                         <li key={index} className="text-third hover:text-primary">
@@ -145,7 +146,7 @@ const Footer = () => {
               </div>
               <div className="lg:flex-[0_0_25%] sm:flex-[0_0_50%] flex-[0_0_100%] sm:pt-0 pt-6">
                 <ul className="flex flex-col md:gap-6 gap:4">
-                  {currentLanguage === 'en' ? (
+                  {lg === 'en' ? (
                     <>
                       {pagesEn.map((v, index) => (
                         <li key={index} className="text-third hover:text-primary">

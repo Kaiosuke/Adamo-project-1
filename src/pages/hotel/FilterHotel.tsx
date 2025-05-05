@@ -86,7 +86,7 @@ const FilterHotel = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <ButtonFeature content="Filter" />
+        <ButtonFeature content={t('filter')} />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="mt-4 rounded-none w-[351px] py-4 px-4">
         <DropdownMenuLabel className="flex justify-between items-center px-0">

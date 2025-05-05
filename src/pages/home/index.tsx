@@ -11,8 +11,8 @@ import TraditionalSection from './Traditional'
 
 import { getAllTour, getFiltersTour, getTours } from '@api/tourRequest'
 
-import PdMain from '@components/paddingList/PbMain'
 import SkeletonData from '@components/LoadingList/SkeletonData'
+import PdMain from '@components/paddingList/PbMain'
 
 const Home = () => {
   const dispatch = useAppDispatch()
