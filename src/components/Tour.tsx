@@ -14,17 +14,28 @@ import { ITour } from '@interfaces/tour'
 import { useAppDispatch } from '@redux-toolkit/index'
 import { handleFormatMoney } from '../helper'
 import StyledButton from './styled/button/Button'
+import { useSelector } from 'react-redux'
+import { authSelector } from '@redux-toolkit/selectors/authSelector'
 
 const Tour = ({ tour }: { tour: ITour }) => {
   const [query] = useQueryParams({
     from: StringParam
   })
+  const { currentUser } = useSelector(authSelector)
 
   const from = query.from || ''
 
   const dispatch = useAppDispatch()
 
   const handleChangeFavorite = useDebouncedCallback(async () => {
+    if (!currentUser) {
+      return toast.warning('Please login first', {
+        style: {
+          backgroundColor: '#FF0B55',
+          color: '#ffffff'
+        }
+      })
+    }
     try {
       const data = {
         favorite: !tour.favorite

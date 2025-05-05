@@ -13,6 +13,8 @@ import { changeStatusFavorite } from '@api/hotelRequest'
 import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 import { IReviewHotel } from '@interfaces/review'
+import { authSelector } from '@redux-toolkit/selectors/authSelector'
+import { useSelector } from 'react-redux'
 
 const Hotel = ({ hotel, totalReview }: { hotel: IHotel; totalReview?: IReviewHotel[] }) => {
   const [query] = useQueryParams({
@@ -22,6 +24,8 @@ const Hotel = ({ hotel, totalReview }: { hotel: IHotel; totalReview?: IReviewHot
   const totalData = Number(localStorage.getItem('totalReviewHotel') || '0')
 
   const queryClient = useQueryClient()
+
+  const { currentUser } = useSelector(authSelector)
 
   const from = query.from || new Date().toDateString()
 
@@ -39,6 +43,14 @@ const Hotel = ({ hotel, totalReview }: { hotel: IHotel; totalReview?: IReviewHot
   })
 
   const handleChangeStatusFavorite = useDebouncedCallback(() => {
+    if (!currentUser) {
+      return toast.warning('Please login first', {
+        style: {
+          backgroundColor: '#FF0B55',
+          color: '#ffffff'
+        }
+      })
+    }
     changeStatus.mutate({ id: hotel.id, data: { favorite: !hotel.favorite } })
   }, 300)
 
