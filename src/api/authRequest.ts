@@ -57,7 +57,7 @@ const loginByFb = createAsyncThunk<IAuth, void, { rejectValue: string }>(
       }
     } catch (error) {
       if (error instanceof FirebaseError) {
-        return rejectWithValue('Change Password failure!')
+        return rejectWithValue('Login failed')
       }
       return rejectWithValue('Login failed')
     }
@@ -81,7 +81,7 @@ const register = createAsyncThunk<
     if (error instanceof FirebaseError) {
       return rejectWithValue('Email already in use')
     }
-    return rejectWithValue('Login failed')
+    return rejectWithValue('error')
   }
 })
 
@@ -93,7 +93,7 @@ const logout = createAsyncThunk<void, void, { rejectValue: string }>('auth/logou
     if (error instanceof FirebaseError) {
       return rejectWithValue('Logout failure!')
     }
-    return rejectWithValue('Login failed')
+    return rejectWithValue('error')
   }
 })
 
@@ -108,7 +108,7 @@ const forgotPassword = createAsyncThunk<string, string, { rejectValue: string }>
       if (error instanceof FirebaseError) {
         return rejectWithValue('Forgot Password failure!')
       }
-      return rejectWithValue('Login failed')
+      return rejectWithValue('error')
     }
   }
 )
@@ -123,7 +123,7 @@ const newPassword = createAsyncThunk<string, { oobCode: string; newPassword: str
       if (error instanceof FirebaseError) {
         return rejectWithValue('Change Password failure!')
       }
-      return rejectWithValue('Login failed')
+      return rejectWithValue('error')
     }
   }
 )
@@ -144,7 +144,7 @@ const changePassword = createAsyncThunk<string, string, { rejectValue: string }>
       if (error instanceof FirebaseError) {
         return rejectWithValue('Change Password failure!')
       }
-      return rejectWithValue('Login failed')
+      return rejectWithValue('error')
     }
   }
 )

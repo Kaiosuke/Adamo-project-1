@@ -16,6 +16,7 @@ import { Link, useNavigate } from 'react-router'
 
 import { toast } from 'sonner'
 import { useTranslation } from 'react-i18next'
+import { useState } from 'react'
 
 const Login = () => {
   const form = useForm<z.infer<typeof signInSchema>>({
@@ -25,6 +26,8 @@ const Login = () => {
       password: ''
     }
   })
+
+  const [pendingLoginFb, setPendingLoginFb] = useState(false)
 
   const { t } = useTranslation('auth')
 
@@ -60,6 +63,7 @@ const Login = () => {
   }
 
   const handleLoginByFb = async () => {
+    setPendingLoginFb(true)
     try {
       const user = await dispatch(loginByFb()).unwrap()
       if (user) {
@@ -79,6 +83,8 @@ const Login = () => {
             color: '#ffffff'
           }
         })
+    } finally {
+      setPendingLoginFb(false)
     }
   }
 
@@ -102,10 +108,15 @@ const Login = () => {
                 <Button variant={'primary'} type="submit" className="text-ten">
                   {loading ? <LoadingBtn /> : `${t('signIn.title')}`}
                 </Button>
-                <Button variant={'six'} type="button" onClick={handleLoginByFb} className="text-ten">
-                  <FaFacebook className="text-size-lg " />
-
-                  {t('signIn.signFb')}
+                <Button
+                  variant={'six'}
+                  type="button"
+                  onClick={handleLoginByFb}
+                  className="text-ten"
+                  disabled={pendingLoginFb}
+                >
+                  {!pendingLoginFb && <FaFacebook className="text-size-lg " />}
+                  {pendingLoginFb ? <LoadingBtn /> : `${t('signIn.signFb')}`}
                 </Button>
               </div>
             </form>
