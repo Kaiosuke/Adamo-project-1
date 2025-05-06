@@ -89,7 +89,7 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
     }
   }
 
-  const { t } = useTranslation('header')
+  const { t } = useTranslation(['header', 'others'])
 
   return (
     <ul className="flex justify-between items-center gap-10 lg:flex-row flex-col ">
@@ -136,7 +136,7 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
                             ${getLinkColor}
                         `}
           >
-            Login
+            {t('others:login')}
           </Link>
         )}
       </li>

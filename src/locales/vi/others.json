@@ -18,5 +18,9 @@
   "detailHotel": "Chi tiết khách sạn",
   "contact": "Liên hệ",
   "stars": "Hạng sao khách sạn",
-  "reviewScore": "Điểm đánh giá"
+  "reviewScore": "Điểm đánh giá",
+  "login": "Đăng nhập",
+  "light": "Sáng",
+  "dark": "Tối",
+  "system": "Hệ thống"
 }

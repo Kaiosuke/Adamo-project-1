@@ -18,5 +18,9 @@
   "detailHotel": "Detail Hotel",
   "contact": "Contact",
   "stars": "Hotel Star",
-  "reviewScore": "Review Score"
+  "reviewScore": "Review Score",
+  "login": "Login",
+  "light": "Light",
+  "dark": "Dark",
+  "system": "System"
 }
