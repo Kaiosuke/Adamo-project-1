@@ -1,4 +1,4 @@
-import { getAllReviewTour, getReviewTourList } from '@api/reviewRequest'
+import { getReviewTourList } from '@api/reviewRequest'
 import { getTourById } from '@api/tourRequest'
 import BreadcrumbCom from '@components/Breadcrumb'
 
@@ -15,7 +15,7 @@ import BillTourDetail from '@components/bills/tour/BillTourDetail'
 import PdMain from '@components/paddingList/PbMain'
 import PdSub from '@components/paddingList/PbSub'
 import SwiperCom from '@components/swiper/SwiperCom'
-import { useQuery } from '@tanstack/react-query'
+import { useQueryReviewTour } from '@hooks/queries/queryReviewTour'
 import { Trans, useTranslation } from 'react-i18next'
 import TourDetailTabs from './TourDetailTabs'
 
@@ -37,11 +37,7 @@ const TourDetail = () => {
     return saved ? Number(saved) : 0
   })
 
-  const { data: totalReviewHotel } = useQuery({
-    queryKey: ['reviewsTour', { id }],
-    queryFn: () => getAllReviewTour(id as string),
-    enabled: id !== undefined
-  })
+  const { data: totalReviewHotel } = useQueryReviewTour(id)
 
   const averageStar = useMemo(() => {
     if (totalReviewHotel?.length) {

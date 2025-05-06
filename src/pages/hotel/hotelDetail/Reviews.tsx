@@ -1,13 +1,11 @@
-import { getReviewsHotel } from '@api/reviewRequest'
-
 import ReviewHotel from '@components/reviews/ReviewHotel'
 import { IReviewHotel } from '@interfaces/review'
-import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import { useEffect, useMemo, useState } from 'react'
 import { useParams } from 'react-router'
 
 import LoadingReview from '@components/LoadingList/LoadingReview'
 import PdSub from '@components/paddingList/PbSub'
+import { useQueryReviewHotel } from '@hooks/queries/queryReviewHotel'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -34,17 +32,7 @@ const Reviews = ({ totalScore }: { totalScore: IReviewHotel[] }) => {
     return saved ? Number(saved) : 0
   })
 
-  const { data, isLoading } = useQuery({
-    queryKey: ['reviewHotel', { id, _page }],
-    queryFn: () =>
-      getReviewsHotel({
-        hotelId: id as string,
-        _page: _page,
-        _limit: ITEMS_PER_PAGE
-      }),
-    placeholderData: keepPreviousData,
-    enabled: id !== undefined
-  })
+  const { data, isLoading } = useQueryReviewHotel({ id, _page, _limit: ITEMS_PER_PAGE })
 
   useEffect(() => {
     setCurrentPage(0)

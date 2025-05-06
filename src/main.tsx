@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@components/ThemeProvider.tsx'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { keepPreviousData, QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
@@ -14,7 +14,8 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: 1 * 60 * 1000,
-      refetchOnWindowFocus: true
+      refetchOnWindowFocus: true,
+      placeholderData: keepPreviousData
     }
   }
 })

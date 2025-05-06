@@ -87,7 +87,7 @@ const ReviewForm = ({ totalData, id, setCurrentPage, onAverageRate, setQuery }: 
       return addReviewHotel({ data })
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['reviewHotel', 'score'] })
+      queryClient.invalidateQueries({ queryKey: ['reviewHotel'] })
       queryClient.invalidateQueries({
         queryKey: ['reviewHotel', { id, _page: 1 }]
       })

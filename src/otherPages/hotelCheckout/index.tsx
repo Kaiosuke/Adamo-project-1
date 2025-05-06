@@ -1,19 +1,17 @@
-import { getHotelById } from '@api/hotelRequest'
-
 import BillHotelCheckOut from '@components/bills/hotel/BillHotelCheckout'
 
+import LoadingPage from '@components/LoadingList/LoadingPage'
+import PdMain from '@components/paddingList/PbMain'
+import PdSub from '@components/paddingList/PbSub'
+import { Skeleton } from '@components/ui/skeleton'
+import { useQueryDetailHotel } from '@hooks/queries/queryHotel'
 import { bookingSelector } from '@redux-toolkit/selectors/bookingSelector'
-import { useQuery } from '@tanstack/react-query'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FaArrowLeftLong } from 'react-icons/fa6'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router'
 import FormInfoUser from './FormInfoUser'
-import { useEffect, useState } from 'react'
-import PdSub from '@components/paddingList/PbSub'
-import PdMain from '@components/paddingList/PbMain'
-import { Skeleton } from '@components/ui/skeleton'
-import LoadingPage from '@components/LoadingList/LoadingPage'
 
 const HotelCheckOut = () => {
   const { t } = useTranslation('checkout')
@@ -22,12 +20,7 @@ const HotelCheckOut = () => {
 
   const id = bookingHotel?.hotelId
 
-  const { data, isLoading } = useQuery({
-    queryKey: ['hotelDetail', { id: id }],
-    queryFn: () => getHotelById(Number(id)),
-    enabled: id !== undefined
-  })
-
+  const { data, isLoading } = useQueryDetailHotel(Number(id))
   const [discount, setDiscount] = useState<number>()
 
   const navigate = useNavigate()

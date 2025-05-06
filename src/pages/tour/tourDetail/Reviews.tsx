@@ -4,15 +4,14 @@ import { tourSelector } from '@redux-toolkit/selectors/tourSelector'
 import { FaStar } from 'react-icons/fa6'
 import { useSelector } from 'react-redux'
 
-import { getAllReviewTour } from '@api/reviewRequest'
-import { useQuery } from '@tanstack/react-query'
-import { useParams } from 'react-router'
-import TourReviewForm from './TourReviewForm'
-import Star from './Star'
 import Pagination from '@components/paginationList/Pagination'
-import { Trans, useTranslation } from 'react-i18next'
+import { useQueryReviewTour } from '@hooks/queries/queryReviewTour'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { memo } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
+import { useParams } from 'react-router'
+import Star from './Star'
+import TourReviewForm from './TourReviewForm'
 
 interface Props {
   currentPage: number
@@ -31,11 +30,7 @@ const Reviews = ({ currentPage, pageCount, totalData, setCurrentPage, averageSta
 
   const { id } = useParams()
 
-  const { data } = useQuery({
-    queryKey: ['reviewsTour', { id }],
-    queryFn: () => getAllReviewTour(id as string),
-    enabled: id !== undefined
-  })
+  const { data } = useQueryReviewTour(id)
 
   useTranslation('detail')
 

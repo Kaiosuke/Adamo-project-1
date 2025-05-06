@@ -4,7 +4,6 @@ import { IHotel } from '@interfaces/hotel'
 import { IRoom } from '@interfaces/room'
 import { roomSelector } from '@redux-toolkit/selectors/roomSelector'
 import { decreaseRoom, increaseRoom } from '@redux-toolkit/slices/roomsSlice'
-import { useQuery } from '@tanstack/react-query'
 import { memo, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FaCircleMinus, FaCirclePlus } from 'react-icons/fa6'
@@ -20,16 +19,17 @@ import { Form, FormField, FormMessage } from '@components/ui/form'
 import { ControllerRenderProps, useForm } from 'react-hook-form'
 import { z } from 'zod'
 
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useQueryData } from '@hooks/queries/other'
 import { IBookingHotel } from '@interfaces/booking'
+import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { addBookingHotel } from '@redux-toolkit/slices/bookingSlice'
 import { bookingHotelSchema } from '@schemas/bookingSchema'
-import { zodResolver } from '@hookform/resolvers/zod'
 import { DateRange } from 'react-day-picker'
 import { useNavigate } from 'react-router'
 import { useDebouncedCallback } from 'use-debounce'
 import DatePickerWithRange from '../../DatePickerWithRange'
 import AddOne from './AddOne'
-import { authSelector } from '@redux-toolkit/selectors/authSelector'
 
 const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
   const { t } = useTranslation(['search', 'bill'])
@@ -51,10 +51,7 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
     to: to
   })
 
-  const { data } = useQuery({
-    queryKey: ['guests'],
-    queryFn: () => getFiltersHotel()
-  })
+  const { data } = useQueryData({ getData: getFiltersHotel })
 
   const dispatch = useDispatch()
 

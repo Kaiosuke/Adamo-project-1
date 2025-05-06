@@ -10,9 +10,7 @@ import PdSub from '@components/paddingList/PbSub'
 import SearchHotel from '@components/searchList/hotel/SearchHotel'
 import HotelPagination from './HotelPagination'
 
-import { getHotels } from '@api/hotelRequest'
-
-import { useQuery } from '@tanstack/react-query'
+import { useQueryHotel } from '@hooks/queries/queryHotel'
 import { NumberParam, StringParam, useQueryParams, withDefault } from 'use-query-params'
 
 const Hotel = () => {
@@ -38,10 +36,7 @@ const Hotel = () => {
   const location = query.location || 'All'
   const star = query.star || ''
 
-  const { data, isLoading } = useQuery({
-    queryKey: ['hotels', { _page, _sort, _order, location, score, prices, star, guest }],
-    queryFn: () => getHotels({ _page, _sort, _order, location, score, prices, star })
-  })
+  const { data, isLoading } = useQueryHotel({ _page, _sort, _order, score, guest, prices, location, star })
 
   const totalData = data?.totalData
 
@@ -55,7 +50,11 @@ const Hotel = () => {
       <BreadcrumbCom links={links} current={current} />
       <PdSub />
       <HotelSection isLoading={isLoading} data={data?.data} />
-      {isLoading || !totalData ? <div>Loading...</div> : <HotelPagination totalData={totalData} />}
+      {isLoading ? (
+        <div className="text-center mt-20">Loading...</div>
+      ) : (
+        totalData && <HotelPagination totalData={totalData} />
+      )}
       <PdMain />
     </>
   )

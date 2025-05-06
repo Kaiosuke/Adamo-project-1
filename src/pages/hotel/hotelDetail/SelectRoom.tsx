@@ -1,16 +1,12 @@
 import { getAllRoom } from '@api/roomRequest'
 
-import { useQuery } from '@tanstack/react-query'
-import Room from './Room'
 import { Skeleton } from '@components/ui/skeleton'
+import { useQueryData } from '@hooks/queries/other'
 import { useTranslation } from 'react-i18next'
+import Room from './Room'
 
 const SelectRoom = () => {
-  const { data, isLoading } = useQuery({
-    queryKey: ['rooms'],
-    queryFn: () => getAllRoom()
-  })
-
+  const { data, isLoading } = useQueryData({ key: 'rooms', getData: getAllRoom })
   const { t } = useTranslation('detail')
 
   return (

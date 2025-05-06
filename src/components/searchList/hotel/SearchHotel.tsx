@@ -1,6 +1,5 @@
 import { getFiltersHotel } from '@api/hotelRequest'
 import DatePickerSingle from '@components/DatePickerSingle'
-import { useQuery } from '@tanstack/react-query'
 import { addDays } from 'date-fns'
 import { memo, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -10,6 +9,7 @@ import { NumberParam, StringParam, useQueryParams, withDefault } from 'use-query
 
 import GuestCom from '@components/GuestCom'
 import LoadingSearch from '@components/LoadingList/LoadingSearch'
+import { useQueryData } from '@hooks/queries/other'
 import SearchHotelBtn from './SearchHotelBtn'
 import SearchLocation from './SearchLocation'
 
@@ -23,10 +23,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
     from: StringParam
   })
 
-  const { data, isLoading } = useQuery({
-    queryKey: ['filtersHotel'],
-    queryFn: () => getFiltersHotel()
-  })
+  const { data, isLoading } = useQueryData({ getData: getFiltersHotel })
 
   const from = useMemo(() => (query.from ? new Date(query.from) : addDays(new Date(), 1)), [query.from])
 

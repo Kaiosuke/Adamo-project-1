@@ -1,17 +1,13 @@
-import { getHotels } from '@api/hotelRequest'
 import Hotel from '@components/Hotel'
 import SkeletonData from '@components/LoadingList/SkeletonData'
+import { useQueryHotel } from '@hooks/queries/queryHotel'
 import { IHotel } from '@interfaces/hotel'
-import { useQuery } from '@tanstack/react-query'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Fragment } from 'react/jsx-runtime'
 
 const RelatedHotels = () => {
-  const { data, isLoading } = useQuery({
-    queryKey: ['hotels'],
-    queryFn: () => getHotels({ _page: 1, _limit: 3 })
-  })
+  const { data, isLoading } = useQueryHotel({ _page: 1, _limit: 3 })
 
   const { t } = useTranslation('detail')
 

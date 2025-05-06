@@ -1,13 +1,12 @@
-import { getReviewsHotel } from '@api/reviewRequest'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs'
+import { useQueryTotalReviews } from '@hooks/queries/queryReviewHotel'
 import { IHotel } from '@interfaces/hotel'
-import { useQuery } from '@tanstack/react-query'
 import { memo } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
 import { useParams } from 'react-router'
 import Descriptions from './Descriptions'
 import Reviews from './Reviews'
 import SelectRoom from './SelectRoom'
-import { Trans, useTranslation } from 'react-i18next'
 
 interface Props {
   data: IHotel
@@ -15,14 +14,8 @@ interface Props {
 
 const HotelDetailTabs = ({ data }: Props) => {
   const { id } = useParams()
-  const { data: totalScore, isLoading } = useQuery({
-    queryKey: ['reviewHotel', 'score'],
-    queryFn: () =>
-      getReviewsHotel({
-        hotelId: id as string
-      }),
-    enabled: id !== undefined
-  })
+
+  const { data: totalScore, isLoading } = useQueryTotalReviews({ id })
 
   const { t } = useTranslation('detail')
 

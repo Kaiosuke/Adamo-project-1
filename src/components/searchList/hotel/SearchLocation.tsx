@@ -1,10 +1,10 @@
 import { getLocationHotel } from '@api/hotelRequest'
-import { useQuery } from '@tanstack/react-query'
 
 import InputSearch from '@components/InputSearch'
-import { useDebounce } from 'use-debounce'
+import { useQueryLocation } from '@hooks/queries/location'
 import { TFunction } from 'i18next'
 import { memo } from 'react'
+import { useDebounce } from 'use-debounce'
 
 interface Props {
   t: TFunction<['search', 'others'], undefined>
@@ -15,13 +15,8 @@ interface Props {
 const SearchLocation = ({ location, setLocation, t }: Props) => {
   const [value] = useDebounce(location.trim(), 300)
 
-  const { data: locationData } = useQuery({
-    queryKey: ['locationHotel', { value }],
-    queryFn: () => {
-      return getLocationHotel({ data: value })
-    },
-    enabled: !!value
-  })
+  const { data: locationData } = useQueryLocation({ key: 'locationHotel', getLocation: getLocationHotel, value })
+
   return (
     <InputSearch
       location={location}

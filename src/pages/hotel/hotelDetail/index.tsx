@@ -1,40 +1,34 @@
 import BreadcrumbCom from '@/components/Breadcrumb'
 
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { CiLocationOn } from 'react-icons/ci'
 import { MdOutlineStar } from 'react-icons/md'
 import { useParams } from 'react-router'
 import HotelDetailTabs from './HotelDetailTabs'
 import RelatedHotels from './RelatedHotel'
 
-import { getHotelById } from '@/api/hotelRequest'
-import { getReviewsHotel } from '@/api/reviewRequest'
 import BillHotelDetail from '@/components/bills/hotel/BillHotelDetail'
-import SwiperCom from '@/components/swiper/SwiperCom'
-import { Skeleton } from '@/components/ui/skeleton'
-import { useQuery } from '@tanstack/react-query'
-import LoadingSlideDetail from './LoadingSlideDetail'
 import PdMain from '@/components/paddingList/PbMain'
 import PdSub from '@/components/paddingList/PbSub'
+import SwiperCom from '@/components/swiper/SwiperCom'
+import { Skeleton } from '@/components/ui/skeleton'
+import { useQueryDetailHotel } from '@hooks/queries/queryHotel'
+import { useQueryTotalReviews } from '@hooks/queries/queryReviewHotel'
 import { Trans, useTranslation } from 'react-i18next'
+import LoadingSlideDetail from './LoadingSlideDetail'
 
 const HotelDetail = () => {
   const { id } = useParams()
 
-  const { data: totalData } = useQuery({
-    queryKey: ['reviewHotel', { id }],
-    queryFn: () =>
-      getReviewsHotel({
-        hotelId: id as string
-      }),
-    enabled: id !== undefined
-  })
+  const [totalData, setTotalData] = useState<number | undefined>(undefined)
 
-  const { data, isLoading } = useQuery({
-    queryKey: ['hotelDetail', { id: id }],
-    queryFn: () => getHotelById(Number(id)),
-    enabled: id !== undefined
-  })
+  const { data: total } = useQueryTotalReviews({ id })
+
+  useEffect(() => {
+    setTotalData(total?.length)
+  }, [total])
+
+  const { data, isLoading } = useQueryDetailHotel(Number(id))
 
   const { t } = useTranslation('others')
 
@@ -72,7 +66,7 @@ const HotelDetail = () => {
               <div className="flex items-center gap-4 text-base">Reviews: Loading...</div>
             ) : (
               <>
-                <Trans ns="detail" i18nKey={'hotel.reviews'} count={totalData.length} />
+                <Trans ns="detail" i18nKey={'hotel.reviews'} count={totalData} />
               </>
             )}
           </span>
