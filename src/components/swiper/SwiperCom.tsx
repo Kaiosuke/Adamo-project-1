@@ -1,21 +1,40 @@
 import { memo, useState } from 'react'
+import Cropper from 'react-easy-crop'
+import 'react-photo-album/rows.css'
+import Lightbox from 'yet-another-react-lightbox'
+import 'yet-another-react-lightbox/styles.css'
+
+import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen'
+import Slideshow from 'yet-another-react-lightbox/plugins/slideshow'
+import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails'
+import 'yet-another-react-lightbox/plugins/thumbnails.css'
+import Zoom from 'yet-another-react-lightbox/plugins/zoom'
+
 import 'swiper/css'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import Cropper from 'react-easy-crop'
 
 import 'swiper/css'
 import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
 
+import LoadedImage from '@components/LoadingList/LoadedImage'
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
-import LoadedImage from '../LoadingList/LoadedImage'
+import { CiCamera } from 'react-icons/ci'
 
 const SwiperCom = ({ images }: { images?: string[] }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
 
   const [crop, setCrop] = useState({ x: 0, y: 0 })
   const [zoom, setZoom] = useState(1)
+
+  const [index, setIndex] = useState(-1)
+
+  const photos = images?.map((image) => ({
+    src: image,
+    width: 800,
+    height: 600
+  }))
 
   return (
     <>
@@ -31,40 +50,48 @@ const SwiperCom = ({ images }: { images?: string[] }) => {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
-        {images?.map((v, index) => (
+        {photos?.map((photo, index) => (
           <SwiperSlide key={index}>
             {/* <LoadedImage alt="image" thumbnail={v} /> */}
-            <Cropper image={v} crop={crop} zoom={zoom} aspect={4 / 3} onCropChange={setCrop} onZoomChange={setZoom} />
+            <Cropper
+              image={photo.src}
+              crop={crop}
+              zoom={zoom}
+              aspect={4 / 3}
+              onCropChange={setCrop}
+              onZoomChange={setZoom}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
-      <Swiper
-        onSwiper={setThumbsSwiper}
-        loop={true}
-        spaceBetween={20}
-        slidesPerView={2}
-        freeMode={true}
-        watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
-        breakpoints={{
-          640: {
-            slidesPerView: 2
-          },
-          768: {
-            slidesPerView: 3
-          },
-          1024: {
-            slidesPerView: 4
-          }
-        }}
-        className="mySwiper mt-3 cursor-pointer"
-      >
-        {images?.map((v, index) => (
-          <SwiperSlide key={index}>
-            <LoadedImage alt="image" thumbnail={v} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="relative">
+        <Swiper
+          spaceBetween={10}
+          onSwiper={setThumbsSwiper}
+          loop={true}
+          slidesPerView={4}
+          className="mySwiper mt-3 cursor-pointer"
+          modules={[FreeMode, Navigation, Thumbs]}
+        >
+          {photos?.map((photo, index) => (
+            <SwiperSlide key={index}>
+              <div className="w-full h-full" onClick={() => setIndex(index)}>
+                <LoadedImage alt="image" thumbnail={photo.src} />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="absolute right-10 top-1/2 -translate-y-1/2 flex items-center gap-1 text-xl z-[50] font-bold select-none">
+          <CiCamera className="text-2xl font-bold" /> {Number(photos?.length) - 4} +
+        </div>
+      </div>
+      <Lightbox
+        slides={photos}
+        open={index >= 0}
+        index={index}
+        close={() => setIndex(-1)}
+        plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+      />
     </>
   )
 }
