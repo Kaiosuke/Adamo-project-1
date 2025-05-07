@@ -1,5 +1,4 @@
 import { memo, useState } from 'react'
-import Cropper from 'react-easy-crop'
 import 'react-photo-album/rows.css'
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
@@ -19,14 +18,12 @@ import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
 
 import LoadedImage from '@components/LoadingList/LoadedImage'
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
+import Magnifier from '@components/Magnifier'
 import { CiCamera } from 'react-icons/ci'
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
 
 const SwiperCom = ({ images }: { images?: string[] }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
-
-  const [crop, setCrop] = useState({ x: 0, y: 0 })
-  const [zoom, setZoom] = useState(1)
 
   const [index, setIndex] = useState(-1)
 
@@ -52,15 +49,7 @@ const SwiperCom = ({ images }: { images?: string[] }) => {
       >
         {photos?.map((photo, index) => (
           <SwiperSlide key={index}>
-            {/* <LoadedImage alt="image" thumbnail={v} /> */}
-            <Cropper
-              image={photo.src}
-              crop={crop}
-              zoom={zoom}
-              aspect={4 / 3}
-              onCropChange={setCrop}
-              onZoomChange={setZoom}
-            />
+            <Magnifier image={photo.src} />
           </SwiperSlide>
         ))}
       </Swiper>
