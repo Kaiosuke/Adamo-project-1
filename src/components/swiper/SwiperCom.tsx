@@ -1,6 +1,7 @@
 import { memo, useState } from 'react'
 import 'swiper/css'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import Cropper from 'react-easy-crop'
 
 import 'swiper/css'
 import 'swiper/css/free-mode'
@@ -12,6 +13,9 @@ import LoadedImage from '../LoadingList/LoadedImage'
 
 const SwiperCom = ({ images }: { images?: string[] }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
+
+  const [crop, setCrop] = useState({ x: 0, y: 0 })
+  const [zoom, setZoom] = useState(1)
 
   return (
     <>
@@ -29,7 +33,8 @@ const SwiperCom = ({ images }: { images?: string[] }) => {
       >
         {images?.map((v, index) => (
           <SwiperSlide key={index}>
-            <LoadedImage alt="image" thumbnail={v} />
+            {/* <LoadedImage alt="image" thumbnail={v} /> */}
+            <Cropper image={v} crop={crop} zoom={zoom} aspect={4 / 3} onCropChange={setCrop} onZoomChange={setZoom} />
           </SwiperSlide>
         ))}
       </Swiper>

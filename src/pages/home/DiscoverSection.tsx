@@ -4,8 +4,8 @@ import { ITour } from '@interfaces/tour'
 
 import { Trans, useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
-import { SwiperSlide } from 'swiper/react'
-import { Swiper } from 'swiper/react'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 const DiscoverSection = ({ data }: { data: ITour[] }) => {
   const { t } = useTranslation('others')
@@ -24,6 +24,7 @@ const DiscoverSection = ({ data }: { data: ITour[] }) => {
       </div>
       <Swiper
         spaceBetween={12}
+        loop={true}
         className="mySwiper2 opacity-none mt-4"
         breakpoints={{
           640: {
