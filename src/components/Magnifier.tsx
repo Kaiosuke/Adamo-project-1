@@ -27,16 +27,16 @@ const Magnifier = ({ image }: { image: string }) => {
       <LoadedImage thumbnail={image} alt="image" />
 
       <div
-        className={`w-[300px] h-[300px] ${showMagnifier ? 'block' : 'hidden'} absolute`}
-        style={{
-          backgroundImage: `url(${image})`,
-          backgroundPosition: `${position.x}% ${position.y}%`,
-          left: `${cursorPosition.x - 100}px`,
-          top: `${cursorPosition.y - 100}px`,
-          pointerEvents: 'none'
-        }}
+        className="absolute"
+        style={{ left: `${cursorPosition.x - 100}px`, top: `${cursorPosition.y - 100}px`, pointerEvents: 'none' }}
       >
-        1{' '}
+        <div
+          className={`w-[200px] h-[200px] ${showMagnifier ? 'block' : 'hidden'} `}
+          style={{
+            backgroundImage: `url(${image})`,
+            backgroundPosition: `${position.x}% ${position.y}%`
+          }}
+        ></div>
       </div>
     </div>
   )
