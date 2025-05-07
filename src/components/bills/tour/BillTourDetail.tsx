@@ -8,20 +8,19 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@components/ui/select'
 import { useTranslation } from 'react-i18next'
 
-import { bookingSchema } from '@schemas/bookingSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { bookingSchema, TBookingHotelSchema } from '@schemas/bookingSchema'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 
 import DatePickerWithRange from '@components/DatePickerWithRange'
 import { Button } from '@components/ui/button'
 import { Form, FormField, FormMessage } from '@components/ui/form'
+import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { addBooking } from '@redux-toolkit/slices/bookingSlice'
 import { filterByGuest } from '@redux-toolkit/slices/toursSlice'
 import { useNavigate } from 'react-router'
 import { toast } from 'sonner'
 import { StringParam, useQueryParams } from 'use-query-params'
-import { authSelector } from '@redux-toolkit/selectors/authSelector'
 
 const BillTourDetail = () => {
   const { tour } = useSelector(tourSelector)
@@ -29,6 +28,7 @@ const BillTourDetail = () => {
   const { currentUser } = useSelector(authSelector)
 
   const { t } = useTranslation(['search', 'bill'])
+  const { t: validationValues } = useTranslation('schema')
 
   const [query, setQuery] = useQueryParams({
     from: StringParam,
@@ -54,8 +54,8 @@ const BillTourDetail = () => {
 
   const { guest } = filter
 
-  const form = useForm<z.infer<typeof bookingSchema>>({
-    resolver: zodResolver(bookingSchema),
+  const form = useForm<TBookingHotelSchema>({
+    resolver: zodResolver(bookingSchema(validationValues as unknown as (_key: string) => string)),
     defaultValues: {
       guests: guest
     }
@@ -63,7 +63,7 @@ const BillTourDetail = () => {
 
   const navigate = useNavigate()
 
-  function onSubmit(values: z.infer<typeof bookingSchema>) {
+  function onSubmit(values: TBookingHotelSchema) {
     if (tour && date?.from && date?.to) {
       const totalPrice = tour?.price && tour?.price * tour?.duration
 

@@ -1,7 +1,5 @@
-import { signInSchema } from '@schemas/authSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 
 import { login, loginByFb } from '@api/authRequest'
 import InputAuth from '@components/InputAuth'
@@ -14,13 +12,16 @@ import { FaFacebook } from 'react-icons/fa6'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router'
 
-import { toast } from 'sonner'
-import { useTranslation } from 'react-i18next'
+import { getSignInSchema, TSignValues } from '@schemas/authSchema'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { toast } from 'sonner'
 
 const Login = () => {
-  const form = useForm<z.infer<typeof signInSchema>>({
-    resolver: zodResolver(signInSchema),
+  const { t: validationMessage } = useTranslation('schema')
+
+  const form = useForm<TSignValues>({
+    resolver: zodResolver(getSignInSchema(validationMessage as unknown as (_key: string) => string)),
     defaultValues: {
       email: '',
       password: ''
@@ -29,7 +30,7 @@ const Login = () => {
 
   const [pendingLoginFb, setPendingLoginFb] = useState(false)
 
-  const { t } = useTranslation('auth')
+  const { t } = useTranslation(['auth', 'schema'])
 
   const { loading } = useSelector(authSelector)
 
@@ -37,7 +38,7 @@ const Login = () => {
 
   const navigate = useNavigate()
 
-  function onSubmit(values: z.infer<typeof signInSchema>) {
+  function onSubmit(values: TSignValues) {
     ;(async () => {
       try {
         const user = await dispatch(login({ email: values.email, password: values.password })).unwrap()

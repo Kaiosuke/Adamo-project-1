@@ -1,24 +1,23 @@
 import { addReviewHotel } from '@api/reviewRequest'
 import { Button } from '@components/ui/button'
 import { Textarea } from '@components/ui/textarea'
-import { IReviewHotel } from '@interfaces/review'
-import { commentSchema } from '@schemas/reviewSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { IReviewHotel } from '@interfaces/review'
+import { commentSchema, TCommentSchemaValues } from '@schemas/reviewSchema'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { ControllerRenderProps, useForm } from 'react-hook-form'
 import { FaUserCircle } from 'react-icons/fa'
-import { z } from 'zod'
 
 import LoadingBtn from '@components/LoadingList/LoadingBtn'
 import Rating from '@components/Rating'
 import { Form, FormField, FormItem, FormMessage } from '@components/ui/form'
+import i18n from '@i18n/i18n'
+import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { ChangeEvent, memo, useCallback, useMemo, useState } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
 import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
-import { Trans, useTranslation } from 'react-i18next'
-import i18n from '@i18n/i18n'
-import { useSelector } from 'react-redux'
-import { authSelector } from '@redux-toolkit/selectors/authSelector'
 
 interface Props {
   id: string
@@ -77,6 +76,10 @@ const listEvaluateVI = [
 ]
 
 const ReviewForm = ({ totalData, id, setCurrentPage, onAverageRate, setQuery }: Props) => {
+  const { t } = useTranslation('detail')
+
+  const { t: validationValues } = useTranslation('schema')
+
   const queryClient = useQueryClient()
   const { currentUser } = useSelector(authSelector)
 
@@ -103,15 +106,15 @@ const ReviewForm = ({ totalData, id, setCurrentPage, onAverageRate, setQuery }: 
     }
   })
 
-  const form = useForm<z.infer<typeof commentSchema>>({
-    resolver: zodResolver(commentSchema),
+  const form = useForm<TCommentSchemaValues>({
+    resolver: zodResolver(commentSchema(validationValues as unknown as (_key: string) => string)),
     defaultValues: {
       message: '',
       star: 0
     }
   })
 
-  const onSubmit = useDebouncedCallback((values: z.infer<typeof commentSchema>) => {
+  const onSubmit = useDebouncedCallback((values: TCommentSchemaValues) => {
     if (!currentUser) {
       return toast.warning('Please login to comment', {
         style: {
@@ -158,7 +161,6 @@ const ReviewForm = ({ totalData, id, setCurrentPage, onAverageRate, setQuery }: 
     []
   )
 
-  const { t } = useTranslation('detail')
   const currentLanguage = i18n.language
 
   const handleFindEvaluate = useMemo(() => {

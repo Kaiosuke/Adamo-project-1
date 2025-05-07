@@ -22,11 +22,10 @@ import { toast } from 'sonner'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 
 import { Button } from '@components/ui/button'
 import { Form, FormField, FormItem, FormMessage } from '@components/ui/form'
-import { commentSchema } from '@schemas/reviewSchema'
+import { commentSchema, TCommentSchemaValues } from '@schemas/reviewSchema'
 import { useTranslation } from 'react-i18next'
 import LoadingBtn from '../LoadingList/LoadingBtn'
 import Rating from '../Rating'
@@ -36,6 +35,7 @@ const ReviewHotel = ({ review, user }: { review: IReviewHotel; user?: IAuth }) =
   const queryClient = useQueryClient()
 
   const { t } = useTranslation('detail')
+  const { t: validationValues } = useTranslation('schema')
 
   const [isOpen, setIsOpen] = useState(false)
   const [isOpenEdit, setIsOpenEdit] = useState(false)
@@ -72,15 +72,15 @@ const ReviewHotel = ({ review, user }: { review: IReviewHotel; user?: IAuth }) =
     deleteComment.mutate(String(review.id))
   }
 
-  const form = useForm<z.infer<typeof commentSchema>>({
-    resolver: zodResolver(commentSchema),
+  const form = useForm<TCommentSchemaValues>({
+    resolver: zodResolver(commentSchema(validationValues as unknown as (_key: string) => string)),
     defaultValues: {
       message: review.des,
       star: review.rate
     }
   })
 
-  const onSubmit = (values: z.infer<typeof commentSchema>) => {
+  const onSubmit = (values: TCommentSchemaValues) => {
     updateComment.mutate({ id: String(review.id), data: { des: values.message, rate: values.star } })
   }
 

@@ -1,10 +1,9 @@
 import FormComp from '@components/forms/FormCom'
 import { Button } from '@components/ui/button'
 import { Form } from '@components/ui/form'
-import { userSchema } from '@schemas/userSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { TUserSchemaValues, userSchema } from '@schemas/userSchema'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 
 import { useEffect, useState } from 'react'
 
@@ -25,6 +24,10 @@ interface Props {
 }
 
 const FormInfoUser = ({ booking, discount }: Props) => {
+  const { t } = useTranslation('checkout')
+
+  const { t: validationValues } = useTranslation('schema')
+
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   const [query, setQuery] = useQueryParams({
@@ -41,8 +44,8 @@ const FormInfoUser = ({ booking, discount }: Props) => {
     payMethod: withDefault(StringParam, '')
   })
 
-  const form = useForm<z.infer<typeof userSchema>>({
-    resolver: zodResolver(userSchema),
+  const form = useForm<TUserSchemaValues>({
+    resolver: zodResolver(userSchema(validationValues as unknown as (_key: string) => string)),
     defaultValues: {
       firstName: query.firstName,
       lastName: query.lastName,
@@ -84,7 +87,7 @@ const FormInfoUser = ({ booking, discount }: Props) => {
     }
   })
 
-  const onSubmit = useDebouncedCallback((values: z.infer<typeof userSchema>) => {
+  const onSubmit = useDebouncedCallback((values: TUserSchemaValues) => {
     const user = {
       ...values,
       phoneNumber: Number(values.phoneNumber)
@@ -101,8 +104,6 @@ const FormInfoUser = ({ booking, discount }: Props) => {
       user: user
     })
   }, 300)
-
-  const { t } = useTranslation('checkout')
 
   return (
     <Form {...form}>

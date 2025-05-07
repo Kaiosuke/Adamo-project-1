@@ -2,19 +2,18 @@ import { bookingTour } from '@api/bookingRequest'
 import FormComp from '@components/forms/FormCom'
 import { Button } from '@components/ui/button'
 import { Form } from '@components/ui/form'
-import { IBooking } from '@interfaces/booking'
-import { userSchema } from '@schemas/userSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { IBooking } from '@interfaces/booking'
+import { TUserSchemaValues, userSchema } from '@schemas/userSchema'
 import { useMutation } from '@tanstack/react-query'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router'
 import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 
+import PayMethod from '@components/PayMethod'
 import { useTranslation } from 'react-i18next'
 import { StringParam, useQueryParams, withDefault } from 'use-query-params'
-import { z } from 'zod'
-import PayMethod from '@components/PayMethod'
 
 interface Props {
   booking: IBooking
@@ -22,6 +21,10 @@ interface Props {
 }
 
 const FormInfoUser = ({ booking, discount }: Props) => {
+  const { t } = useTranslation('checkout')
+
+  const { t: validationValues } = useTranslation('schema')
+
   const [query, setQuery] = useQueryParams({
     firstName: withDefault(StringParam, ''),
     lastName: withDefault(StringParam, ''),
@@ -36,8 +39,8 @@ const FormInfoUser = ({ booking, discount }: Props) => {
     payMethod: withDefault(StringParam, '')
   })
 
-  const form = useForm<z.infer<typeof userSchema>>({
-    resolver: zodResolver(userSchema),
+  const form = useForm<TUserSchemaValues>({
+    resolver: zodResolver(userSchema(validationValues as unknown as (_key: string) => string)),
     defaultValues: {
       firstName: query.firstName,
       lastName: query.lastName,
@@ -70,7 +73,7 @@ const FormInfoUser = ({ booking, discount }: Props) => {
     }
   })
 
-  const onSubmit = useDebouncedCallback((values: z.infer<typeof userSchema>) => {
+  const onSubmit = useDebouncedCallback((values: TUserSchemaValues) => {
     const user = {
       ...values,
       phoneNumber: Number(values.phoneNumber)
@@ -85,8 +88,6 @@ const FormInfoUser = ({ booking, discount }: Props) => {
       user: user
     })
   }, 300)
-
-  const { t } = useTranslation('checkout')
 
   return (
     <Form {...form}>

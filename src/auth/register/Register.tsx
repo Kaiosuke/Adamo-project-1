@@ -1,24 +1,26 @@
-import { registerSchema } from '@schemas/authSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { registerSchema, TRegisterValues } from '@schemas/authSchema'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 
+import { loginByFb, register } from '@api/authRequest'
 import InputAuth from '@components/InputAuth'
+import LoadingBtn from '@components/LoadingList/LoadingBtn'
 import { Button } from '@components/ui/button'
 import { Form } from '@components/ui/form'
-import { FaFacebook } from 'react-icons/fa6'
-import { Link, useNavigate } from 'react-router'
 import { useAppDispatch } from '@redux-toolkit/index'
-import { loginByFb, register } from '@api/authRequest'
-import { useSelector } from 'react-redux'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
-import LoadingBtn from '@components/LoadingList/LoadingBtn'
-import { toast } from 'sonner'
 import { useTranslation } from 'react-i18next'
+import { FaFacebook } from 'react-icons/fa6'
+import { useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router'
+import { toast } from 'sonner'
 
 const Login = () => {
-  const form = useForm<z.infer<typeof registerSchema>>({
-    resolver: zodResolver(registerSchema),
+  const { t } = useTranslation('auth')
+  const { t: validationValues } = useTranslation('schema')
+
+  const form = useForm<TRegisterValues>({
+    resolver: zodResolver(registerSchema(validationValues as unknown as (_key: string) => string)),
     defaultValues: {
       firstName: '',
       lastName: '',
@@ -56,7 +58,7 @@ const Login = () => {
 
   const { loading } = useSelector(authSelector)
 
-  function onSubmit(values: z.infer<typeof registerSchema>) {
+  function onSubmit(values: TRegisterValues) {
     ;(async () => {
       try {
         await dispatch(
@@ -85,8 +87,6 @@ const Login = () => {
       }
     })()
   }
-
-  const { t } = useTranslation('auth')
 
   return (
     <div className="flex justify-center items-center">

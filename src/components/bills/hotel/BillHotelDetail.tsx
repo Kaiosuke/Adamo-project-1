@@ -17,14 +17,13 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { Form, FormField, FormMessage } from '@components/ui/form'
 
 import { ControllerRenderProps, useForm } from 'react-hook-form'
-import { z } from 'zod'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useQueryData } from '@hooks/queries/other'
 import { IBookingHotel } from '@interfaces/booking'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { addBookingHotel } from '@redux-toolkit/slices/bookingSlice'
-import { bookingHotelSchema } from '@schemas/bookingSchema'
+import { bookingHotelSchema, TBookingHotelSchema } from '@schemas/bookingSchema'
 import { DateRange } from 'react-day-picker'
 import { useNavigate } from 'react-router'
 import { useDebouncedCallback } from 'use-debounce'
@@ -33,6 +32,8 @@ import AddOne from './AddOne'
 
 const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
   const { t } = useTranslation(['search', 'bill'])
+  const { t: validationValues } = useTranslation('schema')
+
   const { currentUser } = useSelector(authSelector)
 
   const { rooms, breakfast, extraBed } = useSelector(roomSelector)
@@ -77,14 +78,14 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
 
   const navigate = useNavigate()
 
-  const form = useForm<z.infer<typeof bookingHotelSchema>>({
-    resolver: zodResolver(bookingHotelSchema),
+  const form = useForm<TBookingHotelSchema>({
+    resolver: zodResolver(bookingHotelSchema(validationValues as unknown as (_key: string) => string)),
     defaultValues: {
       guests: query.guest ? query.guest : ''
     }
   })
 
-  const onSubmit = useDebouncedCallback((values: z.infer<typeof bookingHotelSchema>) => {
+  const onSubmit = useDebouncedCallback((values: TBookingHotelSchema) => {
     if (rooms.length < 1) {
       return toast.error('Please select at least 1 room', {
         style: {

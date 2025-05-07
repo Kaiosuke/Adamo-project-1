@@ -1,7 +1,6 @@
-import { newPasswordSchema } from '@schemas/authSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { newPasswordSchema, TNewPasswordValues } from '@schemas/authSchema'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 
 import { loginByFb, newPassword } from '@api/authRequest'
 import InputAuth from '@components/InputAuth'
@@ -20,8 +19,11 @@ import { toast } from 'sonner'
 import { StringParam, useQueryParams } from 'use-query-params'
 
 const NewPassword = () => {
-  const form = useForm<z.infer<typeof newPasswordSchema>>({
-    resolver: zodResolver(newPasswordSchema),
+  const { t } = useTranslation('auth')
+  const { t: validationValues } = useTranslation('schema')
+
+  const form = useForm<TNewPasswordValues>({
+    resolver: zodResolver(newPasswordSchema(validationValues as unknown as (_key: string) => string)),
     defaultValues: {
       password: '',
       confirm: ''
@@ -40,7 +42,7 @@ const NewPassword = () => {
 
   const navigate = useNavigate()
 
-  function onSubmit(values: z.infer<typeof newPasswordSchema>) {
+  function onSubmit(values: TNewPasswordValues) {
     ;(async () => {
       try {
         await dispatch(newPassword({ oobCode: oobCode, newPassword: values.password })).unwrap()
@@ -63,8 +65,6 @@ const NewPassword = () => {
       }
     })()
   }
-
-  const { t } = useTranslation('auth')
 
   const handleLoginByFb = async () => {
     try {

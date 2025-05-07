@@ -1,23 +1,25 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 
+import { forgotPassword } from '@api/authRequest'
 import InputAuth from '@components/InputAuth'
-import { forgotPasswordSchema } from '@schemas/authSchema'
+import LoadingBtn from '@components/LoadingList/LoadingBtn'
 import { Button } from '@components/ui/button'
 import { Form } from '@components/ui/form'
 import { useAppDispatch } from '@redux-toolkit/index'
-import { forgotPassword } from '@api/authRequest'
-import { useSelector } from 'react-redux'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
-import LoadingBtn from '@components/LoadingList/LoadingBtn'
-import { toast } from 'sonner'
-import { Link } from 'react-router'
+import { forgotPasswordSchema, TForgotPasswordValues } from '@schemas/authSchema'
 import { Trans, useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router'
+import { toast } from 'sonner'
 
 const ForgotPassword = () => {
-  const form = useForm<z.infer<typeof forgotPasswordSchema>>({
-    resolver: zodResolver(forgotPasswordSchema),
+  const { t } = useTranslation('auth')
+  const { t: validationValues } = useTranslation('schema')
+
+  const form = useForm<TForgotPasswordValues>({
+    resolver: zodResolver(forgotPasswordSchema(validationValues as unknown as (_key: string) => string)),
     defaultValues: {
       email: ''
     }
@@ -27,7 +29,7 @@ const ForgotPassword = () => {
 
   const dispatch = useAppDispatch()
 
-  function onSubmit(values: z.infer<typeof forgotPasswordSchema>) {
+  function onSubmit(values: TForgotPasswordValues) {
     ;(async () => {
       try {
         await dispatch(forgotPassword(values.email))
@@ -49,8 +51,6 @@ const ForgotPassword = () => {
       }
     })()
   }
-
-  const { t } = useTranslation('auth')
 
   return (
     <div className="flex justify-center items-center">

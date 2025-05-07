@@ -1,6 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 
 import { contact } from '@api/contactRequest'
 import FormContact from '@components/forms/FormContact'
@@ -8,7 +7,7 @@ import LoadingBtn from '@components/LoadingList/LoadingBtn'
 import { Button } from '@components/ui/button'
 import { Form } from '@components/ui/form'
 import { IContact } from '@interfaces/contact'
-import { contactSchema } from '@schemas/contactSchema'
+import { contactSchema, TContactSchemaValues } from '@schemas/contactSchema'
 import { useMutation } from '@tanstack/react-query'
 import { Trans, useTranslation } from 'react-i18next'
 import { toast } from 'sonner'
@@ -16,8 +15,12 @@ import { useDebouncedCallback } from 'use-debounce'
 import Office from './Office'
 
 const ContactSection = () => {
-  const form = useForm<z.infer<typeof contactSchema>>({
-    resolver: zodResolver(contactSchema),
+  const { t } = useTranslation('contact')
+
+  const { t: validationValues } = useTranslation('schema')
+
+  const form = useForm<TContactSchemaValues>({
+    resolver: zodResolver(contactSchema(validationValues as unknown as (_key: string) => string)),
     defaultValues: {
       name: '',
       email: '',
@@ -39,11 +42,9 @@ const ContactSection = () => {
     }
   })
 
-  const onSubmit = useDebouncedCallback((values: z.infer<typeof contactSchema>) => {
+  const onSubmit = useDebouncedCallback((values: TContactSchemaValues) => {
     mutate({ ...values, phoneNumber: Number(values.phoneNumber) })
   }, 300)
-
-  const { t } = useTranslation('contact')
 
   return (
     <section className="main-container animate-fade-down">

@@ -1,11 +1,11 @@
-import { newPasswordSchema } from '@schemas/authSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { newPasswordSchema, TNewPasswordValues } from '@schemas/authSchema'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 
 import { changePassword } from '@api/authRequest'
 import InputAuth from '@components/InputAuth'
 import LoadingBtn from '@components/LoadingList/LoadingBtn'
+import LoadingPage from '@components/LoadingList/LoadingPage'
 import { Button } from '@components/ui/button'
 import { Form } from '@components/ui/form'
 import { useAppDispatch } from '@redux-toolkit/index'
@@ -15,11 +15,14 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router'
 import { toast } from 'sonner'
-import LoadingPage from '@components/LoadingList/LoadingPage'
 
 const ChangePassword = () => {
-  const form = useForm<z.infer<typeof newPasswordSchema>>({
-    resolver: zodResolver(newPasswordSchema),
+  const { t } = useTranslation('auth')
+
+  const { t: validationValues } = useTranslation('schema')
+
+  const form = useForm<TNewPasswordValues>({
+    resolver: zodResolver(newPasswordSchema(validationValues as unknown as (_key: string) => string)),
     defaultValues: {
       password: '',
       confirm: ''
@@ -30,7 +33,7 @@ const ChangePassword = () => {
 
   const dispatch = useAppDispatch()
 
-  function onSubmit(values: z.infer<typeof newPasswordSchema>) {
+  function onSubmit(values: TNewPasswordValues) {
     ;(async () => {
       try {
         await dispatch(changePassword(values.password)).unwrap()
@@ -54,8 +57,6 @@ const ChangePassword = () => {
   }
 
   const navigate = useNavigate()
-  const { t } = useTranslation('auth')
-
   useEffect(() => {
     if (!currentUser) {
       navigate('/')

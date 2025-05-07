@@ -1,50 +1,36 @@
-/* eslint-disable indent */
-import i18next from 'i18next'
 import { z } from 'zod'
 
-const lg = i18next.language
-
-const userSchema =
-  lg === 'en'
-    ? z.object({
-        firstName: z.string().trim().min(4, { message: 'First name must be greater than 4 character ' }),
-        lastName: z.string().trim().min(4, { message: 'Last name must be greater than 4 character ' }),
-        email: z.string().email({ message: 'Invalid Email' }),
-        phoneNumber: z
-          .string()
-          .min(8, {
-            message: 'Phone number must be greater than 8 character and smaller than 11 character'
-          })
-          .max(11, {
-            message: 'Phone number must be greater than 8 character and smaller than 11 character'
-          }),
-        payMethod: z.string().min(1, { message: 'Please choice a pay method' }),
-        address: z.string().optional(),
-        city: z.string().optional(),
-        state: z.string().optional(),
-        zipCode: z.string().optional(),
-        country: z.string().optional(),
-        requirement: z.string().optional()
+const baseUserSchema = (t?: (_key: string) => string) => {
+  return z.object({
+    firstName: z
+      .string()
+      .trim()
+      .min(4, { message: t ? t('first') : 'First name must be greater than 4 character ' }),
+    lastName: z
+      .string()
+      .trim()
+      .min(2, { message: t ? t('lastName') : 'Last name must be greater than 2 character ' }),
+    email: z.string().email({ message: t ? t('email') : 'Invalid Email' }),
+    phoneNumber: z
+      .string()
+      .min(8, {
+        message: t ? t('minPhone') : 'Phone number must be greater than 8 character and smaller than 11 character'
       })
-    : z.object({
-        firstName: z.string().trim().min(4, { message: 'Tên đầu tiên phải có ít nhất 4 ký tự' }),
-        lastName: z.string().trim().min(4, { message: 'Họ phải có ít nhất 4 ký tự' }),
-        email: z.string().email({ message: 'Email không hợp lệ' }),
-        phoneNumber: z
-          .string()
-          .min(8, {
-            message: 'Số điện thoại phải có ít nhất 8 ký tự và không vượt quá 11 ký tự'
-          })
-          .max(11, {
-            message: 'Số điện thoại phải có ít nhất 8 ký tự và không vượt quá 11 ký tự'
-          }),
-        payMethod: z.string().min(1, { message: 'Vui lòng chọn phương thức thanh toán' }),
-        address: z.string().optional(),
-        city: z.string().optional(),
-        state: z.string().optional(),
-        zipCode: z.string().optional(),
-        country: z.string().optional(),
-        requirement: z.string().optional()
-      })
+      .max(11, {
+        message: t ? t('maxPhone') : 'Phone number must be greater than 8 character and smaller than 11 character'
+      }),
+    payMethod: z.string().min(1, { message: t ? t('method') : 'Please choice a pay method' }),
+    address: z.string().optional(),
+    city: z.string().optional(),
+    state: z.string().optional(),
+    zipCode: z.string().optional(),
+    country: z.string().optional(),
+    requirement: z.string().optional()
+  })
+}
 
-export { userSchema }
+export const userSchema = (t?: (_key: string) => string) => {
+  return baseUserSchema(t)
+}
+
+export type TUserSchemaValues = z.infer<Awaited<ReturnType<typeof userSchema>>>

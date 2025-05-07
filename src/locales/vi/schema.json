@@ -1,18 +1,21 @@
 {
   "email": "Email không hợp lệ",
-  "name": "Tên của bạn phải nhiều hơn 4 ký tự",
-  "firstName": "Tên phải nhiều hơn 4 ký tự",
-  "lastName": "Họ phải nhiều hơn 4 ký tự",
-  "minPhone": "Số điện thoại phải nhiều hơn 8 ký tự và ít hơn 11 ký tự",
-  "maxPhone": "Số điện thoại phải nhiều hơn 8 ký tự và ít hơn 11 ký tự",
-  "message": "Tin nhắn phải nhiều hơn 4 ký tự",
-  "passwordLowercase": "Mật khẩu phải chứa ít nhất 1 chữ thường",
-  "passwordUppercase": "Mật khẩu phải chứa ít nhất 1 chữ in hoa",
-  "passwordNumber": "Mật khẩu phải chứa ít nhất 1 chữ số",
-  "passwordSymbol": "Mật khẩu phải chứa ít nhất 1 ký tự đặc biệt",
+  "name": "Tên của bạn phải dài hơn 4 ký tự",
+  "firstName": "Họ phải dài hơn 4 ký tự",
+  "lastName": "Tên phải dài hơn 4 ký tự",
+  "minPhone": "Số điện thoại phải dài hơn 8 ký tự và ngắn hơn 11 ký tự",
+  "maxPhone": "Số điện thoại phải dài hơn 8 ký tự và ngắn hơn 11 ký tự",
+  "message": "Tin nhắn phải dài hơn 4 ký tự",
+  "password": {
+    "min": "Mật khẩu phải dài ít nhất 8 ký tự",
+    "lowercase": "Mật khẩu phải chứa ít nhất 1 chữ thường",
+    "uppercase": "Mật khẩu phải chứa ít nhất 1 chữ hoa",
+    "number": "Mật khẩu phải chứa ít nhất 1 số",
+    "symbol": "Mật khẩu phải chứa ít nhất 1 ký tự đặc biệt"
+  },
   "refine": "Mật khẩu xác nhận không khớp",
   "bookingGuest": "Vui lòng chọn số lượng khách",
-  "comment": "Bình luận phải nhiều hơn 4 ký tự",
+  "comment": "Bình luận phải dài hơn 4 ký tự",
   "rate": "Vui lòng chọn đánh giá",
   "payMethod": "Vui lòng chọn phương thức thanh toán"
 }

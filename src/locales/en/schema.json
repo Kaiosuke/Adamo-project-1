@@ -6,13 +6,16 @@
   "minPhone": "Phone number must be greater than 8 character and smaller than 11 character",
   "maxPhone": "Phone number must be greater than 8 character and smaller than 11 character",
   "message": "Message must be greater than 4 character",
-  "passwordLowercase": "Password must contain at least 1 lowercase letter",
-  "passwordUppercase": "Password must contain at least 1 uppercase letter",
-  "passwordNumber": "Password must contain at least 1 number",
-  "passwordSymbol": "Password must contain at least 1 special character",
+  "password": {
+    "min": "Password must be at least 8 characters",
+    "lowercase": "Password must contain at least 1 lowercase letter",
+    "uppercase": "Password must contain at least 1 uppercase letter",
+    "number": "Password must contain at least 1 number",
+    "symbol": "Password must contain at least 1 special character"
+  },
   "refine": "Passwords do not match",
   "bookingGuest": "Please choose guests",
-  "comment": "comment must be greater than 4 character",
+  "comment": "Comment must be greater than 4 character",
   "rate": "Please choose rate",
   "payMethod": "Please choice a pay method"
 }

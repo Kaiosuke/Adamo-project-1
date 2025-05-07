@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 
 interface IQueryData<T> {
-  key: string
+  key?: string
   getData: () => Promise<T>
 }
 

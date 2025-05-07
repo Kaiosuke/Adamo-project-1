@@ -1,9 +1,8 @@
 import { Trans, useTranslation } from 'react-i18next'
 
-import { sendMailSchema } from '@schemas/authSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { sendMailSchema, TSendMailValues } from '@schemas/authSchema'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 
 import { contact } from '@api/contactRequest'
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@components/ui/form'
@@ -14,8 +13,11 @@ import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 
 const ContactSection = () => {
-  const form = useForm<z.infer<typeof sendMailSchema>>({
-    resolver: zodResolver(sendMailSchema),
+  const { t } = useTranslation('others')
+  const { t: validationValues } = useTranslation('schema')
+
+  const form = useForm<TSendMailValues>({
+    resolver: zodResolver(sendMailSchema(validationValues as unknown as (_key: string) => string)),
     defaultValues: {
       email: ''
     }
@@ -34,11 +36,9 @@ const ContactSection = () => {
     }
   })
 
-  const onSubmit = useDebouncedCallback((values: z.infer<typeof sendMailSchema>) => {
+  const onSubmit = useDebouncedCallback((values: TSendMailValues) => {
     mutate({ ...values })
   }, 300)
-
-  const { t } = useTranslation('others')
 
   return (
     <section className="main-container animate-fade-down">

@@ -2,21 +2,20 @@ import Rating from '@components/Rating'
 import { Button } from '@components/ui/button'
 import { Form, FormField, FormItem, FormMessage } from '@components/ui/form'
 import { Textarea } from '@components/ui/textarea'
-import { useAppDispatch } from '@redux-toolkit/index'
-import { commentSchema } from '@schemas/reviewSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useAppDispatch } from '@redux-toolkit/index'
+import { commentSchema, TCommentSchemaValues } from '@schemas/reviewSchema'
 import { useForm } from 'react-hook-form'
 import { FaUserCircle } from 'react-icons/fa'
-import { z } from 'zod'
 
 import { addReviewTour } from '@api/reviewRequest'
 import { IReviewTourLackId } from '@interfaces/review'
+import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { useQueryClient } from '@tanstack/react-query'
-import { toast } from 'sonner'
-import { useDebouncedCallback } from 'use-debounce'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { authSelector } from '@redux-toolkit/selectors/authSelector'
+import { toast } from 'sonner'
+import { useDebouncedCallback } from 'use-debounce'
 
 interface Props {
   id: string
@@ -24,21 +23,23 @@ interface Props {
 }
 
 const TourReviewForm = ({ id, setCurrentPage }: Props) => {
+  const { t } = useTranslation('detail')
+  const { t: validationValues } = useTranslation('schema')
+
   const dispatch = useAppDispatch()
   const { currentUser } = useSelector(authSelector)
 
-  const form = useForm<z.infer<typeof commentSchema>>({
-    resolver: zodResolver(commentSchema),
+  const form = useForm<TCommentSchemaValues>({
+    resolver: zodResolver(commentSchema(validationValues as unknown as (_key: string) => string)),
     defaultValues: {
       message: '',
       star: 0
     }
   })
 
-  const { t } = useTranslation('detail')
   const queryClient = useQueryClient()
 
-  const onSubmit = useDebouncedCallback((values: z.infer<typeof commentSchema>) => {
+  const onSubmit = useDebouncedCallback((values: TCommentSchemaValues) => {
     ;(async () => {
       if (id) {
         if (!currentUser) {
