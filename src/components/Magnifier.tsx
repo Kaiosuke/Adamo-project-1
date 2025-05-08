@@ -28,7 +28,7 @@ const Magnifier = ({ image }: { image: string }) => {
 
       <div
         className="absolute"
-        style={{ left: `${cursorPosition.x - 100}px`, top: `${cursorPosition.y - 100}px`, pointerEvents: 'none' }}
+        style={{ left: `${cursorPosition.x - 100}px`, top: `${cursorPosition.y - 400}px`, pointerEvents: 'none' }}
       >
         <div
           className={`w-[200px] h-[200px] ${showMagnifier ? 'block' : 'hidden'} `}
