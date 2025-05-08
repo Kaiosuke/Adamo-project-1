@@ -9,17 +9,19 @@ const Magnifier = ({ image }: { image: string }) => {
   const handleMouseHover = (e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {
     const { left, top, width, height } = e.currentTarget.getBoundingClientRect()
 
-    const x = ((e.pageX - left) / width) * 100
-    const y = ((e.pageY - top) / height) * 100
+    const x = ((e.pageX - left - window.scrollX) / width) * 100
+    const y = ((e.pageY - top - window.scrollY) / height) * 100
+    const cursorX = e.pageX - left - window.scrollX
+    const cursorY = e.pageY - top - window.scrollY
 
     setPosition({ x, y })
 
-    setCursorPosition({ x: e.pageX - left, y: e.pageY - top })
+    setCursorPosition({ x: cursorX, y: cursorY })
   }
 
   return (
     <div
-      className="relative w-full h-full"
+      className="relative w-full h-full cursor-zoom-in"
       onMouseEnter={() => setShowMagnifier(true)}
       onMouseLeave={() => setShowMagnifier(false)}
       onMouseMove={(e) => handleMouseHover(e)}
@@ -28,15 +30,15 @@ const Magnifier = ({ image }: { image: string }) => {
 
       <div
         className="absolute"
-        style={{ left: `${cursorPosition.x - 100}px`, top: `${cursorPosition.y - 400}px`, pointerEvents: 'none' }}
+        style={{ left: `${cursorPosition.x - 125}px`, top: `${cursorPosition.y - 125}px`, pointerEvents: 'none' }}
       >
         <div
-          className={`w-[200px] h-[200px] ${showMagnifier ? 'block' : 'hidden'} `}
+          className={`w-[250px] h-[250px] rounded-full ${showMagnifier ? 'block' : 'hidden'} `}
           style={{
             backgroundImage: `url(${image})`,
             backgroundPosition: `${position.x}% ${position.y}%`
           }}
-        ></div>
+        />
       </div>
     </div>
   )
