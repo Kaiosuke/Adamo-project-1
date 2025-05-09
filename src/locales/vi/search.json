@@ -6,7 +6,8 @@
     "departure": "Thời gian khởi hành",
     "type": "Thể loại",
     "guest": "Số lượng khách",
-    "search": "Tìm kiếm"
+    "search": "Tìm kiếm",
+    "notFound": "Không tìm thấy địa điểm"
   },
   "hotel": {
     "title": "Khách sạn",
@@ -15,6 +16,7 @@
     "departure": "Thời gian khởi hành",
     "type": "Thể loại",
     "guest": "Số lượng khách",
-    "search": "Tìm kiếm"
+    "search": "Tìm kiếm",
+    "notFound": "Không tìm thấy địa điểm"
   }
 }

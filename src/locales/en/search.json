@@ -6,7 +6,8 @@
     "departure": "Departure time",
     "type": "Type of Tour",
     "guest": "Number of guests",
-    "search": "Search"
+    "search": "Search",
+    "notFound": "Not Found Location"
   },
   "hotel": {
     "title": "Hotel",
@@ -15,6 +16,7 @@
     "departure": "Departure time",
     "type": "Type of Tour",
     "guest": "Number of guests",
-    "search": "Search"
+    "search": "Search",
+    "notFound": "Not Found Location"
   }
 }

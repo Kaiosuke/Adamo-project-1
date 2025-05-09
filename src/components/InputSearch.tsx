@@ -5,6 +5,7 @@ import { Input } from '@components/ui/input'
 import { IHotel } from '@interfaces/hotel'
 import { ITour } from '@interfaces/tour'
 import { FaLocationDot } from 'react-icons/fa6'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   location: string
@@ -14,6 +15,8 @@ interface Props {
 }
 
 const InputSearch = ({ location, setLocation, locationData, placeHolder = '' }: Props) => {
+  const { t } = useTranslation('search')
+
   const [showResult, setShowResult] = useState(false)
 
   const ref = useRef<HTMLDivElement | null>(null)
@@ -70,7 +73,7 @@ const InputSearch = ({ location, setLocation, locationData, placeHolder = '' }: 
               ))}
             </>
           ) : (
-            <div>Not found location</div>
+            <div>{t('tour.notFound')}</div>
           )}
         </div>
       )}
