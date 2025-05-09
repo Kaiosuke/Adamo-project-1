@@ -29,15 +29,15 @@ const HeroSection = () => {
               {t('featured.title')}
             </div>
             <div className="flex w-full sm:items-center flex-row justify-between items-start sm:gap-0 gap-1">
-              <div className="flex items-end gap-1">
+              <div className="flex items-end md:items-start gap-1 flex-col md:flex-row">
                 <span className="text-size-xl font-bold">200+</span>
                 <span>{t('featured.tours')}</span>
               </div>
-              <div className="flex items-end gap-1">
+              <div className="flex items-end md:items-start gap-1 flex-col md:flex-row">
                 <span className="text-size-xl font-bold">100+</span>
                 <span>{t('featured.Destination')}</span>
               </div>
-              <div className="flex items-end gap-1">
+              <div className="flex items-end md:items-start gap-1 flex-col md:flex-row">
                 <span className="text-size-xl font-bold">8+</span>
                 <span>{t('featured.type')}</span>
               </div>

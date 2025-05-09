@@ -1,11 +1,14 @@
-import { Button } from '@components/ui/button'
 import { privatePolicy } from '@/data.json'
+import { Button } from '@components/ui/button'
 import { handleSeparateWord } from '@helper/index'
+import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import { FaDownload } from 'react-icons/fa6'
 import { Link } from 'react-router'
 import { useReactToPrint } from 'react-to-print'
-import { useRef } from 'react'
 const PrivateSection = () => {
+  const { t } = useTranslation(['policy', 'others'])
+
   const contentRef = useRef<HTMLDivElement>(null)
   const reactToPrintFn = useReactToPrint({
     contentRef,
@@ -15,8 +18,8 @@ const PrivateSection = () => {
   return (
     <>
       <div className="main-container pt-6 text-four animate-fade-down">
-        <h1 className="text-size-4xl text-secondary">Privacy Policy</h1>
-        <div className="mt-6">Last Updated: Feb 03, 2020</div>
+        <h1 className="text-size-4xl text-secondary">{t('title')}</h1>
+        <div className="mt-6">{t('time')}: Feb 03, 2020</div>
         <Button
           variant={'primary'}
           size={'third'}
@@ -24,7 +27,7 @@ const PrivateSection = () => {
           onClick={() => reactToPrintFn()}
         >
           <FaDownload />
-          Download
+          {t('others:download')}
         </Button>
       </div>
       <section ref={contentRef} className="main-container animate-fade-down">
@@ -76,13 +79,6 @@ const PrivateSection = () => {
                             </div>
                           ))}
                         </div>
-                        {/* {content?.list ? (
-                      <ul>
-                        {content?.list.map((cont, index) => (
-                          <li key={index}>{content}</li>
-                        ))}
-                      </ul>
-                    ) : null} */}
                       </div>
                     ))}
                   </div>

@@ -16,8 +16,11 @@ import { handleFormatMoney } from '../helper'
 import StyledButton from './styled/button/Button'
 import { useSelector } from 'react-redux'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
+import { useTranslation } from 'react-i18next'
 
 const Tour = ({ tour }: { tour: ITour }) => {
+  const { t } = useTranslation('others')
+
   const [query] = useQueryParams({
     from: StringParam
   })
@@ -91,7 +94,7 @@ const Tour = ({ tour }: { tour: ITour }) => {
                 <span className="text-four">{tour.time}</span>
               </div>
               <div className="flex items-end gap-1">
-                <span className="text-four">from</span>
+                <span className="text-four">{t('from')}</span>
                 <span className="text-secondary text-size-xl font-bold">{handleFormatMoney(tour.price)}</span>
               </div>
             </div>

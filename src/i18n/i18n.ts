@@ -16,6 +16,7 @@ import THANKS_EN from '@locales/en/thanks.json'
 import OTHERS_EN from '@locales/en/others.json'
 import SCHEMA_EN from '@locales/en/schema.json'
 import NOTFOUND_EN from '@locales/en/notFound.json'
+import POLICY_EN from '@locales/en/policy.json'
 
 import HOME_VI from '@locales/vi/home.json'
 import ABOUT_VI from '@locales/vi/about.json'
@@ -32,6 +33,7 @@ import THANKS_VI from '@locales/vi/thanks.json'
 import OTHERS_VI from '@locales/vi/others.json'
 import SCHEMA_VI from '@locales/vi/schema.json'
 import NOTFOUND_VI from '@locales/vi/notFound.json'
+import POLICY_VI from '@locales/vi/policy.json'
 
 export const resources = {
   en: {
@@ -49,7 +51,8 @@ export const resources = {
     thanks: THANKS_EN,
     others: OTHERS_EN,
     schema: SCHEMA_EN,
-    notFound: NOTFOUND_EN
+    notFound: NOTFOUND_EN,
+    policy: POLICY_EN
   },
   vi: {
     home: HOME_VI,
@@ -66,13 +69,9 @@ export const resources = {
     thanks: THANKS_VI,
     others: OTHERS_VI,
     schema: SCHEMA_VI,
-    notFound: NOTFOUND_VI
+    notFound: NOTFOUND_VI,
+    policy: POLICY_VI
   }
-}
-
-export const locales = {
-  en: 'English',
-  vi: 'Tiếng Việt'
 }
 
 export const defaultNS = 'home'
@@ -90,7 +89,8 @@ const ns = [
   'thanks',
   'others',
   'schema',
-  'notFound'
+  'notFound',
+  'policy'
 ]
 
 i18n.use(initReactI18next).init({

@@ -1,5 +1,6 @@
 import React, { Suspense, useState } from 'react'
 import LazyScrollCom from './LazyScrollCom'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   loader: () => Promise<{ default: React.ComponentType<unknown> }>
@@ -7,6 +8,7 @@ interface Props {
 }
 
 const LazyWrapper = ({ loader, fallback }: Props) => {
+  const { t } = useTranslation('others')
   const [Component, setComponent] = useState<React.LazyExoticComponent<React.ComponentType<unknown>> | null>(null)
 
   return (
@@ -19,7 +21,7 @@ const LazyWrapper = ({ loader, fallback }: Props) => {
       }}
     >
       {Component ? (
-        <Suspense fallback={fallback ? fallback : <div>Loading ...</div>}>
+        <Suspense fallback={fallback ? fallback : <div>{t('loading')}</div>}>
           <Component />
         </Suspense>
       ) : null}

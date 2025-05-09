@@ -26,6 +26,13 @@
   "edit": "Edit",
   "delete": "Delete",
   "departureTime": "Departure time",
+  "from": "From",
+  "rating": "Rating",
+  "night": "Night",
+  "review": "Review",
+  "reviews": "Reviews",
+  "loading": "Loading ...",
+  "download": "Download",
   "formEdit": {
     "title": "Edit Comment"
   },

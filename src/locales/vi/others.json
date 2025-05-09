@@ -25,6 +25,13 @@
   "system": "Hệ thống",
   "edit": "Sửa",
   "delete": "Xóa",
+  "from": "Từ",
+  "rating": "Đánh giá",
+  "night": "Đêm",
+  "review": "Đánh giá",
+  "reviews": "Đánh giá",
+  "loading": "Đang tải ...",
+  "download": "Tải xuống",
   "departureTime": "Thời gian khởi hành",
   "formEdit": {
     "title": "Chỉnh sửa bình luận"

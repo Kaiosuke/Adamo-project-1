@@ -20,6 +20,8 @@ import { Trans, useTranslation } from 'react-i18next'
 import TourDetailTabs from './TourDetailTabs'
 
 const TourDetail = () => {
+  const { t } = useTranslation('others')
+
   const { id } = useParams()
 
   useTranslation()
@@ -72,8 +74,6 @@ const TourDetail = () => {
     }
   }, [id, dispatch, currentPage, pageCount, totalReviewHotel])
 
-  const { t } = useTranslation('others')
-
   const links = useMemo(
     () => [
       { href: '/', title: t('home') },
@@ -108,7 +108,9 @@ const TourDetail = () => {
               </div>
               <span className="text-four">
                 {!totalData && totalData !== 0 ? (
-                  <div className="flex items-center gap-4 text-base">Reviews: Loading...</div>
+                  <div className="flex items-center gap-4 text-base">
+                    {t('reviews')}: {t('loading')}
+                  </div>
                 ) : (
                   <Trans ns="detail" i18nKey={'tour.reviewTitle'} count={totalData} />
                 )}

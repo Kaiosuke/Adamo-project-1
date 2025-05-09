@@ -18,6 +18,7 @@ import { Trans, useTranslation } from 'react-i18next'
 import LoadingSlideDetail from './LoadingSlideDetail'
 
 const HotelDetail = () => {
+  const { t } = useTranslation('others')
   const { id } = useParams()
 
   const [totalData, setTotalData] = useState<number | undefined>(undefined)
@@ -29,8 +30,6 @@ const HotelDetail = () => {
   }, [total])
 
   const { data, isLoading } = useQueryDetailHotel(Number(id))
-
-  const { t } = useTranslation('others')
 
   const links = useMemo(
     () => [
@@ -62,8 +61,10 @@ const HotelDetail = () => {
             {data?.score}
           </div>
           <span className="text-four">
-            {!totalData ? (
-              <div className="flex items-center gap-4 text-base">Reviews: Loading...</div>
+            {!totalData && totalData !== 0 ? (
+              <div className="flex items-center gap-4 text-base">
+                {t('reviews')}: {t('loading')}
+              </div>
             ) : (
               <>
                 <Trans ns="detail" i18nKey={'hotel.reviews'} count={totalData} />

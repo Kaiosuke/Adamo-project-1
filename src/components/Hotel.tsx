@@ -15,8 +15,10 @@ import { useDebouncedCallback } from 'use-debounce'
 import { IReviewHotel } from '@interfaces/review'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
 
 const Hotel = ({ hotel, totalReview }: { hotel: IHotel; totalReview?: IReviewHotel[] }) => {
+  const { t } = useTranslation('others')
   const [query] = useQueryParams({
     guest: StringParam,
     from: StringParam
@@ -94,16 +96,16 @@ const Hotel = ({ hotel, totalReview }: { hotel: IHotel; totalReview?: IReviewHot
         <div className="flex xl:items-center justify-between xl:pt-4 xl:flex-row lg:flex-col flex-row lg:items-start items-center ">
           <div className="flex items-center gap-2">
             <div className="w-fit px-2 py-0.5 flex items-center justify-center text-sm bg-primary text-third gap-1">
-              Rating: <span className="text-base font-semibold">{hotel.score}</span>
+              {t('rating')}: <span className="text-base font-semibold">{hotel.score}</span>
             </div>
             <span className="text-sm">
-              {review} {`${review > 0 ? 'Reviews' : 'Review'}`}
+              {review} {`${review > 0 ? t('reviews') : t('review')}`}
             </span>
           </div>
           <div className="flex items-baseline gap-1">
-            <span className="text-four text-sm">from</span>
+            <span className="text-four text-sm">{t('from')}</span>
             <span className="text-secondary text-size-xl font-bold">{handleFormatMoney(hotel.price)}</span>
-            <span className="text-four text-sm">/nights</span>
+            <span className="text-four text-sm">/{t('night')}</span>
           </div>
         </div>
       </div>

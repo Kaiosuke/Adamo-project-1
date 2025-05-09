@@ -15,7 +15,7 @@ interface Props {
 }
 
 const TourDetailTabs = ({ totalData, currentPage, pageCount, averageStar, setCurrentPage }: Props) => {
-  const { t } = useTranslation('detail')
+  const { t } = useTranslation(['detail', 'others'])
   return (
     <Tabs defaultValue="descriptions" className="lg:pt-10 pt-6">
       <TabsList className="w-full bg-third justify-between p-0">
@@ -36,7 +36,9 @@ const TourDetailTabs = ({ totalData, currentPage, pageCount, averageStar, setCur
           className="data-[state=active]:text-primary text-size-2xl px-0 flex-none data-[state=active]:shadow-none trans-slow hover:text-six cursor-pointer"
         >
           {!totalData && totalData !== 0 ? (
-            <div className="flex items-center gap-4 text-size-2xl">Reviews: Loading...</div>
+            <div className="flex items-center gap-4 text-size-2xl">
+              {t('others:reviews')}: {t('others:loading')}
+            </div>
           ) : (
             <Trans ns="detail" i18nKey={'tour.review.title'} count={totalData}>
               {' '}

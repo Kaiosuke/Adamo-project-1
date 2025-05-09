@@ -13,11 +13,10 @@ interface Props {
 }
 
 const HotelDetailTabs = ({ data }: Props) => {
+  const { t } = useTranslation(['detail', 'others'])
   const { id } = useParams()
 
   const { data: totalScore, isLoading } = useQueryTotalReviews({ id })
-
-  const { t } = useTranslation('detail')
 
   return (
     <>
@@ -40,7 +39,9 @@ const HotelDetailTabs = ({ data }: Props) => {
             className="data-[state=active]:text-primary text-size-2xl px-0 flex-none data-[state=active]:shadow-none trans-slow hover:text-six cursor-pointer"
           >
             {isLoading ? (
-              <div className="flex items-center gap-4 text-size-2xl">Reviews: Loading...</div>
+              <div className="flex items-center gap-4 text-size-2xl">
+                {t('others:reviews')}: {t('others:loading')}
+              </div>
             ) : (
               <Trans ns="detail" i18nKey={'hotel.review.review'} count={totalScore?.length} />
             )}
