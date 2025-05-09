@@ -10,6 +10,9 @@
     "phone": "Số điện thoại",
     "message": "Tin nhắn",
     "submit": "Gửi",
-    "ourOffice": "Địa chỉ văn phòng"
+    "office": {
+      "title": "Địa chỉ văn phòng",
+      "address": "Địa chỉ"
+    }
   }
 }

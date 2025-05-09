@@ -10,6 +10,9 @@
     "phone": "Your phone",
     "message": "Message",
     "submit": "Submit",
-    "ourOffice": "Our Office"
+    "office": {
+      "title": "Our Office",
+      "address": "Address"
+    }
   }
 }
