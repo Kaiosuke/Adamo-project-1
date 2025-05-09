@@ -33,6 +33,11 @@
   "reviews": "Reviews",
   "loading": "Loading ...",
   "download": "Download",
+  "checkIn": "Check In",
+  "checkOut": "Check Out",
+  "roomFacilities": "Room Facilities",
+  "guest": "Guest",
+  "more": "More",
   "formEdit": {
     "title": "Edit Comment"
   },

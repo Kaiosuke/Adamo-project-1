@@ -33,6 +33,11 @@
   "loading": "Đang tải ...",
   "download": "Tải xuống",
   "departureTime": "Thời gian khởi hành",
+  "checkIn": "Nhận phòng",
+  "checkOut": "Trả phòng",
+  "roomFacilities": "Tiện nghi phòng",
+  "more": "Xem thêm",
+  "guest": "Khách",
   "formEdit": {
     "title": "Chỉnh sửa bình luận"
   },

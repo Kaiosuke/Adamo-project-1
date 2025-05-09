@@ -8,7 +8,7 @@ import { handleFormatMoney, handleSeparateWord } from '@helper/index'
 import { IRoom } from '@interfaces/room'
 import { addRoom, deleteRoom } from '@redux-toolkit/slices/roomsSlice'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { memo } from 'react'
+import { memo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FaCheck, FaImage } from 'react-icons/fa6'
 import { IoBedOutline } from 'react-icons/io5'
@@ -20,6 +20,9 @@ import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 
 const Room = ({ room }: { room: IRoom }) => {
+  const { t } = useTranslation(['detail', 'others'])
+  const [open, setOpen] = useState(false)
+
   const dispatch = useDispatch()
 
   const queryClient = useQueryClient()
@@ -58,8 +61,6 @@ const Room = ({ room }: { room: IRoom }) => {
     )
   }, 300)
 
-  const { t } = useTranslation('detail')
-
   const handleNotSelectRoom = useDebouncedCallback((room: IRoom, status: boolean) => {
     changeStatusMutation.mutate(
       { roomId: room.id, status },
@@ -87,9 +88,9 @@ const Room = ({ room }: { room: IRoom }) => {
           </div>
 
           <div className="absolute top-2 left-2 w-8 h-8 rounded-full bg-four flex justify-center items-center">
-            <Dialog>
+            <Dialog open={open} onOpenChange={setOpen}>
               <DialogTrigger>
-                <FaImage className="text-third cursor-pointer" />
+                <FaImage className="text-third cursor-pointer" onClick={() => setOpen(true)} />
               </DialogTrigger>
               <DialogContent className="2xl:max-w-[1200px] md:max-w-[90%] m-auto 2xl:h-fit h-[60%] pb-6">
                 <DialogHeader>
@@ -176,7 +177,7 @@ const Room = ({ room }: { room: IRoom }) => {
                     <div className="str-line" />
 
                     <div className="">
-                      <span className="text-secondary font-bold text-size-lg">Room Facilities:</span>
+                      <span className="text-secondary font-bold text-size-lg">{t('others:roomFacilities')}:</span>
                       <ul className="text-four grid grid-cols-2 gap-2 mt-2">
                         {room.features.map((v, index) => (
                           <li className="flex items-center gap-2" key={index}>
@@ -207,7 +208,9 @@ const Room = ({ room }: { room: IRoom }) => {
                 </div>
                 <div className="flex items-center gap-1">
                   <LuUsers className="text-secondary text-lg" />
-                  <span>{room.capacity} Guest</span>
+                  <span>
+                    {room.capacity} {t('others:guest')}
+                  </span>
                 </div>
               </div>
               <div className="text-four flex gap-2">
@@ -216,7 +219,9 @@ const Room = ({ room }: { room: IRoom }) => {
                     {v} •
                   </span>
                 ))}
-                <span className="text-six font-bold">15 More</span>
+                <span className="text-six font-bold hover:underline cursor-pointer" onClick={() => setOpen(true)}>
+                  {room.features.length - 2} {t('others:more')}
+                </span>
               </div>
             </div>
             <div className="mt-2 flex items-center justify-between">
@@ -260,7 +265,7 @@ const Room = ({ room }: { room: IRoom }) => {
 
               <div>
                 <span className="text-red-600 text-size-xl font-bold">{handleFormatMoney(room.price)}</span>
-                <span className="text-four">/night</span>
+                <span className="text-four">/{t('others:night')}</span>
               </div>
             </div>
           </div>

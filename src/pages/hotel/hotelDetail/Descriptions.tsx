@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 import { IoCheckmarkSharp } from 'react-icons/io5'
 
 const Descriptions = ({ data }: { data: IHotel }) => {
-  const { t } = useTranslation('detail')
+  const { t } = useTranslation(['detail', 'others'])
 
   return (
     <>
@@ -43,13 +43,13 @@ const Descriptions = ({ data }: { data: IHotel }) => {
         <h4 className="text-size-xl text-secondary ">{t('hotel.description.rules')}</h4>
         <div className="mt-2 flex gap-8">
           <div className="font-bold">
-            <div className="text-primary">Checkin</div>
+            <div className="text-primary">{t('others:checkIn')}</div>
             <Button variant={'seven'} className=" md:w-[270px] w-[200px] rounded-lg px-4 cursor-auto mt-2">
               {data.description.rules.checkIn}
             </Button>
           </div>
           <div className="font-bold">
-            <div className="text-primary">Checkout</div>
+            <div className="text-primary">{t('others:checkOut')}</div>
             <Button variant={'seven'} className=" md:w-[270px] w-[200px] rounded-lg px-4 cursor-auto mt-2">
               {data.description.rules.checkOut}
             </Button>
