@@ -110,7 +110,7 @@ const NewPassword = () => {
               <InputAuth form={form} name="password" title={t('newPs.password')} type="password" />
               <InputAuth form={form} name="confirm" title={t('newPs.confirm')} type="password" />
               <div className="text-right">
-                <Link to="/auth/forgot-password" className="text-four text-base">
+                <Link to="/auth/forgot-password" className="text-four text-base hover:underline">
                   {t('newPs.forgot')}
                 </Link>
               </div>

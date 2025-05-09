@@ -101,7 +101,7 @@ const Login = () => {
 
               <InputAuth form={form} name="password" title={t('signIn.password')} type="password" />
               <div className="text-right">
-                <Link to="/auth/forgot-password" className="text-four text-base">
+                <Link to="/auth/forgot-password" className="text-four text-base hover:underline">
                   {t('signIn.forgotPs')}
                 </Link>
               </div>
