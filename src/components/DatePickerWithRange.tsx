@@ -7,6 +7,10 @@ import { Calendar } from '@components/ui/calendar'
 import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover'
 import { cn } from '@lib/utils'
 import { memo } from 'react'
+import { useTranslation } from 'react-i18next'
+import { vi } from 'date-fns/locale/vi'
+import { enUS } from 'date-fns/locale/en-US'
+import i18n from '@i18n/i18n'
 
 interface Props {
   setDate: (_value: DateRange | undefined) => void
@@ -17,6 +21,9 @@ interface Props {
 }
 
 function DatePickerWithRange({ date, setDate, duration, setQuery }: Props) {
+  const { t } = useTranslation('others')
+  const lg = i18n.language
+
   return (
     <div className={cn('grid gap-2')}>
       <Popover>
@@ -33,13 +40,19 @@ function DatePickerWithRange({ date, setDate, duration, setQuery }: Props) {
             {date?.from ? (
               date.to ? (
                 <>
-                  {format(date.from, 'LLL dd, y')} - {format(date.to, 'LLL dd, y')}
+                  {format(date.from, 'LLL dd, y', {
+                    locale: lg === 'en' ? enUS : vi
+                  })}{' '}
+                  -{' '}
+                  {format(date.to, 'LLL dd, y', {
+                    locale: lg === 'en' ? enUS : vi
+                  })}
                 </>
               ) : (
                 format(date.from, 'LLL dd, y')
               )
             ) : (
-              <span>Pick a date</span>
+              <span>{t('departureTime')}</span>
             )}
           </Button>
         </PopoverTrigger>

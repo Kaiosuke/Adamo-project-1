@@ -22,5 +22,17 @@
   "login": "Đăng nhập",
   "light": "Sáng",
   "dark": "Tối",
-  "system": "Hệ thống"
+  "system": "Hệ thống",
+  "edit": "Sửa",
+  "delete": "Xóa",
+  "departureTime": "Thời gian khởi hành",
+  "formEdit": {
+    "title": "Chỉnh sửa bình luận"
+  },
+  "formDelete": {
+    "title": "Bạn có chắc chắn không?",
+    "description": "Hành động này không thể hoàn tác.",
+    "delete": "Xóa",
+    "close": "Đóng"
+  }
 }

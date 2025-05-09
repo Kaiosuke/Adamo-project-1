@@ -176,7 +176,7 @@ const ReviewForm = ({ totalData, id, setCurrentPage, onAverageRate, setQuery }: 
         </div>
         <div className="flex flex-col justify-between">
           <div className="text-size-4xl">{handleFindEvaluate}</div>
-          {/* <div>{t('hotel.review.review')}</div> */}
+
           <Trans ns="detail" i18nKey={'hotel.review.review'} count={totalData} />
 
           <Button variant={isReview ? 'five' : 'primary'} size={'third'} onClick={handleOpenComment} className="px-2">
@@ -219,6 +219,7 @@ const ReviewForm = ({ totalData, id, setCurrentPage, onAverageRate, setQuery }: 
                       <Rating
                         rating={Number(field.value)}
                         size={30}
+                        totalStars={10}
                         onRatingChange={(v) => {
                           field.onChange(Number(v))
                         }}

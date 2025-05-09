@@ -39,7 +39,7 @@ import { MdDeleteForever } from 'react-icons/md'
 const ReviewTour = ({ review, user }: { review: IReviewTour; user?: IAuth }) => {
   const queryClient = useQueryClient()
 
-  const { t } = useTranslation('detail')
+  const { t } = useTranslation(['detail', 'others'])
 
   const { t: validationValues } = useTranslation('schema')
 
@@ -125,7 +125,7 @@ const ReviewTour = ({ review, user }: { review: IReviewTour; user?: IAuth }) => 
                 className="cursor-pointer text-xl text-six flex justify-between items-center"
                 onClick={() => setIsOpenEdit(true)}
               >
-                Edit
+                {t('others:formEdit.title')}
                 <CiEdit className="text-2xl text-six " />
               </DropdownMenuItem>
 
@@ -135,7 +135,7 @@ const ReviewTour = ({ review, user }: { review: IReviewTour; user?: IAuth }) => 
                 className="cursor-pointer text-xl text-red-600 flex justify-between items-center"
                 onClick={() => setIsOpen(true)}
               >
-                Delete
+                {t('others:delete')}
                 <MdDeleteForever className="text-2xl  text-red-600" />
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -146,17 +146,15 @@ const ReviewTour = ({ review, user }: { review: IReviewTour; user?: IAuth }) => 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent>
           <DialogHeader className="p-4">
-            <DialogTitle className="text-size-4xl">Are you absolutely sure?</DialogTitle>
-            <DialogDescription className="text-xl mt-4 ">
-              This action cannot be undone. This will permanently delete your account and remove your data from our
-              servers.
-            </DialogDescription>
+            {t('others:delete')}
+            <DialogTitle className="text-size-4xl"> {t('others:formDelete.title')}</DialogTitle>
+            <DialogDescription className="text-xl mt-4 ">{t('others:formDelete.description')}</DialogDescription>
             <div className="flex gap-5 justify-end mt-6">
               <Button variant={'primary'} className="flex-[0_0_30%]" onClick={handleDeleteComment}>
-                Delete
+                {t('others:formDelete.delete')}
               </Button>
               <Button variant={'six'} className="flex-[0_0_30%]" onClick={() => setIsOpen(false)}>
-                Close
+                {t('others:formDelete.close')}
               </Button>
             </div>
           </DialogHeader>

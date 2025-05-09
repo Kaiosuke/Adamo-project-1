@@ -30,7 +30,7 @@ const LayoutAuth = () => {
           <div
             className="w-full h-full bg-cover bg-center bg-no-repeat "
             style={{ backgroundImage: `url(${ImageSign})` }}
-          ></div>
+          />
         </div>
       </div>
     </>

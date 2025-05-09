@@ -6,6 +6,10 @@ import { Calendar } from '@components/ui/calendar'
 import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover'
 import { cn } from '@lib/utils'
 import { memo } from 'react'
+import { vi } from 'date-fns/locale/vi'
+import { enUS } from 'date-fns/locale/en-US'
+import i18n from '@i18n/i18n'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   date: Date
@@ -14,6 +18,9 @@ interface Props {
 }
 
 function DatePickerSingle({ date, setDate, setQuery }: Props) {
+  const { t } = useTranslation('others')
+  const lg = i18n.language
+
   return (
     <Popover>
       <PopoverTrigger asChild className="cursor-pointer">
@@ -26,7 +33,13 @@ function DatePickerSingle({ date, setDate, setQuery }: Props) {
           )}
         >
           <CalendarIcon className="mr-3 text-primary group-hover:text-third ml-6" />
-          {date ? format(date, 'PPP') : <span>Departure time</span>}
+          {date ? (
+            format(date, 'PPP', {
+              locale: lg === 'en' ? enUS : vi
+            })
+          ) : (
+            <span>{t('departureTime')}</span>
+          )}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-full h-full p-0">

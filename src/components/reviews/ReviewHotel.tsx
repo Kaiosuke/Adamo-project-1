@@ -34,7 +34,7 @@ import { Textarea } from '../ui/textarea'
 const ReviewHotel = ({ review, user }: { review: IReviewHotel; user?: IAuth }) => {
   const queryClient = useQueryClient()
 
-  const { t } = useTranslation('detail')
+  const { t } = useTranslation(['detail', 'others'])
   const { t: validationValues } = useTranslation('schema')
 
   const [isOpen, setIsOpen] = useState(false)
@@ -115,7 +115,7 @@ const ReviewHotel = ({ review, user }: { review: IReviewHotel; user?: IAuth }) =
                 className="cursor-pointer text-xl text-six flex justify-between items-center"
                 onClick={() => setIsOpenEdit(true)}
               >
-                Edit
+                {t('others:edit')}
                 <CiEdit className="text-2xl text-six " />
               </DropdownMenuItem>
 
@@ -125,7 +125,7 @@ const ReviewHotel = ({ review, user }: { review: IReviewHotel; user?: IAuth }) =
                 className="cursor-pointer text-xl text-red-600 flex justify-between items-center"
                 onClick={() => setIsOpen(true)}
               >
-                Delete
+                {t('others:delete')}
                 <MdDeleteForever className="text-2xl  text-red-600" />
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -138,17 +138,14 @@ const ReviewHotel = ({ review, user }: { review: IReviewHotel; user?: IAuth }) =
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent>
           <DialogHeader className="p-4">
-            <DialogTitle className="text-size-4xl">Are you absolutely sure?</DialogTitle>
-            <DialogDescription className="text-xl mt-4 ">
-              This action cannot be undone. This will permanently delete your account and remove your data from our
-              servers.
-            </DialogDescription>
+            <DialogTitle className="text-size-4xl">{t('others:formDelete.title')}</DialogTitle>
+            <DialogDescription className="text-xl mt-4 ">{t('others:formDelete.description')}</DialogDescription>
             <div className="flex gap-5 justify-end mt-6">
               <Button variant={'primary'} className="flex-[0_0_30%]" onClick={handleDeleteComment}>
-                Delete
+                {t('others:formDelete.delete')}
               </Button>
               <Button variant={'six'} className="flex-[0_0_30%]" onClick={() => setIsOpen(false)}>
-                Close
+                {t('others:formDelete.close')}
               </Button>
             </div>
           </DialogHeader>
@@ -161,7 +158,7 @@ const ReviewHotel = ({ review, user }: { review: IReviewHotel; user?: IAuth }) =
             <DialogTitle className="text-size-4xl">Edit Comment</DialogTitle>
 
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mt-6">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mt-6 overflow-hidden ">
                 <FormField
                   control={form.control}
                   name="message"
@@ -181,26 +178,26 @@ const ReviewHotel = ({ review, user }: { review: IReviewHotel; user?: IAuth }) =
                     </FormItem>
                   )}
                 />
-                <div className="w-full mt-6 flex justify-between">
+                <div className="w-full mt-6">
                   <FormField
                     control={form.control}
                     name="star"
                     render={({ field }) => (
                       <FormItem>
-                        <div className="">
-                          <Rating
-                            rating={Number(field.value)}
-                            size={30}
-                            onRatingChange={(v) => {
-                              field.onChange(Number(v))
-                            }}
-                          />
-                        </div>
+                        <Rating
+                          rating={Number(field.value)}
+                          size={30}
+                          totalStars={10}
+                          onRatingChange={(v) => {
+                            field.onChange(Number(v))
+                          }}
+                        />
+
                         <FormMessage />
                       </FormItem>
                     )}
                   />
-                  <Button className="w-auto lg:px-10 md:px-8 px-6" size={'third'}>
+                  <Button className="w-auto lg:px-10 md:px-8 px-6 mt-4" size={'third'}>
                     {updateComment.isPending ? <LoadingBtn /> : t('hotel.review.button')}
                   </Button>
                 </div>
