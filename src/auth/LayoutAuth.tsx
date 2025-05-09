@@ -26,9 +26,9 @@ const LayoutAuth = () => {
       <div className="grid lg:grid-cols-2 h-screen w-screen grid-cols-1">
         <Outlet />
 
-        <div className="w-full">
+        <div className="w-full lg:static lg:blur-none fixed inset-0 -z-[1] blur-3xl">
           <div
-            className="w-full h-full bg-cover bg-center bg-no-repeat lg:block hidden"
+            className="w-full h-full bg-cover bg-center bg-no-repeat "
             style={{ backgroundImage: `url(${ImageSign})` }}
           ></div>
         </div>
