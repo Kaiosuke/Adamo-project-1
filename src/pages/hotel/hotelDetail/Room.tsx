@@ -105,7 +105,7 @@ const Room = ({ room }: { room: IRoom }) => {
                           {handleFormatMoney(room.price * 0.1 + room.price)}
                         </span>
                         <span className="text-size-2xl text-red-700 font-bold">{handleFormatMoney(room.price)}</span>
-                        <span className="text-four">/night</span>
+                        <span className="text-four">/{t('others:night')}</span>
                       </div>
                       <div>
                         {room.quantity < 1 ? (

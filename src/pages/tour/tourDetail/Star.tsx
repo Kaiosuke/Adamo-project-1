@@ -31,7 +31,6 @@ const Star = ({ data, v }: { data: IReviewTour[]; v: number }) => {
             flex: `0 0 ${handleCalculatePercent(handleFilterRate(v))}%`
           }}
         />
-
         <div className="bg-five flex-[1_0_auto] rounded-r-lg" />
       </div>
       <span>{`${handleFilterRate(v)} ${t('tour.review.review')} `}</span>

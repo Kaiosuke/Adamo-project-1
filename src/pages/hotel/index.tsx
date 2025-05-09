@@ -51,7 +51,7 @@ const Hotel = () => {
       <PdSub />
       <HotelSection isLoading={isLoading} data={data?.data} />
       {isLoading ? (
-        <div className="text-center mt-20">Loading...</div>
+        <div className="text-center mt-20">{t('others:loading')}</div>
       ) : (
         totalData && <HotelPagination totalData={totalData} />
       )}

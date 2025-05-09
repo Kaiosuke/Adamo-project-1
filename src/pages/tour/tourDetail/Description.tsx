@@ -17,11 +17,7 @@ const Description = () => {
         <h4 className="text-size-xl font-semibold text-secondary">{t('tour.description.overview')}</h4>
         <p className="mt-4 text-secondary">{tour?.description.overview.title}</p>
         <ul className="list-disc list-inside mt-6 flex flex-col gap-2 text-secondary">
-          {tour?.description.overview.list.map((v: string, index: number) => (
-            <li className="" key={index}>
-              {v}
-            </li>
-          ))}
+          {tour?.description.overview.list.map((v: string, index: number) => <li key={index}>{v}</li>)}
         </ul>
       </div>
       <div className="py-6">

@@ -93,7 +93,6 @@ const TourDetail = () => {
           <div className="mt-10 md:mt-0" />
           <BreadcrumbCom current={current} links={links} />
           <PdSub />
-
           <section className="main-container animate-fade-down">
             <h1 className="text-size-4xl text-secondary">{tour?.title}</h1>
             <div className="lg:mt-6 mg-4 flex items-center gap-2">
@@ -121,7 +120,6 @@ const TourDetail = () => {
                 <div className="h-[680px] ">
                   <SwiperCom images={tour.images} />
                 </div>
-
                 <TourDetailTabs
                   averageStar={averageStar}
                   currentPage={currentPage}
@@ -130,7 +128,6 @@ const TourDetail = () => {
                   totalData={totalData}
                 />
               </div>
-
               <div className="flex-[0_1_auto] max-w-[380px] w-full h-fit xl:sticky top-[20px]">
                 <BillTourDetail />
               </div>

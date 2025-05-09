@@ -15,6 +15,7 @@ interface Props {
 }
 
 const HotelSection = ({ isLoading, data }: Props) => {
+  const { t } = useTranslation('hotel')
   const { data: totalReview } = useQuery({
     queryKey: ['totalReview'],
     queryFn: () => {
@@ -24,8 +25,6 @@ const HotelSection = ({ isLoading, data }: Props) => {
       })()
     }
   })
-
-  useTranslation()
 
   return (
     <section className="main-container animate-fade-down">
@@ -47,7 +46,7 @@ const HotelSection = ({ isLoading, data }: Props) => {
         ) : data && data.length ? (
           data.map((hotel) => <Hotel key={hotel.id} hotel={hotel} totalReview={totalReview} />)
         ) : (
-          <div className="mt-4 text-size-2xl">Not found Hotel</div>
+          <div className="mt-4 text-size-2xl">{t('hotels.notFound')}</div>
         )}
       </div>
     </section>

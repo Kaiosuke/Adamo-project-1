@@ -4,6 +4,7 @@
     "description": "From cozy country homes to funky city apartments"
   },
   "hotels": {
-    "hotels": "Hotels"
+    "hotels": "Hotels",
+    "notFound": "Not Found Hotel"
   }
 }

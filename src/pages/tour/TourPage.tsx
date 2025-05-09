@@ -7,8 +7,11 @@ import { useSelector } from 'react-redux'
 import SkeletonData from '@components/LoadingList/SkeletonData'
 import PaginationWithShow from '@components/paginationList/PaginationWithShow'
 import Tour from '@components/Tour'
+import { useTranslation } from 'react-i18next'
 
 const TourPage = () => {
+  const { t } = useTranslation('tour')
+
   const { tours, loading } = useSelector(tourSelector)
 
   const dispatch = useAppDispatch()
@@ -71,7 +74,7 @@ const TourPage = () => {
         ) : tours.length ? (
           tours.map((tour) => <Tour key={tour.id} tour={tour} />)
         ) : (
-          <div className="mt-4 text-size-2xl">Not found Tour</div>
+          <div className="mt-4 text-size-2xl">{t('notFound')}</div>
         )}
       </div>
       <PaginationWithShow
