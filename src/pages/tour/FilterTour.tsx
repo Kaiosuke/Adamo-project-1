@@ -2,12 +2,12 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigg
 
 import SliderCom from '@components/sliders/SliderCom'
 import { StyledLikeButton } from '@components/styled/likeButton/LikeButton'
+import { toastSuccess } from '@lib/toasts'
 import { tourSelector } from '@redux-toolkit/selectors/tourSelector'
 import { filterByDuration, filterByPrice, filterByType } from '@redux-toolkit/slices/toursSlice'
 import { memo, useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
-import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 import TourBtn from './TourBtn'
 import TourDuration from './TourDuration'
@@ -28,22 +28,12 @@ const FilterTour = () => {
     dispatch(filterByType(typeTour))
     dispatch(filterByDuration(durationTour))
     dispatch(filterByPrice(prices))
-    toast.success('Filter successfully', {
-      style: {
-        backgroundColor: '#4caf50',
-        color: '#ffffff'
-      }
-    })
+    toastSuccess({ content: 'Filter' })
     localStorage.setItem('currentPageTour', '0')
   }, 1000)
 
   const handleResetFilter = () => {
-    toast.success('Reset successfully', {
-      style: {
-        backgroundColor: '#4caf50',
-        color: '#ffffff'
-      }
-    })
+    toastSuccess({ content: 'Reset' })
     setDurationTour('')
     setPrices([0, 300])
     setTypeTour([])

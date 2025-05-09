@@ -6,13 +6,13 @@ import InputAuth from '@components/InputAuth'
 import LoadingBtn from '@components/LoadingList/LoadingBtn'
 import { Button } from '@components/ui/button'
 import { Form } from '@components/ui/form'
+import { toastFailed, toastSuccess } from '@lib/toasts'
 import { useAppDispatch } from '@redux-toolkit/index'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { forgotPasswordSchema, TForgotPasswordValues } from '@schemas/authSchema'
 import { Trans, useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router'
-import { toast } from 'sonner'
 
 const ForgotPassword = () => {
   const { t } = useTranslation('auth')
@@ -34,20 +34,9 @@ const ForgotPassword = () => {
       try {
         await dispatch(forgotPassword(values.email))
         form.reset()
-        toast.success('Please check your email', {
-          style: {
-            backgroundColor: '#4caf50',
-            color: '#ffffff'
-          }
-        })
+        toastSuccess({ content: 'Please check your email ' })
       } catch (error) {
-        if (typeof error === 'string')
-          toast.error(error, {
-            style: {
-              backgroundColor: '#FF0B55',
-              color: '#ffffff'
-            }
-          })
+        if (typeof error === 'string') toastFailed({ content: error })
       }
     })()
   }

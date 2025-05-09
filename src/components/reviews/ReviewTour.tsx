@@ -7,7 +7,6 @@ import { TbPointFilled } from 'react-icons/tb'
 import { deleteReviewTour, editReviewTour } from '@api/reviewRequest'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
-import { toast } from 'sonner'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -33,6 +32,7 @@ import {
   DropdownMenuTrigger
 } from '@components/ui/dropdown-menu'
 import { IAuth } from '@interfaces/auth'
+import { toastFailedWithNotice, toastSuccess } from '@lib/toasts'
 import { CiEdit } from 'react-icons/ci'
 import { MdDeleteForever } from 'react-icons/md'
 
@@ -49,28 +49,24 @@ const ReviewTour = ({ review, user }: { review: IReviewTour; user?: IAuth }) => 
   const deleteComment = useMutation({
     mutationFn: (id: string) => deleteReviewTour({ id }),
     onSuccess: () => {
-      toast.success('Delete successfully', {
-        style: {
-          backgroundColor: '#4caf50',
-          color: '#ffffff'
-        }
-      })
+      toastSuccess({ content: 'Delete' })
       queryClient.invalidateQueries({ queryKey: ['reviewsTour'] })
       setIsOpen(false)
+    },
+    onError: () => {
+      toastFailedWithNotice({ content: 'Delete' })
     }
   })
 
   const updateComment = useMutation({
     mutationFn: ({ id, data }: { id: string; data: { des: string; rate: number } }) => editReviewTour({ data, id }),
     onSuccess: () => {
-      toast.success('Edit comment successfully', {
-        style: {
-          backgroundColor: '#4caf50',
-          color: '#ffffff'
-        }
-      })
+      toastSuccess({ content: 'Edit' })
       queryClient.invalidateQueries({ queryKey: ['reviewsTour'] })
       setIsOpenEdit(false)
+    },
+    onError: () => {
+      toastFailedWithNotice({ content: 'Edit' })
     }
   })
 

@@ -8,8 +8,8 @@ import { contact } from '@api/contactRequest'
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@components/ui/form'
 import { Input } from '@components/ui/input'
 import { IContactOnlyEmail } from '@interfaces/contact'
+import { toastFailed, toastSuccess } from '@lib/toasts'
 import { useMutation } from '@tanstack/react-query'
-import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 
 const ContactSection = () => {
@@ -26,13 +26,11 @@ const ContactSection = () => {
   const { mutate } = useMutation({
     mutationFn: (data: IContactOnlyEmail) => contact({ data }),
     onSuccess: () => {
-      toast.success('Thanks for contact us', {
-        style: {
-          backgroundColor: '#4caf50',
-          color: '#ffffff'
-        }
-      })
+      toastSuccess({ content: 'Contact' })
       form.reset()
+    },
+    onError: (error) => {
+      toastFailed({ content: error })
     }
   })
 

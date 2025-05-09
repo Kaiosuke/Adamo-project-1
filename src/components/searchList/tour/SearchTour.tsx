@@ -2,6 +2,7 @@ import DatePickerSingle from '@components/DatePickerSingle'
 import GuestCom from '@components/GuestCom'
 import LoadingSearch from '@components/LoadingList/LoadingSearch'
 import TypeCom from '@components/TypeCom'
+import { toastSuccess } from '@lib/toasts'
 import { tourSelector } from '@redux-toolkit/selectors/tourSelector'
 import { filterByGuest, filterByLocation, filterByType } from '@redux-toolkit/slices/toursSlice'
 import { addDays } from 'date-fns'
@@ -9,7 +10,6 @@ import { useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
-import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 import { NumberParam, StringParam, useQueryParams, withDefault } from 'use-query-params'
 import SearchLocation from './SearchLocation'
@@ -47,12 +47,7 @@ const SearchTour = ({ isHome = false }: { isHome?: boolean }) => {
   const handleFilter = useDebouncedCallback(() => {
     dispatch(filterByLocation(locationFilter))
     dispatch(filterByType(typeFilter))
-    toast.success('Filter successfully', {
-      style: {
-        backgroundColor: '#4caf50',
-        color: '#ffffff'
-      }
-    })
+    toastSuccess({ content: 'Filter' })
     localStorage.setItem('currentPageTour', '0')
     navigate(`/tours?from=${from.toDateString()}`)
   }, 300)

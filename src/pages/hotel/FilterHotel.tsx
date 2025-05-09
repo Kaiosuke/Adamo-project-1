@@ -2,9 +2,9 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigg
 
 import SliderCom from '@components/sliders/SliderCom'
 import { StyledLikeButton } from '@components/styled/likeButton/LikeButton'
+import { toastSuccess } from '@lib/toasts'
 import { memo, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 import { NumberParam, StringParam, useQueryParams } from 'use-query-params'
 import HotelBtn from './HotelBtn'
@@ -44,24 +44,14 @@ const FilterHotel = () => {
       _page: 1
     })
     setLoading(false)
-    toast.success('Filter successfully', {
-      style: {
-        backgroundColor: '#4caf50',
-        color: '#ffffff'
-      }
-    })
+    toastSuccess({ content: 'Filter' })
   }, 300)
 
   const handleResetFilter = useDebouncedCallback(() => {
     setQuery({ score: '' })
     setQuery({ prices: '0,300' })
     setQuery({ star: '' })
-    toast.success('Reset successfully', {
-      style: {
-        backgroundColor: '#4caf50',
-        color: '#ffffff'
-      }
-    })
+    toastSuccess({ content: 'Reset' })
   }, 300)
 
   const handleChangeValueSlide = useCallback((v: number[]) => {

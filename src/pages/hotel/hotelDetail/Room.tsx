@@ -6,6 +6,7 @@ import { Button } from '@components/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@components/ui/dialog'
 import { handleFormatMoney, handleSeparateWord } from '@helper/index'
 import { IRoom } from '@interfaces/room'
+import { toastFailed, toastSuccess } from '@lib/toasts'
 import { addRoom, deleteRoom } from '@redux-toolkit/slices/roomsSlice'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { memo, useState } from 'react'
@@ -16,7 +17,6 @@ import { LuUsers } from 'react-icons/lu'
 import { RiShape2Line } from 'react-icons/ri'
 
 import { useDispatch } from 'react-redux'
-import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 
 const Room = ({ room }: { room: IRoom }) => {
@@ -50,12 +50,10 @@ const Room = ({ room }: { room: IRoom }) => {
         onSuccess: async () => {
           await queryClient.invalidateQueries({ queryKey: ['rooms'] })
           handleAddRoom(room)
-          toast.success('Add room Successfully', {
-            style: {
-              backgroundColor: '#4caf50',
-              color: '#ffffff'
-            }
-          })
+          toastSuccess({ content: 'Add room' })
+        },
+        onError: (err) => {
+          toastFailed({ content: err })
         }
       }
     )
@@ -68,12 +66,10 @@ const Room = ({ room }: { room: IRoom }) => {
         onSuccess: async () => {
           await queryClient.invalidateQueries({ queryKey: ['rooms'] })
           handleDeleteRoom(room)
-          toast.success('Remove room Successfully', {
-            style: {
-              backgroundColor: '#4caf50',
-              color: '#ffffff'
-            }
-          })
+          toastSuccess({ content: 'Remove room' })
+        },
+        onError: (err) => {
+          toastFailed({ content: err })
         }
       }
     )

@@ -21,6 +21,7 @@ import { ControllerRenderProps, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useQueryData } from '@hooks/queries/other'
 import { IBookingHotel } from '@interfaces/booking'
+import { toastFailed, toastSuccess, toastWarring } from '@lib/toasts'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { addBookingHotel } from '@redux-toolkit/slices/bookingSlice'
 import { bookingHotelSchema, TBookingHotelSchemaValues } from '@schemas/bookingSchema'
@@ -57,26 +58,12 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
   const dispatch = useDispatch()
 
   const handleDecreaseRoom = (room: IRoom, quantity: number) => {
-    if (quantity < 2)
-      toast.error('Cannot decrease more', {
-        style: {
-          backgroundColor: '#FF0B55',
-          color: '#ffffff'
-        }
-      })
-
+    if (quantity < 2) toastWarring({ content: 'Cannot decrease more' })
     dispatch(decreaseRoom(room))
   }
 
   const handleIncreaseRoom = (room: IRoom, quantity: number) => {
-    if (quantity >= room.quantity)
-      toast.error('Cannot increase more', {
-        style: {
-          backgroundColor: '#FF0B55',
-          color: '#ffffff'
-        }
-      })
-
+    if (quantity >= room.quantity) toastWarring({ content: 'Cannot increase more' })
     dispatch(increaseRoom(room))
   }
 
@@ -134,20 +121,10 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
       }
 
       dispatch(addBookingHotel(data))
-      toast.success('Booking successfully', {
-        style: {
-          backgroundColor: '#4caf50',
-          color: '#ffffff'
-        }
-      })
+      toastSuccess({ content: 'Booking' })
       navigate('/hotel-checkout')
     } else {
-      toast.warning('Please choose dates', {
-        style: {
-          backgroundColor: '#FF0B55',
-          color: '#ffffff'
-        }
-      })
+      return toastFailed({ content: 'Please choose dates' })
     }
   }, 300)
 

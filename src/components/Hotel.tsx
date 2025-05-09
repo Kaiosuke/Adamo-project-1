@@ -1,21 +1,21 @@
+import { changeStatusFavorite } from '@api/hotelRequest'
 import Shape2 from '@assets/images/Shape-2png.png'
 import Shape from '@assets/images/shape.png'
 import { handleFormatMoney } from '@helper/index'
 import { IHotel } from '@interfaces/hotel'
+import { IReviewHotel } from '@interfaces/review'
+import { toastSuccess, toastWarring } from '@lib/toasts'
+import { authSelector } from '@redux-toolkit/selectors/authSelector'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { memo, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { CiLocationOn } from 'react-icons/ci'
 import { FaStar } from 'react-icons/fa6'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router'
+import { useDebouncedCallback } from 'use-debounce'
 import { StringParam, useQueryParams } from 'use-query-params'
 import LoadedImage from './LoadingList/LoadedImage'
-import { memo, useMemo } from 'react'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { changeStatusFavorite } from '@api/hotelRequest'
-import { toast } from 'sonner'
-import { useDebouncedCallback } from 'use-debounce'
-import { IReviewHotel } from '@interfaces/review'
-import { authSelector } from '@redux-toolkit/selectors/authSelector'
-import { useSelector } from 'react-redux'
-import { useTranslation } from 'react-i18next'
 
 const Hotel = ({ hotel, totalReview }: { hotel: IHotel; totalReview?: IReviewHotel[] }) => {
   const { t } = useTranslation('others')
@@ -35,23 +35,13 @@ const Hotel = ({ hotel, totalReview }: { hotel: IHotel; totalReview?: IReviewHot
     mutationFn: ({ id, data }: { id: number; data: { favorite: boolean } }) => changeStatusFavorite({ id, data }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['hotels'] })
-      toast.success('Successfully!', {
-        style: {
-          backgroundColor: '#4caf50',
-          color: '#ffffff'
-        }
-      })
+      toastSuccess({ content: 'Change' })
     }
   })
 
   const handleChangeStatusFavorite = useDebouncedCallback(() => {
     if (!currentUser) {
-      return toast.warning('Please login first', {
-        style: {
-          backgroundColor: '#FF0B55',
-          color: '#ffffff'
-        }
-      })
+      return toastWarring({ content: 'Please login first' })
     }
     changeStatus.mutate({ id: hotel.id, data: { favorite: !hotel.favorite } })
   }, 300)

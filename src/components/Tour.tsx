@@ -4,19 +4,19 @@ import Shape from '@assets/images/shape.png'
 import { CiLocationOn } from 'react-icons/ci'
 import { MdCalendarMonth, MdOutlineStar } from 'react-icons/md'
 import { Link } from 'react-router'
-import LoadedImage from './LoadingList/LoadedImage'
 import { StringParam, useQueryParams } from 'use-query-params'
+import LoadedImage from './LoadingList/LoadedImage'
 
 import { changeFavoriteTour } from '@api/tourRequest'
-import { toast } from 'sonner'
-import { useDebouncedCallback } from 'use-debounce'
 import { ITour } from '@interfaces/tour'
+import { toastFailed, toastSuccess, toastWarring } from '@lib/toasts'
 import { useAppDispatch } from '@redux-toolkit/index'
-import { handleFormatMoney } from '../helper'
-import StyledButton from './styled/button/Button'
-import { useSelector } from 'react-redux'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { useDebouncedCallback } from 'use-debounce'
+import { handleFormatMoney } from '../helper'
+import StyledButton from './styled/button/Button'
 
 const Tour = ({ tour }: { tour: ITour }) => {
   const { t } = useTranslation('others')
@@ -32,26 +32,16 @@ const Tour = ({ tour }: { tour: ITour }) => {
 
   const handleChangeFavorite = useDebouncedCallback(async () => {
     if (!currentUser) {
-      return toast.warning('Please login first', {
-        style: {
-          backgroundColor: '#FF0B55',
-          color: '#ffffff'
-        }
-      })
+      return toastWarring({ content: 'Please login first' })
     }
     try {
       const data = {
         favorite: !tour.favorite
       }
       await dispatch(changeFavoriteTour({ id: tour.id, data: data })).unwrap()
-      toast.success('Successfully', {
-        style: {
-          backgroundColor: '#4caf50',
-          color: '#ffffff'
-        }
-      })
+      return toastSuccess({ content: 'Change' })
     } catch (error) {
-      return error
+      if (typeof error === 'string') return toastFailed({ content: error })
     }
   }, 300)
 

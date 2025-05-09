@@ -15,11 +15,11 @@ import { useForm } from 'react-hook-form'
 import DatePickerWithRange from '@components/DatePickerWithRange'
 import { Button } from '@components/ui/button'
 import { Form, FormField, FormMessage } from '@components/ui/form'
+import { toastSuccess, toastWarring } from '@lib/toasts'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { addBooking } from '@redux-toolkit/slices/bookingSlice'
 import { filterByGuest } from '@redux-toolkit/slices/toursSlice'
 import { useNavigate } from 'react-router'
-import { toast } from 'sonner'
 import { StringParam, useQueryParams } from 'use-query-params'
 
 const BillTourDetail = () => {
@@ -79,21 +79,11 @@ const BillTourDetail = () => {
       }
 
       if (!currentUser) {
-        return toast.error('Please Login to booking', {
-          style: {
-            backgroundColor: '#FF0B55',
-            color: '#ffffff'
-          }
-        })
+        return toastWarring({ content: 'Please Login to booking' })
       }
 
       disPatch(addBooking(data))
-      toast.success('Booking successfully', {
-        style: {
-          backgroundColor: '#4caf50',
-          color: '#ffffff'
-        }
-      })
+      toastSuccess({ content: 'Booking' })
       navigate('/tour-checkout')
     }
   }

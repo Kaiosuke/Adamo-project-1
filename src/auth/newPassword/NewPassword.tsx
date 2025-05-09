@@ -8,6 +8,7 @@ import LoadingBtn from '@components/LoadingList/LoadingBtn'
 import LoadingPage from '@components/LoadingList/LoadingPage'
 import { Button } from '@components/ui/button'
 import { Form } from '@components/ui/form'
+import { toastFailed, toastSuccess } from '@lib/toasts'
 import { useAppDispatch } from '@redux-toolkit/index'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { useEffect } from 'react'
@@ -15,7 +16,6 @@ import { useTranslation } from 'react-i18next'
 import { FaFacebook } from 'react-icons/fa6'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router'
-import { toast } from 'sonner'
 import { StringParam, useQueryParams } from 'use-query-params'
 
 const NewPassword = () => {
@@ -47,21 +47,11 @@ const NewPassword = () => {
       try {
         await dispatch(newPassword({ oobCode: oobCode, newPassword: values.password })).unwrap()
         form.reset()
-        toast.success('Change Password success', {
-          style: {
-            backgroundColor: '#4caf50',
-            color: '#ffffff'
-          }
-        })
+        toastSuccess({ content: 'Change Password success' })
+
         navigate('/auth/login')
       } catch (error) {
-        if (typeof error === 'string')
-          toast.error(error, {
-            style: {
-              backgroundColor: '#FF0B55',
-              color: '#ffffff'
-            }
-          })
+        if (typeof error === 'string') toastFailed({ content: error })
       }
     })()
   }
@@ -71,21 +61,10 @@ const NewPassword = () => {
       const user = await dispatch(loginByFb()).unwrap()
       if (user) {
         navigate('/')
-        toast.success('Login Success', {
-          style: {
-            backgroundColor: '#4caf50',
-            color: '#ffffff'
-          }
-        })
+        toastSuccess({ content: 'Login Success' })
       }
     } catch (error) {
-      if (typeof error === 'string')
-        toast.error(error, {
-          style: {
-            backgroundColor: '#FF0B55',
-            color: '#ffffff'
-          }
-        })
+      if (typeof error === 'string') toastFailed({ content: error })
     }
   }
 

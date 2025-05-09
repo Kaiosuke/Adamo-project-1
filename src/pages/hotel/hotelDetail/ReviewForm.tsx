@@ -12,11 +12,11 @@ import LoadingBtn from '@components/LoadingList/LoadingBtn'
 import Rating from '@components/Rating'
 import { Form, FormField, FormItem, FormMessage } from '@components/ui/form'
 import i18n from '@i18n/i18n'
+import { toastSuccess, toastWarring } from '@lib/toasts'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { ChangeEvent, memo, useCallback, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 
 interface Props {
@@ -97,12 +97,7 @@ const ReviewForm = ({ totalData, id, setCurrentPage, onAverageRate, setQuery }: 
       form.reset()
       setQuery({ _page: 1 })
       setCurrentPage(0)
-      toast.success('Comment success', {
-        style: {
-          backgroundColor: '#4caf50',
-          color: '#ffffff'
-        }
-      })
+      toastSuccess({ content: 'Comment' })
     }
   })
 
@@ -116,12 +111,7 @@ const ReviewForm = ({ totalData, id, setCurrentPage, onAverageRate, setQuery }: 
 
   const onSubmit = useDebouncedCallback((values: TCommentSchemaValues) => {
     if (!currentUser) {
-      return toast.warning('Please login to comment', {
-        style: {
-          backgroundColor: '#FF0B55',
-          color: '#ffffff'
-        }
-      })
+      return toastWarring({ content: 'Please login to comment' })
     }
 
     const data = {

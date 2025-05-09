@@ -7,13 +7,13 @@ import InputAuth from '@components/InputAuth'
 import LoadingBtn from '@components/LoadingList/LoadingBtn'
 import { Button } from '@components/ui/button'
 import { Form } from '@components/ui/form'
+import { toastFailed, toastSuccess } from '@lib/toasts'
 import { useAppDispatch } from '@redux-toolkit/index'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { useTranslation } from 'react-i18next'
 import { FaFacebook } from 'react-icons/fa6'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router'
-import { toast } from 'sonner'
 
 const Login = () => {
   const { t } = useTranslation('auth')
@@ -38,21 +38,10 @@ const Login = () => {
       const user = await dispatch(loginByFb()).unwrap()
       if (user) {
         navigate('/')
-        toast.success('Login Success', {
-          style: {
-            backgroundColor: '#4caf50',
-            color: '#ffffff'
-          }
-        })
+        toastSuccess({ content: 'Login' })
       }
     } catch (error) {
-      if (typeof error === 'string')
-        toast.error(error, {
-          style: {
-            backgroundColor: '#FF0B55',
-            color: '#ffffff'
-          }
-        })
+      if (typeof error === 'string') toastFailed({ content: error })
     }
   }
 
@@ -69,21 +58,11 @@ const Login = () => {
             lastName: values.lastName
           })
         ).unwrap()
-        toast.success('Register Success', {
-          style: {
-            backgroundColor: '#4caf50',
-            color: '#ffffff'
-          }
-        })
+        toastSuccess({ content: 'Register' })
+
         form.reset()
       } catch (error) {
-        if (typeof error === 'string')
-          toast.error(error, {
-            style: {
-              backgroundColor: '#FF0B55',
-              color: '#ffffff'
-            }
-          })
+        if (typeof error === 'string') toastFailed({ content: error })
       }
     })()
   }

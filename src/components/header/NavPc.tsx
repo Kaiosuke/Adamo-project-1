@@ -10,11 +10,11 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger
 } from '@components/ui/dropdown-menu'
+import { toastFailed, toastSuccess } from '@lib/toasts'
 import { useAppDispatch } from '@redux-toolkit/index'
+import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { memo } from 'react'
 import { FaUser } from 'react-icons/fa6'
-import { toast } from 'sonner'
-import { authSelector } from '@redux-toolkit/selectors/authSelector'
 
 const linkNavEn = [
   {
@@ -78,14 +78,9 @@ const NavPc = ({ getLinkColor, isPage }: Props) => {
   const handleLogout = async () => {
     try {
       await dispatch(logout()).unwrap()
-      toast.success('Sign Success', {
-        style: {
-          backgroundColor: '#4caf50',
-          color: '#ffffff'
-        }
-      })
+      toastSuccess({ content: 'Login' })
     } catch (error) {
-      return error
+      if (typeof error === 'string') return toastFailed({ content: error })
     }
   }
 

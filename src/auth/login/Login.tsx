@@ -12,10 +12,10 @@ import { FaFacebook } from 'react-icons/fa6'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router'
 
+import { toastFailed, toastSuccess } from '@lib/toasts'
 import { getSignInSchema, TSignValues } from '@schemas/authSchema'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { toast } from 'sonner'
 
 const Login = () => {
   const { t: validationMessage } = useTranslation('schema')
@@ -43,22 +43,11 @@ const Login = () => {
       try {
         const user = await dispatch(login({ email: values.email, password: values.password })).unwrap()
         if (user) {
-          toast.success('Login Success', {
-            style: {
-              backgroundColor: '#4caf50',
-              color: '#ffffff'
-            }
-          })
+          toastSuccess({ content: 'Login Success' })
           navigate('/')
         }
       } catch (error) {
-        if (typeof error === 'string')
-          toast.error(error, {
-            style: {
-              backgroundColor: '#FF0B55',
-              color: '#ffffff'
-            }
-          })
+        if (typeof error === 'string') toastFailed({ content: error })
       }
     })()
   }
@@ -68,22 +57,11 @@ const Login = () => {
     try {
       const user = await dispatch(loginByFb()).unwrap()
       if (user) {
+        toastSuccess({ content: 'Login Success' })
         navigate('/')
-        toast.success('Login Success', {
-          style: {
-            backgroundColor: '#4caf50',
-            color: '#ffffff'
-          }
-        })
       }
     } catch (error) {
-      if (typeof error === 'string')
-        toast.error(error, {
-          style: {
-            backgroundColor: '#FF0B55',
-            color: '#ffffff'
-          }
-        })
+      if (typeof error === 'string') toastFailed({ content: error })
     } finally {
       setPendingLoginFb(false)
     }

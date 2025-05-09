@@ -18,13 +18,13 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
 import { CiEdit } from 'react-icons/ci'
 import { MdDeleteForever } from 'react-icons/md'
-import { toast } from 'sonner'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
 import { Button } from '@components/ui/button'
 import { Form, FormField, FormItem, FormMessage } from '@components/ui/form'
+import { toastSuccess } from '@lib/toasts'
 import { commentSchema, TCommentSchemaValues } from '@schemas/reviewSchema'
 import { useTranslation } from 'react-i18next'
 import LoadingBtn from '../LoadingList/LoadingBtn'
@@ -43,12 +43,7 @@ const ReviewHotel = ({ review, user }: { review: IReviewHotel; user?: IAuth }) =
   const deleteComment = useMutation({
     mutationFn: (id: string) => deleteReviewHotel({ id }),
     onSuccess: () => {
-      toast.success('Delete successfully', {
-        style: {
-          backgroundColor: '#4caf50',
-          color: '#ffffff'
-        }
-      })
+      toastSuccess({ content: 'Delete' })
       queryClient.invalidateQueries({ queryKey: ['reviewHotel'] })
       setIsOpen(false)
     }
@@ -57,13 +52,8 @@ const ReviewHotel = ({ review, user }: { review: IReviewHotel; user?: IAuth }) =
   const updateComment = useMutation({
     mutationFn: ({ id, data }: { id: string; data: { des: string; rate: number } }) => editReviewHotel({ data, id }),
     onSuccess: () => {
-      toast.success('Edit comment successfully', {
-        style: {
-          backgroundColor: '#4caf50',
-          color: '#ffffff'
-        }
-      })
       queryClient.invalidateQueries({ queryKey: ['reviewHotel'] })
+      toastSuccess({ content: 'Edit' })
       setIsOpenEdit(false)
     }
   })

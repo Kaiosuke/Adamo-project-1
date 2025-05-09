@@ -1,8 +1,8 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@components/ui/select'
 import i18n from '@i18n/i18n'
+import { toastSuccess } from '@lib/toasts'
 import { memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { toast } from 'sonner'
 import { NumberParam, StringParam, useQueryParams, withDefault } from 'use-query-params'
 
 const sortListEN = [
@@ -54,12 +54,7 @@ const SortHotel = () => {
   const handleSelect = (v: string) => {
     const [sort, order] = v.split('-')
     setQuery({ _sort: sort, _order: order, _page: 1 })
-    toast.success('Sort successfully', {
-      style: {
-        backgroundColor: '#4caf50',
-        color: '#ffffff'
-      }
-    })
+    toastSuccess({ content: 'Sort' })
   }
 
   useTranslation('others')

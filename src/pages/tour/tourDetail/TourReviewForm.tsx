@@ -10,11 +10,11 @@ import { FaUserCircle } from 'react-icons/fa'
 
 import { addReviewTour } from '@api/reviewRequest'
 import { IReviewTourLackId } from '@interfaces/review'
+import { toastFailed, toastSuccess, toastWarring } from '@lib/toasts'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { useQueryClient } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 
 interface Props {
@@ -43,12 +43,7 @@ const TourReviewForm = ({ id, setCurrentPage }: Props) => {
     ;(async () => {
       if (id) {
         if (!currentUser) {
-          return toast.error('Please Login to comment', {
-            style: {
-              backgroundColor: '#FF0B55',
-              color: '#ffffff'
-            }
-          })
+          return toastWarring({ content: 'Please Login to comment' })
         }
         const data: IReviewTourLackId = {
           userId: currentUser?.uid,
@@ -62,12 +57,8 @@ const TourReviewForm = ({ id, setCurrentPage }: Props) => {
         }
         try {
           await dispatch(addReviewTour({ data: data })).unwrap()
-          toast.success('Comment successfully!!', {
-            style: {
-              backgroundColor: '#4caf50',
-              color: '#ffffff'
-            }
-          })
+          toastSuccess({ content: 'Comment' })
+
           form.reset({
             message: '',
             star: 0
@@ -77,12 +68,8 @@ const TourReviewForm = ({ id, setCurrentPage }: Props) => {
           })
           setCurrentPage(0)
         } catch (error) {
-          toast.error(String(error), {
-            style: {
-              backgroundColor: '#FF0B55',
-              color: '#ffffff'
-            }
-          })
+          const err = error as Error
+          toastFailed({ content: err })
         }
       }
     })()

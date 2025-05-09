@@ -8,10 +8,10 @@ import { TUserSchemaValues, userSchema } from '@schemas/userSchema'
 import { useMutation } from '@tanstack/react-query'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router'
-import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 
 import PayMethod from '@components/PayMethod'
+import { toastSuccess } from '@lib/toasts'
 import { useTranslation } from 'react-i18next'
 import { StringParam, useQueryParams, withDefault } from 'use-query-params'
 
@@ -62,13 +62,7 @@ const FormInfoUser = ({ booking, discount }: Props) => {
     mutationFn: (data: IBooking) => bookingTour({ data }),
     onSuccess: async () => {
       await navigate('/thanks')
-      toast.success('Booking tour success', {
-        style: {
-          backgroundColor: '#4caf50',
-          color: '#ffffff'
-        }
-      })
-
+      toastSuccess({ content: 'Booking tour' })
       form.reset()
     }
   })

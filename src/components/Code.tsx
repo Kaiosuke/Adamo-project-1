@@ -1,10 +1,10 @@
 import { getCode } from '@api/codeRequest'
 import { Input } from '@components/ui/input'
+import { toastFailed, toastSuccess } from '@lib/toasts'
 import { useMutation } from '@tanstack/react-query'
 import { useState } from 'react'
-import { toast } from 'sonner'
-import { Button } from './ui/button'
 import { useTranslation } from 'react-i18next'
+import { Button } from './ui/button'
 
 interface Props {
   setDiscount: (_v: number) => void
@@ -16,24 +16,12 @@ const Code = ({ setDiscount }: Props) => {
   const { mutate } = useMutation({
     mutationFn: (code: string) => getCode(code),
     onSuccess: (data) => {
-      toast.success(`You get a ${data.discount * 100}% discount`, {
-        style: {
-          backgroundColor: '#4caf50',
-          color: '#ffffff'
-        }
-      })
-
+      toastSuccess({ content: `You get a ${data.discount * 100}% discount` })
       setDiscount(data.discount)
     },
     onError: () => {
-      toast.error('Invalid promo code', {
-        style: {
-          backgroundColor: '#f44336',
-          color: '#ffffff'
-        }
-      })
+      toastFailed({ content: 'Invalid promo code' })
       setDiscount(0)
-
       return
     }
   })

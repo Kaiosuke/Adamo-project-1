@@ -7,10 +7,10 @@ import LoadingBtn from '@components/LoadingList/LoadingBtn'
 import { Button } from '@components/ui/button'
 import { Form } from '@components/ui/form'
 import { IContact } from '@interfaces/contact'
+import { toastFailed, toastSuccess } from '@lib/toasts'
 import { contactSchema, TContactSchemaValues } from '@schemas/contactSchema'
 import { useMutation } from '@tanstack/react-query'
 import { Trans, useTranslation } from 'react-i18next'
-import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 import Office from './Office'
 
@@ -32,13 +32,11 @@ const ContactSection = () => {
   const { mutate, isPending } = useMutation({
     mutationFn: (data: IContact) => contact({ data }),
     onSuccess: () => {
-      toast.success('Thanks for contact us', {
-        style: {
-          backgroundColor: '#4caf50',
-          color: '#ffffff'
-        }
-      })
+      toastSuccess({ content: 'Contact' })
       form.reset()
+    },
+    onError: (error) => {
+      toastFailed({ content: error })
     }
   })
 

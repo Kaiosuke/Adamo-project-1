@@ -12,9 +12,9 @@ import { useNavigate } from 'react-router'
 import { bookingHotel } from '@api/bookingRequest'
 import PayMethod from '@components/PayMethod'
 import { IBookingHotel } from '@interfaces/booking'
+import { toastSuccess } from '@lib/toasts'
 import { useMutation } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
-import { toast } from 'sonner'
 import { useDebouncedCallback } from 'use-debounce'
 import { StringParam, useQueryParams, withDefault } from 'use-query-params'
 
@@ -80,7 +80,7 @@ const FormInfoUser = ({ booking, discount }: Props) => {
     mutationFn: (data: IBookingHotel) => bookingHotel({ data }),
     onSuccess: () => {
       setIsSubmitted(true)
-      toast.success('Booking hotel success')
+      toastSuccess({ content: 'Booking hotel' })
       setIsSubmitted(true)
       form.reset()
       navigate('/thanks')

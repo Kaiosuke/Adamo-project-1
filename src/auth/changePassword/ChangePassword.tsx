@@ -8,13 +8,13 @@ import LoadingBtn from '@components/LoadingList/LoadingBtn'
 import LoadingPage from '@components/LoadingList/LoadingPage'
 import { Button } from '@components/ui/button'
 import { Form } from '@components/ui/form'
+import { toastFailed, toastSuccess } from '@lib/toasts'
 import { useAppDispatch } from '@redux-toolkit/index'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router'
-import { toast } from 'sonner'
 
 const ChangePassword = () => {
   const { t } = useTranslation('auth')
@@ -38,20 +38,9 @@ const ChangePassword = () => {
       try {
         await dispatch(changePassword(values.password)).unwrap()
         form.reset()
-        toast.success('Change Password success', {
-          style: {
-            backgroundColor: '#4caf50',
-            color: '#ffffff'
-          }
-        })
+        toastSuccess({ content: 'Change Password' })
       } catch (error) {
-        if (typeof error === 'string')
-          toast.error(error, {
-            style: {
-              backgroundColor: '#FF0B55',
-              color: '#ffffff'
-            }
-          })
+        if (typeof error === 'string') toastFailed({ content: error })
       }
     })()
   }

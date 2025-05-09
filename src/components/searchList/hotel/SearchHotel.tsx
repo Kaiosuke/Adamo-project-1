@@ -4,12 +4,12 @@ import { addDays } from 'date-fns'
 import { memo, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'sonner'
 import { NumberParam, StringParam, useQueryParams, withDefault } from 'use-query-params'
 
 import GuestCom from '@components/GuestCom'
 import LoadingSearch from '@components/LoadingList/LoadingSearch'
 import { useQueryData } from '@hooks/queries/other'
+import { toastSuccess } from '@lib/toasts'
 import SearchHotelBtn from './SearchHotelBtn'
 import SearchLocation from './SearchLocation'
 
@@ -39,13 +39,7 @@ const SearchHotel = ({ isHome = false }: { isHome?: boolean }) => {
   const navigate = useNavigate()
 
   const handleFilter = () => {
-    toast.success('Filter successfully', {
-      style: {
-        backgroundColor: '#4caf50',
-        color: '#ffffff'
-      }
-    })
-
+    toastSuccess({ content: 'Filter' })
     navigate(`/hotels?location=${location}&guest=${guest}&from=${from.toDateString()}&_page=1`)
   }
 

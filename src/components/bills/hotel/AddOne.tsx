@@ -1,5 +1,6 @@
 import { Checkbox } from '@components/ui/checkbox'
 import { handleFormatMoney } from '@helper/index'
+import { toastWarring } from '@lib/toasts'
 import {
   changeBreakfast,
   changeExtraBed,
@@ -14,7 +15,6 @@ import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FaCircleMinus, FaCirclePlus } from 'react-icons/fa6'
 import { useDispatch } from 'react-redux'
-import { toast } from 'sonner'
 
 interface Props {
   breakfast: IBreakfast
@@ -30,24 +30,14 @@ const AddOne = ({ breakfast, extraBed }: Props) => {
 
   const handleDecreaseBreakfast = (breakfast: IBreakfast) => {
     if (breakfast.quantity < 1) {
-      return toast.warning('Cannot decrease further', {
-        style: {
-          backgroundColor: '#FF0B55',
-          color: '#ffffff'
-        }
-      })
+      return toastWarring({ content: 'Cannot decrease' })
     }
     dispatch(deCreaseBreakfast())
   }
 
   const handleIncreaseBreakfast = (breakfast: IBreakfast) => {
     if (breakfast.quantity > 6) {
-      return toast.warning('Cannot increase further', {
-        style: {
-          backgroundColor: '#FF0B55',
-          color: '#ffffff'
-        }
-      })
+      return toastWarring({ content: 'Cannot increase' })
     }
 
     dispatch(inCreaseBreakfast())
@@ -59,12 +49,7 @@ const AddOne = ({ breakfast, extraBed }: Props) => {
 
   const handleDecreaseExtraBed = (extraBed: IExtraBed) => {
     if (extraBed.quantity < 1) {
-      return toast.warning('Cannot decrease further', {
-        style: {
-          backgroundColor: '#FF0B55',
-          color: '#ffffff'
-        }
-      })
+      return toastWarring({ content: 'Cannot decrease' })
     }
 
     dispatch(deCreaseExtraBed())
@@ -72,12 +57,7 @@ const AddOne = ({ breakfast, extraBed }: Props) => {
 
   const handleIncreaseExtraBed = (extraBed: IExtraBed) => {
     if (extraBed.quantity > 6) {
-      return toast.warning('Cannot increase further', {
-        style: {
-          backgroundColor: '#FF0B55',
-          color: '#ffffff'
-        }
-      })
+      return toastWarring({ content: 'Cannot increase' })
     }
     dispatch(inCreaseExtraBed())
   }
