@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { useTranslation } from 'react-i18next'
 
 import { zodResolver } from '@hookform/resolvers/zod'
-import { bookingSchema, TBookingHotelSchema } from '@schemas/bookingSchema'
+import { bookingSchema, TBookingSchemaValues } from '@schemas/bookingSchema'
 import { useForm } from 'react-hook-form'
 
 import DatePickerWithRange from '@components/DatePickerWithRange'
@@ -54,7 +54,7 @@ const BillTourDetail = () => {
 
   const { guest } = filter
 
-  const form = useForm<TBookingHotelSchema>({
+  const form = useForm<TBookingSchemaValues>({
     resolver: zodResolver(bookingSchema(validationValues as unknown as (_key: string) => string)),
     defaultValues: {
       guests: guest
@@ -63,7 +63,7 @@ const BillTourDetail = () => {
 
   const navigate = useNavigate()
 
-  function onSubmit(values: TBookingHotelSchema) {
+  function onSubmit(values: TBookingSchemaValues) {
     if (tour && date?.from && date?.to) {
       const totalPrice = tour?.price && tour?.price * tour?.duration
 

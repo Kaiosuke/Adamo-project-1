@@ -47,7 +47,7 @@ const Room = ({ room }: { room: IRoom }) => {
         onSuccess: async () => {
           await queryClient.invalidateQueries({ queryKey: ['rooms'] })
           handleAddRoom(room)
-          toast.success('Remove room Successfully', {
+          toast.success('Add room Successfully', {
             style: {
               backgroundColor: '#4caf50',
               color: '#ffffff'

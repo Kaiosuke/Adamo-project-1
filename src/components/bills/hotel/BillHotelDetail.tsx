@@ -23,7 +23,7 @@ import { useQueryData } from '@hooks/queries/other'
 import { IBookingHotel } from '@interfaces/booking'
 import { authSelector } from '@redux-toolkit/selectors/authSelector'
 import { addBookingHotel } from '@redux-toolkit/slices/bookingSlice'
-import { bookingHotelSchema, TBookingHotelSchema } from '@schemas/bookingSchema'
+import { bookingHotelSchema, TBookingHotelSchemaValues } from '@schemas/bookingSchema'
 import { DateRange } from 'react-day-picker'
 import { useNavigate } from 'react-router'
 import { useDebouncedCallback } from 'use-debounce'
@@ -56,11 +56,27 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
 
   const dispatch = useDispatch()
 
-  const handleDecreaseRoom = (room: IRoom) => {
+  const handleDecreaseRoom = (room: IRoom, quantity: number) => {
+    if (quantity < 2)
+      toast.error('Cannot decrease more', {
+        style: {
+          backgroundColor: '#FF0B55',
+          color: '#ffffff'
+        }
+      })
+
     dispatch(decreaseRoom(room))
   }
 
-  const handleIncreaseRoom = (room: IRoom) => {
+  const handleIncreaseRoom = (room: IRoom, quantity: number) => {
+    if (quantity >= room.quantity)
+      toast.error('Cannot increase more', {
+        style: {
+          backgroundColor: '#FF0B55',
+          color: '#ffffff'
+        }
+      })
+
     dispatch(increaseRoom(room))
   }
 
@@ -78,14 +94,14 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
 
   const navigate = useNavigate()
 
-  const form = useForm<TBookingHotelSchema>({
+  const form = useForm<TBookingHotelSchemaValues>({
     resolver: zodResolver(bookingHotelSchema(validationValues as unknown as (_key: string) => string)),
     defaultValues: {
       guests: query.guest ? query.guest : ''
     }
   })
 
-  const onSubmit = useDebouncedCallback((values: TBookingHotelSchema) => {
+  const onSubmit = useDebouncedCallback((values: TBookingHotelSchemaValues) => {
     if (rooms.length < 1) {
       return toast.error('Please select at least 1 room', {
         style: {
@@ -206,12 +222,12 @@ const BillHotelDetail = ({ hotel }: { hotel?: IHotel }) => {
                           <div className="flex items-center justify-between gap-2 ml-auto">
                             <FaCircleMinus
                               className="text-four text-xl cursor-pointer hover:text-four/80"
-                              onClick={() => handleDecreaseRoom(room.data)}
+                              onClick={() => handleDecreaseRoom(room.data, room.quantity)}
                             />
                             <span className="w-[10px] text-center">{room.quantity}</span>
                             <FaCirclePlus
                               className="text-four text-xl cursor-pointer hover:text-four/80"
-                              onClick={() => handleIncreaseRoom(room.data)}
+                              onClick={() => handleIncreaseRoom(room.data, room.quantity)}
                             />
                           </div>
                           <div className="font-bold text-six ml-auto">
